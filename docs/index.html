@@ -5,97 +5,389 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具每日速递</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #1a1a2e; padding: 20px; }
-  .container { max-width: 720px; margin: 0 auto; }
-  .hero { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 60%, #4338ca 100%); border-radius: 16px; padding: 40px 36px; color: #fff; margin-bottom: 24px; }
-  .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
-  .hero p { opacity: 0.85; font-size: 14px; line-height: 1.7; }
-  .hero .badge-row { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
-  .hero .tag { background: rgba(255,255,255,0.18); border-radius: 20px; padding: 3px 12px; font-size: 12px; }
-  .section-title { font-size: 15px; font-weight: 700; margin: 24px 0 12px; color: #1a1a2e; }
-  .issue-list { display: flex; flex-direction: column; gap: 8px; }
-  .issue-card { background: #fff; border-radius: 10px; padding: 16px 20px; border: 1px solid #e8ecf1; display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; transition: box-shadow .15s; }
-  .issue-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-  .issue-num { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
-  .c-1 { background: #6366f1; } .c-2 { background: #8b5cf6; } .c-3 { background: #a855f7; } .c-4 { background: #d946ef; }
-  .issue-info { flex: 1; min-width: 0; }
-  .issue-date { font-size: 11px; color: #888; margin-bottom: 2px; }
-  .issue-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .issue-meta { font-size: 11px; color: #999; margin-top: 3px; }
-  .issue-arrow { color: #ccc; font-size: 18px; flex-shrink: 0; }
-  .empty { text-align: center; padding: 30px; color: #999; font-size: 13px; }
-  .footer { text-align: center; padding: 24px 0; font-size: 12px; color: #999; }
-  .footer a { color: #6366f1; text-decoration: none; }
-  .about { background: #fff; border-radius: 10px; padding: 20px; border: 1px solid #e8ecf1; margin-top: 24px; font-size: 13px; color: #555; line-height: 1.7; }
-  .about strong { color: #1a1a2e; }
+  :root {
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #787774;
+    --border: #e9e5df;
+    --purple: #6c5ce7;
+    --green: #10ac84;
+    --blue: #3867d6;
+    --orange: #f39c12;
+    --pink: #e84393;
+    --red: #e17055;
+    --teal: #00b894;
+    --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(160deg, #1a1528 0%, #2d1b4e 40%, #1e3799 70%, #0c1b3d 100%);
+    padding: 80px 24px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top:-80px; left:-100px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(108,92,231,.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom:-60px; right:-80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(16,172,132,.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 680px; margin:0 auto; }
+  .hero-content .pre-title {
+    display: inline-block;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(4px);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,.8);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .hero-content h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .hero-content .hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,.7);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 20px;
+  }
+  .hero-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .hero-tag {
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(4px);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,.85);
+  }
+  .hero-tag .dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px;
+    vertical-align: middle; position: relative; top: -1px;
+  }
+  .dot-purple { background: #a29bfe; }
+  .dot-green { background: #55efc4; }
+  .dot-blue { background: #74b9ff; }
+  .dot-orange { background: #fab1a0; }
+
+  /* Stats bar */
+  .stats-bar {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .stat { text-align: center; }
+  .stat .num { font-size: 20px; font-weight: 700; color: var(--purple); }
+  .stat .label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Main content */
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 24px 48px; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 24px;
+  }
+  .section-header h2 { font-size: 20px; font-weight: 700; }
+  .section-header .line {
+    flex:1; height: 1px; background: var(--border);
+  }
+
+  /* Issue grid */
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 18px;
+  }
+
+  .issue-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .issue-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  }
+  .card-header {
+    padding: 24px 24px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top:-30px; right:-30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    opacity: .15;
+  }
+  .card-g1::before { background: var(--purple); }
+  .card-g2::before { background: var(--green); }
+  .card-g3::before { background: var(--blue); }
+  .card-g4::before { background: var(--orange); }
+  .card-header .issue-num {
+    display: inline-block;
+    font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .n-purple { background: #f3f0ff; color: var(--purple); }
+  .n-green  { background: #e6faf4; color: var(--green); }
+  .n-blue   { background: #e8f0fe; color: var(--blue); }
+  .n-orange { background: #fef3e2; color: var(--orange); }
+
+  .card-header .card-date { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .card-header .card-title {
+    font-size: 16px; font-weight: 700; line-height: 1.4;
+  }
+  .card-body {
+    padding: 0 24px 20px;
+    flex: 1;
+  }
+  .card-body .card-meta {
+    font-size: 12px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .card-body .card-meta span {
+    background: #f5f4f0; padding: 3px 9px; border-radius: 6px;
+  }
+  .card-footer {
+    padding: 14px 24px;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 12px; color: var(--muted);
+  }
+  .card-footer .read-more {
+    color: var(--purple);
+    font-weight: 600;
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  /* About */
+  .about {
+    margin-top: 48px; text-align: center;
+    padding: 40px 24px;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .about h3 { font-size: 18px; margin-bottom: 10px; }
+  .about p { font-size: 13px; color: var(--muted); max-width: 520px; margin:0 auto; line-height: 1.7; }
+  .about .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .about-item {
+    padding: 16px 12px;
+    background: var(--bg);
+    border-radius: 12px;
+  }
+  .about-item .a-icon { font-size: 28px; margin-bottom: 6px; }
+  .about-item .a-label { font-size: 12px; font-weight: 600; color: var(--text); }
+  .about-item .a-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+  }
+  .footer a { color: var(--purple); text-decoration: none; }
+
+  @media (max-width: 500px) {
+    .hero-content h1 { font-size: 28px; }
+    .issue-grid { grid-template-columns: 1fr; }
+    .stats-bar { gap: 24px; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
 
   <div class="hero">
-    <h1>🤖 AI 工具每日速递</h1>
-    <p>每天 5 分钟，掌握 Codex Skills、NotebookLM、Notion、WorkBuddy 的最新实用技巧。<br>聚焦日常知识工作 — 写作、PPT、阅读、分发，0 行代码。</p>
-    <div class="badge-row">
-      <span class="tag">📘 Codex Skills</span>
-      <span class="tag">📗 NotebookLM</span>
-      <span class="tag">📋 Notion</span>
-      <span class="tag">📙 WorkBuddy</span>
+    <div class="hero-content">
+      <div class="pre-title">📬 DAILY BRIEFING</div>
+      <h1>AI 工具<br>每日速递</h1>
+      <p class="hero-desc">
+        每天一份精选简报 — Codex Skills 推荐、NotebookLM 窍门、
+        Notion 效率技巧、WorkBuddy 实用操作。聚焦知识工作，不碰代码。
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag"><span class="dot dot-purple"></span>Codex Skills</span>
+        <span class="hero-tag"><span class="dot dot-green"></span>NotebookLM</span>
+        <span class="hero-tag"><span class="dot dot-blue"></span>Notion</span>
+        <span class="hero-tag"><span class="dot dot-orange"></span>WorkBuddy</span>
+      </div>
     </div>
   </div>
 
-  <div class="section-title">📬 往期速递</div>
-  <div class="issue-list">
-    <a class="issue-card" href="issues/2026-06-22.html">
-      <div class="issue-num c-1">#4</div>
-      <div class="issue-info">
-        <div class="issue-date">2026-06-22 · 星期一</div>
-        <div class="issue-title">视觉与分发专场：配图 · 封面 · 海报 · PPT · 长文</div>
-        <div class="issue-meta">ian-xiaohei-illustrations · baoyu-skills · html-anything · khazix-skills · guizang-ppt-skill</div>
-      </div>
-      <span class="issue-arrow">→</span>
-    </a>
-    <a class="issue-card" href="issues/2026-06-21.html">
-      <div class="issue-num c-2">#3</div>
-      <div class="issue-info">
-        <div class="issue-date">2026-06-21 · 星期六</div>
-        <div class="issue-title">写作创作专场：去AI味 · PPT · 选题诊断 · 完整写作流 · 社交卡片</div>
-        <div class="issue-meta">Humanizer-zh · codex-ppt-skill · dbskill · content-research-writer · social-card-skill</div>
-      </div>
-      <span class="issue-arrow">→</span>
-    </a>
-    <a class="issue-card" href="issues/2026-06-20.html">
-      <div class="issue-num c-3">#2</div>
-      <div class="issue-info">
-        <div class="issue-date">2026-06-20 · 星期五</div>
-        <div class="issue-title">Codex Skills 高星专场：Superpowers · 跨会话记忆 · 文档处理 · 浏览器自动化</div>
-        <div class="issue-meta">Superpowers v6.0.3 · claude-mem · document-skills · agent-browser · frontend-design</div>
-      </div>
-      <span class="issue-arrow">→</span>
-    </a>
-    <a class="issue-card" href="issues/2026-06-19.html">
-      <div class="issue-num c-4">#1</div>
-      <div class="issue-info">
-        <div class="issue-date">2026-06-19 · 星期四</div>
-        <div class="issue-title">创刊号：Codex Skills 入门 · NotebookLM 实操 · WorkBuddy 邮件助手</div>
-        <div class="issue-meta">Skills 正确认知 · 写 Skill 自检清单 · 音频摘要 · 快捷指令</div>
-      </div>
-      <span class="issue-arrow">→</span>
-    </a>
+  <div class="stats-bar">
+    <div class="stat"><div class="num">4</div><div class="label">期已发布</div></div>
+    <div class="stat"><div class="num">20+</div><div class="label">推荐 Skills</div></div>
+    <div class="stat"><div class="num">5min</div><div class="label">阅读时长</div></div>
+    <div class="stat"><div class="num">每日</div><div class="label">更新频率</div></div>
   </div>
 
-  <div class="about">
-    <strong>📌 关于这个项目</strong><br>
-    每天早上由 WorkBuddy 自动生成，从 GitHub 热门 Skill 和知识库中精选当天最值得学的内容。每期 5 个 Skill + NotebookLM/Notion/WorkBuddy 实操技巧，5 分钟读完、马上能试。<br><br>
-    <strong>Skill 筛选标准：</strong>公开仓库 · 收藏使用多 · 面向日常知识工作（写作/PPT/阅读/分发） · 安装即用<br>
-    <strong>源码：</strong><a href="https://github.com/ai-tool-daily">GitHub</a>
-  </div>
+  <div class="container">
 
-  <div class="footer">
-    AI 工具每日速递 · 由 <a href="#">WorkBuddy</a> 生成 · 每日更新
-  </div>
+    <div class="section-header">
+      <h2>📬 往期速递</h2>
+      <div class="line"></div>
+    </div>
 
-</div>
+    <div class="issue-grid">
+
+      <!-- #4 -->
+      <a class="issue-card" href="issues/2026-06-22.html">
+        <div class="card-header card-g1">
+          <span class="issue-num n-purple">#4</span>
+          <div class="card-date">2026年6月22日 · 星期一</div>
+          <div class="card-title">视觉与分发专场</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>🎨 配图</span><span>🖼️ 封面</span><span>📊 海报</span><span>📽️ PPT</span><span>📝 长文</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>5 个 Skills</span>
+          <span class="read-more">阅读 →</span>
+        </div>
+      </a>
+
+      <!-- #3 -->
+      <a class="issue-card" href="issues/2026-06-21.html">
+        <div class="card-header card-g2">
+          <span class="issue-num n-green">#3</span>
+          <div class="card-date">2026年6月21日 · 星期六</div>
+          <div class="card-title">写作创作专场</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>✍️ 去AI味</span><span>📽️ PPT</span><span>🔍 选题</span><span>📝 写作流</span><span>🃏 社交卡</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>5 个 Skills</span>
+          <span class="read-more">阅读 →</span>
+        </div>
+      </a>
+
+      <!-- #2 -->
+      <a class="issue-card" href="issues/2026-06-20.html">
+        <div class="card-header card-g3">
+          <span class="issue-num n-blue">#2</span>
+          <div class="card-date">2026年6月20日 · 星期五</div>
+          <div class="card-title">Codex Skills 高星专场</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>⚡ 全能开发</span><span>🧠 跨会话记忆</span><span>📄 文档处理</span><span>🌐 浏览器</span><span>🎨 前端设计</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>5 个 Skills</span>
+          <span class="read-more">阅读 →</span>
+        </div>
+      </a>
+
+      <!-- #1 -->
+      <a class="issue-card" href="issues/2026-06-19.html">
+        <div class="card-header card-g4">
+          <span class="issue-num n-orange">#1</span>
+          <div class="card-date">2026年6月19日 · 星期四</div>
+          <div class="card-title">创刊号 · 从零开始</div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span>📘 Skills 认知</span><span>🧪 NotebookLM</span><span>📋 Notion</span><span>📙 WorkBuddy</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>5 个 Skills</span>
+          <span class="read-more">阅读 →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="about">
+      <h3>📌 关于这个项目</h3>
+      <p>
+        每天早上由 WorkBuddy 自动生成，从 GitHub 热门 Skill 和知识库中精选当天最值得学的内容。
+        只关注知识工作 — 不涉及编程、不涉及 CI/CD、不涉及调试。
+      </p>
+      <div class="about-grid">
+        <div class="about-item">
+          <div class="a-icon">🔍</div>
+          <div class="a-label">精选公开 Skill</div>
+          <div class="a-sub">GitHub 高星 · 收藏多 · 近期更新</div>
+        </div>
+        <div class="about-item">
+          <div class="a-icon">✍️</div>
+          <div class="a-label">日常知识工作</div>
+          <div class="a-sub">写作 · PPT · 阅读 · 分发</div>
+        </div>
+        <div class="about-item">
+          <div class="a-icon">⚡</div>
+          <div class="a-label">5 分钟读完</div>
+          <div class="a-sub">每条可立刻动手尝试</div>
+        </div>
+        <div class="about-item">
+          <div class="a-icon">🤖</div>
+          <div class="a-label">每日自动更新</div>
+          <div class="a-sub">早上 8:00 准时推送</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com/weidashi/ai-tool-daily">GitHub</a> · 由 WorkBuddy 生成 · 每日更新
+    </div>
+
+  </div>
 </body>
 </html>

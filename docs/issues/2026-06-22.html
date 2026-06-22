@@ -5,319 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具每日速递 - 2026-06-22</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; padding: 20px; color: #1a1a2e; }
-  .container { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-  .header { background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%); color: #fff; padding: 28px 32px; }
-  .header h1 { font-size: 22px; font-weight: 700; }
-  .header .subtitle { margin-top: 6px; font-size: 13px; opacity: 0.85; }
-  .header .date-badge { display: inline-block; margin-top: 10px; background: rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 14px; font-size: 12px; }
-  .content { padding: 28px 32px; }
-  .section { margin-bottom: 30px; }
-  .section-title { font-size: 17px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .intro { background: #eef2ff; border-radius: 8px; padding: 14px 18px; font-size: 13px; line-height: 1.7; margin-bottom: 20px; color: #312e81; border-left: 3px solid #6366f1; }
+  :root {
+    --bg: #f8f7f4;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #787774;
+    --border: #e9e5df;
+    --purple: #6c5ce7;
+    --green: #10ac84;
+    --blue: #3867d6;
+    --orange: #f39c12;
+    --pink: #e84393;
+    --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+  }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
 
-  .skill-card { border: 1px solid #e8ecf1; border-radius: 10px; padding: 20px; margin-bottom: 14px; background: #fafbfc; }
-  .skill-card.featured { border-color: #6366f1; background: #f5f3ff; }
-  .skill-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
-  .skill-name { font-size: 16px; font-weight: 700; color: #1a1a2e; }
-  .skill-badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
-  .bd-purple { background: #eef2ff; color: #4338ca; }
-  .bd-yellow { background: #fff3cd; color: #856404; }
-  .bd-tag { background: #e8ecf1; color: #555; }
-  .skill-desc { font-size: 13px; color: #444; line-height: 1.7; margin-bottom: 10px; }
-  .skill-steps { background: #1a1a2e; color: #a8d8a8; border-radius: 8px; padding: 14px 16px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; margin-bottom: 10px; }
-  .skill-steps .cmt { color: #6a9955; }
-  .skill-usage { font-size: 12px; color: #555; line-height: 1.7; margin-top: 8px; }
-  .skill-usage strong { color: #1a1a2e; }
-  .tip-box { background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 12px; line-height: 1.7; color: #78350f; margin-top: 10px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
 
-  .big-news { background: linear-gradient(135deg, #eef2ff, #f5f3ff); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; border: 1px solid #c7d2fe; }
-  .big-news .bn-title { font-size: 15px; font-weight: 700; color: #4338ca; margin-bottom: 10px; }
-  .big-news .bn-item { font-size: 12px; color: #444; line-height: 1.8; }
-  .big-news .bn-item .hl { font-weight: 600; color: #4338ca; }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
 
-  .compare-card { font-size: 12px; color: #444; line-height: 1.8; margin-top: 8px; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e8ecf1; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
 
-  .code-block { background: #1e1e2e; color: #cdd6f4; border-radius: 8px; padding: 14px 16px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; margin: 10px 0; }
-  .code-block .cmt { color: #6c7086; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); }
+  .bd-r { background:#fce4ec; color:var(--pink); }
 
-  .notebooklm { background: #f0fdf4; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #bbf7d0; }
-  .notebooklm .nt-title { font-size: 14px; font-weight: 600; color: #166534; margin-bottom: 6px; }
-  .notebooklm .nt-body { font-size: 13px; color: #444; line-height: 1.7; }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
 
-  .wb { background: #fef2f2; border-radius: 8px; padding: 16px; border: 1px solid #fecaad; margin-bottom: 10px; }
-  .wb .wt-title { font-size: 14px; font-weight: 600; color: #991b1b; margin-bottom: 8px; }
-  .wb .wt-body { font-size: 13px; color: #444; line-height: 1.7; }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
 
-  .footer { background: #f5f7fa; padding: 20px 32px; text-align: center; font-size: 13px; color: #666; }
-  .footer .encourage { font-size: 15px; color: #1a1a2e; font-weight: 600; margin-bottom: 8px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
-  .grid-2 .mini { border: 1px solid #e8ecf1; border-radius: 8px; padding: 14px; background: #fff; }
-  .grid-2 .mini .m-title { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
-  .grid-2 .mini .m-desc { font-size: 12px; color: #555; line-height: 1.6; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); }
+  .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
 
-  .star { color: #f59e0b; font-size: 11px; }
-  .divider { border: none; border-top: 1px solid #e8ecf1; margin: 18px 0; }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .hl strong { color:#1e3a8a; }
+
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); }
+  .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+
+  .cmp { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:16px 20px; margin-top:12px; }
+  .cmp .ct { font-size:13px; font-weight:700; margin-bottom:10px; }
+  .cmp .cr { display:flex; align-items:center; gap:12px; font-size:12px; padding:6px 0; border-bottom:1px solid var(--border); }
+  .cmp .cr:last-child { border-bottom:none; }
+  .cmp .cr .cn { font-weight:600; width:130px; flex-shrink:0; }
+  .cmp .cr .cd { color:#555; }
+
+  .big { background:linear-gradient(135deg,#eef2ff,#f5f3ff); border-radius:12px; padding:18px 20px; margin-bottom:14px; border:1px solid #c7d2fe; }
+  .big .bt { font-size:14px; font-weight:700; color:#4338ca; margin-bottom:8px; }
+  .big .bi { font-size:12px; color:#444; line-height:1.8; }
+  .big .bi strong { color:#4338ca; }
+
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+
+  @media(max-width:600px){ .art-header h1 { font-size:24px; } .ps-arrow { display:none; } }
 </style>
 </head>
 <body>
-<div style="text-align:center;padding:8px 0;font-size:12px;"><a href="../index.html" style="color:#6366f1;text-decoration:none;">← 返回速递列表</a></div>
-<div class="container">
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
 
-  <div class="header">
-    <div class="date-badge">📅 2026-06-22 星期一</div>
-    <h1>🤖 AI 工具每日速递</h1>
-    <div class="subtitle">Codex 日常 Skills · NotebookLM · Notion · WorkBuddy</div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-22 · 星期一</div>
+    <h1>视觉与分发专场</h1>
+    <div class="art-sub">文章配图 · 封面设计 · HTML 海报 · 长文写作 · PPT 转制</div>
   </div>
 
-  <div class="content">
+  <div class="intro-box">
+    📌 <strong>本期导读</strong><br>
+    今日主题：<strong>写完文章之后怎么办</strong>。正文配图、封面设计、信息图、HTML 海报、PPT 转制——5 个视觉向 Skill 覆盖从文章到多平台分发的完整链路。附带 Codex 6 月重磅更新速览。
+  </div>
 
-    <div class="intro">
-      📌 <strong>本期导读（2026-06-22）</strong><br>
-      今日主题：<strong>文章配图 + 视觉分发</strong>。昨天给了写作流 5 个 Skill，今天补上"写完文章之后怎么办"——正文配图、封面设计、信息图、HTML 海报、PPT 转制，5 个视觉向 Skill 覆盖从文章到多平台分发的完整链路。附带 Codex 6 月重磅更新速览。
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <!-- 1 -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">ian-xiaohei-illustrations</div><div class="sk-subtitle">小黑风格 · 文章正文配图</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3.4K</span><span class="bd bd-p">中文配图</span><span class="bd bd-b">16:9 手绘</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>给中文文章生成"小黑"风格正文配图——把观点、流程、情绪、隐喻画成 16:9 横版手绘解释图。黑色线条 + 少量彩色批注，怪诞清爽。<br>
+        <strong>最适合：</strong>公众号长文、方法论文章——每 500-800 字插一张，读者扫图就能看懂结构。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --skill ian-xiaohei-illustrations --agent codex --global</div>
+        <div class="cmt">💡 或在 Codex 里直接说"帮我安装 ian-xiaohei-illustrations skill"</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你文章里一段方法论文字发给 Codex："用 ian-xiaohei-illustrations 给这段文字配一张解释图"</div>
     </div>
 
-    <!-- ============ Codex Skills ============ -->
-    <div class="section">
-      <div class="section-title">📘 Codex 日常效率 Skills（视觉与分发专场）</div>
-
-      <!-- Skill 1: ian-xiaohei -->
-      <div class="skill-card featured">
-        <div class="skill-header">
-          <span class="skill-name">① ian-xiaohei-illustrations</span>
-          <span class="skill-badge bd-purple">⭐ 3.4K</span>
-          <span class="skill-badge bd-tag">正文配图</span>
-          <span class="skill-badge bd-tag">小黑风格</span>
-        </div>
-        <div class="skill-desc">
-          <strong>是什么：</strong>给中文文章生成"小黑"风格正文配图。它不是通用 AI 插画，而是专门为<strong>观点、流程、情绪、隐喻</strong>画成 16:9 横版手绘解释图。黑色线条 + 少量彩色批注，怪诞清爽。<br>
-          <strong>最适合：</strong>公众号长文、方法论文章、博客、Notion 文档——那些"段落太长需要一张图来解释"的时刻。
-        </div>
-        <div class="skill-steps">
-<span class="cmt"># Codex 安装</span>
-npx -y skills@latest add helloianneo/ian-xiaohei-illustrations \
-  --skill ian-xiaohei-illustrations --agent codex --global
-
-<span class="cmt"># 或直接对 Codex 说</span>
-"请帮我安装 ian-xiaohei-illustrations skill，
- GitHub: https://github.com/helloianneo/ian-xiaohei-illustrations"
-        </div>
-        <div class="skill-usage">
-          <strong>🎯 今天就能试：</strong>把你文章里的一段方法论（比如"三步走战略"）发给 Codex：<em>"用 ian-xiaohei-illustrations 给这段方法论文字配一张解释图"</em> → 生成小黑风格手绘插画。<br><br>
-          <strong>💡 用在哪：</strong>每 500-800 字插一张，读者扫图就能看懂文章结构。公众号排版立刻从"纯文字"变"图文并茂"。
-        </div>
+    <!-- 2 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">baoyu-skills</div><div class="sk-subtitle">JimLiu · 视觉工具箱</div></div></div>
+      <div class="badges"><span class="bd bd-o">⭐ 20.8K 最高星</span><span class="bd bd-p">封面</span><span class="bd bd-b">信息图</span><span class="bd bd-r">图解</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>中文创作者的视觉 Skill 集合——封面图、信息图、结构图、流程图，全部覆盖。20.8K stars 是同类中最高。<br>
+        <strong>最适合：</strong>文章包装和观点可视化——把抽象概念画成图，把复杂关系讲清楚。
       </div>
-
-      <!-- Skill 2: baoyu-skills -->
-      <div class="skill-card">
-        <div class="skill-header">
-          <span class="skill-name">② baoyu-skills</span>
-          <span class="skill-badge bd-yellow">⭐ 20.8K 本日最高</span>
-          <span class="skill-badge bd-tag">视觉工具箱</span>
-          <span class="skill-badge bd-tag">封面/信息图/图解</span>
-        </div>
-        <div class="skill-desc">
-          <strong>是什么：</strong>中文内容创作者的视觉工具箱，由 JimLiu 维护。不是"一个 Skill"，而是<strong>一个 Skill 集合</strong>——封面图、信息图、结构图、流程图、图解，全部覆盖。20.8K stars 是这 10 个 Skill 里最高的。<br>
-          <strong>最适合：</strong>文章包装和观点可视化——把抽象的东西画成图，把复杂的东西讲清楚。
-        </div>
-        <div class="skill-steps">
-<span class="cmt"># Codex 安装</span>
-npx -y skills@latest add JimLiu/baoyu-skills \
-  --skill baoyu-skills --agent codex --global
-        </div>
-        <div class="skill-usage">
-          <strong>🎯 今天就能试：</strong>对 Codex 说 <em>"用 baoyu-skills 帮我给这篇文章做一张封面图，风格简约专业，包含标题和副标题"</em>
-        </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add JimLiu/baoyu-skills --skill baoyu-skills --agent codex --global</div>
       </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>"用 baoyu-skills 帮我给这篇文章做一张封面图，风格简约专业"</div>
+    </div>
 
-      <!-- Skill 3: html-anything -->
-      <div class="skill-card">
-        <div class="skill-header">
-          <span class="skill-name">③ html-anything</span>
-          <span class="skill-badge bd-purple">⭐ 6.3K</span>
-          <span class="skill-badge bd-tag">75 种模板</span>
-          <span class="skill-badge bd-tag">海报/卡片/PNG</span>
-        </div>
-        <div class="skill-desc">
-          <strong>是什么：</strong>Markdown / 文案 → HTML 页面 / 海报 / 卡片 / PNG。内置 <strong>75 种模板、9 种展示载体</strong>（杂志、PPT、海报、小红书卡片、数据报告等），一键发布到微信/X/知乎。<br>
-          <strong>最适合：</strong>想把文章做成杂志风页面、知识卡片、分享图的场景。零 API Key，支持 9 个 AI Agent。
-        </div>
-        <div class="skill-steps">
-<span class="cmt"># 安装 CLI</span>
-git clone https://github.com/nexu-io/html-anything.git
-cd html-anything && pnpm install && pnpm -F @html-anything/next dev
-
-<span class="cmt"># 使用：Markdown → 自动匹配模板的 HTML</span>
-html-anything auto article.md
-        </div>
-        <div class="skill-usage">
-          <strong>🎯 今天就能试：</strong>写一段 Markdown 文字，运行 <code>html-anything auto my-article.md</code> → 自动从 75 个模板中匹配最合适的样式，输出 HTML 页面。直接用浏览器打开就是一篇杂志风文章。
-        </div>
+    <!-- 3 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">html-anything</div><div class="sk-subtitle">75 种模板 · Markdown → 杂志风页面</div></div></div>
+      <div class="badges"><span class="bd bd-p">⭐ 6.3K</span><span class="bd bd-g">75 模板</span><span class="bd bd-b">9 种载体</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>Markdown / 文案 → HTML 页面 / 海报 / 卡片 / PNG。75 种模板、9 种展示载体（杂志、PPT、海报、小红书等），一键发布到微信/X/知乎。<br>
+        <strong>最适合：</strong>想做出杂志风页面、知识卡片、分享图的场景。零 API Key，支持 9 个 AI Agent。
       </div>
-
-      <!-- Skill 4: khazix-skills -->
-      <div class="skill-card">
-        <div class="skill-header">
-          <span class="skill-name">④ khazix-skills</span>
-          <span class="skill-badge bd-yellow">⭐ 14K</span>
-          <span class="skill-badge bd-tag">长文写作流</span>
-          <span class="skill-badge bd-tag">万字研究</span>
-        </div>
-        <div class="skill-desc">
-          <strong>是什么：</strong>数字生命卡兹克开源的 AI Skills 合集，里面的<strong>写作流偏重</strong>——适合公众号长文、万字研究报告、AI 热点分析、深度观点输出。13,990 stars，中文 AI 工具圈头部量级。<br>
-          <strong>最适合：</strong>需要写深度长文的场景（行业分析、趋势解读、万字拆解）。不适用于短文/碎片内容。
-        </div>
-        <div class="skill-steps">
-<span class="cmt"># Codex 安装</span>
-npx -y skills@latest add KKKKhazix/khazix-skills \
-  --skill khazix-skills --agent codex --global
-        </div>
-        <div class="skill-usage">
-          <strong>🎯 今天就能试：</strong>对 Codex 说 <em>"用 khazix-skills 的写作流帮我分析'2026 上半年 AI 行业十大趋势'，做成一篇万字研究报告"</em>
-        </div>
-      </div>
-
-      <!-- Skill 5: guizang-ppt-skill (op7418 version) -->
-      <div class="skill-card featured">
-        <div class="skill-header">
-          <span class="skill-name">⑤ guizang-ppt-skill</span>
-          <span class="skill-badge bd-yellow">⭐ 15.6K</span>
-          <span class="skill-badge bd-tag">HTML PPT</span>
-          <span class="skill-badge bd-tag">一句话生成</span>
-        </div>
-        <div class="skill-desc">
-          <strong>是什么：</strong>op7418 的 PPT Skill，一句话生成<strong>网页版 Presentation</strong>（HTML 格式，非 .pptx）。和昨天 ningzimu 的 codex-ppt-skill 定位不同——这个更轻、更快、偏"分享展示"场景，ningzimu 的偏"工作流可控"场景。<br>
-          <strong>最适合：</strong>快速出演示稿、技术分享、轻量汇报——追求速度而非强控制力的场景。
-        </div>
-        <div class="skill-steps">
-<span class="cmt"># Codex 安装</span>
-npx -y skills@latest add op7418/guizang-ppt-skill \
-  --skill guizang-ppt --agent codex --global
-        </div>
-        <div class="skill-usage">
-          <strong>🎯 今天就能试：</strong>对 Codex 说 <em>"用 guizang-ppt 根据这篇文档生成一个 10 页的演讲 PPT，风格现代简约"</em>
-        </div>
-        <div class="compare-card">
-          🔀 <strong>两个 PPT Skill 怎么选？</strong><br>
-          • <strong>guizang-ppt-skill</strong>（今天）：一句话出成品，适合分享/轻量汇报，输出 HTML<br>
-          • <strong>codex-ppt-skill</strong>（昨天）：11 步审阅流，适合正式汇报/论文答辩，输出 .pptx<br>
-          日常分享用前者，正式场合用后者。
-        </div>
-      </div>
-
-      <!-- 分段总结 -->
-      <div class="big-news" style="margin-top: 10px;">
-        <div class="bn-title">🧩 今天的视觉分发链：写完文章后 4 步走</div>
-        <div class="bn-item">
-          <span class="hl">写完初稿</span> → <span class="hl">ian-xiaohei-illustrations</span>（正文补配图，每 500 字插一张）→ <span class="hl">baoyu-skills</span>（做封面图和信息图）→ <span class="hl">html-anything</span>（生成杂志风 HTML 页或小红书卡片）→ <span class="hl">guizang-ppt-skill</span>（转制成分享 PPT）
-        </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">git clone https://github.com/nexu-io/html-anything.git && cd html-anything && pnpm install</div>
+        <div class="cmt">💡 使用：html-anything auto article.md → 自动匹配最佳模板</div>
       </div>
     </div>
 
-    <!-- ============ Codex 大更新 ============ -->
-    <div class="section">
-      <div class="section-title">🆕 Codex 6 月重大更新 & 使用技巧</div>
-
-      <div class="big-news">
-        <div class="bn-title">📌 6 月 2 日：Codex 从"编程工具"转向"知识工作平台"</div>
-        <div class="bn-item">
-          <span class="hl">关键数据：</span>Codex 周活用户超 500 万，<span class="hl">非开发者占 20%，增速是开发者的 3 倍</span>。<br>
-          <span class="hl">三大更新：</span><br>
-          ① <strong>6 个角色专属插件</strong>（数据分析、创意制作、销售、产品设计、投资研究、投行），预装 62 个应用 + 110 个技能，无需写代码即可用<br>
-          ② <strong>Sites</strong>：一句话生成可分享的交互网站/仪表盘/项目看板（支持 Business 和 Enterprise）<br>
-          ③ <strong>Annotations</strong>：点选任意内容片段局部修改（类似 Google Docs 的评论功能）<br><br>
-          <span class="hl">对你意味着什么：</span>如果你是分析师/营销/运营/内容创作者，Codex 现在有了你的专属入口（创意制作插件），不用学编程命令。
-        </div>
+    <!-- 4 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">khazix-skills</div><div class="sk-subtitle">卡兹克 · 万字长文写作流</div></div></div>
+      <div class="badges"><span class="bd bd-o">⭐ 14K</span><span class="bd bd-r">长文</span><span class="bd bd-b">深度研究</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>公众号长文、万字研究报告、AI 热点分析的写作流合集。偏重，不适合短文。<br>
+        <strong>最适合：</strong>需要写深度长文的场景——行业分析、趋势解读、万字拆解。
       </div>
-
-      <div class="big-news" style="margin-top: 10px;">
-        <div class="bn-title">📌 6 月 18 日：第三方模型开放接入</div>
-        <div class="bn-item">
-          Codex 不再锁死 OpenAI 模型。可在桌面 App → Settings → Model → 添加自定义 API Endpoint，接入 DeepSeek/Claude/Gemini。注意第三方模型<strong>需通过 OpenAI 兼容 API 网关封装</strong>才能被识别。
-        </div>
-      </div>
-
-      <div class="big-news" style="margin-top: 10px;">
-        <div class="bn-title">⚡ 今日实用技巧：Appshots + 配图 Skill 联动</div>
-        <div class="bn-item">
-          看到一篇排版很棒的图文？<strong>macOS 上按两下 Command</strong>（Appshots）→ Codex 收到截图+文本 → 对 Codex 说"按这个视觉风格，用 ian-xiaohei-illustrations 给我的文章配图"。<br>
-          不用文字描述"就是那种感觉的"，AI 直接看懂你的参考。
-        </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add KKKKhazix/khazix-skills --skill khazix-skills --agent codex --global</div>
       </div>
     </div>
 
-    <!-- ============ NotebookLM & Notion ============ -->
-    <div class="section">
-      <div class="section-title">📗 待学习：NotebookLM & Notion 每日进步</div>
-
-      <div class="notebooklm">
-        <div class="nt-title">🧪 NotebookLM — 技巧 1：「选择来源」追查观点出处</div>
-        <div class="nt-body">
-          <strong>操作：</strong>上传 3-4 篇同一话题的文档 → 在对话输入框点"来源"→ 勾选其中一篇 → 问"这篇文章的核心观点是什么？"→ 再切换勾选另一篇，问同样的问题 → 对比两篇回答差异。<br>
-          适合做研究时<strong>逐篇精读 + 跨文档对比</strong>，不会让 AI 混淆来源。
-        </div>
+    <!-- 5 -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-ppt-skill</div><div class="sk-subtitle">op7418 · 一句话出 HTML PPT</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 15.6K</span><span class="bd bd-p">HTML PPT</span><span class="bd bd-b">轻量分享</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>op7418 的 PPT Skill，一句话生成网页版 Presentation（HTML 格式）。和 codex-ppt-skill 定位不同——这个更轻、更快、偏"分享展示"。<br>
+        <strong>最适合：</strong>快速出演示稿、技术分享、轻量汇报。
       </div>
-
-      <div class="notebooklm" style="margin-top: 10px;">
-        <div class="nt-title">🧪 NotebookLM — 技巧 2：用「朗读」模式消化长文</div>
-        <div class="nt-body">
-          <strong>操作：</strong>在 NotebookLM 打开任意笔记本 → 点击右上角三个点菜单 → 选择"朗读"→ 系统朗读所有文档和笔记。通勤/做饭时听，把阅读时间"折叠"进碎片时间。
-          <strong>适合：</strong>需要看完但没时间坐下读的行业报告、政策文件、长论文。
-        </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global</div>
       </div>
-
-      <div class="notebooklm" style="margin-top: 10px;">
-        <div class="nt-title">🧪 NotebookLM — 技巧 3：用「笔记本描述」定制 AI 回答风格</div>
-        <div class="nt-body">
-          <strong>操作：</strong>打开笔记本 → 左侧笔记面板 → 新建笔记 → 写入：<em>"请用简明中文回答，3 句话内给出结论，然后展开。回答时标注出处（文档名+页码）。优先使用原文引用而非改写。"</em><br>
-          之后这个笔记本里所有 AI 回答自动遵守这段行为准则。
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="mini">
-          <div class="m-title">📋 Notion — 用按钮批量更新数据库字段</div>
-          <div class="m-desc"><strong>操作：</strong>在数据库页面输入 <code>/button</code> → 配置"编辑数据库页面属性"→ 设置多个字段同时更新（如「状态=完成」「完成日期=今天」）。选中多个条目后一键批量更新。</div>
-        </div>
-        <div class="mini">
-          <div class="m-title">📋 Notion — AI 生成数据库模板</div>
-          <div class="m-desc"><strong>操作：</strong>新建数据库 → 点"使用 AI 生成"→ 描述需求（"一个内容创作项目管理数据库，包含状态、优先级、发布平台、字数"）→ AI 自动建好字段。</div>
-        </div>
+      <div class="cmp">
+        <div class="ct">🔀 两个 PPT Skill 怎么选？</div>
+        <div class="cr"><span class="cn">guizang-ppt-skill</span><span class="cd">一句话出成品，分享/轻量汇报，输出 HTML</span></div>
+        <div class="cr"><span class="cn">codex-ppt-skill</span><span class="cd">11 步审阅流，正式汇报/答辩，输出 .pptx</span></div>
       </div>
     </div>
 
-    <!-- ============ WorkBuddy ============ -->
-    <div class="section">
-      <div class="section-title">📙 实用技巧：WorkBuddy 与 Agent</div>
-
-      <div class="wb">
-        <div class="wt-title">⚡ 把 Codex Skills 同步到 WorkBuddy 用</div>
-        <div class="wt-body">
-          <strong>场景：</strong>Codex Skills 的 SKILL.md 格式是跨平台开放标准。你在 Codex 里的 Skills 可以直接复制到 WorkBuddy，同一套 SKILL.md 在两边都能激活。<br><br>
-          <strong>操作：</strong><code>cp -r ~/.codex/skills/某个Skill ~/.workbuddy/skills/某个Skill</code><br>
-          例如你在 Codex 里装了 Humanizer-zh，复制后在 WorkBuddy 里也能用：<em>"用 humanizer-zh 润色这段文字"</em>。<br><br>
-          <strong>为什么这么做：</strong>Codex 适合长流程创作，WorkBuddy 适合碎片化日常任务——同一套 Skill，选对的工具跑对的任务。
-        </div>
-      </div>
-
-      <div class="wb" style="margin-top: 10px;">
-        <div class="wt-title">🤖 每日一句：写 Skill 时把自己当作"流程教练"</div>
-        <div class="wt-body">
-          好的 Skill 不是给你一套"正确答案模板"，而是<strong>给你一个你可以审阅的流程</strong>。codex-ppt-skill 的作者说："Skills 本质上是高度个性化的流程"。装完后别照搬——按你自己的偏好改大纲模板、固定风格、指定输出目录。让 Skill 越来越像"你自己做这件事的方式"。
-        </div>
-      </div>
+    <div class="pipe">
+      <span class="ps ps-1">写完初稿</span><span class="pa">→</span>
+      <span class="ps ps-2">小黑配图</span><span class="pa">→</span>
+      <span class="ps ps-3">封面信息图</span><span class="pa">→</span>
+      <span class="ps ps-4">HTML 海报</span><span class="pa">→</span>
+      <span class="ps ps-5">PPT 转制</span>
     </div>
+  </div>
 
-  </div><!-- end content -->
+  <!-- Codex news -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 6 月重大更新</span></div>
+    <div class="big"><div class="bt">📌 6月2日：从"编程工具"转向"知识工作平台"</div><div class="bi">周活用户超 500 万，<strong>非开发者占 20%，增速是开发者的 3 倍</strong>。6 个角色专属插件（62 个应用 + 110 个技能）、Sites 建站、Annotations 局部修改。</div></div>
+    <div class="big"><div class="bt">📌 6月18日：第三方模型开放接入</div><div class="bi">Codex 不再锁死 OpenAI 模型——Settings → Model → 添加 DeepSeek/Claude/Gemini。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ Appshots + 配图联动</div></div><div class="tb">macOS 上按两下 Command（Appshots）→ Codex 收到截图 → 说"按这个视觉风格给我文章配图"——AI 直接看懂你的参考。</div></div>
+  </div>
+
+  <!-- NotebookLM & Notion -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 NotebookLM — 追查观点出处</div></div><div class="tb">上传 3-4 篇文档 → 点"来源"→ 勾选一篇 → 提问 → 切换另一篇再问 → 对比差异。逐篇精读 + 跨文档对比。</div></div>
+    <div class="tip t-g" style="margin-top:10px;"><div class="th"><div class="tt">🧪 NotebookLM — 朗读模式消化长文</div></div><div class="tb">打开笔记本 → 右上角菜单 → "朗读"→ 通勤/做饭时用碎片时间听完报告。</div></div>
+    <div class="tip t-g" style="margin-top:10px;"><div class="th"><div class="tt">🧪 NotebookLM — 定制回答风格</div></div><div class="tb">在笔记面板新建笔记写入偏好："用简明中文，3 句话内给结论，标注出处（文档名+页码）"→ 本笔记本所有回答自动遵守。</div></div>
+    <div class="tip t-o" style="margin-top:10px;"><div class="th"><div class="tt">📋 Notion — 按钮批量更新数据库</div></div><div class="tb">输入 /button → 配置"编辑数据库字段"→ 同时更新多个字段。选中多条后一键批量操作。</div></div>
+  </div>
+
+  <!-- WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ Codex Skills 同步到 WorkBuddy</div></div><div class="tb">SKILL.md 是跨平台开放标准——你在 Codex 装的 Skills 直接复制到 WorkBuddy 就能用：<br><code style="background:#f5f4f0;padding:3px 8px;border-radius:4px;font-size:11px;">cp -r ~/.codex/skills/某Skill ~/.workbuddy/skills/某Skill</code><br>同一套 Skill，两个工具都能激活。</div></div>
+  </div>
 
   <div class="footer">
-    <div class="encourage">🌱 今天装 ian-xiaohei-illustrations，给你的公众号文章插第一张小黑配图——读者会感知到那个"不对，这篇文章有点不一样"的瞬间。</div>
-    选一个 Skill，装完马上试，有问题直接回 📬<br>
-    <span style="color:#999;font-size:11px;">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-22</span>
+    <div class="enc">🌱 今天装 ian-xiaohei-illustrations，给你公众号文章插第一张小黑配图<br>读者会感知到那个"这篇文章有点不一样"的瞬间。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-22</span>
   </div>
-
 </div>
 </body>
 </html>
