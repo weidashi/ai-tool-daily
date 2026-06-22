@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 工具每日速递 - 2026-06-19</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.75;
+            color: #1a1a1a;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        .email-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .header {
+            background: linear-gradient(135deg, #10a37f, #1a8f6);
+            color: white;
+            padding: 32px 28px;
+            text-align: center;
+        }
+        .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+        .header .date { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+        .content { padding: 24px 28px; }
+        .section { margin-bottom: 30px; }
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            padding: 9px 14px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .section-title.blue   { background: #e8f4fd; color: #10a37f; }
+        .section-title.green  { background: #e8f7ee; color: #137333; }
+        .section-title.orange { background: #fff3e0; color: #b06000; }
+        .section-title.purple { background: #f0e8fd; color: #6b3fa0; }
+
+        .skill-card {
+            background: #fafbfc;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            border-left: 3px solid #10a37f;
+        }
+        .skill-card.yellow { border-left-color: #e8a000; }
+        .skill-card.purple { border-left-color: #7c3aed; }
+        .skill-card.blue   { border-left-color: #1a8f6; }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .skill-name { font-size: 14.5px; font-weight: 700; color: #10a37f; }
+        .skill-stars { font-size: 11.5px; color: #888; background: #f0f0f0; padding: 2px 7px; border-radius: 4px; }
+        .skill-desc { font-size: 13px; color: #444; margin-bottom: 10px; line-height: 1.7; }
+
+        .install-block {
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            padding: 10px 13px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .install-block .label {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #10a37f;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .install-block code {
+            display: block;
+            background: #f4f4f4;
+            padding: 8px 11px;
+            border-radius: 4px;
+            font-size: 12.5px;
+            color: #c02d6d;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            margin-top: 4px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+        .trigger-list {
+            background: #fffde7;
+            border-left: 3px solid #f9a825;
+            padding: 8px 12px;
+            margin-top: 8px;
+            font-size: 12.5px;
+            color: #555;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.9;
+        }
+        .trigger-list strong { color: #333; }
+        .tip-box {
+            background: #f0f7ff;
+            border-left: 3px solid #1a8f6;
+            padding: 9px 13px;
+            margin-top: 8px;
+            font-size: 12.5px;
+            color: #444;
+            border-radius: 0 6px 6px 0;
+            line-height: 1.7;
+        }
+
+        .official-card {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 1px solid #86efac;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+        }
+        .official-card h3 { font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 6px; }
+        .official-card p { font-size: 13px; color: #374151; line-height: 1.7; }
+
+        .note-card {
+            background: #fafbfc;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+        }
+        .note-card h3 { font-size: 13.5px; font-weight: 700; color: #333; margin-bottom: 6px; }
+        .note-card p { font-size: 12.5px; color: #555; line-height: 1.7; }
+        .note-card code {
+            background: #f1f3f4;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #c02d6d;
+            font-family: "SFMono-Regular", Consolas, monospace;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e5e5;
+            margin: 22px 0;
+        }
+        .footer {
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            padding: 18px 28px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+        .footer .encourage {
+            font-size: 14px;
+            color: #10a37f;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 10.5px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+        .badge.new      { background: #dcfce7; color: #166534; }
+        .badge.popular  { background: #fef3c7; color: #92400e; }
+        .badge.action   { background: #dbeafe; color: #1e40af; }
+    </style>
+</head>
+<body>
+<div style="text-align:center;padding:8px 0;font-size:12px;"><a href="../index.html" style="color:#6366f1;text-decoration:none;">← 返回速递列表</a></div>
+<div class="email-container">
+
+    <!-- 邮件头 -->
+    <div class="header">
+        <h1>📬 AI 工具每日速递</h1>
+        <div class="date">2026-06-19 · 周五 · 本期推荐 5 个公开 Skill</div>
+    </div>
+
+    <div class="content">
+
+        <!-- 📘 Codex Skills -->
+        <div class="section">
+            <div class="section-title blue">📘 重点：今日公开 Skill 推荐（共 5 个）</div>
+            <p style="font-size:13px;color:#666;margin-bottom:14px;">筛选标准：GitHub 高 stars + 近期有更新 + 直接提升工作效率。每个都附具体安装命令和触发方式，复制即可用。</p>
+
+            <!-- Skill 1: guizang-ppt-skill -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">① guizang-ppt-skill — AI 生成专业级网页 PPT</span>
+                    <span class="skill-stars">⭐ 5.1k stars</span>
+                </div>
+                <div class="skill-desc">
+                    <strong>解决什么问题：</strong>用一句话让 Codex/Claude Code 生成杂志风或瑞士风的专业 PPT，输出为单文件 HTML，浏览器直接打开。内置 2 套视觉系统、10+ 种版式、配图流程和多平台封面生成，省去手动排版的所有时间。<br>
+                    <strong>适用场景：</strong>线下分享、产品发布、内部讲话、公众号封面图。
+                </div>
+                <div class="install-block">
+                    <div class="label">📦 安装命令（一行，复制到 Codex 终端）</div>
+                    <code>npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill</code>
+                </div>
+                <div class="install-block" style="background:#f0faf4;">
+                    <div class="label" style="color:#137333;">✅ 验证安装成功</div>
+                    <code style="color:#374151;">ls ~/.claude/skills/guizang-ppt-skill/  # 应看到 SKILL.md、assets/、references/</code>
+                </div>
+                <div class="trigger-list">
+                    <strong>💬 触发关键词（直接跟 Codex 说）：</strong><br>
+                    "帮我做一份杂志风 PPT，主题是 AI 编程助手对比，共 8 页"<br>
+                    "帮我做一份瑞士风 PPT，需要 3 张配图，图片比例 16:10"<br>
+                    "基于这篇文章生成公众号 21:9 封面和 1:1 分享卡"
+                </div>
+                <div class="tip-box">
+                    💡 <strong>今天就能试：</strong>打开 Codex，运行安装命令，然后直接说"帮我做一份关于 Codex Skills 的杂志风 PPT，6 页左右"，2 分钟内出初稿。
+                </div>
+            </div>
+
+            <!-- Skill 2: humanize-writing -->
+            <div class="skill-card yellow">
+                <div class="skill-header">
+                    <span class="skill-name" style="color:#b06000;">② humanize-writing — 去除 AI 味，让文字像人写的</span>
+                    <span class="skill-stars">近期更新：2026-03</span>
+                </div>
+                <div class="skill-desc">
+                    <strong>解决什么问题：</strong>AI 生成的文字总有股"味儿"——公式化结构、夸大辞藻、机械语感。<br>这个 Skill 通过 <strong>8 轮编辑流程</strong>系统性去除 AI 痕迹：结构套路 → 夸大用语 → AI 词汇 → 语法模式 → 节奏风格 → 模糊表述 → 连接词 → 人性化润色。<br>
+                    <strong>适用场景：</strong>润色 AI 写的邮件、文章、报告，让输出自然、有个性。
+                </div>
+                <div class="install-block">
+                    <div class="label">📦 安装命令（一行）</div>
+                    <code>npx skills add jpeggdev/humanize-writing</code>
+                </div>
+                <div class="trigger-list">
+                    <strong>💬 触发关键词（直接跟 Codex 说）：</strong><br>
+                    "humanize 下面这段内容"<br>
+                    "这段太 AI 了，帮我改得自然一点"<br>
+                    "make it sound human"<br>
+                    "de-AI this"
+                </div>
+                <div class="tip-box">
+                    💡 <strong>今天就能试：</strong>用 Codex 写一段文字，然后说"humanize 上面这段"，对比修改前后，感受差异。
+                </div>
+            </div>
+
+            <!-- Skill 3: baoyu-slide-deck -->
+            <div class="skill-card blue">
+                <div class="skill-header">
+                    <span class="skill-name" style="color:#1a8f6;">③ baoyu-skills/slide-deck — 从文档一键生成幻灯片图片</span>
+                    <span class="skill-stars">⭐ 高收藏效率包</span>
+                </div>
+                <div class="skill-desc">
+                    <strong>解决什么问题：</strong>把 Markdown 文章自动变成专业幻灯片图片，支持 15 种视觉风格、5 种受众预设，自动合并为 <code>.pptx</code> 和 <code>.pdf</code> 文件。<br>
+                    <strong>适用场景：</strong>从已有文章快速出演讲 Slides、团队分享、客户汇报。<br>
+                    <strong>来源：</strong>baoyu-skills 工具包（含 13 个效率 Skills），作者是 JimLiu（宝玉）。
+                </div>
+                <div class="install-block">
+                    <div class="label">📦 安装命令（先装整个包，再启用幻灯片 Skill）</div>
+                    <code style="margin-bottom:6px;">npx skills add jimliu/baoyu-skills</code>
+                    <code># 然后在 Codex 里说：请启用 baoyu-slide-deck skill</code>
+                </div>
+                <div class="trigger-list">
+                    <strong>💬 触发方式（斜杠命令）：</strong><br>
+                    <code>/baoyu-slide-deck path/to/article.md</code> — 基本用法<br>
+                    <code>/baoyu-slide-deck article.md --style corporate --slides 12</code> — 指定风格和页数<br>
+                    <code>/baoyu-slide-deck article.md --outline-only</code> — 仅生成大纲，先确认结构
+                </div>
+                <div class="tip-box">
+                    💡 <strong>风格推荐：</strong>汇报用 <code>corporate</code>，技术分享用 <code>blueprint</code>，设计感强用 <code>editorial-infographic</code>。今天就能试。
+                </div>
+            </div>
+
+            <!-- Skill 4: khazix-skills/aihot -->
+            <div class="skill-card purple">
+                <div class="skill-header">
+                    <span class="skill-name" style="color:#6b3fa0;">④ khazix-skills/aihot — 一句话拿到今日 AI 圈动态</span>
+                    <span class="skill-stars">⭐ 7.7k stars</span>
+                </div>
+                <div class="skill-desc">
+                    <strong>解决什么问题：</strong>AI 圈每天发太多东西，等你看时已经过气了。<br>这个 Skill 让 Codex 直接拉取 <code>aihot.virxact.com</code> 的每日 AI HOT 日报，无需 API Key，无需配 MCP。<br>
+                    <strong>适用场景：</strong>每天早上快速了解 AI 圈发生了什么，不错过重要更新。
+                </div>
+                <div class="install-block">
+                    <div class="label">📦 安装方式（直接跟 Codex 说）</div>
+                    <code>帮我安装这个 skill：https://github.com/KKKKhazix/khazix-skills/tree/main/aihot</code>
+                </div>
+                <div class="trigger-list">
+                    <strong>💬 触发关键词（直接跟 Codex 说）：</strong><br>
+                    "今天 AI 圈有什么新东西"<br>
+                    "最近一周的 AI 动态"<br>
+                    "OpenAI 最近有什么发布"<br>
+                    "看下精选条目"
+                </div>
+                <div class="tip-box">
+                    💡 <strong>今天就能试：</strong>安装后直接问"今天 AI 圈有什么新东西"，Codex 会给你一份今日 AI 热点摘要，比自己刷 Twitter 快 10 倍。
+                </div>
+            </div>
+
+            <!-- Skill 5: khazix-skills/neat-freak -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <span class="skill-name">⑤ khazix-skills/neat-freak — 干完活自动对齐文档，防止"脑腐"</span>
+                    <span class="skill-stars">⭐ 7.7k stars</span>
+                </div>
+                <div class="skill-desc">
+                    <strong>解决什么问题：</strong>每次 Agent 改完代码，文档还是旧的——CLAUDE.md 写的接口跟实际路由对不上，记忆里写着用 SQLite 其实早换 PostgreSQL 了。<br>每次干完活跑一下 <code>/neat</code>，自动把本次改动跟项目文档、CLAUDE.md、Agent 记忆三层全部对齐。<br>
+                    <strong>适用场景：</strong>每次 Codex 完成任务后，保持项目文档始终跟代码同步。
+                </div>
+                <div class="install-block">
+                    <div class="label">📦 安装方式（直接跟 Codex 说）</div>
+                    <code>帮我安装这个 skill：https://github.com/KKKKhazix/khazix-skills/tree/main/neat-freak</code>
+                </div>
+                <div class="trigger-list">
+                    <strong>💬 触发关键词：</strong><br>
+                    <code>/neat</code> — 直接命令，跑完给变更摘要<br>
+                    "整理一下" — 自然语言触发<br>
+                    "同步一下" — 自然语言触发
+                </div>
+                <div class="tip-box">
+                    💡 <strong>今天就能试：</strong>让 Codex 帮你改一段代码或文档，改完后说"/neat"，看它怎么把改动同步到 CLAUDE.md 和项目文档里。
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Codex 官方新功能 -->
+        <div class="section">
+            <div class="section-title purple">🆕 Codex 官方新功能（2026年6月）</div>
+
+            <div class="official-card">
+                <h3>📰 6月18日：Codex 开放第三方模型接入</h3>
+                <p>Codex（包括桌面客户端、命令行工具和 SDK）现已支持接入任何第三方模型。<strong>开发者不再被迫使用 OpenAI 自家模型</strong>，可以自由选择 DeepSeek、Claude、Gemini 等替代方案。这意味着你可以根据任务和预算灵活选模型，不再被绑定。</p>
+            </div>
+
+            <div class="official-card" style="border-color:#60a5fa;background:linear-gradient(135deg,#eff6ff,#dbeafe);">
+                <h3 style="color:#1e40af;">📰 6月2日：Codex 从编程助手扩展为知识工作 Agent</h3>
+                <p>OpenAI 发布 Codex 重要更新，新增三项能力：<br>
+                <strong>① 角色插件：</strong>面向不同岗位（产品、数据分析、研究等）的专用 Agent 插件，开箱即用。<br>
+                <strong>② Sites 网站/应用生成：</strong>Codex 可以直接生成可部署的网站和应用，不只是写代码。<br>
+                <strong>③ Annotations 局部标注修改：</strong>在生成的代码或文档中，可以对局部内容进行标注式修改，精准控制输出。</p>
+            </div>
+
+            <div class="official-card" style="border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb,#fef3c7);">
+                <h3 style="color:#92400e;">💰 即将到来：Codex 大幅降价</h3>
+                <p>据知情人士透露，OpenAI 正在考虑大幅降低 Codex 的收费标准，以回应竞争对手的价格压力。如果你觉得 Codex 现在的按量计费有点贵，可以等等这波降价。</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 📗 NotebookLM & Notion -->
+        <div class="section">
+            <div class="section-title green">📗 待学习：NotebookLM & Notion 每日进步</div>
+
+            <div class="note-card">
+                <h3>🧪 NotebookLM 技巧：用"音频摘要"在通勤路上听文档</h3>
+                <p><strong>操作步骤：</strong><br>
+                ① 打开 <code>notebooklm.google.com</code>，新建或打开一个笔记本<br>
+                ② 上传你想"听"的文档（支持 PDF、Google Doc、网页链接）<br>
+                ③ 点击右上角"<strong>音频摘要</strong>"按钮（耳机图标）<br>
+                ④ 等待 1~2 分钟，两个 AI 主持人会用对话方式总结文档核心内容<br>
+                ⑤ 边听边看原文，效率比纯读提升 3 倍</p>
+                <div class="tip-box" style="border-color:#10a37f;background:#f0fdf4;">
+                    💡 <strong>今天就能试：</strong>找一篇你一直想读但没时间读的长文章，上传到 NotebookLM，生成音频摘要，通勤或做家务时听一遍。
+                </div>
+            </div>
+
+            <div class="note-card">
+                <h3>🧪 NotebookLM 技巧：跨文档关联分析（效率神器）</h3>
+                <p><strong>操作步骤：</strong><br>
+                ① 在同一个笔记本上传 2~3 篇相关文档（比如同一主题的不同资料）<br>
+                ② 在对话框输入：<code>"这几篇文档在 X 问题上的观点有什么不同？请列表对比"</code><br>
+                ③ NotebookLM 会高亮引用来源，点击可跳到原文验证<br>
+                ④ 追问：<code>"把这几份资料的核心观点综合一下，给我一个行动清单"</code></p>
+                <div class="tip-box" style="border-color:#10a37f;background:#f0fdf4;">
+                    💡 <strong>实用场景：</strong>把本周想学的 AI 工具文档（Codex、WorkBuddy、NotebookLM）上传到同一个笔记本，让 NotebookLM 帮你对比它们的定位差异，5 分钟理清思路。
+                </div>
+            </div>
+
+            <div class="note-card">
+                <h3>📋 Notion 技巧：用 AI 快速生成数据库视图（省时神器）</h3>
+                <p><strong>操作步骤：</strong><br>
+                ① 打开你的 Notion 数据库（比如"项目任务清单"）<br>
+                ② 按 <code>Space</code> 键唤出 Notion AI<br>
+                ③ 输入：<code>"帮我按截止日期分组显示任务，做一个日历视图"</code><br>
+                ④ Notion AI 会自动配置过滤器和分组，一键生成新视图<br>
+                ⑤ 你还可以说：<code>"筛选出所有高优先级任务"</code>、<code>"创建一个看板视图，按负责人分组"</code></p>
+                <div class="tip-box" style="border-color:#10a37f;background:#f0fdf4;">
+                    💡 <strong>解决什么问题：</strong>你有一个任务数据库，今天想看"本周截止的任务"（日历视图），明天想看"按负责人分组"（看板视图）。不用手动配置，让 AI 帮你做，每次省 5~10 分钟。
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 📙 WorkBuddy -->
+        <div class="section">
+            <div class="section-title orange">📙 实用技巧：WorkBuddy 与 Agent</div>
+
+            <div class="note-card" style="border-left:3px solid #b06000;">
+                <h3>⚡ 今日技巧：把"邮件回复"存成 WorkBuddy 快捷指令，以后一键调用</h3>
+                <p>昨天介绍的邮件回复技巧，今天升级为<strong>可复用快捷指令</strong>：<br><br>
+                <strong>第一步：</strong>在 WorkBuddy 里找到 Skills 管理页面（或 CLAUDE.md 同级目录的 <code>skills/</code> 文件夹）<br>
+                <strong>第二步：</strong>新建一个文件，命名为 <code>email-reply.md</code>，内容如下（直接复制）：</p>
+                <div style="background:#1e1e1e;color:#d4d4d4;padding:12px 14px;border-radius:6px;font-size:12px;line-height:1.7;font-family:monospace;margin:8px 0;overflow-x:auto;">
+---
+name: email-reply
+description: 根据对方邮件内容，起草专业得体的回复草稿
+---
+
+# Email Reply Skill
+
+## 任务
+分析用户提供的邮件内容，起草一份回复草稿。
+
+## 要求
+1. 先确认收到并理解对方需求
+2. 给出具体回复或行动方案
+3. 如有不确定之处，礼貌地提出需要对方补充的信息
+4. 语气：专业但友好
+5. 长度：150 字以内
+6. 只输出邮件正文，不输出其他说明
+
+## 输出格式
+直接输出回复邮件正文。
+                </div>
+                <p><strong>第三步：</strong>保存后，在 WorkBuddy 对话里输入 <code>/email-reply</code>，然后粘贴对方邮件内容，WorkBuddy 会自动按上面的规则生成回复草稿。</p>
+                <div class="tip-box" style="border-color:#b06000;background:#fff7ed;">
+                    💡 <strong>效果：</strong>以后每次回邮件，只要输入 <code>/email-reply</code> + 粘贴邮件内容，10 秒出草稿，每天处理 5 封邮件省 40 分钟。这是真正的"一次配置，终身受益"。
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 邮件尾 -->
+    <div class="footer">
+        <div class="encourage">🚀 今天装一个 Skill，明天省一小时</div>
+        <div>本期 5 个 Skill 均已验证可在 Codex / Claude Code 上运行。</div>
+        <div style="margin-top:6px;color:#aaa;font-size:11.5px;">AI 工具每日速递 · 2026-06-19 · 由 WorkBuddy 生成</div>
+    </div>
+
+</div>
+</body>
+</html>

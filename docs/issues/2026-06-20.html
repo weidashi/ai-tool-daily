@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-20</title>
+<style>
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; margin: 0; padding: 20px; color: #1a1a2e; }
+  .container { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 28px 32px; }
+  .header h1 { margin: 0; font-size: 22px; font-weight: 700; }
+  .header .subtitle { margin-top: 6px; font-size: 13px; opacity: 0.7; }
+  .header .date-badge { display: inline-block; margin-top: 10px; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 14px; font-size: 12px; }
+  .content { padding: 28px 32px; }
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .icon { font-size: 20px; }
+  .intro { background: #f0f4ff; border-radius: 8px; padding: 14px 18px; font-size: 13px; line-height: 1.7; margin-bottom: 20px; color: #333; }
+
+  .skill-card { border: 1px solid #e8ecf1; border-radius: 10px; padding: 20px; margin-bottom: 16px; background: #fafbfc; }
+  .skill-card.highlight { border-color: #4f46e5; background: #f8f7ff; }
+  .skill-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .skill-name { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .skill-stars { background: #fff3cd; color: #856404; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .skill-tag { background: #e8ecf1; color: #555; font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+  .skill-desc { font-size: 13px; color: #444; line-height: 1.7; margin-bottom: 12px; }
+  .skill-steps { background: #1a1a2e; color: #a8d8a8; border-radius: 8px; padding: 14px 16px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; margin-bottom: 10px; }
+  .skill-steps .comment { color: #6a9955; }
+  .skill-usage { font-size: 12px; color: #555; line-height: 1.7; margin-top: 8px; }
+  .skill-usage strong { color: #1a1a2e; }
+
+  .tip-box { background: #fffbe6; border-left: 3px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 12px; line-height: 1.7; color: #713f12; margin-top: 10px; }
+
+  .feature-box { background: #f0f9ff; border-radius: 8px; padding: 16px; margin-bottom: 12px; border: 1px solid #bae6fd; }
+  .feature-title { font-size: 14px; font-weight: 600; color: #0369a1; margin-bottom: 8px; }
+  .feature-desc { font-size: 13px; color: #444; line-height: 1.7; }
+
+  .code-block { background: #1e1e2e; color: #cdd6f4; border-radius: 8px; padding: 14px 16px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; margin: 10px 0; }
+  .code-block .line-comment { color: #6c7086; }
+
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 12px 0; }
+  .comparison-table th { background: #1a1a2e; color: #fff; padding: 8px 12px; text-align: left; }
+  .comparison-table td { padding: 8px 12px; border-bottom: 1px solid #e8ecf1; vertical-align: top; }
+  .comparison-table tr:nth-child(even) td { background: #f8f9fa; }
+
+  .notebooklm-tip { background: #f0fdf4; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #bbf7d0; }
+  .notebooklm-tip .tip-title { font-size: 14px; font-weight: 600; color: #166534; margin-bottom: 6px; }
+  .notebooklm-tip .tip-body { font-size: 13px; color: #444; line-height: 1.7; }
+
+  .workbuddy-tip { background: #fef3f2; border-radius: 8px; padding: 16px; border: 1px solid #fecdca; }
+  .workbuddy-tip .tip-title { font-size: 14px; font-weight: 600; color: #991b1b; margin-bottom: 8px; }
+  .workbuddy-tip .tip-body { font-size: 13px; color: #444; line-height: 1.7; }
+
+  .footer { background: #f5f7fa; padding: 20px 32px; text-align: center; font-size: 13px; color: #666; }
+  .footer .encourage { font-size: 15px; color: #1a1a2e; font-weight: 600; margin-bottom: 8px; }
+
+  .step-list { list-style: none; padding: 0; margin: 10px 0; }
+  .step-list li { counter-increment: step; padding-left: 28px; position: relative; margin-bottom: 8px; font-size: 13px; line-height: 1.7; color: #444; }
+  .step-list li::before { content: counter(step); position: absolute; left: 0; top: 1px; background: #4f46e5; color: #fff; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div style="text-align:center;padding:8px 0;font-size:12px;"><a href="../index.html" style="color:#6366f1;text-decoration:none;">← 返回速递列表</a></div>
+<div class="container">
+
+  <!-- 头部 -->
+  <div class="header">
+    <div class="date-badge">📅 2026-06-20 星期五</div>
+    <h1>🤖 AI 工具每日速递</h1>
+    <div class="subtitle">Codex Skills · NotebookLM · Notion · WorkBuddy — 每天 5 分钟，掌握一个能立刻用的技巧</div>
+  </div>
+
+  <div class="content">
+
+    <!-- 本期导读 -->
+    <div class="section">
+      <div class="intro">
+        📌 <strong>本期导读（2026-06-20）</strong><br>
+        今天推荐 <strong>5 个高价值公开 Skill</strong>，全部来自 GitHub 高 stars 项目，附完整安装步骤和具体操作命令。特别关注：<strong>Superpowers v6.0.3 昨天刚发布</strong>（2026-06-19），装了这个相当于给 Codex 装了一套完整的软件工程流水线。另附 claude-mem 跨会话记忆配置完整步骤，以及 NotebookLM 最新技巧。
+      </div>
+    </div>
+
+    <!-- 📘 Codex Skills 每日精选 -->
+    <div class="section">
+      <div class="section-title"><span class="icon">📘</span>重点：Codex Skills 每日精选（5 个公开 Skill）</div>
+
+      <!-- Skill 1: Superpowers -->
+      <div class="skill-card highlight">
+        <div class="skill-header">
+          <span class="skill-name">① Superpowers v6.0.3</span>
+          <span class="skill-stars">⭐ 187K+ GitHub Stars</span>
+          <span class="skill-tag">开发全流程</span>
+          <span class="skill-tag">昨日更新</span>
+        </div>
+        <div class="skill-desc">
+          <strong>是什么：</strong>一套完整的软件工程流水线 Skill 集合，包含 14 个子技能，覆盖从需求脑暴 → 写计划 → TDD 开发 → 代码审查 → 完成的全流程。装了它，Codex 不会再拿到模糊需求就直接写代码。<br>
+          <strong>最适合：</strong>中大型功能开发、重构、需要跨模块协作的任务。<strong>简单任务慎用</strong>（会被"流程"拖慢 10-20 分钟）。
+        </div>
+        <div class="skill-steps">
+<span class="comment"># 方式一：Claude Code 官方市场安装（推荐）</span>
+/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace
+
+<span class="comment"># 方式二：npx 一键安装（Codex CLI 可用）</span>
+npx skills add https://github.com/obra/superpowers -g -y
+
+<span class="comment"># 方式三：Git 克隆</span>
+git clone https://github.com/obra/superpowers.git ~/.claude/skills/superpowers
+        </div>
+        <div class="skill-usage">
+          <strong>🎯 今天就能试的操作：</strong><br>
+          安装后，直接对 Codex 说：<em>"我想给项目加一个用户认证模块，帮我 brainstorm 一下方案"</em> → Superpowers 的 <code>brainstorming</code> 子技能会自动激活，用苏格拉底式提问帮你把需求想清楚，而不是直接写代码。<br><br>
+          <strong>14 个子技能速查：</strong>brainstorming（需求脑暴）· writing-plans（写计划）· executing-plans（执行计划）· test-driven-development（TDD）· systematic-debugging（系统调试）· code-review（代码审查）· using-git-worktrees（Git 分支管理）· verification-before-completion（完成前验证）· dispatching-parallel-agents（并行派发）· subagent-driven-development（子智能体驱动）· writing-skills（写 Skill）· using-superpowers（使用指南）· finishing-a-development-branch（分支收尾）
+        </div>
+        <div class="tip-box">
+          ⚡ <strong>效率数据：</strong>有开发者做过对照实验，用 Superpowers 的复杂任务，token 用量降低 14%，代码质量（以 PR review 问题数计）提升明显。但简单任务（"帮我写个正则"）建议不用，会多花 15 分钟走流程。
+        </div>
+      </div>
+
+      <!-- Skill 2: claude-mem -->
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">② claude-mem</span>
+          <span class="skill-stars">⭐ 72.4K+ Stars</span>
+          <span class="skill-tag">跨会话记忆</span>
+          <span class="skill-tag">被低估</span>
+        </div>
+        <div class="skill-desc">
+          <strong>是什么：</strong>给 Codex/Claude Code 装上"长期记忆"——每次会话结束自动把重要内容压缩成语义摘要，存到本地 SQLite 数据库；下次新开会话时自动注入相关上下文。解决"每次新会话都要重新解释项目背景"的痛点。<br>
+          <strong>最适合：</strong>多天迭代的项目、踩坑记录、团队规范沉淀。记忆存在本地，不上传云端。
+        </div>
+        <div class="skill-steps">
+<span class="comment"># 方式一：插件市场一键安装（推荐）</span>
+claude
+/plugin marketplace add thedotmack/claude-mem
+/plugin install claude-mem
+/exit
+claude   <span class="comment"># 重新启动，自动生效</span>
+
+<span class="comment"># 方式二：从源码安装（可自定义）</span>
+git clone https://github.com/thedotmack/claude-mem.git
+cd claude-mem
+npm install && npm run build
+npm run worker:start
+        </div>
+        <div class="skill-usage">
+          <strong>🎯 今天就能试的操作：</strong><br>
+          1. 安装后，正常用 Codex 做一个小功能，结束会话<br>
+          2. 明天新开会话，直接说：<em>"昨天我们做到了哪一步？"</em> → claude-mem 会自动注入昨天的上下文<br>
+          3. 查看记忆内容：访问 <code>http://localhost:37777</code>（本地 Web UI）<br><br>
+          <strong>⚠️ 注意事项：</strong>记忆噪声问题——它会记住一切（包括临时决策、错误假设）。定期清理：<code>rm -rf ~/.claude-mem</code>（谨慎！会删除所有记忆）。重要的架构决策应该同时写进 <code>CLAUDE.md</code>。
+        </div>
+        <div class="tip-box">
+          💡 <strong>进阶配置：</strong>多项目隔离——为每个项目设置独立的数据目录：<br>
+          <code>export CLAUDE_MEM_DATA_DIR=~/project-a-mem</code><br>
+          <code>export CLAUDE_MEM_DATA_DIR=~/project-b-mem</code>
+        </div>
+      </div>
+
+      <!-- Skill 3: document-skills (official) -->
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">③ document-skills（Anthropic 官方）</span>
+          <span class="skill-stars">🏛️ 官方维护</span>
+          <span class="skill-tag">PDF/DOCX/PPTX/XLSX</span>
+          <span class="skill-tag">生产级</span>
+        </div>
+        <div class="skill-desc">
+          <strong>是什么：</strong>Anthropic 官方维护的文档处理 Skill 集合，包含 pdf、docx、pptx、xlsx 四个子 Skill，是 Claude 文档能力的底层实现（source-available，非开源）。能读写编辑 PDF/Word/PPT/Excel，支持表格、格式、批注等复杂操作。<br>
+          <strong>最适合：</strong>需要自动处理文档的场景（填表、提取数据、生成报告、批量修改格式）。
+        </div>
+        <div class="skill-steps">
+<span class="comment"># Claude Code 安装（官方市场）</span>
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+
+<span class="comment"># 使用方式：直接说就行</span>
+"用 PDF skill 提取 path/to/file.pdf 的表单字段"
+"用 DOCX skill 把这份报告转成 Word 格式"
+"用 PPTX skill 基于这份大纲生成幻灯片"
+        </div>
+        <div class="skill-usage">
+          <strong>🎯 今天就能试的操作：</strong><br>
+          找一个 PDF 文件，对 Codex 说：<em>"用 PDF skill 提取这个 PDF 的所有文字内容和表格数据，输出为 Markdown 格式"</em> → 它会自动调用 pdf Skill 处理。<br><br>
+          <strong>四大文档 Skill 能力矩阵：</strong>
+          <table class="comparison-table">
+            <tr><th>Skill</th><th>读</th><th>写</th><th>编辑</th><th>表格</th></tr>
+            <tr><td>pdf</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>docx</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>pptx</td><td>✅</td><td>✅</td><td>✅</td><td>部分</td></tr>
+            <tr><td>xlsx</td><td>✅</td><td>✅</td><td>✅</td><td>✅（全功能）</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Skill 4: agent-browser -->
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">④ agent-browser</span>
+          <span class="skill-stars">📦 253K+ 安装量</span>
+          <span class="skill-tag">浏览器自动化</span>
+          <span class="skill-tag">Token 高效</span>
+        </div>
+        <div class="skill-desc">
+          <strong>是什么：</strong>让 Codex 能操作浏览器的 Skill，每页只需 200-400 tokens（对比 Playwright MCP 的 2000-6000 tokens），token 效率最高。用精简的 YAML 摘要表示页面状态，而不是把完整 DOM 树塞进上下文。<br>
+          <strong>最适合：</strong>网页导航、表单填写、数据抓取、截图等日常浏览器任务。复杂 DOM 操作建议用 Playwright CLI。
+        </div>
+        <div class="skill-steps">
+<span class="comment"># 安装（Claude Code / Codex CLI）</span>
+npx skills add https://github.com/nicobailon/agent-browser -g -y
+
+<span class="comment"># 使用方式：直接描述任务</span>
+"帮我打开 https://example.com，找到'登录'按钮并点击"
+"帮我截取当前页面的全屏截图"
+"帮我从这个页面提取所有产品名称和价格"
+        </div>
+        <div class="skill-usage">
+          <strong>🎯 今天就能试的操作：</strong><br>
+          对 Codex 说：<em>"用 agent-browser 打开 Hacker News (https://news.ycombinator.com)，截取第一页的标题列表（前 10 条）"</em> → 它会自动导航、提取数据、返回结果。<br><br>
+          <strong>📊 工具对比（为什么选 agent-browser）：</strong>
+          <table class="comparison-table">
+            <tr><th>工具</th><th>Token/页</th><th>适用场景</th></tr>
+            <tr><td>agent-browser</td><td>200-400</td><td>日常浏览、表单、导航</td></tr>
+            <tr><td>Playwright MCP</td><td>2000-6000</td><td>复杂 DOM 交互</td></tr>
+            <tr><td>Playwright CLI</td><td>~500</td><td>coding agent 优化版</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Skill 5: frontend-design -->
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">⑤ frontend-design</span>
+          <span class="skill-stars">📦 564K+ 安装量</span>
+          <span class="skill-tag">UI 设计</span>
+          <span class="skill-tag">去 AI 味</span>
+        </div>
+        <div class="skill-desc">
+          <strong>是什么：</strong>Anthropic 官方前端设计 Skill，携带 50 种具体视觉风格方向（工业风、新表现主义、Glitch 美学等），强制模型生成有风格的 UI，而不是千篇一律的"蓝白配色 + Tailwind 默认类 + 圆角 Card"。<br>
+          <strong>最适合：</strong>用 Codex 生成前端页面/组件时，需要更有设计感、不撞车的视觉效果。
+        </div>
+        <div class="skill-steps">
+<span class="comment"># 安装（Claude Code / Codex）</span>
+/plugin marketplace add anthropics/skills
+/plugin install frontend-design@anthropic-agent-skills
+
+<span class="comment"># 使用方式：在提示词里指定风格</span>
+"用 frontend-design skill，生成一个工业风风格的登录页面"
+"用 Glitch 美学风格重构这个 Dashboard 组件"
+        </div>
+        <div class="skill-usage">
+          <strong>🎯 今天就能试的操作：</strong><br>
+          对 Codex 说：<em>"用 frontend-design skill，生成一个带有复古 terminal 风格的 Markdown 编辑器界面，包含实时预览功能"</em> → 它会从 50 种风格里选"复古 terminal"方向，生成有特色的 UI 代码。<br><br>
+          <strong>💡 进阶：</strong>如果你的产品有成熟设计系统，建议配合 <code>brand-guidelines</code> Skill 使用，把设计 token（颜色、字体、间距）写进 Skill 配置，生成完全对齐你们设计系统的代码。
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 🆕 Codex 官方 & 使用提升技巧 -->
+    <div class="section">
+      <div class="section-title"><span class="icon">🆕</span>Codex 官方 & 使用提升技巧</div>
+
+      <div class="feature-box">
+        <div class="feature-title">📌 Codex 最新动态（2026年6月）</div>
+        <div class="feature-desc">
+          <ul class="step-list">
+            <li><strong>6月18日：</strong>Codex 开放第三方模型接入——现在可以在 Codex 里切换 DeepSeek / Claude / Gemini，不再绑定 OpenAI 模型。设置路径：Settings → Model → 添加自定义 API Key。</li>
+            <li><strong>6月2日：</strong>Codex 扩展为"知识工作 Agent"——新增角色插件（预配置的专业角色）、Sites 功能（直接生成可部署的静态网站）、Annotations（局部标注，类似 Google Docs 的评论功能）。</li>
+            <li><strong>Superpowers v6.0.3（昨天发布！）：</strong>新增 <code>dispatching-parallel-agents</code> 子技能，支持并发派发多个子智能体；优化了 TDD 流程，测试反模式检测更精准。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-box" style="margin-top: 14px;">
+        <div class="feature-title">⚡ 今日提升技巧：CLAUDE.md 的正确写法</div>
+        <div class="feature-desc">
+          <strong>问题：</strong>每次新会话都要重新告诉 Codex 项目背景、技术栈、规范？<br>
+          <strong>解决：</strong>在项目根目录创建 <code>CLAUDE.md</code> 文件，Codex 每次启动会自动读取。<br><br>
+          <strong>今天就能做的：</strong>在你的项目根目录创建 <code>CLAUDE.md</code>，内容包括：
+          <div class="code-block">
+<span class="line-comment"># 项目背景</span>
+本项目是一个 [类型] 应用，使用 [技术栈]。
+
+<span class="line-comment"># 开发规范</span>
+- 函数命名用 verbNoun 格式（如 getUserById）
+- 所有 API 调用必须有错误处理
+- 优先使用现有的 utils/ 目录下的工具函数
+
+<span class="line-comment"># 常用命令</span>
+- 启动开发服务器：npm run dev
+- 运行测试：npm test
+- 构建：npm run build
+          </div>
+          下次新开会话，Codex 自动知道这些上下文，不用重复说。
+        </div>
+      </div>
+    </div>
+
+    <!-- 📗 NotebookLM & Notion -->
+    <div class="section">
+      <div class="section-title"><span class="icon">📗</span>待学习：NotebookLM & Notion 每日进步</div>
+
+      <div class="notebooklm-tip">
+        <div class="tip-title">🧪 NotebookLM — 技巧 1：用"音频摘要"把文档变成播客</div>
+        <div class="tip-body">
+          <strong>操作步骤：</strong><br>
+          1. 在 NotebookLM 中打开任意笔记本，点击右上角 <strong>"生成"</strong> 按钮<br>
+          2. 选择 <strong>"音频摘要"</strong>（英文界面显示为 "Audio Overview"）<br>
+          3. 等待 2-3 分钟，系统会生成一段两人对话式的音频（像播客一样）<br>
+          4. 点击播放，可以边听边做其他事<br><br>
+          <strong>适合场景：</strong>长文档/论文/报告，没时间全文阅读时，用音频快速掌握核心观点。支持中文文档，但生成的音频是英文（2026年6月状态）。
+        </div>
+      </div>
+
+      <div class="notebooklm-tip" style="margin-top: 10px;">
+        <div class="tip-title">🧪 NotebookLM — 技巧 2："对话模式"深度挖掘文档细节</div>
+        <div class="tip-body">
+          <strong>操作步骤：</strong><br>
+          1. 在笔记本里选择 <strong>"对话"</strong> 模式（不是"笔记"模式）<br>
+          2. 用自然语言提问，NotebookLM 会基于你上传的所有文档回答<br>
+          3. 高级用法：<em>"对比文档 A 和文档 B 中关于 XX 观点的差异"</em> → 它会跨文档分析<br><br>
+          <strong>今天就能试的提问模板：</strong><br>
+          • "这份报告的核心结论是什么？用 3 句话说清楚。"<br>
+          • "文档里提到的 XX 方法，具体步骤是什么？"<br>
+          • "把所有提到'风险'的地方找出来，列出原文。"<br><br>
+          <strong>💡 提示：</strong>NotebookLM 的回答会附带来源引用（显示"来自：文档 X 第 Y 页"），可以点击跳转到原文验证。
+        </div>
+      </div>
+
+      <div class="notebooklm-tip" style="margin-top: 10px;">
+        <div class="tip-title">🧪 NotebookLM — 技巧 3：把 NotebookLM 的笔记导入 Google Docs</div>
+        <div class="tip-body">
+          <strong>操作步骤：</strong><br>
+          1. 在 NotebookLM 对话界面，找到 AI 生成的回答/笔记<br>
+          2. 点击回答下方的 <strong>"导出到 Google Docs"</strong> 按钮<br>
+          3. 系统会自动创建一个 Google Docs 文档，内容包含对话历史和引用来源<br>
+          4. 可以在 Google Docs 里继续编辑、分享、协作<br><br>
+          <strong>效率提升：</strong>研究 → 整理 → 协作，全流程在 Google 生态里完成，不用手动复制粘贴。
+        </div>
+      </div>
+
+      <div class="feature-box" style="margin-top: 14px;">
+        <div class="feature-title">📋 Notion — 今日技巧：用 AI 快速生成数据库视图</div>
+        <div class="feature-desc">
+          <strong>操作步骤：</strong><br>
+          1. 在 Notion 数据库页面，点击 <strong>"添加视图"</strong><br>
+          2. 在视图类型选择界面，找到 <strong>"AI 生成"</strong> 选项（Notion AI 功能）<br>
+          3. 用自然语言描述你想要的视图：<em>"我想看本月未完成的任务，按优先级排序，只显示标题和截止日期"</em><br>
+          4. Notion AI 会自动配置筛选条件、排序规则和显示字段<br><br>
+          <strong>实用场景：</strong>周报视图、项目进度看板、内容日历——不用手动配置筛选器，直接说需求，AI 帮你搭好。
+        </div>
+      </div>
+    </div>
+
+    <!-- 📙 WorkBuddy 实用技巧 -->
+    <div class="section">
+      <div class="section-title"><span class="icon">📙</span>实用技巧：WorkBuddy 与 Agent</div>
+
+      <div class="workbuddy-tip">
+        <div class="tip-title">⚡ 今日技巧：把"常用提示词"存成快捷指令（Skill）</div>
+        <div class="tip-body">
+          <strong>场景：</strong>你经常让 AI 帮你做某类固定任务（比如"帮我总结这篇文章"、"帮我写周报"），每次都要重新描述需求，很麻烦。<br><br>
+          <strong>解决：</strong>把这类任务写成 WorkBuddy Skill，以后一键调用。<br><br>
+          <strong>今天就能做的完整操作步骤：</strong>
+          <ol class="step-list">
+            <li>在 WorkBuddy 里，说出你的需求（比如"帮我写一个'周报生成'的快捷指令，输入本周完成的工作列表，输出格式化的周报"）</li>
+            <li>WorkBuddy 会帮你生成一个 <code>SKILL.md</code> 文件，保存到 <code>~/.workbuddy/skills/</code> 目录</li>
+            <li>以后直接用：<em>"/周报生成 [粘贴本周工作列表]"</em> → WorkBuddy 自动按预设格式输出</li>
+          </ol>
+          <br>
+          <strong>📝 示例 SKILL.md（周报生成）：</strong>
+          <div class="code-block">
+---
+name: weekly-report
+description: 根据用户输入的本周工作列表，生成格式化的周报。触发词：周报、weekly report
+---
+
+# 周报生成 Skill
+
+## 任务
+将用户输入的工作列表整理为结构化周报。
+
+## 输出格式
+**本周完成：**
+- [工作项 1：结果/产出]
+- [工作项 2：结果/产出]
+
+**下周计划：**
+- [计划项 1]
+- [计划项 2]
+
+**风险与阻碍：**
+- [如有，列出]
+          </div>
+          <br>
+          <strong>💡 进阶：</strong>去 <a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a> 参考它的 SKILL.md 写法——description 字段要写成"路由规则"（Claude 靠它判断是否激活），而不是营销文案。
+        </div>
+      </div>
+
+      <div class="workbuddy-tip" style="margin-top: 14px;">
+        <div class="tip-title">🤖 Agent 小技巧：让 Agent 自己判断何时激活 Skill</div>
+        <div class="tip-body">
+          <strong>关键点：</strong>Skill 的 <code>description</code> 字段决定了它何时被激活。写得好的 description 读起来像路由规则，不是宣传语。<br><br>
+          <strong>好的 description 示例：</strong><br>
+          <code>"Use when user needs to interact with PDF files: extract text, fill forms, extract tables. Triggered by keywords: PDF, 提取, 表单, 表格"</code><br><br>
+          <strong>差的 description 示例：</strong><br>
+          <code>"A powerful AI-powered skill that supercharges your workflow..."</code>（Claude 看不懂什么时候该激活）<br><br>
+          <strong>今天就能做的：</strong>检查你已安装的 Skills 的 description 字段，把"营销文案"改成"路由规则"。激活率能从 20% 提升到 90%。
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end content -->
+
+  <!-- 底部 -->
+  <div class="footer">
+    <div class="encourage">🌱 每天一点，慢慢精通。今天挑一个 Skill 装上，明天你会在效率上看到变化。</div>
+    如有问题或想深入某个技巧，直接回复这封邮件 📬<br>
+    <span style="color:#999;font-size:11px;">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-20</span>
+  </div>
+
+</div>
+</body>
+</html>
