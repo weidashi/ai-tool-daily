@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-23</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-23 · 星期二</div>
+    <h1>报告自动化：从输入到多格式交付</h1>
+    <div class="art-sub">阅读总结 × 可视化报告 × 可编辑 PPT × 演讲者模式</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>前两期我们覆盖了写作创作（#3）和视觉分发（#4），今天聚焦第三个高频痛点：<strong>拿到一堆资料/笔记/会议纪要之后，怎么快速变成能交付的报告和 PPT？</strong> — 4 个 Skill 覆盖「阅读→总结→报告→多格式PPT」完整链路，外加 1 个组合技把流程串成自动化。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">visual-report</div><div class="sk-subtitle">larrywood0602 · 资料 → 互动报告 + PDF/PPT 导出</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2026.3 新发布</span><span class="bd bd-p">阅读总结</span><span class="bd bd-o">报告生成</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把文字、图片、表格截图、会议纪要、资料文档整理成交互式可视化网页报告，并支持一键导出 PDF 与可编辑 PPT。内置版式规则、PPT 主题、打印规则，自动判断输出模式（报告/PDF/PPT/表格）。<br><strong>最适合：</strong>周报月报、项目复盘、数据展示、管理层汇报材料 — 从原始资料直接跳到成品报告。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">$skill-installer install https://github.com/larrywood0602/codex-skill-visual-report/tree/main/skills/visual-report</div><div class="cmt">或手动：git clone 后 cp 到 ~/.codex/skills/</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把上次会议的纪要丢进去，说「帮我把这份会议纪要整理成可视化汇报，并导出 PDF」— 几分钟出完整报告。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">ppt-master</div><div class="sk-subtitle">hugohe3 · 原生 PPTX 矢量流，真正可编辑</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">PPT 生成</span><span class="bd bd-b">可编辑交付</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>与上一期介绍的 guizang-ppt-skill（HTML 网页流）不同，ppt-master 生成的是<strong>标准 .pptx 文件</strong>— 每个文本框、形状都可在 PowerPoint 中直接编辑。底层将内容先转 SVG 矢量，再转原生 PPTX 对象。支持从 PDF、DOCX、甚至网页 URL 直接导入内容。<br><strong>最适合：</strong>需要发给团队/老板/客户继续修改的场景 — 不想被「图片 PPT」困住。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add hugohe3/ppt-master --agent codex --global</div><div class="cmt">需要预先安装 Cairo 或 Canvas 图形库，详见仓库 README</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>丢一份 Word 文档进去，说「把这份方案转成 20 页 PPT，每页 3 个要点」— 生成的 .pptx 可以直接发给同事修改。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">html-ppt-skill</div><div class="sk-subtitle">lewislulu · 演讲者模式 + 36 主题</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">PPT 生成</span><span class="bd bd-r">演讲辅助</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>HTML 网页演示工具，专为<strong>需要上台演讲</strong>的用户设计。内置 36 套主题、15 套 deck 模板、31 种单页布局。最大亮点是<strong>演讲者模式（Presenter Mode）</strong>— 演示时按 S 键唤起独立窗口，显示逐字稿和计时器，学术报告和技术分享场景下非常实用。<br><strong>最适合：</strong>需要在发布会、培训、学术会议上做演示 — 提词器 + 计时器让你脱稿更自信。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add lewislulu/html-ppt-skill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>说「帮我做一份 2026 AI 趋势演讲 PPT，15 页，学术风格」— 生成后在浏览器打开，按 S 键体验演讲者模式。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">GordenPPTSkill</div><div class="sk-subtitle">GordenSun · 企业 VI 模板，批量标准化</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">PPT 生成</span><span class="bd bd-o">企业 VI</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专为<strong>固定企业视觉识别（VI）场景</strong>设计。不依赖 AI 自由发挥排版，而是通过精准文本占位符替换，将内容填入预设中文模板。保证形状、配色和字号的绝对规范，脚本会自动检查文本是否超出边框。<br><strong>最适合：</strong>需要批量制作格式高度统一的汇报 PPT — 如国企季度汇报、党建材料、标准提案，一份模板套用全年。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add GordenSun/GordenPPTSkill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>准备好你公司的 PPT 模板，说「按这个模板，把本月数据填进去，生成 Q2 汇报 PPT」— 格式自动对齐，零手工调排版。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">技能组合：一条龙报告工作流</div><div class="sk-subtitle">把 4 个 Skill 串成自动化管线</div></div></div>
+      <div class="badges"><span class="bd bd-b">工作流</span><span class="bd bd-o">日常自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是新 Skill，而是把本期推荐串起来的<strong>组合用法</strong>。在 Codex 中一次描述全流程，它会按顺序调用多个 Skill：<br><strong>资料 → visual-report（阅读总结+生成互动报告）→ ppt-master（导出可编辑 PPTX）→ html-ppt-skill（生成演讲版）→ GordenPPTSkill（套企业模板统一格式）。</strong><br>一条指令完成四步，实现真正的「从信息输入到多格式交付」自动化。</div>
+      <div class="install"><div class="il">💡 组合指令示例</div><div class="cmd">先把这些会议纪要用 visual-report 生成互动报告，再用 ppt-master 导出可编辑 PPTX，同时用 html-ppt-skill 做一份演讲版，最后用 GordenPPTSkill 套公司模板统一格式</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>装好上面 4 个 Skill 后，丢入一份资料，复制上面的组合指令 — 看看 Codex 如何自动走完整个报告生产线。</div>
+    </div>
+
+    <!-- 选型速查 -->
+    <div class="hl">
+      <strong>⚡ PPT Skill 选型速查</strong><br>
+      · <strong>要发给人改 → ppt-master</strong>（标准.pptx，可编辑）<br>
+      · <strong>要上台演讲 → html-ppt-skill</strong>（提词器+计时器）<br>
+      · <strong>要极致视觉 → guizang-ppt-skill</strong>（#4 期推荐，杂志级排版）<br>
+      · <strong>要企业统一格式 → GordenPPTSkill</strong>（VI 模板占位符替换）<br>
+      · <strong>要先总结再出报告 → visual-report</strong>（阅读→报告→多格式导出）
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 重磅：6 个角色专属插件上线（6/2）</div></div>
+      <div class="tb">Codex 推出<strong>角色专属插件市场</strong>，首批 6 个覆盖数据分析、创意生产、销售、产品设计、公募投资、投资银行，内置 62 款应用 + 110 个专项技能。<strong>非开发者（分析师/营销/设计师/投资人）已占 Codex 用户的 20%，增速是开发者的 3 倍</strong> — Codex 正从编程工具转型为通用知识工作平台。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🏗️ Sites：一句话生成可分享网站</div></div>
+      <div class="tb">用 <code>@Sites</code> 前缀描述需求，Codex 自动生成<strong>交互式托管网站</strong>，支持 D1 数据库 + R2 文件存储，可设访问权限。适合内部分析仪表盘、项目进度追踪、活动运营看板 — 不只是 demo，是能进生产环境的内部工具。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">✏️ Annotations：点选内容局部精修</div></div>
+      <div class="tb">选中报告/表格/幻灯片中任意区域，直接告诉 Codex 改什么 — <strong>只改选中区域，不动其他地方</strong>。第一稿之后不想全部推倒重来？标注修改让迭代从「重新描述」变成「原地微调」。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 一笔记本一主题原则</div></div>
+      <div class="tb">每个笔记本只聚焦<strong>一个主题 + 一个时间段</strong>（如"2026 Q2 竞品分析"）。跨主题混放会稀释检索命中率 — 你问 A 问题，AI 不知道你想从哪段材料里找答案。5-10 个高质量来源比塞满 50 个来源的效果稳定得多。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — YouTube 视频 5 分钟变大纲</div></div>
+      <div class="tb">粘贴带字幕的公开 YouTube 链接到 Sources，直接让 NotebookLM 出逐字稿、章节大纲、关键语录。1 小时视频 <strong>5 分钟提取骨架</strong>。拿到逐字稿后导出给大模型做深度改写和二次加工，NotebookLM 负责「引用」，大模型负责「创作」。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — Deep Research 查询公式</div></div>
+      <div class="tb">公式：<strong>主题 + 时间范围 + 分析维度</strong>。例：「2026 Q1 国内 AI 教育 KOL 的内容定位演变，按平台/订阅模式/变现方式整理」。Deep Research 后台自动爬取多个来源，产出 2000-4000 字带引用的报告。Standard 版每月 10 次，重要研究才用它。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — 自动化模板 + 数据库关联</div></div>
+      <div class="tb">建一个「周报自动生成」模板：用 Database 关联「本周任务」和「下周计划」两个表，模板里预设好标题层级和分节结构。每周五点击一次「从模板创建」，自动拉取关联数据填入正文。配合 Notion AI 做摘要润色，周报从 1 小时缩到 5 分钟。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 选对工作模式：Ask / Plan / Craft</div></div>
+      <div class="tb">WorkBuddy 有三种力度 — <strong>Ask</strong>（只答不动手，适合查资料）、<strong>Plan</strong>（先出方案确认后再执行，适合怕跑偏的复杂任务）、<strong>Craft</strong>（直接干，适合明确任务）。日常问答用 Ask 省积分，做事用 Craft，拿不准先用 Plan 看方案。一句话切换：「切换到 Plan 模式」。</div>
+    </div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 定时自动化任务：雇个数字员工</div></div>
+      <div class="tb">左侧边栏「自动化」→ 添加任务 → 用自然语言描述 → 设置执行频率（每天/每周/自定义时间）。比如「每天早上 8 点抓取指定网站的动态，汇总推送微信」或「每周五归类下载文件夹」。<strong>电脑保持开机即自动执行</strong>，结果可推送到绑定的微信 — 真正的无人值守。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 今天迈出一小步：装好 visual-report，把上周的会议纪要变成一份互动报告</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-23</span>
+  </div>
+</div>
+</body>
+</html>
