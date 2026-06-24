@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-24</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-24 · 星期三</div>
+    <h1>中文内容创作流水线：选题 → 写作 → 分发</h1>
+    <div class="art-sub">5 个 Skills 串联完整创作流程 · 去 AI 味 · 社交卡片 · PPT 演示</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>本周 Codex 中文创作者社区集中爆发了一批高质量的日常效率 Skills。本期精选 5 个，从选题诊断、深度写作、去 AI 味、社交分发到 PPT 演示，正好串成一条完整创作流水线。全部零代码、零配置，安装即用。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <!-- ① Humanizer-zh -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">Humanizer-zh — 中文「去 AI 味」润色</div><div class="sk-subtitle">op7418 · 2.4k+ Stars · 中文内容创作者必备</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2.4k+</span><span class="bd bd-p">写作润色</span><span class="bd bd-r">去AI味</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专门识别中文 AI 文本中的空话、套话、三段式、过度排比和"AI 腔"，把生硬的机器文风改得像真人手笔。内置 24 项检测模式，从语气、结构到用词全面去机械化。<br><strong>最适合：</strong>公众号文章、小红书笔记、知乎回答、Newsletter——任何需要"像人写的"中文内容。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global</div><div class="cmt">安装后在 Codex 中直接说"帮这篇文章去 AI 味"</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把昨天 AI 辅助写的公众号文章扔给它，说「全文去 AI 味，保留核心观点，语气自然像朋友聊天」——你会看到同一篇文章从"机器人作文"变成"真人随笔"。</div>
+    </div>
+
+    <!-- ② dbskill -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">dbskill — 内容选题诊断器</div><div class="sk-subtitle">dontbesilent · 中文自媒体选题神器</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高收藏</span><span class="bd bd-p">选题诊断</span><span class="bd bd-o">爆款拆解</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>为中文内容创作者设计的「选题诊断」工具。能分析你的选题是否成立、帮你诊断商业表达是否清晰、优化 hook 和标题、拆解爆款笔记结构。覆盖小红书标题生成、公众号选题评估、知识型内容定位等场景。<br><strong>最适合：</strong>做自媒体、知识付费、公众号、小红书的中文创作者——每次发文前用它诊断一下，选题成功率高很多。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把下周想写的 3 个选题输入给 dbskill：「帮我诊断这 3 个选题，哪个最值得写？标题怎么优化？」它会像资深编辑一样给你反馈。</div>
+    </div>
+
+    <!-- ③ content-research-writer -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">content-research-writer — 研究型写作全流程</div><div class="sk-subtitle">ComposioHQ · 选题→资料→提纲→引用→初稿一条龙</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高热度</span><span class="bd bd-p">内容创作</span><span class="bd bd-b">深度写作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把"选题→搜集资料→整理提纲→引用来源→生成初稿"五步写作流程编码为一个完整的 Skill。适合公众号长文、Newsletter、博客和深度文章，不用在不同工具间来回切换。<br><strong>最适合：</strong>需要写深度内容的知识工作者——行业分析、研究报告、长篇公众号、Newsletter 周报。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>输入「帮我写一篇关于 AI 工具对知识工作者影响的深度文章，字数 2000 左右，带数据支撑和引用」——它会先给你提纲，确认后再逐段生成。</div>
+    </div>
+
+    <!-- ④ guizang-social-card-skill -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">guizang-social-card-skill — 社交分发卡片生成</div><div class="sk-subtitle">op7418 · 文章→小红书卡片/公众号封面一键转换</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-p">社交分发</span><span class="bd bd-r">小红书</span><span class="bd bd-o">公众号</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。解决了"写完文章还要手动做图分发"的痛点——文章写完后直接生成可发布的视觉内容，一键分发到多个平台。<br><strong>最适合：</strong>公众号作者需要做封面图、小红书创作者需要把长文拆成图文卡片、知识博主做社交分享图。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近写的一篇文章输入，说「帮我把这篇文章拆成 6 张小红书卡片」——它会自动排版、配色、生成可直接发布的图片。</div>
+    </div>
+
+    <!-- ⑤ guizang-ppt-skill -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-ppt-skill — 文章观点转 PPT / 演示图</div><div class="sk-subtitle">op7418 · 把文字内容二次分发为演示稿和分享图</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高热度</span><span class="bd bd-p">PPT 生成</span><span class="bd bd-o">演讲</span><span class="bd bd-b">演示</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把你的文章、观点、报告直接转化为 PPT 演示稿、演讲图、公众号头图和小红书封面。如果你经常需要把同一份内容在不同场景复用——文字版发公众号、PPT 版做汇报、图片版发朋友圈——这个 Skill 能帮你节省大量重复排版时间。<br><strong>最适合：</strong>知识博主、企业培训师、咨询顾问——需要频繁把文字内容转化为演示材料的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你最近写的分析文章，输入「把这篇做成 10 页 PPT，每页一个核心观点，配色商务简约风」——几分钟完成从文章到 PPT 的转换。</div>
+    </div>
+
+    <!-- 流水线提示 -->
+    <div class="pipe">
+      <span class="pa">🎬 创作流水线</span>
+      <span class="ps ps-2">① 选题诊断</span><span style="color:var(--muted);">→</span>
+      <span class="ps ps-1">② 深度写作</span><span style="color:var(--muted);">→</span>
+      <span class="ps ps-3">③ 去 AI 味</span><span style="color:var(--muted);">→</span>
+      <span class="ps ps-4">④ 社交卡片</span><span style="color:var(--muted);">→</span>
+      <span class="ps ps-5">⑤ PPT 演示</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ Codex 0.142.0 发布（6月22日）</div></div>
+      <div class="tb">最新版带来三个实用改进：<strong>插件发现增强</strong>——输入 <code>/plugins</code> 可浏览官方精选、工作区和共享插件，并在对话中直接推荐和安装；<strong>多 Agent 委托控制</strong>——可配置子 Agent 的启用程度（禁用/仅显式请求/主动模式），控制上下文消耗；<strong>定时提醒</strong>——Codex 终于能接收 UTC 定时通知了，自动化场景更灵活。</div>
+    </div>
+
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">💡 本周技巧：用 /usage 管理用量</div></div>
+      <div class="tb">输入 <code>/usage</code> 可查看每日、每周和累计账户 Token 活动，还能查看和兑换已获得的使用限额重置积分。Plus 和 Pro 用户现在有免费重置次数和推荐奖励。对于日常高频使用 Codex 的知识工作者，合理管理 Token 预算能避免工作中断。</div>
+    </div>
+
+    <div class="hl">
+      <strong>📌 插件市场正在取代旧 Skills 仓库</strong><br>
+      注意：OpenAI 已于 6月22日宣布 openai/skills 仓库正式废弃（deprecated），推荐转向 <strong>Plugins 目录</strong>（github.com/openai/plugins）安装 Skill 类插件。不过，本文推荐的 5 个社区 Skills 来自独立 GitHub 仓库，仍然通过 <code>npx skills@latest add</code> 正常安装，不受此次调整影响。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM 6月大升级：AI Agent + 独立云计算</div></div>
+      <div class="tb">6月10日 Google 为每个 NotebookLM 笔记本配备了<strong>独立的云端计算机</strong>，支持代码实时执行和 AI Agent 深度研究。内部测试显示 Agent 表现比旧版提升约 65%。简单说：你的笔记本现在能像一个研究助理一样，<strong>主动做分析而不是被动做摘要</strong>。</div>
+    </div>
+
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🔍 新功能：「零源检索」——跳过上传直接搜</div></div>
+      <div class="tb">不用上传文档也能用 NotebookLM 了。打开「零源（Zero-source）」模式，它会直接通过 Google 搜索获取全网权威资源并自动标注来源。适合<strong>快速调研</strong>——想了解一个新话题，不用先找资料再上传，直接提问就行。</div>
+    </div>
+
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">📤 一键导出：报告 → PDF / Excel / PPT</div></div>
+      <div class="tb">分析报告现在可以一键导出为包含专业图表的 PDF、Excel 电子表格、PowerPoint 演示文稿和图片。写研究报告的流程简化了一大截：在 NotebookLM 里分析完数据，<strong>直接导出为带图表的 PPT</strong>，不用再手动做图。</div>
+    </div>
+
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — /ai 斜杠命令：最被低估的效率开关</div></div>
+      <div class="tb">在 Notion 任意页面输入 <code>/ai</code> 就能唤醒 AI 助手——不是特地去点按钮或打开对话窗口，而是<strong>在你写作的当前位置</strong>直接调用。更实用的用法：<strong>选中一段文字后让 AI 扩写、改写或总结</strong>——完全不用离开编辑流。对于日常在 Notion 里写文档、做笔记的知识工作者，这个功能每天至少省 10 次"切换到 ChatGPT"的操作。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ Craft 模式：一句话搞定批量文件处理</div></div>
+      <div class="tb">很多人习惯用 Ask 模式问问题，但真正省力的是 <strong>Craft 模式</strong>。比如桌面上有 50 个散乱的项目文件需要按日期分类归档——以前手动一个一个拖，现在只需一句：「读取桌面上所有 .docx 和 .xlsx 文件，按文件修改日期创建文件夹，把文件移动到对应日期的文件夹中」。WorkBuddy 自动遍历文件、创建目录、完成移动，<strong>整个过程不到 30 秒</strong>。核心是：把你要"做"的事描述清楚，不用描述"怎么做"。</div>
+    </div>
+
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">🔁 自动化：把"每天早上等 10 分钟"变成"等 10 秒"</div></div>
+      <div class="tb">WorkBuddy 的自动化功能支持纯自然语言描述定时任务。典型场景：每天早上检查数据 → 更新汇总表 → 保存带日期的日报。以前手动操作要 15 分钟，设置自动化后到点自动执行，<strong>你只需要看一眼结果</strong>。对咨询顾问、分析师这类每天处理固定报表的人尤其有用——固定流程交给 WorkBuddy，你只做需要判断的部分。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 最有价值的效率不是"做更快"，而是"想更少"——让工具承担重复，把思考留给自己。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-24</span>
+  </div>
+</div>
+</body>
+</html>
