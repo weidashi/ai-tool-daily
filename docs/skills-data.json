@@ -84,7 +84,8 @@
       "issues": [
         "2026-06-24",
         "2026-06-21"
-      ]
+      ],
+      "screenshot": ""
     },
     "content-research-writer": {
       "name": "content-research-writer",
@@ -101,7 +102,8 @@
       "issues": [
         "2026-06-24",
         "2026-06-21"
-      ]
+      ],
+      "screenshot": ""
     },
     "khazix-skills": {
       "name": "khazix-skills",
@@ -117,7 +119,8 @@
       "install": "npx -y skills@latest add KKKKhazix/khazix-skills --skill khazix-skills --agent codex --global",
       "issues": [
         "2026-06-25"
-      ]
+      ],
+      "screenshot": ""
     },
     "baoyu-skills": {
       "name": "baoyu-skills",
@@ -134,7 +137,8 @@
       "issues": [
         "2026-06-25",
         "2026-06-22"
-      ]
+      ],
+      "screenshot": ""
     },
     "ian-xiaohei-illustrations": {
       "name": "ian-xiaohei-illustrations",
@@ -151,7 +155,8 @@
       "issues": [
         "2026-06-25",
         "2026-06-22"
-      ]
+      ],
+      "screenshot": ""
     },
     "html-anything": {
       "name": "html-anything",
@@ -168,7 +173,8 @@
       "issues": [
         "2026-06-25",
         "2026-06-22"
-      ]
+      ],
+      "screenshot": ""
     },
     "guizang-ppt-skill": {
       "name": "guizang-ppt-skill",
@@ -185,7 +191,8 @@
       "issues": [
         "2026-06-22",
         "2026-06-24"
-      ]
+      ],
+      "screenshot": ""
     },
     "ppt-master": {
       "name": "ppt-master",
@@ -201,7 +208,8 @@
       "install": "npx -y skills@latest add hugohe3/ppt-master --agent codex --global",
       "issues": [
         "2026-06-23"
-      ]
+      ],
+      "screenshot": ""
     },
     "html-ppt-skill": {
       "name": "html-ppt-skill",
@@ -217,7 +225,8 @@
       "install": "npx -y skills@latest add lewislulu/html-ppt-skill --agent codex --global",
       "issues": [
         "2026-06-23"
-      ]
+      ],
+      "screenshot": ""
     },
     "gorden-ppt-skill": {
       "name": "GordenPPTSkill",
@@ -233,7 +242,8 @@
       "install": "npx -y skills@latest add GordenSun/GordenPPTSkill --agent codex --global",
       "issues": [
         "2026-06-23"
-      ]
+      ],
+      "screenshot": ""
     },
     "guizang-social-card-skill": {
       "name": "guizang-social-card-skill",
@@ -249,7 +259,8 @@
       "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global",
       "issues": [
         "2026-06-24"
-      ]
+      ],
+      "screenshot": ""
     },
     "dbskill": {
       "name": "dbskill",
@@ -266,7 +277,8 @@
       "issues": [
         "2026-06-24",
         "2026-06-21"
-      ]
+      ],
+      "screenshot": ""
     },
     "visual-report": {
       "name": "visual-report",
@@ -282,7 +294,8 @@
       "install": "git clone https://github.com/larrywood0602/codex-skill-visual-report.git",
       "issues": [
         "2026-06-23"
-      ]
+      ],
+      "screenshot": ""
     }
   },
   "issues": [
@@ -443,6 +456,317 @@
       "numColor": "n-blue",
       "file": "2026-06-19.html",
       "skills": []
+    }
+  ],
+  "showdowns": [
+    {
+      "id": "ppt-four",
+      "title": "PPT 生成四选一：哪个才是你的菜？",
+      "desc": "市面上 4 个热门 PPT Skill 横评对比：输出格式、编辑能力、演讲支持、适用场景。",
+      "skills": [
+        "guizang-ppt-skill",
+        "ppt-master",
+        "html-ppt-skill",
+        "gorden-ppt-skill"
+      ],
+      "dimensions": [
+        {
+          "label": "输出格式",
+          "values": [
+            "HTML 网页",
+            "标准 .pptx",
+            "HTML 网页",
+            "标准 .pptx"
+          ]
+        },
+        {
+          "label": "可编辑性",
+          "values": [
+            "🟡 代码编辑",
+            "🟢 原生可编辑",
+            "🟡 代码编辑",
+            "🟢 原生可编辑"
+          ]
+        },
+        {
+          "label": "演讲模式",
+          "values": [
+            "🔴 无",
+            "🔴 无",
+            "🟢 演讲者模式",
+            "🔴 无"
+          ]
+        },
+        {
+          "label": "企业VI",
+          "values": [
+            "🔴 不支持",
+            "🔴 不支持",
+            "🔴 不支持",
+            "🟢 专为此设计"
+          ]
+        },
+        {
+          "label": "最佳场景",
+          "values": [
+            "快速分享",
+            "正式交付",
+            "上台演讲",
+            "批量标准汇报"
+          ]
+        },
+        {
+          "label": "Stars",
+          "values": [
+            "15.6K",
+            "热门",
+            "热门",
+            "热门"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing-three",
+      "title": "写作三剑客：去AI味 vs 研究型 vs 长文流",
+      "desc": "Humanizer-zh 专注于「改」，content-research-writer 专注于「写」，khazix-skills 专注于「深」。选对工具，事半功倍。",
+      "skills": [
+        "humanizer-zh",
+        "content-research-writer",
+        "khazix-skills"
+      ],
+      "dimensions": [
+        {
+          "label": "核心能力",
+          "values": [
+            "AI文本润色",
+            "研究+写作全流程",
+            "长文+研究报告"
+          ]
+        },
+        {
+          "label": "写作长度",
+          "values": [
+            "任意",
+            "2000字+",
+            "5000字+"
+          ]
+        },
+        {
+          "label": "使用时机",
+          "values": [
+            "AI写完初稿之后",
+            "从零开始写",
+            "有主题要深入"
+          ]
+        },
+        {
+          "label": "输出风格",
+          "values": [
+            "真人随笔风",
+            "研究型深度风",
+            "公众号长文风"
+          ]
+        },
+        {
+          "label": "Stars",
+          "values": [
+            "2.4K+",
+            "高热度",
+            "14K"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visual-three",
+      "title": "视觉设计三件套：封面 → 配图 → 页面",
+      "desc": "baoyu-skills 出封面和信息图，ian-xiaohei 出正文配图，html-anything 出完整页面。一个内容三种视觉形态。",
+      "skills": [
+        "baoyu-skills",
+        "ian-xiaohei-illustrations",
+        "html-anything"
+      ],
+      "dimensions": [
+        {
+          "label": "输出类型",
+          "values": [
+            "封面/信息图",
+            "正文插图",
+            "完整HTML页面"
+          ]
+        },
+        {
+          "label": "视觉风格",
+          "values": [
+            "专业信息风",
+            "小黑手绘风",
+            "杂志排版风"
+          ]
+        },
+        {
+          "label": "适用平台",
+          "values": [
+            "公众号/小红书",
+            "文章内插",
+            "独立页面/分享"
+          ]
+        },
+        {
+          "label": "模版数量",
+          "values": [
+            "10个合集",
+            "风格统一",
+            "75个Skill"
+          ]
+        },
+        {
+          "label": "Stars",
+          "values": [
+            "20.8K",
+            "3.4K",
+            "6.3K"
+          ]
+        }
+      ]
+    }
+  ],
+  "combos": [
+    {
+      "id": "content-pipeline",
+      "title": "完整创作流水线",
+      "icon": "🎬",
+      "desc": "从选题到多平台分发，6步走完一个完整的内容创作周期。每个 Skill 分工明确，像流水线一样接力。",
+      "steps": [
+        {
+          "skill": "dbskill",
+          "label": "选题诊断",
+          "desc": "检查选题是否成立，优化标题和hook"
+        },
+        {
+          "skill": "content-research-writer",
+          "label": "研究写作",
+          "desc": "搜集资料、搭框架、写初稿"
+        },
+        {
+          "skill": "humanizer-zh",
+          "label": "去AI味",
+          "desc": "全文润色，让文字像真人手笔"
+        },
+        {
+          "skill": "khazix-skills",
+          "label": "深化改写",
+          "desc": "扩展为深度长文，增加分析和案例"
+        },
+        {
+          "skill": "baoyu-skills",
+          "label": "视觉包装",
+          "desc": "生成封面图和信息图解"
+        },
+        {
+          "skill": "guizang-social-card-skill",
+          "label": "社交分发",
+          "desc": "拆成小红书卡片和公众号封面"
+        }
+      ]
+    },
+    {
+      "id": "visual-pipeline",
+      "title": "文章视觉化流水线",
+      "icon": "🎨",
+      "desc": "一篇写好文章，依次过三个 Skill，从「纯文字」变成「视觉完整」的全平台内容。",
+      "steps": [
+        {
+          "skill": "baoyu-skills",
+          "label": "封面+信息图",
+          "desc": "首先生成吸引点击的封面和结构图解"
+        },
+        {
+          "skill": "ian-xiaohei-illustrations",
+          "label": "正文配图",
+          "desc": "为核心观点生成小黑风格插图"
+        },
+        {
+          "skill": "html-anything",
+          "label": "完整页面",
+          "desc": "全部内容整合为杂志风HTML页面"
+        }
+      ]
+    },
+    {
+      "id": "report-pipeline",
+      "title": "报告速成流水线",
+      "icon": "📊",
+      "desc": "原始资料进去，完整报告出来。适合周报月报、项目复盘、管理层汇报。",
+      "steps": [
+        {
+          "skill": "visual-report",
+          "label": "整理成报告",
+          "desc": "文字/截图/纪要→交互式可视化报告"
+        },
+        {
+          "skill": "ppt-master",
+          "label": "导出PPTX",
+          "desc": "导出为标准.pptx，继续编辑细节"
+        },
+        {
+          "skill": "html-ppt-skill",
+          "label": "演讲彩排",
+          "desc": "转HTML演示稿，用演讲者模式练讲"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "ppt-week",
+      "title": "PPT 生成专题周",
+      "icon": "📽️",
+      "desc": "一周搞懂 PPT Skill 生态：四种工具各有千秋，适配不同场景。",
+      "issues": [
+        "2026-06-23"
+      ],
+      "topics": [
+        "选型指南",
+        "轻量快速出PPT",
+        "原生可编辑PPT",
+        "演讲辅助工具",
+        "企业VI标准化"
+      ]
+    },
+    {
+      "id": "writing-week",
+      "title": "内容创作专题周",
+      "icon": "✍️",
+      "desc": "从选题到分发，一套完整的 AI 辅助中文创作方法论。",
+      "issues": [
+        "2026-06-21",
+        "2026-06-24"
+      ],
+      "topics": [
+        "选题诊断",
+        "深度研究写作",
+        "去AI味润色",
+        "长文结构优化",
+        "社交分发改写"
+      ]
+    },
+    {
+      "id": "visual-week",
+      "title": "视觉设计专题周",
+      "icon": "🎨",
+      "desc": "不用学设计，也能产出专业级视觉物料的完整工具链。",
+      "issues": [
+        "2026-06-22",
+        "2026-06-25"
+      ],
+      "topics": [
+        "封面设计指南",
+        "正文配图技巧",
+        "信息图制作",
+        "HTML页面美化",
+        "多平台适配"
+      ]
     }
   ]
 }
