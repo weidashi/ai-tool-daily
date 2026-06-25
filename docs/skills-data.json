@@ -1,0 +1,448 @@
+{
+  "categories": [
+    {
+      "id": "writing",
+      "name": "写作润色",
+      "icon": "✍️",
+      "color": "#6c5ce7",
+      "desc": "去AI味、内容润色、研究型写作、深度长文创作",
+      "skills": [
+        "humanizer-zh",
+        "content-research-writer",
+        "khazix-skills"
+      ]
+    },
+    {
+      "id": "visual",
+      "name": "视觉设计",
+      "icon": "🎨",
+      "color": "#10ac84",
+      "desc": "封面图、信息图、风格配图、HTML页面生成",
+      "skills": [
+        "baoyu-skills",
+        "ian-xiaohei-illustrations",
+        "html-anything"
+      ]
+    },
+    {
+      "id": "ppt",
+      "name": "PPT 生成",
+      "icon": "📽️",
+      "color": "#3867d6",
+      "desc": "HTML演示、原生PPTX、演讲者模式、企业VI模板",
+      "skills": [
+        "guizang-ppt-skill",
+        "ppt-master",
+        "html-ppt-skill",
+        "gorden-ppt-skill"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "社交分发",
+      "icon": "🃏",
+      "color": "#f39c12",
+      "desc": "小红书卡片、公众号封面、多平台内容适配",
+      "skills": [
+        "guizang-social-card-skill"
+      ]
+    },
+    {
+      "id": "research",
+      "name": "选题研究",
+      "icon": "🔍",
+      "color": "#e84393",
+      "desc": "选题诊断、爆款拆解、内容定位优化",
+      "skills": [
+        "dbskill"
+      ]
+    },
+    {
+      "id": "report",
+      "name": "报告生成",
+      "icon": "📊",
+      "color": "#00b894",
+      "desc": "可视化报告、PDF/PPT导出、数据展示",
+      "skills": [
+        "visual-report"
+      ]
+    }
+  ],
+  "skills": {
+    "humanizer-zh": {
+      "name": "Humanizer-zh",
+      "author": "op7418",
+      "subtitle": "中文去AI味必备",
+      "desc": "专门识别中文AI文本中的空话、套话、三段式、过度排比和“AI腔”，把生硬的机器文风改得像真人手笔。内置24项检测模式。",
+      "stars": "2.4K+",
+      "tags": [
+        "去AI味",
+        "写作润色",
+        "中文必备"
+      ],
+      "install": "npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global",
+      "issues": [
+        "2026-06-24",
+        "2026-06-21"
+      ]
+    },
+    "content-research-writer": {
+      "name": "content-research-writer",
+      "author": "ComposioHQ",
+      "subtitle": "研究型写作全流程",
+      "desc": "把“选题→搜集资料→整理提纲→引用来源→生成初稿”五步写作流程编码为一个完整的Skill。适合公众号长文、Newsletter、博客和深度文章。",
+      "stars": "高热度",
+      "tags": [
+        "内容创作",
+        "深度写作",
+        "全流程"
+      ],
+      "install": "npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global",
+      "issues": [
+        "2026-06-24",
+        "2026-06-21"
+      ]
+    },
+    "khazix-skills": {
+      "name": "khazix-skills",
+      "author": "KKKKhazix",
+      "subtitle": "万字长文写作流",
+      "desc": "公众号长文、万字研究报告、AI热点分析的写作流合集。知名AI博主「数字生命卡兹克」开源的Skills合集。",
+      "stars": "14K",
+      "tags": [
+        "长文写作",
+        "深度研究",
+        "万字报告"
+      ],
+      "install": "npx -y skills@latest add KKKKhazix/khazix-skills --skill khazix-skills --agent codex --global",
+      "issues": [
+        "2026-06-25"
+      ]
+    },
+    "baoyu-skills": {
+      "name": "baoyu-skills",
+      "author": "JimLiu",
+      "subtitle": "中文创作者视觉工具箱",
+      "desc": "10个Skill里stars最高的视觉工具箱。把文字内容一键转成封面图、信息图、结构图、图解海报，覆盖公众号、小红书、知识星球等平台。",
+      "stars": "20.8K",
+      "tags": [
+        "封面设计",
+        "信息图",
+        "图解海报"
+      ],
+      "install": "npx -y skills@latest add JimLiu/baoyu-skills --agent codex --global",
+      "issues": [
+        "2026-06-25",
+        "2026-06-22"
+      ]
+    },
+    "ian-xiaohei-illustrations": {
+      "name": "ian-xiaohei-illustrations",
+      "author": "helloianneo",
+      "subtitle": "小黑风格正文配图",
+      "desc": "为中文内容定制的插图生成器——根据文章观点、流程、情绪、隐喻生成配套的小黑风格插画。黑色线条+少量彩色批注。",
+      "stars": "3.4K",
+      "tags": [
+        "插图生成",
+        "风格化",
+        "中文配图"
+      ],
+      "install": "npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --skill ian-xiaohei-illustrations --agent codex --global",
+      "issues": [
+        "2026-06-25",
+        "2026-06-22"
+      ]
+    },
+    "html-anything": {
+      "name": "html-anything",
+      "author": "nexu-io",
+      "subtitle": "Markdown转HTML页面",
+      "desc": "75个Skills覆盖9种输出界面：杂志风文章页面、知识卡片、小红书图文、海报、PNG导出等。自带沙箱预览+一键发布到微信/知乎/X。",
+      "stars": "6.3K",
+      "tags": [
+        "HTML生成",
+        "75模板",
+        "多平台分发"
+      ],
+      "install": "npx -y skills@latest add nexu-io/html-anything --agent codex --global",
+      "issues": [
+        "2026-06-25",
+        "2026-06-22"
+      ]
+    },
+    "guizang-ppt-skill": {
+      "name": "guizang-ppt-skill",
+      "author": "op7418",
+      "subtitle": "一句话出HTML PPT",
+      "desc": "一句话生成网页版Presentation（HTML格式）。更轻、更快、偏“分享展示”。适合快速出演示稿、技术分享、轻量汇报。",
+      "stars": "15.6K",
+      "tags": [
+        "HTML PPT",
+        "轻量分享",
+        "演示"
+      ],
+      "install": "npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global",
+      "issues": [
+        "2026-06-22",
+        "2026-06-24"
+      ]
+    },
+    "ppt-master": {
+      "name": "ppt-master",
+      "author": "hugohe3",
+      "subtitle": "原生PPTX矢量流",
+      "desc": "生成标准.pptx文件——每个文本框、形状都可在PowerPoint中直接编辑。底层将内容先转SVG矢量，再转原生PPTX对象。支持从PDF、DOCX、网页URL导入。",
+      "stars": "热门",
+      "tags": [
+        "原生PPTX",
+        "可编辑",
+        "矢量输出"
+      ],
+      "install": "npx -y skills@latest add hugohe3/ppt-master --agent codex --global",
+      "issues": [
+        "2026-06-23"
+      ]
+    },
+    "html-ppt-skill": {
+      "name": "html-ppt-skill",
+      "author": "lewislulu",
+      "subtitle": "演讲者模式+36主题",
+      "desc": "HTML网页演示工具，专为需要上台演讲的用户设计。内置36套主题、15套deck模板、31种单页布局。最大亮点是演讲者模式。",
+      "stars": "热门",
+      "tags": [
+        "演讲者模式",
+        "36主题",
+        "提词器"
+      ],
+      "install": "npx -y skills@latest add lewislulu/html-ppt-skill --agent codex --global",
+      "issues": [
+        "2026-06-23"
+      ]
+    },
+    "gorden-ppt-skill": {
+      "name": "GordenPPTSkill",
+      "author": "GordenSun",
+      "subtitle": "企业VI模板",
+      "desc": "专为固定企业视觉识别（VI）场景设计。通过精准文本占位符替换，将内容填入预设中文模板。保证形状、配色和字号的绝对规范。",
+      "stars": "热门",
+      "tags": [
+        "企业VI",
+        "批量标准化",
+        "模板套用"
+      ],
+      "install": "npx -y skills@latest add GordenSun/GordenPPTSkill --agent codex --global",
+      "issues": [
+        "2026-06-23"
+      ]
+    },
+    "guizang-social-card-skill": {
+      "name": "guizang-social-card-skill",
+      "author": "op7418",
+      "subtitle": "社交分发卡片生成",
+      "desc": "把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。解决了“写完文章还要手动做图分发”的痛点。",
+      "stars": "热门",
+      "tags": [
+        "小红书",
+        "公众号封面",
+        "图文卡片"
+      ],
+      "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global",
+      "issues": [
+        "2026-06-24"
+      ]
+    },
+    "dbskill": {
+      "name": "dbskill",
+      "author": "dontbesilent",
+      "subtitle": "选题诊断器",
+      "desc": "为中文内容创作者设计的「选题诊断」工具。能分析选题是否成立、诊断商业表达是否清晰、优化hook和标题、拆解爆款笔记结构。",
+      "stars": "高收藏",
+      "tags": [
+        "选题诊断",
+        "爆款拆解",
+        "标题优化"
+      ],
+      "install": "npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global",
+      "issues": [
+        "2026-06-24",
+        "2026-06-21"
+      ]
+    },
+    "visual-report": {
+      "name": "visual-report",
+      "author": "larrywood0602",
+      "subtitle": "可视化报告",
+      "desc": "把文字、图片、表格截图、会议纪要、资料文档整理成交互式可视化网页报告，并支持一键导出PDF与可编辑PPT。",
+      "stars": "新发布",
+      "tags": [
+        "报告生成",
+        "PDF导出",
+        "可视化"
+      ],
+      "install": "git clone https://github.com/larrywood0602/codex-skill-visual-report.git",
+      "issues": [
+        "2026-06-23"
+      ]
+    }
+  },
+  "issues": [
+    {
+      "id": 7,
+      "date": "2026-06-25",
+      "weekday": "星期四",
+      "title": "Codex 职场化浪潮：6大岗位插件 + 视觉创作工具链",
+      "subtitle": "本周重磅：Codex 跳出编程圈，NotebookLM 装上 Agent，Notion 开放外部智能体",
+      "tags": [
+        "🎨 视觉工具箱",
+        "✍️ 长文创作",
+        "📄 HTML 海报",
+        "🖼️ 风格插图"
+      ],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-06-25.html",
+      "skills": [
+        "baoyu-skills",
+        "khazix-skills",
+        "html-anything",
+        "ian-xiaohei-illustrations"
+      ]
+    },
+    {
+      "id": 6,
+      "date": "2026-06-24",
+      "weekday": "星期三",
+      "title": "中文内容创作流水线：选题 → 写作 → 分发",
+      "subtitle": "5 个 Skills 串联完整创作流程 · 去 AI 味 · 社交卡片 · PPT 演示",
+      "tags": [
+        "✍️ 去AI味",
+        "🔍 选题",
+        "📝 写作流",
+        "🃏 社交卡",
+        "📽️ PPT"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-06-24.html",
+      "skills": [
+        "humanizer-zh",
+        "dbskill",
+        "content-research-writer",
+        "guizang-social-card-skill",
+        "guizang-ppt-skill"
+      ]
+    },
+    {
+      "id": 5,
+      "date": "2026-06-23",
+      "weekday": "星期二",
+      "title": "报告自动化：从输入到多格式交付",
+      "subtitle": "阅读总结 × 可视化报告 × 可编辑 PPT × 演讲者模式",
+      "tags": [
+        "📊 报告",
+        "📽️ PPT",
+        "🎤 演讲",
+        "🏢 企业VI",
+        "⚡ 工作流"
+      ],
+      "skillCount": 5,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-06-23.html",
+      "skills": [
+        "visual-report",
+        "ppt-master",
+        "html-ppt-skill",
+        "gorden-ppt-skill"
+      ]
+    },
+    {
+      "id": 4,
+      "date": "2026-06-22",
+      "weekday": "星期一",
+      "title": "视觉与分发专场",
+      "subtitle": "文章配图 · 封面设计 · HTML 海报 · 长文写作 · PPT 转制",
+      "tags": [
+        "🎨 配图",
+        "🖼️ 封面",
+        "📊 海报",
+        "📽️ PPT",
+        "📝 长文"
+      ],
+      "skillCount": 5,
+      "color": "g4",
+      "numColor": "n-orange",
+      "file": "2026-06-22.html",
+      "skills": [
+        "ian-xiaohei-illustrations",
+        "baoyu-skills",
+        "html-anything",
+        "guizang-ppt-skill"
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2026-06-21",
+      "weekday": "星期六",
+      "title": "写作创作专场",
+      "subtitle": "写作润色 · PPT 生成 · 选题诊断 · 内容创作 · 社交分发",
+      "tags": [
+        "✍️ 去AI味",
+        "📽️ PPT",
+        "🔍 选题",
+        "📝 写作流",
+        "🃏 社交卡"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-06-21.html",
+      "skills": [
+        "humanizer-zh",
+        "guizang-ppt-skill",
+        "dbskill",
+        "content-research-writer",
+        "guizang-social-card-skill"
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2026-06-20",
+      "weekday": "星期五",
+      "title": "Codex Skills 高星专场",
+      "subtitle": "5 个高星实用 Skills，覆盖文档处理、浏览器、前端设计",
+      "tags": [
+        "⚡ 全能开发",
+        "🧠 跨会话记忆",
+        "📄 文档处理",
+        "🌐 浏览器",
+        "🎨 前端设计"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-06-20.html",
+      "skills": []
+    },
+    {
+      "id": 1,
+      "date": "2026-06-19",
+      "weekday": "星期四",
+      "title": "创刊号 · 从零开始",
+      "subtitle": "Codex Skills 认知入门，NotebookLM 技巧，Notion 窍门",
+      "tags": [
+        "📘 Skills 认知",
+        "🧪 NotebookLM",
+        "📋 Notion",
+        "📙 WorkBuddy"
+      ],
+      "skillCount": 5,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-06-19.html",
+      "skills": []
+    }
+  ]
+}
