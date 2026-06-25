@@ -768,5 +768,202 @@
         "多平台适配"
       ]
     }
+  ],
+  "tips": [
+    {
+      "skill": "humanizer-zh",
+      "title": "不要整篇丢进去",
+      "body": "先让AI标出最AI味的3-5段（通常是开头、总结、过度句），单独投喂Humanizer-zh处理这些段落。分段处理比全文处理的自然度高出至少一档。",
+      "level": "进阶"
+    },
+    {
+      "skill": "dbskill",
+      "title": "带读者画像诊断",
+      "body": "输入选题时附上目标读者的一句话画像，比如「25-35岁职场女性，关注个人成长」，dbskill的诊断精度会比单纯丢选题高出很多，hook推荐也更精准。",
+      "level": "进阶"
+    },
+    {
+      "skill": "content-research-writer",
+      "title": "先提纲后成文",
+      "body": "分两步走：先说「帮我给这个选题列一个大纲，3-4个大段」，确认后再执行第二步「按这个大纲写初稿」。一步到位容易跑偏，两步走可控且有编辑感。",
+      "level": "基础"
+    },
+    {
+      "skill": "khazix-skills",
+      "title": "给AI喂资料再写",
+      "body": "khazix-skills的长文模式支持先导入资料，把你收集的文章链接、PDF、笔记先丢进去，告诉它「基于这些资料写一篇万字深度分析」。有输入源的文章质量远超凭空生成。",
+      "level": "进阶"
+    },
+    {
+      "skill": "baoyu-skills",
+      "title": "指定平台风格",
+      "body": "生成封面/信息图时直接说「微信公众号封面，900x383，简约商务风」，比「帮我做一张封面图」的输出更精准。每次都带三个参数：平台、尺寸、风格。",
+      "level": "基础"
+    },
+    {
+      "skill": "ian-xiaohei-illustrations",
+      "title": "段配图，不是文配图",
+      "body": "不要给整篇文章配一张图。把文章按观点/流程拆成3-5段，每段挑一句最有画面感的话给Skill，得到的插图更有节奏感，读者也更容易扫图理解结构。",
+      "level": "进阶"
+    },
+    {
+      "skill": "html-anything",
+      "title": "先定风格再给内容",
+      "body": "启动时先说「我是知识类公众号，风格参考XX杂志，配色蓝白为主」，模板匹配率会高很多。内容格式（表格/列表/引用）也提前声明，排版不散架。",
+      "level": "基础"
+    },
+    {
+      "skill": "guizang-ppt-skill",
+      "title": "每页一个核心句",
+      "body": "提需求时用「每页一个核心句+2-3个支撑点」格式。比如「第1页：AI正在重塑知识工作 | 数据：500万周活 | 案例：XX公司效率翻倍」。这比「帮我做个PPT」准确十倍。",
+      "level": "基础"
+    },
+    {
+      "skill": "ppt-master",
+      "title": "从Word直接导入",
+      "body": "ppt-master支持从Word文档(.docx)直接提取内容生成PPT。把方案的Word文档丢进去，说「每页3个要点，15页，商务蓝配色」，Word到PPT零手动。",
+      "level": "进阶"
+    },
+    {
+      "skill": "html-ppt-skill",
+      "title": "彩排时按S键",
+      "body": "用html-ppt-skill生成演示稿后，浏览器打开按S键可唤出演讲者窗口，左边显示当前页，右边是逐字稿+计时器。上台前用它练3遍，脱稿自信心大幅提升。",
+      "level": "基础"
+    },
+    {
+      "skill": "gorden-ppt-skill",
+      "title": "先建模板再批量套",
+      "body": "先花5分钟在PowerPoint里做好一个企业标准模板（封面/目录/正文/封底四页），然后把模板路径告诉GordenPPTSkill。之后所有PPT都基于这个模板生成，格式绝对统一。",
+      "level": "进阶"
+    },
+    {
+      "skill": "guizang-social-card-skill",
+      "title": "按平台选卡片数量",
+      "body": "小红书推荐6-9张卡片（刚好占满一次发布），公众号封面推荐3-4张（封面+摘要）。告诉Skill目标平台和数量，排版和间距会自动适配。",
+      "level": "基础"
+    },
+    {
+      "skill": "visual-report",
+      "title": "先丢资料再定风格",
+      "body": "把所有原始资料（会议纪要+截图+Excel表格）一次性丢进去，说「帮我整理成可视化报告，配色参考我们公司品牌色#XXXXXX」。它会自动识别数据类型并匹配合适的图表类型。",
+      "level": "基础"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "write-article",
+      "title": "我要写一篇公众号深度文章",
+      "icon": "✍️",
+      "desc": "从选题到发布，完整流程所用到的Skills",
+      "flow": [
+        "dbskill",
+        "content-research-writer",
+        "humanizer-zh",
+        "baoyu-skills",
+        "ian-xiaohei-illustrations"
+      ],
+      "note": "选题诊断 → 研究写作 → 去AI味 → 做封面 → 配插图，5步出成品"
+    },
+    {
+      "id": "make-ppt",
+      "title": "我要做一份工作汇报PPT",
+      "icon": "📽️",
+      "desc": "根据交付场景选择不同的Skill",
+      "flow": [
+        "guizang-ppt-skill",
+        "ppt-master",
+        "gorden-ppt-skill"
+      ],
+      "note": "快速分享用guizang-ppt，正式交付用ppt-master，批量标准化用GordenPPT"
+    },
+    {
+      "id": "xhs-note",
+      "title": "我要发一篇小红书笔记",
+      "icon": "🃏",
+      "desc": "从长文到图文卡片的一站式转换",
+      "flow": [
+        "humanizer-zh",
+        "guizang-social-card-skill",
+        "baoyu-skills"
+      ],
+      "note": "去AI味 → 拆卡片 → 做封面，适配小红书视觉风格"
+    },
+    {
+      "id": "speech",
+      "title": "我要做一场演讲/培训",
+      "icon": "🎤",
+      "desc": "适用于发布会、培训、学术报告场景",
+      "flow": [
+        "html-ppt-skill",
+        "baoyu-skills"
+      ],
+      "note": "用html-ppt-skill生成演示稿+演讲者模式，baoyu-skills出封面和关键信息图"
+    },
+    {
+      "id": "report",
+      "title": "我要整理一份项目复盘报告",
+      "icon": "📊",
+      "desc": "从原始资料到可交付的PDF/PPT",
+      "flow": [
+        "visual-report",
+        "ppt-master"
+      ],
+      "note": "先丢资料给visual-report生成可视化报告，再导出PPTX做最终编辑"
+    },
+    {
+      "id": "publish-all",
+      "title": "我一篇文章要多平台分发",
+      "icon": "🌐",
+      "desc": "同一篇文章覆盖公众号+小红书+知乎+X",
+      "flow": [
+        "html-anything",
+        "guizang-social-card-skill",
+        "baoyu-skills"
+      ],
+      "note": "html-anything出网页版 → social-card出小红书图文 → baoyu出各平台封面"
+    },
+    {
+      "id": "deep-research",
+      "title": "我要做一次主题深度研究",
+      "icon": "🔍",
+      "desc": "万字级研究报告、行业分析、知识体系构建",
+      "flow": [
+        "khazix-skills",
+        "visual-report"
+      ],
+      "note": "khazix-skills写万字长文 → visual-report转可视化报告，适合分析师和研究员"
+    }
+  ],
+  "trends": [
+    {
+      "date": "06-25",
+      "title": "Codex 周活突破500万",
+      "body": "非开发者用户增速是程序员的3倍。内容创作者、分析师、产品经理成为增长最快群体。Skills生态从编程圈扩展到全岗位。",
+      "source": "OpenAI Blog"
+    },
+    {
+      "date": "06-22",
+      "title": "openai/skills 仓库正式废弃",
+      "body": "转向Plugins目录（github.com/openai/plugins）作为新分发渠道。社区第三方的 npx skills@latest add 安装方式不受影响。",
+      "source": "GitHub"
+    },
+    {
+      "date": "06-09",
+      "title": "NotebookLM 新增Agent引擎",
+      "body": "每个notebook配一台云端计算机，支持代码执行、多格式输出（PDF/Excel/PPT/图片），内置100+软件技能。跳过上传，直接搜索全网资料。",
+      "source": "Google Blog"
+    },
+    {
+      "date": "06-02",
+      "title": "Codex 发布「Intelligence at Work」战略",
+      "body": "6大岗位插件覆盖62个商用应用、110项细分能力。Sites建站、定点批注修改同步发布。",
+      "source": "OpenAI"
+    },
+    {
+      "date": "05-30",
+      "title": "Notion External Agents API 开放",
+      "body": "外部AI智能体（Claude、Codex等）可直接接入Notion工作区，读写页面、操作数据库。定制Agent开发门槛大幅降低。",
+      "source": "Notion Blog"
+    }
   ]
 }
