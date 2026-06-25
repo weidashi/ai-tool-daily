@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-25</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-25 · 星期四</div>
+    <h1>Codex 职场化浪潮：6大岗位插件 + 视觉创作工具链</h1>
+    <div class="art-sub">本周重磅：Codex 跳出编程圈，NotebookLM 装上 Agent，Notion 开放外部智能体</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>OpenAI Codex 迎来最大规模转型——发布 6 大岗位专属插件、Sites 建站、定点批注三大能力，周活突破 500 万，非技术用户增长 3 倍于程序员。本期聚焦"视觉内容创作"工具链，4 个高星 Skill 覆盖封面设计、长文配图、HTML 海报、风格插图。NotebookLM 装上 Agent 引擎，Notion 开放 External Agents API。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 视觉创作 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">baoyu-skills — 中文创作者视觉工具箱</div><div class="sk-subtitle">JimLiu · 封面/信息图/结构图/图解一站式生成</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 20,788</span><span class="bd bd-p">视觉设计</span><span class="bd bd-o">中文创作者</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>10 个 Skill 里 stars 最高的视觉工具箱。把文字内容一键转成封面图、信息图、结构图、图解海报，覆盖公众号、小红书、知识星球等平台的核心视觉需求。<br><strong>最适合：</strong>需要频繁出视觉物料但不想学设计的中文内容创作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add JimLiu/baoyu-skills --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把昨天写的文章标题和核心论点丢进去，让它生成一张公众号封面图+一张信息图解。5 分钟，不用打开任何设计工具。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">khazix-skills — 公众号长文/万字研究报告创作流</div><div class="sk-subtitle">数字生命卡兹克 · 中文长文 AI Skills 合集</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13,990</span><span class="bd bd-p">长文写作</span><span class="bd bd-b">深度研究</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>知名 AI 博主「数字生命卡兹克」开源的 Skills 合集，专门针对公众号长文和万字研究报告场景，提供完整的写作流 SOP：资料整理→结构设计→分章起草→整体润色。<br><strong>最适合：</strong>需要产出深度长文（5000+ 字）的写作者、分析师、研究人员。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add KKKKhazix/khazix-skills --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你想写但迟迟没动的深度文章选题，让 khazix-skills 帮你搭框架、出提纲、写第一段草稿。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">html-anything — Markdown/文案一键变网页、海报、卡片</div><div class="sk-subtitle">nexu-io · 75 Skills × 9 种输出界面</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6,268</span><span class="bd bd-p">HTML 生成</span><span class="bd bd-o">多平台分发</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>这仓库功能非常丰富——75 个 Skills 覆盖 9 种输出界面：杂志风文章页面、知识卡片、小红书图文、海报、PNG 导出等。自带沙箱预览 + 一键发布到微信/知乎/𝕏。<br><strong>最适合：</strong>想让普通文章变成"好看页面"的内容创作者，不需要学前端。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nexu-io/html-anything --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近写的一篇文章 Markdown 丢给它，生成一份杂志风格的 HTML 页面。你会惊讶于排版效果。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ian-xiaohei-illustrations — 中文"小黑"风格正文配图</div><div class="sk-subtitle">helloianneo · 按文章观点/流程/情绪生成插图</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3,372</span><span class="bd bd-p">插图生成</span><span class="bd bd-r">风格化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>为中文内容定制的插图生成器——不是随机 AI 图，而是根据文章里的观点、流程、情绪、隐喻来生成配套的小黑风格插画。有统一的视觉调性，不像 Midjourney 那样风格飘忽。<br><strong>最适合：</strong>公众号长文、小红书笔记需要批量插入统一风格配图的创作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇 2000 字左右的文章，告诉它"帮我根据每段核心观点生成一张小黑风格配图"，看看整篇文章的视觉感受变化。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① 封面/信息图</span><span class="pa">→</span>
+      <span class="ps ps-2">② 长文大纲</span><span class="pa">→</span>
+      <span class="ps ps-3">③ HTML 页面</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 风格配图</span>
+      <span style="margin-left:4px;font-size:11px;color:var(--muted);">串联 4 个 Skill = 一篇文章的完整视觉包装</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="hl">🔥 <strong>本周最大新闻：</strong>6 月 2 日 OpenAI 发布 Codex 史上最大规模转型——「Intelligence at Work」——Codex 正式跳出编程圈，变成全岗位 AI 助手。周活突破 <strong>500 万</strong>，非开发者用户增速是程序员的 3 倍。</div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🧩 6 大岗位插件 — 一键覆盖全工作流</div></div>
+      <div class="tb">
+        单次安装即可对接岗位刚需软件，覆盖 62 个高频商用应用、110 项细分能力：<br>
+        <strong>📊 数据分析</strong>（Snowflake/Tableau）· <strong>🎨 创意制作</strong>（Figma/Canva）· <strong>💼 销售</strong>（Salesforce/HubSpot）<br>
+        <strong>📱 产品设计</strong>（文字需求→交互原型）· <strong>📈 股票投资</strong>（财报拆解/信号跟踪）· <strong>🏦 投资银行</strong>（尽调→路演 PPT）<br>
+        <span style="font-size:11px;color:var(--muted);">企业版/商业版优先开放，个人版后续分批推送部分能力。</span>
+      </div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📝 定点批注修改 — 告别全文重写</div></div>
+      <div class="tb">
+        框选文档、表格、PPT 中任意局部文字，下达定向修改指令，Codex 仅修改选中区域——其余格式和逻辑完全保留。特别适合严谨商务文稿和研报修订场景，不再担心 AI 改坏其他地方。
+      </div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🌐 Sites 建站 — 一键生成团队协作预览页</div></div>
+      <div class="tb">
+        把文档、看板、原型页面一键生成可分享的交互式预览站点，团队成员点链接即可在线查看、批注留言。不用反复发文件，远程协同效率大幅提升。企业版/商业版独享。
+      </div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — Agent 引擎上线：从"只读笔记"到"能写代码、出图、做表"</div></div>
+      <div class="tb">
+        6 月 9 日 Google 给 NotebookLM 装上 Agent 能力，三大升级值得关注：<br>
+        <strong>① 每个 notebook 配一台云端安全计算机</strong>——NotebookLM 现在能在 sandbox 里跑代码，内置 100+ curated software skills。内部评测平均 win rate 65%，大文档分析 69.9%，高级搜索 78.2%。<br>
+        <strong>② 输出格式大扩展</strong>——不只是文字，现在能出 PDF 报告（含图表）、Excel 表格、PPT、CSV/JSON、甚至图片。生成后还能<strong>继续编辑</strong>。<br>
+        <strong>③ 降低研究启动门槛</strong>——以前你必须自带资料才能用，现在可以从"模糊想法"开始，NotebookLM 用 Google Search 帮你找高质量 Web 源补充到 notebook 里。你仍是资料的控制者，所有来源有明确标注。<br>
+        <span style="font-size:11px;color:var(--muted);">Google AI Ultra 用户和 Workspace 商业客户已可用，逐步推广中。</span>
+      </div>
+    </div>
+
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">💡 NotebookLM 技巧 — 用"研究目标"功能锁定分析方向</div></div>
+      <div class="tb">
+        升级后 NotebookLM 支持设置「Research Goals」，在 chat 面板定义你要研究的具体方向。建议在导入资料后先设定 2-3 个明确的研究目标，AI 的回答会更聚焦——比如"对比这三份财报的营收结构差异"比"分析这些财报"有效得多。
+      </div>
+    </div>
+
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — 开放 External Agents API，Codex 可以直接操作你的 Notion 工作区</div></div>
+      <div class="tb">
+        Notion 3.5 版本推出了 Developer Platform，其中最值得关注的是 <strong>External Agents API (Alpha)</strong>——它允许 Claude、Codex 等外部 AI 智能体直接接入 Notion 工作区，读写页面、操作数据库、执行自动化任务。配合新发布的 Notion CLI 和 Agent SDK，定制化 Agent 的开发门槛大幅降低。Workers 功能目前在 Beta 期免费，8 月起按 Notion credits 计费。
+      </div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 四要素结构化指令法 — 告别模糊指令，精准零返工</div></div>
+      <div class="tb">
+        大多数人用不好 AI 的核心原因不是工具不行，是指令太模糊。WorkBuddy 高手都在用的「四要素」模板：<br>
+        <strong>① 目标：</strong>明确这次任务要解决什么问题<br>
+        <strong>② 输入：</strong>附上文件、数据、核心素材<br>
+        <strong>③ 输出：</strong>规定字数、排版、结构、风格<br>
+        <strong>④ 约束：</strong>划定禁忌点、规避错误、明确细节要求<br><br>
+        <span style="background:#fef3e2;padding:3px 8px;border-radius:4px;font-size:11px;">模板："你是资深[角色]。请基于[输入文件]完成[目标]。输出格式为[格式要求]，特别注意[约束条件]。"</span>
+      </div>
+    </div>
+
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">🔗 WorkBuddy 技巧 — 技能连招：一句话串起完整工作流</div></div>
+      <div class="tb">
+        WorkBuddy 支持多个 Skill 串联执行。比如「抓取热榜 → 分析选题 → 生成文章 → 存到桌面」，一个指令跑完全程。建议先开 <strong>Plan 模式</strong> 预览步骤，确认无误再执行——复杂任务尤其重要，避免中间步骤出错后返工。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具在进化，你的工作流也该一起升级</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-25</span>
+  </div>
+</div>
+</body>
+</html>
