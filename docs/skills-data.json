@@ -85,7 +85,8 @@
         "2026-06-24",
         "2026-06-21"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "原来生硬的AI腔文章 → 像朋友聊天一样的真人随笔。"
     },
     "content-research-writer": {
       "name": "content-research-writer",
@@ -103,7 +104,8 @@
         "2026-06-24",
         "2026-06-21"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "一个选题 → 一篇2000-5000字的完整文章，可直接发公众号。"
     },
     "khazix-skills": {
       "name": "khazix-skills",
@@ -120,7 +122,8 @@
       "issues": [
         "2026-06-25"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "模糊想法 → 一篇万字深度分析，适合付费内容或行业报告。"
     },
     "baoyu-skills": {
       "name": "baoyu-skills",
@@ -138,7 +141,8 @@
         "2026-06-25",
         "2026-06-22"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "纯文字 → 一张专业封面+一张信息图解。不打开设计工具。"
     },
     "ian-xiaohei-illustrations": {
       "name": "ian-xiaohei-illustrations",
@@ -156,7 +160,8 @@
         "2026-06-25",
         "2026-06-22"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "每段观点 → 一张小黑风格手绘插图。文章从纯文字变图文并茂。"
     },
     "html-anything": {
       "name": "html-anything",
@@ -174,7 +179,8 @@
         "2026-06-25",
         "2026-06-22"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "一篇Markdown → 一个杂志风网页。手机上像看数字杂志。"
     },
     "guizang-ppt-skill": {
       "name": "guizang-ppt-skill",
@@ -192,7 +198,8 @@
         "2026-06-22",
         "2026-06-24"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "一句话需求 → 15页网页PPT。分享链接就能看。"
     },
     "ppt-master": {
       "name": "ppt-master",
@@ -209,7 +216,8 @@
       "issues": [
         "2026-06-23"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "一份Word → 一个标准.pptx。PowerPoint里继续编辑。"
     },
     "html-ppt-skill": {
       "name": "html-ppt-skill",
@@ -226,7 +234,8 @@
       "issues": [
         "2026-06-23"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "文字内容 → 带提词器+计时器的演示稿。"
     },
     "gorden-ppt-skill": {
       "name": "GordenPPTSkill",
@@ -243,7 +252,8 @@
       "issues": [
         "2026-06-23"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "内容+模板 → N份格式统一的PPT。"
     },
     "guizang-social-card-skill": {
       "name": "guizang-social-card-skill",
@@ -260,7 +270,8 @@
       "issues": [
         "2026-06-24"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "一篇长文 → 6-9张小红书卡片。不用学Canva/PS。"
     },
     "dbskill": {
       "name": "dbskill",
@@ -278,7 +289,8 @@
         "2026-06-24",
         "2026-06-21"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "3个待选选题 → 优化标题+hook建议。有据可依。"
     },
     "visual-report": {
       "name": "visual-report",
@@ -295,7 +307,8 @@
       "issues": [
         "2026-06-23"
       ],
-      "screenshot": ""
+      "screenshot": "",
+      "result": "会议纪要+截图+Excel → 可视化报告，可导出PDF。"
     }
   },
   "issues": [
@@ -634,85 +647,94 @@
   "combos": [
     {
       "id": "content-pipeline",
-      "title": "完整创作流水线",
+      "title": "一篇深度公众号文章的完整诞生过程",
       "icon": "🎬",
-      "desc": "从选题到多平台分发，6步走完一个完整的内容创作周期。每个 Skill 分工明确，像流水线一样接力。",
+      "desc": "从0到多平台发布，5步全部在Codex里完成。每一步都有具体操作和产出。",
+      "outcome": "最终成果：一篇去AI味、有封面配图、可小红书同步的深度文章。总耗时约40分钟（以前纯写作就要3-4小时）。",
       "steps": [
         {
+          "label": "① 选题诊断",
           "skill": "dbskill",
-          "label": "选题诊断",
-          "desc": "检查选题是否成立，优化标题和hook"
+          "do": "把想写的主题告诉Codex：「我想写一篇关于XX的文章，目标读者是XX，用dbskill诊断这个选题，推荐3个标题方案」。",
+          "get": "得到：选题是否值得写的判断 + 3个优化标题 + 2个hook方向。5分钟方向就定了。"
         },
         {
+          "label": "② 搭框架写初稿",
           "skill": "content-research-writer",
-          "label": "研究写作",
-          "desc": "搜集资料、搭框架、写初稿"
+          "do": "「帮我就刚才的选题列4段提纲，每段含子标题和核心论点」。确认后再「按这个提纲逐段展开写初稿」。",
+          "get": "得到：一篇2000字结构完整的初稿，有逻辑有论据。15分钟。"
         },
         {
+          "label": "③ 去AI味",
           "skill": "humanizer-zh",
-          "label": "去AI味",
-          "desc": "全文润色，让文字像真人手笔"
+          "do": "「用humanizer-zh帮我把这篇初稿去AI味，语气像朋友聊天，删除所有套话」。",
+          "get": "得到：读起来像自己手写的文章。朋友看完说「你文笔进步好大」。5分钟。"
         },
         {
-          "skill": "khazix-skills",
-          "label": "深化改写",
-          "desc": "扩展为深度长文，增加分析和案例"
-        },
-        {
+          "label": "④ 视觉包装",
           "skill": "baoyu-skills",
-          "label": "视觉包装",
-          "desc": "生成封面图和信息图解"
+          "do": "「用baoyu-skills给这篇文章做一张公众号封面图+一张核心观点图解，简约商务风」。",
+          "get": "得到：封面设成公众号头图，信息图插文章开头做视觉导读。10分钟。"
         },
         {
+          "label": "⑤ 社交分发",
           "skill": "guizang-social-card-skill",
-          "label": "社交分发",
-          "desc": "拆成小红书卡片和公众号封面"
+          "do": "「用guizang-social-card把这篇文章拆成8张小红书卡片，每张一个观点+金句」。",
+          "get": "得到：8张可直接发布的小红书卡片。同一篇文章两个渠道。10分钟。"
         }
       ]
     },
     {
       "id": "visual-pipeline",
-      "title": "文章视觉化流水线",
+      "title": "让一篇纯文字文章变视觉完整",
       "icon": "🎨",
-      "desc": "一篇写好文章，依次过三个 Skill，从「纯文字」变成「视觉完整」的全平台内容。",
+      "desc": "3步，从纯文字到有封面+有配图+有网页版。适合已有文章想升级视觉。",
+      "outcome": "最终成果：原来只有字的文章变成有封面+3-5张配图+精美网页版。可发公众号、分享链接、转小红书。",
       "steps": [
         {
+          "label": "① 封面+结构图",
           "skill": "baoyu-skills",
-          "label": "封面+信息图",
-          "desc": "首先生成吸引点击的封面和结构图解"
+          "do": "「用baoyu-skills给这篇文章生成公众号封面图+文章结构图解，简约专业风」。",
+          "get": "得到：吸引点击的封面+读者秒懂文章逻辑的结构图。"
         },
         {
+          "label": "② 正文配图",
           "skill": "ian-xiaohei-illustrations",
-          "label": "正文配图",
-          "desc": "为核心观点生成小黑风格插图"
+          "do": "把5个核心段落的观点逐条发给Codex：「用ian-xiaohei-illustrations给这个观点配小黑风格插图」。",
+          "get": "得到：3-5张风格统一的手绘插图。插入文章后读者反馈「图比字还好懂」。"
         },
         {
+          "label": "③ 生成网页",
           "skill": "html-anything",
-          "label": "完整页面",
-          "desc": "全部内容整合为杂志风HTML页面"
+          "do": "把完整文章（含插图封面）发给Codex：「用html-anything生成杂志风格页面，蓝白配色，手机友好」。",
+          "get": "得到：精美网页，手机打开像数字杂志。可分享链接、转图文、打PDF。"
         }
       ]
     },
     {
       "id": "report-pipeline",
-      "title": "报告速成流水线",
+      "title": "从零散资料到一场完整汇报",
       "icon": "📊",
-      "desc": "原始资料进去，完整报告出来。适合周报月报、项目复盘、管理层汇报。",
+      "desc": "桌面散落的会议纪要+截图+Excel变成可视化报告+可编辑PPT+演讲彩排。",
+      "outcome": "最终成果：一份可视化PDF报告+一个可编辑.pptx+一个带提词器的演示稿。以前要一整天，现在30分钟。",
       "steps": [
         {
+          "label": "① 生成报告",
           "skill": "visual-report",
-          "label": "整理成报告",
-          "desc": "文字/截图/纪要→交互式可视化报告"
+          "do": "把所有原始资料一次性丢给Codex：「这些是会议纪要+数据截图+表格，用visual-report整理成可视化复盘报告」。",
+          "get": "得到：带图表的网页版报告，数据自动匹配图表类型。可导出PDF。"
         },
         {
+          "label": "② 导出PPT",
           "skill": "ppt-master",
-          "label": "导出PPTX",
-          "desc": "导出为标准.pptx，继续编辑细节"
+          "do": "「把刚才的报告用ppt-master导出.pptx，15页，每页3个核心要点」。",
+          "get": "得到：标准.pptx，PowerPoint里可继续编辑。发给老板不像AI做的。"
         },
         {
+          "label": "③ 演讲彩排",
           "skill": "html-ppt-skill",
-          "label": "演讲彩排",
-          "desc": "转HTML演示稿，用演讲者模式练讲"
+          "do": "「基于报告核心内容用html-ppt-skill生成演讲稿，10页学术风」。浏览器按S键进演讲者模式。",
+          "get": "得到：左边幻灯片，右边逐字稿+计时器。上台前练3遍，汇报更自信。"
         }
       ]
     }
@@ -772,81 +794,94 @@
   "tips": [
     {
       "skill": "humanizer-zh",
-      "title": "不要整篇丢进去",
-      "body": "先让AI标出最AI味的3-5段（通常是开头、总结、过度句），单独投喂Humanizer-zh处理这些段落。分段处理比全文处理的自然度高出至少一档。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "开头就是'在当今AI时代，人工智能技术正在深刻改变……'，AI味扑面而来",
+      "after": "朋友聊天式开头：'你有没有发现，AI写的文章第一句永远在讲当今时代？'——读者一眼就想看下去，完全不像AI写的",
+      "do": "把文章发给Codex说「用humanizer-zh帮我去AI味，语气像朋友聊天」——30秒出结果"
     },
     {
       "skill": "dbskill",
-      "title": "带读者画像诊断",
-      "body": "输入选题时附上目标读者的一句话画像，比如「25-35岁职场女性，关注个人成长」，dbskill的诊断精度会比单纯丢选题高出很多，hook推荐也更精准。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "自己想了3个选题，不确定哪个能火，纠结了半天选了最没把握的那个",
+      "after": "dbskill告诉你选题2「结构性最优」——受众明确、痛点清晰、有信息差。标题推荐3版，hook给2个方向。4分钟方向就定了",
+      "do": "把选题写成一句主题句+一句目标读者画像，发给Codex说「用dbskill帮我诊断选题」"
     },
     {
       "skill": "content-research-writer",
-      "title": "先提纲后成文",
-      "body": "分两步走：先说「帮我给这个选题列一个大纲，3-4个大段」，确认后再执行第二步「按这个大纲写初稿」。一步到位容易跑偏，两步走可控且有编辑感。",
-      "level": "基础"
+      "level": "基础",
+      "before": "打开空白文档，标题写了又删，三小时只憋出两段",
+      "after": "第一步出4段提纲，你确认后第二步逐段生成。30分钟出一篇结构完整、有论据有引用的2000字初稿",
+      "do": "分两步：先要提纲，确认后再要正文。说「帮我给XX选题列一个4段提纲，含子标题和核心论点」"
     },
     {
       "skill": "khazix-skills",
-      "title": "给AI喂资料再写",
-      "body": "khazix-skills的长文模式支持先导入资料，把你收集的文章链接、PDF、笔记先丢进去，告诉它「基于这些资料写一篇万字深度分析」。有输入源的文章质量远超凭空生成。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "想写深度长文但缺素材、缺框架，东拼西凑出来的文章散且浅",
+      "after": "输入你收集的5-10篇参考文章+3个核心观点，khazix帮你整合重构为一篇有深度、有案例、有逻辑链的万字长文",
+      "do": "先把相关文章链接、PDF、笔记整理好，告诉Codex「基于这些资料，用khazix-skills写一篇万字深度分析」"
     },
     {
       "skill": "baoyu-skills",
-      "title": "指定平台风格",
-      "body": "生成封面/信息图时直接说「微信公众号封面，900x383，简约商务风」，比「帮我做一张封面图」的输出更精准。每次都带三个参数：平台、尺寸、风格。",
-      "level": "基础"
+      "level": "基础",
+      "before": "文章写好了，封面要么用素材网模板（和内容无关），要么花30分钟在Canva里拖",
+      "after": "5分钟，一张和文章内容高度相关的封面图，配色、构图、字体都是专业水准。不学设计也能产出设计感",
+      "do": "告诉Codex「用baoyu-skills给这篇文章做一张微信公众号封面，简约商务风，突出XX观点」"
     },
     {
       "skill": "ian-xiaohei-illustrations",
-      "title": "段配图，不是文配图",
-      "body": "不要给整篇文章配一张图。把文章按观点/流程拆成3-5段，每段挑一句最有画面感的话给Skill，得到的插图更有节奏感，读者也更容易扫图理解结构。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "一篇3000字方法论文章，从头到尾全是字，读者看着累，跳出率高",
+      "after": "每500字插一张小黑风格图解，读者扫图就能抓住核心逻辑。阅读完成率显著提升",
+      "do": "把文章的5个核心论点/流程拆出来，逐条发给Codex「用ian-xiaohei-illustrations给这个观点配一张插图」"
     },
     {
       "skill": "html-anything",
-      "title": "先定风格再给内容",
-      "body": "启动时先说「我是知识类公众号，风格参考XX杂志，配色蓝白为主」，模板匹配率会高很多。内容格式（表格/列表/引用）也提前声明，排版不散架。",
-      "level": "基础"
+      "level": "基础",
+      "before": "写完文章只能发公众号，想做一个好看的网页版要么不会做要么太费时间",
+      "after": "一篇Markdown变成一本可以在手机上翻阅的电子杂志页面。多一个分渠道，多一个传播场景",
+      "do": "先告诉Codex你的品牌风格（配色/字体），再把文章Markdown丢进去说「用html-anything生成杂志风页面」"
     },
     {
       "skill": "guizang-ppt-skill",
-      "title": "每页一个核心句",
-      "body": "提需求时用「每页一个核心句+2-3个支撑点」格式。比如「第1页：AI正在重塑知识工作 | 数据：500万周活 | 案例：XX公司效率翻倍」。这比「帮我做个PPT」准确十倍。",
-      "level": "基础"
+      "level": "基础",
+      "before": "明天要汇报，PPT还没做，从空白页开始想排版、找模板、搭结构……至少2小时",
+      "after": "一句话描述需求（主题+页数+风格），10分钟出15页HTML PPT。分享链接给同事，打开就能看",
+      "do": "告诉Codex「用guizang-ppt帮我做一份XX主题的PPT，10页，每页一个核心句+2个要点」"
     },
     {
       "skill": "ppt-master",
-      "title": "从Word直接导入",
-      "body": "ppt-master支持从Word文档(.docx)直接提取内容生成PPT。把方案的Word文档丢进去，说「每页3个要点，15页，商务蓝配色」，Word到PPT零手动。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "Word写好方案了，但做PPT要手动复制粘贴、调格式、对齐……重复劳动占了大半",
+      "after": "Word文档丢进去，指定「每页3个要点，15页」，自动提取、排版、生成标准.pptx。Word到PPT零手动",
+      "do": "把你的Word方案发给Codex「用ppt-master把这份文档转成PPT，每页3要点，商务蓝配色」"
     },
     {
       "skill": "html-ppt-skill",
-      "title": "彩排时按S键",
-      "body": "用html-ppt-skill生成演示稿后，浏览器打开按S键可唤出演讲者窗口，左边显示当前页，右边是逐字稿+计时器。上台前用它练3遍，脱稿自信心大幅提升。",
-      "level": "基础"
+      "level": "基础",
+      "before": "上台演讲时频繁低头看稿、紧张忘词、时间把控不好",
+      "after": "浏览器按S键，左边是当前幻灯片，右边是逐字稿+计时器。练三遍后脱稿讲，像手里有提词器",
+      "do": "生成演示稿后在浏览器打开，按S键进入演讲者模式，用计时器练节奏，用逐字稿做脱稿辅助"
     },
     {
       "skill": "gorden-ppt-skill",
-      "title": "先建模板再批量套",
-      "body": "先花5分钟在PowerPoint里做好一个企业标准模板（封面/目录/正文/封底四页），然后把模板路径告诉GordenPPTSkill。之后所有PPT都基于这个模板生成，格式绝对统一。",
-      "level": "进阶"
+      "level": "进阶",
+      "before": "国企季度汇报要交20份PPT，每次手动调整格式、替换内容，做一份要30分钟",
+      "after": "花5分钟建一次标准模板，之后所有PPT都套用模板生成——格式100%统一，一份只要2分钟",
+      "do": "先在PowerPoint做好模板（封面/目录/正文/封底），告诉Codex路径后说「用GordenPPT生成XX内容的PPT」"
     },
     {
       "skill": "guizang-social-card-skill",
-      "title": "按平台选卡片数量",
-      "body": "小红书推荐6-9张卡片（刚好占满一次发布），公众号封面推荐3-4张（封面+摘要）。告诉Skill目标平台和数量，排版和间距会自动适配。",
-      "level": "基础"
+      "level": "基础",
+      "before": "写完一篇长文，还要打开Canva手动做6张卡片配图再发小红书。做图30分钟",
+      "after": "10分钟自动生成6-9张排版精美的小红书卡片。文章写完直接出图，一次写作覆盖两个渠道",
+      "do": "告诉Codex「用guizang-social-card把这篇长文拆成6张小红书卡片，简约清新风」"
     },
     {
       "skill": "visual-report",
-      "title": "先丢资料再定风格",
-      "body": "把所有原始资料（会议纪要+截图+Excel表格）一次性丢进去，说「帮我整理成可视化报告，配色参考我们公司品牌色#XXXXXX」。它会自动识别数据类型并匹配合适的图表类型。",
-      "level": "基础"
+      "level": "基础",
+      "before": "周三要交项目复盘报告，打开Excel截图、粘贴会议纪要、手动排版……从9点干到15点",
+      "after": "所有资料一次性丢进去，10分钟自动识别数据、匹配图表、生成可视化报告，可导出PDF",
+      "do": "把所有原始资料打包发给Codex「用visual-report帮我整理成可视化复盘报告，蓝白配色」"
     }
   ],
   "scenarios": [
@@ -854,7 +889,7 @@
       "id": "write-article",
       "title": "我要写一篇公众号深度文章",
       "icon": "✍️",
-      "desc": "从选题到发布，完整流程所用到的Skills",
+      "desc": "从选题诊断到多平台发布",
       "flow": [
         "dbskill",
         "content-research-writer",
@@ -862,76 +897,83 @@
         "baoyu-skills",
         "ian-xiaohei-illustrations"
       ],
-      "note": "选题诊断 → 研究写作 → 去AI味 → 做封面 → 配插图，5步出成品"
+      "note": "选题诊断→研究写作→去AI味→做封面→配插图",
+      "outcome": "产出：一篇去AI味的深度文章+封面图+3-5张插图。总耗时约40分钟。"
     },
     {
       "id": "make-ppt",
       "title": "我要做一份工作汇报PPT",
       "icon": "📽️",
-      "desc": "根据交付场景选择不同的Skill",
+      "desc": "根据交付场景选择不同Skill",
       "flow": [
         "guizang-ppt-skill",
         "ppt-master",
         "gorden-ppt-skill"
       ],
-      "note": "快速分享用guizang-ppt，正式交付用ppt-master，批量标准化用GordenPPT"
+      "note": "快速分享用guizang-ppt，正式交付用ppt-master，批量标准化用GordenPPT",
+      "outcome": "产出：符合场景的PPT。分享=网页链接，交付=.pptx，批量=模板套全年。"
     },
     {
       "id": "xhs-note",
       "title": "我要发一篇小红书笔记",
       "icon": "🃏",
-      "desc": "从长文到图文卡片的一站式转换",
+      "desc": "从长文到图文卡片，一键转换",
       "flow": [
         "humanizer-zh",
         "guizang-social-card-skill",
         "baoyu-skills"
       ],
-      "note": "去AI味 → 拆卡片 → 做封面，适配小红书视觉风格"
-    },
-    {
-      "id": "speech",
-      "title": "我要做一场演讲/培训",
-      "icon": "🎤",
-      "desc": "适用于发布会、培训、学术报告场景",
-      "flow": [
-        "html-ppt-skill",
-        "baoyu-skills"
-      ],
-      "note": "用html-ppt-skill生成演示稿+演讲者模式，baoyu-skills出封面和关键信息图"
-    },
-    {
-      "id": "report",
-      "title": "我要整理一份项目复盘报告",
-      "icon": "📊",
-      "desc": "从原始资料到可交付的PDF/PPT",
-      "flow": [
-        "visual-report",
-        "ppt-master"
-      ],
-      "note": "先丢资料给visual-report生成可视化报告，再导出PPTX做最终编辑"
+      "note": "去AI味→拆卡片→做封面",
+      "outcome": "产出：6-9张排版精美的小红书卡片+封面图。一次写作用两个渠道。"
     },
     {
       "id": "publish-all",
-      "title": "我一篇文章要多平台分发",
+      "title": "我要一篇文章多平台分发",
       "icon": "🌐",
-      "desc": "同一篇文章覆盖公众号+小红书+知乎+X",
+      "desc": "公众号+小红书+知乎+X一起发",
       "flow": [
         "html-anything",
         "guizang-social-card-skill",
         "baoyu-skills"
       ],
-      "note": "html-anything出网页版 → social-card出小红书图文 → baoyu出各平台封面"
+      "note": "网页版→小红书图文→各平台封面",
+      "outcome": "产出：精美网页+8张卡片+各平台封面。一次写作，四个渠道同步。"
+    },
+    {
+      "id": "report",
+      "title": "我要整理项目复盘报告",
+      "icon": "📊",
+      "desc": "零散资料→可视化报告→可交付文档",
+      "flow": [
+        "visual-report",
+        "ppt-master"
+      ],
+      "note": "丢资料→可视化报告→导出PPTX",
+      "outcome": "产出：带图表的可视化报告+标准.pptx。以前一天，现在30分钟。"
+    },
+    {
+      "id": "speech",
+      "title": "我要做一场演讲/培训",
+      "icon": "🎤",
+      "desc": "文字内容→带提词器的演示稿",
+      "flow": [
+        "html-ppt-skill",
+        "baoyu-skills"
+      ],
+      "note": "html-ppt-skill出演示稿+演讲者模式，baoyu出封面",
+      "outcome": "产出：带演讲者模式的演示稿+封面。上台有提词器辅助。"
     },
     {
       "id": "deep-research",
-      "title": "我要做一次主题深度研究",
+      "title": "我要做主题深度研究",
       "icon": "🔍",
-      "desc": "万字级研究报告、行业分析、知识体系构建",
+      "desc": "模糊想法→万字长文→可视化报告",
       "flow": [
         "khazix-skills",
         "visual-report"
       ],
-      "note": "khazix-skills写万字长文 → visual-report转可视化报告，适合分析师和研究员"
+      "note": "khazix写万字长文→visual-report转可视化",
+      "outcome": "产出：万字深度分析+可视化PDF。适合付费专栏、行业分析、年终复盘。"
     }
   ],
   "trends": [

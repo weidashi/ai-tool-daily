@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 工具每日速递</title>
+<title>AI 工具每日速递 — 用好的，不只是知道</title>
 <style>
   :root {
     --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774;
     --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6;
-    --orange: #f39c12; --pink: #e84393; --teal: #00b894; --radius: 16px;
+    --orange: #f39c12; --pink: #e84393; --radius: 16px;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  .hero { background: linear-gradient(160deg, #1a1528 0%, #2d1b4e 40%, #1e3799 70%, #0c1b3d 100%); padding: 48px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero { background: linear-gradient(160deg, #1a1528 0%, #2d1b4e 40%, #1e3799 70%, #0c1b3d 100%); padding: 44px 24px 52px; text-align: center; position: relative; overflow: hidden; }
   .hero::before { content:''; position:absolute; top:-80px; left:-100px; width:350px; height:350px; background: radial-gradient(circle, rgba(108,92,231,.25) 0%, transparent 70%); border-radius:50%; }
   .hero::after { content:''; position:absolute; bottom:-60px; right:-80px; width:300px; height:300px; background: radial-gradient(circle, rgba(16,172,132,.2) 0%, transparent 70%); border-radius:50%; }
   .hero-content { position:relative; z-index:1; max-width:680px; margin:0 auto; }
   .hero-content .pre-title { display:inline-block; background:rgba(255,255,255,.1); backdrop-filter:blur(4px); padding:4px 14px; border-radius:20px; font-size:12px; color:rgba(255,255,255,.8); letter-spacing:1px; margin-bottom:12px; }
-  .hero-content h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
-  .hero-content .hero-desc { font-size:13px; color:rgba(255,255,255,.65); line-height:1.7; max-width:520px; margin:0 auto 14px; }
+  .hero-content h1 { font-size:34px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
+  .hero-content .hero-desc { font-size:13px; color:rgba(255,255,255,.65); line-height:1.7; max-width:540px; margin:0 auto 14px; }
   .hero-tags { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; }
   .hero-tag { background:rgba(255,255,255,.1); backdrop-filter:blur(4px); padding:4px 12px; border-radius:20px; font-size:11px; color:rgba(255,255,255,.85); }
 
@@ -28,11 +28,11 @@
   .stat .num { font-size:17px; font-weight:700; color:var(--purple); }
   .stat .label { font-size:10px; color:var(--muted); margin-top:1px; }
 
-  .tab-nav { display:flex; justify-content:center; gap:5px; padding:18px 20px 0; max-width:940px; margin:0 auto; flex-wrap:wrap; }
-  .tab-btn { padding:7px 13px; border:1px solid var(--border); background:var(--card); border-radius:18px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; transition:all .2s; white-space:nowrap; }
+  .tab-nav { display:flex; justify-content:center; gap:4px; padding:16px 20px 0; max-width:960px; margin:0 auto; flex-wrap:wrap; }
+  .tab-btn { padding:6px 11px; border:1px solid var(--border); background:var(--card); border-radius:16px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; transition:all .2s; white-space:nowrap; }
   .tab-btn:hover { border-color:var(--purple); color:var(--purple); }
   .tab-btn.active { background:var(--purple); border-color:var(--purple); color:#fff; }
-  .tab-divider { width:1px; height:22px; background:var(--border); margin:0 4px; align-self:center; }
+  .tab-divider { width:1px; height:20px; background:var(--border); margin:0 3px; align-self:center; }
 
   .container { max-width:900px; margin:0 auto; padding:24px 20px 48px; }
   .section-header { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
@@ -41,7 +41,7 @@
   .tab-content { display:none; }
   .tab-content.active { display:block; }
 
-  /* ===== Issues ===== */
+  /* Issues */
   .issue-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:16px; }
   .issue-card { background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); text-decoration:none; color:inherit; transition:all .2s; display:flex; flex-direction:column; }
   .issue-card:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,.08); }
@@ -60,7 +60,7 @@
   .card-footer { padding:12px 22px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; font-size:11px; color:var(--muted); }
   .card-footer .read-more { color:var(--purple); font-weight:600; }
 
-  /* ===== Categories ===== */
+  /* Categories */
   .category-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:14px; }
   .category-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:18px; transition:all .2s; cursor:pointer; }
   .category-card:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,.08); }
@@ -73,12 +73,14 @@
   .skill-list.active { display:block; }
   .skill-item { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:18px; margin-bottom:10px; transition:all .2s; }
   .skill-item:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .skill-item .sk-top { display:flex; align-items:flex-start; gap:10px; margin-bottom:8px; }
+  .skill-item .sk-top { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
   .skill-item .sk-icon { width:36px; height:36px; border-radius:9px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
   .skill-item .sk-info { flex:1; }
   .skill-item .sk-name { font-size:14px; font-weight:700; margin-bottom:2px; }
   .skill-item .sk-author { font-size:11px; color:var(--muted); }
   .skill-item .sk-desc { font-size:12px; color:#555; line-height:1.6; margin-bottom:8px; }
+  .skill-item .sk-result { background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; padding:12px 14px; margin-bottom:10px; font-size:12px; color:#065f46; border:1px solid #a7f3d0; }
+  .skill-item .sk-result strong { color:#047857; }
   .skill-item .sk-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
   .skill-item .sk-tag { font-size:10px; padding:2px 7px; border-radius:7px; background:#f5f4f0; color:var(--muted); }
   .skill-item .sk-tag.stars { background:#e6faf4; color:var(--green); font-weight:600; }
@@ -90,7 +92,7 @@
   .back-btn { display:inline-flex; align-items:center; gap:5px; padding:7px 14px; background:var(--card); border:1px solid var(--border); border-radius:18px; font-size:12px; color:var(--muted); cursor:pointer; transition:all .2s; margin-bottom:16px; }
   .back-btn:hover { border-color:var(--purple); color:var(--purple); }
 
-  /* ===== Showdowns ===== */
+  /* Showdowns */
   .showdown-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:24px; overflow:hidden; }
   .showdown-card .sd-header { padding:18px 22px 14px; border-bottom:1px solid var(--border); }
   .showdown-card .sd-header .sd-title { font-size:16px; font-weight:700; margin-bottom:3px; }
@@ -102,20 +104,66 @@
   .showdown-card .sd-table td:first-child { font-weight:600; color:var(--text); }
   .showdown-card .sd-table tr:last-child td { border-bottom:none; }
 
-  /* ===== Combos ===== */
+  /* Combos */
   .combo-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:22px; overflow:hidden; }
+  .combo-card .co-outcome { margin:0 22px 16px; padding:12px 16px; background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; border:1px solid #a7f3d0; font-size:13px; color:#065f46; line-height:1.6; }
+  .combo-card .co-outcome strong { color:#047857; }
   .combo-card .co-header { padding:18px 22px; display:flex; align-items:flex-start; gap:12px; }
   .combo-card .co-icon { width:48px; height:48px; border-radius:12px; background:#f3f0ff; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
   .combo-card .co-info .co-title { font-size:16px; font-weight:700; margin-bottom:3px; }
   .combo-card .co-info .co-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-  .combo-flow { display:flex; align-items:flex-start; gap:0; padding:0 22px 22px; overflow-x:auto; flex-wrap:wrap; }
-  .combo-step { flex:1; min-width:130px; background:#faf9f7; border-radius:10px; border:1px solid var(--border); padding:12px; text-align:center; }
-  .combo-step .cs-num { width:26px; height:26px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin:0 auto 7px; }
-  .combo-step .cs-name { font-size:12px; font-weight:700; margin-bottom:3px; }
-  .combo-step .cs-desc { font-size:10px; color:var(--muted); line-height:1.5; }
-  .combo-arrow { display:flex; align-items:center; padding:18px 3px 0; font-size:18px; color:var(--muted); flex-shrink:0; }
+  .combo-flow { display:flex; flex-direction:column; gap:0; padding:0 22px 22px; }
+  .combo-step { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
+  .combo-step:last-child { border-bottom:none; }
+  .combo-step .cs-num { width:28px; height:28px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; }
+  .combo-step .cs-body { flex:1; }
+  .combo-step .cs-label { font-size:14px; font-weight:700; margin-bottom:6px; color:var(--text); }
+  .combo-step .cs-do { font-size:12px; color:#555; line-height:1.7; margin-bottom:6px; padding:8px 12px; background:#fdfbff; border-left:3px solid #d4c5f9; border-radius:0 8px 8px 0; }
+  .combo-step .cs-get { font-size:12px; color:#065f46; line-height:1.6; padding:8px 12px; background:#ecfdf5; border-radius:8px; }
 
-  /* ===== Collections ===== */
+  /* Tips */
+  .tip-grid { display:grid; grid-template-columns:1fr; gap:14px; }
+  .tip-card { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:20px; transition:all .2s; }
+  .tip-card:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
+  .tip-card .tp-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .tip-card .tp-badge { display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:8px; }
+  .tp-basic { background:#e6faf4; color:var(--green); }
+  .tp-advanced { background:#fef3e2; color:var(--orange); }
+  .tip-card .tp-title { font-size:14px; font-weight:700; }
+  .tip-card .tp-compare { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .tip-card .tp-before, .tip-card .tp-after { padding:12px 14px; border-radius:10px; font-size:12px; line-height:1.7; }
+  .tip-card .tp-before { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; }
+  .tip-card .tp-before::before { content:'用之前：'; display:block; font-weight:700; font-size:10px; margin-bottom:4px; color:#dc2626; }
+  .tip-card .tp-after { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; }
+  .tip-card .tp-after::before { content:'用之后：'; display:block; font-weight:700; font-size:10px; margin-bottom:4px; color:var(--green); }
+  .tip-card .tp-do { margin-top:10px; padding:10px 14px; background:#fdfbff; border-left:3px solid var(--purple); border-radius:0 8px 8px 0; font-size:12px; color:#4a3f8a; line-height:1.7; }
+  .tip-card .tp-do::before { content:'怎么做：'; display:block; font-weight:700; font-size:10px; margin-bottom:2px; color:var(--purple); }
+
+  /* Scenarios */
+  .scenario-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:14px; }
+  .scenario-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:20px; transition:all .2s; }
+  .scenario-card:hover { box-shadow:0 4px 24px rgba(0,0,0,.06); }
+  .scenario-card .sc-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .scenario-card .sc-icon { width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#f3f0ff; }
+  .scenario-card .sc-info .sc-title { font-size:15px; font-weight:700; margin-bottom:2px; }
+  .scenario-card .sc-info .sc-desc { font-size:12px; color:var(--muted); line-height:1.5; }
+  .scenario-card .sc-flow { display:flex; flex-wrap:wrap; gap:4px; align-items:center; margin-bottom:10px; }
+  .scenario-card .sc-step { font-size:11px; padding:3px 8px; border-radius:7px; background:#e8f0fe; color:var(--blue); font-weight:600; }
+  .scenario-card .sc-arrow { font-size:12px; color:var(--muted); margin:0 1px; }
+  .scenario-card .sc-note { font-size:11px; color:var(--muted); line-height:1.5; padding:8px 10px; background:#faf9f7; border-radius:8px; margin-bottom:8px; }
+  .scenario-card .sc-outcome { font-size:12px; color:#065f46; line-height:1.6; padding:10px 12px; background:#ecfdf5; border-radius:8px; border:1px solid #a7f3d0; }
+
+  /* Trends */
+  .trend-list { display:flex; flex-direction:column; gap:10px; }
+  .trend-item { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:16px 20px; transition:all .2s; display:flex; align-items:flex-start; gap:14px; }
+  .trend-item:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
+  .trend-item .tr-date { font-size:11px; font-weight:700; color:var(--purple); min-width:48px; padding-top:2px; }
+  .trend-item .tr-content { flex:1; }
+  .trend-item .tr-title { font-size:14px; font-weight:700; margin-bottom:3px; }
+  .trend-item .tr-body { font-size:12px; color:#555; line-height:1.6; margin-bottom:4px; }
+  .trend-item .tr-source { font-size:10px; color:var(--muted); }
+
+  /* Collections */
   .collection-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:22px; margin-bottom:16px; transition:all .2s; }
   .collection-card:hover { box-shadow:0 4px 24px rgba(0,0,0,.06); }
   .collection-card .cl-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
@@ -128,40 +176,6 @@
   .collection-card .cl-issues a { font-size:11px; color:var(--blue); text-decoration:none; background:#e8f0fe; padding:3px 8px; border-radius:7px; font-weight:600; }
   .collection-card .cl-issues a:hover { text-decoration:underline; }
 
-  /* ===== Tips ===== */
-  .tip-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:14px; }
-  .tip-card { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:18px; transition:all .2s; }
-  .tip-card:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .tip-card .tp-badge { display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:8px; margin-bottom:8px; }
-  .tp-basic { background:#e6faf4; color:var(--green); }
-  .tp-advanced { background:#fef3e2; color:var(--orange); }
-  .tip-card .tp-title { font-size:14px; font-weight:700; margin-bottom:6px; }
-  .tip-card .tp-body { font-size:12px; color:#555; line-height:1.7; }
-
-  /* ===== Scenarios ===== */
-  .scenario-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:14px; }
-  .scenario-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:20px; transition:all .2s; }
-  .scenario-card:hover { box-shadow:0 4px 24px rgba(0,0,0,.06); }
-  .scenario-card .sc-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
-  .scenario-card .sc-icon { width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#f3f0ff; }
-  .scenario-card .sc-info .sc-title { font-size:15px; font-weight:700; margin-bottom:2px; }
-  .scenario-card .sc-info .sc-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-  .scenario-card .sc-flow { display:flex; flex-wrap:wrap; gap:4px; align-items:center; margin-bottom:8px; }
-  .scenario-card .sc-step { font-size:11px; padding:3px 8px; border-radius:7px; background:#e8f0fe; color:var(--blue); font-weight:600; }
-  .scenario-card .sc-arrow { font-size:12px; color:var(--muted); margin:0 1px; }
-  .scenario-card .sc-note { font-size:11px; color:var(--muted); line-height:1.5; background:#faf9f7; padding:8px 10px; border-radius:8px; }
-
-  /* ===== Trends ===== */
-  .trend-list { display:flex; flex-direction:column; gap:10px; }
-  .trend-item { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:16px 20px; transition:all .2s; display:flex; align-items:flex-start; gap:14px; }
-  .trend-item:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .trend-item .tr-date { font-size:11px; font-weight:700; color:var(--purple); min-width:48px; padding-top:2px; }
-  .trend-item .tr-content { flex:1; }
-  .trend-item .tr-title { font-size:14px; font-weight:700; margin-bottom:3px; }
-  .trend-item .tr-body { font-size:12px; color:#555; line-height:1.6; margin-bottom:4px; }
-  .trend-item .tr-source { font-size:10px; color:var(--muted); }
-
-  /* ===== About ===== */
   .about { margin-top:36px; text-align:center; padding:32px 24px; background:var(--card); border-radius:var(--radius); border:1px solid var(--border); }
   .about h3 { font-size:16px; margin-bottom:8px; }
   .about p { font-size:13px; color:var(--muted); max-width:520px; margin:0 auto; line-height:1.7; }
@@ -170,17 +184,15 @@
   .about-item .a-icon { font-size:22px; margin-bottom:4px; }
   .about-item .a-label { font-size:11px; font-weight:600; color:var(--text); }
   .about-item .a-sub { font-size:10px; color:var(--muted); margin-top:1px; }
-
   .footer { text-align:center; padding:24px; font-size:11px; color:var(--muted); border-top:1px solid var(--border); margin-top:18px; }
   .footer a { color:var(--purple); text-decoration:none; }
 
   @media (max-width:600px) {
-    .hero-content h1 { font-size:26px; }
-    .issue-grid, .category-grid, .tip-grid, .scenario-grid { grid-template-columns:1fr; }
+    .hero-content h1 { font-size:24px; }
+    .issue-grid, .category-grid, .scenario-grid { grid-template-columns:1fr; }
     .stats-bar { gap:14px; }
-    .combo-arrow { display:none; }
-    .combo-step { flex:100%; min-width:100%; }
-    .tab-btn { font-size:11px; padding:6px 10px; }
+    .tip-card .tp-compare { grid-template-columns:1fr; }
+    .combo-step { flex-direction:column; gap:8px; }
   }
 </style>
 </head>
@@ -188,16 +200,12 @@
 
 <div class="hero">
   <div class="hero-content">
-    <div class="pre-title">📬 不只推荐 · 更教你用好</div>
+    <div class="pre-title">能做什么 · 怎么做 · 得到什么</div>
     <h1>AI 工具每日速递</h1>
-    <p class="hero-desc">Codex Skills 推荐 · NotebookLM 技巧 · Notion 效率 · WorkBuddy 实操。聚焦知识工作，0 行代码，重在运用。</p>
+    <p class="hero-desc">13个精选Skills，每个都告诉你：能做什么、怎么做、能产出什么。不只推荐，更教你用出效果。</p>
     <div class="hero-tags">
-      <span class="hero-tag">📬 往期速递</span>
-      <span class="hero-tag">⚔️ Skill 擂台</span>
-      <span class="hero-tag">🔗 组合技</span>
-      <span class="hero-tag">💡 每日一技</span>
-      <span class="hero-tag">🎯 场景导航</span>
-      <span class="hero-tag">🌊 生态速览</span>
+      <span class="hero-tag">📬 速递</span><span class="hero-tag">⚔️ 擂台</span><span class="hero-tag">🔗 组合技</span>
+      <span class="hero-tag">💡 技巧</span><span class="hero-tag">🎯 场景</span><span class="hero-tag">🌊 动态</span>
     </div>
   </div>
 </div>
@@ -207,18 +215,19 @@
   <div class="stat"><div class="num" id="stat-skills">-</div><div class="label">Skills</div></div>
   <div class="stat"><div class="num" id="stat-scenarios">-</div><div class="label">场景</div></div>
   <div class="stat"><div class="num" id="stat-tips">-</div><div class="label">技巧</div></div>
-  <div class="stat"><div class="num" id="stat-trends">-</div><div class="label">生态动态</div></div>
+  <div class="stat"><div class="num" id="stat-trends">-</div><div class="label">动态</div></div>
 </div>
 
 <div class="tab-nav">
-  <button class="tab-btn active" data-tab="issues">📬 往期速递</button>
-  <button class="tab-btn" data-tab="categories">📚 技能分类</button>
-  <button class="tab-btn" data-tab="showdowns">⚔️ 擂台</button>
+  <button class="tab-btn active" data-tab="issues">📬 速递</button>
+  <button class="tab-btn" data-tab="categories">📚 分类</button>
+  <button class="tab-btn" data-tab="scenarios">🎯 场景</button>
   <button class="tab-btn" data-tab="combos">🔗 组合技</button>
   <span class="tab-divider"></span>
-  <button class="tab-btn" data-tab="tips">💡 每日一技</button>
-  <button class="tab-btn" data-tab="scenarios">🎯 场景导航</button>
-  <button class="tab-btn" data-tab="trends">🌊 生态速览</button>
+  <button class="tab-btn" data-tab="tips">💡 技巧</button>
+  <button class="tab-btn" data-tab="showdowns">⚔️ 擂台</button>
+  <span class="tab-divider"></span>
+  <button class="tab-btn" data-tab="trends">🌊 动态</button>
   <button class="tab-btn" data-tab="collections">📦 专题</button>
 </div>
 
@@ -232,24 +241,24 @@
     <div class="category-grid" id="category-overview"></div>
     <div id="skill-detail-area"></div>
   </div>
+  <div class="tab-content" id="tab-scenarios">
+    <div class="section-header"><h2>🎯 场景导航「我要做XX，用什么？」</h2><div class="line"></div></div>
+    <div class="scenario-grid" id="scenario-area"></div>
+  </div>
+  <div class="tab-content" id="tab-combos">
+    <div class="section-header"><h2>🔗 组合技 — 多Skill串联效果</h2><div class="line"></div></div>
+    <div id="combo-area"></div>
+  </div>
+  <div class="tab-content" id="tab-tips">
+    <div class="section-header"><h2>💡 每个Skill一个高级用法</h2><div class="line"></div></div>
+    <div class="tip-grid" id="tip-area"></div>
+  </div>
   <div class="tab-content" id="tab-showdowns">
     <div class="section-header"><h2>⚔️ Skill 擂台</h2><div class="line"></div></div>
     <div id="showdown-area"></div>
   </div>
-  <div class="tab-content" id="tab-combos">
-    <div class="section-header"><h2>🔗 组合技专栏</h2><div class="line"></div></div>
-    <div id="combo-area"></div>
-  </div>
-  <div class="tab-content" id="tab-tips">
-    <div class="section-header"><h2>💡 每日一技</h2><div class="line"></div></div>
-    <div class="tip-grid" id="tip-area"></div>
-  </div>
-  <div class="tab-content" id="tab-scenarios">
-    <div class="section-header"><h2>🎯 场景导航 — "我要做XX，用什么？"</h2><div class="line"></div></div>
-    <div class="scenario-grid" id="scenario-area"></div>
-  </div>
   <div class="tab-content" id="tab-trends">
-    <div class="section-header"><h2>🌊 AI 工具生态速览</h2><div class="line"></div></div>
+    <div class="section-header"><h2>🌊 AI 工具生态动态</h2><div class="line"></div></div>
     <div class="trend-list" id="trend-area"></div>
   </div>
   <div class="tab-content" id="tab-collections">
@@ -258,14 +267,14 @@
   </div>
 
   <div class="about">
-    <h3>📌 关于这个项目</h3>
-    <p>不只推荐 Skill，更教你<b>怎么用好它</b>。13 个精选 Skills 覆盖 7 大日常场景，配对比擂台 + 组合技 + 每日技巧。</p>
+    <h3>📌 不只推荐，更教你用出效果</h3>
+    <p>13个Skills覆盖7大场景。每个Skill都回答了三个问题：能做什么、怎么做、能得到什么。</p>
     <div class="about-grid">
-      <div class="about-item"><div class="a-icon">📬</div><div class="a-label">7 期速递</div></div>
-      <div class="about-item"><div class="a-icon">📚</div><div class="a-label">13 个 Skills</div></div>
-      <div class="about-item"><div class="a-icon">⚔️</div><div class="a-label">3 场擂台</div></div>
-      <div class="about-item"><div class="a-icon">💡</div><div class="a-label">13 个技巧</div></div>
-      <div class="about-item"><div class="a-icon">🎯</div><div class="a-label">7 大场景</div></div>
+      <div class="about-item"><div class="a-icon">📬</div><div class="a-label">7期速递</div></div>
+      <div class="about-item"><div class="a-icon">📚</div><div class="a-label">13 Skills</div></div>
+      <div class="about-item"><div class="a-icon">🎯</div><div class="a-label">7大场景</div></div>
+      <div class="about-item"><div class="a-icon">🔗</div><div class="a-label">3套组合技</div></div>
+      <div class="about-item"><div class="a-icon">💡</div><div class="a-label">13个技巧</div></div>
     </div>
   </div>
   <div class="footer"><a href="https://github.com/weidashi/ai-tool-daily">GitHub</a> · 由 WorkBuddy 生成 · 每日更新</div>
@@ -273,7 +282,6 @@
 
 <script>
 const DATA_URL = 'skills-data.json';
-
 (async function init() {
   const resp = await fetch(DATA_URL);
   const data = await resp.json();
@@ -286,7 +294,6 @@ const DATA_URL = 'skills-data.json';
   renderScenarios(data);
   renderTrends(data);
   renderCollections(data);
-
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -309,14 +316,12 @@ function renderIssues(data) {
   document.getElementById('issue-grid').innerHTML = data.issues.map(issue => `
     <a class="issue-card" href="issues/${issue.file}">
       <div class="card-header card-${issue.color}">
-        <span class="issue-num ${issue.numColor}">#${issue.id}</span>
-        <div class="card-date">${issue.date} · ${issue.weekday}</div>
+        <span class="issue-num ${issue.numColor}">#${issue.id}</span><div class="card-date">${issue.date} · ${issue.weekday}</div>
         <div class="card-title">${issue.title}</div>
       </div>
       <div class="card-body"><div class="card-meta">${issue.tags.map(t => `<span>${t}</span>`).join('')}</div></div>
       <div class="card-footer"><span>${issue.skillCount} 个 Skills</span><span class="read-more">阅读 →</span></div>
-    </a>
-  `).join('');
+    </a>`).join('');
 }
 
 function renderCategories(data) {
@@ -326,26 +331,23 @@ function renderCategories(data) {
   overview.innerHTML = data.categories.map(cat => `
     <div class="category-card" data-category="${cat.id}">
       <div class="cat-icon" style="background:${catColors[cat.id] || '#f3f0ff'}">${cat.icon}</div>
-      <div class="cat-title">${cat.name}</div>
-      <div class="cat-desc">${cat.desc}</div>
-      <div class="cat-count">${cat.skills.length} 个</div>
-    </div>`).join('');
+      <div class="cat-title">${cat.name}</div><div class="cat-desc">${cat.desc}</div>
+      <div class="cat-count">${cat.skills.length} 个</div></div>`).join('');
   overview.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', () => {
       const cat = data.categories.find(c => c.id === card.dataset.category);
-      if (!cat) return;
-      overview.style.display = 'none';
+      if (!cat) return; overview.style.display = 'none';
       const skillsHtml = cat.skills.map(sid => {
         const sk = data.skills[sid]; if (!sk) return '';
         const issueLinks = sk.issues.map(d => { const iss = data.issues.find(i => i.date === d); return iss ? `<a href="issues/${iss.file}">📬 第${iss.id}期</a>` : ''; }).join('');
-        const screenshot = sk.screenshot ? `<div class="sk-screenshot">📸 <a href="${sk.screenshot}" target="_blank">查看效果截图</a></div>` : '';
+        const result = sk.result ? `<div class="sk-result"><strong>📦 效果：</strong>${sk.result}</div>` : '';
         const tip = data.tips.find(t => t.skill === sid);
-        const tipHtml = tip ? `<div class="sk-screenshot" style="border-color:#d4c5f9;background:#fdfbff;">💡 <b>${tip.level}技巧：</b>${tip.title} — ${tip.body.substring(0,40)}...</div>` : '';
+        const tipHtml = tip ? `<div class="sk-result" style="background:linear-gradient(135deg,#fdfbff,#faf8ff);border-color:#d4c5f9;"><strong>💡 ${tip.level}技巧：</strong>${tip.before.substring(0,35)}... <strong>→</strong> ${tip.after.substring(0,35)}...</div>` : '';
         return `<div class="skill-item">
           <div class="sk-top"><div class="sk-icon">${cat.icon}</div><div class="sk-info"><div class="sk-name">${sk.name}</div><div class="sk-author">${sk.author} · ${sk.subtitle}</div></div></div>
-          <div class="sk-desc">${sk.desc}</div>
+          <div class="sk-desc">${sk.desc}</div>${result}
           <div class="sk-tags"><span class="sk-tag stars">⭐ ${sk.stars}</span>${sk.tags.map(t => `<span class="sk-tag">${t}</span>`).join('')}</div>
-          <div class="sk-install">${sk.install}</div>${tipHtml}${screenshot}
+          <div class="sk-install">${sk.install}</div>${tipHtml}
           <div class="sk-issues">${issueLinks}</div></div>`;
       }).join('');
       detailArea.innerHTML = `<div class="skill-list active"><button class="back-btn" data-back>\u2190 返回分类</button><div class="section-header"><h2>${cat.icon} ${cat.name}</h2><div class="line"></div></div>${skillsHtml}</div>`;
@@ -364,12 +366,19 @@ function renderShowdowns(data) {
 
 function renderCombos(data) {
   document.getElementById('combo-area').innerHTML = data.combos.map(co => {
-    let flowHtml = '';
-    co.steps.forEach((s, i) => {
-      flowHtml += `<div class="combo-step"><div class="cs-num">${i+1}</div><div class="cs-name">${s.label}</div><div class="cs-desc">${s.desc}</div></div>`;
-      if (i < co.steps.length - 1) flowHtml += `<div class="combo-arrow">\u2192</div>`;
-    });
-    return `<div class="combo-card"><div class="co-header"><div class="co-icon" style="background:#f3f0ff">${co.icon}</div><div class="co-info"><div class="co-title">${co.title}</div><div class="co-desc">${co.desc}</div></div></div><div class="combo-flow">${flowHtml}</div></div>`;
+    const stepsHtml = co.steps.map(s => `
+      <div class="combo-step">
+        <div class="cs-num">${s.label.charAt(0)}</div>
+        <div class="cs-body">
+          <div class="cs-label">${s.label}</div>
+          <div class="cs-do"><strong>怎么做：</strong>${s.do}</div>
+          <div class="cs-get"><strong>✅ 得到：</strong>${s.get}</div>
+        </div>
+      </div>`).join('');
+    return `<div class="combo-card">
+      <div class="co-header"><div class="co-icon" style="background:#f3f0ff">${co.icon}</div><div class="co-info"><div class="co-title">${co.title}</div><div class="co-desc">${co.desc}</div></div></div>
+      <div class="co-outcome"><strong>🏆 最终成果：</strong>${co.outcome}</div>
+      <div class="combo-flow">${stepsHtml}</div></div>`;
   }).join('');
 }
 
@@ -377,9 +386,15 @@ function renderTips(data) {
   document.getElementById('tip-area').innerHTML = data.tips.map(tip => {
     const sk = data.skills[tip.skill];
     return `<div class="tip-card">
-      <span class="tp-badge ${tip.level === '基础' ? 'tp-basic' : 'tp-advanced'}">${tip.level}</span>
-      <div class="tp-title">${sk ? sk.icon || '' : ''} ${sk ? sk.name + ' — ' : ''}${tip.title}</div>
-      <div class="tp-body">${tip.body}</div>
+      <div class="tp-header">
+        <span class="tp-badge ${tip.level === '基础' ? 'tp-basic' : 'tp-advanced'}">${tip.level}</span>
+        <div class="tp-title">${sk ? sk.name : ''} — ${tip.title || ''}</div>
+      </div>
+      <div class="tp-compare">
+        <div class="tp-before">${tip.before}</div>
+        <div class="tp-after">${tip.after}</div>
+      </div>
+      <div class="tp-do">${tip.do}</div>
     </div>`;
   }).join('');
 }
@@ -388,29 +403,22 @@ function renderScenarios(data) {
   document.getElementById('scenario-area').innerHTML = data.scenarios.map(sc => {
     const flowHtml = sc.flow.map((sid, i) => {
       const sk = data.skills[sid];
-      const html = sk ? `<span class="sc-step">${sk.name}</span>` : '';
-      if (i < sc.flow.length - 1) return html + '<span class="sc-arrow">\u2192</span>';
+      let html = sk ? `<span class="sc-step">${sk.name}</span>` : `<span class="sc-step">${sid}</span>`;
+      if (i < sc.flow.length - 1) html += '<span class="sc-arrow">\u2192</span>';
       return html;
     }).join('');
     return `<div class="scenario-card">
       <div class="sc-top"><div class="sc-icon">${sc.icon}</div><div class="sc-info"><div class="sc-title">${sc.title}</div><div class="sc-desc">${sc.desc}</div></div></div>
       <div class="sc-flow">${flowHtml}</div>
       <div class="sc-note">${sc.note}</div>
+      <div class="sc-outcome"><strong>🏆 ${sc.outcome}</strong></div>
     </div>`;
   }).join('');
 }
 
 function renderTrends(data) {
   document.getElementById('trend-area').innerHTML = data.trends.map(tr => `
-    <div class="trend-item">
-      <div class="tr-date">${tr.date}</div>
-      <div class="tr-content">
-        <div class="tr-title">${tr.title}</div>
-        <div class="tr-body">${tr.body}</div>
-        <div class="tr-source">来源：${tr.source}</div>
-      </div>
-    </div>
-  `).join('');
+    <div class="trend-item"><div class="tr-date">${tr.date}</div><div class="tr-content"><div class="tr-title">${tr.title}</div><div class="tr-body">${tr.body}</div><div class="tr-source">来源：${tr.source}</div></div></div>`).join('');
 }
 
 function renderCollections(data) {
