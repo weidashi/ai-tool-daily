@@ -3,444 +3,377 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 工具每日速递 — 用好的，不只是知道</title>
+<title>AI 工具每日速递 · Skill 精选</title>
 <style>
-  :root {
-    --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774;
-    --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6;
-    --orange: #f39c12; --pink: #e84393; --radius: 16px;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+:root {
+  --bg: #f8f9fc; --card: #fff; --text: #1a1a2e; --muted: #6b7280;
+  --border: #e5e7eb; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6;
+  --orange: #f39c12; --pink: #e84393; --teal: #00b894;
+  --radius: 14px; --shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
+a { color:var(--purple); text-decoration:none; }
+.header { background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%); padding:30px 24px 20px; text-align:center; }
+.header h1 { color:#fff; font-size:24px; margin-bottom:6px; }
+.header p { color:rgba(255,255,255,.65); font-size:13px; }
+.tab-bar { display:flex; background:var(--card); border-bottom:1px solid var(--border); overflow-x:auto; position:sticky; top:0; z-index:10; }
+.tab-btn { flex-shrink:0; padding:13px 20px; font-size:14px; border:none; background:none; cursor:pointer; color:var(--muted); font-weight:500; transition:all .2s; white-space:nowrap; border-bottom:2px solid transparent; }
+.tab-btn.active { color:var(--purple); border-bottom-color:var(--purple); font-weight:700; }
+.tab-btn:hover { color:var(--text); background:#f9fafb; }
+.container { max-width:860px; margin:0 auto; padding:20px 16px 60px; }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
 
-  .hero { background: linear-gradient(160deg, #1a1528 0%, #2d1b4e 40%, #1e3799 70%, #0c1b3d 100%); padding: 44px 24px 52px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content:''; position:absolute; top:-80px; left:-100px; width:350px; height:350px; background: radial-gradient(circle, rgba(108,92,231,.25) 0%, transparent 70%); border-radius:50%; }
-  .hero::after { content:''; position:absolute; bottom:-60px; right:-80px; width:300px; height:300px; background: radial-gradient(circle, rgba(16,172,132,.2) 0%, transparent 70%); border-radius:50%; }
-  .hero-content { position:relative; z-index:1; max-width:680px; margin:0 auto; }
-  .hero-content .pre-title { display:inline-block; background:rgba(255,255,255,.1); backdrop-filter:blur(4px); padding:4px 14px; border-radius:20px; font-size:12px; color:rgba(255,255,255,.8); letter-spacing:1px; margin-bottom:12px; }
-  .hero-content h1 { font-size:34px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
-  .hero-content .hero-desc { font-size:13px; color:rgba(255,255,255,.65); line-height:1.7; max-width:540px; margin:0 auto 14px; }
-  .hero-tags { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; }
-  .hero-tag { background:rgba(255,255,255,.1); backdrop-filter:blur(4px); padding:4px 12px; border-radius:20px; font-size:11px; color:rgba(255,255,255,.85); }
+/* Issue card */
+.issue-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:14px; padding:18px 20px; transition:box-shadow .2s; }
+.issue-card:hover { box-shadow:var(--shadow); }
+.issue-card .ic-top { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.issue-card .ic-num { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; font-weight:700; flex-shrink:0; }
+.n-purple { background:var(--purple); } .n-green { background:var(--green); } .n-blue { background:var(--blue); } .n-orange { background:var(--orange); }
+.issue-card .ic-date { font-size:12px; color:var(--muted); }
+.issue-card .ic-title { font-size:16px; font-weight:700; margin-bottom:4px; }
+.issue-card .ic-sub { font-size:12px; color:var(--muted); margin-bottom:8px; }
+.issue-card .ic-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.issue-card .ic-tag { font-size:11px; background:#f3f0ff; color:var(--purple); padding:2px 8px; border-radius:10px; }
 
-  .stats-bar { background:#fff; border-bottom:1px solid var(--border); padding:12px 20px; display:flex; justify-content:center; gap:32px; flex-wrap:wrap; position:sticky; top:0; z-index:10; }
-  .stat { text-align:center; }
-  .stat .num { font-size:17px; font-weight:700; color:var(--purple); }
-  .stat .label { font-size:10px; color:var(--muted); margin-top:1px; }
+/* Section title */
+.section-title { font-size:18px; font-weight:800; margin:20px 0 12px; color:var(--text); }
 
-  .tab-nav { display:flex; justify-content:center; gap:4px; padding:16px 20px 0; max-width:960px; margin:0 auto; flex-wrap:wrap; }
-  .tab-btn { padding:6px 11px; border:1px solid var(--border); background:var(--card); border-radius:16px; font-size:12px; font-weight:600; color:var(--muted); cursor:pointer; transition:all .2s; white-space:nowrap; }
-  .tab-btn:hover { border-color:var(--purple); color:var(--purple); }
-  .tab-btn.active { background:var(--purple); border-color:var(--purple); color:#fff; }
-  .tab-divider { width:1px; height:20px; background:var(--border); margin:0 3px; align-self:center; }
+/* Category grid */
+.cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-bottom:10px; }
+.cat-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:16px; cursor:pointer; transition:all .2s; }
+.cat-card:hover { box-shadow:0 4px 12px rgba(0,0,0,.08); border-color:#d4c5f9; }
+.cat-card .cc-h { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.cat-card .cc-icon { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+.cat-card .cc-name { font-size:15px; font-weight:700; }
+.cat-card .cc-desc { font-size:12px; color:var(--muted); margin-bottom:8px; }
+.cat-card .cc-skills { display:flex; gap:4px; flex-wrap:wrap; }
+.cat-card .cc-skill { font-size:11px; background:#f0fdf4; color:var(--green); padding:1px 6px; border-radius:4px; }
 
-  .container { max-width:900px; margin:0 auto; padding:24px 20px 48px; }
-  .section-header { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
-  .section-header h2 { font-size:18px; font-weight:700; }
-  .section-header .line { flex:1; height:1px; background:var(--border); }
-  .tab-content { display:none; }
-  .tab-content.active { display:block; }
+/* Skill expand section */
+.skill-expand { display:none; margin-top:14px; }
+.skill-expand.show { display:block; }
+.skill-detail { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:16px; margin-bottom:12px; }
+.skill-detail .sd-h { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.skill-detail .sd-name { font-size:15px; font-weight:700; }
+.skill-detail .sd-stars { font-size:12px; color:var(--orange); }
+.skill-detail .sd-result { margin-top:8px; padding:8px 12px; background:#ecfdf5; border-radius:8px; font-size:12px; color:#065f46; }
+.skill-detail .sd-install { margin-top:8px; padding:8px 12px; background:#1a1a2e; border-radius:8px; font-size:11px; color:#a0ec7d; font-family:monospace; word-break:break-all; }
 
-  /* Issues */
-  .issue-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:16px; }
-  .issue-card { background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); text-decoration:none; color:inherit; transition:all .2s; display:flex; flex-direction:column; }
-  .issue-card:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,.08); }
-  .card-header { padding:22px 22px 14px; position:relative; overflow:hidden; }
-  .card-header::before { content:''; position:absolute; top:-30px; right:-30px; width:100px; height:100px; border-radius:50%; opacity:.15; }
-  .card-g1::before { background:var(--purple); } .card-g2::before { background:var(--green); }
-  .card-g3::before { background:var(--blue); } .card-g4::before { background:var(--orange); }
-  .card-header .issue-num { display:inline-block; font-size:10px; font-weight:600; padding:3px 9px; border-radius:10px; margin-bottom:8px; }
-  .n-purple { background:#f3f0ff; color:var(--purple); } .n-green { background:#e6faf4; color:var(--green); }
-  .n-blue { background:#e8f0fe; color:var(--blue); } .n-orange { background:#fef3e2; color:var(--orange); }
-  .card-header .card-date { font-size:11px; color:var(--muted); margin-bottom:4px; }
-  .card-header .card-title { font-size:15px; font-weight:700; line-height:1.4; }
-  .card-body { padding:0 22px 16px; flex:1; }
-  .card-body .card-meta { font-size:11px; color:var(--muted); display:flex; flex-wrap:wrap; gap:5px; }
-  .card-body .card-meta span { background:#f5f4f0; padding:2px 8px; border-radius:5px; }
-  .card-footer { padding:12px 22px; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; font-size:11px; color:var(--muted); }
-  .card-footer .read-more { color:var(--purple); font-weight:600; }
+/* Scenario (实战) cards */
+.sc-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:16px 18px; margin-bottom:10px; transition:box-shadow .2s; cursor:pointer; }
+.sc-card:hover { box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.sc-card .sc-top { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.sc-card .sc-icon { font-size:22px; }
+.sc-card .sc-title { font-size:15px; font-weight:700; }
+.sc-card .sc-flow { display:flex; flex-wrap:wrap; gap:4px; margin:8px 0; }
+.sc-card .sc-skill { font-size:11px; background:#fdfbff; color:var(--purple); padding:2px 7px; border-radius:4px; border:1px solid #e8e0ff; }
+.sc-card .sc-outcome { font-size:12px; color:#065f46; background:#ecfdf5; padding:8px 10px; border-radius:6px; margin-top:6px; }
+.sc-card .sc-note { font-size:12px; color:var(--muted); }
 
-  /* Categories */
-  .category-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:14px; }
-  .category-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:18px; transition:all .2s; cursor:pointer; }
-  .category-card:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,.08); }
-  .category-card .cat-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:10px; }
-  .category-card .cat-title { font-size:15px; font-weight:700; margin-bottom:4px; }
-  .category-card .cat-desc { font-size:11px; color:var(--muted); line-height:1.5; margin-bottom:10px; }
-  .category-card .cat-count { font-size:10px; font-weight:600; color:var(--purple); background:#f3f0ff; padding:3px 8px; border-radius:10px; display:inline-block; }
+/* Combo steps (实战内联) */
+.combo-block { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:14px; overflow:hidden; }
+.combo-block .cb-header { padding:16px 18px; border-bottom:1px solid var(--border); }
+.combo-block .cb-scene { font-size:12px; color:var(--pink); background:#fef1f7; display:inline-block; padding:2px 8px; border-radius:4px; margin-bottom:4px; }
+.combo-block .cb-title { font-size:16px; font-weight:700; }
+.combo-block .cb-outcome { margin:12px 18px; padding:10px 14px; background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:8px; font-size:12px; color:#065f46; }
+.combo-step { padding:14px 18px; border-bottom:1px solid var(--border); }
+.combo-step:last-child { border-bottom:none; }
+.combo-step .cs-label { font-size:14px; font-weight:700; margin-bottom:6px; }
+.combo-step .cs-prompt { padding:8px 12px; background:#fdfbff; border-left:3px solid #d4c5f9; border-radius:0 8px 8px 0; font-size:12px; color:#555; line-height:1.6; margin-bottom:6px; font-family:monospace; font-size:11px; }
+.combo-step .cs-get { font-size:12px; color:#065f46; }
 
-  .skill-list { display:none; }
-  .skill-list.active { display:block; }
-  .skill-item { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:18px; margin-bottom:10px; transition:all .2s; }
-  .skill-item:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .skill-item .sk-top { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
-  .skill-item .sk-icon { width:36px; height:36px; border-radius:9px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
-  .skill-item .sk-info { flex:1; }
-  .skill-item .sk-name { font-size:14px; font-weight:700; margin-bottom:2px; }
-  .skill-item .sk-author { font-size:11px; color:var(--muted); }
-  .skill-item .sk-desc { font-size:12px; color:#555; line-height:1.6; margin-bottom:8px; }
-  .skill-item .sk-result { background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; padding:12px 14px; margin-bottom:10px; font-size:12px; color:#065f46; border:1px solid #a7f3d0; }
-  .skill-item .sk-result strong { color:#047857; }
-  .skill-item .sk-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
-  .skill-item .sk-tag { font-size:10px; padding:2px 7px; border-radius:7px; background:#f5f4f0; color:var(--muted); }
-  .skill-item .sk-tag.stars { background:#e6faf4; color:var(--green); font-weight:600; }
-  .skill-item .sk-install { background:#faf9f7; border:1px solid var(--border); border-radius:8px; padding:9px 11px; font-family:'SF Mono', Consolas, monospace; font-size:10px; color:var(--purple); word-break:break-all; overflow-x:auto; }
-  .skill-item .sk-screenshot { margin-top:8px; padding:7px 10px; background:#fffbeb; border-radius:7px; border:1px solid #fef3c7; font-size:10px; color:#92400e; }
-  .skill-item .sk-issues { margin-top:8px; display:flex; flex-wrap:wrap; gap:5px; }
-  .skill-item .sk-issues a { font-size:10px; color:var(--blue); text-decoration:none; background:#e8f0fe; padding:2px 7px; border-radius:5px; }
-  .skill-item .sk-issues a:hover { text-decoration:underline; }
-  .back-btn { display:inline-flex; align-items:center; gap:5px; padding:7px 14px; background:var(--card); border:1px solid var(--border); border-radius:18px; font-size:12px; color:var(--muted); cursor:pointer; transition:all .2s; margin-bottom:16px; }
-  .back-btn:hover { border-color:var(--purple); color:var(--purple); }
+/* Showdown table */
+.showdown-block { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:16px; overflow:hidden; }
+.showdown-block .sd-header { padding:16px 18px; border-bottom:1px solid var(--border); }
+.showdown-block .sd-title { font-size:16px; font-weight:700; }
+.showdown-block .sd-desc { font-size:12px; color:var(--muted); margin-top:4px; }
+.showdown-table { width:100%; border-collapse:collapse; font-size:13px; }
+.showdown-table th { background:#f9fafb; padding:10px 12px; text-align:left; font-size:12px; color:var(--muted); font-weight:600; border-bottom:1px solid var(--border); }
+.showdown-table th:first-child { width:100px; }
+.showdown-table td { padding:10px 12px; border-bottom:1px solid var(--border); }
+.showdown-table tr:last-child td { border-bottom:none; }
 
-  /* Showdowns */
-  .showdown-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:24px; overflow:hidden; }
-  .showdown-card .sd-header { padding:18px 22px 14px; border-bottom:1px solid var(--border); }
-  .showdown-card .sd-header .sd-title { font-size:16px; font-weight:700; margin-bottom:3px; }
-  .showdown-card .sd-header .sd-desc { font-size:12px; color:var(--muted); }
-  .showdown-card .sd-table { width:100%; border-collapse:collapse; font-size:12px; }
-  .showdown-card .sd-table td, .showdown-card .sd-table th { padding:9px 12px; border-bottom:1px solid var(--border); text-align:left; line-height:1.4; }
-  .showdown-card .sd-table th { font-weight:600; font-size:10px; color:var(--muted); background:#faf9f7; white-space:nowrap; }
-  .showdown-card .sd-table td { color:#444; }
-  .showdown-card .sd-table td:first-child { font-weight:600; color:var(--text); }
-  .showdown-card .sd-table tr:last-child td { border-bottom:none; }
+/* Tips */
+.tip-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }
+.tip-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:16px; }
+.tip-card .tp-skill { font-size:11px; color:var(--purple); font-weight:600; margin-bottom:4px; }
+.tip-card .tp-before { font-size:12px; color:#dc2626; margin-bottom:4px; padding:6px 8px; background:#fef2f2; border-radius:6px; }
+.tip-card .tp-after { font-size:12px; color:#065f46; margin-bottom:6px; padding:6px 8px; background:#ecfdf5; border-radius:6px; }
+.tip-card .tp-do { font-size:11px; color:var(--muted); padding:6px 8px; background:#f9fafb; border-radius:6px; }
 
-  /* Combos */
-  .combo-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:28px; overflow:hidden; }
-  .combo-card .co-header { padding:18px 24px 14px; }
-  .combo-card .co-icon { width:48px; height:48px; border-radius:12px; background:#f3f0ff; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
-  .combo-card .co-title { font-size:18px; font-weight:800; margin-bottom:2px; }
-  .combo-card .co-scene { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; margin:0 24px 14px; font-size:13px; color:#92400e; line-height:1.7; }
-  .combo-card .co-scene::before { content:'🆘 真实场景：'; font-weight:700; }
-  .combo-card .co-outcome { margin:0 24px 16px; padding:12px 16px; background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; border:1px solid #a7f3d0; font-size:13px; color:#065f46; line-height:1.6; }
-  .combo-card .co-outcome::before { content:'🏆 最终成果：'; font-weight:700; color:#047857; }
-  .combo-flow { display:flex; flex-direction:column; gap:0; padding:0 24px 24px; }
-  .combo-step { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
-  .combo-step:last-child { border-bottom:none; }
-  .combo-step .cs-num { width:30px; height:30px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
-  .combo-step .cs-body { flex:1; }
-  .combo-step .cs-label { font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text); }
-  .combo-step .cs-label .skill-tag { font-size:10px; font-weight:600; padding:2px 7px; border-radius:6px; background:#e8f0fe; color:var(--blue); margin-left:6px; }
-  .combo-step .cs-prompt { font-size:12px; color:#4a3f8a; line-height:1.7; margin-bottom:8px; padding:10px 14px; background:#fdfbff; border-left:3px solid #d4c5f9; border-radius:0 8px 8px 0; font-family:'SF Mono', Consolas, monospace; }
-  .combo-step .cs-prompt::before { content:'📋 直接复制发给Codex →  '; font-weight:700; font-family:inherit; color:var(--purple); display:block; margin-bottom:4px; }
-  .combo-step .cs-get { font-size:12px; color:#065f46; line-height:1.6; padding:8px 12px; background:#ecfdf5; border-radius:8px; }
-  .combo-step .cs-get::before { content:'✅ 这步做完你拿到：'; font-weight:700; }
+/* Trends */
+.trend-list { display:flex; flex-direction:column; gap:8px; }
+.trend-item { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:14px 16px; display:flex; gap:12px; align-items:flex-start; }
+.trend-item .tr-date { font-size:11px; color:var(--purple); font-weight:700; background:#f3f0ff; padding:3px 8px; border-radius:4px; white-space:nowrap; }
+.trend-item .tr-body { flex:1; }
+.trend-item .tr-title { font-size:14px; font-weight:700; margin-bottom:3px; }
+.trend-item .tr-text { font-size:12px; color:var(--muted); line-height:1.5; }
+.trend-item .tr-src { font-size:11px; color:#9ca3af; margin-top:3px; }
 
-  /* Tips */
-  .tip-grid { display:grid; grid-template-columns:1fr; gap:14px; }
-  .tip-card { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:20px; transition:all .2s; }
-  .tip-card:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .tip-card .tp-header { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-  .tip-card .tp-badge { display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:8px; }
-  .tp-basic { background:#e6faf4; color:var(--green); }
-  .tp-advanced { background:#fef3e2; color:var(--orange); }
-  .tip-card .tp-title { font-size:14px; font-weight:700; }
-  .tip-card .tp-compare { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .tip-card .tp-before, .tip-card .tp-after { padding:12px 14px; border-radius:10px; font-size:12px; line-height:1.7; }
-  .tip-card .tp-before { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; }
-  .tip-card .tp-before::before { content:'用之前：'; display:block; font-weight:700; font-size:10px; margin-bottom:4px; color:#dc2626; }
-  .tip-card .tp-after { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; }
-  .tip-card .tp-after::before { content:'用之后：'; display:block; font-weight:700; font-size:10px; margin-bottom:4px; color:var(--green); }
-  .tip-card .tp-do { margin-top:10px; padding:10px 14px; background:#fdfbff; border-left:3px solid var(--purple); border-radius:0 8px 8px 0; font-size:12px; color:#4a3f8a; line-height:1.7; }
-  .tip-card .tp-do::before { content:'怎么做：'; display:block; font-weight:700; font-size:10px; margin-bottom:2px; color:var(--purple); }
+/* Collections */
+.col-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:16px; }
+.col-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:16px; }
+.col-card .cl-icon { font-size:28px; margin-bottom:8px; }
+.col-card .cl-title { font-size:15px; font-weight:700; margin-bottom:4px; }
+.col-card .cl-desc { font-size:12px; color:var(--muted); margin-bottom:8px; }
+.col-card .cl-topics { display:flex; flex-wrap:wrap; gap:4px; }
+.col-card .cl-topic { font-size:11px; background:#fdfbff; color:var(--purple); padding:2px 7px; border-radius:4px; }
 
-  /* Scenarios */
-  .scenario-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(380px, 1fr)); gap:14px; }
-  .scenario-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:20px; transition:all .2s; }
-  .scenario-card:hover { box-shadow:0 4px 24px rgba(0,0,0,.06); }
-  .scenario-card .sc-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
-  .scenario-card .sc-icon { width:44px; height:44px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; background:#f3f0ff; }
-  .scenario-card .sc-info .sc-title { font-size:15px; font-weight:700; margin-bottom:2px; }
-  .scenario-card .sc-info .sc-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-  .scenario-card .sc-flow { display:flex; flex-wrap:wrap; gap:4px; align-items:center; margin-bottom:10px; }
-  .scenario-card .sc-step { font-size:11px; padding:3px 8px; border-radius:7px; background:#e8f0fe; color:var(--blue); font-weight:600; }
-  .scenario-card .sc-arrow { font-size:12px; color:var(--muted); margin:0 1px; }
-  .scenario-card .sc-note { font-size:11px; color:var(--muted); line-height:1.5; padding:8px 10px; background:#faf9f7; border-radius:8px; margin-bottom:8px; }
-  .scenario-card .sc-outcome { font-size:12px; color:#065f46; line-height:1.6; padding:10px 12px; background:#ecfdf5; border-radius:8px; border:1px solid #a7f3d0; }
+/* Selector bar (for 技能库 sub-view) */
+.selector-bar { display:flex; gap:8px; margin-bottom:16px; }
+.sel-btn { padding:7px 16px; border-radius:20px; border:1px solid var(--border); background:var(--card); font-size:13px; cursor:pointer; transition:all .2s; }
+.sel-btn.active { background:var(--purple); color:#fff; border-color:var(--purple); }
 
-  /* Trends */
-  .trend-list { display:flex; flex-direction:column; gap:10px; }
-  .trend-item { background:var(--card); border-radius:12px; border:1px solid var(--border); padding:16px 20px; transition:all .2s; display:flex; align-items:flex-start; gap:14px; }
-  .trend-item:hover { box-shadow:0 4px 20px rgba(0,0,0,.05); }
-  .trend-item .tr-date { font-size:11px; font-weight:700; color:var(--purple); min-width:48px; padding-top:2px; }
-  .trend-item .tr-content { flex:1; }
-  .trend-item .tr-title { font-size:14px; font-weight:700; margin-bottom:3px; }
-  .trend-item .tr-body { font-size:12px; color:#555; line-height:1.6; margin-bottom:4px; }
-  .trend-item .tr-source { font-size:10px; color:var(--muted); }
-
-  /* Collections */
-  .collection-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:22px; margin-bottom:16px; transition:all .2s; }
-  .collection-card:hover { box-shadow:0 4px 24px rgba(0,0,0,.06); }
-  .collection-card .cl-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
-  .collection-card .cl-icon { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
-  .collection-card .cl-info .cl-title { font-size:17px; font-weight:700; margin-bottom:3px; }
-  .collection-card .cl-info .cl-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-  .collection-card .cl-topics { display:flex; flex-wrap:wrap; gap:6px; }
-  .collection-card .cl-topic { font-size:11px; padding:4px 10px; border-radius:14px; background:#f5f4f0; color:var(--text); }
-  .collection-card .cl-issues { margin-top:10px; display:flex; flex-wrap:wrap; gap:5px; }
-  .collection-card .cl-issues a { font-size:11px; color:var(--blue); text-decoration:none; background:#e8f0fe; padding:3px 8px; border-radius:7px; font-weight:600; }
-  .collection-card .cl-issues a:hover { text-decoration:underline; }
-
-  .about { margin-top:36px; text-align:center; padding:32px 24px; background:var(--card); border-radius:var(--radius); border:1px solid var(--border); }
-  .about h3 { font-size:16px; margin-bottom:8px; }
-  .about p { font-size:13px; color:var(--muted); max-width:520px; margin:0 auto; line-height:1.7; }
-  .about .about-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:10px; margin-top:18px; text-align:center; }
-  .about-item { padding:14px 10px; background:var(--bg); border-radius:10px; }
-  .about-item .a-icon { font-size:22px; margin-bottom:4px; }
-  .about-item .a-label { font-size:11px; font-weight:600; color:var(--text); }
-  .about-item .a-sub { font-size:10px; color:var(--muted); margin-top:1px; }
-  .footer { text-align:center; padding:24px; font-size:11px; color:var(--muted); border-top:1px solid var(--border); margin-top:18px; }
-  .footer a { color:var(--purple); text-decoration:none; }
-
-  @media (max-width:600px) {
-    .hero-content h1 { font-size:24px; }
-    .issue-grid, .category-grid, .scenario-grid { grid-template-columns:1fr; }
-    .stats-bar { gap:14px; }
-    .tip-card .tp-compare { grid-template-columns:1fr; }
-    .combo-step { flex-direction:column; gap:8px; }
-    .combo-step .cs-prompt { font-size:11px; }
-  }
+/* Responsive */
+@media (max-width:600px) {
+  .cat-grid,.tip-grid,.col-grid { grid-template-columns:1fr; }
+  .showdown-table { font-size:11px; }
+  .showdown-table th,.showdown-table td { padding:8px 6px; }
+}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-content">
-    <div class="pre-title">能做什么 · 怎么做 · 得到什么</div>
-    <h1>AI 工具每日速递</h1>
-    <p class="hero-desc">13个精选Skills，每个都告诉你：能做什么、怎么做、能产出什么。不只推荐，更教你用出效果。</p>
-    <div class="hero-tags">
-      <span class="hero-tag">📬 速递</span><span class="hero-tag">⚔️ 擂台</span><span class="hero-tag">🔗 组合技</span>
-      <span class="hero-tag">💡 技巧</span><span class="hero-tag">🎯 场景</span><span class="hero-tag">🌊 动态</span>
-    </div>
-  </div>
-</div>
+<header class="header">
+  <h1>AI 工具每日速递</h1>
+  <p>13 个精选 Skills · 6 大分类 · 从发现到运用，一站式 Skill 导航</p>
+</header>
 
-<div class="stats-bar">
-  <div class="stat"><div class="num" id="stat-issues">-</div><div class="label">往期</div></div>
-  <div class="stat"><div class="num" id="stat-skills">-</div><div class="label">Skills</div></div>
-  <div class="stat"><div class="num" id="stat-scenarios">-</div><div class="label">场景</div></div>
-  <div class="stat"><div class="num" id="stat-tips">-</div><div class="label">技巧</div></div>
-  <div class="stat"><div class="num" id="stat-trends">-</div><div class="label">动态</div></div>
-</div>
-
-<div class="tab-nav">
-  <button class="tab-btn active" data-tab="issues">📬 速递</button>
-  <button class="tab-btn" data-tab="categories">📚 分类</button>
-  <button class="tab-btn" data-tab="scenarios">🎯 场景</button>
-  <button class="tab-btn" data-tab="combos">🔗 组合技</button>
-  <span class="tab-divider"></span>
-  <button class="tab-btn" data-tab="tips">💡 技巧</button>
-  <button class="tab-btn" data-tab="showdowns">⚔️ 擂台</button>
-  <span class="tab-divider"></span>
-  <button class="tab-btn" data-tab="trends">🌊 动态</button>
-  <button class="tab-btn" data-tab="collections">📦 专题</button>
-</div>
+<nav class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="daily">速递</button>
+  <button class="tab-btn" data-tab="practical">实战</button>
+  <button class="tab-btn" data-tab="library">技能库</button>
+  <button class="tab-btn" data-tab="tips">技巧</button>
+  <button class="tab-btn" data-tab="news">资讯</button>
+</nav>
 
 <div class="container">
-  <div class="tab-content active" id="tab-issues">
-    <div class="section-header"><h2>📬 往期速递</h2><div class="line"></div></div>
-    <div class="issue-grid" id="issue-grid"></div>
-  </div>
-  <div class="tab-content" id="tab-categories">
-    <div class="section-header"><h2>📚 技能分类</h2><div class="line"></div></div>
-    <div class="category-grid" id="category-overview"></div>
-    <div id="skill-detail-area"></div>
-  </div>
-  <div class="tab-content" id="tab-scenarios">
-    <div class="section-header"><h2>🎯 场景导航「我要做XX，用什么？」</h2><div class="line"></div></div>
-    <div class="scenario-grid" id="scenario-area"></div>
-  </div>
-  <div class="tab-content" id="tab-combos">
-    <div class="section-header"><h2>🔗 组合技 — 多Skill串联效果</h2><div class="line"></div></div>
-    <div id="combo-area"></div>
-  </div>
-  <div class="tab-content" id="tab-tips">
-    <div class="section-header"><h2>💡 每个Skill一个高级用法</h2><div class="line"></div></div>
-    <div class="tip-grid" id="tip-area"></div>
-  </div>
-  <div class="tab-content" id="tab-showdowns">
-    <div class="section-header"><h2>⚔️ Skill 擂台</h2><div class="line"></div></div>
-    <div id="showdown-area"></div>
-  </div>
-  <div class="tab-content" id="tab-trends">
-    <div class="section-header"><h2>🌊 AI 工具生态动态</h2><div class="line"></div></div>
-    <div class="trend-list" id="trend-area"></div>
-  </div>
-  <div class="tab-content" id="tab-collections">
-    <div class="section-header"><h2>📦 专题合集</h2><div class="line"></div></div>
-    <div id="collection-area"></div>
-  </div>
 
-  <div class="about">
-    <h3>📌 不只推荐，更教你用出效果</h3>
-    <p>13个Skills覆盖7大场景。每个Skill都回答了三个问题：能做什么、怎么做、能得到什么。</p>
-    <div class="about-grid">
-      <div class="about-item"><div class="a-icon">📬</div><div class="a-label">7期速递</div></div>
-      <div class="about-item"><div class="a-icon">📚</div><div class="a-label">13 Skills</div></div>
-      <div class="about-item"><div class="a-icon">🎯</div><div class="a-label">7大场景</div></div>
-      <div class="about-item"><div class="a-icon">🔗</div><div class="a-label">3套组合技</div></div>
-      <div class="about-item"><div class="a-icon">💡</div><div class="a-label">13个技巧</div></div>
-    </div>
+<!-- ═══════════ TAB 1: 速递 ═══════════ -->
+<section class="tab-content active" id="tab-daily">
+  <div class="section-title">往期速递</div>
+  <div id="issueArea"></div>
+</section>
+
+<!-- ═══════════ TAB 2: 实战 ═══════════ -->
+<section class="tab-content" id="tab-practical">
+  <div class="section-title">场景决策</div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">根据你的真实需求，快速定位需要哪些 Skill，点击展开看具体步骤和可复制 Prompt</p>
+  <div id="sceneArea"></div>
+  <div class="section-title" style="margin-top:28px;">组合技教程</div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">从真实痛点出发，每一步都给可以直接复制发给 Codex 的 Prompt</p>
+  <div id="comboArea"></div>
+</section>
+
+<!-- ═══════════ TAB 3: 技能库 ═══════════ -->
+<section class="tab-content" id="tab-library">
+  <div class="selector-bar">
+    <button class="sel-btn active" data-sub="cat">分类浏览</button>
+    <button class="sel-btn" data-sub="vs">Skill 擂台</button>
   </div>
-  <div class="footer"><a href="https://github.com/weidashi/ai-tool-daily">GitHub</a> · 由 WorkBuddy 生成 · 每日更新</div>
+  <div id="libSubCat" class="lib-sub show">
+    <div class="cat-grid" id="catGrid"></div>
+    <div id="catDetail" style="margin-top:12px;"></div>
+  </div>
+  <div id="libSubVs" class="lib-sub" style="display:none;">
+    <div id="showdownArea"></div>
+  </div>
+</section>
+
+<!-- ═══════════ TAB 4: 技巧 ═══════════ -->
+<section class="tab-content" id="tab-tips">
+  <div class="section-title">💡 用法技巧</div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">每个 Skill 一个具体用法，Before/After 对比 + 怎么做</p>
+  <div class="tip-grid" id="tipGrid"></div>
+</section>
+
+<!-- ═══════════ TAB 5: 资讯 ═══════════ -->
+<section class="tab-content" id="tab-news">
+  <div class="section-title">🌊 AI 生态速览</div>
+  <div class="trend-list" id="trendList"></div>
+  <div class="section-title" style="margin-top:28px;">📦 专题合集</div>
+  <div class="col-grid" id="colGrid"></div>
+</section>
+
 </div>
 
 <script>
-const DATA_URL = 'skills-data.json';
-(async function init() {
-  const resp = await fetch(DATA_URL);
-  const data = await resp.json();
-  renderStats(data);
-  renderIssues(data);
-  renderCategories(data);
-  renderShowdowns(data);
-  renderCombos(data);
-  renderTips(data);
-  renderScenarios(data);
-  renderTrends(data);
-  renderCollections(data);
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-    });
-  });
-})();
+// ─── Data ───
+const DATA = {"categories": [{"id": "writing", "name": "写作润色", "icon": "✍️", "color": "#6c5ce7", "desc": "去AI味、内容润色、研究型写作、深度长文创作", "skills": ["humanizer-zh", "content-research-writer", "khazix-skills"]}, {"id": "visual", "name": "视觉设计", "icon": "🎨", "color": "#10ac84", "desc": "封面图、信息图、风格配图、HTML页面生成", "skills": ["baoyu-skills", "ian-xiaohei-illustrations", "html-anything"]}, {"id": "ppt", "name": "PPT 生成", "icon": "📽️", "color": "#3867d6", "desc": "HTML演示、原生PPTX、演讲者模式、企业VI模板", "skills": ["guizang-ppt-skill", "ppt-master", "html-ppt-skill", "gorden-ppt-skill"]}, {"id": "social", "name": "社交分发", "icon": "🃏", "color": "#f39c12", "desc": "小红书卡片、公众号封面、多平台内容适配", "skills": ["guizang-social-card-skill"]}, {"id": "research", "name": "选题研究", "icon": "🔍", "color": "#e84393", "desc": "选题诊断、爆款拆解、内容定位优化", "skills": ["dbskill"]}, {"id": "report", "name": "报告生成", "icon": "📊", "color": "#00b894", "desc": "可视化报告、PDF/PPT导出、数据展示", "skills": ["visual-report"]}], "skills": {"humanizer-zh": {"name": "Humanizer-zh", "author": "op7418", "subtitle": "中文去AI味必备", "desc": "专门识别中文AI文本中的空话、套话、三段式、过度排比和“AI腔”，把生硬的机器文风改得像真人手笔。内置24项检测模式。", "stars": "2.4K+", "tags": ["去AI味", "写作润色", "中文必备"], "install": "npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global", "issues": ["2026-06-24", "2026-06-21"], "screenshot": "", "result": "原来生硬的AI腔文章 → 像朋友聊天一样的真人随笔。"}, "content-research-writer": {"name": "content-research-writer", "author": "ComposioHQ", "subtitle": "研究型写作全流程", "desc": "把“选题→搜集资料→整理提纲→引用来源→生成初稿”五步写作流程编码为一个完整的Skill。适合公众号长文、Newsletter、博客和深度文章。", "stars": "高热度", "tags": ["内容创作", "深度写作", "全流程"], "install": "npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global", "issues": ["2026-06-24", "2026-06-21"], "screenshot": "", "result": "一个选题 → 一篇2000-5000字的完整文章，可直接发公众号。"}, "khazix-skills": {"name": "khazix-skills", "author": "KKKKhazix", "subtitle": "万字长文写作流", "desc": "公众号长文、万字研究报告、AI热点分析的写作流合集。知名AI博主「数字生命卡兹克」开源的Skills合集。", "stars": "14K", "tags": ["长文写作", "深度研究", "万字报告"], "install": "npx -y skills@latest add KKKKhazix/khazix-skills --skill khazix-skills --agent codex --global", "issues": ["2026-06-25"], "screenshot": "", "result": "模糊想法 → 一篇万字深度分析，适合付费内容或行业报告。"}, "baoyu-skills": {"name": "baoyu-skills", "author": "JimLiu", "subtitle": "中文创作者视觉工具箱", "desc": "10个Skill里stars最高的视觉工具箱。把文字内容一键转成封面图、信息图、结构图、图解海报，覆盖公众号、小红书、知识星球等平台。", "stars": "20.8K", "tags": ["封面设计", "信息图", "图解海报"], "install": "npx -y skills@latest add JimLiu/baoyu-skills --agent codex --global", "issues": ["2026-06-25", "2026-06-22"], "screenshot": "", "result": "纯文字 → 一张专业封面+一张信息图解。不打开设计工具。"}, "ian-xiaohei-illustrations": {"name": "ian-xiaohei-illustrations", "author": "helloianneo", "subtitle": "小黑风格正文配图", "desc": "为中文内容定制的插图生成器——根据文章观点、流程、情绪、隐喻生成配套的小黑风格插画。黑色线条+少量彩色批注。", "stars": "3.4K", "tags": ["插图生成", "风格化", "中文配图"], "install": "npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --skill ian-xiaohei-illustrations --agent codex --global", "issues": ["2026-06-25", "2026-06-22"], "screenshot": "", "result": "每段观点 → 一张小黑风格手绘插图。文章从纯文字变图文并茂。"}, "html-anything": {"name": "html-anything", "author": "nexu-io", "subtitle": "Markdown转HTML页面", "desc": "75个Skills覆盖9种输出界面：杂志风文章页面、知识卡片、小红书图文、海报、PNG导出等。自带沙箱预览+一键发布到微信/知乎/X。", "stars": "6.3K", "tags": ["HTML生成", "75模板", "多平台分发"], "install": "npx -y skills@latest add nexu-io/html-anything --agent codex --global", "issues": ["2026-06-25", "2026-06-22"], "screenshot": "", "result": "一篇Markdown → 一个杂志风网页。手机上像看数字杂志。"}, "guizang-ppt-skill": {"name": "guizang-ppt-skill", "author": "op7418", "subtitle": "一句话出HTML PPT", "desc": "一句话生成网页版Presentation（HTML格式）。更轻、更快、偏“分享展示”。适合快速出演示稿、技术分享、轻量汇报。", "stars": "15.6K", "tags": ["HTML PPT", "轻量分享", "演示"], "install": "npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global", "issues": ["2026-06-22", "2026-06-24"], "screenshot": "", "result": "一句话需求 → 15页网页PPT。分享链接就能看。"}, "ppt-master": {"name": "ppt-master", "author": "hugohe3", "subtitle": "原生PPTX矢量流", "desc": "生成标准.pptx文件——每个文本框、形状都可在PowerPoint中直接编辑。底层将内容先转SVG矢量，再转原生PPTX对象。支持从PDF、DOCX、网页URL导入。", "stars": "热门", "tags": ["原生PPTX", "可编辑", "矢量输出"], "install": "npx -y skills@latest add hugohe3/ppt-master --agent codex --global", "issues": ["2026-06-23"], "screenshot": "", "result": "一份Word → 一个标准.pptx。PowerPoint里继续编辑。"}, "html-ppt-skill": {"name": "html-ppt-skill", "author": "lewislulu", "subtitle": "演讲者模式+36主题", "desc": "HTML网页演示工具，专为需要上台演讲的用户设计。内置36套主题、15套deck模板、31种单页布局。最大亮点是演讲者模式。", "stars": "热门", "tags": ["演讲者模式", "36主题", "提词器"], "install": "npx -y skills@latest add lewislulu/html-ppt-skill --agent codex --global", "issues": ["2026-06-23"], "screenshot": "", "result": "文字内容 → 带提词器+计时器的演示稿。"}, "gorden-ppt-skill": {"name": "GordenPPTSkill", "author": "GordenSun", "subtitle": "企业VI模板", "desc": "专为固定企业视觉识别（VI）场景设计。通过精准文本占位符替换，将内容填入预设中文模板。保证形状、配色和字号的绝对规范。", "stars": "热门", "tags": ["企业VI", "批量标准化", "模板套用"], "install": "npx -y skills@latest add GordenSun/GordenPPTSkill --agent codex --global", "issues": ["2026-06-23"], "screenshot": "", "result": "内容+模板 → N份格式统一的PPT。"}, "guizang-social-card-skill": {"name": "guizang-social-card-skill", "author": "op7418", "subtitle": "社交分发卡片生成", "desc": "把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。解决了“写完文章还要手动做图分发”的痛点。", "stars": "热门", "tags": ["小红书", "公众号封面", "图文卡片"], "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global", "issues": ["2026-06-24"], "screenshot": "", "result": "一篇长文 → 6-9张小红书卡片。不用学Canva/PS。"}, "dbskill": {"name": "dbskill", "author": "dontbesilent", "subtitle": "选题诊断器", "desc": "为中文内容创作者设计的「选题诊断」工具。能分析选题是否成立、诊断商业表达是否清晰、优化hook和标题、拆解爆款笔记结构。", "stars": "高收藏", "tags": ["选题诊断", "爆款拆解", "标题优化"], "install": "npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global", "issues": ["2026-06-24", "2026-06-21"], "screenshot": "", "result": "3个待选选题 → 优化标题+hook建议。有据可依。"}, "visual-report": {"name": "visual-report", "author": "larrywood0602", "subtitle": "可视化报告", "desc": "把文字、图片、表格截图、会议纪要、资料文档整理成交互式可视化网页报告，并支持一键导出PDF与可编辑PPT。", "stars": "新发布", "tags": ["报告生成", "PDF导出", "可视化"], "install": "git clone https://github.com/larrywood0602/codex-skill-visual-report.git", "issues": ["2026-06-23"], "screenshot": "", "result": "会议纪要+截图+Excel → 可视化报告，可导出PDF。"}}, "issues": [{"id": 7, "date": "2026-06-25", "weekday": "星期四", "title": "Codex 职场化浪潮：6大岗位插件 + 视觉创作工具链", "subtitle": "本周重磅：Codex 跳出编程圈，NotebookLM 装上 Agent，Notion 开放外部智能体", "tags": ["🎨 视觉工具箱", "✍️ 长文创作", "📄 HTML 海报", "🖼️ 风格插图"], "skillCount": 4, "color": "g1", "numColor": "n-purple", "file": "2026-06-25.html", "skills": ["baoyu-skills", "khazix-skills", "html-anything", "ian-xiaohei-illustrations"]}, {"id": 6, "date": "2026-06-24", "weekday": "星期三", "title": "中文内容创作流水线：选题 → 写作 → 分发", "subtitle": "5 个 Skills 串联完整创作流程 · 去 AI 味 · 社交卡片 · PPT 演示", "tags": ["✍️ 去AI味", "🔍 选题", "📝 写作流", "🃏 社交卡", "📽️ PPT"], "skillCount": 5, "color": "g2", "numColor": "n-green", "file": "2026-06-24.html", "skills": ["humanizer-zh", "dbskill", "content-research-writer", "guizang-social-card-skill", "guizang-ppt-skill"]}, {"id": 5, "date": "2026-06-23", "weekday": "星期二", "title": "报告自动化：从输入到多格式交付", "subtitle": "阅读总结 × 可视化报告 × 可编辑 PPT × 演讲者模式", "tags": ["📊 报告", "📽️ PPT", "🎤 演讲", "🏢 企业VI", "⚡ 工作流"], "skillCount": 5, "color": "g3", "numColor": "n-blue", "file": "2026-06-23.html", "skills": ["visual-report", "ppt-master", "html-ppt-skill", "gorden-ppt-skill"]}, {"id": 4, "date": "2026-06-22", "weekday": "星期一", "title": "视觉与分发专场", "subtitle": "文章配图 · 封面设计 · HTML 海报 · 长文写作 · PPT 转制", "tags": ["🎨 配图", "🖼️ 封面", "📊 海报", "📽️ PPT", "📝 长文"], "skillCount": 5, "color": "g4", "numColor": "n-orange", "file": "2026-06-22.html", "skills": ["ian-xiaohei-illustrations", "baoyu-skills", "html-anything", "guizang-ppt-skill"]}, {"id": 3, "date": "2026-06-21", "weekday": "星期六", "title": "写作创作专场", "subtitle": "写作润色 · PPT 生成 · 选题诊断 · 内容创作 · 社交分发", "tags": ["✍️ 去AI味", "📽️ PPT", "🔍 选题", "📝 写作流", "🃏 社交卡"], "skillCount": 5, "color": "g1", "numColor": "n-purple", "file": "2026-06-21.html", "skills": ["humanizer-zh", "guizang-ppt-skill", "dbskill", "content-research-writer", "guizang-social-card-skill"]}, {"id": 2, "date": "2026-06-20", "weekday": "星期五", "title": "Codex Skills 高星专场", "subtitle": "5 个高星实用 Skills，覆盖文档处理、浏览器、前端设计", "tags": ["⚡ 全能开发", "🧠 跨会话记忆", "📄 文档处理", "🌐 浏览器", "🎨 前端设计"], "skillCount": 5, "color": "g2", "numColor": "n-green", "file": "2026-06-20.html", "skills": []}, {"id": 1, "date": "2026-06-19", "weekday": "星期四", "title": "创刊号 · 从零开始", "subtitle": "Codex Skills 认知入门，NotebookLM 技巧，Notion 窍门", "tags": ["📘 Skills 认知", "🧪 NotebookLM", "📋 Notion", "📙 WorkBuddy"], "skillCount": 5, "color": "g3", "numColor": "n-blue", "file": "2026-06-19.html", "skills": []}], "showdowns": [{"id": "ppt-four", "title": "PPT 生成四选一：哪个才是你的菜？", "desc": "市面上 4 个热门 PPT Skill 横评对比：输出格式、编辑能力、演讲支持、适用场景。", "skills": ["guizang-ppt-skill", "ppt-master", "html-ppt-skill", "gorden-ppt-skill"], "dimensions": [{"label": "输出格式", "values": ["HTML 网页", "标准 .pptx", "HTML 网页", "标准 .pptx"]}, {"label": "可编辑性", "values": ["🟡 代码编辑", "🟢 原生可编辑", "🟡 代码编辑", "🟢 原生可编辑"]}, {"label": "演讲模式", "values": ["🔴 无", "🔴 无", "🟢 演讲者模式", "🔴 无"]}, {"label": "企业VI", "values": ["🔴 不支持", "🔴 不支持", "🔴 不支持", "🟢 专为此设计"]}, {"label": "最佳场景", "values": ["快速分享", "正式交付", "上台演讲", "批量标准汇报"]}, {"label": "Stars", "values": ["15.6K", "热门", "热门", "热门"]}]}, {"id": "writing-three", "title": "写作三剑客：去AI味 vs 研究型 vs 长文流", "desc": "Humanizer-zh 专注于「改」，content-research-writer 专注于「写」，khazix-skills 专注于「深」。选对工具，事半功倍。", "skills": ["humanizer-zh", "content-research-writer", "khazix-skills"], "dimensions": [{"label": "核心能力", "values": ["AI文本润色", "研究+写作全流程", "长文+研究报告"]}, {"label": "写作长度", "values": ["任意", "2000字+", "5000字+"]}, {"label": "使用时机", "values": ["AI写完初稿之后", "从零开始写", "有主题要深入"]}, {"label": "输出风格", "values": ["真人随笔风", "研究型深度风", "公众号长文风"]}, {"label": "Stars", "values": ["2.4K+", "高热度", "14K"]}]}, {"id": "visual-three", "title": "视觉设计三件套：封面 → 配图 → 页面", "desc": "baoyu-skills 出封面和信息图，ian-xiaohei 出正文配图，html-anything 出完整页面。一个内容三种视觉形态。", "skills": ["baoyu-skills", "ian-xiaohei-illustrations", "html-anything"], "dimensions": [{"label": "输出类型", "values": ["封面/信息图", "正文插图", "完整HTML页面"]}, {"label": "视觉风格", "values": ["专业信息风", "小黑手绘风", "杂志排版风"]}, {"label": "适用平台", "values": ["公众号/小红书", "文章内插", "独立页面/分享"]}, {"label": "模版数量", "values": ["10个合集", "风格统一", "75个Skill"]}, {"label": "Stars", "values": ["20.8K", "3.4K", "6.3K"]}]}], "combos": [{"id": "content-pipeline", "scene": "老板说「下周发一篇深度文章，要有观点有数据」——但你现在对着空白文档，不知道从哪写起", "title": "从0写一篇能发的公众号深度文章", "icon": "🎬", "outcome": "一篇去AI味的深度文章 + 封面图 + 小红书卡片。总耗时约40分钟，以前要3-4小时。", "steps": [{"label": "第一步：确诊选题值不值得写", "skill": "dbskill", "prompt": "我想写一篇关于「XX」的文章，目标读者是25-35岁的职场人，请用dbskill帮我诊断这个选题是否成立，推荐3个标题方案和2个hook方向。", "get": "一份选题判断（告诉你值不值）+ 3个优化后的标题 + 2个吸引点击的hook。你不是在瞎猜，是在有方向地开始。"}, {"label": "第二步：搭好骨架再填肉", "skill": "content-research-writer", "prompt": "帮我给「刚才那个选题」列一个4段提纲，每段含子标题和2个核心论点。确认后，按这个提纲逐段展开写初稿，每段300-400字。", "get": "一篇2000字的结构初稿，段落分明，有逻辑有论据。不会跑题，因为你先确认了提纲再写的。"}, {"label": "第三步：让文章读起来像人写的", "skill": "humanizer-zh", "prompt": "用humanizer-zh帮我把这篇文章去AI味：删除套话和「当今时代」式开头，语气像朋友聊天，保留核心观点和关键数据。", "get": "一篇读起来像老手写的文章。发给朋友看，他们不会第一反应「这是AI写的吧」。"}, {"label": "第四步：穿上视觉外套", "skill": "baoyu-skills", "prompt": "用baoyu-skills给这篇文章做一张微信公众号封面图（900x383），主题是「文章核心观点」，风格简约商务。", "get": "一张能吸引点击的封面图。设成公众号头图，文章打开率翻倍。"}, {"label": "收尾：小红书同步", "skill": "guizang-social-card-skill", "prompt": "用guizang-social-card把这篇完整文章拆成8张小红书卡片，每张一个核心观点+一个金句，清新简约配色。", "get": "8张可直接发布的小红书卡片。公众号发完，10分钟后小红书也能发了。一篇内容，双重曝光。"}]}, {"id": "visual-pipeline", "scene": "文章已经写了，但全是字——发出去像在叫人看Word文档。读者扫一眼就划走了", "title": "给纯文字文章穿上视觉外套", "icon": "🎨", "outcome": "原来只有字的文章 → 有封面+有3-5张配图+有精美网页版。三个版本齐了，公众号、分享链接、小红书都能用。", "steps": [{"label": "第一步：出封面和结构图", "skill": "baoyu-skills", "prompt": "用baoyu-skills给这篇文章生成一张公众号封面图（900x383）+一张文章结构图解（把核心论点可视化），简约专业风，配色蓝白。", "get": "两张图：封面图放公众号头图，结构图放文章最前面当视觉导读。读者扫一眼就知道文章讲什么。"}, {"label": "第二步：正文配插图", "skill": "ian-xiaohei-illustrations", "prompt": "文章核心段落的观点是「XXXX」，请用ian-xiaohei-illustrations给这个观点配一张小黑风格手绘插图，16:9横版。", "get": "3-5张风格统一的小黑插画。每500字插一张，文章阅读完成率从30%涨到60%以上。"}, {"label": "第三步：出精美网页版", "skill": "html-anything", "prompt": "把这篇完整文章（含封面和插图）用html-anything生成杂志风格HTML页面，蓝白配色，手机阅读友好。", "get": "一个能在手机上翻的电子杂志页面。发到朋友圈、微信群，比干巴巴的文章链接有面子多了。还可以导出PDF。"}]}, {"id": "report-pipeline", "scene": "明天要项目汇报，桌面上散落着会议纪要Word、数据截图、Excel表格——你准备手动拼PPT拼到半夜", "title": "从零散资料到一份能上台的完整汇报", "icon": "📊", "outcome": "一份可视化PDF报告 + 一个可编辑.pptx + 一个带提词器的演示稿。以前编辑做一整天，现在30分钟搞定。", "steps": [{"label": "第一步：自动出可视化报告", "skill": "visual-report", "prompt": "下面是这次项目的会议纪要、数据截图和Excel表格（附上文件）。请用visual-report帮我整理成一份可视化复盘报告，蓝白配色，含数据图表和关键结论。", "get": "一份带图表的网页版报告。数据自动识别类型、自动匹配图表。直接导出PDF就能交差。"}, {"label": "第二步：转可编辑PPT", "skill": "ppt-master", "prompt": "把刚才的报告用ppt-master导出标准.pptx文件：15页，每页3个核心要点，商务蓝配色，字号统一。", "get": "一个标准.pptx。在PowerPoint打开就能继续微调。发给老板也不像AI生成的——因为格式完全正常。"}, {"label": "收尾：上台演讲彩排", "skill": "html-ppt-skill", "prompt": "基于刚才的报告核心内容，用html-ppt-skill生成一份演讲演示稿，10页，学术简约风。每页配一个核心句。", "get": "一份带演讲者模式的演示稿。浏览器打开按S键，左边幻灯片、右边你的逐字稿+计时器。上台前练3遍，汇报自信翻倍。"}]}], "collections": [{"id": "ppt-week", "title": "PPT 生成专题周", "icon": "📽️", "desc": "一周搞懂 PPT Skill 生态：四种工具各有千秋，适配不同场景。", "issues": ["2026-06-23"], "topics": ["选型指南", "轻量快速出PPT", "原生可编辑PPT", "演讲辅助工具", "企业VI标准化"]}, {"id": "writing-week", "title": "内容创作专题周", "icon": "✍️", "desc": "从选题到分发，一套完整的 AI 辅助中文创作方法论。", "issues": ["2026-06-21", "2026-06-24"], "topics": ["选题诊断", "深度研究写作", "去AI味润色", "长文结构优化", "社交分发改写"]}, {"id": "visual-week", "title": "视觉设计专题周", "icon": "🎨", "desc": "不用学设计，也能产出专业级视觉物料的完整工具链。", "issues": ["2026-06-22", "2026-06-25"], "topics": ["封面设计指南", "正文配图技巧", "信息图制作", "HTML页面美化", "多平台适配"]}], "tips": [{"skill": "humanizer-zh", "level": "进阶", "before": "开头就是'在当今AI时代，人工智能技术正在深刻改变……'，AI味扑面而来", "after": "朋友聊天式开头：'你有没有发现，AI写的文章第一句永远在讲当今时代？'——读者一眼就想看下去，完全不像AI写的", "do": "把文章发给Codex说「用humanizer-zh帮我去AI味，语气像朋友聊天」——30秒出结果"}, {"skill": "dbskill", "level": "进阶", "before": "自己想了3个选题，不确定哪个能火，纠结了半天选了最没把握的那个", "after": "dbskill告诉你选题2「结构性最优」——受众明确、痛点清晰、有信息差。标题推荐3版，hook给2个方向。4分钟方向就定了", "do": "把选题写成一句主题句+一句目标读者画像，发给Codex说「用dbskill帮我诊断选题」"}, {"skill": "content-research-writer", "level": "基础", "before": "打开空白文档，标题写了又删，三小时只憋出两段", "after": "第一步出4段提纲，你确认后第二步逐段生成。30分钟出一篇结构完整、有论据有引用的2000字初稿", "do": "分两步：先要提纲，确认后再要正文。说「帮我给XX选题列一个4段提纲，含子标题和核心论点」"}, {"skill": "khazix-skills", "level": "进阶", "before": "想写深度长文但缺素材、缺框架，东拼西凑出来的文章散且浅", "after": "输入你收集的5-10篇参考文章+3个核心观点，khazix帮你整合重构为一篇有深度、有案例、有逻辑链的万字长文", "do": "先把相关文章链接、PDF、笔记整理好，告诉Codex「基于这些资料，用khazix-skills写一篇万字深度分析」"}, {"skill": "baoyu-skills", "level": "基础", "before": "文章写好了，封面要么用素材网模板（和内容无关），要么花30分钟在Canva里拖", "after": "5分钟，一张和文章内容高度相关的封面图，配色、构图、字体都是专业水准。不学设计也能产出设计感", "do": "告诉Codex「用baoyu-skills给这篇文章做一张微信公众号封面，简约商务风，突出XX观点」"}, {"skill": "ian-xiaohei-illustrations", "level": "进阶", "before": "一篇3000字方法论文章，从头到尾全是字，读者看着累，跳出率高", "after": "每500字插一张小黑风格图解，读者扫图就能抓住核心逻辑。阅读完成率显著提升", "do": "把文章的5个核心论点/流程拆出来，逐条发给Codex「用ian-xiaohei-illustrations给这个观点配一张插图」"}, {"skill": "html-anything", "level": "基础", "before": "写完文章只能发公众号，想做一个好看的网页版要么不会做要么太费时间", "after": "一篇Markdown变成一本可以在手机上翻阅的电子杂志页面。多一个分渠道，多一个传播场景", "do": "先告诉Codex你的品牌风格（配色/字体），再把文章Markdown丢进去说「用html-anything生成杂志风页面」"}, {"skill": "guizang-ppt-skill", "level": "基础", "before": "明天要汇报，PPT还没做，从空白页开始想排版、找模板、搭结构……至少2小时", "after": "一句话描述需求（主题+页数+风格），10分钟出15页HTML PPT。分享链接给同事，打开就能看", "do": "告诉Codex「用guizang-ppt帮我做一份XX主题的PPT，10页，每页一个核心句+2个要点」"}, {"skill": "ppt-master", "level": "进阶", "before": "Word写好方案了，但做PPT要手动复制粘贴、调格式、对齐……重复劳动占了大半", "after": "Word文档丢进去，指定「每页3个要点，15页」，自动提取、排版、生成标准.pptx。Word到PPT零手动", "do": "把你的Word方案发给Codex「用ppt-master把这份文档转成PPT，每页3要点，商务蓝配色」"}, {"skill": "html-ppt-skill", "level": "基础", "before": "上台演讲时频繁低头看稿、紧张忘词、时间把控不好", "after": "浏览器按S键，左边是当前幻灯片，右边是逐字稿+计时器。练三遍后脱稿讲，像手里有提词器", "do": "生成演示稿后在浏览器打开，按S键进入演讲者模式，用计时器练节奏，用逐字稿做脱稿辅助"}, {"skill": "gorden-ppt-skill", "level": "进阶", "before": "国企季度汇报要交20份PPT，每次手动调整格式、替换内容，做一份要30分钟", "after": "花5分钟建一次标准模板，之后所有PPT都套用模板生成——格式100%统一，一份只要2分钟", "do": "先在PowerPoint做好模板（封面/目录/正文/封底），告诉Codex路径后说「用GordenPPT生成XX内容的PPT」"}, {"skill": "guizang-social-card-skill", "level": "基础", "before": "写完一篇长文，还要打开Canva手动做6张卡片配图再发小红书。做图30分钟", "after": "10分钟自动生成6-9张排版精美的小红书卡片。文章写完直接出图，一次写作覆盖两个渠道", "do": "告诉Codex「用guizang-social-card把这篇长文拆成6张小红书卡片，简约清新风」"}, {"skill": "visual-report", "level": "基础", "before": "周三要交项目复盘报告，打开Excel截图、粘贴会议纪要、手动排版……从9点干到15点", "after": "所有资料一次性丢进去，10分钟自动识别数据、匹配图表、生成可视化报告，可导出PDF", "do": "把所有原始资料打包发给Codex「用visual-report帮我整理成可视化复盘报告，蓝白配色」"}], "scenarios": [{"id": "write-article", "title": "我要写一篇公众号深度文章", "icon": "✍️", "desc": "从选题诊断到多平台发布", "flow": ["dbskill", "content-research-writer", "humanizer-zh", "baoyu-skills", "ian-xiaohei-illustrations"], "note": "选题诊断→研究写作→去AI味→做封面→配插图", "outcome": "产出：一篇去AI味的深度文章+封面图+3-5张插图。总耗时约40分钟。"}, {"id": "make-ppt", "title": "我要做一份工作汇报PPT", "icon": "📽️", "desc": "根据交付场景选择不同Skill", "flow": ["guizang-ppt-skill", "ppt-master", "gorden-ppt-skill"], "note": "快速分享用guizang-ppt，正式交付用ppt-master，批量标准化用GordenPPT", "outcome": "产出：符合场景的PPT。分享=网页链接，交付=.pptx，批量=模板套全年。"}, {"id": "xhs-note", "title": "我要发一篇小红书笔记", "icon": "🃏", "desc": "从长文到图文卡片，一键转换", "flow": ["humanizer-zh", "guizang-social-card-skill", "baoyu-skills"], "note": "去AI味→拆卡片→做封面", "outcome": "产出：6-9张排版精美的小红书卡片+封面图。一次写作用两个渠道。"}, {"id": "publish-all", "title": "我要一篇文章多平台分发", "icon": "🌐", "desc": "公众号+小红书+知乎+X一起发", "flow": ["html-anything", "guizang-social-card-skill", "baoyu-skills"], "note": "网页版→小红书图文→各平台封面", "outcome": "产出：精美网页+8张卡片+各平台封面。一次写作，四个渠道同步。"}, {"id": "report", "title": "我要整理项目复盘报告", "icon": "📊", "desc": "零散资料→可视化报告→可交付文档", "flow": ["visual-report", "ppt-master"], "note": "丢资料→可视化报告→导出PPTX", "outcome": "产出：带图表的可视化报告+标准.pptx。以前一天，现在30分钟。"}, {"id": "speech", "title": "我要做一场演讲/培训", "icon": "🎤", "desc": "文字内容→带提词器的演示稿", "flow": ["html-ppt-skill", "baoyu-skills"], "note": "html-ppt-skill出演示稿+演讲者模式，baoyu出封面", "outcome": "产出：带演讲者模式的演示稿+封面。上台有提词器辅助。"}, {"id": "deep-research", "title": "我要做主题深度研究", "icon": "🔍", "desc": "模糊想法→万字长文→可视化报告", "flow": ["khazix-skills", "visual-report"], "note": "khazix写万字长文→visual-report转可视化", "outcome": "产出：万字深度分析+可视化PDF。适合付费专栏、行业分析、年终复盘。"}], "trends": [{"date": "06-25", "title": "Codex 周活突破500万", "body": "非开发者用户增速是程序员的3倍。内容创作者、分析师、产品经理成为增长最快群体。Skills生态从编程圈扩展到全岗位。", "source": "OpenAI Blog"}, {"date": "06-22", "title": "openai/skills 仓库正式废弃", "body": "转向Plugins目录（github.com/openai/plugins）作为新分发渠道。社区第三方的 npx skills@latest add 安装方式不受影响。", "source": "GitHub"}, {"date": "06-09", "title": "NotebookLM 新增Agent引擎", "body": "每个notebook配一台云端计算机，支持代码执行、多格式输出（PDF/Excel/PPT/图片），内置100+软件技能。跳过上传，直接搜索全网资料。", "source": "Google Blog"}, {"date": "06-02", "title": "Codex 发布「Intelligence at Work」战略", "body": "6大岗位插件覆盖62个商用应用、110项细分能力。Sites建站、定点批注修改同步发布。", "source": "OpenAI"}, {"date": "05-30", "title": "Notion External Agents API 开放", "body": "外部AI智能体（Claude、Codex等）可直接接入Notion工作区，读写页面、操作数据库。定制Agent开发门槛大幅降低。", "source": "Notion Blog"}]};
 
-function renderStats(data) {
-  document.getElementById('stat-issues').textContent = data.issues.length;
-  document.getElementById('stat-skills').textContent = Object.keys(data.skills).length;
-  document.getElementById('stat-scenarios').textContent = data.scenarios.length;
-  document.getElementById('stat-tips').textContent = data.tips.length;
-  document.getElementById('stat-trends').textContent = data.trends.length;
-}
+// ─── Shortcuts ───
+const S = DATA.skills;
+const skillName = id => (S[id]||{name:id}).name;
+const skillTags = id => (S[id]||{tags:[]}).tags||[];
 
-function renderIssues(data) {
-  document.getElementById('issue-grid').innerHTML = data.issues.map(issue => `
-    <a class="issue-card" href="issues/${issue.file}">
-      <div class="card-header card-${issue.color}">
-        <span class="issue-num ${issue.numColor}">#${issue.id}</span><div class="card-date">${issue.date} · ${issue.weekday}</div>
-        <div class="card-title">${issue.title}</div>
+// ─── Tab switch ───
+document.querySelectorAll('.tab-btn').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+  };
+});
+
+// ─── Sub-selector (技能库) ───
+document.querySelectorAll('.sel-btn').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('.sel-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('libSubCat').style.display = b.dataset.sub === 'cat' ? 'block' : 'none';
+    document.getElementById('libSubVs').style.display = b.dataset.sub === 'vs' ? 'block' : 'none';
+  };
+});
+
+// ─── Render: Issues ───
+function renderIssues() {
+  document.getElementById('issueArea').innerHTML = DATA.issues.map(iss => {
+    const tagsHtml = (iss.tags||[]).map(t => `<span class="ic-tag">${t}</span>`).join('');
+    return `<a class="issue-card" href="issues/${iss.file}" target="_blank">
+      <div class="ic-top">
+        <div class="ic-num ${iss.numColor}">#${iss.id}</div>
+        <div class="ic-date">${iss.date} ${iss.weekday}</div>
       </div>
-      <div class="card-body"><div class="card-meta">${issue.tags.map(t => `<span>${t}</span>`).join('')}</div></div>
-      <div class="card-footer"><span>${issue.skillCount} 个 Skills</span><span class="read-more">阅读 →</span></div>
-    </a>`).join('');
+      <div class="ic-title">${iss.title}</div>
+      <div class="ic-sub">${iss.subtitle}</div>
+      <div class="ic-tags">${tagsHtml}</div>
+    </a>`;
+  }).join('');
 }
 
-function renderCategories(data) {
-  const overview = document.getElementById('category-overview');
-  const detailArea = document.getElementById('skill-detail-area');
-  const catColors = { writing:'#f3f0ff', visual:'#e6faf4', ppt:'#e8f0fe', social:'#fef3e2', research:'#fce4ec', report:'#f0fdf4' };
-  overview.innerHTML = data.categories.map(cat => `
-    <div class="category-card" data-category="${cat.id}">
-      <div class="cat-icon" style="background:${catColors[cat.id] || '#f3f0ff'}">${cat.icon}</div>
-      <div class="cat-title">${cat.name}</div><div class="cat-desc">${cat.desc}</div>
-      <div class="cat-count">${cat.skills.length} 个</div></div>`).join('');
-  overview.querySelectorAll('.category-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const cat = data.categories.find(c => c.id === card.dataset.category);
-      if (!cat) return; overview.style.display = 'none';
-      const skillsHtml = cat.skills.map(sid => {
-        const sk = data.skills[sid]; if (!sk) return '';
-        const issueLinks = sk.issues.map(d => { const iss = data.issues.find(i => i.date === d); return iss ? `<a href="issues/${iss.file}">📬 第${iss.id}期</a>` : ''; }).join('');
-        const result = sk.result ? `<div class="sk-result"><strong>📦 效果：</strong>${sk.result}</div>` : '';
-        const tip = data.tips.find(t => t.skill === sid);
-        const tipHtml = tip ? `<div class="sk-result" style="background:linear-gradient(135deg,#fdfbff,#faf8ff);border-color:#d4c5f9;"><strong>💡 ${tip.level}技巧：</strong>${tip.before.substring(0,35)}... <strong>→</strong> ${tip.after.substring(0,35)}...</div>` : '';
-        return `<div class="skill-item">
-          <div class="sk-top"><div class="sk-icon">${cat.icon}</div><div class="sk-info"><div class="sk-name">${sk.name}</div><div class="sk-author">${sk.author} · ${sk.subtitle}</div></div></div>
-          <div class="sk-desc">${sk.desc}</div>${result}
-          <div class="sk-tags"><span class="sk-tag stars">⭐ ${sk.stars}</span>${sk.tags.map(t => `<span class="sk-tag">${t}</span>`).join('')}</div>
-          <div class="sk-install">${sk.install}</div>${tipHtml}
-          <div class="sk-issues">${issueLinks}</div></div>`;
+// ─── Render: Categories ───
+let activeCat = null;
+function renderCategories() {
+  document.getElementById('catGrid').innerHTML = DATA.categories.map(cat => {
+    const sBadges = cat.skills.map(sid => `<span class="cc-skill">${skillName(sid)}</span>`).join('');
+    return `<div class="cat-card" data-cat="${cat.id}" style="border-left:3px solid ${cat.color};">
+      <div class="cc-h"><span class="cc-icon" style="background:${cat.color}15;color:${cat.color}">${cat.icon}</span><span class="cc-name">${cat.name}</span></div>
+      <div class="cc-desc">${cat.desc}</div>
+      <div class="cc-skills">${sBadges}</div>
+    </div>`;
+  }).join('');
+
+  document.querySelectorAll('.cat-card').forEach(card => {
+    card.onclick = () => {
+      const catId = card.dataset.cat;
+      if (activeCat === catId) { activeCat = null; document.getElementById('catDetail').innerHTML = ''; return; }
+      activeCat = catId;
+      const cat = DATA.categories.find(c => c.id === catId);
+      const details = (cat.skills||[]).map(sid => {
+        const s = S[sid];
+        if (!s) return '';
+        return `<div class="skill-detail">
+          <div class="sd-h"><span class="sd-name">${s.name}</span><span class="sd-stars">⭐ ${s.stars}</span></div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">${s.desc}</div>
+          <div class="sd-result">📦 效果：${s.result||''}</div>
+          <div class="sd-install">${s.install||''}</div>
+        </div>`;
       }).join('');
-      detailArea.innerHTML = `<div class="skill-list active"><button class="back-btn" data-back>\u2190 返回分类</button><div class="section-header"><h2>${cat.icon} ${cat.name}</h2><div class="line"></div></div>${skillsHtml}</div>`;
-      detailArea.querySelector('[data-back]').addEventListener('click', () => { overview.style.display = 'grid'; detailArea.innerHTML = ''; });
-    });
+      document.getElementById('catDetail').innerHTML = `<div class="skill-expand show">${details}</div>`;
+      document.getElementById('catDetail').scrollIntoView({behavior:'smooth'});
+    };
   });
 }
 
-function renderShowdowns(data) {
-  document.getElementById('showdown-area').innerHTML = data.showdowns.map(sd => {
-    const skillHeaders = sd.skills.map(sid => { const sk = data.skills[sid]; return sk ? `<th>${sk.name}<br><span style="font-weight:400;font-size:10px;color:var(--muted)">${sk.subtitle}</span></th>` : '<th>-</th>'; }).join('');
-    const rows = sd.dimensions.map(dim => `<tr><td>${dim.label}</td>${dim.values.map(v => `<td>${v}</td>`).join('')}</tr>`).join('');
-    return `<div class="showdown-card"><div class="sd-header"><div class="sd-title">${sd.title}</div><div class="sd-desc">${sd.desc}</div></div><div style="overflow-x:auto"><table class="sd-table"><thead><tr><th style="width:90px">对比维度</th>${skillHeaders}</tr></thead><tbody>${rows}</tbody></table></div></div>`;
-  }).join('');
-}
-
-function renderCombos(data) {
-  document.getElementById('combo-area').innerHTML = data.combos.map((co, ci) => {
-    const stepsHtml = co.steps.map((s, i) => {
-      const sk = data.skills[s.skill];
-      const skillName = sk ? sk.name : s.skill;
-      return `<div class="combo-step">
-        <div class="cs-num">${i + 1}</div>
-        <div class="cs-body">
-          <div class="cs-label">${s.label}<span class="skill-tag">@${skillName}</span></div>
-          <div class="cs-prompt">${s.prompt}</div>
-          <div class="cs-get">${s.get}</div>
-        </div>
-      </div>`;
+// ─── Render: Showdowns ───
+function renderShowdowns() {
+  document.getElementById('showdownArea').innerHTML = DATA.showdowns.map(sd => {
+    const headers = sd.skills.map(sid => `<th>${skillName(sid)}</th>`).join('');
+    const rows = sd.dimensions.map(dim => {
+      const cells = dim.values.map(v => `<td>${v}</td>`).join('');
+      return `<tr><td>${dim.label}</td>${cells}</tr>`;
     }).join('');
-    return `<div class="combo-card">
-      <div class="co-header">
-        <div class="co-icon" style="background:#f3f0ff">${co.icon}</div>
-        <div class="co-title">${co.title}</div>
-      </div>
-      <div class="co-scene">${co.scene}</div>
-      <div class="co-outcome">${co.outcome}</div>
-      <div class="combo-flow">${stepsHtml}</div></div>`;
-  }).join('');
-}
-
-function renderTips(data) {
-  document.getElementById('tip-area').innerHTML = data.tips.map(tip => {
-    const sk = data.skills[tip.skill];
-    return `<div class="tip-card">
-      <div class="tp-header">
-        <span class="tp-badge ${tip.level === '基础' ? 'tp-basic' : 'tp-advanced'}">${tip.level}</span>
-        <div class="tp-title">${sk ? sk.name : ''} — ${tip.title || ''}</div>
-      </div>
-      <div class="tp-compare">
-        <div class="tp-before">${tip.before}</div>
-        <div class="tp-after">${tip.after}</div>
-      </div>
-      <div class="tp-do">${tip.do}</div>
+    return `<div class="showdown-block">
+      <div class="sd-header"><div class="sd-title">⚔️ ${sd.title}</div><div class="sd-desc">${sd.desc}</div></div>
+      <table class="showdown-table"><thead><tr><th>维度</th>${headers}</tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join('');
 }
 
-function renderScenarios(data) {
-  document.getElementById('scenario-area').innerHTML = data.scenarios.map(sc => {
-    const flowHtml = sc.flow.map((sid, i) => {
-      const sk = data.skills[sid];
-      let html = sk ? `<span class="sc-step">${sk.name}</span>` : `<span class="sc-step">${sid}</span>`;
-      if (i < sc.flow.length - 1) html += '<span class="sc-arrow">\u2192</span>';
-      return html;
-    }).join('');
-    return `<div class="scenario-card">
-      <div class="sc-top"><div class="sc-icon">${sc.icon}</div><div class="sc-info"><div class="sc-title">${sc.title}</div><div class="sc-desc">${sc.desc}</div></div></div>
-      <div class="sc-flow">${flowHtml}</div>
+// ─── Render: Scenarios ───
+function renderScenarios() {
+  document.getElementById('sceneArea').innerHTML = DATA.scenarios.map(sc => {
+    const flowBadges = sc.flow.map(sid => `<span class="sc-skill">${skillName(sid)}</span>`).join('<span style="font-size:11px;color:#ccc;">→</span>');
+    return `<div class="sc-card" data-scene="${sc.id}">
+      <div class="sc-top"><span class="sc-icon">${sc.icon}</span><span class="sc-title">${sc.title}</span></div>
       <div class="sc-note">${sc.note}</div>
-      <div class="sc-outcome"><strong>🏆 ${sc.outcome}</strong></div>
+      <div class="sc-flow">${flowBadges}</div>
+      <div class="sc-outcome">🏆 ${sc.outcome}</div>
     </div>`;
   }).join('');
 }
 
-function renderTrends(data) {
-  document.getElementById('trend-area').innerHTML = data.trends.map(tr => `
-    <div class="trend-item"><div class="tr-date">${tr.date}</div><div class="tr-content"><div class="tr-title">${tr.title}</div><div class="tr-body">${tr.body}</div><div class="tr-source">来源：${tr.source}</div></div></div>`).join('');
-}
-
-function renderCollections(data) {
-  const colColors = { 'ppt-week': '#e8f0fe', 'writing-week': '#f3f0ff', 'visual-week': '#e6faf4' };
-  document.getElementById('collection-area').innerHTML = data.collections.map(cl => {
-    const topicsHtml = cl.topics.map(t => `<span class="cl-topic">${t}</span>`).join('');
-    const issueLinks = cl.issues.map(d => { const iss = data.issues.find(i => i.date === d); return iss ? `<a href="issues/${iss.file}">📬 第${iss.id}期：${iss.title}</a>` : ''; }).join('');
-    return `<div class="collection-card"><div class="cl-top"><div class="cl-icon" style="background:${colColors[cl.id] || '#f3f0ff'}">${cl.icon}</div><div class="cl-info"><div class="cl-title">${cl.title}</div><div class="cl-desc">${cl.desc}</div></div></div><div class="cl-topics">${topicsHtml}</div><div class="cl-issues">${issueLinks}</div></div>`;
+// ─── Render: Combos ───
+function renderCombos() {
+  document.getElementById('comboArea').innerHTML = DATA.combos.map(co => {
+    const stepsHtml = co.steps.map(s => `
+      <div class="combo-step">
+        <div class="cs-label">${s.label} <span style="font-size:11px;color:var(--purple);font-weight:400;">[${skillName(s.skill)}]</span></div>
+        <div class="cs-prompt">${s.prompt}</div>
+        <div class="cs-get">✅ ${s.get}</div>
+      </div>`).join('');
+    return `<div class="combo-block">
+      <div class="cb-header">
+        <span class="cb-scene">🆘 ${co.scene}</span>
+        <div class="cb-title">${co.icon} ${co.title}</div>
+      </div>
+      <div class="cb-outcome"><strong>🏆 最终成果：</strong>${co.outcome}</div>
+      ${stepsHtml}
+    </div>`;
   }).join('');
 }
+
+// ─── Render: Tips ───
+function renderTips() {
+  document.getElementById('tipGrid').innerHTML = DATA.tips.map(t => {
+    const sk = S[t.skill]||{};
+    return `<div class="tip-card">
+      <div class="tp-skill">${sk.name||t.skill} · ${t.level}</div>
+      <div class="tp-before">❌ 之前：${t.before}</div>
+      <div class="tp-after">✅ 之后：${t.after}</div>
+      <div class="tp-do">🔧 怎么做：${t.do}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── Render: Trends ───
+function renderTrends() {
+  document.getElementById('trendList').innerHTML = DATA.trends.map(t => `
+    <div class="trend-item">
+      <span class="tr-date">${t.date}</span>
+      <div class="tr-body">
+        <div class="tr-title">${t.title}</div>
+        <div class="tr-text">${t.body}</div>
+        <div class="tr-src">${t.source}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ─── Render: Collections ───
+function renderCollections() {
+  document.getElementById('colGrid').innerHTML = DATA.collections.map(c => {
+    const topics = c.topics.map(tp => `<span class="cl-topic">${tp}</span>`).join('');
+    return `<div class="col-card">
+      <div class="cl-icon">${c.icon}</div>
+      <div class="cl-title">${c.title}</div>
+      <div class="cl-desc">${c.desc}</div>
+      <div class="cl-topics">${topics}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── Init ───
+renderIssues();
+renderCategories();
+renderShowdowns();
+renderScenarios();
+renderCombos();
+renderTips();
+renderTrends();
+renderCollections();
 </script>
 </body>
 </html>
