@@ -105,21 +105,25 @@
   .showdown-card .sd-table tr:last-child td { border-bottom:none; }
 
   /* Combos */
-  .combo-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:22px; overflow:hidden; }
-  .combo-card .co-outcome { margin:0 22px 16px; padding:12px 16px; background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; border:1px solid #a7f3d0; font-size:13px; color:#065f46; line-height:1.6; }
-  .combo-card .co-outcome strong { color:#047857; }
-  .combo-card .co-header { padding:18px 22px; display:flex; align-items:flex-start; gap:12px; }
+  .combo-card { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); margin-bottom:28px; overflow:hidden; }
+  .combo-card .co-header { padding:18px 24px 14px; }
   .combo-card .co-icon { width:48px; height:48px; border-radius:12px; background:#f3f0ff; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
-  .combo-card .co-info .co-title { font-size:16px; font-weight:700; margin-bottom:3px; }
-  .combo-card .co-info .co-desc { font-size:12px; color:var(--muted); line-height:1.5; }
-  .combo-flow { display:flex; flex-direction:column; gap:0; padding:0 22px 22px; }
+  .combo-card .co-title { font-size:18px; font-weight:800; margin-bottom:2px; }
+  .combo-card .co-scene { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; margin:0 24px 14px; font-size:13px; color:#92400e; line-height:1.7; }
+  .combo-card .co-scene::before { content:'🆘 真实场景：'; font-weight:700; }
+  .combo-card .co-outcome { margin:0 24px 16px; padding:12px 16px; background:linear-gradient(135deg,#ecfdf5,#f0fdf4); border-radius:10px; border:1px solid #a7f3d0; font-size:13px; color:#065f46; line-height:1.6; }
+  .combo-card .co-outcome::before { content:'🏆 最终成果：'; font-weight:700; color:#047857; }
+  .combo-flow { display:flex; flex-direction:column; gap:0; padding:0 24px 24px; }
   .combo-step { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--border); }
   .combo-step:last-child { border-bottom:none; }
-  .combo-step .cs-num { width:28px; height:28px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; }
+  .combo-step .cs-num { width:30px; height:30px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
   .combo-step .cs-body { flex:1; }
-  .combo-step .cs-label { font-size:14px; font-weight:700; margin-bottom:6px; color:var(--text); }
-  .combo-step .cs-do { font-size:12px; color:#555; line-height:1.7; margin-bottom:6px; padding:8px 12px; background:#fdfbff; border-left:3px solid #d4c5f9; border-radius:0 8px 8px 0; }
+  .combo-step .cs-label { font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text); }
+  .combo-step .cs-label .skill-tag { font-size:10px; font-weight:600; padding:2px 7px; border-radius:6px; background:#e8f0fe; color:var(--blue); margin-left:6px; }
+  .combo-step .cs-prompt { font-size:12px; color:#4a3f8a; line-height:1.7; margin-bottom:8px; padding:10px 14px; background:#fdfbff; border-left:3px solid #d4c5f9; border-radius:0 8px 8px 0; font-family:'SF Mono', Consolas, monospace; }
+  .combo-step .cs-prompt::before { content:'📋 直接复制发给Codex →  '; font-weight:700; font-family:inherit; color:var(--purple); display:block; margin-bottom:4px; }
   .combo-step .cs-get { font-size:12px; color:#065f46; line-height:1.6; padding:8px 12px; background:#ecfdf5; border-radius:8px; }
+  .combo-step .cs-get::before { content:'✅ 这步做完你拿到：'; font-weight:700; }
 
   /* Tips */
   .tip-grid { display:grid; grid-template-columns:1fr; gap:14px; }
@@ -193,6 +197,7 @@
     .stats-bar { gap:14px; }
     .tip-card .tp-compare { grid-template-columns:1fr; }
     .combo-step { flex-direction:column; gap:8px; }
+    .combo-step .cs-prompt { font-size:11px; }
   }
 </style>
 </head>
@@ -365,19 +370,26 @@ function renderShowdowns(data) {
 }
 
 function renderCombos(data) {
-  document.getElementById('combo-area').innerHTML = data.combos.map(co => {
-    const stepsHtml = co.steps.map(s => `
-      <div class="combo-step">
-        <div class="cs-num">${s.label.charAt(0)}</div>
+  document.getElementById('combo-area').innerHTML = data.combos.map((co, ci) => {
+    const stepsHtml = co.steps.map((s, i) => {
+      const sk = data.skills[s.skill];
+      const skillName = sk ? sk.name : s.skill;
+      return `<div class="combo-step">
+        <div class="cs-num">${i + 1}</div>
         <div class="cs-body">
-          <div class="cs-label">${s.label}</div>
-          <div class="cs-do"><strong>怎么做：</strong>${s.do}</div>
-          <div class="cs-get"><strong>✅ 得到：</strong>${s.get}</div>
+          <div class="cs-label">${s.label}<span class="skill-tag">@${skillName}</span></div>
+          <div class="cs-prompt">${s.prompt}</div>
+          <div class="cs-get">${s.get}</div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
     return `<div class="combo-card">
-      <div class="co-header"><div class="co-icon" style="background:#f3f0ff">${co.icon}</div><div class="co-info"><div class="co-title">${co.title}</div><div class="co-desc">${co.desc}</div></div></div>
-      <div class="co-outcome"><strong>🏆 最终成果：</strong>${co.outcome}</div>
+      <div class="co-header">
+        <div class="co-icon" style="background:#f3f0ff">${co.icon}</div>
+        <div class="co-title">${co.title}</div>
+      </div>
+      <div class="co-scene">${co.scene}</div>
+      <div class="co-outcome">${co.outcome}</div>
       <div class="combo-flow">${stepsHtml}</div></div>`;
   }).join('');
 }
