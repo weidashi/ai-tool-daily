@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-26</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-26 · 星期五</div>
+    <h1>日常自动化专场：让 Codex 接手你的重复劳动</h1>
+    <div class="art-sub">会议纪要 · 邮件润色 · 文件整理 · 知识入库——5 个 Skill，每天省 2 小时</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>前几期我们聚焦了写作、视觉、PPT 和报告——都是「创作型」场景。但日常工作中，80% 的时间消耗在重复劳动上：开会记笔记、回邮件措辞、桌面文件堆成山、随手记的灵感没处放。本期推荐 5 个「日常自动化」Skill，把机械劳动交给 Codex，你只做决策。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">unslop — 程序化去 AI 味</div><div class="sk-subtitle">MohamedAbdallah-14 · CLI 工具，5 级强度调节，适配 Codex/Claude/Gemini</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-p">去AI味</span><span class="bd bd-r">CLI工具</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个确定性的后处理工具，不是靠 prompt 让 AI "改得自然一点"，而是程序化识别并删除 AI 写作痕迹：三段式排比、滥用破折号、谄媚式开头（"在当今XX时代"）、堆砌修饰词。提供 5 级强度 + 仅审计不修改模式。<br><strong>最适合：</strong>AI 写完初稿后，一键去掉机器味儿，再自己微调。比 Humanizer-zh 更底层——它是规则引擎，不依赖 AI 判断。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add MohamedAbdallah-14/unslop --agent codex --global</div><div class="cmt">安装后重启 Codex，输入 /unslop 即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近一篇 AI 辅助写的文章丢给它，选 BALANCED 模式跑一遍，对比前后差异——你会惊讶原来有那么多"AI 口头禅"。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">meeting-notes-and-actions — 会议纪要自动化</div><div class="sk-subtitle">ComposioHQ · 录音转决策摘要 + 标记负责人的行动项</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">会议纪要</span><span class="bd bd-o">行动追踪</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把会议录音或转录文本丢进去，自动生成结构化摘要——包含核心决策、待办事项、负责人标记。不是泛泛的"大家讨论了XX"，而是"张三负责在周五前提交方案，李四跟进客户反馈"。<br><strong>最适合：</strong>每天 2-3 个会的职场人。开完会 2 分钟出纪要，不用再花 20 分钟回忆+整理。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-notes-and-actions</div><div class="cmt">安装到 ~/.codex/skills/，重启 Codex 即生效</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>下次开会用手机录个音（或飞书/钉钉自动转录），丢给 Codex 说「用 meeting-notes 整理会议纪要」。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div><div class="sk-title">email-draft-polish — 邮件起草与润色</div><div class="sk-subtitle">ComposioHQ · 起草、改写、精简邮件，自动匹配语气和受众</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">邮件处理</span><span class="bd bd-b">商务沟通</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不只是"帮我写一封邮件"——它会根据你指定的受众（客户/领导/同事/供应商）自动调整语气、正式度和篇幅。支持三种模式：从零起草、改写已有草稿、精简冗长邮件。<br><strong>最适合：</strong>每天处理 10+ 封邮件的商务岗。客户邮件要客气但坚定、内部邮件要简洁直接、跨部门邮件要清晰无歧义——每次都要切换语气，这个 Skill 帮你自动完成。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path email-draft-polish</div><div class="cmt">安装后描述邮件需求即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一封你写了但觉得语气不太对的邮件，丢给 Codex 说「用 email-draft-polish 帮我改成更正式但不生硬的语气」。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div><div class="sk-title">file-organizer — 桌面/文件夹自动整理</div><div class="sk-subtitle">ComposioHQ · 按规则批量重命名、分类、归档文件</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">文件管理</span><span class="bd bd-p">日常自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你告诉它规则（如"按日期+项目名重命名""把图片移到Images文件夹""删除7天前的临时文件"），它批量执行。不是简单的 mv 命令——能识别文件类型、提取日期、匹配命名模式。<br><strong>最适合：</strong>桌面常年堆满"新建文件夹(1)"到"新建文件夹(9)"的人。每月整理一次变每天自动整理。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path file-organizer</div><div class="cmt">⚠️ 首次使用建议先 dry-run 预览变更，确认后再执行</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把桌面路径告诉 Codex，说「用 file-organizer 按文件类型分类，把超过 30 天没动的文件归档到 Archive 文件夹」。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div><div class="sk-title">notion-knowledge-capture — 灵感自动入库</div><div class="sk-subtitle">ComposioHQ · 聊天/笔记/随手记 → 结构化 Notion 页面</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">知识管理</span><span class="bd bd-b">Notion</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你随手记的碎片化笔记、聊天记录里的灵感、网页上看到的好观点——直接丢给它，自动转成格式统一、标签完善、相互关联的 Notion 页面。不用再手动复制粘贴+排版。<br><strong>最适合：</strong>用 Notion 做第二大脑的人。灵感碎片自动入库，不会因为"懒得整理"而丢失好想法。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-knowledge-capture</div><div class="cmt">需先通过 Composio 连接 Notion 账号</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近 3 天手机备忘录里记的灵感碎片发给 Codex，说「用 notion-knowledge-capture 整理到我的 Ideas 数据库」。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">🔗 串联思路</span>
+      <span class="ps ps-1">meeting-notes</span><span class="pa">→</span>
+      <span class="ps ps-3">email-draft</span><span class="pa">→</span>
+      <span class="ps ps-5">notion-capture</span>
+      <span style="font-size:11px;color:var(--muted);margin-left:8px;">开会→出纪要→发邮件跟进→知识入库，一条龙</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📢 6/25 · v0.142.2 — MCP 工具搜索 + macOS 代理</div></div>
+      <div class="tb">Codex 继续高速迭代。本周更新：默认启用 MCP 工具搜索（更智能的工具发现）、macOS 系统代理支持（企业内网用户不再需要手动配）、深色模式插件图标、安全缓冲 UI 升级。CLI 从月初的 v0.136.0 已更新至 v0.142.2，一个月 7 个版本。</div>
+    </div>
+
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">🎬 6/18 · Record & Replay — 把操作录制成可复用 Skill</div></div>
+      <div class="tb">这是最值得关注的新功能：在 macOS 上把一段工作流录制下来，Codex 自动转化为可复用的 Skill。比如你演示一遍"打开 Excel → 筛选数据 → 生成图表 → 导出 PDF"，Codex 学会后可以反复执行。这意味着<strong>不懂代码也能创建自己的自动化 Skill</strong>。</div>
+    </div>
+
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 技巧：用 Claude Code 导入功能零成本迁移</div></div>
+      <div class="tb">Codex v0.140.0 新增 `/import` 命令，可选择性导入 Claude Code 的设置、项目配置和近期聊天记录。如果你之前在 Claude Code 里积累了大量 prompt 和配置，一条命令就能迁移到 Codex生态，不用手动重建。</div>
+    </div>
+
+    <div class="hl">💡 <strong>一句话总结 6 月 Codex 更新：</strong>从编码工具进化为全岗位工作台。6 大岗位插件（数据分析/创意/销售/产品/投资/投行）覆盖 62 款商用软件、110 项能力。非开发者用户增速是程序员的 3 倍，周活突破 500 万。</div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — PPTX 导出：AI 草稿直接变标准 PowerPoint</div></div>
+      <div class="tb">NotebookLM 的 Slide Deck 功能新增 PPTX 导出——你在 NotebookLM 里生成的演示稿，可以导出为标准 .pptx 文件，在 PowerPoint 里继续编辑。虽然导出的是图片层（不是可编辑文本框），但视觉布局完整保留，直接嵌入公司模板即可使用。<strong>技巧：</strong>在生成时把公司配色/字体要求写进 prompt（如"深色背景、Arial 标题、关键指标用蓝色高亮"），导出的 PPTX 基本不用再调格式。</div>
+    </div>
+
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — 聊天中直接创建产出物</div></div>
+      <div class="tb">最新版本支持在聊天对话中直接说「把这个转成 Slide Deck」或「生成一份 2 页简报」，不用再切到 Studio 面板。在聊天中打磨好逻辑和措辞后，一句话变成正式产出物。<strong>用法：</strong>把聊天当草稿区，把论点聊透了再点「生成」，产出物的质量和逻辑会远好于直接要求 AI 写。</div>
+    </div>
+
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — EPUB 长文支持，整本书丢进去分析</div></div>
+      <div class="tb">新增 EPUB 格式支持，可以把整本电子书（技术手册、行业著作、企业 playbook）上传到 NotebookLM。结合已有的 PDF、CSV、代码仓库，实现跨数百页内容的交叉引用和深度分析。<strong>场景：</strong>上传一本行业方法论 EPUB + 你公司的内部数据，问「对比书中的方法论和我们实际数据，哪些地方有差距？」</div>
+    </div>
+
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — AI 自动填充数据库属性</div></div>
+      <div class="tb">Notion AI 的 auto-fill 功能可以根据页面内容自动填充数据库属性（标签、状态、负责人、日期等）。建一个「阅读笔记」数据库，粘贴文章链接后 AI 自动提取摘要、打标签、评星——省去手动分类的时间。配合前面的 notion-knowledge-capture Skill，可以实现「灵感碎片→自动入库→AI 归类」的全自动知识管理流。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 记忆投喂：让 WorkBuddy 越来越懂你</div></div>
+      <div class="tb">WorkBuddy 的「记忆」功能不只是被动记录——你可以主动投喂。打开 设置 → 记忆，手动补充一条你希望它记住的核心信息（比如"我的公众号读者是国企中层，偏好结构化论述"）。以后每次生成内容，它会自动带上这个上下文。<strong>进阶：</strong>在 MEMORY.md 里写入你的写作风格偏好，比如"写给 30-45 岁职场人的大白话，不要学术腔"，WorkBuddy 会内化这种表达习惯。</div>
+    </div>
+
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 自动化任务：从「问一句答一句」到「定时自己干活」</div></div>
+      <div class="tb">WorkBuddy 最高阶的用法不是对话，而是自动化。你可以配一个定时任务：「每天下午 5 点，读取项目文件夹的最新文件，生成一句话摘要发给我」。先手动跑 3 次确认稳定，再开启定时。<strong>原则：</strong>两周打磨好一个高质量任务，远胜两天配三个全跑不通的。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 今天省下的 2 小时，是你明天思考战略的资本</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-26</span>
+  </div>
+</div>
+</body>
+</html>

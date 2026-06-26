@@ -9,7 +9,9 @@
       "skills": [
         "humanizer-zh",
         "content-research-writer",
-        "khazix-skills"
+        "khazix-skills",
+        "unslop",
+        "email-draft-polish"
       ]
     },
     {
@@ -52,9 +54,10 @@
       "name": "选题研究",
       "icon": "🔍",
       "color": "#e84393",
-      "desc": "选题诊断、爆款拆解、内容定位优化",
+      "desc": "选题诊断、爆款拆解、内容定位优化、知识管理",
       "skills": [
-        "dbskill"
+        "dbskill",
+        "notion-knowledge-capture"
       ]
     },
     {
@@ -62,13 +65,105 @@
       "name": "报告生成",
       "icon": "📊",
       "color": "#00b894",
-      "desc": "可视化报告、PDF/PPT导出、数据展示",
+      "desc": "可视化报告、PDF/PPT导出、数据展示、会议纪要",
       "skills": [
-        "visual-report"
+        "visual-report",
+        "meeting-notes-and-actions",
+        "file-organizer"
       ]
     }
   ],
   "skills": {
+    "unslop": {
+      "name": "unslop",
+      "author": "MohamedAbdallah-14",
+      "subtitle": "程序化去AI味",
+      "desc": "确定性CLI工具，程序化识别并删除AI写作痕迹：三段式排比、滥用破折号、谄媚式开头、堆砌修饰词。5级强度调节+仅审计模式。适配Codex/Claude/Gemini。",
+      "stars": "热门",
+      "tags": [
+        "去AI味",
+        "CLI工具",
+        "文本后处理"
+      ],
+      "install": "npx -y skills@latest add MohamedAbdallah-14/unslop --agent codex --global",
+      "issues": [
+        "2026-06-26"
+      ],
+      "screenshot": "",
+      "result": "AI写的初稿 → 去掉机器味儿。5种强度可选，比prompt润色更稳定可靠。"
+    },
+    "meeting-notes-and-actions": {
+      "name": "meeting-notes-and-actions",
+      "author": "ComposioHQ",
+      "subtitle": "会议纪要自动化",
+      "desc": "把会议录音或转录文本转为结构化摘要：核心决策、待办事项、负责人标记。不是泛泛总结，而是可直接发群里的行动纪要。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "会议纪要",
+        "行动追踪",
+        "自动化"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-notes-and-actions",
+      "issues": [
+        "2026-06-26"
+      ],
+      "screenshot": "",
+      "result": "1小时会议录音 → 2分钟出结构化纪要+行动项。以前手动整理要20分钟。"
+    },
+    "email-draft-polish": {
+      "name": "email-draft-polish",
+      "author": "ComposioHQ",
+      "subtitle": "邮件起草与润色",
+      "desc": "根据受众自动调整邮件语气、正式度和篇幅。支持从零起草、改写草稿、精简冗长邮件三种模式。适配客户/领导/同事/供应商等不同场景。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "邮件处理",
+        "商务沟通",
+        "语气调整"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path email-draft-polish",
+      "issues": [
+        "2026-06-26"
+      ],
+      "screenshot": "",
+      "result": "几句要点 → 一封语气恰当的专业邮件。客户/领导/同事各不同。"
+    },
+    "file-organizer": {
+      "name": "file-organizer",
+      "author": "ComposioHQ",
+      "subtitle": "文件自动整理",
+      "desc": "按规则批量重命名、分类、归档文件。识别文件类型、提取日期、匹配命名模式。支持dry-run预览后再执行。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "文件管理",
+        "自动整理",
+        "日常效率"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path file-organizer",
+      "issues": [
+        "2026-06-26"
+      ],
+      "screenshot": "",
+      "result": "桌面一堆散乱文件 → 按类型/日期/项目自动分类归档。"
+    },
+    "notion-knowledge-capture": {
+      "name": "notion-knowledge-capture",
+      "author": "ComposioHQ",
+      "subtitle": "灵感自动入库",
+      "desc": "碎片化笔记、聊天记录、网页灵感→自动转成格式统一、标签完善、相互关联的Notion页面。不用手动复制粘贴排版。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "知识管理",
+        "Notion",
+        "自动入库"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-knowledge-capture",
+      "issues": [
+        "2026-06-26"
+      ],
+      "screenshot": "",
+      "result": "灵感碎片 → 结构化Notion页面。不会因为懒得整理而丢失好想法。"
+    },
     "humanizer-zh": {
       "name": "Humanizer-zh",
       "author": "op7418",
@@ -312,6 +407,31 @@
     }
   },
   "issues": [
+    {
+      "id": 8,
+      "date": "2026-06-26",
+      "weekday": "星期五",
+      "title": "日常自动化专场：让 Codex 接手你的重复劳动",
+      "subtitle": "会议纪要 · 邮件润色 · 文件整理 · 知识入库——5 个 Skill，每天省 2 小时",
+      "tags": [
+        "📝 会议纪要",
+        "✉️ 邮件润色",
+        "📁 文件整理",
+        "🧠 知识入库",
+        "🤖 自动化"
+      ],
+      "skillCount": 5,
+      "color": "g4",
+      "numColor": "n-orange",
+      "file": "2026-06-26.html",
+      "skills": [
+        "unslop",
+        "meeting-notes-and-actions",
+        "email-draft-polish",
+        "file-organizer",
+        "notion-knowledge-capture"
+      ]
+    },
     {
       "id": 7,
       "date": "2026-06-25",
