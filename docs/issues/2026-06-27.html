@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-27</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-27 · 星期六</div>
+    <h1>写作自动化专场：4 个新 Skill，覆盖你最常写的四种文体</h1>
+    <div class="art-sub">公众号文章 · 工作日报 · 深度长文 · 内容日报——Codex 替你写</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>今天不聊老面孔。4 个近期发布的全新 Skill——公众号全流程运营、工作日报自动生成、长文小说写作、公众号日报自动化——每个都针对一种高频写作场景深度优化。从「选题→写作→审稿→排版→配图→发布」到「读会话记录→自动出日报」，全流程交给 Codex。每周至少省 5 小时。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 内容生产 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">wechat-article-skills</div><div class="sk-subtitle">aiworkskills · 公众号运营数字员工——选了风格、说一句话，剩下全自动</div></div></div>
+      <div class="badges"><span class="bd bd-g">🌟 新发布</span><span class="bd bd-p">全流程</span><span class="bd bd-b">9个Skill</span><span class="bd bd-o">AI味自检</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套覆盖公众号内容生产全流程的 Skill 套件。拆成 9 个独立技能：主流程串联、选题调研、AI 写作、敏感词审稿（含「AI 味自检」诊断）、Markdown 转微信 HTML 排版（4 套主题）、14 种视觉风格配图、微信 API 直发草稿。<br><strong>最适合：</strong>公众号内容创作者、自媒体运营——不用学设计，不用记排版规范，说一句话就能出完整文章。<br><strong>亮点：</strong>每一步都暂停等你确认，不会自动跳走；内置业务资料库（AI 自动查你的产品信息）；Codex 原生支持（仓库自带 AGENTS.md，克隆即生效）。</div>
+      <div class="install"><div class="il">📦 安装（Codex）</div><div class="cmd">git clone https://github.com/aiworkskills/wechat-article-skills.git ~/.codex/skills/wechat-article-skills</div><div class="cmt">重载 Codex 后生效。装完对 Codex 说「帮我写一篇公众号文章」即可开始。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对 Codex 说「帮我写一篇公众号文章，主题是『普通人如何用 AI 提升工作效率』，风格简约商务，1500 字左右」——它会先出选题卡片让你确认，再逐段写作，然后审稿去 AI 味，最后排版配图，全程你只需点头或微调。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">weekly-report-skill</div><div class="sk-subtitle">longzhengwu-web · 日报/周报自动生成——读 Codex 会话记录，自动出工作报告</div></div></div>
+      <div class="badges"><span class="bd bd-g">🌟 新发布</span><span class="bd bd-p">日报周报</span><span class="bd bd-b">自动采集</span><span class="bd bd-o">自进化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个给技术型 leader 看的日报/周报生成 Skill。它读取你本机 Codex（和 Claude Code）的会话记录，自动抽取当天/本周的工作意图、产出要点、改动文件，按「做了什么→产出/结论→下一步」三段式结构输出。支持 4 种用法：自动生成日/周报、团队日报提取个人部分、给报告打分、生成时自带质量自查。<br><strong>最适合：</strong>每天要写日报、每周要交周报的职场人——不需要回忆今天干了什么，Codex 帮你从会话记录里找出来。<br><strong>亮点：</strong>自进化机制——你每次纠正它都会记住（learned_preferences.md），越用越懂你的文风和归类习惯；跨源去重（同一件事在 Codex 和 Claude 里都做了，只报告一次）。</div>
+      <div class="install"><div class="il">📦 安装（Codex）</div><div class="cmd">git clone https://github.com/longzhengwu-web/weekly-report-skill.git ~/.codex/skills/weekly-report</div><div class="cmt">装完后重载 Codex，对 Codex 说「出今天日报」即可触发。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>今天周六——但你可以试试「出本周周报」，它会自动读取周一至周六的 Codex 会话记录，按主线聚合（同一条工作线合并），输出一份结构清晰、结论优先的周报。下周一开始，每天下班前说「出今天日报」，5 秒搞定。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">novel-writing</div><div class="sk-subtitle">wgwtest · 长文/小说写作全流程——从大纲到终稿，步步有据</div></div></div>
+      <div class="badges"><span class="bd bd-g">🌟 热门</span><span class="bd bd-p">长文写作</span><span class="bd bd-b">小说</span><span class="bd bd-o">章节规划</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个专为长篇内容设计的 Codex Skill。覆盖小说/长文写作的四个核心环节：大纲规划（人物、情节、世界观）、逐章起草（保持前后一致）、场景延续（基于已有内容推进情节）、修订迭代（结构化修改建议）。不是简单的「帮我写」，而是每一步都有明确的结构和约束。<br><strong>最适合：</strong>写长篇内容的人——公众号万字长文、付费专栏、小说、行业深度报告。需要持续多天写作、保持前后一致性的场景。<br><strong>亮点：</strong>保持故事/论述前后一致不跑偏；每章自动对照前面内容检查矛盾；修订建议分优先级（结构问题 > 逻辑问题 > 文字问题）。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add wgwtest/novel-writing --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对 Codex 说「我想写一篇 5000 字的文章，主题是『2026 上半年 AI 工具生态回顾』，帮我先列一个大纲，分 5 个章节，每章 2-3 个核心论点」——novel-writing 会先出完整大纲让你确认，然后逐章展开写。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">WeChat Daily Skills</div><div class="sk-subtitle">mrguo · 公众号日报自动化——从抓取到发布，一套可复用的工作流</div></div></div>
+      <div class="badges"><span class="bd bd-g">🌟 新发布</span><span class="bd bd-p">公众号日报</span><span class="bd bd-b">自动化</span><span class="bd bd-o">5个Skill</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套开源的公众号日报自动化 Skill 包。把「报告抓取→信源核查→头版选题→中文长文写作→公众号排版配图→微信草稿上传」串成可复用的工作流。包含 5 个独立 Skill：主控编排、报告 MCP 抓取、深度研究写作、公众号 HTML 排版配图、微信草稿上传。<br><strong>最适合：</strong>需要每天/定期产出公众号日报的内容团队或个人——不用在多个工具间切换，一条链路跑完。<br><strong>亮点：</strong>已做开源脱敏处理（删除私有路径和凭据），拿来即改即用；支持只创建草稿不发布（先审后发）；主控 Skill 负责编排其他 4 个 Skill，不用手动串联。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">从 mrguo.life/zh/resources/wechat-daily-skills-open-source 下载开源包，解压后 cp -r skills/* ~/.codex/skills/</div><div class="cmt">需自行配置微信公众平台凭据和 Report MCP 服务。建议先在测试公众号草稿模式跑通。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>下载后先跑通单步——用 daily-brief-deepresearch Skill 测试「帮我生成一份今日 AI 领域简报，1500 字，含 5 个核心新闻和评论」，验证写作环节。确认没问题后再串全流程。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">串联思路</span>
+      <span class="ps ps-1">写公众号</span><span style="color:var(--muted)">→</span>
+      <span class="ps ps-2">出日报</span><span style="color:var(--muted)">→</span>
+      <span class="ps ps-3">写长文</span><span style="color:var(--muted)">→</span>
+      <span class="ps ps-4">发日报</span>
+      <span style="font-size:11px;color:var(--muted);margin-left:4px">四种文体，四个 Skill，全流程覆盖</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📱 Codex Remote 正式 GA（6/25）</div></div>
+      <div class="tb">从 ChatGPT 移动端 App 通过 QR 码配对，远程控制你的 Mac 或 Windows 桌面 Codex。想象一下：通勤路上用手机给 Codex 下指令，到家时工作已经跑完了。6 月 8 日前的老连接需重新配对。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">💰 令牌预算上线（v0.142.0）</div></div>
+      <div class="tb">可配置的令牌预算，跨 Agent 线程追踪使用情况，耗尽时自动中止。对于每天跑大量自动化任务的用户来说，这个功能能有效控制 API 成本——不会出现「跑了一夜，账单爆炸」的情况。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🎭 每主机个性化 + Composer 目标编辑（iOS）</div></div>
+      <div class="tb">iOS 端上线每主机个性化设置——友好模式（更耐心、解释更多）和务实模式（直接给答案、少废话）。Composer 中可直接编辑目标，分叉对话可链接回原始线程。选务实模式，Codex 会更像一个高效的技术搭档。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 本周使用技巧：</strong>如果你装了多个 Skill，用自然语言描述任务即可自动触发——不需要记命令。比如「帮我把今天的会话整理成日报」，Codex 会自动发现 weekly-report-skill 并调用。关键是要把 Skill 装到 ~/.codex/skills/ 目录下，然后重载窗口让它发现。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — Deep Research 查询公式</div></div>
+      <div class="tb">用这个公式提问，Deep Research 产出质量直接翻倍：<strong>主题 + 时间范围 + 分析维度</strong>。例如：「2026 上半年中国 AI 教育赛道的内容定位演变，按平台/订阅模式/变现方式三个维度分析」。标准版每月 10 次免费 Deep Research，省着用在最重要的研究上。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 先讨论再整理</div></div>
+      <div class="tb">别一上来就往 NotebookLM 里塞 30 个资料然后问「怎么写」。正确的顺序：<strong>先用 ChatGPT/Claude 讨论想解决什么问题、怎么拆分章节 → 按这个框架找资料加到 NotebookLM → 再问结构化问题</strong>。NotebookLM 的强项是「基于源材料的整理」，不是「从零创造」。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — YouTube 转录工作流</div></div>
+      <div class="tb">贴一个带字幕的 YouTube 公开链接到 Sources 里，NotebookLM 会自动抓取转录文本。然后让它出章节大纲、关键引语、核心观点。一小时的长视频，5 分钟就能拿到骨架。会议的录音、播客、访谈也适用——上传音频→生成转录→导出到大模型做后处理。</div>
+    </div>
+
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — AI 自动填充数据库属性</div></div>
+      <div class="tb">Notion 数据库里有一列「摘要」或「标签」不想手动填？选中多行 → 右键「Ask AI」→ 输入「根据标题和内容，为每行生成一句话摘要和 3 个标签」→ AI 自动填充整列。比手动一条条填快 10 倍，而且格式统一。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🧠 记忆系统「主动投喂」技巧</div></div>
+      <div class="tb">WorkBuddy 的记忆系统不是实时的——它是<strong>每晚自动整理前一天的对话</strong>，第二天才生效。所以别干等着让它自己猜你是谁。最高效的做法：在对话中一次性说清你的身份+行业+偏好，例如「我是做教育行业的，团队 12 个人，在深圳做 K12 课外辅导。输出风格要口语化、分点清晰、800-1200 字」。一句话包含 4 个信息点，系统当晚就会全部提取并记住，比手动编辑记忆快得多。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 底部 5 按钮高效工作流</div></div>
+      <div class="tb">WorkBuddy 底部 5 个按钮是效率核心：① <strong>Craft 角色切换</strong>——写文章切「内容创作专家」，写汇报切「职场办公专家」，角色选对少改 2-3 轮；② <strong>Auto 自动模式</strong>——AI 自己规划、分步跑、自查，全程不用盯；③ <strong>技能快捷栏</strong>——常用技能一键调用。90% 的人还在纯打字，但这三个按钮的组合使用才是拉开效率差距的地方。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 写东西这件事，最难的不是写，是「开始写」。今天这四个 Skill，每一个都帮你跨过那个最难的「从零到一」。装一个，试一次，你会发现——原来不是不想写，是缺了把好用的笔。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-27</span>
+  </div>
+</div>
+</body>
+</html>

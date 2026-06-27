@@ -11,7 +11,9 @@
         "content-research-writer",
         "khazix-skills",
         "unslop",
-        "email-draft-polish"
+        "email-draft-polish",
+        "novel-writing",
+        "weekly-report-skill"
       ]
     },
     {
@@ -23,7 +25,8 @@
       "skills": [
         "baoyu-skills",
         "ian-xiaohei-illustrations",
-        "html-anything"
+        "html-anything",
+        "wechat-article-skills"
       ]
     },
     {
@@ -46,7 +49,9 @@
       "color": "#f39c12",
       "desc": "小红书卡片、公众号封面、多平台内容适配",
       "skills": [
-        "guizang-social-card-skill"
+        "guizang-social-card-skill",
+        "wechat-article-skills",
+        "wechat-daily-skills"
       ]
     },
     {
@@ -57,7 +62,8 @@
       "desc": "选题诊断、爆款拆解、内容定位优化、知识管理",
       "skills": [
         "dbskill",
-        "notion-knowledge-capture"
+        "notion-knowledge-capture",
+        "wechat-daily-skills"
       ]
     },
     {
@@ -69,7 +75,8 @@
       "skills": [
         "visual-report",
         "meeting-notes-and-actions",
-        "file-organizer"
+        "file-organizer",
+        "weekly-report-skill"
       ]
     }
   ],
@@ -404,9 +411,109 @@
       ],
       "screenshot": "",
       "result": "会议纪要+截图+Excel → 可视化报告，可导出PDF。"
+    },
+    "wechat-article-skills": {
+      "name": "wechat-article-skills",
+      "author": "aiworkskills",
+      "subtitle": "公众号运营数字员工",
+      "desc": "一套覆盖公众号内容生产全流程的 Skill 套件（9 个独立 Skill）：选题调研、AI 写作、敏感词审稿（含 AI 味自检）、Markdown 转微信 HTML 排版（4 套主题）、14 种风格配图、微信草稿上传。Codex 原生支持，克隆即用。",
+      "stars": "新发布",
+      "tags": [
+        "公众号",
+        "全流程",
+        "9个Skill",
+        "AI味自检"
+      ],
+      "install": "git clone https://github.com/aiworkskills/wechat-article-skills.git ~/.codex/skills/wechat-article-skills",
+      "issues": [
+        "2026-06-27"
+      ],
+      "screenshot": "",
+      "result": "说一句话「帮我写一篇公众号文章」 → 选题→写作→审稿→排版→配图→发布，全程自动。"
+    },
+    "weekly-report-skill": {
+      "name": "weekly-report-skill",
+      "author": "longzhengwu-web",
+      "subtitle": "日报/周报自动生成",
+      "desc": "读取本机 Codex 会话记录，自动抽取工作意图、产出要点、改动文件，按三段式结构生成日报/周报。支持自动生成、团队日报提取、报告打分、自进化偏好学习。Codex/Claude Code 通用。",
+      "stars": "新发布",
+      "tags": [
+        "日报",
+        "周报",
+        "自动采集",
+        "自进化"
+      ],
+      "install": "git clone https://github.com/longzhengwu-web/weekly-report-skill.git ~/.codex/skills/weekly-report",
+      "issues": [
+        "2026-06-27"
+      ],
+      "screenshot": "",
+      "result": "说「出今天日报」 → 5 秒出三段式工作报告。不用回忆今天干了什么。"
+    },
+    "novel-writing": {
+      "name": "novel-writing",
+      "author": "wgwtest",
+      "subtitle": "长文/小说写作全流程",
+      "desc": "覆盖长篇内容的四个核心环节：大纲规划（人物、情节、世界观）、逐章起草（保持前后一致）、场景延续（基于已有内容推进）、修订迭代（结构化修改建议）。适合万字长文、小说、深度行业报告。",
+      "stars": "热门",
+      "tags": [
+        "长文写作",
+        "小说",
+        "章节规划",
+        "一致性"
+      ],
+      "install": "npx -y skills@latest add wgwtest/novel-writing --agent codex --global",
+      "issues": [
+        "2026-06-27"
+      ],
+      "screenshot": "",
+      "result": "大纲 → 逐章写作 → 自动检查前后一致 → 修订。适合持续多天写作。"
+    },
+    "wechat-daily-skills": {
+      "name": "WeChat Daily Skills",
+      "author": "mrguo",
+      "subtitle": "公众号日报自动化工作流",
+      "desc": "一套开源的公众号日报自动化 Skill 包（5 个 Skill）：主控编排、报告 MCP 抓取、深度研究写作、公众号 HTML 排版配图、微信草稿上传。从抓取到发布串成可复用工作流。",
+      "stars": "新发布",
+      "tags": [
+        "公众号日报",
+        "自动化",
+        "5个Skill",
+        "工作流"
+      ],
+      "install": "从 mrguo.life/zh/resources/wechat-daily-skills-open-source 下载开源包，解压后 cp -r skills/* ~/.codex/skills/",
+      "issues": [
+        "2026-06-27"
+      ],
+      "screenshot": "",
+      "result": "报告抓取→信源核查→深度写作→排版配图→草稿上传。一条链路自动跑完。"
     }
   },
   "issues": [
+    {
+      "id": 9,
+      "date": "2026-06-27",
+      "weekday": "星期六",
+      "title": "写作自动化专场：4 个新 Skill，覆盖你最常写的四种文体",
+      "subtitle": "公众号文章 · 工作日报 · 深度长文 · 内容日报——Codex 替你写",
+      "tags": [
+        "📝 公众号",
+        "📋 日报周报",
+        "📖 长文写作",
+        "📰 日报自动化",
+        "🤖 全流程"
+      ],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-06-27.html",
+      "skills": [
+        "wechat-article-skills",
+        "weekly-report-skill",
+        "novel-writing",
+        "wechat-daily-skills"
+      ]
+    },
     {
       "id": 8,
       "date": "2026-06-26",
