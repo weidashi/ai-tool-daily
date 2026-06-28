@@ -13,7 +13,8 @@
         "unslop",
         "email-draft-polish",
         "novel-writing",
-        "weekly-report-skill"
+        "weekly-report-skill",
+        "internal-comms"
       ]
     },
     {
@@ -26,7 +27,9 @@
         "baoyu-skills",
         "ian-xiaohei-illustrations",
         "html-anything",
-        "wechat-article-skills"
+        "wechat-article-skills",
+        "canvas-design",
+        "brand-guidelines"
       ]
     },
     {
@@ -39,7 +42,8 @@
         "guizang-ppt-skill",
         "ppt-master",
         "html-ppt-skill",
-        "gorden-ppt-skill"
+        "gorden-ppt-skill",
+        "codex-ppt-skill"
       ]
     },
     {
@@ -63,7 +67,8 @@
       "skills": [
         "dbskill",
         "notion-knowledge-capture",
-        "wechat-daily-skills"
+        "wechat-daily-skills",
+        "notion-research-documentation"
       ]
     },
     {
@@ -487,9 +492,129 @@
       ],
       "screenshot": "",
       "result": "报告抓取→信源核查→深度写作→排版配图→草稿上传。一条链路自动跑完。"
+    },
+    "codex-ppt-skill": {
+      "name": "codex-ppt-skill",
+      "author": "ningzimu",
+      "subtitle": "全流程图片式PPT生成",
+      "desc": "把文章、报告、论文、课程笔记转为整页图片式演示文稿。先确认大纲和视觉风格，再逐页生成高清幻灯片图，最后自动组装.pptx+演讲稿。内置10种风格（麦肯锡、科研答辩、手绘技术等），支持自定义风格复刻。",
+      "stars": "2000+",
+      "tags": [
+        "PPT生成",
+        "10种风格",
+        "图片式",
+        "含演讲稿"
+      ],
+      "install": "npx -y skills@latest add ningzimu/codex-ppt-skill --skill codex-ppt --agent codex --global",
+      "issues": [
+        "2026-06-28"
+      ],
+      "screenshot": "",
+      "result": "一篇文章 → 10页高清PPT + .pptx文件 + 演讲稿。10种风格可选，不满意单页重做。"
+    },
+    "internal-comms": {
+      "name": "internal-comms",
+      "author": "ComposioHQ",
+      "subtitle": "内部沟通消息撰写",
+      "desc": "专门处理企业内部沟通场景：全员公告、部门更新、项目进展通报、利益相关者消息。根据受众自动调整语气和正式度——CEO通报用正式严谨风，团队群消息用轻松直接风。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "内部沟通",
+        "全员邮件",
+        "语气调整",
+        "办公效率"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path internal-comms",
+      "issues": [
+        "2026-06-28"
+      ],
+      "screenshot": "",
+      "result": "几个要点 → 一封语气得体的内部邮件。30人团队群、CEO通报、客户通知各不相同。"
+    },
+    "notion-research-documentation": {
+      "name": "notion-research-documentation",
+      "author": "ComposioHQ",
+      "subtitle": "Notion多来源综合研究",
+      "desc": "把分散在多个Notion页面的信息综合为结构化产出：竞品对比简报、行业调研报告、多项目对比分析。每个结论附带来源引用，可直接回溯原始页面。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "研究简报",
+        "Notion",
+        "带引用",
+        "竞品分析"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-research-documentation",
+      "issues": [
+        "2026-06-28"
+      ],
+      "screenshot": "",
+      "result": "散落各处的Notion页面 → 一份结构化简报/对比报告。每条结论带来源链接。"
+    },
+    "canvas-design": {
+      "name": "canvas-design",
+      "author": "ComposioHQ",
+      "subtitle": "画布式视觉设计",
+      "desc": "生成结构化画布布局——产品一页纸、方案概览、战略路线图、信息图解、商业模式画布。描述想要的板块和内容，AI直接出图。不学设计工具也能做视觉物料。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "画布设计",
+        "一页纸",
+        "信息图",
+        "视觉"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path canvas-design",
+      "issues": [
+        "2026-06-28"
+      ],
+      "screenshot": "",
+      "result": "描述4个板块的内容 → 一张可直接打印的产品一页纸/方案概览/路线图。"
+    },
+    "brand-guidelines": {
+      "name": "brand-guidelines",
+      "author": "ComposioHQ",
+      "subtitle": "一键品牌视觉规范",
+      "desc": "设定一次品牌色、字体、视觉风格，之后所有AI产出（报告、PPT、页面、图表）自动套用。告别每次手动重复'蓝白配色、苹方字体'。咨询顾问、市场部、创始人的统一品牌利器。",
+      "stars": "13K+（合集）",
+      "tags": [
+        "品牌统一",
+        "视觉规范",
+        "配色字体",
+        "一致性"
+      ],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines",
+      "issues": [
+        "2026-06-28"
+      ],
+      "screenshot": "",
+      "result": "设定一次品牌色+字体 → 所有PPT/报告/页面自动套用。品牌统一不再是手工活。"
     }
   },
   "issues": [
+    {
+      "id": 10,
+      "date": "2026-06-28",
+      "weekday": "星期日",
+      "title": "周日充电特辑：5 个新出炉的创作型 Skill",
+      "subtitle": "PPT 图片流 · 内部沟通 · 研究简报 · 画布设计 · 品牌统一",
+      "tags": [
+        "📽️ PPT图片流",
+        "📝 内部沟通",
+        "🔍 研究简报",
+        "🎨 画布设计",
+        "🏷️ 品牌统一"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-06-28.html",
+      "skills": [
+        "codex-ppt-skill",
+        "internal-comms",
+        "notion-research-documentation",
+        "canvas-design",
+        "brand-guidelines"
+      ]
+    },
     {
       "id": 9,
       "date": "2026-06-27",

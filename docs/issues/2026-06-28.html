@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-28</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-28 · 星期日</div>
+    <h1>周日充电特辑：5 个新出炉的创作型 Skill</h1>
+    <div class="art-sub">PPT 图片流 · 内部沟通 · 研究简报 · 画布设计 · 品牌统一</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周日不推高强度工作流。给你 5 个刚出炉的 Codex Skill，都跟日常创作有关——从 PPT 生成到内部公告，从资料综合到视觉统一。外加本周最重要的 Codex 动态、NotebookLM 研究新玩法，以及一条让 AI 一次就懂你的"四要素指令法"。今天装好，周一直接甩活儿。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">codex-ppt-skill</div><div class="sk-subtitle">ningzimu · 全流程图片式 PPT 生成</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2000+</span><span class="bd bd-p">PPT 生成</span><span class="bd bd-b">10 种风格</span><span class="bd bd-o">含演讲稿</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把文章、报告、论文、课程笔记转为"整页图片式"演示文稿。先确认大纲和视觉风格→每页生成高清幻灯片图→自动组装为 .pptx + 演讲稿。内置 10 种风格：清爽专业、科研答辩、麦肯锡、手绘技术、数据仪表盘等，也可以上传喜欢的 PPT 让 AI 复刻风格。<br><strong>最适合：</strong>技术分享、项目答辩、商业汇报——不想花时间排版，但想要视觉统一、拿得出手的 PPT。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ningzimu/codex-ppt-skill --skill codex-ppt --agent codex --global</div><div class="cmt">支持 Codex / OpenClaw / Hermes Agent。v0.5.2（2026-06-20）</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把上次写的文章发给 Codex 说"用 codex-ppt 转成 10 页麦肯锡风格 PPT，蓝白配色"。先出大纲让你确认，再逐页生成——每页都是独立高清图，不满意单页重做。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">internal-comms</div><div class="sk-subtitle">ComposioHQ · 内部沟通消息撰写</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">办公沟通</span><span class="bd bd-p">全员邮件</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专门处理企业内部沟通场景——全员公告、部门更新、项目进展通报、利益相关者消息。根据受众自动调整语气和正式度：CEO 通报用正式严谨风，团队群消息用轻松直接风。<br><strong>最适合：</strong>不想每次写内部邮件都纠结措辞的人。给几个要点，自动生成得体的内部消息。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path internal-comms</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>告诉 Codex"下周全员要去团建，帮我写一封内部通知邮件发给 30 人团队，语气轻松但不随意，包含集合时间地点和注意事项"——30 秒出草稿。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">notion-research-documentation</div><div class="sk-subtitle">ComposioHQ · Notion 多来源综合研究</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">研究简报</span><span class="bd bd-p">Notion</span><span class="bd bd-r">带引用</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把分散在多个 Notion 页面的信息综合为结构化产出——竞品对比简报、行业调研报告、多项目对比分析。每个结论附带来源引用，可直接回溯原始页面。<br><strong>最适合：</strong>资料散落在不同 Notion 页面、需要横向对比或综合输出时。不用手动翻阅、摘抄、对照——AI 帮你串起来。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-research-documentation</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 Notion 里建好竞品资料页面（每个竞品一个子页面），告诉 Codex"用 notion-research-documentation 帮我出一份竞品对比简报，4 个维度：产品定位、定价、核心功能、用户评价"。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">canvas-design</div><div class="sk-subtitle">ComposioHQ · 画布式视觉设计</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">视觉设计</span><span class="bd bd-p">一页纸</span><span class="bd bd-b">信息图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>生成结构化画布布局——产品一页纸、方案概览、战略路线图、信息图解、商业模式画布。不学设计工具，描述你想要的板块和内容，AI 直接出图。<br><strong>最适合：</strong>需要快速产出"一张图说清楚"的场景——给老板的方案概览、给客户的提案一页纸、团队的季度路线图。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path canvas-design</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>"用 canvas-design 帮我做一张 Q3 工作重点一页纸，4 个板块：目标、关键项目、风险、资源需求。蓝白配色，适合打印贴在工位上。"</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">brand-guidelines</div><div class="sk-subtitle">ComposioHQ · 一键品牌视觉规范</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">品牌统一</span><span class="bd bd-b">视觉规范</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>设定一次品牌色、字体、视觉风格，之后所有 AI 产出（报告、PPT、页面、图表）自动套用。不用每次都重复"蓝白配色、苹方字体"——Codex 会记住你的品牌规范。<br><strong>最适合：</strong>经常需要对外产出材料的人——咨询顾问的方案书、市场部的活动物料、创始人的投资人 deck。统一品牌视觉，告别每次手动调整。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>"用 brand-guidelines 设定我的品牌：主色 #1a56db，辅色 #10ac84，字体苹方，视觉风格简约商务。之后所有 PPT 和报告都用这个风格。"</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① PPT图片流</span><span class="pa">→</span>
+      <span class="ps ps-2">② 内部沟通</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 研究简报</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 画布设计</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 品牌统一</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📢 openai/skills 仓库正式废弃（6/23）</div></div>
+      <div class="tb">OpenAI 官方的 skills 仓库已标记为 deprecated，Skill 分发迁移至 <strong>openai/plugins</strong> 目录。对用户无影响——社区第三方的 <code>npx skills@latest add</code> 安装方式不变，只是官方渠道从 skills repo 切到了 plugins repo。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ Skill 安装后无需重启 Codex</div></div>
+      <div class="tb">过去安装 Skill 后要重启 Codex 才能生效。6 月 24 日起，Codex 会在对话轮次间自动刷新 Skill 目录——装完下次对话直接可用。小改动，但省了每次装完 Skill 重开终端那一步。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🌐 Sites 插件预览中</div></div>
+      <div class="tb">Codex 内置建站能力：在对话中直接创建、保存、部署网站和应用。托管由 OpenAI 提供，ChatGPT Business 工作区默认开启。目前处于 Preview 阶段——以后做官网 landing page、产品演示页，不用离开 Codex。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 快速研究 vs 深度研究，选题调研别再翻搜索页</div></div>
+      <div class="tb">新建笔记本后点"发现来源"，选<strong>快速研究</strong>：30 秒返回 10 个高相关来源；选<strong>深度研究</strong>：几分钟广泛覆盖。两者都跳过搜索引擎的广告和低质结果，勾选想要的来源一键加到笔记本。做选题调研或竞品分析时，比手动翻 5 页搜索结果高效得多。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — Gemini + NotebookLM 双工具联动：创意和验证分开做</div></div>
+      <div class="tb"><strong>工作流：</strong>先在 Gemini 中自由头脑风暴产出大纲和角度 → 把 Gemini 输出粘贴为 NotebookLM 源文件 → 让 NotebookLM 基于已验证的来源逐条扩展并附上引用。通用 AI 负责发散创意，NotebookLM 负责事实核查——两者互补，既不怕跑偏，也不用逐句核实。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 把项目文档"喂"成个人研究助手</div></div>
+      <div class="tb">把所有项目相关 PDF、网页、Google Docs 一次性加载到专属 Notebook 中。之后随时向 AI 提问，每次回答都附带<strong>原文引用</strong>，杜绝幻觉。遇到好的回答点"保存到笔记"，积累成不断增长的知识库。长线项目尤其好用——3 个月后回头查资料，不用翻文件夹。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — AI 自动填充数据库属性</div></div>
+      <div class="tb">在 Notion 数据库里，AI 能根据页面标题和内容自动填充标签、状态、负责人等属性。新建一个"待读文章"数据库，设好规则：标题含"AI"自动打标签"人工智能"，含"产品"打"产品经理"。以后新增页面自动分类，不用逐条手动标注。建一次规则，一直用。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 四要素结构化指令法：别再让 AI 猜你想要什么</div></div>
+      <div class="tb">绝大多数人用 AI 效果不好的原因不是工具不行，是<strong>指令太模糊</strong>。下次别再说"帮我写个报告"，试试这个四要素模板：<br><br>
+      <strong>① 目标：</strong>告诉 AI 你要解决什么问题——"写一份 Q2 项目复盘报告"<br>
+      <strong>② 输入：</strong>附上原始材料——"基于附件 3 份会议纪要和销售数据 Excel"<br>
+      <strong>③ 输出：</strong>定义格式和结构——"2000 字，分三段：成果、问题、改进计划，Word 格式"<br>
+      <strong>④ 约束：</strong>划定边界——"语气专业但不官僚，不要罗列流水账，重点写分析和行动项"<br><br>
+      套上这个模板，AI 一次就给出你想要的结果。省下的反复修改时间，比学什么高级技巧都实在。</div>
+    </div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 建立你的"咒语仓库"——好指令别再只用一次</div></div>
+      <div class="tb">每次用完一段效果特别好的提示词，别让它消失在聊天记录里。建一个 <code>my_prompts.md</code> 文件存起来，下次直接复制粘贴。更进一步：把你的写作风格偏好写进 MEMORY.md，以后 WorkBuddy 每次说话都会带上你的味儿——比如"写给 30 岁职场人的大白话，不要官腔，不要三段式"。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 周日是充电日。5 个新 Skill 今天装上，周一上班直接甩活儿给 Codex。你不是在偷懒，你是在让对的人做对的事。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-28</span>
+  </div>
+</div>
+</body>
+</html>
