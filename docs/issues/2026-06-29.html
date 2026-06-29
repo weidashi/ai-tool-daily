@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-06-29</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-06-29 · 星期一</div>
+    <h1>周一效率开机：5 个让文档工作起飞的新 Skill</h1>
+    <div class="art-sub">文档全格式生成 · 会议深度分析 · 竞品创意提取 · Excel 公式助手 · 会前情报准备</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周一回到工位，桌上堆着上周的会议记录、竞品资料、待整理的表格……这 5 个本周新发现的 Skill 正好覆盖了知识工作者最高频的五个文档场景：不用打开 Office 就能出 PPTX+DOCX+XLSX+PDF、会议不只是总结而是深度诊断、竞品内容一键提取可用创意、Excel 公式不用百度直接问 AI、开会前自动帮你备齐背景资料。每个都有安装命令，今天就能试。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">paperjsx — 多格式文档全家桶</div><div class="sk-subtitle">ComposioHQ 精选 · 一句话生成 PPTX、DOCX、XLSX、PDF 四种格式</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">文档生成</span><span class="bd bd-b">多格式</span><span class="bd bd-o">办公必备</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个 Skill 覆盖四种 Office 格式——描述内容后，自动生成标准 .pptx 演示文稿、.docx 文档、.xlsx 表格和 .pdf 报告。不用打开 PowerPoint/Word/Excel，不用调格式，不用学模板。<br><strong>最适合：</strong>周一早上的周报、临时要交的方案文档、数据汇总成表、把同一份内容快速出四种格式。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path paperjsx</div><div class="cmt">💡 前置：需 Node.js 环境。安装后 Codex 里说「用 paperjsx 生成一份 XX 内容的 PPTX」即可。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把上周的工作总结写 5 个要点发给 Codex → 「用 paperjsx 生成一份 8 页工作周报 PPTX，商务蓝配色，每页一个要点」→ 5 分钟拿到 .pptx 文件。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">meeting-insights-analyzer — 会议不只是总结</div><div class="sk-subtitle">ComposioHQ 精选 · 从会议记录中挖出主题、风险、沟通模式和后续动作</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">会议分析</span><span class="bd bd-r">深度洞察</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不同于简单的"会议纪要"Skill——它不只归纳说了什么，还会分析隐含主题、识别潜在风险、标记沟通模式（比如谁总被打断、哪个话题反复出现但没结论）、提取真正的下一步行动项。<br><strong>最适合：</strong>项目复盘会、跨部门协调会、客户沟通会——需要从"记录"升级到"诊断"的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-insights-analyzer</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把上次开会的录音转文字（或现有会议记录）发给 Codex → 「用 meeting-insights-analyzer 分析这次会议，重点标出未解决的议题和潜在风险」→ 得到一份比你自己看更透彻的诊断报告。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div><div class="sk-title">competitive-ads-extractor — 竞品创意一键提取</div><div class="sk-subtitle">ComposioHQ 精选 · 分析竞品广告/内容，提取可复用的信息、创意方向和问题点</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">竞品分析</span><span class="bd bd-p">内容创作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把竞品的广告文案、公众号文章、落地页内容喂进去，自动提取：他们怎么开头（hook）的、用了什么说服框架、差异化卖点是什么、哪些地方可能踩了坑。不只是"看看别人怎么写的"，而是结构化的创意拆解。<br><strong>最适合：</strong>市场人员做竞品调研、内容创作者找选题角度、广告投放前做竞品参考。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path competitive-ads-extractor</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找 3 个同行公众号最近的文章链接 → 发给 Codex → 「用 competitive-ads-extractor 分析这三篇文章的标题策略、开头 hook 方式和核心卖点」→ 拿到可复用的写法清单。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div><div class="sk-title">spreadsheet-formula-helper — Excel 公式再也不用百度了</div><div class="sk-subtitle">ComposioHQ 精选 · 编写和调试 Excel / Google Sheets 公式、透视表和数组公式</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">Excel 助手</span><span class="bd bd-p">日常办公</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你只需要描述需求——"A列是销售额，B列是日期，我要按月份汇总并自动标出超过平均值20%的月份"——它直接给你写好的公式（VLOOKUP、SUMIFS、INDEX-MATCH、数组公式、透视表公式全支持），还解释为什么这么写。再也不用到百度搜"Excel 多条件汇总公式"然后在一堆广告里翻。<br><strong>最适合：</strong>财务做表、运营做数据分析、HR 做考勤统计——所有和表格打交道的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path spreadsheet-formula-helper</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开你桌面上那张"感觉公式不太对"的表格 → 把问题描述给 Codex → 「用 spreadsheet-formula-helper 帮我写一个公式实现 XX 功能」→ 复制粘贴到 Excel，搞定。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div><div class="sk-title">notion-meeting-intelligence — 开会前自动备齐情报</div><div class="sk-subtitle">ComposioHQ 精选 · 结合 Notion 历史资料 + Codex 联网研究，生成会前准备包</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">会议准备</span><span class="bd bd-p">Notion 联动</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>告诉它你要和谁开会、讨论什么主题，它自动翻阅你的 Notion 工作区找到历史相关页面（上次会议纪要、相关项目文档、对方公司资料），再结合 Codex 的联网研究能力补充外部信息，最后生成一份会前 Brief——含对方背景、上次未了事项、本次建议议题、需准备的数据。<br><strong>最适合：</strong>客户拜访前的准备、跨部门协调会的背景梳理、供应商谈判前的信息搜集。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-meeting-intelligence</div><div class="cmt">💡 前提：已连接 Notion 到 Codex。一句话触发：用 notion-meeting-intelligence 帮我准备明天和 XX 公司的会议。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>明天有个重要的会 → 「用 notion-meeting-intelligence 帮我准备和 [对方] 关于 [主题] 的会议，梳理历史往来和本次建议议题」→ 5 分钟拿到一份专业会前 Brief。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① 出文档</span><span class="pa">→</span>
+      <span class="ps ps-2">② 诊会议</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 拆竞品</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 写公式</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 备会议</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--muted);">周一知识工作者的五合一效率包</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📊 Codex 周活突破 500 万，非开发者增长 3 倍于程序员</div></div>
+      <div class="tb">OpenAI 6 月下旬发布报告：Codex 非开发类个人用户自 2025 年 8 月以来增长 137 倍，组织用户增长 189 倍。内容创作者、分析师、产品经理是增长最快群体。这个数据印证了 Codex 从"编程工具"到"全岗位效率工具"的转型已全面落地。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">🔌 openai/plugins 仓库新增 API 用户市场</div></div>
+      <div class="tb">6 月中旬，官方 plugins 仓库为 API Key 登录用户新增了独立的插件市场，首批收录所有仅含 skills 的轻量插件。这意味着用 API Key 的方式也能享受完整的 Skill 生态——不再需要 ChatGPT 订阅。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 技巧：安装多个同源 Skill 的快捷方式</div></div>
+      <div class="tb">ComposioHQ 合集中的 Skill 不必一个一个装——clone 后把整个 skills 目录的 SKILL.md 文件一次性复制到 ~/.codex/skills/ 即可全部加载。然后 Codex 里说「列出可用 skills」就能看到所有已安装的，挑需要的用。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 给播客加「自定义指令」</div></div>
+      <div class="tb">生成 AI 播客前，输入自定义指令可以精准控制内容——比如"只讲第三章的实验数据对比"或"用小学生能听懂的方式解释"。默认播客容易把简单的事讲绕，加了指令后质量提升明显。路径：Audio Overview → 生成前点击「自定义」→ 输入指令。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — Goals 目标化对话（新功能）</div></div>
+      <div class="tb">给笔记本设定一个固定"目标"和"语气风格"——比如目标设为"帮我写项目提案"，语气"正式商务风格"。之后这个笔记本里的所有对话 AI 都按这个方向回答。特别适合固定用途的笔记本：周报写作库、竞品分析库、客户提案库。不用每次都重新描述需求。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — 先问具体数据，再问开放问题</div></div>
+      <div class="tb">实用技巧：问"XX 论文中模型准确率是多少"比问"这篇论文讲了什么"得到的答案精准得多。原因是 NotebookLM 基于你上传的资料逐句检索——具体数字问题直接命中原文，开放问题则需要 AI 自行归纳，容易遗漏细节。建议先用几个数据问题定位关键段落，再展开提问。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — External Agents API：让 Codex 直接操作你的工作区</div></div>
+      <div class="tb">Notion 已开放 External Agents API，外部 AI（包括 Codex、Claude 等）可以直接读写你的 Notion 页面和数据库。今天的 notion-meeting-intelligence Skill 就是基于这个能力——Codex 自动翻你的 Notion 找相关资料，不用你手动复制粘贴。配置方式：Notion 设置 → 集成 → 创建新的集成 → 获取 API Key → 在 Codex 中配置。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 四要素结构化指令法</div></div>
+      <div class="tb">不要让 AI 猜你想要什么。每次下指令包含四个要素：<strong>目标</strong>（要产出什么）、<strong>输入</strong>（给什么原始材料）、<strong>输出</strong>（要什么格式和风格）、<strong>约束</strong>（不要什么）。例如："帮我写一份 Q2 复盘报告（目标），基于以下会议纪要和 Excel 数据（输入），生成 1500 字结构化文档，商务风格（输出），不要使用'当今时代'类开头（约束）。" 这个习惯养成后，AI 产出质量至少翻倍。</div>
+    </div>
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 链式任务指令：用 → 串联多步骤流水线</div></div>
+      <div class="tb">不要一个任务分多次对话。用箭头（→）把多个步骤串成一条指令：<strong>"把这份会议录音转文字 → 整理成结构化纪要 → 提取行动项 → 生成 PPTX"</strong>。WorkBuddy 会自动按顺序执行，中间不用你盯着。对于每天重复的工作流，这就是你专属的自动化流水线。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 周一回到工位，别急着打开第一个文件——先把这五个 Skill 装上。这周你会发现：文档、会议、竞品、表格、会前准备——每个环节都能快一倍</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-06-29</span>
+  </div>
+</div>
+</body>
+</html>

@@ -43,7 +43,8 @@
         "ppt-master",
         "html-ppt-skill",
         "gorden-ppt-skill",
-        "codex-ppt-skill"
+        "codex-ppt-skill",
+        "paperjsx"
       ]
     },
     {
@@ -68,7 +69,9 @@
         "dbskill",
         "notion-knowledge-capture",
         "wechat-daily-skills",
-        "notion-research-documentation"
+        "notion-research-documentation",
+        "competitive-ads-extractor",
+        "notion-meeting-intelligence"
       ]
     },
     {
@@ -81,7 +84,10 @@
         "visual-report",
         "meeting-notes-and-actions",
         "file-organizer",
-        "weekly-report-skill"
+        "weekly-report-skill",
+        "paperjsx",
+        "meeting-insights-analyzer",
+        "spreadsheet-formula-helper"
       ]
     }
   ],
@@ -587,9 +593,82 @@
       ],
       "screenshot": "",
       "result": "设定一次品牌色+字体 → 所有PPT/报告/页面自动套用。品牌统一不再是手工活。"
+    },
+    "paperjsx": {
+      "name": "paperjsx",
+      "author": "ComposioHQ",
+      "subtitle": "多格式文档全家桶",
+      "desc": "一个Skill覆盖四种Office格式：描述内容后自动生成标准.pptx演示文稿、.docx文档、.xlsx表格和.pdf报告。不用打开Office，不用调格式。",
+      "stars": "13K+（合集）",
+      "tags": ["文档生成", "多格式", "办公必备", "PPTX+DOCX+XLSX+PDF"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path paperjsx",
+      "issues": ["2026-06-29"],
+      "screenshot": "",
+      "result": "一段内容描述 → 同时出.pptx+.docx+.xlsx+.pdf四种格式。以前要分别打开三个软件排版。"
+    },
+    "meeting-insights-analyzer": {
+      "name": "meeting-insights-analyzer",
+      "author": "ComposioHQ",
+      "subtitle": "会议深度分析诊断",
+      "desc": "不同于简单会议纪要——不只归纳说了什么，还分析隐含主题、识别潜在风险、标记沟通模式、提取真正可执行的下一步。从记录升级到诊断。",
+      "stars": "13K+（合集）",
+      "tags": ["会议分析", "深度洞察", "风险管理", "沟通诊断"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-insights-analyzer",
+      "issues": ["2026-06-29"],
+      "screenshot": "",
+      "result": "会议录音/记录 → 主题+风险+沟通模式+行动项诊断。比你自己复盘看得更透彻。"
+    },
+    "competitive-ads-extractor": {
+      "name": "competitive-ads-extractor",
+      "author": "ComposioHQ",
+      "subtitle": "竞品内容创意提取",
+      "desc": "把竞品广告文案、公众号文章、落地页喂进去，自动提取开头hook策略、说服框架、差异化卖点、潜在问题点。不只是看看别人写了什么，而是结构化拆解可复用的创意方法。",
+      "stars": "13K+（合集）",
+      "tags": ["竞品分析", "内容创作", "创意提取", "市场调研"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path competitive-ads-extractor",
+      "issues": ["2026-06-29"],
+      "screenshot": "",
+      "result": "3篇竞品文章 → 标题策略+hook方式+核心卖点清单。做内容不再凭感觉。"
+    },
+    "spreadsheet-formula-helper": {
+      "name": "spreadsheet-formula-helper",
+      "author": "ComposioHQ",
+      "subtitle": "Excel公式智能助手",
+      "desc": "用自然语言描述需求，自动生成VLOOKUP、SUMIFS、INDEX-MATCH、数组公式、透视表公式，并解释为什么这么写。不用百度搜公式教程。",
+      "stars": "13K+（合集）",
+      "tags": ["Excel助手", "日常办公", "公式生成", "Google Sheets"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path spreadsheet-formula-helper",
+      "issues": ["2026-06-29"],
+      "screenshot": "",
+      "result": "描述需求 → 写好+解释好的Excel公式。不用百度，复制粘贴即用。"
+    },
+    "notion-meeting-intelligence": {
+      "name": "notion-meeting-intelligence",
+      "author": "ComposioHQ",
+      "subtitle": "会前情报自动准备",
+      "desc": "告诉它和谁开会、讨论什么，自动翻阅Notion工作区找历史资料+Codex联网补充外部信息，生成含对方背景、上次未了事项、建议议题、需准备数据的会前Brief。",
+      "stars": "13K+（合集）",
+      "tags": ["会议准备", "Notion联动", "情报收集", "客户拜访"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-meeting-intelligence",
+      "issues": ["2026-06-29"],
+      "screenshot": "",
+      "result": "说「明天见XX客户谈XX」→ 自动整理历史往来+背景资料+建议议题。5分钟出会前Brief。"
     }
   },
   "issues": [
+    {
+      "id": 11,
+      "date": "2026-06-29",
+      "weekday": "星期一",
+      "title": "周一效率开机：5 个让文档工作起飞的新 Skill",
+      "subtitle": "文档全格式生成 · 会议深度分析 · 竞品创意提取 · Excel 公式助手 · 会前情报准备",
+      "tags": ["📄 文档全家桶", "🧠 会议分析", "🔍 竞品提取", "📊 Excel助手", "📋 会议情报"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-06-29.html",
+      "skills": ["paperjsx", "meeting-insights-analyzer", "competitive-ads-extractor", "spreadsheet-formula-helper", "notion-meeting-intelligence"]
+    },
     {
       "id": 10,
       "date": "2026-06-28",
