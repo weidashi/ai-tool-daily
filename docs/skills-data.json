@@ -605,9 +605,16 @@
       "subtitle": "多格式文档全家桶",
       "desc": "一个Skill覆盖四种Office格式：描述内容后自动生成标准.pptx演示文稿、.docx文档、.xlsx表格和.pdf报告。不用打开Office，不用调格式。",
       "stars": "13K+（合集）",
-      "tags": ["文档生成", "多格式", "办公必备", "PPTX+DOCX+XLSX+PDF"],
+      "tags": [
+        "文档生成",
+        "多格式",
+        "办公必备",
+        "PPTX+DOCX+XLSX+PDF"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path paperjsx",
-      "issues": ["2026-06-29"],
+      "issues": [
+        "2026-06-29"
+      ],
       "screenshot": "",
       "result": "一段内容描述 → 同时出.pptx+.docx+.xlsx+.pdf四种格式。以前要分别打开三个软件排版。"
     },
@@ -617,9 +624,16 @@
       "subtitle": "会议深度分析诊断",
       "desc": "不同于简单会议纪要——不只归纳说了什么，还分析隐含主题、识别潜在风险、标记沟通模式、提取真正可执行的下一步。从记录升级到诊断。",
       "stars": "13K+（合集）",
-      "tags": ["会议分析", "深度洞察", "风险管理", "沟通诊断"],
+      "tags": [
+        "会议分析",
+        "深度洞察",
+        "风险管理",
+        "沟通诊断"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-insights-analyzer",
-      "issues": ["2026-06-29"],
+      "issues": [
+        "2026-06-29"
+      ],
       "screenshot": "",
       "result": "会议录音/记录 → 主题+风险+沟通模式+行动项诊断。比你自己复盘看得更透彻。"
     },
@@ -629,9 +643,16 @@
       "subtitle": "竞品内容创意提取",
       "desc": "把竞品广告文案、公众号文章、落地页喂进去，自动提取开头hook策略、说服框架、差异化卖点、潜在问题点。不只是看看别人写了什么，而是结构化拆解可复用的创意方法。",
       "stars": "13K+（合集）",
-      "tags": ["竞品分析", "内容创作", "创意提取", "市场调研"],
+      "tags": [
+        "竞品分析",
+        "内容创作",
+        "创意提取",
+        "市场调研"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path competitive-ads-extractor",
-      "issues": ["2026-06-29"],
+      "issues": [
+        "2026-06-29"
+      ],
       "screenshot": "",
       "result": "3篇竞品文章 → 标题策略+hook方式+核心卖点清单。做内容不再凭感觉。"
     },
@@ -641,9 +662,16 @@
       "subtitle": "Excel公式智能助手",
       "desc": "用自然语言描述需求，自动生成VLOOKUP、SUMIFS、INDEX-MATCH、数组公式、透视表公式，并解释为什么这么写。不用百度搜公式教程。",
       "stars": "13K+（合集）",
-      "tags": ["Excel助手", "日常办公", "公式生成", "Google Sheets"],
+      "tags": [
+        "Excel助手",
+        "日常办公",
+        "公式生成",
+        "Google Sheets"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path spreadsheet-formula-helper",
-      "issues": ["2026-06-29"],
+      "issues": [
+        "2026-06-29"
+      ],
       "screenshot": "",
       "result": "描述需求 → 写好+解释好的Excel公式。不用百度，复制粘贴即用。"
     },
@@ -653,9 +681,16 @@
       "subtitle": "会前情报自动准备",
       "desc": "告诉它和谁开会、讨论什么，自动翻阅Notion工作区找历史资料+Codex联网补充外部信息，生成含对方背景、上次未了事项、建议议题、需准备数据的会前Brief。",
       "stars": "13K+（合集）",
-      "tags": ["会议准备", "Notion联动", "情报收集", "客户拜访"],
+      "tags": [
+        "会议准备",
+        "Notion联动",
+        "情报收集",
+        "客户拜访"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-meeting-intelligence",
-      "issues": ["2026-06-29"],
+      "issues": [
+        "2026-06-29"
+      ],
       "screenshot": "",
       "result": "说「明天见XX客户谈XX」→ 自动整理历史往来+背景资料+建议议题。5分钟出会前Brief。"
     },
@@ -665,9 +700,16 @@
       "subtitle": "公众号文章创作节点",
       "desc": "classfang/weixin-mp-skills 合集里的文章创作 Skill。给它一个选题或大纲，它会依次完成：理解选题方向→生成标题和大纲→撰写正文→匹配视觉风格→输出封面图和文内配图prompt。一条路走完，只需说「帮我写一篇关于XX的公众号文章」。",
       "stars": "新发布",
-      "tags": ["公众号写作", "全流程创作", "Codex原生", "视觉建议"],
+      "tags": [
+        "公众号写作",
+        "全流程创作",
+        "Codex原生",
+        "视觉建议"
+      ],
       "install": "git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh",
-      "issues": ["2026-06-30"],
+      "issues": [
+        "2026-06-30"
+      ],
       "screenshot": "",
       "result": "一个选题 → 标题+大纲+正文+视觉风格建议+配图prompt。5分钟从空白到成品。"
     },
@@ -677,9 +719,17 @@
       "subtitle": "Markdown转微信公众号排版CLI",
       "desc": "面向AI Agent的微信公众号创作与发布CLI。48个专业主题+43个:::module排版模块+AI配图+批量发布+多账号管理。写Markdown，一键生成公众号排版HTML。还内置write、humanize、title suggest、generate_cover等内容生产命令。支持Codex/Claude/WorkBuddy/Kimi等多种Agent。",
       "stars": "高星",
-      "tags": ["48主题", "43模块", "CLI排版", "AI配图", "多账号"],
+      "tags": [
+        "48主题",
+        "43模块",
+        "CLI排版",
+        "AI配图",
+        "多账号"
+      ],
       "install": "npm install -g @geekjourneyx/md2wechat && md2wechat config init",
-      "issues": ["2026-07-01"],
+      "issues": [
+        "2026-07-01"
+      ],
       "screenshot": "",
       "result": "一篇Markdown → 秒级出48主题可选的微信HTML。排版+草稿一条命令搞定。"
     },
@@ -689,9 +739,16 @@
       "subtitle": "公众号专属配图节点",
       "desc": "classfang/weixin-mp-skills 合集里的配图 Skill。给它文章主题/标题/摘要，自动生成公众号封面图（默认2.35:1宽幅比例）、文章头图、文内配图。默认偏好「重图轻标题」的知识媒体风格——画面有故事感，标题只是点缀。配图prompt可直接喂给md2wechat的generate_cover命令。",
       "stars": "新发布",
-      "tags": ["公众号配图", "封面图", "2.35:1", "知识媒体风格"],
+      "tags": [
+        "公众号配图",
+        "封面图",
+        "2.35:1",
+        "知识媒体风格"
+      ],
       "install": "git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh",
-      "issues": ["2026-07-02"],
+      "issues": [
+        "2026-07-02"
+      ],
       "screenshot": "",
       "result": "文章标题 → 封面图prompt+头图prompt+文内配图prompt。知识媒体风格，2.35:1宽幅封面。"
     },
@@ -701,9 +758,16 @@
       "subtitle": "公众号API一键推送",
       "desc": "classfang/weixin-mp-skills 合集里的发布 Skill。通过微信公众号官方服务端API上传本地HTML/Markdown/JSON文章+图片素材。默认只创建草稿——不会擅自发布。正式发布需要用户明确确认。凭据从~/.config/wechat-mp/.env读取。",
       "stars": "新发布",
-      "tags": ["公众号发布", "API推送", "草稿先行", "安全确认"],
+      "tags": [
+        "公众号发布",
+        "API推送",
+        "草稿先行",
+        "安全确认"
+      ],
       "install": "git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh",
-      "issues": ["2026-07-03"],
+      "issues": [
+        "2026-07-03"
+      ],
       "screenshot": "",
       "result": "排版好的HTML+封面图 → 30秒推到公众号草稿箱。预览确认后再发布。"
     },
@@ -713,9 +777,17 @@
       "subtitle": "公众号六节点全自动编排",
       "desc": "classfang/weixin-mp-skills 合集的全流程编排 Skill。给一个选题或大纲，通过问答补齐关键信息后自动串联：选题/素材收集→内容创作(write)→配图(image)→图片回填排版→用户确认→草稿创建(publish)。正式发布必须另行确认。",
       "stars": "新发布",
-      "tags": ["全流程编排", "6节点", "问答补齐", "图片回填", "草稿创建"],
+      "tags": [
+        "全流程编排",
+        "6节点",
+        "问答补齐",
+        "图片回填",
+        "草稿创建"
+      ],
       "install": "git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh",
-      "issues": ["2026-07-04"],
+      "issues": [
+        "2026-07-04"
+      ],
       "screenshot": "",
       "result": "一句话选题 → 六步自动走完到草稿箱。全程问答补齐关键决策，不需要手动衔接。"
     }
@@ -727,12 +799,24 @@
       "weekday": "星期六",
       "title": "公众号专题周⑤：六节点全自动，一条命令从选题到草稿箱",
       "subtitle": "全流程编排 · 问答补齐 · 图片回填 · 用户确认 · 草稿创建 · 一周横评",
-      "tags": ["🧭 全流程", "⑥ 草稿", "🏆 横评", "✍️ 写作节点", "🎨 排版衔接"],
+      "tags": [
+        "🧭 全流程",
+        "⑥ 草稿",
+        "🏆 横评",
+        "✍️ 写作节点",
+        "🎨 排版衔接"
+      ],
       "skillCount": 5,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-07-04.html",
-      "skills": ["wechat-article-workflow", "wechat-article-write", "md2wechat", "brand-guidelines", "guizang-social-card-skill"]
+      "skills": [
+        "wechat-article-workflow",
+        "wechat-article-write",
+        "md2wechat",
+        "brand-guidelines",
+        "guizang-social-card-skill"
+      ]
     },
     {
       "id": 15,
@@ -740,12 +824,24 @@
       "weekday": "星期五",
       "title": "公众号专题周④：一键推送，文章从桌面到草稿箱",
       "subtitle": "API自动上传 · 草稿创建 · 定点确认发布 · 多账号管理 · 社交分发",
-      "tags": ["🚀 API发布", "📋 草稿", "🔒 安全确认", "🃏 小红书", "🌐 网页版"],
+      "tags": [
+        "🚀 API发布",
+        "📋 草稿",
+        "🔒 安全确认",
+        "🃏 小红书",
+        "🌐 网页版"
+      ],
       "skillCount": 5,
       "color": "g4",
       "numColor": "n-orange",
       "file": "2026-07-03.html",
-      "skills": ["wechat-article-publish", "md2wechat", "guizang-social-card-skill", "html-anything", "wechat-daily-skills"]
+      "skills": [
+        "wechat-article-publish",
+        "md2wechat",
+        "guizang-social-card-skill",
+        "html-anything",
+        "wechat-daily-skills"
+      ]
     },
     {
       "id": 14,
@@ -753,12 +849,24 @@
       "weekday": "星期四",
       "title": "公众号专题周③：封面+配图+信息图，让文章被人记住",
       "subtitle": "公众号封面图 · 头图 · 文内配图 · 小黑风格插图 · 品牌视觉统一",
-      "tags": ["🖼️ 封面图", "🎨 信息图", "✏️ 正文插图", "📐 结构大图", "🏷️ 品牌统一"],
+      "tags": [
+        "🖼️ 封面图",
+        "🎨 信息图",
+        "✏️ 正文插图",
+        "📐 结构大图",
+        "🏷️ 品牌统一"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-02.html",
-      "skills": ["wechat-article-image", "baoyu-skills", "ian-xiaohei-illustrations", "canvas-design", "brand-guidelines"]
+      "skills": [
+        "wechat-article-image",
+        "baoyu-skills",
+        "ian-xiaohei-illustrations",
+        "canvas-design",
+        "brand-guidelines"
+      ]
     },
     {
       "id": 13,
@@ -766,12 +874,24 @@
       "weekday": "星期三",
       "title": "公众号专题周②：48 主题 + 43 模块，排版不再手动调",
       "subtitle": "Markdown转微信HTML · 48专业主题 · 43排版模块 · 品牌统一 · 社交卡片",
-      "tags": ["🎨 48主题", "📐 43模块", "✍️ CLI排版", "🏷️ 品牌统一", "🃏 社交卡"],
+      "tags": [
+        "🎨 48主题",
+        "📐 43模块",
+        "✍️ CLI排版",
+        "🏷️ 品牌统一",
+        "🃏 社交卡"
+      ],
       "skillCount": 5,
       "color": "g3",
       "numColor": "n-blue",
       "file": "2026-07-01.html",
-      "skills": ["md2wechat", "wechat-article-skills", "html-anything", "brand-guidelines", "guizang-social-card-skill"]
+      "skills": [
+        "md2wechat",
+        "wechat-article-skills",
+        "html-anything",
+        "brand-guidelines",
+        "guizang-social-card-skill"
+      ]
     },
     {
       "id": 12,
@@ -779,12 +899,24 @@
       "weekday": "星期二",
       "title": "公众号专题周①：从想法到成品的写作流水线",
       "subtitle": "选题诊断 · 全流程创作 · 去AI味润色 · 竞品创意提取 · 研究型写作",
-      "tags": ["✍️ 公众号写作", "🔍 选题诊断", "🧠 研究写作", "🎯 去AI味", "💡 竞品拆解"],
+      "tags": [
+        "✍️ 公众号写作",
+        "🔍 选题诊断",
+        "🧠 研究写作",
+        "🎯 去AI味",
+        "💡 竞品拆解"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-06-30.html",
-      "skills": ["wechat-article-write", "dbskill", "content-research-writer", "humanizer-zh", "competitive-ads-extractor"]
+      "skills": [
+        "wechat-article-write",
+        "dbskill",
+        "content-research-writer",
+        "humanizer-zh",
+        "competitive-ads-extractor"
+      ]
     },
     {
       "id": 11,
@@ -792,12 +924,24 @@
       "weekday": "星期一",
       "title": "周一效率开机：5 个让文档工作起飞的新 Skill",
       "subtitle": "文档全格式生成 · 会议深度分析 · 竞品创意提取 · Excel 公式助手 · 会前情报准备",
-      "tags": ["📄 文档全家桶", "🧠 会议分析", "🔍 竞品提取", "📊 Excel助手", "📋 会议情报"],
+      "tags": [
+        "📄 文档全家桶",
+        "🧠 会议分析",
+        "🔍 竞品提取",
+        "📊 Excel助手",
+        "📋 会议情报"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-06-29.html",
-      "skills": ["paperjsx", "meeting-insights-analyzer", "competitive-ads-extractor", "spreadsheet-formula-helper", "notion-meeting-intelligence"]
+      "skills": [
+        "paperjsx",
+        "meeting-insights-analyzer",
+        "competitive-ads-extractor",
+        "spreadsheet-formula-helper",
+        "notion-meeting-intelligence"
+      ]
     },
     {
       "id": 10,
@@ -1587,6 +1731,216 @@
       "title": "Notion External Agents API 开放",
       "body": "外部AI智能体（Claude、Codex等）可直接接入Notion工作区，读写页面、操作数据库。定制Agent开发门槛大幅降低。",
       "source": "Notion Blog"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "wechat-full-pipeline",
+      "name": "公众号发文全流程",
+      "icon": "📝",
+      "keywords": [
+        "公众号",
+        "发文",
+        "发布",
+        "排版",
+        "写作",
+        "文章",
+        "推文",
+        "微信",
+        "内容创作"
+      ],
+      "flow": [
+        "wechat-article-write",
+        "md2wechat",
+        "wechat-article-image",
+        "humanizer-zh",
+        "wechat-article-publish"
+      ],
+      "desc": "从选题→写作→排版→配图→润色→发布的完整公众号发文链路",
+      "oneCommand": "使用 $wechat-article-workflow 从「你的选题」开始完成公众号文章全流程",
+      "steps": [
+        {
+          "skill": "wechat-article-write",
+          "label": "① 选题与写作",
+          "prompt": "使用 $wechat-article-write 写一篇关于【主题】的公众号文章，目标读者是【读者群】"
+        },
+        {
+          "skill": "md2wechat",
+          "label": "② 排版美化",
+          "prompt": "用 md2wechat convert article.md --theme elegant-blue 转成微信HTML"
+        },
+        {
+          "skill": "wechat-article-image",
+          "label": "③ 配图生成",
+          "prompt": "使用 $wechat-article-image 给这篇文章生成封面图和文内配图"
+        },
+        {
+          "skill": "humanizer-zh",
+          "label": "④ 去AI味润色",
+          "prompt": "用 humanizer-zh 帮我去AI味，语气像朋友聊天"
+        },
+        {
+          "skill": "wechat-article-publish",
+          "label": "⑤ 推送草稿箱",
+          "prompt": "使用 $wechat-article-publish 将 article.html 和 cover.jpg 创建为草稿"
+        }
+      ]
+    },
+    {
+      "id": "ppt-report",
+      "name": "PPT / 报告生成",
+      "icon": "📊",
+      "keywords": [
+        "PPT",
+        "幻灯片",
+        "报告",
+        "演示",
+        "汇报",
+        "方案",
+        "pptx",
+        "slide"
+      ],
+      "flow": [
+        "paperjsx",
+        "spreadsheet-formula-helper",
+        "brand-guidelines"
+      ],
+      "desc": "快速制作专业 PPT 和数据报告",
+      "oneCommand": "使用 paperjsx 创建一份关于【主题】的 PPT，风格【商务/学术/简约】",
+      "steps": [
+        {
+          "skill": "paperjsx",
+          "label": "① 生成PPT",
+          "prompt": "使用 paperjsx 创建一份关于【主题】的PPT，【页数】页，【风格】"
+        },
+        {
+          "skill": "spreadsheet-formula-helper",
+          "label": "② 数据表格",
+          "prompt": "用 spreadsheet-formula-helper 处理报告中的数据表格和图表公式"
+        },
+        {
+          "skill": "brand-guidelines",
+          "label": "③ 品牌统一",
+          "prompt": "设定品牌色和字体，确保PPT风格统一"
+        }
+      ]
+    },
+    {
+      "id": "research-writing",
+      "name": "研究型深度写作",
+      "icon": "🔬",
+      "keywords": [
+        "深度",
+        "研究",
+        "论文",
+        "报告",
+        "调研",
+        "分析",
+        "长文",
+        "资料"
+      ],
+      "flow": [
+        "content-research-writer",
+        "competitive-ads-extractor",
+        "humanizer-zh"
+      ],
+      "desc": "有论据有引用的深度长文写作",
+      "oneCommand": "用 content-research-writer 给【主题】写一篇【字数】字的深度研究报告",
+      "steps": [
+        {
+          "skill": "content-research-writer",
+          "label": "① 研究写作",
+          "prompt": "用 content-research-writer 深度研究【主题】，输出带引用的研究报告"
+        },
+        {
+          "skill": "competitive-ads-extractor",
+          "label": "② 竞品拆解",
+          "prompt": "用 competitive-ads-extractor 拆解同行关于【主题】的爆款文章"
+        },
+        {
+          "skill": "humanizer-zh",
+          "label": "③ 去AI味",
+          "prompt": "用 humanizer-zh 润色全文"
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "name": "社交分发（小红书等）",
+      "icon": "📱",
+      "keywords": [
+        "小红书",
+        "社交",
+        "分发",
+        "卡片",
+        "图文",
+        "微博",
+        "朋友圈",
+        "传播"
+      ],
+      "flow": [
+        "guizang-social-card-skill",
+        "html-anything",
+        "baoyu-skills"
+      ],
+      "desc": "长文拆成卡片，多平台同步分发",
+      "oneCommand": "用 guizang-social-card 把这篇文章拆成【数量】张小红书卡片",
+      "steps": [
+        {
+          "skill": "guizang-social-card-skill",
+          "label": "① 拆成卡片",
+          "prompt": "用 guizang-social-card 把文章拆成8张小红书卡片"
+        },
+        {
+          "skill": "html-anything",
+          "label": "② 网页版分享",
+          "prompt": "用 html-anything 生成网页版发朋友圈"
+        },
+        {
+          "skill": "baoyu-skills",
+          "label": "③ 信息图",
+          "prompt": "用 baoyu-skills 做一张核心观点信息图"
+        }
+      ]
+    },
+    {
+      "id": "daily-automation",
+      "name": "日常自动化 / 日报",
+      "icon": "⚡",
+      "keywords": [
+        "日报",
+        "自动化",
+        "每日",
+        "定时",
+        "周报",
+        "总结",
+        "例行",
+        "重复"
+      ],
+      "flow": [
+        "wechat-daily-skills",
+        "weekly-report-skill",
+        "file-organizer"
+      ],
+      "desc": "自动化日常重复性内容生产",
+      "oneCommand": "用 wechat-daily-skills 工作流自动生成今日【类型】日报并推送草稿箱",
+      "steps": [
+        {
+          "skill": "wechat-daily-skills",
+          "label": "① 自动抓取+写作",
+          "prompt": "用 wechat-daily-skills 从信源抓取数据写成日报"
+        },
+        {
+          "skill": "weekly-report-skill",
+          "label": "② 周报生成",
+          "prompt": "用 weekly-report-skill 生成本周工作周报"
+        },
+        {
+          "skill": "file-organizer",
+          "label": "③ 文件整理",
+          "prompt": "用 file-organizer 整理本周产出的文件"
+        }
+      ]
     }
   ]
 }

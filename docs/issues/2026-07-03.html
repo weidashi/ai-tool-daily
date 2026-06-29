@@ -39,6 +39,10 @@
   .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
   .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
   .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
   .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
   .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
   .tip .tt { font-size:14px; font-weight:700; }
@@ -50,6 +54,10 @@
   .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
   .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
   .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
   .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
   .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
   @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
@@ -75,6 +83,11 @@
       <div class="sk-desc"><strong>是什么：</strong>classfang/weixin-mp-skills 合集里的发布 Skill。通过微信公众号官方服务端 API 上传本地 HTML/Markdown/JSON 文章 + 图片素材。默认行为是<strong>只创建草稿</strong>——不会擅自发布。正式发布需要你明确确认后才会执行。凭据从 ~/.config/wechat-mp/.env 读取，不硬编码在代码里。<br><strong>最适合：</strong>不想每次手动打开微信后台粘贴排版的人、矩阵号运营者需要批量创建草稿、想把「写→排→发」串成一条命令的内容团队。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh</div><div class="cmt">💡 安装后先配置公众号凭据：在 ~/.config/wechat-mp/.env 填写 WECHAT_APP_ID 和 WECHAT_APP_SECRET。还需要在微信后台添加 IP 白名单。详见 classfang 仓库的安装文档。</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>排版好的 HTML 文件 + 封面图 → 「使用 $wechat-article-publish 将 ./outputs/article.html 和 ./outputs/cover.jpg 创建为公众号草稿」→ 30 秒推到草稿箱，在微信后台预览确认后再发布。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「使用 $wechat-article-publish 将 article.html（已排版好的文章）和 cover.jpg（封面图）创建为公众号草稿」</div>
+        <div class="ex-out"><strong>成果（执行过程）：</strong><br>✅ Step 1: 读取 ~/.config/wechat-mp/.env 获取 AppID/AppSecret<br>✅ Step 2: 调用 API 上传封面图素材 → 返回 media_id: 'Ax8KxXxx...'<br>✅ Step 3: 上传正文 HTML（含内联图片）→ 返回 media_id: 'Bz9KyYyy...'<br>✅ Step 4: 创建草稿 → 返回 draft_id: 'Cw0LzZzz...'<br>📋 草稿已在微信公众号后台「草稿箱」可见<br>⚠️ 状态：草稿模式，未发布。需要你说「确认发布」才会正式发出<br>⏱️ 全程约 20 秒（手动操作需 3-5 分钟）</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -83,6 +96,11 @@
       <div class="sk-desc"><strong>是什么：</strong>昨天的主角 md2wechat 今天换了个用法——convert 命令可以把 Markdown → 微信 HTML → 创建草稿三步合并成一条命令。加上 --create-draft 参数，排版完自动推到草稿箱。<br><strong>公众号发布用法：</strong>如果你用 md2wechat 排版，就不需要单独装 wechat-article-publish——一条 md2wechat convert article.md --create-draft 就够了。两者互补：md2wechat 偏 CLI 精细控制，wechat-article-publish 偏 Codex 原生对话式。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npm install -g @geekjourneyx/md2wechat && md2wechat config init</div><div class="cmt">💡 昨天已装过的直接用。新增草稿功能需要先 md2wechat config init 配置微信凭据。</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>写好的 Markdown → 「md2wechat convert article.md --theme elegant-blue --create-draft」→ 排版+上传图片+创建草稿三步合一，一条命令搞定。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入（命令）：</strong>md2wechat convert ./article.md --theme elegant-blue --create-draft --account "科技日常"</div>
+        <div class="ex-out"><strong>成果（终端输出）：</strong><br>✅ [1/4] Markdown → HTML (elegant-blue theme) — 2.3s<br>✅ [2/4] 提取并上传内联图片(3张) — 5.1s<br>✅ [3/4] 上传封面图 cover.jpg — 1.8s<br>✅ [4/4] 创建公众号草稿(draft_id: Dx1MaAaa...) — 3.2s<br><br>📋 全流程完成！<br>🔗 预览链接：https://mp.weixin.qq.com/s?__biz=...&mid=...&idx=1&sn=...#rd<br>💡 状态：已推入「科技日常」账号的草稿箱<br>⏱️ 总耗时：12.4 秒</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -91,6 +109,11 @@
       <div class="sk-desc"><strong>是什么：</strong>把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。<br><strong>公众号发布用法：</strong>文章推到公众号草稿箱后，10 分钟后再发小红书——用 guizang-social-card 把文章核心观点拆成 8 张卡片，直接发小红书图文笔记。一次写作，两个渠道同步曝光。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>文章发布后 → 「用 guizang-social-card 把这篇文章拆成 8 张小红书卡片」→ 公众号发完，10 分钟后小红书也发了。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把《停更公众号30天后》拆成6张小红书卡片，目标用户是25-35岁内容创作者，风格和公众号统一（蓝白极简）」</div>
+        <div class="ex-out"><strong>成果（输出清单）：</strong><br>📌 card_01.png (1080×1440) — 封面卡：标题+副标题<br>📌 card_02.png (1080×1440) — 数据卡：效率提升4.5倍对比图<br>📌 card_03.png (1080×1440) — 流程卡：5件套工具链图解<br>📌 card_04.png (1080×1440) — 对比卡：传统 vs AI辅助 5维度<br>📌 card_05.png (1080×1440) — 收益卡：月更2篇→8篇增长曲线<br>📌 card_06.png (1080×1440) — CTA卡：工具安装清单+引导关注<br><br>✅ 全部图片已保存到 ./outputs/xiaohongshu/<br>💡 配套文案已生成（每张卡的标题+正文）<br>⏱️ 耗时：约8分钟</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -99,6 +122,11 @@
       <div class="sk-desc"><strong>是什么：</strong>75 个 Skills 生成杂志风 HTML 页面、知识卡片、海报等。自带沙箱预览 + 一键发布到微信/知乎/X。<br><strong>公众号发布用法：</strong>公众号版本走草稿箱 API，网页版本走 html-anything 独立发布——发朋友圈用网页链接，发公众号用草稿箱推送。两个版本同一内容，四个渠道同步。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nexu-io/html-anything --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>文章同时出两个版本 → 「用 html-anything 给这篇文章生成杂志风网页版」→ 公众号发草稿，朋友圈发网页链接，一次写作四个渠道。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「给这篇文章生成网页版，要求：蓝白配色、手机优先、带阅读进度条、底部分享到微信按钮」</div>
+        <div class="ex-out"><strong>成果（输出）：</strong><br>📄 article-web.html — 单文件完整页面（HTML+CSS+JS 内联）<br>• 文件大小：48KB<br>• 页面元素：顶部固定导航 + 进度条 + 目录侧栏 + 正文 + 分享栏<br>• 响应式：手机端自动调整字号(+2px)和图片宽度(100%)<br>• 分享按钮：微信/微博/复制链接/QQ<br><br>🔗 使用方式：<br>　→ 部署到 GitHub Pages：直接 push 到仓库即可访问<br>　→ 发微信群：粘贴 URL 自动生成卡片预览<br>　→ 发朋友圈：长按链接生成分享卡片<br>✅ 与公众号版本内容一致，体验不同</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -107,6 +135,11 @@
       <div class="sk-desc"><strong>是什么：</strong>一套公众号日报自动化 Skill 包（5 个 Skill）：主控编排、报告 MCP 抓取、深度研究写作、公众号 HTML 排版配图、微信草稿上传。从抓取到发布串成可复用工作流。<br><strong>公众号发布用法：</strong>如果你做的是日报型内容（AI 日报、行业日报、知识速递），wechat-daily-skills 的发布子 Skill 最省事——整个工作流最后一步自动推草稿，不用你单独操作。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">从 mrguo.life/zh/resources/wechat-daily-skills-open-source 下载开源包，解压后 cp -r skills/* ~/.codex/skills/</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>做日报型内容 → 「用 wechat-daily-skills 工作流，帮我从 XX 信源抓取数据 → 写成公众号日报 → 排版配图 → 推到草稿箱」→ 一条链路自动跑完。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 wechat-daily-skills 生成今天的 AI 工具日报：从 GitHub Trending + Product Hunt + HN 抓取今日热门 AI 项目，写成公众号日报，排版配图后推到草稿箱」</div>
+        <div class="ex-out"><strong>成果（工作流输出）：</strong><br>✅ [Step 1] 数据抓取 — 从 3 个信源抓取 15 条 AI 相关动态<br>✅ [Step 2] 筛选去重 — 过滤出 8 条高价值条目<br>✅ [Step 3] 写作 — 生成 1500 字日报正文（含标题+摘要+点评）<br>✅ [Step 4] 排版 — md2wechat elegant-blue 主题<br>✅ [Step 5] 配图 — 自动生成 2 张信息图（趋势图+项目对比表）<br>✅ [Step 6] 发布 — 已推入草稿箱 (draft_id: Ex2NbBbb...)<br><br>📋 输出文件：<br>　• ./outputs/daily-2026-07-03.md（Markdown 原文）<br>　• ./outputs/daily-2026-07-03.html（排版后 HTML）<br>　• ./outputs/daily-cover.jpg（封面图）<br>⏱️ 全流程约 18 分钟（手动需 2 小时+）</div>
+      </div>
     </div>
 
     <div class="pipe">
@@ -138,7 +171,7 @@
 
   <!-- 📗 -->
   <div class="section">
-    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
     <div class="tip t-g">
       <div class="th"><div class="tt">🧪 NotebookLM — 快速研究 vs 深度研究：怎么选</div></div>
       <div class="tb">NotebookLM 现在有两种研究模式：快速研究适合 10 分钟搞清一个概念，深度研究适合 30 分钟出一份带引用的报告。公众号选题阶段用快速研究确认方向，写作阶段用深度研究补充数据——两个模式分阶段用，效率最高。</div>
@@ -150,10 +183,6 @@
     <div class="tip t-g" style="margin-top:10px;">
       <div class="th"><div class="tt">🧪 NotebookLM — 项目文档喂成个人研究助手</div></div>
       <div class="tb">把你的公众号选题灵感库、过往文章、竞品分析报告全部上传到一个 NotebookLM notebook。之后每次有新选题，问「这个选题我之前写过类似的吗？」「同行有没有写过类似角度？」——它直接翻你的历史资料回答，比你自己翻文件夹快 10 倍。</div>
-    </div>
-    <div class="tip t-o" style="margin-top:10px;">
-      <div class="th"><div class="tt">📋 Notion — AI 自动填充数据库属性</div></div>
-      <div class="tb">Notion AI 现在可以自动填充数据库属性——比如文章数据库里设一个「选题评分」属性，AI 根据文章标题和摘要自动评分。设一个「建议发布时间」属性，AI 根据内容热度自动推荐发布时机。对公众号选题库管理特别有用。</div>
     </div>
   </div>
 
@@ -167,6 +196,35 @@
     <div class="tip t-p" style="margin-top:10px;">
       <div class="th"><div class="tt">⚡ Ask 模式先收集，再 Craft 出结果</div></div>
       <div class="tb">调研类任务先用 Ask 模式确认方向（只读不写、消耗低），确认信息够用了再切 Craft 模式出报告/文章。中间来回追问不会白白消耗积分。发布前的选题确认、配图确认，都用 Ask 模式，最后发布用 Craft 模式。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一篇文章从桌面到全渠道上线 — 发布全流程</div>
+      <div class="sh-sub">用今天介绍的发布工具链，完成一篇文章的多渠道分发</div>
+      <div class="sh-box">
+        <strong>📝 文章：</strong>《停更公众号 30 天后，我靠 AI 写作重新出发》（已排版 + 已配图）<br><br>
+        <strong>① 公众号草稿（wechat-article-publish / md2wechat --create-draft）：</strong><br>
+        　✅ 上传封面图 → media_id: Ax8KxXxx<br>
+        　✅ 上传正文 HTML(含3张内图) → media_id: Bz9KyYyy<br>
+        　✅ 创建草稿 → draft_id: Cw0LzZzz<br>
+        　⏱️ 耗时：20秒<br><br>
+        <strong>② 小红书同步（guizang-social-card）：</strong><br>
+        　✅ 拆成6张卡片(1080×1440px) → ./outputs/xiaohongshu/<br>
+        　✅ 配套文案自动生成<br>
+        　⏱️ 耗时：8分钟<br><br>
+        <strong>③ 网页版分享（html-anything）：</strong><br>
+        　✅ 杂志风单页 HTML (48KB)<br>
+        　✅ 含进度条+目录导航+分享按钮<br>
+        　🔗 可直接发微信群/朋友圈<br><br>
+        <strong>④ 日报自动化预览（wechat-daily-skills）：</strong><br>
+        　✅ 展示了如果这是日报型内容，可全自动：抓取→写作→排版→配图→草稿<br>
+        　⏱️ 全自动流程约18分钟<br><br>
+        <strong>🎯 总计：一次写作 → 4 个渠道就位，总操作耗时不到 10 分钟</strong>
+      </div>
     </div>
   </div>
 

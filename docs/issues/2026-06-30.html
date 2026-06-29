@@ -39,6 +39,10 @@
   .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
   .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
   .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
   .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
   .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
   .tip .tt { font-size:14px; font-weight:700; }
@@ -50,6 +54,10 @@
   .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
   .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
   .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
   .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
   .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
   @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
@@ -75,6 +83,11 @@
       <div class="sk-desc"><strong>是什么：</strong>classfang/weixin-mp-skills 合集里的文章创作 Skill。给它一个选题或大纲，它会依次完成：理解选题方向 → 生成标题和大纲 → 撰写正文 → 匹配视觉风格 → 输出封面图和文内配图 prompt。你只需要说「帮我写一篇关于 XX 的公众号文章」，剩下的全交给它。<br><strong>最适合：</strong>有选题但不知道怎么展开的公众号作者、从大纲到成文的一站式创作、需要视觉风格建议的内容创作者。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh</div><div class="cmt">💡 一键脚本会把 6 个 Skill 全部同步到 ~/.codex/skills/。也可单独 cp wechat-article-write ~/.codex/skills/。安装后在 Codex 里说「使用 $wechat-article-write 写一篇 XX 主题的文章」。</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>把你的选题发给 Codex → 「使用 $wechat-article-write，帮我写一篇关于「AI 工具如何改变公众号写作」的 2000 字深度文章，目标读者是 25-35 岁的内容创作者」→ 5 分钟拿到标题+大纲+正文+配图建议。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我写一篇关于 AI 编程助手如何改变普通人的工作方式的公众号文章，目标读者是 25-35 岁职场人」</div>
+        <div class="ex-out"><strong>成果（标题）：</strong>《我用 AI 写了一周代码后，发现最值钱的能力不是写代码》<br><strong>成果（大纲）：</strong>一、引子：一个不会编程的人用 Codex 做了什么 / 二、三个真实变化：效率×5、从执行者变指挥官、重新理解"专业" / 三、对普通人的 3 个建议 / 四、结尾：工具在变，思考力是唯一护城河<br><strong>成果（配图 prompt）：</strong>一个人坐在电脑前，屏幕上显示着对话界面，暖色调，极简风格，2:1 横版</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -83,6 +96,11 @@
       <div class="sk-desc"><strong>是什么：</strong>专为中文内容创作者设计的选题诊断工具。喂给它 3 个待选选题，它会告诉你哪个「结构性最优」——受众明确、痛点清晰、有信息差。还会推荐 3 版标题和 2 个 hook 方向。<br><strong>公众号用法：</strong>写公众号文章之前，先用 dbskill 确诊选题值不值得写。避免花 2 小时写了一篇没人看的文章。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>列出 3 个选题 → 「用 dbskill 诊断这 3 个公众号选题，目标读者是 XX 群体」→ 4 分钟拿到判断+标题+hook。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「诊断这 3 个选题：① AI 工具测评合集 ② 我用 AI 做副业的 30 天记录 ③ 为什么年轻人不爱看长文章了？目标读者是 25-35 岁内容创作者」</div>
+        <div class="ex-out"><strong>成果（推荐）：</strong><br>✅ 选② — 有叙事弧线 + 个人体验 = 高分享率<br>⚠️ 选题① 太泛，建议收窄为「5 个真正好用的 AI 工具」<br>❌ 选题③ 立场容易得罪人<br><strong>标题方案：</strong>《停更公众号 30 天后，我靠 AI 写作月入 XXXX》/ 《一个普通人的 AI 副业实验：第 1 天 vs 第 30 天》</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -91,6 +109,11 @@
       <div class="sk-desc"><strong>是什么：</strong>把「选题→搜集资料→整理提纲→引用来源→生成初稿」五步写作流程编码为一个 Skill。适合需要数据支撑、有论据有引用的公众号深度长文。<br><strong>公众号用法：</strong>wechat-article-write 出快速成文，content-research-writer 出有资料支撑的深度版。两者搭配：先出快版确认方向，再用研究版补深度。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>选题确认后 → 「用 content-research-writer 给「XX」选题写一篇 2000 字公众号深度文章，每段带数据引用」→ 30 分钟出结构完整的研究型文章。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用研究写作模式写一篇关于「远程办公三年后，哪些公司退回办公室了？」的公众号文章，需要数据和案例支撑」</div>
+        <div class="ex-out"><strong>成果（引用片段）：</strong><br>「据 Stanford WFH 研究 2026 年数据，全职远程员工占比从 2023 年的 35% 下降至 18%（来源：Stanford WFH Report, 2026Q1）。而 Goldman Sachs 在 2025 年 9 月 memo 中明确要求 junior staff 每周至少到岗 4 天——理由是"师徒制文化无法在线上复制"。」<br><strong>成果（结构）：</strong>数据对比表(3年趋势) → 5 家典型公司决策分析(含原因) → 对普通人的影响判断</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -99,6 +122,11 @@
       <div class="sk-desc"><strong>是什么：</strong>专门识别中文 AI 文本中的空话、套话、三段式排比、过度修饰和「AI腔」，把生硬的机器文风改得像真人手笔。内置 24 项检测模式。<br><strong>公众号用法：</strong>这是公众号写作的最后一道工序——AI 写完初稿后，用 humanizer-zh 过一遍，读者就不会再第一眼觉得「这是 AI 写的」。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>文章初稿发给 Codex → 「用 humanizer-zh 帮我去 AI 味，语气像朋友聊天，删掉套话和三段式排比」→ 30 秒出真人手笔版。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入（AI 腔原文）：</strong>「在当今数字化转型的浪潮中，人工智能技术正以前所未有的速度深刻改变着内容创作领域。首先，我们需要认识到...其次，值得注意的是...最后，综上所述...」</div>
+        <div class="ex-out"><strong>成果（润色后）：</strong><br>「说实话，去年我还在手动排版公众号，今年已经全丢给 AI 了。不是因为我变懒了——而是我发现把时间花在"怎么写"上比花在"写什么"上值钱得多。有个数据挺扎心的：同样的选题，用 Skill 配合人工润色，从构思到发布只要 40 分钟。」<br>（去掉了三段式排比、空洞过渡句、教科书式表达）</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -107,6 +135,11 @@
       <div class="sk-desc"><strong>是什么：</strong>把竞品公众号文章喂进去，自动提取：标题策略（数字型/疑问型/冲突型）、开头 hook 方式、说服框架、差异化卖点。不只是看看别人怎么写，而是结构化拆解可复用的写法。<br><strong>公众号用法：</strong>写之前先拆 3 篇同行爆款 → 拿到可复用的标题模板和 hook 清单 → 用这些策略写自己的文章，命中率翻倍。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path competitive-ads-extractor</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>找 3 个同行公众号最近的文章链接 → 发给 Codex → 「用 competitive-ads-extractor 拆解这三篇文章的标题策略和 hook 方式」→ 拿到写法清单直接用。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「拆解这 3 篇竞品文章：①《AI 编程助手横评：Cursor vs Copilot vs Windsurf》②《我用 AI 做了 100 张图，发现了这些规律》③《别再用 ChatGPT 写公众号了，试试这个》」</div>
+        <div class="ex-out"><strong>成果（拆解报告）：</strong><br>• 标题策略：① 数字+对比型(高点击) ② 经历数字型(强信任) ③ 否定指令型(高好奇)<br>• Hook 模式：「我花了 X 小时测试了 Y 个工具，只推荐这 1 个」<br>• 可复用模板：《我测评了 N 个 XX，只有这 M 个值得说》/ 《别再 YY 了，实测数据告诉你真相》<br>• 差异化角度建议：竞品都在"横评"，你可以做"场景化推荐"</div>
+      </div>
     </div>
 
     <div class="pipe">
@@ -138,7 +171,7 @@
 
   <!-- 📗 -->
   <div class="section">
-    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
     <div class="tip t-g">
       <div class="th"><div class="tt">🧪 NotebookLM — 用「对比」问题挖出矛盾观点</div></div>
       <div class="tb">上传多篇来源后，问「A 和 B 在 XX 观点上有什么矛盾？」比问「这些文章讲了什么」得到的信息密度高 3 倍。因为 NotebookLM 会逐句检索冲突点，而不是泛泛归纳。写公众号选题时，把 3 篇不同立场文章喂进去，问矛盾点——选题角度自动浮现。</div>
@@ -150,10 +183,6 @@
     <div class="tip t-g" style="margin-top:10px;">
       <div class="th"><div class="tt">🧪 NotebookLM — 给 AI 播客加「自定义指令」</div></div>
       <div class="tb">生成播客前输入自定义指令可以精准控制内容——比如「只讲第三章的实验数据对比」或「用小学生能听懂的方式解释」。默认播客容易把简单的事讲绕，加了指令后质量提升明显。</div>
-    </div>
-    <div class="tip t-o" style="margin-top:10px;">
-      <div class="th"><div class="tt">📋 Notion — Agent 定时自动执行任务</div></div>
-      <div class="tb">Notion 3.0 的 Custom Agent 现在支持定时触发：设置「每天早上 9 点自动整理昨天的会议纪要到项目页面」，或「每周一自动从数据库提取数据生成周报」。不需要你手动跑，Agent 在后台按时干活。对公众号运营来说，可以设置定时整理选题灵感库。</div>
     </div>
   </div>
 
@@ -167,6 +196,24 @@
     <div class="tip t-p" style="margin-top:10px;">
       <div class="th"><div class="tt">⚡ 周一目标法：工作区开头写「本周重点」</div></div>
       <div class="tb">在 WorkBuddy 工作区第一天写一句「本周重点：完成 3 篇公众号文章」，后面每次产出内容它都能关联上下文，不会漏掉大事。这比每次重新描述需求省很多时间。一周结束看工作区，产出自然对齐目标。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一篇完整的公众号文章 — 从选题到成稿</div>
+      <div class="sh-sub">用今天介绍的 5 个 Skill，完成一个可交付的公众号文章成品</div>
+      <div class="sh-box">
+        <strong>📝 文章标题：</strong>《停更公众号 30 天后，我靠 AI 写作重新出发》<br><br>
+        <strong>🔍 选题诊断（dbskill）：</strong>从 3 个选题中选出"个人经历+AI工具"角度，判定为"高分享率"类型<br><br>
+        <strong>✍️ 正文生成（wechat-article-write）：</strong>2000 字完整文章，含 5 个小节、3 个数据引用点、2 个配图 prompt<br><br>
+        <strong>📚 深度补充（content-research-writer）：</strong>补充了 AI 写作工具市场数据（2026Q1 增长率 340%）和用户调研数据<br><br>
+        <strong>🗣️ 润色去AI味（humanizer-zh）：</strong>将"在当今数字化转型浪潮中"改为"说实话，去年我还在手动排版..."，全文口语化处理<br><br>
+        <strong>💡 竞品参考（competitive-ads-extractor）：</strong>从 3 篇同行爆款提取标题策略，最终选用"时间对比型"标题<br><br>
+        <strong>⏱️ 总耗时：约 40 分钟（传统流程需 3-4 小时）</strong>
+      </div>
     </div>
   </div>
 

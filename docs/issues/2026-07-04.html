@@ -39,6 +39,10 @@
   .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
   .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
   .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
   .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
   .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
   .tip .tt { font-size:14px; font-weight:700; }
@@ -50,6 +54,10 @@
   .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
   .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
   .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
   .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
   .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
   @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
@@ -75,6 +83,11 @@
       <div class="sk-desc"><strong>是什么：</strong>classfang/weixin-mp-skills 合集的全流程编排 Skill。你只需要给一个选题或大纲，它会通过少量问答补齐读者画像、方向、视觉风格、是否生成文内图、是否创建草稿等关键选择，然后自动串联：选题/素材收集 → 内容创作（wechat-article-write）→ 配图（wechat-article-image）→ 图片路径回填到排版稿 → 用户确认预览 → 创建公众号草稿（wechat-article-publish）。正式发布必须另行明确确认。<br><strong>最适合：</strong>不想分五步分别调用 Skill 的人、想把公众号发文变成一条命令的内容团队、每天重复发文流程的运营者。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh</div><div class="cmt">💡 合集全装后，在 Codex 里说「使用 $wechat-article-workflow 从这个选题开始，帮我完成公众号内容创作、配图、图片回填排版和创建草稿」。</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>一句话选题 → 「使用 $wechat-article-workflow 帮我从「AI 工具如何改变公众号写作」这个选题开始做一篇公众号文章，过程中需要我选择的地方你来问我」→ 它会问你读者画像、视觉风格偏好等几个关键问题，然后自动走完六步，最后停在草稿让你确认。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「使用 $wechat-article-workflow 从选题"社区文化活动策划方案"开始做一篇公众号文章」</div>
+        <div class="ex-out"><strong>成果（workflow 六节点执行记录）：</strong><br><br>❓ Q1: 目标读者是谁？→ A: 社区工作人员+居民<br>❓ Q2: 文章风格？→ A: 务实亲切，带案例<br>❓ Q3: 需要文内配图吗？→ A: 需要2张<br>❓ Q4: 排版主题偏好？→ A: 暖色调<br>❓ Q5: 创建草稿吗？→ A: 是<br><br>✅ [节点1] 选题确认 — "社区文化活动的5种创新形式"<br>✅ [节点2] 内容创作 — 1800字正文（含3个案例）<br>✅ [节点3] 配图生成 — 封面图 + 活动流程信息图<br>✅ [节点4] 排版回填 — warm-orange 主题 HTML<br>✅ [节点5] 用户预览 — 已生成，等你确认<br>⏸️ [节点6] 草稿创建 — 等你确认后执行<br><br>⏱️ 总耗时：约12分钟（人工需3-4小时）</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -83,6 +96,11 @@
       <div class="sk-desc"><strong>是什么：</strong>周一介绍过的写作 Skill，今天是它的「全流程角色」——在 workflow 编排中，它自动被调用来完成内容创作环节。你不需要单独调用，workflow 会替你衔接。<br><strong>全流程用法：</strong>单独使用时你自己控制每步输出，全流程使用时 workflow 自动衔接——选题出来后直接交给 write，write 产出后直接交给 image，不需要你手动传递。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">已在合集安装中包含，无需额外安装</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>全流程模式下不需要单独调用——workflow 会自动衔接。如果你想单独精细控制写作步骤，仍然可以单独说「使用 $wechat-article-write ...」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入（独立调用）：</strong>「使用 $wechat-article-write 单独写一篇关于"社区文化活动策划"的文章，目标读者是社区工作者，需要3个可落地的活动案例」</div>
+        <div class="ex-out"><strong>成果（write 节点输出）：</strong><br>📄 文章标题：《社区文化不等于广场舞：5种让年轻人也愿意参加的活动方案》<br>📋 大纲：引子(社区活动痛点) → 方案1(邻里技能交换) → 方案2(社区故事展) → 方案3(代际共学) → 方案4(微改造工作坊) → 方案5(社区共创节) → 落地清单<br>✍️ 正文：约1800字，含数据支撑和案例细节<br>🎨 配图prompt：封面(暖色调社区场景) + 文内图2张<br><br>💡 此输出会作为 workflow 第②步的输入，直接传给后续节点</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -91,6 +109,11 @@
       <div class="sk-desc"><strong>是什么：</strong>周三介绍过的排版 CLI，今天是它的「全流程角色」——workflow 内部用 md2wechat 命令来执行排版和草稿创建。<br><strong>全流程用法：</strong>workflow 会在配图完成后调用 md2wechat convert 把 Markdown 转成微信 HTML，并自动 --create-draft 推到草稿箱。你也可以在 workflow 之外单独用 md2wechat 精细控制排版主题和模块。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npm install -g @geekjourneyx/md2wechat && md2wechat config init</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>全流程模式下 md2wechat 自动衔接。精细控制：workflow 完成写作和配图后 → 你预览确认 → 单独用 md2wechat convert article.md --theme elegant-blue --create-draft 精调排版。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入（独立精调）：</strong>「workflow 已完成写作和配图，现在用 md2wechat 精调排版：主题 warm-orange，需要 hero 开篇区 + callout 案例高亮框 + 底部行动号召区」</div>
+        <div class="ex-out"><strong>成果（排版输出）：</strong><br>📄 article-final.html — 完整微信兼容 HTML<br>• Hero 区：暖橙渐变底 + 白色大标题"社区文化不等于广场舞"<br>• 正文：17px 行高1.85，暖色系引用块<br>• Callout ×3：每个案例方案用橙色边框强调框突出<br>• CTA 区：底部卡片样式"📅 本月社区活动日历见评论区"<br>✅ 排版后自动 --create-draft 推入草稿箱<br>⏱️ 独立精调耗时：约3分钟</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -99,6 +122,11 @@
       <div class="sk-desc"><strong>是什么：</strong>品牌视觉规范 Skill，不是流程中的某个节点，而是<strong>贯穿全程的统一标准</strong>——设定一次品牌色+字体后，写作的语气、排版的配色、配图的风格、发布的一致性全部自动套用。<br><strong>全流程用法：</strong>在启动 workflow 之前先设定品牌 → 「用 brand-guidelines 设定公众号品牌色 #4A90D9、风格简约商务」→ 之后 workflow 产出的所有内容都自动对齐品牌。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>先设品牌 → 再启动 workflow → 「设定品牌色蓝白苹方 → 使用 $wechat-article-workflow 从选题开始做公众号文章」→ 从写作到配图到排版到草稿，风格全程统一。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「为"幸福社区"公众号设定品牌规范：主色 #e85d04(暖橙)，辅色 #f48c06(琥珀)，字体苹方，风格温暖亲切有活力，禁止冷色调和严肃商务风。然后用这个品牌规范跑一篇社区活动文章的完整 workflow」</div>
+        <div class="ex-out"><strong>成果（品牌统一效果）：</strong><br>📝 写作阶段：语气自动调整为"咱们社区""街坊邻居"等口语化表达<br>🎨 配图阶段：封面/插图全部使用暖橙色调，拒绝冷蓝灰<br>📄 排版阶段：md2wechat 自动选用 warm-orange 同色系主题<br>🖼️ 信息图：配色从 brand.md 读取暖橙阶梯色<br><br>✅ 全流程产出视觉一致：打开文章就知道是"幸福社区"发的<br>💡 brand-guidelines 不是某个节点的输入——它是全局配置</div>
+      </div>
     </div>
 
     <div class="skill">
@@ -107,6 +135,11 @@
       <div class="sk-desc"><strong>是什么：</strong>社交分发卡片 Skill——全流程的最后一步加分动作：文章推到公众号草稿箱后，10 分钟后再发小红书。<br><strong>全流程用法：</strong>workflow 走完 → 草稿创建 → 确认发布 → 再说「用 guizang-social-card 把这篇文章拆成 8 张小红书卡片」→ 公众号+小红书双渠道同步。一次写作，双重曝光。</div>
       <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
       <div class="try"><strong>🎯 今天就能试：</strong>workflow 全流程跑完后 → 「用 guizang-social-card 把这篇已发布文章拆成 8 张小红书卡片，配色和公众号风格统一」→ 一次产出两个渠道的内容。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「workflow 已完成并发布《社区文化不等于广场舞》，现在用 guizang-social-card 拆成小红书卡片，目标用户是社区工作者和活动策划人，暖橙配色」</div>
+        <div class="ex-out"><strong>成果（双渠道输出）：</strong><br><br>📢 公众号（已发布）：<br>　✅ 1800字完整文章 + 封面 + 2张配图<br>　🔗 链接：mp.weixin.qq.com/s?...<br><br>📱 小红书（新生成）：<br>　📌 card_01: "社区活动=广场舞？这5种新玩法年轻人抢着参加"<br>　📌 card_02: 方案1 邻里技能交换 — 你教我烘焙，我教你剪发<br>　📌 card_03: 方案2 社区故事展 — 老照片+老物件+老故事<br>　📌 card_04: 方案3 代际共学 — 爷爷教用手机，孙辈教防诈骗<br>　📌 card_05: 方案4 微改造 — 僵尸墙变共享书架<br>　📌 card_06: CTA — 你们社区有什么好玩的？评论区聊聊<br><br>⏱️ 从发布到小红书就绪：约10分钟<br>💡 公众号主攻深度，小红书主攻传播，互补不重复</div>
+      </div>
     </div>
 
     <div class="pipe">
@@ -153,7 +186,7 @@
 
   <!-- 📗 -->
   <div class="section">
-    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
     <div class="tip t-g">
       <div class="th"><div class="tt">🧪 NotebookLM — 三种研究模式怎么选</div></div>
       <div class="tb">快速研究（10 分钟搞清概念）→ 选题阶段用；深度研究（30 分钟出带引用报告）→ 写作阶段用；Agent 模式（代码执行+联网搜索+多格式输出）→ 数据分析阶段用。三个模式分阶段用，效率最高。不要一开始就上深度研究——先快速研究确认方向，再深入。</div>
@@ -165,10 +198,6 @@
     <div class="tip t-g" style="margin-top:10px;">
       <div class="th"><div class="tt">🧪 NotebookLM — Studio 多格式输出：研究报告变 PPT/PDF/Excel</div></div>
       <div class="tb">做完深度研究后，Studio 可以直接导出 PPT（上台讲）、PDF（发团队审）、Excel（做数据表）、图片（发小红书）。不用切换工具，一个 notebook 出四种格式。公众号专题的收尾步骤：导出 PDF 给编辑审稿，导出图片做小红书卡片。</div>
-    </div>
-    <div class="tip t-o" style="margin-top:10px;">
-      <div class="th"><div class="tt">📋 Notion + Codex 联动：选题库自动推送</div></div>
-      <div class="tb">Notion External Agents API 让 Codex 可以直接读写 Notion 工作区。实操方案：在 Notion 建「本周选题」数据库 → Codex 每天定时扫描 → 自动为每个选题跑 wechat-article-workflow → 产出推到草稿箱。从选题库到草稿箱全自动，你只需要最后确认发布。</div>
     </div>
   </div>
 
@@ -182,6 +211,33 @@
     <div class="tip t-p" style="margin-top:10px;">
       <div class="th"><div class="tt">⚡ 建立你的公众号指令仓库</div></div>
       <div class="tb">把本周验证过的指令保存到 my_prompts.md：选题诊断指令、写作指令、排版指令、配图指令、发布指令、全流程指令。下次发文时直接调用，不用从头写。WorkBuddy 会记住你的偏好，越用越精准。一周下来，你的公众号发文已经从「2 小时手动操作」变成了「5 分钟一条命令」。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 公众号专题周终极成果 — 从"我要写社区文化活动策划"到全渠道就位</div>
+      <div class="sh-sub">用一周学到的全部 Skill，完成一个完整的端到端示例</div>
+      <div class="sh-box">
+        <strong>🎯 用户需求：</strong>"我要写一篇关于社区文化活动的策划方案文章，发布到公众号"<br><br>
+        <strong>⚡ 一键配置（智能推荐）：</strong><br>
+        　① wechat-article-write — 写作（选题→大纲→正文）<br>
+        　② md2wechat — 排版（warm-orange 主题）<br>
+        　③ wechat-article-image — 配图（封面+信息图）<br>
+        　④ wechat-article-publish — 发布（API 推草稿箱）<br>
+        　⑤ guizang-social-card — 同步小红书卡片<br><br>
+        <strong>📦 完整产出物清单：</strong><br>
+        　📄 article.md — 1800字 Markdown 原文<br>
+        　📄 article.html — 微信排版版（暖橙色系）<br>
+        　🖼️ cover.jpg — 900×383 封面图<br>
+        　🖼️ infographic.jpg — 活动流程信息图<br>
+        　🖼️ card_01~06.png — 小红书图文卡(1080×1440)<br>
+        　🔗 draft_id: Fx3PcCcc... (草稿已在后台)<br><br>
+        <strong>⏱️ 全流程耗时：约40分钟（传统方式需1天以上）</strong><br>
+        <strong>💰 成本：0元（全部 Skill 免费开源）</strong>
+      </div>
     </div>
   </div>
 
