@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-03</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-03 · 星期五</div>
+    <h1>公众号专题周④：一键推送，文章从桌面到草稿箱</h1>
+    <div class="art-sub">API 自动上传 · 草稿创建 · 定点确认发布 · 多账号管理 · 社交分发</div>
+  </div>
+  <div class="intro-box">📌 <strong>专题周第四天：发布专场。</strong>文章写好了、排版好了、配图好了——现在该推到公众号草稿箱了。wechat-article-publish 通过微信官方服务端 API 直接上传图文素材，默认只创建草稿，正式发布必须你明确确认，不会擅自上线。md2wechat 的 convert+draft 命令也能一键排版+创建草稿。4 个辅助 Skill 覆盖社交分发和多账号管理。明天是全流程串联专场——把前三天的 Skill 全部串起来。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>公众号发布 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">wechat-article-publish — 公众号 API 一键推送</div><div class="sk-subtitle">classfang · 微信官方 API 上传图文素材 → 创建草稿 → 确认后发布</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">公众号发布</span><span class="bd bd-b">API推送</span><span class="bd bd-o">安全确认</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>classfang/weixin-mp-skills 合集里的发布 Skill。通过微信公众号官方服务端 API 上传本地 HTML/Markdown/JSON 文章 + 图片素材。默认行为是<strong>只创建草稿</strong>——不会擅自发布。正式发布需要你明确确认后才会执行。凭据从 ~/.config/wechat-mp/.env 读取，不硬编码在代码里。<br><strong>最适合：</strong>不想每次手动打开微信后台粘贴排版的人、矩阵号运营者需要批量创建草稿、想把「写→排→发」串成一条命令的内容团队。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh</div><div class="cmt">💡 安装后先配置公众号凭据：在 ~/.config/wechat-mp/.env 填写 WECHAT_APP_ID 和 WECHAT_APP_SECRET。还需要在微信后台添加 IP 白名单。详见 classfang 仓库的安装文档。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>排版好的 HTML 文件 + 封面图 → 「使用 $wechat-article-publish 将 ./outputs/article.html 和 ./outputs/cover.jpg 创建为公众号草稿」→ 30 秒推到草稿箱，在微信后台预览确认后再发布。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">md2wechat convert — 排版+草稿一条命令</div><div class="sk-subtitle">geekjourneyx · Markdown → 微信 HTML → 草稿箱，一条 CLI 串三步</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高星</span><span class="bd bd-p">CLI排版</span><span class="bd bd-b">一键草稿</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>昨天的主角 md2wechat 今天换了个用法——convert 命令可以把 Markdown → 微信 HTML → 创建草稿三步合并成一条命令。加上 --create-draft 参数，排版完自动推到草稿箱。<br><strong>公众号发布用法：</strong>如果你用 md2wechat 排版，就不需要单独装 wechat-article-publish——一条 md2wechat convert article.md --create-draft 就够了。两者互补：md2wechat 偏 CLI 精细控制，wechat-article-publish 偏 Codex 原生对话式。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npm install -g @geekjourneyx/md2wechat && md2wechat config init</div><div class="cmt">💡 昨天已装过的直接用。新增草稿功能需要先 md2wechat config init 配置微信凭据。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>写好的 Markdown → 「md2wechat convert article.md --theme elegant-blue --create-draft」→ 排版+上传图片+创建草稿三步合一，一条命令搞定。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">guizang-social-card-skill — 小红书同步分发</div><div class="sk-subtitle">op7418 · 文章拆成 6-9 张精美小红书卡片，一键双渠道</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-o">小红书</span><span class="bd bd-p">双渠道分发</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。<br><strong>公众号发布用法：</strong>文章推到公众号草稿箱后，10 分钟后再发小红书——用 guizang-social-card 把文章核心观点拆成 8 张卡片，直接发小红书图文笔记。一次写作，两个渠道同步曝光。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>文章发布后 → 「用 guizang-social-card 把这篇文章拆成 8 张小红书卡片」→ 公众号发完，10 分钟后小红书也发了。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">html-anything — 网页版本独立分享</div><div class="sk-subtitle">nexu-io · 同一篇文章出杂志风网页版，朋友圈/微信群/知乎都能发</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6.3K</span><span class="bd bd-p">网页版</span><span class="bd bd-b">多渠道</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>75 个 Skills 生成杂志风 HTML 页面、知识卡片、海报等。自带沙箱预览 + 一键发布到微信/知乎/X。<br><strong>公众号发布用法：</strong>公众号版本走草稿箱 API，网页版本走 html-anything 独立发布——发朋友圈用网页链接，发公众号用草稿箱推送。两个版本同一内容，四个渠道同步。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nexu-io/html-anything --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>文章同时出两个版本 → 「用 html-anything 给这篇文章生成杂志风网页版」→ 公众号发草稿，朋友圈发网页链接，一次写作四个渠道。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">wechat-daily-skills — 日报自动化含发布子 Skill</div><div class="sk-subtitle">mrguo · 5 个 Skill 串成日报工作流，最后一步自动推草稿</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">日报自动化</span><span class="bd bd-o">5个Skill</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套公众号日报自动化 Skill 包（5 个 Skill）：主控编排、报告 MCP 抓取、深度研究写作、公众号 HTML 排版配图、微信草稿上传。从抓取到发布串成可复用工作流。<br><strong>公众号发布用法：</strong>如果你做的是日报型内容（AI 日报、行业日报、知识速递），wechat-daily-skills 的发布子 Skill 最省事——整个工作流最后一步自动推草稿，不用你单独操作。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">从 mrguo.life/zh/resources/wechat-daily-skills-open-source 下载开源包，解压后 cp -r skills/* ~/.codex/skills/</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>做日报型内容 → 「用 wechat-daily-skills 工作流，帮我从 XX 信源抓取数据 → 写成公众号日报 → 排版配图 → 推到草稿箱」→ 一条链路自动跑完。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① API发布</span><span class="pa">→</span>
+      <span class="ps ps-2">② CLI草稿</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 小红书</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 网页版</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 日报流</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--muted);">发布五件套：从桌面到多渠道上线</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🔒 wechat-article-publish 安全机制：草稿先行，发布必须确认</div></div>
+      <div class="tb">发布 Skill 的默认行为是只创建草稿——不会擅自发布。正式发布需要你明确说「确认发布」。这个设计是因为公众号文章一旦发布就不可撤回（只能删除），AI 不应该替你做这个决定。使用方式：先草稿 → 微信后台预览 → 确认无误 → 再让 Codex 执行发布。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 技巧：微信凭据安全存放</div></div>
+      <div class="tb">不要把 WECHAT_APP_ID 和 WECHAT_APP_SECRET 硬编码在代码里。推荐放在 ~/.config/wechat-mp/.env 文件中——wechat-article-publish 会自动读取。同时确保在微信后台「基本配置」页面添加你的服务器 IP 到白名单，否则 API 调用会返回 IP 未授权错误。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">📊 md2wechat 支持多账号矩阵号发布</div></div>
+      <div class="tb">md2wechat config wechat-accounts 可以查看本地多公众号账号配置。每个账号命名管理，本地只读发现，不输出 Secret。适合运营多个公众号的矩阵号场景——一条命令指定账号名，自动切换到对应凭据发布。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 快速研究 vs 深度研究：怎么选</div></div>
+      <div class="tb">NotebookLM 现在有两种研究模式：快速研究适合 10 分钟搞清一个概念，深度研究适合 30 分钟出一份带引用的报告。公众号选题阶段用快速研究确认方向，写作阶段用深度研究补充数据——两个模式分阶段用，效率最高。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — 音频播客 + 笔记联动</div></div>
+      <div class="tb">生成 AI 播客后，播客里提到的每个观点都会自动关联到原始笔记中的对应段落。听播客时听到有意思的点，点击就能跳回原文查看详细数据。做选题调研时，先听播客快速过一遍，再点进去精读重点段落。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — 项目文档喂成个人研究助手</div></div>
+      <div class="tb">把你的公众号选题灵感库、过往文章、竞品分析报告全部上传到一个 NotebookLM notebook。之后每次有新选题，问「这个选题我之前写过类似的吗？」「同行有没有写过类似角度？」——它直接翻你的历史资料回答，比你自己翻文件夹快 10 倍。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — AI 自动填充数据库属性</div></div>
+      <div class="tb">Notion AI 现在可以自动填充数据库属性——比如文章数据库里设一个「选题评分」属性，AI 根据文章标题和摘要自动评分。设一个「建议发布时间」属性，AI 根据内容热度自动推荐发布时机。对公众号选题库管理特别有用。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 分步指令+检查点：发布流程的安全带</div></div>
+      <div class="tb">发布是高风险操作——用分步指令+检查点确保安全：「第1步：用 $wechat-article-publish 创建草稿 → 完成后暂停让我确认预览 → 第2步：确认无误后正式发布」。WorkBuddy 会在每步完成后暂停等你确认，不会一口气发出去。</div>
+    </div>
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ Ask 模式先收集，再 Craft 出结果</div></div>
+      <div class="tb">调研类任务先用 Ask 模式确认方向（只读不写、消耗低），确认信息够用了再切 Craft 模式出报告/文章。中间来回追问不会白白消耗积分。发布前的选题确认、配图确认，都用 Ask 模式，最后发布用 Craft 模式。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 发布是终点线。三天准备，一秒上线——明天把整条流水线串起来，六节点全自动</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-03</span>
+  </div>
+</div>
+</body>
+</html>

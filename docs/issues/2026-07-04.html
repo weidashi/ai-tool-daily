@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-04</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-04 · 星期六</div>
+    <h1>公众号专题周⑤：六节点全自动，一条命令从选题到草稿箱</h1>
+    <div class="art-sub">全流程编排 · 问答补齐 · 图片回填 · 用户确认 · 草稿创建 · 一周横评</div>
+  </div>
+  <div class="intro-box">📌 <strong>专题周收官：全流程串联专场。</strong>过去四天我们分别讲了写作、排版、配图、发布——今天把它们串起来。wechat-article-workflow 是今天的主角：给它一个选题，它通过问答补齐必要信息，然后自动串联选题/素材收集 → 内容创作 → 配图 → 图片回填排版 → 用户确认 → 草稿创建六步。4 个辅助 Skill 是本周出现过的核心节点，今天从「独立使用」升级到「组合编排」。最后附上一周公众号 Skill 横评总结。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>公众号全流程编排 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">wechat-article-workflow — 六节点全自动编排</div><div class="sk-subtitle">classfang · 选题 → 创作 → 配图 → 回填排版 → 确认 → 草稿，一条命令走完</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">全流程</span><span class="bd bd-b">6节点</span><span class="bd bd-o">问答补齐</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>classfang/weixin-mp-skills 合集的全流程编排 Skill。你只需要给一个选题或大纲，它会通过少量问答补齐读者画像、方向、视觉风格、是否生成文内图、是否创建草稿等关键选择，然后自动串联：选题/素材收集 → 内容创作（wechat-article-write）→ 配图（wechat-article-image）→ 图片路径回填到排版稿 → 用户确认预览 → 创建公众号草稿（wechat-article-publish）。正式发布必须另行明确确认。<br><strong>最适合：</strong>不想分五步分别调用 Skill 的人、想把公众号发文变成一条命令的内容团队、每天重复发文流程的运营者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/classfang/weixin-mp-skills.git && cd weixin-mp-skills && ./scripts/update-skills.sh</div><div class="cmt">💡 合集全装后，在 Codex 里说「使用 $wechat-article-workflow 从这个选题开始，帮我完成公众号内容创作、配图、图片回填排版和创建草稿」。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>一句话选题 → 「使用 $wechat-article-workflow 帮我从「AI 工具如何改变公众号写作」这个选题开始做一篇公众号文章，过程中需要我选择的地方你来问我」→ 它会问你读者画像、视觉风格偏好等几个关键问题，然后自动走完六步，最后停在草稿让你确认。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">wechat-article-write — 内容创作节点（全流程中的第二步）</div><div class="sk-subtitle">classfang · workflow 调用此 Skill 自动完成选题→大纲→正文→视觉建议</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">写作节点</span><span class="bd bd-b">全流程中</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>周一介绍过的写作 Skill，今天是它的「全流程角色」——在 workflow 编排中，它自动被调用来完成内容创作环节。你不需要单独调用，workflow 会替你衔接。<br><strong>全流程用法：</strong>单独使用时你自己控制每步输出，全流程使用时 workflow 自动衔接——选题出来后直接交给 write，write 产出后直接交给 image，不需要你手动传递。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">已在合集安装中包含，无需额外安装</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>全流程模式下不需要单独调用——workflow 会自动衔接。如果你想单独精细控制写作步骤，仍然可以单独说「使用 $wechat-article-write ...」。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">md2wechat — 排版+发布 CLI（全流程中的排版环节）</div><div class="sk-subtitle">geekjourneyx · 48主题+43模块+AI配图，workflow 可衔接此 CLI</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高星</span><span class="bd bd-p">CLI排版</span><span class="bd bd-b">全流程中</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>周三介绍过的排版 CLI，今天是它的「全流程角色」——workflow 内部用 md2wechat 命令来执行排版和草稿创建。<br><strong>全流程用法：</strong>workflow 会在配图完成后调用 md2wechat convert 把 Markdown 转成微信 HTML，并自动 --create-draft 推到草稿箱。你也可以在 workflow 之外单独用 md2wechat 精细控制排版主题和模块。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npm install -g @geekjourneyx/md2wechat && md2wechat config init</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>全流程模式下 md2wechat 自动衔接。精细控制：workflow 完成写作和配图后 → 你预览确认 → 单独用 md2wechat convert article.md --theme elegant-blue --create-draft 精调排版。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">brand-guidelines — 全流程品牌统一（贯穿全程）</div><div class="sk-subtitle">ComposioHQ · 设定一次品牌 → 写作/排版/配图/发布全自动套用</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">品牌统一</span><span class="bd bd-b">贯穿全程</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>品牌视觉规范 Skill，不是流程中的某个节点，而是<strong>贯穿全程的统一标准</strong>——设定一次品牌色+字体后，写作的语气、排版的配色、配图的风格、发布的一致性全部自动套用。<br><strong>全流程用法：</strong>在启动 workflow 之前先设定品牌 → 「用 brand-guidelines 设定公众号品牌色 #4A90D9、风格简约商务」→ 之后 workflow 产出的所有内容都自动对齐品牌。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>先设品牌 → 再启动 workflow → 「设定品牌色蓝白苹方 → 使用 $wechat-article-workflow 从选题开始做公众号文章」→ 从写作到配图到排版到草稿，风格全程统一。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-social-card-skill — 全流程收尾：小红书分发</div><div class="sk-subtitle">op7418 · 公众号发布后 10 分钟，小红书同步上线</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-o">小红书</span><span class="bd bd-p">全流程收尾</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>社交分发卡片 Skill——全流程的最后一步加分动作：文章推到公众号草稿箱后，10 分钟后再发小红书。<br><strong>全流程用法：</strong>workflow 走完 → 草稿创建 → 确认发布 → 再说「用 guizang-social-card 把这篇文章拆成 8 张小红书卡片」→ 公众号+小红书双渠道同步。一次写作，双重曝光。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>workflow 全流程跑完后 → 「用 guizang-social-card 把这篇已发布文章拆成 8 张小红书卡片，配色和公众号风格统一」→ 一次产出两个渠道的内容。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">选题/素材</span><span class="pa">→</span>
+      <span class="ps ps-1">② 内容创作</span><span class="pa">→</span>
+      <span class="ps ps-2">配图生成</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 排版回填</span><span class="pa">→</span>
+      <span class="ps ps-4">用户确认</span><span class="pa">→</span>
+      <span class="ps ps-5">草稿创建</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--muted);">① workflow 六节点全自动编排</span>
+    </div>
+  </div>
+
+  <!-- 横评 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">🏆</div><span>公众号 Skill 一周横评总结</span></div>
+    <div class="hl">
+      <strong>本周 5 个核心公众号 Skill 横评：</strong><br><br>
+      <strong>① wechat-article-write</strong>（classfang）— 专攻写作，从选题到大纲到正文到配图 prompt。独立使用最灵活。<br>
+      <strong>② md2wechat</strong>（geekjourneyx）— 专攻排版+发布，48 主题+43 模块 CLI。技术最成熟，v2.9 版本。<br>
+      <strong>③ wechat-article-image</strong>（classfang）— 专攻配图，默认 2.35:1 宽幅知识媒体风格。公众号比例最精准。<br>
+      <strong>④ wechat-article-publish</strong>（classfang）— 专攻发布，API 直接推草稿。安全机制最完善（草稿先行+确认发布）。<br>
+      <strong>⑤ wechat-article-workflow</strong>（classfang）— 专攻编排，六节点全自动串联。一句话从选题到草稿。<br><br>
+      <strong>选型建议：</strong>每天发文 → 用 workflow 一条命令搞定；精细控制 → 拆开用 write+image+publish 各自调；排版定制 → 用 md2wechat 48 主题精细调。三者互补，不是互斥。
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🧭 workflow 编排概念：Codex 里的「流水线」</div></div>
+      <div class="tb">wechat-article-workflow 代表了 Codex Skill 生态的一个新趋势——从单个 Skill 做单个任务，升级到编排型 Skill 把多个子 Skill 串联成一条流水线。workflow 会自动在合适的时机调用 write、image、publish，中间用问答补齐你需要决策的信息。你不需要记住每个 Skill 的调用顺序，workflow 替你管。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 技巧：workflow 问答补齐——别急着跳过</div></div>
+      <div class="tb">workflow 启动后会问你几个关键问题：读者画像、视觉风格偏好、是否生成文内图、是否创建草稿。别急着跳过——这些回答决定了后续 5 个节点的产出质量。比如选「知识媒体风格」还是「大字海报风格」，配图和排版完全不同。花 2 分钟回答，省 30 分钟微调。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">📊 图片回填：workflow 的隐藏亮点</div></div>
+      <div class="tb">配图完成后，workflow 会把图片路径自动回填到 Markdown/HTML 排版稿中——配图不是独立的步骤，而是自动嵌入到排版里。这意味着你不需要手动在文章里找位置插入图片，workflow 在配图环节就帮你搞好了。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 三种研究模式怎么选</div></div>
+      <div class="tb">快速研究（10 分钟搞清概念）→ 选题阶段用；深度研究（30 分钟出带引用报告）→ 写作阶段用；Agent 模式（代码执行+联网搜索+多格式输出）→ 数据分析阶段用。三个模式分阶段用，效率最高。不要一开始就上深度研究——先快速研究确认方向，再深入。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — 知识库+联网搜索双模式</div></div>
+      <div class="tb">NotebookLM 现在支持两种信息来源：上传的私有资料（知识库模式）和自动搜索全网资料（联网模式）。做公众号选题时，知识库模式翻你的历史灵感库，联网模式补充最新行业数据。两者结合：私有经验+公开信息=完整选题素材。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — Studio 多格式输出：研究报告变 PPT/PDF/Excel</div></div>
+      <div class="tb">做完深度研究后，Studio 可以直接导出 PPT（上台讲）、PDF（发团队审）、Excel（做数据表）、图片（发小红书）。不用切换工具，一个 notebook 出四种格式。公众号专题的收尾步骤：导出 PDF 给编辑审稿，导出图片做小红书卡片。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion + Codex 联动：选题库自动推送</div></div>
+      <div class="tb">Notion External Agents API 让 Codex 可以直接读写 Notion 工作区。实操方案：在 Notion 建「本周选题」数据库 → Codex 每天定时扫描 → 自动为每个选题跑 wechat-article-workflow → 产出推到草稿箱。从选题库到草稿箱全自动，你只需要最后确认发布。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 角色+目标+约束：全流程指令公式</div></div>
+      <div class="tb">全流程指令用这个公式：「你是我的公众号运营助手（角色），目标是从选题到草稿箱完成一篇公众号文章（目标），要求：1. 知识媒体风格 2. 2000 字 3. 封面图 2.35:1 4. 最后只创建草稿不发布（约束）。」四个要素齐全，workflow 执行就不会跑偏。</div>
+    </div>
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 建立你的公众号指令仓库</div></div>
+      <div class="tb">把本周验证过的指令保存到 my_prompts.md：选题诊断指令、写作指令、排版指令、配图指令、发布指令、全流程指令。下次发文时直接调用，不用从头写。WorkBuddy 会记住你的偏好，越用越精准。一周下来，你的公众号发文已经从「2 小时手动操作」变成了「5 分钟一条命令」。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 公众号专题周收官。五天下来，从「打开空白文档」到「一条命令推到草稿箱」——下周，你可以每天省出 2 小时做更有价值的事</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-04</span>
+  </div>
+</div>
+</body>
+</html>

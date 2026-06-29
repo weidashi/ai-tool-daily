@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-01</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-01 · 星期三</div>
+    <h1>公众号专题周②：48 主题 + 43 模块，排版不再手动调</h1>
+    <div class="art-sub">Markdown 转微信 HTML · 48 专业主题 · 43 排版模块 · 品牌统一 · 社交卡片</div>
+  </div>
+  <div class="intro-box">📌 <strong>专题周第二天：排版专场。</strong>昨天写好了文章，今天给它穿上好看的衣服。md2wechat 是今天的主角——48 个专业主题 + 43 个高级排版模块，一条 CLI 命令把 Markdown 变成可直接复制到微信编辑器的 HTML。不再需要打开 135 编辑器、秀米、新媒体管家手动拖拽调间距。4 个辅助 Skill 覆盖品牌统一、HTML 页面生成、公众号套件排版和社交分发卡片。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>公众号排版 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">md2wechat — Markdown 转微信公众号排版 CLI</div><div class="sk-subtitle">geekjourneyx · 48 主题 + 43 排版模块 + AI 配图 + 批量发布 + 多账号管理</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高星</span><span class="bd bd-p">48主题</span><span class="bd bd-b">43模块</span><span class="bd bd-o">CLI工具</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>面向 AI Agent 的微信公众号创作与发布 CLI。写 Markdown，一键生成公众号排版 HTML——48 个专业主题（Minimal、Focus、Elegant、Bold 系列）+ 43 个 :::module 高级排版模块（hero、callout 等）。还内置 write（从想法写文章）、humanize（去 AI 味）、title suggest（标题建议）、generate_cover（AI 配图）等内容生产命令。支持 Codex/Claude/WorkBuddy/Kimi 等多种 Agent。<br><strong>最适合：</strong>用 Markdown 写公众号的人、追求排版一致性矩阵号运营者、想把写作-排版-发布串成一条命令的内容团队。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npm install -g @geekjourneyx/md2wechat && md2wechat config init</div><div class="cmt">💡 初始化后运行 md2wechat doctor 检查配置。Codex 中使用：md2wechat convert article.md --theme elegant-blue --create-draft。个人免费，商业需授权。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>写好的 Markdown 文件 → Codex 里说「用 md2wechat 把 article.md 转成微信 HTML，选 elegant-blue 主题」→ 秒级出排版精美的 HTML，直接复制到微信编辑器。想预览先 md2wechat preview article.md。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">wechat-article-skills — 公众号 9 Skill 套件（含排版）</div><div class="sk-subtitle">aiworkskills · 选题调研 → AI 写作 → 审稿 → 排版（4 套主题）→ 配图 → 发布</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">9个Skill</span><span class="bd bd-b">4套主题</span><span class="bd bd-o">AI味自检</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套覆盖公众号内容生产全流程的 9 个独立 Skill。排版部分有 4 套微信 HTML 主题可选，含敏感词审稿和 AI 味自检功能。<br><strong>公众号排版用法：</strong>如果 md2wechat 的 48 主题觉得太多，wechat-article-skills 的 4 套精选主题更适合快速上手。两者互补：md2wechat 做精细定制，wechat-article-skills 做快速套用。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/aiworkskills/wechat-article-skills.git ~/.codex/skills/wechat-article-skills</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>文章写好后 → 「用 wechat-article-skills 的排版 Skill 把这篇 Markdown 转成微信 HTML，选简约商务主题」→ 拿到可直接粘贴的排版版本。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">html-anything — 杂志风 HTML 页面（公众号第二版本）</div><div class="sk-subtitle">nexu-io · 75 个 Skill · 9 种输出界面 · 一键发布到微信/知乎/X</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6.3K</span><span class="bd bd-p">75模板</span><span class="bd bd-b">杂志风</span><span class="bd bd-o">多平台</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>75 个 Skills 覆盖 9 种输出界面：杂志风文章页面、知识卡片、小红书图文、海报等。自带沙箱预览 + 一键发布到微信/知乎/X。<br><strong>公众号排版用法：</strong>同一个文章可以有两个版本——md2wechat 出微信编辑器版，html-anything 出独立网页版。网页版发朋友圈、微信群，比公众号链接更有面子。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nexu-io/html-anything --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>同一篇文章 → 「用 html-anything 生成杂志风 HTML 页面，蓝白配色，手机阅读友好」→ 拿到一个可在手机上翻的电子杂志页面，多一个分发渠道。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">brand-guidelines — 公众号视觉风格统一</div><div class="sk-subtitle">ComposioHQ · 设定一次品牌色+字体 → 所有排版自动套用</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">品牌统一</span><span class="bd bd-b">配色字体</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>设定一次品牌色、字体、视觉风格，之后所有 AI 产出自动套用。告别每次手动重复「蓝白配色、苹方字体」。<br><strong>公众号排版用法：</strong>配合 md2wechat 的 brand profile 功能，把公众号长期风格偏好写入配置——以后每篇文章的排版、配色、字体都自动统一，不用每次选主题。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>告诉 Codex 你的公众号风格 → 「用 brand-guidelines 设定品牌色 #4A90D9、字体苹方、风格简约商务」→ 之后所有排版自动套用，再也不用每次手动调。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-social-card-skill — 文章拆成小红书卡片</div><div class="sk-subtitle">op7418 · 一篇长文 → 6-9 张精美小红书/公众号封面卡片</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-o">小红书</span><span class="bd bd-p">图文卡片</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一篇长文自动拆成多张精美卡片，适配小红书图文和公众号封面。解决了「写完文章还要手动做图分发」的痛点。<br><strong>公众号排版用法：</strong>排版好之后，用这个 Skill 把文章核心观点拆成 6-9 张卡片发小红书——一次写作，两个渠道。卡片设计风格和公众号排版风格可以保持统一。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>排版完的文章 → 「用 guizang-social-card 把这篇文章拆成 8 张小红书卡片，配色和公众号风格统一」→ 10 分钟出 8 张可直接发布的卡片。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① md2wechat 排版</span><span class="pa">→</span>
+      <span class="ps ps-2">④ 品牌统一</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 网页版本</span><span class="pa">→</span>
+      <span class="ps ps-4">② 套件排版</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 卡片分发</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--muted);">排版五件套：从 Markdown 到多渠道分发</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🔌 openai/plugins 仓库新增 API 用户市场</div></div>
+      <div class="tb">6 月中旬，官方 plugins 仓库为 API Key 登录用户新增了独立的插件市场。首批收录所有仅含 skills 的轻量插件——这意味着用 API Key 的方式也能享受完整的 Skill 生态，不再需要 ChatGPT 订阅。md2wechat、wechat-article-skills 等公众号相关 Skill 都在这个市场里。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">📦 md2wechat v2.9.0 发布：新增 brand profile + 多账号支持</div></div>
+      <div class="tb">md2wechat 最新版支持把长期风格偏好写入 ~/.config/md2wechat/brand.md——以后 Agent 写作和排版时自动读取品牌风格。还新增了命名多公众号账号功能，适合矩阵号运营者。一条命令 md2wechat config wechat-accounts 查看本地账号配置。</div>
+    </div>
+    <div class="tip t-b" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 技巧：md2wechat 的 43 个排版模块怎么用</div></div>
+      <div class="tb">在 Markdown 里用 :::hero、:::callout 等模块语法插入高级排版组件——比如 :::hero 生成带 eyebrow+title+subtitle 的开篇大图区，:::callout 生成侧边强调框。先用 md2wechat layout list 看全部模块，再用 md2wechat layout show hero 看具体用法。比手动调 CSS 简洁 10 倍。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM & Notion 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM — 一键导出为 PPT / PDF</div></div>
+      <div class="tb">Studio 模式下的导出功能已经支持 PPT、PDF、Excel 和图片四种格式。做完选题研究后，导出 PDF 发给团队审稿；做完竞品分析后，导出 PPT 直接上台讲。不再需要手动把笔记搬进 PowerPoint。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — Goals 目标化对话</div></div>
+      <div class="tb">给笔记本设定固定「目标」和「语气风格」——比如目标设为「帮我写公众号选题报告」，语气「简洁商务风格」。之后这个笔记本里的所有对话 AI 都按这个方向回答。不用每次重新描述需求。</div>
+    </div>
+    <div class="tip t-g" style="margin-top:10px;">
+      <div class="th"><div class="tt">🧪 NotebookLM — Deep Research：让 AI 替你翻 50 篇论文</div></div>
+      <div class="tb">遇到需要大量资料支撑的选题，开启 Deep Research 模式——NotebookLM 会自动搜索相关论文、报告、新闻，逐条提取关键数据，最后综合成一份带引用的研究报告。对公众号深度文章特别有用。</div>
+    </div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">📋 Notion — External Agents API：让 Codex 直接操作你的工作区</div></div>
+      <div class="tb">Notion 已开放 External Agents API。外部 AI（Codex、Claude 等）可以直接读写你的 Notion 页面和数据库。对公众号运营者来说，这意味着选题灵感库在 Notion 里、文章草稿也在 Notion 里——Codex 可以自动在这两个地方来回搬运，不用你手动复制粘贴。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 底部技能快捷栏：常用排版 Skill 一键调用</div></div>
+      <div class="tb">WorkBuddy 5.1.5 在底部固定了一条快捷栏——常用 Skill 直接点。还可以把自己常用的指令保存成「我的技能」，一键调用不用每次重新输入。对公众号排版来说，把 md2wechat convert 命令存成快捷技能，写完文章一键排版。</div>
+    </div>
+    <div class="tip t-p" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚡ 「我的技能」一键调用：把排版命令存起来</div></div>
+      <div class="tb">把常用的 md2wechat 排版命令保存为「我的技能」：比如「公众号排版-商务蓝」= md2wechat convert article.md --theme elegant-blue --create-draft。下次写完文章，底部快捷栏一键触发，不用再打整条命令。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 排版是衣服。文章写得再好，穿着 Word 的灰底出去没人看——明天给文章做封面和配图</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-01</span>
+  </div>
+</div>
+</body>
+</html>
