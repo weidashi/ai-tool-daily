@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-03</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-03 · 星期五</div>
+    <h1>Codex GA 满月特辑：知识工作的 AI 闭环</h1>
+    <div class="art-sub">文献阅读 · 知识综合 · 内容拆解 · 数据理解 · 碎片入库</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>Codex GA 发布整整一个月了——500万周活、6大行业插件、Sites 建站、iOS 远程操控，它已从编程工具变成覆盖全体知识工作者的 AI 操作系统。这一期我们从这个新起点出发，聚焦「阅读与知识管理」这个最容易被忽视的AI应用场景：你每天读的报告、论文、会议记录、竞品文章、数据表格——AI 都可以帮你从「读完」升到「吃透」。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">codex-literature-reading-skills</div><div class="sk-subtitle">R3ze959 · 文献阅读四件套：翻译+解析+综述+对比</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">📖 文献阅读</span><span class="bd bd-b">🌐 中文输出</span><span class="bd bd-o">🧪 深度解析</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一组面向中文科研工作流的 Codex Skills，4个子技能覆盖完整阅读链路——完整PDF翻译保留版式、单篇论文深度解析（研究逻辑+实验方法+逐图讲解+证据链）、多篇论文联合综述、跨文献主题证据比较。核心哲学是：不只要「总结论文」，而是把论文读成<strong>可复用的科研材料</strong>。<br><strong>最适合：</strong>需要大量阅读报告/论文/行业材料的知识工作者——不只是科研人员，咨询顾问读行业报告、产品经理读用户调研、投资者读财报研报，都能用。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/R3ze959/codex-literature-reading-skills.git && cp -R codex-literature-reading-skills/skills/* ~/.codex/skills/</div><div class="cmt">四个子 Skill：translate-full-pdf / comprehensive-paper-analysis / multi-paper-materials-review / multi-paper-aspect-review</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一份行业报告 PDF 放进工作目录，在 Codex 中说「用 comprehensive-paper-analysis 帮我深度解析这份报告，中文输出，逐图讲解关键数据」</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「这是40页的行业白皮书PDF，用 comprehensive-paper-analysis 深度解析，中文输出，包含核心观点、数据证据链、逻辑漏洞、可延伸的研究方向」</div>
+        <div class="ex-out"><strong>成果：</strong>一份15页的结构化中文报告：含封面页、研究逻辑图、逐章核心发现、关键数据表、证据链图、方法论评估、局限性和延伸问题清单。可直接用作组会汇报材料或内部分析简报。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">meeting-insights-analyzer</div><div class="sk-subtitle">ComposioHQ · 不只记录，更读懂会议中的潜台词</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">🧠 深度分析</span><span class="bd bd-b">🔍 洞察挖掘</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>区别于普通会议纪要约「说了什么」，这个 Skill 做的是<strong>深度阅读</strong>——识别隐含主题、分析沟通模式、标记潜在风险、提取真正可执行的下一步。就像给会议记录配了一个有经验的管理顾问帮你「读」一遍。<br><strong>最适合：</strong>跨部门沟通会、客户拜访后的复盘、项目评审会——那些「话里有话」的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-insights-analyzer</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一次跨部门会议的文字记录给 Codex，说「用 meeting-insights-analyzer 分析这次会议：哪些议题被回避了？谁在主导讨论？有没有潜在的资源冲突？」</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「这是上周项目推进会的完整记录，涉及产品、研发、市场三个部门。用 meeting-insights-analyzer 帮我分析」</div>
+        <div class="ex-out"><strong>成果：</strong>一份三页分析报告：①三个隐含但未被直接讨论的议题；②沟通模式分析（研发被动防守、市场主动推进）；③真正可执行的5个下一步，而不是泛泛的「继续跟进」。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">competitive-ads-extractor</div><div class="sk-subtitle">ComposioHQ · 像做读书笔记一样拆解竞品文章</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">🔍 内容拆解</span><span class="bd bd-p">📝 创意提取</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把竞品广告文案、公众号文章、落地页喂进去，自动提取开头 hook 策略、说服框架、差异化卖点、潜在问题点。不是「看看别人写了什么」，而是<strong>结构化拆解出可复用的方法论</strong>——相当于请了一个内容策略顾问帮你做深度阅读笔记。<br><strong>最适合：</strong>做内容策略需要研究同行、市场部做竞品分析、运营做选题调研。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path competitive-ads-extractor</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找3篇你行业里阅读量最高的公众号文章链接，在 Codex 中说「用 competitive-ads-extractor 拆解这3篇文章的写作策略：hook 方式、论证结构、金句分布、CTA 设计」</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「这是三篇同行业阅读量10万+的公众号文章链接。用 competitive-ads-extractor 做结构化拆解」</div>
+        <div class="ex-out"><strong>成果：</strong>一份对比分析表：三篇文章的①标题 hook 策略分类；②论证金字塔结构图；③每500字的金句密度和位置分布；④CTA 的设计模式。可直接复用这些策略写自己的下一篇。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">notion-research-documentation</div><div class="sk-subtitle">ComposioHQ · 把散落的知识碎片编织成体系</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">📚 知识综合</span><span class="bd bd-p">🔗 带引用</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把分散在多个 Notion 页面的信息综合为结构化产出——竞品对比简报、行业调研报告、多项目对比分析。每条结论附带来源引用，可直接回溯到原始页面。这个 Skill 解决的是知识工作者最头疼的问题：<strong>读了很多、记了很多，但用的时候找不到、串不起来</strong>。<br><strong>最适合：</strong>Notion 重度用户做知识整合、跨项目对比分析、多来源信息的一页纸简报。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-research-documentation</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 Codex 中说「用 notion-research-documentation 把我 Notion 里关于 XX 主题的5个页面综合成一份一页纸简报，每条结论标注来源」</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「我在 Notion 里有5个关于新能源政策的笔记页面，用 notion-research-documentation 帮我综合成一份行业简报」</div>
+        <div class="ex-out"><strong>成果：</strong>一份带目录的结构化简报：核心观点摘要→政策时间线→关键数据对比表→各方立场分析→个人判断与行动建议。每个要点后面跟着来源页面链接，点击即可回溯原始内容。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">spreadsheet-formula-helper</div><div class="sk-subtitle">ComposioHQ · 让 AI 帮你「读懂」表格里的数据</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-o">📊 数据阅读</span><span class="bd bd-p">💬 自然语言</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>用自然语言描述分析需求，自动生成 VLOOKUP、SUMIFS、INDEX-MATCH、数组公式、透视表公式，并<strong>解释为什么这么写</strong>。换个角度看，这不只是公式生成器——更是帮你「读懂」数据关系的翻译器。你说「帮我找出每个产品线连续三个月下滑的品类」，它给你公式+解释。<br><strong>最适合：</strong>日常需要从表格中提取洞察的管理者、分析师——不用百度搜公式、不用理解函数之间的嵌套逻辑。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path spreadsheet-formula-helper</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开你的月度销售表，在 Codex 中说「用 spreadsheet-formula-helper 帮我找出销售额环比下降超过20%且库存周转超过60天的产品，解释公式逻辑」</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「这是我的季度销售表，帮我用 spreadsheet-formula-helper 找出：各区域毛利排名前5的产品、同比下滑最严重的3个品类、库存预警名单」</div>
+        <div class="ex-out"><strong>成果：</strong>三个公式 + 逐一解释：①用 INDEX-MATCH+LARGE 实现带条件的前N排名；②用 SUMIFS+同比计算+条件格式标记；③用 IF+AND 嵌套设置多条件预警。每个公式附带业务解读。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">📖 文献阅读</span><span class="pa">→</span>
+      <span class="ps ps-2">👂 会议洞察</span><span class="pa">→</span>
+      <span class="ps ps-3">🔍 内容拆解</span><span class="pa">→</span>
+      <span class="ps ps-4">📚 知识综合</span><span class="pa">→</span>
+      <span class="ps ps-5">📊 数据阅读</span>
+    </div>
+    <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;">从「读材料」到「出洞察」的五步闭环，今天就能跑通</div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="hl">
+      <strong>🎂 Codex GA 发布满一个月</strong><br>
+      6月2日 OpenAI 正式发布 Codex GA 版本（General Availability），到今天正好满月。一个月来的关键数字：<strong>周活跃用户突破500万</strong>（非开发者增速是程序员的3倍）、<strong>六大行业插件</strong>覆盖62个商用应用+110项细分能力、<strong>Sites 建站</strong>让非技术人员也能一句话生成网站。
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 六大行业角色插件</div></div>
+      <div class="tb">Codex 不再是程序员专属——6月3日发布的角色插件覆盖了<strong>数据分析师、创意营销、销售、产品设计、公募股权投资、投资银行</strong>六个岗位。每个插件预装该岗位的常用工具链和专业工作流。比如数据分析插件直连 Snowflake/Tableau，创意制作插件集成了 Figma/Canva/Shutterstock。<strong>免费安装</strong>，只需在 Codex 中激活即可。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🌐 Sites 建站：一句话生成交互网站</div></div>
+      <div class="tb">在对话中使用 <strong>@Sites</strong> 前缀，描述你想要的功能，Codex 自动生成并托管一个可交互的网站/应用/仪表盘。内置三种存储方案（无存储→D1关系数据库→R2对象存储）和三级权限控制。目前面向 Business 和 Enterprise 用户预览。运营仪表盘、项目进度看板、活动页面——全都不需要开发介入。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📱 iOS 远程操控 Mac 上的 Codex</div></div>
+      <div class="tb">通过 ChatGPT iOS 应用连接到运行 Codex 的 Mac，所有项目、文件、凭据、Skills 和配置均可用。Codex 在主机上运行，手机只是远程控制界面。<strong>无需额外订阅</strong>。6月9日更新还增加了分支选择、Worktree 支持、环境设置脚本等功能。配合5月21日上线的远程 Computer Use（Mac 锁屏后 Codex 继续运行，手机监控），构成了完整的<strong>「随时随地指挥 AI」体验</strong>。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">💡 技巧：用 @ 符号触发 Codex 内置能力</div></div>
+      <div class="tb">Codex 现在支持多个内置前缀命令：<strong>@Sites</strong> 建站部署、<strong>@Annotations</strong> 精准局部编辑（选中文档/表格/幻灯片的任意部分→局部修改，不影响其他）、<strong>@web</strong> 联网搜索。记住这几个快捷键，日常效率提升立竿见影。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 Audio Overview 2.0 — 交互式AI播客</div></div>
+      <div class="tb">NotebookLM 可以把你的文档瞬间变成<strong>双人对话播客</strong>。新版本更支持<strong>中途打断加入对话</strong>——点击麦克风图标，你可以直接加入 AI 主持人的讨论，向他们提问或要求澄清某个观点。还支持<strong>风格定制</strong>：Deep Dive（深度探讨）、Brief（简报）、Critique（批评分析）、Debate（辩论）四种模式，以及 Shorter/Default/Longer 三档时长控制。通勤听论文、做家务听财报——把阅读变成「听」。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎬 Studio 创作工坊 — 从阅读到多模态输出</div></div>
+      <div class="tb">位于界面右侧的 Studio 面板，可以把你的阅读成果转化为多种形式：<strong>Video Overviews</strong>（6种视觉风格自动生成讲解视频）、<strong>Infographics</strong>（数据自动转信息长图）、<strong>Presentation</strong>（一键生成完整幻灯片PDF）、<strong>Mind Maps</strong>（交互式思维导图）。最实用的场景：把10篇行业报告喂给 NotebookLM → Deep Research 生成综合报告 → Studio 一键转成视频/幻灯片/信息图，一次阅读，三种产出。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🔍 Deep Research — 没有现成文档也能做研究</div></div>
+      <div class="tb">输入研究主题，AI 自动进行多轮联网搜索→筛选高质量来源→阅读并综合信息→生成一份带引用的完整研究报告，<strong>自动保存为笔记来源</strong>。然后你可以继续对这份报告提问、生成播客、制作视频。适合「从零开始」的研究场景：写公众号文章前的背景调研、行业分析前的信息搜集、竞品研究等。需 NotebookLM Plus 订阅。</div>
+    </div>
+
+    <div class="hl">
+      <strong>🔗 联动思路：NotebookLM + Codex 分工</strong><br>
+      NotebookLM 做「阅读与理解」（严格基于上传资料，零幻觉），Codex 做「创作与交付」（Skills 驱动的结构化产出）。比如：在 NotebookLM 里把5篇行业报告生成 Deep Research 综合报告 → 导出为 PDF → 用 Codex 的 codex-literature-reading-skills 进一步深度解析 → 用 paperjsx 生成 PPT + DOCX + 数据表格。</div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⏰ 定时自动化——把「每天都要做」变成「AI 定时做你看」</div></div>
+      <div class="tb">WorkBuddy 的 Automation 功能本质上是一个<strong>定时触发 AI Agent</strong>的机制。在对话中直接描述任务+时间频率，系统会自动创建定时任务。三个最实用的设置思路：①<strong>信息汇总类</strong>——每天9点抓取行业新闻生成简报；②<strong>工作记录类</strong>——每天17:30根据当日对话生成日报草稿；③<strong>周期报告类</strong>——每周五汇总工作内容生成周报。40分钟的重复劳动→0分钟，你到公司直接看结果。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">📝 四要素结构化指令法——让 AI 精准交付</div></div>
+      <div class="tb">模糊的指令是效率的最大杀手。记住这个公式：<strong>目标（做什么）+ 输入（给什么材料）+ 输出（要什么格式）+ 约束（不要什么）</strong>。对比一下：❌「帮我写一个报告」→ ✅「基于这3份PDF行业报告，生成一份15页的结构化分析报告，每页一个核心观点+数据支撑，输出为HTML网页版和PDF两个格式，蓝白配色，不要AI味的套话开头」。后者的产出质量至少翻倍。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一份能直接用的 AI 阅读工作流</div>
+      <div class="sh-sub">用今天介绍的工具组合，把「读完一份行业报告 → 写出分析简报」的完整链路跑通</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你收到了一份40页的新能源政策白皮书，需要在2小时内出一份内部分析简报。<br><br>
+        <strong>第一步（Codex + codex-literature-reading-skills，15分钟）：</strong><br>
+        把 PDF 放进工作目录，在 Codex 中说：<br>
+        「用 comprehensive-paper-analysis 深度解析这份新能源政策白皮书。中文输出，包含：核心政策逻辑、关键数据证据链、与其他国家政策的差异、对行业的影响预判、报告中存在的逻辑漏洞。输出为结构化 Markdown。」<br>
+        ➔ 得到一份15页的结构化分析，含逐章核心发现和证据链。<br><br>
+        <strong>第二步（Codex + humanizer-zh，5分钟）：</strong><br>
+        「用 humanizer-zh 把这份分析报告去AI味，语气像内部咨询简报，保留所有数据和结论，删除'在当今时代'类套话」<br>
+        ➔ 报告读起来像有经验的顾问写的，不是机器生成的。<br><br>
+        <strong>第三步（NotebookLM Studio，15分钟）：</strong><br>
+        把原始白皮书 + 分析报告一起导入 NotebookLM，用 Studio 的 Presentation 功能生成一份15页幻灯片（PDF），用 Infographic 功能生成一张核心结论信息长图。<br>
+        ➔ 一份报告进，三份产出出：文字简报 + 幻灯片 + 信息图。<br><br>
+        <strong>第四步（WorkBuddy Automation，0分钟——以后每次自动）：</strong><br>
+        在 WorkBuddy 中设置自动化：「每周五 14:00，读取桌面「待阅读」文件夹下本周新增的所有 PDF，用 Codex 的 comprehensive-paper-analysis 逐份解析，汇总为一份本周重要报告摘要，发送到我的微信。」<br>
+        ➔ 从此每周五自动收 AI 阅读周报，不需要手动启动任何工具。<br><br>
+        <strong>总耗时：约35分钟（首次）→ 以后每次0分钟（自动化）</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具不会替你思考，但能帮你把思考的时间花在真正重要的事情上</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-03</span>
+  </div>
+</div>
+</body>
+</html>

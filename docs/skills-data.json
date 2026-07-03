@@ -70,6 +70,7 @@
       "color": "#e84393",
       "desc": "选题诊断、爆款拆解、内容定位优化、知识管理",
       "skills": [
+        "codex-literature-reading-skills",
         "dbskill",
         "notion-knowledge-capture",
         "wechat-daily-skills",
@@ -771,6 +772,26 @@
       "screenshot": "",
       "result": "排版好的HTML+封面图 → 30秒推到公众号草稿箱。预览确认后再发布。"
     },
+    "codex-literature-reading-skills": {
+      "name": "literature-reading-skills",
+      "author": "R3ze959",
+      "subtitle": "文献阅读四件套：翻译+解析+综述+对比",
+      "desc": "一组面向中文科研工作流的 Codex Skills（4个子技能）：完整PDF翻译保留版式、单篇论文深度解析（研究逻辑+实验方法+逐图讲解+证据链）、多篇论文联合综述、跨文献主题证据比较。不只总结论文，而是把论文读成可复用的科研材料。同样适合咨询顾问读行业报告、投资者读财报研报。",
+      "stars": "新发布",
+      "tags": [
+        "文献阅读",
+        "PDF翻译",
+        "深度解析",
+        "综述对比",
+        "中文输出"
+      ],
+      "install": "git clone https://github.com/R3ze959/codex-literature-reading-skills.git && cp -R codex-literature-reading-skills/skills/* ~/.codex/skills/",
+      "issues": [
+        "2026-07-03"
+      ],
+      "screenshot": "",
+      "result": "一份40页行业白皮书 → 15页结构化中文报告：含封面页、研究逻辑图、逐章核心发现、关键数据表、证据链图、方法论评估、局限性分析。可直接用作组会汇报或内部分析简报。"
+    },
     "wechat-article-workflow": {
       "name": "wechat-article-workflow",
       "author": "classfang",
@@ -793,6 +814,31 @@
     }
   },
   "issues": [
+    {
+      "id": 17,
+      "date": "2026-07-03",
+      "weekday": "星期五",
+      "title": "Codex GA 满月特辑：知识工作的 AI 闭环",
+      "subtitle": "文献阅读 · 知识综合 · 内容拆解 · 数据理解 · 碎片入库",
+      "tags": [
+        "📖 文献阅读",
+        "🧠 会议洞察",
+        "🔍 内容拆解",
+        "📚 知识综合",
+        "📊 数据理解"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-03-ga.html",
+      "skills": [
+        "codex-literature-reading-skills",
+        "meeting-insights-analyzer",
+        "competitive-ads-extractor",
+        "notion-research-documentation",
+        "spreadsheet-formula-helper"
+      ]
+    },
     {
       "id": 16,
       "date": "2026-07-04",
