@@ -787,7 +787,7 @@
       ],
       "install": "git clone https://github.com/R3ze959/codex-literature-reading-skills.git && cp -R codex-literature-reading-skills/skills/* ~/.codex/skills/",
       "issues": [
-        "2026-07-03"
+        "2026-07-05"
       ],
       "screenshot": "",
       "result": "一份40页行业白皮书 → 15页结构化中文报告：含封面页、研究逻辑图、逐章核心发现、关键数据表、证据链图、方法论评估、局限性分析。可直接用作组会汇报或内部分析简报。"
@@ -816,8 +816,8 @@
   "issues": [
     {
       "id": 17,
-      "date": "2026-07-03",
-      "weekday": "星期五",
+      "date": "2026-07-05",
+      "weekday": "星期日",
       "title": "Codex GA 满月特辑：知识工作的 AI 闭环",
       "subtitle": "文献阅读 · 知识综合 · 内容拆解 · 数据理解 · 碎片入库",
       "tags": [
@@ -830,7 +830,7 @@
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
-      "file": "2026-07-03-ga.html",
+      "file": "2026-07-05.html",
       "skills": [
         "codex-literature-reading-skills",
         "meeting-insights-analyzer",
