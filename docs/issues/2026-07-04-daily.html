@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-04</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-04 · 星期六</div>
+    <h1>内容创作者四件套：选题→写稿→配图→分发</h1>
+    <div class="art-sub">选题诊断 · 研究型写作 · 正文配图 · 卡片化分发 · 一条线全跑通</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>本周专题周讲了公众号发文全流程，今天换个角度——不按工具讲，按创作者的真实工作流来串。从"不知道写什么"到"写完不知道发哪里"，五个 Skill 分别卡在选题诊断、内容撰写、配图生成、社交分发四个关键节点，装完就是一个可以跑通的个人创作流水线。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>创作者工作流 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">dbskill — 中文内容选题诊断器</div><div class="sk-subtitle">dontbesilent2025 · 内容诊断、hook 优化、小红书标题、爆款拆解</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区高星</span><span class="bd bd-p">选题研究</span><span class="bd bd-r">内容诊断</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专为中文内容创作者打造的选题诊断工具。直接把你的标题、开头、正文丢给它，它从 hook 钩子、情绪触发、信息密度、转发动力等维度给你打分和优化建议。还能拆解爆款文章的结构，反向学套路。<br><strong>最适合：</strong>写公众号、小红书、知乎的人——每次发之前先跑一遍诊断，避免自嗨。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/dontbesilent2025/dbskill ~/.codex/skills/dbskill</div><div class="cmt">安装后重启 Codex，对话中提及"诊断"/"选题"/"标题优化"自动加载</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你下一篇准备发的文章标题丢给它，让它从 hook、情绪、信息密度三个维度打分，并给出 3 个优化版本。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"请诊断这个标题：国企改革三年行动收官，地方融资平台如何转型？"</div>
+        <div class="ex-out"><strong>成果：</strong>诊断报告——Hook 评分 4/10（缺少具体数据或冲突感），建议改为"3年花掉8000亿，地方融资平台转型到底卡在哪？"；信息密度 6/10（有核心概念但缺少悬念）；优化方向：加数字、加冲突、加"你不一定知道"的暗示。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">content-research-writer — 研究型长文写作流</div><div class="sk-subtitle">ComposioHQ · 选题→搜资料→列提纲→写引用→出初稿</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+</span><span class="bd bd-p">写作润色</span><span class="bd bd-b">研究写作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把"找资料→列提纲→写初稿→加引用"整合成一个工作流。不是让 AI 凭空编一篇文章，而是先做 research、再做 outline、再逐段填充——每一步都有据可查。<br><strong>最适合：</strong>写深度文章、行业分析、公众号长文——需要有数据、有出处的严肃内容。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill content-research-writer --agent codex --global</div><div class="cmt">安装后对话中提及"写一篇深度文章""研究某话题"自动触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>输入"帮我研究一下2026年AI在知识工作领域的应用趋势，写一篇2500字的分析文章，要有数据引用。"</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"写一篇关于 NotebookLM 深度研究功能如何改变知识工作者工作流的文章，1500字，要有具体使用场景"</div>
+        <div class="ex-out"><strong>成果：</strong>自动执行四步：①搜索 NotebookLM Deep Research 最新资料 ②列出"场景概述→功能拆解→行业对比→效率提升数据→实操建议"五段提纲 ③逐段撰写并标注引用来源 ④输出带引用的完整初稿。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">ian-xiaohei-illustrations — 中文文章正文配图</div><div class="sk-subtitle">helloianneo · 观点配图、流程插图、隐喻插图、情绪配图</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">视觉设计</span><span class="bd bd-o">正文配图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专门为中文文章生成正文配图的 Skill。不是随便生成一张图，而是把文章里的观点、流程、情绪、隐喻理解之后，画成统一的"小黑"风格插图——画面简约但辨识度高，一篇文章放 4-5 张风格统一的配图，阅读体验立刻不一样。<br><strong>最适合：</strong>写公众号长文、深度文章的人——文内插图从"找图苦恼"变"AI 自动生成"。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/helloianneo/ian-xiaohei-illustrations ~/.codex/skills/ian-xiaohei-illustrations</div><div class="cmt">安装后在对话中说"帮我给这段文字配三张小黑风格插图"，自动触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一段你写的文章（500字左右），让它生成 3 张小黑风格插图——分别对应"核心观点""关键流程""总结隐喻"。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"针对下面这段文字生成3张配图：数字化转型不是简单的工具替换，而是要重新思考业务流程。第一步是数据打通，第二步是流程再造，第三步是组织变革。"</div>
+        <div class="ex-out"><strong>成果：</strong>生成 3 张风格统一的小黑插图——图1"从旧工具到新思维"的对比画面、图2"三步递进流程图"、图3"组织变革的场景化隐喻图"，可直接插入文章正文。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">html-anything — 文案秒变杂志风页面</div><div class="sk-subtitle">nexu-io · Markdown/文案转 HTML 海报、卡片、PNG、知识卡片</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">视觉设计</span><span class="bd bd-o">社交分发</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把 Markdown、纯文本、文章变成好看的 HTML 页面、卡片和 PNG 图片。内置多套杂志排版模板，支持小红书卡片尺寸、公众号封面尺寸、知识卡片尺寸。不需要会 CSS——描述你要什么风格，它就生成什么。<br><strong>最适合：</strong>写完文章想二次分发的——一键变小红书卡片、公众号封面、知识卡片分享图。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/nexu-io/html-anything ~/.codex/skills/html-anything</div><div class="cmt">对话中说"帮我把这段文字做成小红书卡片""生成知识卡片"自动触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近一篇文章的摘要丢给它，让它生成一张小红书风格的知识卡片——红色系、大字标题、3 个要点、底部有你的名字。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"把下面这段话做成小红书风格的知识卡片——'AI 写作的五个层次：第一层拼速度，AI 完胜；第二层拼结构，AI 不输人类；第三层拼观点，AI 开始吃力；第四层拼情感共鸣，AI 基本做不到；第五层拼独特的生命体验，只有人能做到。'"</div>
+        <div class="ex-out"><strong>成果：</strong>生成一张小红书卡片 PNG——渐变紫红背景、大字标题"AI 写作的五个层次"、五彩分层阶梯图、底部"—— 魏东咚 · 君卓国企观察"。可直接发小红书或朋友圈。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-social-card-skill — 社交分发卡片工厂</div><div class="sk-subtitle">op7418 · 小红书图文切片、公众号封面、信息长图、多图连发</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 社区热门</span><span class="bd bd-p">社交分发</span><span class="bd bd-r">封面图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专为社交分发设计的卡片生成器。写完一篇长文后，它能把文章自动拆成 3-6 张小红书图文字卡、生成公众号 2.35:1 封面头图、或者做成信息图长图。同时适配小红书多图连发格式和公众号素材库尺寸。<br><strong>最适合：</strong>一篇文章想发多个平台——公众号、小红书、朋友圈，不同平台不同尺寸不同风格，它一站式生成。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/op7418/guizang-social-card-skill ~/.codex/skills/guizang-social-card-skill</div><div class="cmt">对话中说"把这篇文章拆成小红书卡片""生成公众号封面"自动触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一篇文章，让它同时生成：①公众号 2.35:1 封面头图 ②小红书 6 张图文切片 ③一张朋友圈分享长图。体验一下"一鱼三吃"的效率。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"请把昨天写的国企改革分析文章拆成封面+6张小红书卡片，风格用深蓝商务风"</div>
+        <div class="ex-out"><strong>成果：</strong>输出 7 张图——1 张公众号 2.35:1 封面头图（标题+核心数据大图）、6 张小红书图文切片（每张一个核心论点+数据支撑+一句话结论），颜色统一深蓝商务风，可以直接上传发布。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">①选题诊断</span><span class="pa">→</span>
+      <span class="ps ps-2">②研究写作</span><span class="pa">→</span>
+      <span class="ps ps-3">③正文配图</span><span class="pa">→</span>
+      <span class="ps ps-4">④页面美化</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤社交分发</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ Codex 六大行业插件正式上线</div></div><div class="tb">6月3日，OpenAI 发布了覆盖数据分析、创意制作、销售、产品设计、公募股权投资、投资银行六大行业的专业插件。每个插件打包了该岗位的应用集成+工作流模板，<strong>不需要懂编程，只需要懂自己的专业</strong>。Codex 周活已突破 500 万，非开发者增速是开发者的 3 倍——AI 正从程序员工具变成全体知识工作者的操作系统。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ Sites 建站：一句话生成交互网站</div></div><div class="tb">在 Codex 对话中输入 <code>@Sites</code>，描述你想要什么就能自动生成一个可交互的网站。比如"帮我做一个项目进度追踪看板，能添加任务、标记完成、按优先级排序"，几分钟就得到一个带分享链接的完整应用。目前面向 Business 和 Enterprise 用户预览。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">💡 技巧：升级 Codex Skills 安装体验</div></div><div class="tb">安装 Skill 后<strong>无需重启 Codex</strong>，打开新会话即可自动生效。官方推荐用法：先在 Codex 中输入 <code>$skill-creator</code> 学会自己创建 Skill，再安装社区热门 Skill。安装路径建议统一放在 <code>~/.codex/skills/</code> 目录下，方便管理和清理。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 深度研究：零资料也能建知识库</div></div><div class="tb">NotebookLM 2026 版本最大的升级：<strong>不需要提前准备任何资料</strong>。输入一个模糊的研究主题，AI 会自动规划多步骤研究计划、浏览数百个相关网站、产出结构完整的深度报告，所有爬取的网页和报告内容一键汇入笔记本变成你的专属知识库。有 Free 版用户每月 10 次深度研究额度——先试试，真的够了。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Audio Overview：把枯燥资料变播客</div></div><div class="tb">丢进去一份财报、一篇论文或会议记录，点一下"语音摘要"，<strong>两位 AI 主持人开始对谈</strong>，讨论、补充、偶尔提问——就像一集为你资料量身定制的播客。通勤时间直接把 PDF 消化了。现在也支持视频摘要版本，画面搭配关键文字和图表，适合分享给团队。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Gemini + NotebookLM 双工具联动</div></div><div class="tb">把 Gemini 当成"创意探索器"，广撒网聊想法；把 NotebookLM 当成"深度整理器"，把好想法落地成结构化知识。<strong>可以一键把 Gemini 的对话记录导入 NotebookLM</strong>，且不占用来源数量限额。两个工具分工协作，研究流程就清晰多了。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 模版化提问：一次说清，不再反复追问</div></div><div class="tb">别只说"帮我写个周报"——那样 AI 会反问你三四轮，浪费积分。试试这个四要素模版：<strong>【任务】做什么 【角色】你是谁 【材料】给什么参考 【要求】什么格式、多少字、什么风格</strong>。例如："【任务】生成项目复盘报告【角色】项目经理【材料】附件是项目日志和会议纪要【要求】1500字，按'背景-问题-方案-效果'四段，语气专业"。一次就出成品。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 三模式分场景：Ask → Plan → Craft</div></div><div class="tb">WorkBuddy 有三种模式但很多人不知道什么时候切：<strong>Ask 模式</strong>用来查资料、问问题、思路碰撞（只读不写，几乎不扣积分）；<strong>Plan 模式</strong>用来先出计划让你确认（复杂项目避免跑偏）；<strong>Craft 模式</strong>用来真正改文件、生成文档、处理数据。推荐流程：先用 Ask 把方案聊清楚→切 Plan 看执行计划→确认后切 Craft 干活。据说能省 30% 积分。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 用 dbskill 诊断一个真实选题</div>
+      <div class="sh-sub">把本期速递介绍的 dbskill 跑一遍，看看它能给出什么诊断结果</div>
+      <div class="sh-box">
+        <strong>原标题：</strong>"内容创作者四件套：选题→写稿→配图→分发"<br><br>
+        <strong>dbskill 诊断报告：</strong><br>
+        🔸 Hook 评分 7/10 — "四件套"是熟悉的框架词，用户能秒懂结构；但缺少数字冲击力<br>
+        🔸 情绪触发 6/10 — 击中"创作者想省事"的痛点，但没触发"别人都会了你还不会"的焦虑<br>
+        🔸 信息密度 8/10 — 四个环节清晰，用户一眼知道这篇文章讲什么<br>
+        🔸 转发动力 5/10 — 适合收藏但不一定转发，建议加一个"反直觉洞察"制造转发欲<br><br>
+        <strong>优化建议：</strong><br>
+        🥇 "内容创作者的隐形流水线：5 个 Codex Skill，没人告诉你它们能串起来用"<br>
+        🥈 "不知道写什么→写不好→不知道发哪里？这条流水线把三个问题一起解决"<br>
+        🥉 "四件套选题法：我用 5 个 AI Skill 搭了一条零手动创作流水线"<br><br>
+        <strong>一句话总结：</strong>原版标题清晰但太平，加"隐形""没人告诉你"这类语言能大幅提升打开率。建议选第一个优化版——悬念+数字+利益点全有了。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 五个 Skill，一条流水线。从今天起，别再让 AI 帮你"写一篇文章"——让它帮你搭一个你可以反复用的创作系统。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-04</span>
+  </div>
+</div>
+</body>
+</html>

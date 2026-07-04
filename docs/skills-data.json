@@ -220,6 +220,7 @@
       ],
       "install": "npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global",
       "issues": [
+        "2026-07-04",
         "2026-06-24",
         "2026-06-21"
       ],
@@ -276,6 +277,7 @@
       ],
       "install": "npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --skill ian-xiaohei-illustrations --agent codex --global",
       "issues": [
+        "2026-07-04",
         "2026-06-25",
         "2026-06-22"
       ],
@@ -295,6 +297,7 @@
       ],
       "install": "npx -y skills@latest add nexu-io/html-anything --agent codex --global",
       "issues": [
+        "2026-07-04",
         "2026-06-25",
         "2026-06-22"
       ],
@@ -387,6 +390,7 @@
       ],
       "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global",
       "issues": [
+        "2026-07-04",
         "2026-06-24"
       ],
       "screenshot": "",
@@ -405,6 +409,7 @@
       ],
       "install": "npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global",
       "issues": [
+        "2026-07-04",
         "2026-06-24",
         "2026-06-21"
       ],
@@ -814,6 +819,31 @@
     }
   },
   "issues": [
+    {
+      "id": 18,
+      "date": "2026-07-04",
+      "weekday": "星期六",
+      "title": "内容创作者四件套：选题→写稿→配图→分发",
+      "subtitle": "选题诊断 · 研究型写作 · 正文配图 · 卡片化分发 · 一条线全跑通",
+      "tags": [
+        "🔍 选题诊断",
+        "✍️ 研究写作",
+        "✏️ 正文配图",
+        "📱 社交分发",
+        "🃏 卡片工厂"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-04-daily.html",
+      "skills": [
+        "dbskill",
+        "content-research-writer",
+        "ian-xiaohei-illustrations",
+        "html-anything",
+        "guizang-social-card-skill"
+      ]
+    },
     {
       "id": 17,
       "date": "2026-07-05",
