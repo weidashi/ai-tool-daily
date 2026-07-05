@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-05</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-05 · 星期日</div>
+    <h1>向阳乔木五件套：一套把碎片信息变成结构化知识的 Skill 全家桶</h1>
+    <div class="art-sub">论文解读 · 深度阅读 · 多源转播客 · 知识网站 · 设计审查</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>本周，知名博主「向阳乔木」（joeseesun）一口气开源了 8 个工具 + 5 个 Skill，覆盖了从论文阅读、电子书深度批注、多源内容转播客、到知识学习网站生成和设计审查的完整知识工作链路。本期精选其中 5 个对日常知识工作者最实用的 Skill，每个都能今天装上就用。加上 Codex 六月更新的深度解读和 NotebookLM 验证工作流，这个周日，把碎片变体系。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识体系构建 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">qiaomu-paper-interpreter — 论文智能解读</div><div class="sk-subtitle">joeseesun（向阳乔木）· Arxiv/HuggingFace 论文 → 结构化中文解读</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 高热度</span><span class="bd bd-p">论文阅读</span><span class="bd bd-b">图表提取</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>提供一个 Arxiv 或 HuggingFace 论文链接，自动下载、解析、结构化解读。支持原始 TeX Source 格式——图表提取比 AI 截图更精准。输出含研究背景、核心方法、实验结论、局限分析。<br>
+        <strong>最适合：</strong>每周追 AI 前沿论文的从业者、做行业研究时需快速吃透论文的咨询/投资分析师。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add joeseesun/qiaomu-paper-interpreter --agent codex --global</div>
+        <div class="cmt">安装后重启 Codex 或新开会话即可自动触发</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>去 <strong>huggingface.co/papers</strong> 找一篇本周热门论文，复制链接发给 Codex，说「用 qiaomu-paper-interpreter 帮我解读这篇论文」→ 5 分钟出一份结构化中文报告。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 qiaomu-paper-interpreter 解读这篇论文：https://arxiv.org/abs/2606.xxxxx，我需要知道它的核心方法、实验设计和实际应用场景」</div>
+        <div class="ex-out"><strong>成果：</strong>一份包含「研究背景→核心方法（附原理图描述）→关键实验数据→与已有方法对比→应用场景建议→局限性分析」的结构化报告，可直接用于组会分享或内部分析。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">qiaomu-read-helper — 飞书+AI 深度阅读法</div><div class="sk-subtitle">joeseesun（向阳乔木）· 电子书→飞书文档→划线批注→AI 对话</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热度高</span><span class="bd bd-o">深度阅读</span><span class="bd bd-r">飞书联动</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>一个重新定义「读书」方式的 Skill——把 EPUB 电子书按章节写入飞书文档，你像读纸质书一样划线、加粗、写评论。读完一章后，Codex 自动读取你的标记和评论，AI 跟你对话探讨书中的观点。比读完再写读书笔记深刻得多。<br>
+        <strong>最适合：</strong>想深度读透一本书而非「翻完就忘」的知识工作者。尤其适合方法论类、商业类、心理学类书籍。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add joeseesun/qiaomu-read-helper --agent codex --global</div>
+        <div class="cmt">需要飞书账号。安装后在对话中说「帮我导入这本电子书到飞书」</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一本你买了但一直没读完的 EPUB 电子书，发给 Codex 说「用 qiaomu-read-helper 帮我把这本书导入飞书，按章节分文档」。然后打开飞书，开始划线阅读——你会发现原来读书可以这么沉浸。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 qiaomu-read-helper 导入这本《思考，快与慢》的 EPUB 到飞书，按章节拆分。我读完第一章后，请你读取我在飞书上的划线标记和评论，跟我展开对话讨论。」</div>
+        <div class="ex-out"><strong>成果：</strong>飞书文档中按章节排列全书内容。你划线标记「系统1和系统2的定义」后，Codex 基于你的标记与你展开对话——「你标记了系统1的『快思考』特点，书中还提到了一个经典的 bat-and-ball 问题来演示，你想试试这个测试吗？」</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">qiaomu-anything-to-notebooklm — 15+ 内容源一键转学习材料</div><div class="sk-subtitle">joeseesun（向阳乔木）· 微信公众号/网页/YouTube/PDF/Markdown → 播客/PPT/思维导图/测验</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 1611+</span><span class="bd bd-p">多源聚合</span><span class="bd bd-b">NotebookLM</span><span class="bd bd-o">自动化</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>把 15+ 种内容源（微信公众号文章、网页、YouTube 视频、PDF 论文、Markdown 笔记、搜索查询结果）自动转为 NotebookLM 可处理的格式，然后由 NotebookLM 进一步生成播客、PPT 大纲、思维导图、测验题。彻底打通「内容收集→智能处理」的最后一公里。<br>
+        <strong>最适合：</strong>做主题研究时想要一次性消化多来源信息的人。比如研究一个行业，把 5 篇公众号 + 3 个 YouTube + 2 份 PDF 全部喂进去，出来一个播客边走边听。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add joeseesun/qiaomu-anything-to-notebooklm --agent codex --global</div>
+        <div class="cmt">需要 NotebookLM 账号。安装后在 Codex 对话中说「把这些内容转成 NotebookLM 格式」</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>收集 3-5 篇你最近想深入学习的公众号文章或网页链接，发给 Codex 说「用 qiaomu-anything-to-notebooklm 把这些内容转成 NotebookLM 可用格式，然后生成一个播客」→ 1 小时后你在通勤路上就能听 AI 给你讲你收集的内容。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 qiaomu-anything-to-notebooklm 处理以下内容：① 这5篇公众号文章链接 ② 这2个YouTube视频 ③ 这份PDF行业报告。全部转成 NotebookLM 可用格式，然后生成一个 15 分钟的双人对话播客和一份思维导图。」</div>
+        <div class="ex-out"><strong>成果：</strong>NotebookLM 里出现一套完整的学习材料——15 分钟播客（双人对话轻松讲解核心观点）+ 结构化思维导图 + 关键概念测验题。原本要花半天分别消化，现在通勤路上就听完了。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div><div class="sk-title">knowledge-site-creator — 一句话生成知识学习网站</div><div class="sk-subtitle">joeseesun（向阳乔木）· 主题→自动创作内容→闪卡+测试+学习模式→一键部署</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 325+</span><span class="bd bd-p">知识网站</span><span class="bd bd-b">闪卡学习</span><span class="bd bd-o">零代码</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>说一句话描述你想学什么——「生成一个进化心理学学习网站」、「创建量子力学基础概念网站」——AI 自动理解主题、生成 20-30 个核心知识点、创作所有文案和页面，最终一键部署为一个带闪卡、渐进学习、测验、进度追踪的完整学习网站。已上线 4 个示例：五代十国历史工坊、设计美学工坊、词根词缀记忆工坊、大模型术语工坊。<br>
+        <strong>最适合：</strong>想系统学习一个新领域但不知道从哪开始的人；做内部分享或培训时需要快速搭建知识站点的团队。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add joeseesun/knowledge-site-creator --agent codex --global</div>
+        <div class="cmt">需要 Node.js 18+ 和 Vercel CLI（用于部署）。生成后自动返回可访问链接</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>想一个你一直想系统学习但没时间整理的主题（比如「认知偏见大全」、「AI 工具选型指南」），对 Codex 说「用 knowledge-site-creator 生成一个 XX 主题的学习网站」→ 20 分钟后你拥有一个专属的知识学习站。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 knowledge-site-creator 生成一个'AI 写作工具选型指南'学习网站，包含 25 个核心概念，覆盖 GPT、Claude、Gemini 等主流工具的使用场景和选型建议。」</div>
+        <div class="ex-out"><strong>成果：</strong>一个可访问的完整学习网站（https://你的域名.vercel.app），包含：首页概览 → 25 个概念的闪卡学习模式 → 4 选 1 测验题 → 学习进度追踪 → PWA 支持离线访问。手机上也能学，效果像 Duolingo。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div><div class="sk-title">qiaomu-design-advisor — 偏执型设计顾问</div><div class="sk-subtitle">joeseesun（向阳乔木）· 自动检查页面/卡片/海报的设计问题并给出修复方案</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 233+</span><span class="bd bd-p">设计审查</span><span class="bd bd-r">自动修复</span></div>
+      <div class="sk-desc">
+        <strong>是什么：</strong>一个「强迫症级别」的 AI 设计审查 Skill。给它一个网页截图、设计稿或 HTML 页面，它会从间距对齐、色彩搭配、字体层级、留白比例、视觉重心、信息密度等维度逐一检查，生成问题清单 + 修复建议。像请了一个不留情面的设计总监给你审稿。<br>
+        <strong>最适合：</strong>做公众号封面、小红书卡片、汇报 PPT、海报时——发布前让 advisor 扫一眼，能避免 80% 的「看着不对劲但说不清」的设计问题。
+      </div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx -y skills@latest add joeseesun/qiaomu-design-advisor --agent codex --global</div>
+        <div class="cmt">安装后，把设计稿截图或 HTML 发给 Codex 说「帮我审查设计」即可触发</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近做的一张公众号封面或小红书卡片截图，发给 Codex 说「用 qiaomu-design-advisor 审查这个设计」。它会列出具体的间距、配色、字体问题，并给出可操作的修改建议。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 qiaomu-design-advisor 审查这张小红书封面卡片的设计。目标受众是 25-35 岁职场女性，内容关于时间管理。」</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化审查报告——「✅ 通过的：配色方案适合目标受众。⚠️ 需改进：① 标题字号偏小，在信息流中不够突出，建议从 18px→24px；② 左侧留白不均匀，建议统一为 20px；③ 副标题与主标题间距过大（36px），建议缩至 16px 加强关联。🔧 修复后效果对比：[附修改示意]。」</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">论文解读</span><span class="pa">→</span>
+      <span class="ps ps-2">深度阅读</span><span class="pa">→</span>
+      <span class="ps ps-3">多源聚合</span><span class="pa">→</span>
+      <span class="ps ps-4">知识网站</span><span class="pa">→</span>
+      <span class="ps ps-5">设计审查</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📊 Codex GA 满月数据：非开发者增速 3 倍于程序员</div></div>
+      <div class="tb">OpenAI 内部数据显示，Codex 推出一个月后，周活跃用户已突破 500 万。其中非开发者占比 20%，增速是开发者的 3 倍以上。更震撼的是：OpenAI 员工通过 Codex 和 ChatGPT 的月输出 Token 比去年 11 月增长了 13-50 倍。近 30% 的员工同时管理 5 个以上的并发 Agent——AI 已经从「工具」变成了「同事」。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🏗️ 6 大行业插件：62 应用 + 110 技能的「AI 操作系统」</div></div>
+      <div class="tb">6 月 2 日发布的「Intelligence at Work」战略带来三样东西：<br>① <strong>6 个角色专用插件</strong>：数据分析（连接 Snowflake/Tableau）、创意制作（Figma/Canva 直接出图）、销售（Salesforce/HubSpot 智能 CRM）、产品设计（想法→原型）、公募股权投资（Moody's/FactSet 研报分析）、投资银行（路演材料自动生成）。<br>② <strong>Sites 建站</strong>：一句话生成可交互网站，自动托管+可分享 URL。<br>③ <strong>Annotations 标注</strong>：点选文档/表格/幻灯片任意位置，局部精准修改。</div>
+    </div>
+    <div class="hl">
+      <strong>💡 本周技巧：让 Codex「学会你的工作方式」</strong><br>
+      打开 Codex，输入以下提示词：<br>
+      <em>「阅读并检索我们所有的对话记录与执行日志，进行系统性复盘。提炼：① 哪些做法导致了问题、正确的执行方式是什么；② 我的内容偏好、文案风格、设计倾向；③ 未来你可直接遵循的行为准则清单。完成后保存为独立文件，在配置中引用，让后续所有会话默认继承。」</em><br>
+      做完这一步，Codex 就不再是通用助手——而是懂你风格、知你偏好的专属搭档。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 来源到输出的验证工作流 — 别再盲目信任 AI 的引用</div></div>
+      <div class="tb">用 NotebookLM 时最容易踩的坑：AI 找到了正确的文档，但做出了比原文更宽泛的断言。<br><strong>标准操作：</strong>① 提一个窄范围、带引用来源指定的问题 → ② 逐个打开每个内联引文标记，检查原文是否真的支持该结论 → ③ 把每条引用分为「直接支持」「仅相关」「冲突」三类 → ④ 如果支持力度不足，追加指令：<em>「只使用引用段落直接支持的论断重写答案」</em> → ⑤ 验证通过后，才将答案保存为笔记。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 精确角色提示词 — 命名具体任务比泛泛指令效果好得多</div></div>
+      <div class="tb">别说「对比这些来源」，要说「在来源 2、4、7 中，哪些主张是共享的、冲突的、独特的？」<br>别说「扮演教授」，要说「扮演一个持怀疑态度的审稿人。逐句标记为：原文直接支持、推断、无支持。」<br><strong>高效提示词模式：</strong>「分离直接证据与你的解读，用两列呈现：左边是证据，右边是对应的原文引用。」——命名具体的比较/验证任务，效果远好于泛泛描述。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 分笔记本 + 桥接笔记 — 大项目别把所有来源堆一起</div></div>
+      <div class="tb">不断往笔记本添加来源会让答案精确度下降。<br><strong>做法：</strong>按决策或章节拆分——文献综述拆为「方法论」「研究发现」「反驳论点」三个笔记本。每个笔记本加一个「桥接笔记」写明包含什么、排除什么。只在需要跨笔记本综合时才手动跨查。项目完成后及时归档，不要永久堆积。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 模版化提问法：一个结构解决所有效率问题</div></div>
+      <div class="tb">别再发「帮我写个周报」这种一句话指令了——AI 会反问你一大堆问题，来回三四轮，效率极低。<br><strong>自创模版：</strong><br>【任务】+【角色】+【内容/素材】+【要求/格式】<br>例如：<em>「【任务】生成本周工作周报【角色】电商运营【本周完成】1.上架15款新品 2.处理售后47单，满意度96% 3.双十一预热页面搭建完成【要求】800字左右，突出数据成果，语气专业但不死板」</em><br>这个模版可以套用到 PPT 大纲、PRD 文档、竞品分析等几乎所有任务——一次对话就出成品，省积分还省时间。</div>
+    </div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ Ask → Plan → Craft 三模式切换法</div></div>
+      <div class="tb">WorkBuddy 三种模式不是摆设，用对了起码省 30% 积分：<br>① <strong>Ask 模式</strong>（只读不写）：查资料、问问题、思路碰撞时用，几乎不扣积分。<br>② <strong>Plan 模式</strong>（先出计划再执行）：复杂项目、拿不准方案时用，让它先出执行计划给你确认。<br>③ <strong>Craft 模式</strong>（真正干活）：改文件、生成文档、数据处理时用。<br>标准工作流：先 Ask 把想法聊清楚 → 切 Plan 看它计划 → 确认无误切 Craft 执行。不浪费积分在来回确认上。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果</div>
+      <div class="sh-sub">用本期介绍的 knowledge-site-creator，做一份专属学习资料</div>
+      <div class="sh-box">
+        <strong>成果：AI 工具选型知识网站概要</strong><br><br>
+        <strong>首页标题：</strong>「AI 写作工具选型指南 · 25 个核心概念速览」<br>
+        <strong>学习模式：</strong><br>
+        📇 <strong>闪卡模式</strong>——正面显示工具名称（如「Claude Code」），背面显示「直接在工作终端中用自然语言描述需求、自动执行多步骤任务的 AI 编程助手」<br>
+        📖 <strong>渐进学习</strong>——从「AI 写作工具分类（通用对话/专业写作/代码 Agent）」→「选型三要素（任务复杂度/输出格式/成本）」→「各工具对比」→「组合使用策略」，逐步深入<br>
+        ✏️ <strong>4 选 1 测验</strong>——「写深度研究报告最适合用哪个工具？A.GPT B.Claude3 C.Codex+content-research-writer D.Gemini」<br>
+        📊 <strong>进度追踪</strong>——显示「已掌握 18/25 概念，学习进度 72%」<br><br>
+        <strong>部署：</strong>通过 Vercel 一键部署，获得可分享 URL，手机和电脑都能访问。PWA 支持离线学习，地铁上也能刷闪卡。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 知识不用「记住」，体系不用「理清」——让 Skill 替你消化碎片，你只管思考和创造。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-05</span>
+  </div>
+</div>
+</body>
+</html>

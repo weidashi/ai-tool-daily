@@ -32,7 +32,8 @@
         "canvas-design",
         "brand-guidelines",
         "md2wechat",
-        "wechat-article-image"
+        "wechat-article-image",
+        "qiaomu-design-advisor"
       ]
     },
     {
@@ -60,7 +61,8 @@
         "guizang-social-card-skill",
         "wechat-article-skills",
         "wechat-daily-skills",
-        "wechat-article-publish"
+        "wechat-article-publish",
+        "qiaomu-design-advisor"
       ]
     },
     {
@@ -77,7 +79,10 @@
         "notion-research-documentation",
         "competitive-ads-extractor",
         "notion-meeting-intelligence",
-        "wechat-article-workflow"
+        "wechat-article-workflow",
+        "qiaomu-paper-interpreter",
+        "qiaomu-read-helper",
+        "qiaomu-anything-to-notebooklm"
       ]
     },
     {
@@ -93,11 +98,72 @@
         "weekly-report-skill",
         "paperjsx",
         "meeting-insights-analyzer",
-        "spreadsheet-formula-helper"
+        "spreadsheet-formula-helper",
+        "knowledge-site-creator"
       ]
     }
   ],
   "skills": {
+    "qiaomu-paper-interpreter": {
+      "name": "qiaomu-paper-interpreter",
+      "author": "joeseesun（向阳乔木）",
+      "subtitle": "论文智能解读：Arxiv/HuggingFace→结构化中文解读",
+      "desc": "提供一个 Arxiv 或 HuggingFace 论文链接，自动下载、解析、生成结构化中文解读。支持原始 TeX Source 格式，图表提取比 AI 截图更精准。输出含研究背景、核心方法、实验结论、局限分析。",
+      "stars": "高热度",
+      "tags": ["论文阅读", "Arxiv", "HuggingFace", "图表提取", "中文输出"],
+      "install": "npx -y skills@latest add joeseesun/qiaomu-paper-interpreter --agent codex --global",
+      "issues": ["2026-07-05"],
+      "screenshot": "",
+      "result": "一篇 Arxiv 论文链接 → 5分钟出结构化中文报告：含研究背景、核心方法、实验数据对比、应用场景、局限性。"
+    },
+    "qiaomu-read-helper": {
+      "name": "qiaomu-read-helper",
+      "author": "joeseesun（向阳乔木）",
+      "subtitle": "飞书+AI深度阅读：电子书→飞书标记→AI对话",
+      "desc": "把 EPUB 电子书按章节写入飞书文档，人肉阅读时划线+加粗+评论，Codex 自动读取标记和评论后与你对话探讨书中观点。比读完再写笔记深刻得多。",
+      "stars": "高热度",
+      "tags": ["深度阅读", "飞书联动", "电子书", "AI对话", "读书笔记"],
+      "install": "npx -y skills@latest add joeseesun/qiaomu-read-helper --agent codex --global",
+      "issues": ["2026-07-05"],
+      "screenshot": "",
+      "result": "一本电子书 → 按章节拆分的飞书文档 + 边读边标记 + AI基于你的标记展开深度对话。"
+    },
+    "qiaomu-anything-to-notebooklm": {
+      "name": "qiaomu-anything-to-notebooklm",
+      "author": "joeseesun（向阳乔木）",
+      "subtitle": "15+内容源→NotebookLM：播客/PPT/思维导图/测验",
+      "desc": "把微信公众号文章、网页、YouTube视频、PDF、Markdown等15+种内容源自动转为NotebookLM可用格式，进一步生成播客、PPT大纲、思维导图、测验题。打通「内容收集→智能处理」最后一公里。",
+      "stars": "1611+",
+      "tags": ["NotebookLM", "多源聚合", "播客生成", "思维导图", "自动化"],
+      "install": "npx -y skills@latest add joeseesun/qiaomu-anything-to-notebooklm --agent codex --global",
+      "issues": ["2026-07-05"],
+      "screenshot": "",
+      "result": "5篇公众号+3个YouTube+2份PDF → NotebookLM里的播客+思维导图+测验。通勤路上就能听完。"
+    },
+    "knowledge-site-creator": {
+      "name": "knowledge-site-creator",
+      "author": "joeseesun（向阳乔木）",
+      "subtitle": "一句话生成知识学习网站：闪卡+测试+学习模式+一键部署",
+      "desc": "说一句话描述想学什么，AI自动理解主题、生成20-30个核心知识点、创作文案和页面，一键部署为带闪卡、渐进学习、测验、进度追踪的完整学习网站。PWA支持离线使用。",
+      "stars": "325+",
+      "tags": ["知识网站", "闪卡学习", "零代码", "PWA", "Vercel部署"],
+      "install": "npx -y skills@latest add joeseesun/knowledge-site-creator --agent codex --global",
+      "issues": ["2026-07-05"],
+      "screenshot": "",
+      "result": "一句话「生成进化心理学学习网站」→ 20分钟出一个带闪卡+测验+进度追踪的完整学习站，手机上也能学。"
+    },
+    "qiaomu-design-advisor": {
+      "name": "qiaomu-design-advisor",
+      "author": "joeseesun（向阳乔木）",
+      "subtitle": "偏执型设计顾问：自动检查并修复设计问题",
+      "desc": "给它一个页面截图、设计稿或HTML，自动从间距对齐、色彩搭配、字体层级、留白比例、视觉重心等维度逐一检查，生成问题清单+修复建议。像请了一个不留情面的设计总监审稿。",
+      "stars": "233+",
+      "tags": ["设计审查", "自动修复", "公众号封面", "小红书卡片", "视觉检查"],
+      "install": "npx -y skills@latest add joeseesun/qiaomu-design-advisor --agent codex --global",
+      "issues": ["2026-07-05"],
+      "screenshot": "",
+      "result": "一张封面图截图 → 结构化审查报告：通过的项+需改进的具体问题+修复建议+效果对比。"
+    },
     "unslop": {
       "name": "unslop",
       "author": "MohamedAbdallah-14",
@@ -819,6 +885,31 @@
     }
   },
   "issues": [
+    {
+      "id": 19,
+      "date": "2026-07-05",
+      "weekday": "星期日",
+      "title": "向阳乔木五件套：一套把碎片信息变成结构化知识的 Skill 全家桶",
+      "subtitle": "论文解读 · 深度阅读 · 多源转播客 · 知识网站 · 设计审查",
+      "tags": [
+        "📄 论文解读",
+        "📖 深度阅读",
+        "🎙️ 多源聚合",
+        "🌐 知识网站",
+        "🎨 设计审查"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-05-daily.html",
+      "skills": [
+        "qiaomu-paper-interpreter",
+        "qiaomu-read-helper",
+        "qiaomu-anything-to-notebooklm",
+        "knowledge-site-creator",
+        "qiaomu-design-advisor"
+      ]
+    },
     {
       "id": 18,
       "date": "2026-07-04",
@@ -1778,6 +1869,12 @@
     }
   ],
   "trends": [
+    {
+      "date": "07-05",
+      "title": "Codex GA 满月：内部月输出 Token 增长 13-50 倍",
+      "body": "OpenAI 内部数据显示，普通员工通过 Codex 月输出 Token 暴增 13-50 倍。近 30% 员工同时管理 5+ 并发 Agent。500 万周活中非开发者增速 3 倍于程序员。",
+      "source": "36氪 / OpenAI 内部报告"
+    },
     {
       "date": "06-25",
       "title": "Codex 周活突破500万",
