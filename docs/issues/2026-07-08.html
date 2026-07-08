@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-08</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-08 · 星期三</div>
+    <h1>职场效率工具箱：把杂活交给 AI，把时间留给自己</h1>
+    <div class="art-sub">简历精修 · 发票整理 · 图片增强 · 视频下载</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周二到周四的工作日，总有一些"不做不行、做又费时"的杂活——改简历投岗位、整理发票报销、处理图片素材、下载参考资料。4 个来自 ComposioHQ 精选合集的全新 Skill，帮你把这些琐事一键自动化。今天就能试，用一次就回不去。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">tailored-resume-generator — 智能简历精修</div><div class="sk-subtitle">ComposioHQ · 按岗位要求自动定制简历，突出量化成果</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">写作润色</span><span class="bd bd-o">职场必备</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>给它你的基础简历 + 目标岗位描述，自动分析岗位需求，重新组织经历、调整措辞、突出量化成果、匹配关键词——生成一份"投其所好"的专业简历。<br><strong>最适合：</strong>海投找工作时，每份岗位描述不同，手动改简历太累；或者长期不更新简历，不知道怎么写合适。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path tailored-resume-generator</div><div class="cmt">安装后重启 Codex，对话中直接说「用 tailored-resume-generator 帮我改简历」即可触发。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你的简历（哪怕只有要点）+ 一个你感兴趣的岗位链接发给 Codex，让它用这个 Skill 重写一份针对该岗位的定制版简历。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"这是我的简历要点：3年新媒体运营经验，负责公众号和小红书账号，写过爆款文章，做过社群。帮我用 tailored-resume-generator 改一份面向'内容运营经理'岗位的简历。"</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化简历——从"我做过什么"变成"我带来了什么结果"。每条经历都带量化数据表述（如"单篇阅读10万+"、"社群转化率提升35%"），关键词匹配岗位JD，排版专业可直接投递。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">invoice-organizer — 发票智能整理</div><div class="sk-subtitle">ComposioHQ · 规范化提取发票数据，自动分类归档</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">日常自动化</span><span class="bd bd-o">办公效率</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一堆散乱的发票扫描件/PDF/图片丢给它，自动识别并提取关键信息——发票号码、金额、日期、供应商名称、税号、商品明细——然后按你定义的规则分类归档。月底报销不再手动翻、手动录。<br><strong>最适合：</strong>每月报销季、项目结账、出差回来后面对一大堆纸质发票和电子发票无从下手的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path invoice-organizer</div><div class="cmt">安装后说「用 invoice-organizer 帮我整理这些发票」，附上发票文件夹路径即可。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拍 3-5 张手头的发票（打车、餐饮、办公用品都行），扔给 Codex 让 invoice-organizer 自动提取信息并输出一张汇总表。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"这是我的5张7月发票截图（附图片路径），帮我用 invoice-organizer 提取每张的金额、日期、供应商、类别，并按'差旅/餐饮/办公'分类汇总。"</div>
+        <div class="ex-out"><strong>成果：</strong>一张分好类的发票汇总表——日期、金额、供应商、类别一目了然。月底填报销单直接复制粘贴，不用一张张翻照片了。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">image-enhancer — 图片一键增强</div><div class="sk-subtitle">ComposioHQ · 可配置预设，一键放大、优化、去噪</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-p">视觉设计</span><span class="bd bd-r">素材处理</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>用可配置的预设参数，对图片进行智能放大、降噪、锐化、色彩优化。不需要打开 PS，不需要学参数——描述你要的效果（"放大到4K"、"让这张图更清晰"、"去掉噪点"），AI 自动执行。<br><strong>最适合：</strong>做公众号/PowerPoint 时发现配图分辨率不够、老照片模糊想修复、截图文字不清晰需要画质提升。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path image-enhancer</div><div class="cmt">安装后说「用 image-enhancer 把这张图放大到 2 倍并去噪」即可。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一张手机里拍的模糊照片或低分辨率网图，让 image-enhancer 帮你放大 + 优化画质，看看能提升多少。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 image-enhancer 把这张截图放大到 2 倍，提高清晰度，去掉背景噪点。这张图我要用在公众号文章里当配图。"</div>
+        <div class="ex-out"><strong>成果：</strong>一张从 800px 提升到 1600px 的清晰配图——文字边缘清晰，背景干净，可以直接插入公众号文章。以前遇到模糊网图只能放弃不用，现在 1 分钟救回来。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">video-downloader — 视频素材下载</div><div class="sk-subtitle">ComposioHQ · 下载视频并预处理为离线可用的素材</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13K+（合集）</span><span class="bd bd-b">选题研究</span><span class="bd bd-o">素材收集</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>给你一个视频链接（B站、YouTube 等），自动下载视频文件并预处理——提取关键帧、转文字稿、压缩为移动端可播放格式。做研究、写稿件时需要的视频素材，不用一个一个手动下载转换。<br><strong>最适合：</strong>做竞品分析需要拆解同行的视频内容；写深度文章需要引用视频里的某段话；收集学习资料想离线看。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path video-downloader</div><div class="cmt">安装后说「用 video-downloader 下载这个链接的视频并提取关键帧」。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一个你最近想参考但还没时间看的行业分析/竞品视频链接，丢给 video-downloader 下载 + 提取字幕文本，直接跳到核心部分。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"帮我用 video-downloader 下载这个 B 站视频 [链接]，提取字幕文本，再帮我生成 10 张关键帧截图。我要写一篇关于这个话题的公众号文章。"</div>
+        <div class="ex-out"><strong>成果：</strong>视频文件 + 完整字幕文本 + 10 张关键截图。不用 2 倍速看完全片——直接读字幕找到核心观点，关键帧截图作为文章配图。20 分钟的视频 3 分钟消化。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">📋 简历</span><span class="pa">→</span>
+      <span class="ps ps-2">🧾 发票</span><span class="pa">→</span>
+      <span class="ps ps-3">🖼️ 图片</span><span class="pa">→</span>
+      <span class="ps ps-4">🎬 视频</span>
+      <span style="margin-left:12px;font-size:11px;color:var(--muted)">四件套串联：杂活自动化流水线</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">📱 Codex Remote 正式发布（GA）</div></div><div class="tb">手机远程操控电脑成为现实。通过 ChatGPT 移动端 App，你可以<strong>在手机上启动或继续桌面端的工作</strong>——人在通勤路上，发一句话，家里的电脑就开始跑任务。支持<strong>一对一 QR 码认证配对</strong>，安全可靠。搭配 WorkBuddy 的「微信遥控」功能，出门在外也能管两台 AI 助手。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🎬 Record & Replay — 把你的工作流录成 Skill</div></div><div class="tb">Codex 26.616 版本新增了<strong>录制与回放</strong>功能（macOS）。你演示一遍操作流程，Codex 自动转化为可复用的 Skill。比如「生成周报→排版→上传草稿箱」这套动作，录制一次，以后一句话调用。<strong>零编程门槛</strong>，你只需要做一遍，Codex 就学会了。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⌨️ Codex 联名键盘 7 月 15 日上线</div></div><div class="tb">OpenAI 与 Work Louder 合作推出 <strong>Codex 品牌专用输入设备</strong>，将于 7 月 15 日正式发售。同月，前苹果设计官 Jony Ive 主导的消费级 AI 硬件「Gumdrop」也在推进中。AI 不再只是软件，硬件生态正在成形。</div></div>
+
+    <div class="hl">💡 <strong>本周技巧：ComposioHQ 合集批量安装</strong><br>ComposioHQ/awesome-codex-skills 仓库包含 30+ 个 Skills。如果你觉得逐个安装太慢，可以直接 <code>git clone</code> 整个仓库，然后用 skill-installer 脚本批量安装你需要的。今天 4 个 Skill 装完只需不到 3 分钟，性价比极高。</div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🎙️ Audio Overview — 把资料变播客，通勤路上听</div></div><div class="tb">NotebookLM 最出圈的功能。上传资料后，它能生成一段<strong>双人对谈式 AI 播客</strong>，两位 AI 主持人围绕你的资料自然讨论。不是念稿，而是有问有答、有观点碰撞。<strong>实操：</strong>把今天要读的 3 篇行业报告上传→点 Audio Overview→生成 15 分钟播客→上班路上戴耳机听完，下车已经"读完"了。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">📋 Briefing Doc — 一键生成结构化汇报大纲</div></div><div class="tb">把一堆复杂资料（会议记录、调研报告、邮件往来）丢进 NotebookLM，选<strong>「简报文档」</strong>模式，自动提取关键信息并按逻辑重组为汇报大纲。列出核心结论→支撑数据→待解决问题→建议行动。<strong>场景：</strong>老板问你"这个项目现在什么情况？"，把相关材料丢进去，2 分钟出一份能直接用来汇报的简明文档。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 分 Notebook 策略：每个项目一个专属知识库</div></div><div class="tb">很多用户把所有资料堆在一个 Notebook 里，结果回答时混在一起。<strong>正确做法：</strong>每个项目/主题建一个独立 Notebook。比如「竞品分析」「客户提案」「行业数据」各一个，这样每次提问的回答只基于该项目的资料，不会串台。管理上也不乱。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">🧠 知识库喂料法：把 AI 变成你的私有专家</div></div><div class="tb">WorkBuddy 和通用 AI 最大的区别——它可以直接读你本地的文件。<strong>操作方法：</strong>左侧「知识库」→ 新建 → 把你的项目手册、过往合同、行业报告、写作模板全部拖进去 → 开启「对话优先从本地调取」。从此问它"这个客户该怎么回？"——它从你公司真实的资料里找答案，而不是从训练数据里编。<strong>进阶：</strong>设定定时任务"每周一自动读取新资料，生成本周行业动态"。喂得越勤，它越懂你的业务。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">🎭 多专家会诊模式：一条决定，三个视角</div></div><div class="tb">做重要决策时别只听一面之词。让 WorkBuddy 同时扮演<strong>「乐观派」「悲观派」「中立分析师」</strong>三个角色，分别从不同角度分析同一个问题。<strong>操作：</strong>输入"你同时扮演乐观派、悲观派和财务专家三个角色，分别分析这个方案的可行性"→ 10 分钟后得到一份三维度对比报告。比自己左右纠结高效太多。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 用 tailored-resume-generator 改造一份简历</div>
+      <div class="sh-sub">一个真实的简历改写案例：从"做了什么"变成"带来了什么结果"</div>
+      <div class="sh-box">
+        <strong>改写前（干瘪的事实罗列）：</strong><br>
+        · 负责公司公众号运营，每周发布3篇文章<br>
+        · 管理小红书账号，发布笔记<br>
+        · 参与社群运营，回复用户消息<br><br>
+        <strong>改写后（量化+结果导向）：</strong><br>
+        · <strong>从0到1搭建公众号矩阵：</strong>6个月内粉丝从2000增长至3.5万，单篇最高阅读10万+，平均打开率高出行业均值40%<br>
+        · <strong>小红书获客体系搭建：</strong>月均发布笔记15篇，爆款率20%（点赞1000+），累计为私域引流精准用户800+<br>
+        · <strong>社群运营标准化：</strong>建立3个500人社群，制定SOP话术库，用户7日留存率从45%提升至72%<br><br>
+        <strong>🎯 关键变化：</strong>同一个人、同样的经历——前者像工作描述，后者像能力证明。HR 扫一眼就能判断你的价值。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 今天不写代码，只做内容。Codex 把杂活接了，你把创造力省下来。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-08</span>
+  </div>
+</div>
+</body>
+</html>

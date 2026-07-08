@@ -15,7 +15,8 @@
         "novel-writing",
         "weekly-report-skill",
         "internal-comms",
-        "wechat-article-write"
+        "wechat-article-write",
+        "tailored-resume-generator"
       ]
     },
     {
@@ -33,7 +34,8 @@
         "brand-guidelines",
         "md2wechat",
         "wechat-article-image",
-        "qiaomu-design-advisor"
+        "qiaomu-design-advisor",
+        "image-enhancer"
       ]
     },
     {
@@ -82,7 +84,8 @@
         "wechat-article-workflow",
         "qiaomu-paper-interpreter",
         "qiaomu-read-helper",
-        "qiaomu-anything-to-notebooklm"
+        "qiaomu-anything-to-notebooklm",
+        "video-downloader"
       ]
     },
     {
@@ -99,7 +102,8 @@
         "paperjsx",
         "meeting-insights-analyzer",
         "spreadsheet-formula-helper",
-        "knowledge-site-creator"
+        "knowledge-site-creator",
+        "invoice-organizer"
       ]
     }
   ],
@@ -863,6 +867,54 @@
       "screenshot": "",
       "result": "一份40页行业白皮书 → 15页结构化中文报告：含封面页、研究逻辑图、逐章核心发现、关键数据表、证据链图、方法论评估、局限性分析。可直接用作组会汇报或内部分析简报。"
     },
+    "tailored-resume-generator": {
+      "name": "tailored-resume-generator",
+      "author": "ComposioHQ",
+      "subtitle": "智能简历精修：按岗位自动定制，突出量化成果",
+      "desc": "把基础简历+目标岗位描述交给它，自动分析岗位需求、重组经历、调整措辞、突出量化成果、匹配关键词，生成一份投其所好的专业简历。每条经历都带数据化表述。",
+      "stars": "13K+（合集）",
+      "tags": ["简历优化", "求职", "写作润色", "职场"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path tailored-resume-generator",
+      "issues": ["2026-07-08"],
+      "screenshot": "",
+      "result": "一份基础简历+一份岗位JD → 突出量化成果的定制简历。从'我做过什么'变成'我带来了什么结果'。"
+    },
+    "invoice-organizer": {
+      "name": "invoice-organizer",
+      "author": "ComposioHQ",
+      "subtitle": "发票智能整理：规范化提取数据，自动分类归档",
+      "desc": "把散乱的发票扫描件/PDF/图片喂给它，自动识别并提取发票号码、金额、日期、供应商、税号、商品明细。按你定义的规则分类归档，月底报销不再手动翻找。",
+      "stars": "13K+（合集）",
+      "tags": ["发票管理", "日常自动化", "办公效率", "财务"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path invoice-organizer",
+      "issues": ["2026-07-08"],
+      "screenshot": "",
+      "result": "一堆发票图片 → 提取后的汇总表：日期+金额+供应商+类别一目了然。报销直接复制粘贴。"
+    },
+    "image-enhancer": {
+      "name": "image-enhancer",
+      "author": "ComposioHQ",
+      "subtitle": "图片一键增强：放大优化去噪，配置化预设",
+      "desc": "用可配置预设参数对图片进行智能放大、降噪、锐化、色彩优化。不学PS不调参数，描述你要的效果（放大到4K、更清晰、去噪点）即可。",
+      "stars": "13K+（合集）",
+      "tags": ["图片处理", "视觉设计", "素材优化", "公众号配图"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path image-enhancer",
+      "issues": ["2026-07-08"],
+      "screenshot": "",
+      "result": "一张模糊网图 → 清晰的高清配图。公众号文章不再被低分辨率素材拖累。"
+    },
+    "video-downloader": {
+      "name": "video-downloader",
+      "author": "ComposioHQ",
+      "subtitle": "视频素材下载：下载+转文字+关键帧提取",
+      "desc": "给视频链接自动下载并预处理——提取字幕文字稿、抓取关键帧截图、压缩为移动端可播放格式。做研究、写稿件需要的视频素材，不用手动下载转换。",
+      "stars": "13K+（合集）",
+      "tags": ["视频下载", "素材收集", "选题研究", "竞品分析"],
+      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path video-downloader",
+      "issues": ["2026-07-08"],
+      "screenshot": "",
+      "result": "一个B站/YouTube链接 → 视频文件+字幕文本+关键截图。20分钟视频3分钟消化。"
+    },
     "wechat-article-workflow": {
       "name": "wechat-article-workflow",
       "author": "classfang",
@@ -885,6 +937,30 @@
     }
   },
   "issues": [
+    {
+      "id": 20,
+      "date": "2026-07-08",
+      "weekday": "星期三",
+      "title": "职场效率工具箱：把杂活交给 AI，把时间留给自己",
+      "subtitle": "简历精修 · 发票整理 · 图片增强 · 视频下载",
+      "tags": [
+        "📋 简历精修",
+        "🧾 发票整理",
+        "🖼️ 图片增强",
+        "🎬 视频下载",
+        "⚡ 职场效率"
+      ],
+      "skillCount": 4,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-07-08.html",
+      "skills": [
+        "tailored-resume-generator",
+        "invoice-organizer",
+        "image-enhancer",
+        "video-downloader"
+      ]
+    },
     {
       "id": 19,
       "date": "2026-07-05",
