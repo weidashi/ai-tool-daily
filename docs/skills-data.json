@@ -16,7 +16,8 @@
         "weekly-report-skill",
         "internal-comms",
         "wechat-article-write",
-        "tailored-resume-generator"
+        "tailored-resume-generator",
+        "article-writer-skill"
       ]
     },
     {
@@ -35,7 +36,8 @@
         "md2wechat",
         "wechat-article-image",
         "qiaomu-design-advisor",
-        "image-enhancer"
+        "image-enhancer",
+        "imagegen-builtin"
       ]
     },
     {
@@ -85,7 +87,9 @@
         "qiaomu-paper-interpreter",
         "qiaomu-read-helper",
         "qiaomu-anything-to-notebooklm",
-        "video-downloader"
+        "video-downloader",
+        "web-access",
+        "daily-paper"
       ]
     },
     {
@@ -915,6 +919,54 @@
       "screenshot": "",
       "result": "一个B站/YouTube链接 → 视频文件+字幕文本+关键截图。20分钟视频3分钟消化。"
     },
+    "web-access": {
+      "name": "web-access",
+      "author": "eze-is",
+      "subtitle": "全平台联网搜索+浏览器自动化：让Codex真正「会上网」",
+      "desc": "让AI Agent获得完整联网能力的Skill。通过CDP协议直连Chrome/Edge浏览器，天然携带登录态——能搜网页、读内容、操作交互页面，支持并行多目标调研。兼容Codex、Claude Code、Cursor等所有支持SKILL.md的Agent。",
+      "stars": "8.1K",
+      "tags": ["联网搜索", "浏览器自动化", "CDP", "并行调研", "Codex兼容"],
+      "install": "npx skills add eze-is/web-access",
+      "issues": ["2026-07-09"],
+      "screenshot": "",
+      "result": "「同时调研3个竞品官网最新动态」→ 自动并行打开三个网站，提取关键信息，汇总为对比摘要，每条带来源链接。"
+    },
+    "daily-paper": {
+      "name": "Daily-paper",
+      "author": "hhhzauuu",
+      "subtitle": "论文每日追踪：自动检索+中文摘要+邮件推送",
+      "desc": "面向科研阅读的Codex自动化项目。配置研究方向后，Codex每天自动检索arXiv、OpenReview、ACL Anthology等来源的最新论文，下载PDF、提取主图、写中文digest、更新Excel汇总表、发手机端友好HTML邮件。不只适合科研者，同样适合行业分析师、咨询顾问追踪专业动态。",
+      "stars": "新发布",
+      "tags": ["论文追踪", "自动摘要", "邮件推送", "Codex自动化", "学术研究"],
+      "install": "git clone https://github.com/hhhzauuu/Daily-paper.git && cd Daily-paper && cp -Recurse -Force skills/daily-paper-digest $env:USERPROFILE\\.codex\\skills\\daily-paper-digest",
+      "issues": ["2026-07-09"],
+      "screenshot": "",
+      "result": "配置研究方向「企业战略咨询方法论」→ 每天早8点邮件推送3-5篇最新论文中文摘要，含PDF+主图+你的理解+局限分析。"
+    },
+    "imagegen-builtin": {
+      "name": "imagegen（内置）",
+      "author": "Codex 内置",
+      "subtitle": "零安装AI图片生成：封面图、文章配图、概念图解",
+      "desc": "Codex自带的图片生成能力，无需安装任何Skill。描述想要的画面——公众号封面图、文章配图、概念图解、数据示意图——Codex直接生成。支持照片级写实、插画风格、信息图解等多种风格。写文章做PPT再也不用另外打开设计工具找图。",
+      "stars": "Codex 内置",
+      "tags": ["AI生图", "零安装", "公众号封面", "文章配图", "概念图解"],
+      "install": "无需安装，直接在Codex对话中说「帮我生成一张图：XXX」",
+      "issues": ["2026-07-09"],
+      "screenshot": "",
+      "result": "「帮我生成一张公众号封面图：简约商务风，深蓝+金色配色」→ 30秒出一张独一无二的封面。"
+    },
+    "article-writer-skill": {
+      "name": "article-writer",
+      "author": "H1N2/wordflowlab",
+      "subtitle": "11步系统化写作流：教练/快速/混合三种模式",
+      "desc": "专为内容创作者设计的系统化写作CLI。通过/specify→/topic→/research→/write→/review→/publish共11个斜杠命令拆解写作全流程。三种模式：教练模式（AI只提问，0%AI生成，检测率<15%）、快速模式（AI生成初稿）、混合模式（AI写框架你填内容）。支持公众号、视频脚本、通用内容三种工作区，兼容Codex CLI等13个AI平台。",
+      "stars": "热门",
+      "tags": ["系统写作", "11步流程", "教练模式", "AI味<15%", "Codex兼容"],
+      "install": "npm install -g article-writer-cn && content init my-article --workspace wechat --ai codex",
+      "issues": ["2026-07-09"],
+      "screenshot": "",
+      "result": "「/content-write 教练模式，主题『AI时代还需要记笔记吗』」→ AI提问引导，最终文章全是你的真话，AI检测率<15%。"
+    },
     "wechat-article-workflow": {
       "name": "wechat-article-workflow",
       "author": "classfang",
@@ -937,6 +989,30 @@
     }
   },
   "issues": [
+    {
+      "id": 21,
+      "date": "2026-07-09",
+      "weekday": "星期四",
+      "title": "信息获取力——从搜索到成文，打通信息处理全链路",
+      "subtitle": "联网搜索 · 论文追踪 · 图片生成 · 系统写作",
+      "tags": [
+        "🌐 联网搜索",
+        "📡 论文追踪",
+        "🖼️ 图片生成",
+        "✍️ 系统写作",
+        "🔗 全链路"
+      ],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-09.html",
+      "skills": [
+        "web-access",
+        "daily-paper",
+        "imagegen-builtin",
+        "article-writer-skill"
+      ]
+    },
     {
       "id": 20,
       "date": "2026-07-08",

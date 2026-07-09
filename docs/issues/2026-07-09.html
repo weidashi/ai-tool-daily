@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-09</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-09 · 星期四</div>
+    <h1>信息获取力——从搜索到成文，打通信息处理全链路</h1>
+    <div class="art-sub">联网搜索 · 论文追踪 · 图片生成 · 系统写作</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>知识工作者的核心竞争力不在「会写」，而在「会搜、会读、会整理」。本期 4 个 Skill 覆盖信息处理的完整闭环：web-access 让 Codex 真正会「上网搜」，Daily-paper 帮你自动追踪学术前沿，imagegen 解决写文章的配图焦虑，article-writer 把搜索到的素材转化为高质量完整文章。从信息搜集到内容产出，一条线跑通。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <!-- Skill 1: web-access -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">web-access — Codex 的「联网之眼」</div><div class="sk-subtitle">eze-is · 全平台联网搜索 + 浏览器自动化</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 8.1K</span><span class="bd bd-p">联网搜索</span><span class="bd bd-b">浏览器自动化</span><span class="bd bd-o">Codex 兼容</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个让 AI Agent 获得完整联网能力的 Skill。不只是简单的 WebSearch / WebFetch，而是通过 CDP 协议直连你的 Chrome/Edge 浏览器，天然携带登录态——能搜网页、能读内容、能操作交互页面，甚至能做并行多目标调研。<br><strong>最适合：</strong>需要搜集行业资料、做竞品调研、批量比对信息的场景。知识工作者的「研究助理」，再也不用手动翻几十个网页。</div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npx skills add eze-is/web-access</div>
+        <div class="cmt">自动检测 Codex 环境安装到正确位置。需要 Node.js 22+，CDP 模式需 Chrome/Edge 开启远程调试</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 Codex 里说「用 web-access 帮我同时调研钉钉、飞书、企微三家的 AI 功能最新动态，给我一份对比摘要」——它会自动并行打开三个官网，提取关键信息，汇总为一张对比表。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>帮我搜索「2026 下半年 AI 写作工具趋势」，看看最近有哪些新产品或功能更新，整理一份 500 字简报</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化的 AI 写作工具趋势简报，包含 3 个重点产品的功能对比、用户反馈归纳和我的判断。每条信息附带来源链接，可直接用于选题调研。</div>
+      </div>
+    </div>
+
+    <!-- Skill 2: Daily-paper -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">Daily-paper — 论文追踪不费脑，每天自动发到邮箱</div><div class="sk-subtitle">hhhzauuu · 每日论文检索 + 自动中文摘要 + 邮件推送</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">论文追踪</span><span class="bd bd-b">Codex 自动化</span><span class="bd bd-o">邮件推送</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个面向科研阅读的 Codex 自动化项目。配置你的研究方向后，Codex 每天自动检索 arXiv、OpenReview、ACL Anthology 等学术来源的最新论文，下载 PDF、提取主图、写中文 digest、更新 Excel 汇总表，最后把整理好的摘要发到邮箱。<br><strong>最适合：</strong>需要持续追踪某个领域前沿的人——学术研究者、行业分析师、咨询顾问、产品经理。不用每天手动刷 arXiv，早上一杯咖啡的时间，邮件里已经有 3-5 篇真正值得读的论文摘要。</div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">git clone https://github.com/hhhzauuu/Daily-paper.git && cd Daily-paper && cp -Recurse -Force skills/daily-paper-digest "$env:USERPROFILE\.codex\skills\daily-paper-digest"</div>
+        <div class="cmt">需要 Python 3.10+、SMTP 邮箱、支持 GPT web search 的 Codex 模型。安装后在 Codex 说「使用 daily-paper-digest skill，帮我检查项目配置是否可用」</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>配置研究方向为「企业战略咨询方法论」，每天早 8 点自动收到 3-5 篇最新相关论文的中文摘要，含 PDF 链接 + 主图 + 你的理解 + 局限分析。Excel 累积一段时间后就是你的专属研究文献库。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>配置 research_topic 为「数字化转型对国有企业组织效能的影响」，keywords 含「国企改革」「组织变革」「数字化成熟度」</div>
+        <div class="ex-out"><strong>成果：</strong>每天早上 8 点邮件推来 3-5 篇最新论文，每篇含：标题+作者+来源+PDF链接+中文摘要+结论翻译+My Understanding+局限分析。周末翻一翻 Excel 汇总表，一周的学术动向一目了然。</div>
+      </div>
+    </div>
+
+    <!-- Skill 3: imagegen -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">imagegen — 写文章时配图不用愁，让 AI 帮你画</div><div class="sk-subtitle">Codex 内置 · 文本生成图片，零安装零配置</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ Codex 内置</span><span class="bd bd-p">AI 生图</span><span class="bd bd-o">零安装</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>Codex 自带的图片生成能力，不需要额外安装任何 Skill。在对话中描述想要的画面——可以是公众号封面图、文章配图、概念图解、数据示意图——Codex 直接生成图片。支持照片级写实、插画风格、信息图解等多种风格。<br><strong>最适合：</strong>写文章需要配图但不想学设计工具；做 PPT 缺视觉素材；需要快速画一张概念图来解释复杂想法。不用打开 Canva、不用找图库、不用调 PS。</div>
+      <div class="install">
+        <div class="il">📦 触发方式</div>
+        <div class="cmd">直接在 Codex 对话中说「帮我生成一张图：XXX」</div>
+        <div class="cmt">无需安装，Codex 内置。描述越具体越好：风格、色调、构图、元素等。</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对 Codex 说「帮我生成一张公众号封面图：主题是"信息获取力"，风格简约商务，深蓝+金色配色，包含一本书和放大镜的意象，2.35:1 宽幅」——30 秒后你就有了一张独一无二的封面，不用翻图库。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>帮我生成 3 张文内配图，主题「知识工作者的一天」：第一张是清晨喝咖啡读邮件，第二张是中午用 AI 工具分析数据，第三张是傍晚整理知识笔记。风格：扁平化插画，暖色调，16:9</div>
+        <div class="ex-out"><strong>成果：</strong>3 张风格统一的扁平化插图，可直接插入文章。文章从纯文字变成图文并茂，阅读体验翻倍。不用找图库、不担心版权。</div>
+      </div>
+    </div>
+
+    <!-- Skill 4: article-writer -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">article-writer — 从搜索到成文：11 步系统化写作流</div><div class="sk-subtitle">H1N2/wordflowlab · 13 平台兼容 · 教练/快速/混合三种写作模式</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 热门</span><span class="bd bd-p">系统写作</span><span class="bd bd-b">Codex CLI</span><span class="bd bd-o">11 步流水线</span><span class="bd bd-r">AI 味 &lt;30%</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套专为内容创作者设计的系统化写作工具。通过斜杠命令（/specify → /topic → /research → /write → /review → /publish）把写作拆成 11 个可控步骤。三种模式可选——教练模式（AI 只提问引导，0% AI 生成）、快速模式（AI 生成初稿）、混合模式（AI 写框架你来填）。支持公众号、视频脚本、通用内容三种工作区。<br><strong>最适合：</strong>需要写深度文章但不想「从头到尾全靠 AI 写然后全是 AI 味」的人。教练模式下 AI 检测率可低至 15% 以下，写出来的文章读起来完全不像机器写的。</div>
+      <div class="install">
+        <div class="il">📦 安装</div>
+        <div class="cmd">npm install -g article-writer-cn && content init my-article --workspace wechat --ai codex</div>
+        <div class="cmt">安装后初始化项目，在 Codex 中使用 /content-write 等斜杠命令触发。Codex CLI 形式为 /content-命令名。</div>
+      </div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 Codex 里用「/content-topic」讨论你要写的选题，AI 会给 3-4 个方向供你选；确定方向后用「/content-research」自动搜索资料，最后用「/content-write」选择教练模式——AI 不帮你写一个字，只提问引导你理清思路，最终文章 AI 检测率 &lt;15%。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>/content-write 教练模式，主题「AI 时代我们还需要记笔记吗」。AI 会问：你的核心观点是什么？你自己用什么笔记工具？有没有具体的一个例子可以展开？</div>
+        <div class="ex-out"><strong>成果：</strong>一篇 2500 字的公众号文章，用了你自己的经历和真实例子，没有一句套话。发给朋友看，没人能看出 AI 参与过——因为 AI 只负责问问题，内容全是你自己写的。</div>
+      </div>
+    </div>
+
+    <!-- 流水线 -->
+    <div class="pipe">
+      <span class="ps ps-1">🔍 搜</span><span class="pa">→</span><span>web-access 全网搜集资料</span>
+      <span class="pa">→</span><span class="ps ps-2">📡 追</span><span class="pa">→</span><span>Daily-paper 自动追踪前沿</span>
+      <span class="pa">→</span><span class="ps ps-3">🖼️ 画</span><span class="pa">→</span><span>imagegen 生成配图</span>
+      <span class="pa">→</span><span class="ps ps-4">✍️ 写</span><span class="pa">→</span><span>article-writer 系统化成文</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⌨️ Codex 联名键盘 7 月 15 日上线</div></div>
+      <div class="tb">OpenAI 与 Work Louder 合作的首款 Codex 品牌硬件即将发布。基于 Creator Micro 2 键盘优化，12 个可自定义机械按键，键帽支持图标或文字定制，专为创意工作者和 AI 开发者设计。虽然是硬件，但释放的信号很明确：Codex 正在从一个软件工具变成一个有物理载体的「工作伙伴」。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🧠 GPT-5.6 三大子模型曝光</div></div>
+      <div class="tb">Codex 应用底层代码中惊现 GPT-5.6 Sol、Terra、Luna 三个子模型标识，同时出现了一个「速度拨盘」功能。这意味着用户未来可以根据需求在速度、质量、成本之间自由切换。虽然发布日期未定，但 Codex 的能力天花板正在被快速推高。</div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ Skill 管理技巧：按任务场景分组，不全部挂载</div></div>
+      <div class="tb">一个常见误区是「越多 Skill 越好」。实际上每个 Skill 的 prompt 描述在每次 Codex 调用时都会被加载，10 个 Skill 同时挂着还没开始干活 context 就吃满了。建议策略：按任务分场景——写作场景只挂写作相关 Skill，研究场景只挂搜索和分析 Skill。跑完一个任务再换一批。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 本期亮点组合：</strong>web-access 搜资料 → Daily-paper 追前沿 → imagegen 出配图 → article-writer 写成文。四个 Skill 串起来，一个选题从零到成品不超过 2 小时，而且文章是你的风格、你的观点、你的经历。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM 6 月大更新：研究能力全面进化</div></div>
+      <div class="tb">Google 在 6 月 8 日推送了 NotebookLM 史上最大一次更新。核心变化：底层模型升级为 Gemini 3.5（理解力质的飞跃）、每个 notebook 配备云端代码执行环境（终于能做数据分析了）、新增「推理可见」模式（chat 里会展示它的思考步骤，不再黑箱）、Agent 自主发现信源（给它一个研究方向，它自己去找资料建库）。新导出格式也补上了——图表可导出为 PNG/SVG，文档支持 PDF/Word/Markdown/Excel/PPT 等。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📊 新玩法：用「Agent 自主建库」做竞品研究</div></div>
+      <div class="tb">无需手动上传文件了。给 NotebookLM 一个研究方向，比如「中国企业战略咨询行业竞争格局」，它会自动全网搜索相关信源，建立专属资料库。之后基于这个库做深度问答、生成简报、出思维导图——全程不需要你手动找资料。这个功能目前仅对 Google AI Ultra 和 Workspace 企业用户开放，但免费版迟早会跟上。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎧 Audio Overview 暂时没有升级——但它有了新出口</div></div>
+      <div class="tb">NotebookLM 生成的双人对话播客（Audio Overview）在 6 月更新中没有任何改动——不能编辑脚本、不能自定义主播、不能导出到播客平台。但已经有工具补齐了这个缺口：Jellypod 等第三方服务可以接收 NotebookLM 的 Audio Overview 文件，转录并分离两个 speaker，让你编辑脚本后用自己的声音重新生成，再推送到 Spotify、Apple Podcasts。你的 NotebookLM 播客终于能变成真正的「节目」了。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 多模型混用：不同任务配不同的「大脑」</div></div>
+      <div class="tb">WorkBuddy 内置混元、DeepSeek、Kimi 等多个模型，在对话框右上角一键切换，无需重启。搭配策略：<strong>混元</strong>——擅长办公文档、PPT、中文创作，写周报和汇报材料用它；<strong>DeepSeek</strong>——擅长数据分析、复杂计算，处理 Excel 报表用它；<strong>Kimi</strong>——擅长长文档解读、PDF 分析，读万字报告用它。一句话总结：不要只用默认模型，把不同模型当不同特长的同事来调配。</div>
+    </div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🧩 Skill 市场挖宝：别只盯着官方技能</div></div>
+      <div class="tb">WorkBuddy 自带 30+ 技能，但真正好用的很多是社区贡献的。左侧菜单进入「技能市场」，可以搜索安装。推荐四件套：办公套件（Word/Excel/PPT/PDF）、联网搜索、浏览器操控、邮件连接器。全部免费安装，即装即用。安装方式：在对话中直接说「帮我安装 XX 技能」，或去市场搜索。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 用 web-access + imagegen 做一份「AI 工具周报」</div>
+      <div class="sh-sub">web-access 全网搜索资讯 → imagegen 配封面图 → 一份可以直接发的周报</div>
+      <div class="sh-box">
+        <strong>📰 AI 工具周报 · 2026 年第 28 周（7/6-7/12）</strong><br><br>
+        <strong>1. OpenAI × Work Louder 联名键盘 7/15 上线</strong><br>
+        首款 Codex 品牌硬件，12 个可编程按键，面向创意工作者。信号意义大于产品本身——Codex 正在从软件走向物理世界。<br><br>
+        <strong>2. Google NotebookLM 迎来史上最大更新</strong><br>
+        Gemini 3.5 引擎 + 云端代码执行 + Agent 自主建库 + 11 种新导出格式。AI 研究工具的能力边界被大幅推高。<br><br>
+        <strong>3. GPT-5.6 三大子模型代码曝光</strong><br>
+        Sol / Terra / Luna 三个子模型 + 「速度拨盘」功能，暗示用户将可以按需切换速度、质量和成本。<br><br>
+        <strong>4. web-access 拿下 8.1K Stars</strong><br>
+        这个全平台联网 Skill 上线 3 个月就成为 Codex 生态中最受欢迎的工具型 Skill 之一。知识工作者的「必装清单」再添一项。<br><br>
+        <strong>📌 一句话总结：</strong>AI 工具正从「帮你写代码」进化到「帮你理解世界」——联网搜索、自主研究、信息整理，这些才是知识工作者真正需要的 AI 能力。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 信息的价值不在「知道」，而在「能用上」——今天这四个工具，就是帮你从知道到用上的桥梁</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-09</span>
+  </div>
+</div>
+</body>
+</html>
