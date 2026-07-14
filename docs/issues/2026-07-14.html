@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-14</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-14 · 星期一</div>
+    <h1>Codex 并入 ChatGPT 后的第一课：5 个 Skills 让你的知识工作提速 10 倍</h1>
+    <div class="art-sub">学术写作 · 去AI味 · HTML PPT · 多平台分发 · 选题诊断</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>7 月 9 日，OpenAI 将 Codex 正式并入 ChatGPT 桌面端，Chat / Work / Codex 三模式一键切换。7 月 13 日更宣布暂时取消 5 小时使用限制——现在正是把 Codex Skills 用起来的最佳时机。本期精选 5 个高星 Skills，覆盖从选题到分发的完整知识工作链路，外加 NotebookLM 3 个进阶技巧和 WorkBuddy 记忆体系实操。每个 Skill 都附带了安装命令、触发方式、示例输入输出，今天就能试。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <!-- Skill 1: nature-skills (featured) -->
+    <div class="skill featured">
+      <div class="sk-top">
+        <div class="sk-num">1</div>
+        <div>
+          <div class="sk-title">nature-skills — 学术写作全套技能包</div>
+          <div class="sk-subtitle">Yuan1z0825 · 22.3K Stars · 11 个子技能</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="bd bd-p">⭐ 22.3K</span>
+        <span class="bd bd-g">写作润色</span>
+        <span class="bd bd-b">论文转PPT</span>
+        <span class="bd bd-o">科研绘图</span>
+        <span class="bd bd-r">审稿回复</span>
+      </div>
+      <div class="sk-desc">面向 Nature / 高影响力期刊的科研技能包集合，围绕 SKILL.md 组织，涵盖<strong>学术写作润色、科研绘图、文献检索、论文转 PPT、审稿回复、专利起草</strong>等 11 个子技能。主打 Codex 安装，也可适配 Cursor 等 agent。如果你做学术写作或研究报告，这一个 Skill 顶五个。</div>
+      <div class="install">
+        <div class="il">安装命令（发给 Codex）</div>
+        <div class="cmd">npx -y skills@latest add Yuan1z0825/nature-skills --agent codex --global</div>
+        <div class="cmt">克隆到 ~/.codex/skills/ 后自动加载，11 个子技能全部可用</div>
+      </div>
+      <div class="try"><strong>触发方式：</strong>安装后对 Codex 说「请用 nature-skills 帮我润色这段英文摘要」或「把这篇论文转成 PPT」</div>
+      <div class="example">
+        <div class="ex-title">示例：论文润色</div>
+        <div class="ex-in"><strong>输入：</strong>Our method shows good results and is better than others.</div>
+        <div class="ex-out"><strong>润色后：</strong>Our approach demonstrates superior performance across all benchmark datasets, achieving a 12.3% improvement over state-of-the-art methods (p &lt; 0.01).</div>
+      </div>
+      <div class="try"><strong>今天就能试：</strong>把最近写的一段英文摘要发给 Codex，加上「用 nature-skills 润色」——30 秒出 Nature 风格的学术英文。</div>
+    </div>
+
+    <!-- Skill 2: Humanizer-zh -->
+    <div class="skill">
+      <div class="sk-top">
+        <div class="sk-num">2</div>
+        <div>
+          <div class="sk-title">Humanizer-zh — 中文去 AI 味必备</div>
+          <div class="sk-subtitle">op7418 · 9.5K Stars · 24 项检测模式</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="bd bd-p">⭐ 9.5K</span>
+        <span class="bd bd-g">去AI味</span>
+        <span class="bd bd-o">中文润色</span>
+        <span class="bd bd-b">真人风</span>
+      </div>
+      <div class="sk-desc">专门识别中文 AI 文本中的空话、套话、三段式排比、过度修饰和「AI 腔」，把生硬的机器文风改得像真人手笔。内置 <strong>24 项检测模式</strong>，包括谄媚式开头、滥用破折号、堆砌形容词等。中文内容创作者的必备工具。</div>
+      <div class="install">
+        <div class="il">安装命令（发给 Codex）</div>
+        <div class="cmd">npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global</div>
+        <div class="cmt">安装后对 Codex 说「用 humanizer-zh 检查这段文字的 AI 味」</div>
+      </div>
+      <div class="try"><strong>触发方式：</strong>「请用 Humanizer-zh 检查以下文章的 AI 痕迹并修改」</div>
+      <div class="example">
+        <div class="ex-title">示例：去 AI 味</div>
+        <div class="ex-in"><strong>输入：</strong>在这个快速发展的时代，人工智能正在深刻地改变着我们的生活。首先，它提升了效率；其次，它降低了成本；最后，它创造了可能。</div>
+        <div class="ex-out"><strong>修改后：</strong>AI 这东西，说白了就是让机器干人不想干的活。效率上去了，成本下来了，以前不敢想的事现在也能试试了。</div>
+      </div>
+      <div class="try"><strong>今天就能试：</strong>把上次 AI 帮你写的公众号初稿发给 Codex，加上「去 AI 味」——出来的文字像你本人写的。</div>
+    </div>
+
+    <!-- Skill 3: guizang-ppt-skill -->
+    <div class="skill">
+      <div class="sk-top">
+        <div class="sk-num">3</div>
+        <div>
+          <div class="sk-title">guizang-ppt-skill — 一句话生成网页 PPT</div>
+          <div class="sk-subtitle">op7418 · 15.6K Stars · 25 天破万 Star</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="bd bd-p">⭐ 15.6K</span>
+        <span class="bd bd-b">PPT生成</span>
+        <span class="bd bd-g">电子杂志风</span>
+        <span class="bd bd-o">瑞士国际主义</span>
+      </div>
+      <div class="sk-desc">一句话生成网页版 Presentation（HTML 格式）。两种风格可选：<strong>电子杂志风</strong>（叙事、观点、分享）和<strong>瑞士国际主义</strong>（网格、分析、方法论）。给它一篇文章、一个链接或几段文字，自动提炼叙事结构、分配页数、生成完整演示稿。</div>
+      <div class="install">
+        <div class="il">安装命令（发给 Codex）</div>
+        <div class="cmd">npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global</div>
+        <div class="cmt">安装后说「请调用 guizang-ppt-skill 帮我做一篇 PPT」</div>
+      </div>
+      <div class="try"><strong>触发方式：</strong>「请调用 guizang-ppt-skill，把这篇文章做成 PPT，风格选电子杂志」</div>
+      <div class="example">
+        <div class="ex-title">示例：文章转 PPT</div>
+        <div class="ex-in"><strong>输入：</strong>一篇 3000 字的公众号文章链接 + 「做成 12 页 PPT，电子杂志风」</div>
+        <div class="ex-out"><strong>输出：</strong>15 页 HTML 演示稿，自动拆分叙事节奏，每页一个核心观点 + 视觉设计。分享链接直接打开看。</div>
+      </div>
+      <div class="try"><strong>今天就能试：</strong>把上周写的一篇文章发给 Codex，说「做成 PPT」——10 分钟出一套可以直接分享的演示稿。</div>
+    </div>
+
+    <!-- Skill 4: html-anything -->
+    <div class="skill">
+      <div class="sk-top">
+        <div class="sk-num">4</div>
+        <div>
+          <div class="sk-title">html-anything — 75 个 Skill 覆盖 9 种输出界面</div>
+          <div class="sk-subtitle">nexu-io · 6.3K Stars · 一键发布微信/知乎/X</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="bd bd-p">⭐ 6.3K</span>
+        <span class="bd bd-o">社交分发</span>
+        <span class="bd bd-b">75模板</span>
+        <span class="bd bd-g">多平台</span>
+      </div>
+      <div class="sk-desc">75 个 Skills 覆盖 9 种输出界面：<strong>杂志风文章页面、知识卡片、小红书图文、海报、PNG 导出</strong>等。自带沙箱预览 + 一键发布到微信/知乎/X。写完内容不用再手动排版适配各平台，一个 Skill 全搞定。</div>
+      <div class="install">
+        <div class="il">安装命令（发给 Codex）</div>
+        <div class="cmd">npx -y skills@latest add nexu-io/html-anything --agent codex --global</div>
+        <div class="cmt">安装后说「用 html-anything 把这段内容做成小红书图文卡片」</div>
+      </div>
+      <div class="try"><strong>触发方式：</strong>「用 html-anything 把这篇文章转成杂志风页面」或「做成 6 张小红书卡片」</div>
+      <div class="example">
+        <div class="ex-title">示例：多平台分发</div>
+        <div class="ex-in"><strong>输入：</strong>一篇 Markdown 文章 + 「转成小红书图文 + 公众号排版」</div>
+        <div class="ex-out"><strong>输出：</strong>6 张小红书风格卡片（1080×1440）+ 一套公众号 HTML 排版（含样式表），沙箱预览后一键发布。</div>
+      </div>
+      <div class="try"><strong>今天就能试：</strong>写完一篇文章后发给 Codex，说「用 html-anything 做成小红书卡片」——不用打开 Canva 或 PS。</div>
+    </div>
+
+    <!-- Skill 5: dbskill -->
+    <div class="skill">
+      <div class="sk-top">
+        <div class="sk-num">5</div>
+        <div>
+          <div class="sk-title">dbskill — 中文创作者的选题诊断器</div>
+          <div class="sk-subtitle">dontbesilent · 高收藏 · 选题/爆款/Hook 优化</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="bd bd-p">高收藏</span>
+        <span class="bd bd-r">选题诊断</span>
+        <span class="bd bd-o">爆款拆解</span>
+        <span class="bd bd-b">标题优化</span>
+      </div>
+      <div class="sk-desc">为中文内容创作者设计的「选题诊断」工具。能分析<strong>选题是否成立、诊断商业表达是否清晰、优化 hook 和标题、拆解爆款笔记结构</strong>。特别适合小红书、公众号、知识星球的运营者——写之前先诊断，避免写完发现没人看。</div>
+      <div class="install">
+        <div class="il">安装命令（发给 Codex）</div>
+        <div class="cmd">npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global</div>
+        <div class="cmt">安装后说「用 dbskill 诊断我的选题」</div>
+      </div>
+      <div class="try"><strong>触发方式：</strong>「用 dbskill 诊断以下 3 个选题，给出优化建议」</div>
+      <div class="example">
+        <div class="ex-title">示例：选题诊断</div>
+        <div class="ex-in"><strong>输入：</strong>选题 1：「AI 时代如何做笔记」 / 选题 2：「我用 Codex 写了一个月公众号」 / 选题 3：「效率工具推荐」</div>
+        <div class="ex-out"><strong>输出：</strong>选题 1 → 标题优化为「记了 10 年笔记，AI 让我全推翻了」；选题 2 → 诊断通过，Hook 建议从「结果」开头；选题 3 → 太宽泛，建议聚焦到「3 个免安装的 AI 效率工具」。</div>
+      </div>
+      <div class="try"><strong>今天就能试：</strong>把你手上 2-3 个待写选题发给 Codex，说「用 dbskill 诊断」——5 分钟出优化建议，少走一半弯路。</div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="hl">🚀 <strong>重大更新：Codex 正式并入 ChatGPT 桌面端</strong>（2026-07-09）<br>原独立 Codex 桌面应用完整并入新版 ChatGPT 桌面端，三种模式一键切换：<strong>Chat</strong>（对话）、<strong>Work</strong>（生产力工具）、<strong>Codex</strong>（编程）。旧版 ChatGPT 更名为「ChatGPT Classic」并停止更新。原 Codex 用户的项目、设置、工作流全部保留。</div>
+
+    <div class="tip t-b">
+      <div class="th"><span>⚡</span><span class="tt">GPT-5.6 三层模型体系上线</span></div>
+      <div class="tb"><strong>Sol</strong>（旗舰模型，Terminal-Bench 2.1 得分 88.8%，Ultra 模式下达 91.9%）、<strong>Terra</strong>（日常工作能力与成本平衡）、<strong>Luna</strong>（速度和价格优先）。编程场景选 Sol，日常写作用 Terra，批量处理选 Luna。</div>
+    </div>
+
+    <div class="tip t-o">
+      <div class="th"><span>🔥</span><span class="tt">暂时取消 5 小时使用限制</span></div>
+      <div class="tb">7 月 13 日，OpenAI 宣布 Codex 和 ChatGPT Work 暂时取消 Plus/Business 和 Pro 订阅的 5 小时使用限制。GPT-5.6 Sol 将进行效率优化，提升整体运行效率。平台活跃用户已突破 600 万。<strong>现在是用 Codex 跑重任务的最佳窗口期。</strong></div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><span>✨</span><span class="tt">新功能：直接文件编辑 + PR Review + Ultra 模式</span></div>
+      <div class="tb">新版支持在应用内直接编辑 Markdown 和代码文件、使用内联注释、在侧边栏查看 GitHub PR 并附带 reviewer 反馈。<strong>Ultra 模式</strong>通过子智能体并行加速复杂任务，适合多步骤的知识工作（如批量生成、多文件处理）。Pro 模式可从 ChatGPT 对话直接交给 Codex 执行。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><span>📦</span><span class="tt">CLI 更新：v0.144.1</span></div>
+      <div class="tb">修复了 GitHub 发布元数据解析问题，code-mode 可靠性提升。MCP 工具现在可以交互式请求认证，无需实验性 opt-in。插件管理移入设置页，skill 加载速度优化。<strong>更新命令：</strong>npm install -g @openai/codex@0.144.1</div>
+    </div>
+  </div>
+
+  <!-- 📗 NotebookLM -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><span>🎯</span><span class="tt">技巧 1：Custom Instructions — 10,000 字符的角色设定</span></div>
+      <div class="tb">NotebookLM 的自定义指令上限已从 500 字符提升到 <strong>10,000 字符</strong>。在笔记本设置中将「定义对话目标、风格或角色」设为自定义，定义角色为「专注于 AI 工具的分析师」或「历史助教」，将回答长度设为「较长」。配置完成后，AI 会站在特定专业立场思考，回答质量天差地别。<br><br><strong>实操：</strong>新建笔记本 → 右上角配置 → 粘贴角色描述 → 保存。5 分钟搞定，之后每次提问都是专家级回答。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><span>🔬</span><span class="tt">技巧 2：Deep Research — 自动扫描数百个网站</span></div>
+      <div class="tb">2025 年 11 月上线的 Deep Research 功能是最被低估的更新。输入<strong>「主题 + 时间范围 + 分析面向」</strong>的提问公式，NotebookLM 会在后台自动爬取多个外部来源，产出完整研究报告并自动加入笔记本。适合文献回顾、竞品分析、行业调研。<br><br><strong>实操：</strong>提问「2026 Q2 AI 编程工具竞争格局，按产品定位 / 定价模型 / 用户规模三轴整理」→ 后台运行 → 完成后自动生成结构化报告。Standard 每月 10 次，重要研究排好队用。</div>
+    </div>
+
+    <div class="tip t-o">
+      <div class="th"><span>🔪</span><span class="tt">技巧 3：外科手术式来源过滤</span></div>
+      <div class="tb">常见错误是始终勾选所有来源——这会稀释结果导致回答模糊。<strong>正确做法：</strong>需要技术细节时只勾选那几份技术论文，其他文件对 AI 来说不存在，回答会极其精准。这种控制能让 AI 瞬间将庞大仓库变成一个极度聚焦的子笔记本。<br><br><strong>实操：</strong>提问前在来源列表中只勾选 2-3 个最相关的来源 → 提问「基于以上来源，总结核心发现」→ 输出锐利、专业、无杂质。</div>
+    </div>
+  </div>
+
+  <!-- 📙 WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><span>🧠</span><span class="tt">三层记忆体系：让 AI 记住你的偏好和决策</span></div>
+      <div class="tb">WorkBuddy 有三层独立记忆存储，用好它能让 AI 越用越懂你：<br><br><strong>① 云端记忆：</strong>服务器自动整理的长期用户画像，跨设备同步。<br><strong>② 用户级本地记忆：</strong><code style="background:#f5f4f0;padding:2px 6px;border-radius:4px;font-size:12px">~/.workbuddy/MEMORY.md</code>，跨项目通用。写入你的写作风格偏好（如「写给 30 岁职场人的大白话」），之后每次对话都自动带上你的味儿。<br><strong>③ 工作区记忆：</strong>项目目录下的 <code style="background:#f5f4f0;padding:2px 6px;border-radius:4px;font-size:12px">.workbuddy/memory/</code>，按日期记录。项目决策写这里。<br><br><strong>实操建议：</strong>重要偏好写用户级 MEMORY.md，项目决策写工作区 MEMORY.md，每日工作记录写 YYYY-MM-DD.md。三层各司其职，不混用。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+
+    <div class="showcase">
+      <div class="sh-title">🏆 用 5 个 Skills 串起你的知识工作全链路</div>
+      <div class="sh-sub">从选题到分发，一条链路跑完</div>
+      <div class="sh-box">
+        <strong>场景：</strong>每周要写 2 篇公众号 + 1 组小红书卡片<br><br>
+        <strong>Step 1 选题诊断：</strong>用 dbskill 诊断 3 个待选选题 → 拿到优化标题和 Hook 建议<br>
+        <strong>Step 2 内容写作：</strong>用 nature-skills（学术/深度）或 Humanizer-zh（公众号/口语化）写初稿<br>
+        <strong>Step 3 去 AI 味：</strong>初稿过一遍 Humanizer-zh → 24 项检测模式逐条修改<br>
+        <strong>Step 4 转 PPT：</strong>用 guizang-ppt-skill 把文章转成分享用演示稿<br>
+        <strong>Step 5 多平台分发：</strong>用 html-anything 转成小红书卡片 + 公众号排版<br><br>
+        <strong>效果：</strong>原来 4 小时/篇 → 现在 40 分钟/篇。5 个 Skills 各管一段，像流水线一样跑通。
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">dbskill 选题</span>
+      <span class="pa">→</span>
+      <span class="ps ps-2">写作 初稿</span>
+      <span class="pa">→</span>
+      <span class="ps ps-3">Humanizer 润色</span>
+      <span class="pa">→</span>
+      <span class="ps ps-4">PPT 生成</span>
+      <span class="pa">→</span>
+      <span class="ps ps-5">多平台分发</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具再强，不如今天就用起来。装一个 Skill，试一次，你就回不去了。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-14</span>
+  </div>
+</div>
+</body>
+</html>

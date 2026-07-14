@@ -990,6 +990,56 @@
   },
   "issues": [
     {
+      "id": 23,
+      "date": "2026-07-14",
+      "weekday": "星期一",
+      "title": "Codex 并入 ChatGPT 后的第一课：5 个 Skills 让你的知识工作提速 10 倍",
+      "subtitle": "学术写作 · 去AI味 · HTML PPT · 多平台分发 · 选题诊断",
+      "tags": [
+        "✍️ 学术写作",
+        "🧹 去AI味",
+        "📽️ PPT生成",
+        "📱 社交分发",
+        "🔍 选题诊断"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-14.html",
+      "skills": [
+        "nature-skills",
+        "humanizer-zh",
+        "guizang-ppt-skill",
+        "html-anything",
+        "dbskill"
+      ]
+    },
+    {
+      "id": 22,
+      "date": "2026-07-10",
+      "weekday": "星期五",
+      "title": "GPT-5.6 时代的知识工作流：用 Skills 串联你的「读·写·存·发」",
+      "subtitle": "去AI味 · 知识库直连 · 自动化笔记 · 论文精读 · 封面生成",
+      "tags": [
+        "✍️ 去AI味",
+        "📚 知识库直连",
+        "📝 自动笔记",
+        "🔬 论文精读",
+        "🎨 封面生成"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-10.html",
+      "skills": [
+        "stop-slop",
+        "notebooklm-skill",
+        "obsidian-inbox",
+        "deep-paper-note",
+        "punk-skill"
+      ]
+    },
+    {
       "id": 21,
       "date": "2026-07-09",
       "weekday": "星期四",
