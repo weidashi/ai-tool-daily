@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-07</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-07 · 星期二</div>
+    <h1>想清楚再动手：用 AI 帮你拆解问题、规划路径</h1>
+    <div class="art-sub">反向提问 · 持久化规划 · 对话交接 · 图表生成 · 论文修订</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>大多数人用 AI 的方式是「给我一个答案」，但真正有用的用法是「帮我想清楚问题本身」。本期 5 个 Skill 聚焦知识工作的「思考前置环节」：让 AI 反过来拷问你、帮你把规划写进文件持久化、把对话变成可交接的文档、把想法画成图表、把论文改得不出错。想清楚，才能干明白。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识工作 Skills — 想·划·交·画·修</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">grill-me — AI 反过来拷问你，帮你想清楚</div><div class="sk-subtitle">mattpocock · 不是给你答案，而是问你问题</div></div></div>
+      <div class="badges"><span class="bd bd-r">选题诊断</span><span class="bd bd-p">思考工具</span><span class="bd bd-g">反向提问</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>大多数 AI 对话是你问它答。grill-me 反过来——你给它一个想法或计划，它像投资人/导师/编辑一样连续追问你：「你说的用户群体具体是谁？」「为什么是现在做？」「竞品已经在做了，你的差异在哪？」直到你把每个含糊的地方都说清楚。最终输出不是 AI 写的东西，而是你被逼着想清楚的东西。<br><strong>最适合：</strong>写选题前的自我审视、做方案前的逻辑检查、准备汇报前的沙盘推演。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add mattpocock/grill-me --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>给 Codex 一个你正在考虑的选题，说「grill me on this idea」，看它能问出多少你没想到的问题。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"我想写一篇关于「国企数字化转型」的深度文章，grill me on this."</div>
+        <div class="ex-out"><strong>成果：</strong>AI 连续追问 6 个问题：①你说的数字化转型是指业务流程、组织架构还是商业模式？②目标读者是国企管理者还是外部顾问？③你有没有一手案例还是纯二手资料？④「深度」的标准是什么——5000字还是1万字？⑤读者看完应该能做什么？⑥这个选题和已有的同类文章有什么不同？——答完这6个问题，选题方向自然清晰了。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">planning-with-files — Manus 风格的持久化规划</div><div class="sk-subtitle">OthmanAdi · 21.6K stars · 规划不再丢在对话里</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 21.6K+</span><span class="bd bd-p">日常自动化</span><span class="bd bd-b">持久化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>灵感来自 Manus 的工作模式——AI 执行复杂任务时，不是把所有思考放在对话里（上下文会丢失），而是写入 Markdown 文件。规划过程、中间结果、决策理由都被持久化到文件系统中，即使对话重置了，规划还在。你可以随时打开文件查看「AI 为什么这么做」「下一步计划是什么」。<br><strong>最适合：</strong>复杂多步骤任务——写一份 50 页报告、做一个 3 阶段的项目计划、策划一场大型活动。越是需要跨天推进的任务，越需要持久化规划。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add OthmanAdi/planning-with-files --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>给 Codex 一个复杂任务「帮我策划一个 3 天的企业培训项目」，看它怎么把规划拆成文件——你会看到一个清晰的 Markdown 规划文档，而不是一坨对话。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"帮我规划一个为期2周的国企中层管理者AI素养培训项目，用 planning-with-files"</div>
+        <div class="ex-out"><strong>成果：</strong>生成 planning/ 目录下多个文件：overview.md（项目目标+受众分析）→ week1-plan.md（第一周课程大纲+每日安排）→ week2-plan.md（第二周实操+考核）→ resources.md（所需材料清单）→ risks.md（风险预案）。每个文件可独立打开查看和修改。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">handoff — 把对话变成可交接的文档</div><div class="sk-subtitle">mattpocock · 对话 → 结构化文档一键转</div></div></div>
+      <div class="badges"><span class="bd bd-p">日常自动化</span><span class="bd bd-b">文档交接</span><span class="bd bd-o">协作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你和 AI 聊了半天，产出了很多有价值的内容，但这些内容散落在对话里，同事看不到、也没法直接用。handoff 解决这个问题——把整个对话的精华提炼成一份结构化文档，包含：讨论了什么、达成了什么结论、还有哪些待定项、下一步谁做什么。一键生成，直接发同事。<br><strong>最适合：</strong>需要团队协作的场景——你和 AI 讨论出一个方案后，需要把结果交给同事继续推进。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add mattpocock/handoff --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>和 Codex 聊完一个话题后，说「handoff this conversation」，它会生成一份可以直接发给同事的总结文档。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>（和 Codex 讨论了 30 分钟「公司是否应该引入 AI 辅助写作工具」后）"handoff this conversation"</div>
+        <div class="ex-out"><strong>成果：</strong>生成一份交接文档：讨论背景 → 核心结论（建议试点引入）→ 三条关键论据（成本、效率、风险可控）→ 待定项（需法务确认数据合规）→ 下一步行动（张三下周调研供应商，李四准备试点方案）。直接转发，同事不用爬楼看聊天记录。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">excalidraw-diagram-skill — 手绘风格的图表生成</div><div class="sk-subtitle">coleam00 · Excalidraw 图表 + 流程图 + 架构图</div></div></div>
+      <div class="badges"><span class="bd bd-p">内容创作</span><span class="bd bd-g">手绘风格</span><span class="bd bd-b">图表</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>用 AI 生成 Excalidraw 格式的图表——流程图、架构图、概念图、时间线。Excalidraw 的手绘风格天然适合知识分享：看起来不像 PPT 模板，更像你在白板上画给同事看的东西。生成的图表可以在 Excalidraw 里继续编辑，也可以导出 PNG/SVG。<br><strong>最适合：</strong>写文章需要配图、做分享需要流程图、写文档需要架构图——不想用 Visio，也不想用 PPT 画图，Excalidraw 手绘风正合适。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add coleam00/excalidraw-diagram-skill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>描述一个你工作中遇到的流程，让 Codex「用 excalidraw 画一张这个流程的图」，3 秒出一张手绘风格流程图。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 excalidraw 画一张「内容创作流水线」流程图：选题→搜集资料→写初稿→去AI味→配图→排版→发布"</div>
+        <div class="ex-out"><strong>成果：</strong>一张 Excalidraw 手绘风格流程图：7 个圆角矩形节点 + 箭头连接，每个节点标注了负责的 Skill 名字。可以在 Excalidraw 里继续拖拽、改色、加批注。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">paper-writing-codex-skill — LaTeX 论文安全修订</div><div class="sk-subtitle">Luzianstz · 追踪修改 + 不破坏格式</div></div></div>
+      <div class="badges"><span class="bd bd-p">写作润色</span><span class="bd bd-b">LaTeX</span><span class="bd bd-g">论文修订</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专门用于学术论文修订的 Skill。不是「帮你写论文」，而是「帮你改论文」——在保持 LaTeX 格式不被破坏的前提下，修订语言表达、优化段落结构、检查逻辑一致性。核心是「安全修订」：只改该改的，不动格式、不乱加内容、不删引用。每次修改都有 diff 可查。<br><strong>最适合：</strong>正在写论文的人——尤其是 LaTeX 用户，最怕的就是 AI 改完论文格式全乱了。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add Luzianstz/paper-writing-codex-skill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一段你之前写的论文段落（LaTeX 格式），让 Codex「用 paper-writing 修订这段，改善表达但不改格式」，对比修改前后。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 paper-writing 修订论文第3节「研究方法」的 LaTeX 段落，改善语言表达，保持 \section \subsection 格式不变"</div>
+        <div class="ex-out"><strong>成果：</strong>修订后的 LaTeX 代码——所有 \section{} \subsection{} \cite{} \ref{} 格式完好无损，但语言表达明显改善：被动语态改主动、冗长句子拆短、逻辑连接词优化。附带 diff 对照表，标红删除、标绿新增。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">想清楚再动手 →</span>
+      <span class="ps ps-1">① 反向提问拷问</span><span class="pa">→</span>
+      <span class="ps ps-2">② 持久化规划</span><span class="pa">→</span>
+      <span class="ps ps-3">④ 画流程图</span><span class="pa">→</span>
+      <span class="ps ps-4">⑤ 安全修订</span><span class="pa">→</span>
+      <span class="ps ps-5">③ 交接文档</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态：远程插件默认开启 + Bedrock 接入 GPT-5.6</span></div>
+
+    <div class="hl">🔥 <strong>Codex CLI v0.143 发布，远程插件默认开启。</strong>插件目录变得更丰富，支持 npm marketplace 源，可以直观看到远程/本地版本差异。同时，Amazon Bedrock 新增 GPT-5.6 Sol、Terra、Luna 三款模型，支持 max reasoning effort。MCP 工具默认使用 tool search，ChatGPT 托管的 MCP 服务器可以使用 session 认证。</div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 系统代理支持——企业用户福音</div></div>
+      <div class="tb">Codex 现在可以自动通过 macOS 和 Windows 的系统代理路由认证和 Responses API 流量，包括 PAC 和 WPAD 配置。之前用企业代理的用户经常遇到连接失败，现在不需要手动配置环境变量了——系统代理设置直接生效。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ codex remote-control pair——手动配对码</div></div>
+      <div class="tb">新增 remote-control pair 命令，可以从运行中的 daemon 生成手动配对码。配合 iOS 端的 Codex 任务管理，你在手机上输入配对码就能连上电脑上的 Codex 实例——不需要 SSH，不需要端口转发，一个配对码搞定。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 Deep Research 提问公式——主题 + 时间 + 分析维度</div></div>
+      <div class="tb">NotebookLM 的 Deep Research 不是随便问就有好结果。用这个公式：<strong>主题 + 时间范围 + 分析面向</strong>。例：「2026 Q1 中国 AI 教育领域的内容定位演变，按平台 / 订阅模型 / 商业化方式三轴整理」。Deep Research 会背景运行、爬多个外部来源、自动加进 notebook。Standard 每月 10 次，重要研究排队用。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 固定问题做笔记本模板——Saved Note 复用</div></div>
+      <div class="tb">在 NotebookLM 的聊天框里点保存，把常用的 3-5 个问题存为 Saved Note。比如「客户项目」笔记本里总是先问：客户核心诉求、价格敏感度、决策链。下次新建项目笔记本，问题模板直接复用，不用每次重打一遍。这是一个看起来简单但效率翻倍的技巧。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 YouTube 逐字稿工作流</div></div>
+      <div class="tb">贴一个公开的、有字幕的 YouTube 链接到 NotebookLM，它会直接抓逐字稿。然后你可以针对逐字稿提问：「视频里提到的三个核心方法论是什么？分别在哪分钟讲的？」比看一小时视频效率高十倍。音档则可以上传后在 Studio 区块产生逐字稿，复制到大模型做后处理。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 微信遥控电脑——人在外面，活照干</div></div>
+      <div class="tb">配置好微信绑定后（左侧「Claw」→ 齿轮图标 → 微信绑定 → 扫码），你在外面用手机给 WorkBuddy 发条微信，家里的电脑就会自动执行任务。<br><strong>真实场景：</strong>下班路上老板要一份数据汇总，地铁上微信发「帮我把桌面上的周报模板填上本周数据，生成PDF发我微信」。到家打开手机，文件已经在了。<br><strong>注意：</strong>电脑要保持开机联网状态。如果公司电脑不关机，通勤路上发指令，到公司活已经干完了。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 从想法到可执行方案——一条命令跑通全链路</div>
+      <div class="sh-sub">用 grill-me + planning-with-files + handoff 组合，把模糊想法变成可交接的执行方案</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你想在公司内部推动一个「AI 写作辅助工具试点」项目，但想法还很模糊，不知道从哪下手。<br><br>
+        <strong>操作：</strong><br>
+        ① 把想法丢给 Codex：「我想在公司推动 AI 写作工具试点，grill me on this」→ AI 连续追问 8 个问题，你被逼着想清楚目标用户、试点范围、成功标准、风险预案<br>
+        ② 想清楚后说「用 planning-with-files 把这个试点项目拆成执行计划」→ 生成 planning/ 目录：overview.md + phase1-pilot.md + phase2-eval.md + risks.md + timeline.md<br>
+        ③ 让 Codex「用 excalidraw 画一张试点推进流程图」→ 一张手绘风格流程图，贴到 planning 文件里<br>
+        ④ 最后说「handoff this conversation，收件人是 CTO」→ 生成一份交接文档：核心结论 + 三阶段计划 + 风险清单 + 下一步行动项<br><br>
+        <strong>以前：</strong>脑子里想了三天，写了个 200 字的提案，被老板问「细节呢？」<br>
+        <strong>现在：</strong>30 分钟对话，产出完整执行计划 + 流程图 + 交接文档，直接发给 CTO。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 想清楚比干得快重要——方向对了，速度才有意义。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-07</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-15</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-15 · 星期三</div>
+    <h1>GPT-5.6 全量上线：ChatGPT 从聊天变身交付引擎</h1>
+    <div class="art-sub">ChatGPT Work · Sites 公测 · Codex 合并桌面端 · 4 个跟上节奏的新 Skills</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>本周 AI 圈最大的事：7 月 9 日 GPT-5.6 全量上线，OpenAI 把 ChatGPT 从「聊天工具」重构成了「交付平台」。Work 模式能花几小时做研究、写报告、做 PPT、建网站；Sites 描述需求就直接生成并发布网站；Codex 也合并进了桌面端。这不再是「AI 帮你说」，而是「AI 帮你做完」。这期挑 4 个能让你跟上这波节奏的新 Skills，全是日常知识工作用得上的。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <!-- ① ian-handdrawn-ppt -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">ian-handdrawn-ppt</div><div class="sk-subtitle">helloianneo · 中文手绘技术图PPT生成器：文章→整套手绘课件</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 412</span><span class="bd bd-p">PPT生成</span><span class="bd bd-o">手绘风格</span><span class="bd bd-b">中文配图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把文章、课程笔记、大纲或讲稿，自动转成一套中文手绘技术风格的 PPT 页面图。自带 21:9 封面+16:9 正文配图两种画幅，先理解内容叙事结构，再逐页生成视觉图。视觉风格统一——近白纸底、细手绘线条、淡蓝/鼠尾草绿/淡桃标记、大量留白克制排版。<br><strong>最适合：</strong>写技术文章需要封面和配图、做课程课件、想把手写感的图解放进分享稿。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/helloianneo/ian-handdrawn-ppt.git && cp -R ./ian-handdrawn-ppt/ian-handdrawn-ppt ~/.codex/skills/</div><div class="cmt">安装后在 Codex 中输入 Use $ian-handdrawn-ppt 即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你最近写的文章或笔记，让 ian-handdrawn-ppt 把它变成 1 张封面+3 张正文配图。手绘风格天然带「人味儿」，比模板PPT有辨识度得多。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>Use $ian-handdrawn-ppt 把下面这篇文章做成 1 张 21:9 中文封面图 + 3 张 16:9 正文配图。风格保持中文手绘技术解释图，文字尽量短，每张图只表达一个观点。<br><br>【粘贴文章：AI 工具如何改变了内容创作流程】</div>
+        <div class="ex-out"><strong>成果：</strong>4 张风格统一的 PNG 页面图——封面用隐喻画面引出主题，正文 3 张分别图解「选题→写作→分发」三步。手绘线条+淡色标记，不像 AI 生成的模板，更像用手画出来的课件。</div>
+      </div>
+    </div>
+
+    <!-- ② ado-visual-director -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">ado-visual-director</div><div class="sk-subtitle">aduo2233 · 视觉方案导演：选题→完整的视觉策略+逐页提示词</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">视觉设计</span><span class="bd bd-o">内容创作</span><span class="bd bd-r">审美检查</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个「先想清楚再动手」的视觉导演 Skill。拿到选题或文章后，不是直接出图，而是先规划——视觉命题、主角、视觉态度、页面结构、尺寸预设、逐页提示词、质量检查清单，最后才给可以喂给任何生图工具的提示词包。内置「研究档案式编辑设计」默认审美，支持小红书、PPT 单页、横版 Hero 图等多种输出格式。<br><strong>最适合：</strong>做小红书知识卡片、公众号封面配图、PPT 演示页，或者给已有图片做审美检查——它会直接告诉你哪些是「廉价AI套路」并给出替代方案。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/aduo2233/ado-visual-director.git ~/.codex/skills/ado-visual-director</div><div class="cmt">安装后在 Codex 中输入 Use $ado-visual-director 即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>选一个你正在写的选题，让它出一套 4 页小红书视觉方案。你会得到比「好看」更重要的东西——每页讲什么、视觉主角是谁、怎么避免廉价感，逐页写清楚。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>Use $ado-visual-director 把这个主题做成 4 页小红书知识卡片视觉方案。<br>主题：普通人学AI，不要先追模型，先学会拆工作流。<br>受众：25-35岁职场人<br>尺寸：1080x1350<br>希望的感觉：专业、克制、有真实工作场景感</div>
+        <div class="ex-out"><strong>成果：</strong>一套完整的视觉导演方案——含视觉命题「工作流才是AI真正的杠杆」、主角「被拆解的工作流步骤」、4 页逐页结构和对应提示词、否决清单（禁止蓝紫渐变、3D图标堆、AI大脑等套路）。不是模板，是有审美判断的策略输出。</div>
+      </div>
+    </div>
+
+    <!-- ③ caveman -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">caveman</div><div class="sk-subtitle">JuliusBrussee · AI废话刹车：让30+Agent说人话，平均省65%输出Token</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 87.8K</span><span class="bd bd-p">写作润色</span><span class="bd bd-o">去AI味</span><span class="bd bd-b">省Token</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个让所有 AI Agent 变得简洁到「原始人说话」程度的 Skill。不是简单的字数压缩，而是系统性地去掉冗余修饰、模板句、过度解释——技术准确度保持 100%，输出 Token 平均减少 65%。支持 /caveman lite|full|ultra|wenyan 四档强度，还带 /caveman-compress 可以把记忆文件也压成原始人语节省输入 Token。<br><strong>最适合：</strong>受够了 AI 的长篇废话、想让 AI 回复变得像同事聊天一样简短利索、或者在手机上读 AI 输出的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx skills add JuliusBrussee/caveman --agent codex --global</div><div class="cmt">也支持一键脚本：curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash（macOS/Linux）</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>装完后在 Codex 里说 /caveman lite，然后随便问一个问题。你会发现回复只剩干货，没有「在当今AI时代」那套开场白。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>/caveman full<br>请帮我分析这篇公众号文章的结构是否合理</div>
+        <div class="ex-out"><strong>成果（caveman模式输出）：</strong>结构OK。开场太长，删前两段。中间第三部分案例重复，合并。结尾CTA弱，加一个具体行动建议。改完800字→500字。完毕。<br><br><strong>对比普通模式：</strong>「您好！我已经仔细阅读了您提供的文章，整体来看结构是合理的，但我发现有几个可以优化的地方。首先，开场部分略显冗长，建议您删除前两段以更快切入主题。其次，在第三部分……」（大量废话被砍掉，核心判断一秒可见）</div>
+      </div>
+    </div>
+
+    <!-- ④ agent-skills -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">agent-skills</div><div class="sk-subtitle">addyosmani · Google工程师精选Skills宝库：76.9K★的一站式「应用商店」</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 76.9K</span><span class="bd bd-p">技能发现</span><span class="bd bd-o">精选集合</span><span class="bd bd-b">多Agent</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>Google 工程专家 Addy Osmani 整理的 Agent Skills 精选宝库，汇集了各类可装进 Codex、Claude Code、Cursor 等智能体的实用技能包。不是单个 Skill，而是一个帮你发现「该装什么」的入口。写作、配图、排版、自动化——按需翻阅，一行命令装好。本周新增 7,944★，社区持续贡献。<br><strong>最适合：</strong>不想全网搜 Skill、不知道有什么好东西可以装的用户。先翻一遍这个宝库，找到自己领域最实用的几个装上，效率瞬间不一样。</div>
+      <div class="install"><div class="il">📦 浏览方式</div><div class="cmd">在 GitHub 搜索 addyosmani/agent-skills，按分类浏览。找到想要的 Skill 后，用 npx skills add 作者/仓库 --agent codex --global 安装即可。</div><div class="cmt">这个仓库本身就是「Skill 目录」，不是单个可安装的包。把它当作你的 Skills 应用商店来用。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开 agent-skills 仓库，找到「Writing」或「Content Creation」分类，挑 2 个你没装过的实用 Skill 装上。10 分钟翻完，知识工作工具链就补齐了。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>需求：</strong>我写公众号，需要找内容创作相关的 Codex Skills，不知道有什么好的。</div>
+        <div class="ex-out"><strong>使用方式：</strong>打开 addyosmani/agent-skills 仓库 → 翻到「Content & Writing」分类 → 看到 10+ 个精选 Skill，每个都有说明和安装方式 → 挑 3 个最对口的：选题诊断、去AI味、排版美化 → 各一行命令装好。比自己全网搜 GitHub 省 2 小时。</div>
+      </div>
+    </div>
+
+    <!-- 技能组合流 -->
+    <div class="pipe">
+      <span class="ps ps-1">📝 选题</span><span class="pa">→</span><span class="ps ps-2">🎬 视觉导演</span><span class="pa">→</span><span class="ps ps-3">✏️ 手绘出图</span><span class="pa">→</span><span class="ps ps-4">🦴 去废话</span><span class="pa">→</span><span class="ps ps-5">📱 发布</span>
+    </div>
+    <div style="font-size:11px; color:var(--muted); margin-top:8px; text-align:center;">今天介绍的 Skill 可以串联使用：先用 ado-visual-director 确定视觉方向，再用 ian-handdrawn-ppt 出图，最后用 caveman 压缩文案。找更多 Skill 去 agent-skills 宝库翻。</div>
+  </div>
+
+  <!-- 🆕 Codex 动态 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 本周大事件</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🚀 GPT-5.6 全量上线：Sol/Terra/Luna 三档模型</div></div>
+      <div class="tb">7 月 9 日 OpenAI 正式发布 GPT-5.6 系列，用天体命名分层：<strong>Sol（太阳）</strong>旗舰版，面向复杂推理和深度研究；<strong>Terra（地球）</strong>均衡版，性能持平 GPT-5.5 但成本减半；<strong>Luna（月亮）</strong>轻量版，适合高频调用。三档模型已覆盖 ChatGPT、Codex 和 API。GPT-5.6 Sol 被 OpenAI 称为「迄今最强模型」，新增程序化工具调用、显式提示缓存控制、持久化推理、多 Agent 编排等能力。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🧠 ChatGPT Work 上线：AI 不再只是聊，开始替你交付成果</div></div>
+      <div class="tb">Work 是 ChatGPT 里的新 Agent 模式——它能花几小时做研究、跨应用和文件工作、产出完整的文档、表格、演示文稿、报告和 Sites。你可以全程看它进度、回答问题、改变方向、审批关键操作。还支持<strong>定时任务（Scheduled Tasks）</strong>：一次性、周期、事件触发、变化监控四种模式。目前向 Pro/Pro Lite/Enterprise/Edu 用户推送，Plus 和 Business 用户随后跟上。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🌐 ChatGPT Sites 公测：描述需求→生成→发布网站</div></div>
+      <div class="tb">在 Work 或 Codex 中描述你想建的网站（仪表盘、项目看板、日历、原型、内部门户、报告页等），ChatGPT 直接生成可交互的网页，预览满意后一键发布获得 URL。支持绑定自定义域名。Business 和 Enterprise 用户已可用，可公开发布供任何人访问。对非开发者来说，这是「不用学建站工具也能让想法上线」的巨大跨越。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🖥️ Codex 并入 ChatGPT 桌面端：Chat+Work+Codex 三合一</div></div>
+      <div class="tb">独立的 Codex 应用正式合并进新版 ChatGPT 桌面客户端（macOS/Windows）。一个应用里切换三种视角——<strong>Chat</strong> 聊天问答、<strong>Work</strong> 研究和交付、<strong>Codex</strong> 软件开发。Codex 新增文件内直接编辑、应用内 Pull Request 审查、更快的 Computer Use、多仓库项目支持。原 Codex 用户可以保留图标和默认视图，项目、设置和工作流不受影响。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">💡 本周实操技巧：用 @Sites 把速递内容一键变成网站</div></div>
+      <div class="tb">如果你有 ChatGPT Pro 或 Plus 账号，试试这个：在 Work 模式下输入「@Sites 帮我把这份 AI 工具速递做成一个展示网站，含往期目录和每期的摘要卡片」。ChatGPT 会直接生成一个可访问的网站，分享链接给同事朋友就能看。不需要写一行代码。</div>
+    </div>
+  </div>
+
+  <!-- 📗 NotebookLM -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎬 Short Video Overview：资料→60秒竖屏短视频</div></div>
+      <div class="tb">NotebookLM 新增短视频概览功能。上传 PDF、网页、YouTube 链接后，点 Video Overview 选「Short」格式，AI 自动生成约 60 秒的竖屏讲解视频。内置 Explainer（讲解型）、Storytelling（叙事型）、Highlights（集锦型）三种风格。字幕支持中文，背景乐可选。最适合把研究报告、论文、行业分析变成手机上能刷的短视频——通勤路上 1 分钟看完核心结论。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM 2.0 升级：Gemini 3.5 Flash + 独立云端虚拟机</div></div>
+      <div class="tb">Google 悄无声息地把 NotebookLM 重构到了 2.0 版本。底层接入 Gemini 3.5 Flash，每个笔记本配独立云端虚拟机算力，可以执行代码、生成数据图表。Deep Research 模式直接联网搜索数十个来源并生成研究报告。<strong>关键技巧：</strong>在同一个笔记本里混合导入学术论文+YouTube 视频+播客音频，跨媒介组合能拼凑出某个主题的最全视角。回答前先取消勾选无关来源，只保留最相关 2-3 个文件，精度大幅提升。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📋 「反向解释」检验法：知道错的才能理解对的</div></div>
+      <div class="tb">给 NotebookLM 发这句提示词：「用错误的方式向我解释这个概念。什么是常见的误解？」知道一个想法的「错误版本」，往往比知道正确版本更能让你真正理解它。你读到误解时心里会想「哦我明白为什么会有人这么想了，但实际上——」，然后你对正确答案的理解就更深了一层。适合复习、备课、准备演讲前自查。</div>
+    </div>
+  </div>
+
+  <!-- 📙 WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 定时自动化：让 WorkBuddy 每天早上帮你准备好一切</div></div>
+      <div class="tb">WorkBuddy 的定时任务功能被严重低估。你可以设置「每天早上 8:30 自动生成今日工作简报」「每周一早上读取最新数据生成周报」「每两小时检查一次邮件并汇总未读」。设置方法很简单：告诉 WorkBuddy 你想自动化什么任务、什么时间执行、输出到哪里，它会创建定时任务并自动运行。<strong>关键技巧：</strong>先手动跑一遍同样的 Prompt 确认效果没问题，再设成定时任务挂着跑。一次性配好，之后每天自动出活。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🔗 链式任务指令：用「→」串联多步骤工作流</div></div>
+      <div class="tb">WorkBuddy 支持单条指令串联多步骤任务。格式：「读取工作区数据文件 → 分析趋势并生成图表 → 写成 500 字摘要 → 保存为报告」。不用分三次对话，一条指令跑完整个流程。比手动逐步操作快 3-5 倍，而且中间不会因为忘记上下文而出错。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 用 ado-visual-director 把本期速递拆成小红书知识卡片</div>
+      <div class="sh-sub">把「GPT-5.6 全量上线」这个选题，用今天介绍的视觉导演 Skill 生成一套可直接发的小红书图文方案</div>
+      <div class="sh-box">
+        <strong>📋 视觉导演方案：</strong><br><br>
+        <strong>视觉命题：</strong>AI 工具正在从「帮你说」变成「替你做完」——GPT-5.6 不是升级，是换了一种使用 AI 的方式。<br><br>
+        <strong>主角：</strong>三个交付物——Work 产出的完整文档、Sites 生成的在线网站、Codex 合并后的统一工作桌面。<br><br>
+        <strong>视觉态度：</strong>克制、事实导向、工作台质感。不做「颠覆」「革命」那种喊口号的海报，做成像内部 memo 升级通知一样的专业感。<br><br>
+        <strong>4 页结构：</strong><br>
+        ① 封面页：标题「AI 不再只是聊天」，主角是一个从聊天框里「走出来」变成文件/网页/报告的视觉隐喻<br>
+        ② Work 页：一张完整文档+PPT+报告的桌面视角，「以前你写，现在 AI 交付」<br>
+        ③ Sites 页：代码编辑器到浏览器 URL 的转变，「描述需求=发布网站」<br>
+        ④ 总结页：三条变化+行动建议——「今天装一个 Work 不会的 Skill，你就是它缺的那块」<br><br>
+        <strong>否决清单：</strong>不出现机器人、AI 大脑、蓝紫渐变、宇宙星空、赛博城市、发光神经元。<br>
+        <strong>色彩系统：</strong>纸白底+深灰文字+理性蓝结构线+少量暖橙行动按钮。像一份设计精良的产品更新通知，不像一张 AI 生成的海报。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 这周最大的变化不是模型更强了，而是 AI 开始从「建议者」变成「交付者」。工具在进化，你的角色也在变——从操作工变成导演。今天装一个 Skill，让它替你干活。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 自动生成 · 2026-07-15</span>
+  </div>
+</div>
+</body>
+</html>

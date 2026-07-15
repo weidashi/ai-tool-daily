@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-06</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-06 · 星期一</div>
+    <h1>知识输入效率革命：5 个 Skill 让你的阅读不再白读</h1>
+    <div class="art-sub">批注导图 · 论文追踪 · 知识管理 · 自然写作 · 手绘PPT</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>读了很多书却记不住？论文堆成山却没时间看？问题不在「读得不够多」，而在「读完后没有结构化沉淀」。本期 5 个 Skill 解决知识输入链路上的三件事：把批注变成思维导图、把论文追踪自动化、把知识用 FSRS 间隔复习锁进长期记忆。读完不再白读。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识工作 Skills — 读·记·管·写·展</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">obsidian-reading-map-skill — 批注自动变思维导图</div><div class="sk-subtitle">STRUGGLE1999 · Apple Books 批注 → Obsidian → XMind</div></div></div>
+      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-g">Obsidian</span><span class="bd bd-o">思维导图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把你在 Apple Books 里的高亮和批注，自动导出为 Obsidian 笔记，并生成可展开的思维导图。不再是「画了很多线但从来不回头看」——每条批注都变成导图节点，点击可跳回原书上下文。<br><strong>最适合：</strong>用 Apple Books 看电子书的人，尤其是做主题阅读的人——5 本同一主题的书放一起，导图一合并，立刻看到不同作者对同一问题的不同看法。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add STRUGGLE1999/obsidian-reading-map-skill --agent codex --global</div><div class="cmt">需要本地 Obsidian Vault 和 Apple Books 批注导出</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开你在 Apple Books 里批注最多的一本书，让 Codex「用 obsidian-reading-map 导出这本书的批注并生成思维导图」，3 分钟出一张可交互的知识地图。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 obsidian-reading-map 导出《思考快与慢》的批注，按「系统1」「系统2」「偏见」「决策」四个分支生成思维导图"</div>
+        <div class="ex-out"><strong>成果：</strong>Obsidian 里生成一张思维导图：中心节点「思考快与慢」→ 四条主分支 → 每条分支下挂着你的高亮原文 + 你的批注。点击任一节点跳回原书对应章节。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">dailypaper-skills — 论文追踪全自动，Obsidian 里看日报</div><div class="sk-subtitle">YixFeng · 每日抓取 + 初筛 + 精读 + Zotero 联动</div></div></div>
+      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-b">论文追踪</span><span class="bd bd-g">Obsidian</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一句话让 Codex 每天帮你抓 arXiv 新论文，做初筛推荐，单篇可深度解析或快速摘要，最终把笔记自动写进 Obsidian 并维护目录页。能接 Zotero，不用一篇篇复制链接。说「今日论文推荐」跑完整流程，说「读一下这篇论文」精读单篇。<br><strong>最适合：</strong>科研人员、行业分析师、技术追踪者——不用每天刷 arXiv，AI 帮你筛完，只看值得看的。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/YixFeng/dailypaper-skills.git ~/.codex/skills/dailypaper-skills</div><div class="cmt">需要 Python 3.8+ 和 poppler-utils；Zotero 可选</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 Codex 里说「过去3天论文推荐」，它会自动抓取、筛选、生成推荐列表，每篇附带一句中文摘要和推荐理由。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"今日论文推荐"</div>
+        <div class="ex-out"><strong>成果：</strong>Obsidian 里生成「DailyPapers/2026-07-06-论文推荐.md」，含：今日新论文列表（标题+作者+一句话摘要）→ 推荐阅读（标注 ⭐ 的 3-5 篇）→ 每篇附 arXiv 链接。目录页自动更新。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">knowledge-mgmt — 6 个命令管理你的全部知识</div><div class="sk-subtitle">owenliang60-ship-it · FSRS 间隔复习 + 原子卡片 + 双提议机制</div></div></div>
+      <div class="badges"><span class="bd bd-p">知识管理</span><span class="bd bd-g">间隔复习</span><span class="bd bd-o">Obsidian</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套完整的个人知识管理系统，6 个命令覆盖全流程：<strong>/read</strong> 深度阅读论文 → <strong>/insights</strong> 提取商业洞察 → <strong>/note</strong> 唯一写入通道（生成研究摘要+原子卡片，双提议机制让你逐条确认） → <strong>/review</strong> FSRS-6 间隔复习（AI 出题+评分+助记） → <strong>/query</strong> 基于 vault 内容回答 → <strong>/lint</strong> 健康检查（断链/孤岛/缺标签）。核心设计：人必须在 loop 里，AI 不能自动创建卡片。<br><strong>最适合：</strong>长期学习者——把碎片知识变成可复习的原子卡片，用 FSRS 算法安排最佳复习时间，不会学了就忘。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/owenliang60-ship-it/knowledge-mgmt.git ~/.codex/skills/knowledge-mgmt</div><div class="cmt">需要 Obsidian Vault 作为存储后端</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>让 Codex「用 /review 复习今天的知识卡片」，AI 会根据 FSRS 算法判断哪些卡片到了该复习的时间，出题考你，答完打分并生成助记。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"/note 把今天读到的「混合所有制改革三种模式」存成原子卡片"</div>
+        <div class="ex-out"><strong>成果：</strong>AI 先生成研究摘要给你看，然后提出两类建议：① Wikilink 建议（链接到 vault 里已有的相关卡片）② 原子卡片建议（提取「改制模式A」「员工持股比例」「治理结构变化」三张卡片）。你逐条确认后才写入 Obsidian。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">write-naturally — 基于维基百科指南的自然写作</div><div class="sk-subtitle">taupirho · 去 AI 味的规则驱动方案</div></div></div>
+      <div class="badges"><span class="bd bd-p">写作润色</span><span class="bd bd-g">去AI味</span><span class="bd bd-b">规则驱动</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>基于维基百科「AI 写作痕迹识别指南」构建的写作 Skill。不是笼统地说「写自然点」，而是把 AI 写作的典型特征——过度使用转折词、喜欢列清单、语气过于中立、频繁使用「值得注意的是」「总的来说」——逐条列成检测规则，让 AI 在写作时主动避开。<br><strong>最适合：</strong>任何需要 AI 辅助写作但不想被看出来的人——写公众号、写报告、写邮件，过一遍这个 Skill，文字立刻像人写的。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add taupirho/write-naturally --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>让 Codex「用 write-naturally 风格写一段关于今天工作总结的朋友圈」，对比不加 Skill 的版本，感受文字质感的差异。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 write-naturally 风格写一段关于「今天参加国企改革研讨会」的朋友圈"</div>
+        <div class="ex-out"><strong>成果：</strong>"今天去听了场国企改革的研讨会。说实话，台上讲的三种改制模式我之前只知其名，现在总算搞明白了——整体改制像换底盘，分立式改制像拆分家产，混改则是请外人进来一起干活。最有意思的是台下提问环节，有位老局长直接问『员工持股到底谁说了算』，全场笑了。"</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">ian-handdrawn-ppt — 中文手绘技术 PPT</div><div class="sk-subtitle">helloianneo · 1.1K+ stars · 21:9 封面 + 16:9 正文配图</div></div></div>
+      <div class="badges"><span class="bd bd-b">PPT生成</span><span class="bd bd-g">手绘风格</span><span class="bd bd-o">中文友好</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>生成整页手绘风格的技术 PPT 图片——21:9 封面 + 16:9 正文配图，PNG 输出。与 helloianneo 的另一个作品「小黑风格配图」不同，这个 Skill 专注于完整 PPT 页面的生成，白底手绘 + 少量红橙蓝批注，适合技术分享、知识分享、轻量汇报。<br><strong>最适合：</strong>不想做 PPT 但又要上台分享的人——给一个主题，出整套手绘风格幻灯片，不用打开 PowerPoint。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add helloianneo/ian-handdrawn-ppt --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把今天读到的一篇文章核心观点丢给 Codex，说「用 ian-handdrawn-ppt 生成 5 页手绘风格分享幻灯片」，看它出的图能不能直接拿去用。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 ian-handdrawn-ppt 生成关于「FSRS 间隔复习算法原理」的 5 页手绘风格 PPT"</div>
+        <div class="ex-out"><strong>成果：</strong>5 张 PNG 图片：封面（手绘大脑+日历标题图）→ 第1页：什么是遗忘曲线 → 第2页：FSRS 的四个参数 → 第3页：复习间隔怎么算 → 第4页：实际效果对比。白底+手绘线条+红蓝批注，风格统一。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">知识输入流水线 →</span>
+      <span class="ps ps-2">② 每日论文追踪</span><span class="pa">→</span>
+      <span class="ps ps-1">① 批注变导图</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 知识卡片+复习</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 自然写作输出</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 手绘PPT展示</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态：iOS 端管理 Codex 任务</span></div>
+
+    <div class="hl">🔥 <strong>7月1日起，ChatGPT for iOS 正式支持 Codex 任务管理。</strong>你可以在手机上创建、搜索、打开、fork 和管理 Codex 任务，查看 staged/unstaged 和分支 diff，附加文件，连接 SSH 主机，甚至查看用量和额度详情。这意味着——通勤路上就能用手机监控 Codex 跑的长任务，发现问题立刻 fork 一个新分支修。</div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 移动端 + Codex 的三个实用场景</div></div>
+      <div class="tb"><strong>① 通勤监控：</strong>出门前在电脑上启动 Codex 跑一个长任务，地铁上打开手机看进度，发现问题及时 fork。<br><strong>② 文件速览：</strong>手机上查看 Codex 改了哪些文件的 diff，不需要打开电脑。<br><strong>③ SSH 远程：</strong>手机连接公司 SSH 主机上的 Codex，在外面也能让办公室的 AI 干活。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 「找矛盾」提问法——发现你没想到的问题</div></div>
+      <div class="tb">在 NotebookLM 里上传多份文档后，问：<strong>「这些来源之间有没有互相矛盾的地方？在哪些观点上存在分歧？」</strong>这是 NotebookLM 最强大的提问方式之一——它会逐条对比不同文档的立场，帮你看手动阅读时容易忽略的冲突。研究竞品报告、对比政策文件时尤其好用。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 多语言混合源——跨语言关联研究</div></div>
+      <div class="tb">一个笔记本可以同时放中英文文档。问中文它用中文答，问英文用英文答。研究海外产品时特别好用：把英文官方文档 + 中文用户评论一起传，问「中国用户最不满意的点是什么，对应的官方解释是什么」，它会自动跨语言关联。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 指定来源功能——强制精准回答</div></div>
+      <div class="tb">上传多个来源时，可以在对话前先勾选你想让 AI 参考的特定文件，强制它只从那几份资料里找答案。比如只勾选两份竞品报告，问「这两家在定价策略上的差异」，AI 不会跑题到其他文档去。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 定时任务自动化——设置一次，永久运行</div></div>
+      <div class="tb">WorkBuddy 的「自动化」面板支持一次性任务和周期性任务。点「自动化」→「新建定时任务」→ 选触发时间（每天/每周/自定义）→ 写清楚要干什么 → 保存。比如设三个任务：8:30 抓行业新闻生成早报、12:00 汇总上午待办、17:30 整理当天工作日志。配好之后，第二天到公司打开手机，早报已经在微信里躺着了——就像白捡了一个助理。<br><strong>避坑：</strong>Prompt 要精确到文件名和路径，别用「相关的」「适当的」这种模糊词。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一条命令搭建论文追踪→精读→复习全链路</div>
+      <div class="sh-sub">用 dailypaper-skills + knowledge-mgmt 组合，把每天的论文阅读变成自动化流水线</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你是一个行业分析师，每天需要追踪 3-5 个方向的最新论文，但没时间逐篇精读，更没时间整理笔记。<br><br>
+        <strong>操作：</strong><br>
+        ① 早上在 Codex 里说「今日论文推荐」→ dailypaper-skills 自动抓取 arXiv 新论文，生成推荐列表（含中文摘要+推荐理由），写入 Obsidian<br>
+        ② 从推荐列表里挑 2 篇值得深读的，说「读一下这篇论文 https://arxiv.org/abs/...」→ 自动生成精读笔记（研究故事线+方法+实验+图表解读）<br>
+        ③ 说「/note 把这两篇论文的核心方法存成原子卡片」→ knowledge-mgmt 的双提议机制让你逐条确认后写入 Obsidian<br>
+        ④ 晚上说「/review」→ FSRS 算法判断今天该复习哪些卡片，AI 出题考你<br><br>
+        <strong>以前：</strong>每天刷 arXiv 30 分钟 → 挑论文 10 分钟 → 精读 1 小时 → 整理笔记 30 分钟 → 从不复习，三天后忘光。<br>
+        <strong>现在：</strong>三句对话 + 5 分钟复习，论文追踪、精读、笔记、复习全自动化。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 读得快不如记得牢——结构化沉淀比海量阅读重要一百倍。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-06</span>
+  </div>
+</div>
+</body>
+</html>

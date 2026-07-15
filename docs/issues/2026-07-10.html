@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-10</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-10 · 星期五</div>
+    <h1>GPT-5.6 时代的知识工作流：用 Skills 串联你的「读·写·存·发」</h1>
+    <div class="art-sub">去AI味 · 知识库直连 · 自动化笔记 · 论文精读 · 封面生成</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>昨天凌晨，OpenAI 完成了今年最大的一次产品重组——GPT-5.6 全量开放，Codex 正式并入 ChatGPT 桌面版。在这个新格局下，知识工作者真正需要的不是更多工具，而是一条从"读到写、从存到发"的自动化流水线。本期 5 个新 Skill，就是帮你把这条线跑起来的。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识工作 Skills — 读·写·存·发全链路</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">stop-slop — 去AI味的「文字医生」</div><div class="sk-subtitle">hardikpandya · 5.8K+ stars · 8条规则 + 50分评分量表</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 5.8K+</span><span class="bd bd-p">写作润色</span><span class="bd bd-o">英文+中文通用</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一份纯 Markdown 规则文件，列出 AI 写作的 8 类典型痕迹，告诉 AI「看到这些就改掉」。内置 50 分评分量表，低于 35 分强制重写。不同于 humanizer-zh 的中文专项定位，stop-slop 更偏底层规则驱动——它不是"帮你润色"，而是"教 AI 怎么判断自己写得不像人"。<br><strong>最适合：</strong>任何 AI 辅助写作场景的"最后一关"——写完初稿后过一遍，把模板句、过度转折、空洞金句一条条摘掉。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add hardikpandya/stop-slop --agent codex --global</div><div class="cmt">安装后自动生效，Codex 生成文字时会应用规则</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你之前 AI 写的文章，让 Codex "用 stop-slop 过一遍这篇文章，删掉所有 AI 痕迹"，对比修改前后。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"在当今快速发展的数字时代，人工智能技术正在深刻改变我们的工作方式。值得注意的是，它不仅提升了效率，更重要的是重新定义了人类与机器的协作关系。从这个意义上说，AI 的价值不仅在于自动化，更在于赋予每个人前所未有的创造能力。"</div>
+        <div class="ex-out"><strong>成果：</strong>"AI 工具帮我在今天下午完成了原本要花三天的数据分析。以前跑一组回归模型要手动调参数、等结果、再调、再等——现在我只告诉它要什么，它给我结论加可视化。唯一的问题是，它偶尔会自信满满地给一个错的结论。"</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">notebooklm-skill — Codex 直连你的知识库</div><div class="sk-subtitle">PleasePrompto · 6.3K+ stars · 有来源、有引用、无幻觉</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6.3K+</span><span class="bd bd-p">知识管理</span><span class="bd bd-b">NotebookLM 联动</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>让 Codex 通过浏览器自动化直接与 Google NotebookLM 对话。把课程资料、会议纪要、行业报告上传到 NotebookLM，Codex 能直接查询并返回基于你文档的有引用答案——每句话都有出处，不凭空编造。支持管理多个 Notebook 库、跨文档推理、自然语言综合。<br><strong>最适合：</strong>经常需要基于大量文档做研究判断的人——咨询顾问解读行业报告、学者写文献综述、自媒体人基于资料库写作。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/PleasePrompto/notebooklm-skill.git ~/.codex/skills/notebooklm</div><div class="cmt">需要本地 Python 3.10+环境和 Google 账号</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把最近 5 篇行业报告上传到 NotebookLM 建一个笔记本，在 Codex 里说「用 notebooklm 查一下这五份报告里关于市场增长率的共同结论」，5 分钟出一份带引用的综合分析。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 notebooklm 查一下我的「国企改革案例」笔记本，这三家在重组整合后的业绩变化趋势是什么？每家附上原文出处。"</div>
+        <div class="ex-out"><strong>成果：</strong>"三家公司重组后的共同趋势：①营收增速在整合后第2年达到峰值（来源：A公司年报P15、B公司研报P8）；②组织融合期平均8-12个月（来源：C公司内部文件）；③人均产出提升幅度在15%-32%之间（来源详见各公司Q3经营分析会纪要对应段落）。"</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">obsidian-inbox — 把碎片信息自动沉淀为结构化笔记</div><div class="sk-subtitle">Simuiu · 新发布 · 视频+文章+网页 → Obsidian 笔记一条龙</div></div></div>
+      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-o">日常自动化</span><span class="bd bd-g">Obsidian</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个 Codex Skill，把文章链接、B站/YouTube 视频、本地音视频文件自动转为结构化的 Obsidian 笔记。支持「普通入库」（快速摘要+行动清单）和「深度入库」（问题链+概念地图+机制拆解+对比表+设计取舍+实践路径）两种模式。最妙的是：抓不到字幕或正文时保留失败状态，不编造总结。<br><strong>最适合：</strong>日常大量消费信息但懒得整理的知识工作者——看到好文章随手丢链接进去，晚上回来看笔记库就已经多了一条结构化记录。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/Simuiu/obsidian-inbox.git ~/.codex/skills/obsidian-inbox</div><div class="cmt">需要配置 Obsidian Vault 路径：python3 scripts/init_config.py --vault-path "/你的Obsidian路径"</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一个你收藏已久但没空看的 B 站视频链接，在 Codex 里说「用 obsidian-inbox 深度入库这个视频：https://...」，3 分钟后笔记库里多了一条含概念地图+核心结论+对比表的结构化笔记。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 obsidian-inbox 深度入库这篇文章：一篇关于国企三项制度改革的万字解读文链接"</div>
+        <div class="ex-out"><strong>成果：</strong>Obsidian 里生成一条笔记，包含：核心结论（3条）→ 问题链（改革动因→路径→阻力→成效）→ 概念地图（劳动/人事/分配三条线）→ 机制拆解 → 对比表（改革前后对比）→ 常见误区 → 实践路径建议。可点击的索引页自动更新。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">DeepPaperNote — 论文不止"看"，更要"拆开读懂"</div><div class="sk-subtitle">917Dhj · 新发布 · 精读笔记而非摘要复述</div></div></div>
+      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-g">论文精读</span><span class="bd bd-r">中文输出</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专为 Codex 设计的论文精读 Skill。不是"本文提出了什么方法"式的泛泛摘要，而是把论文每个部分真正拆开：故事逻辑是什么、数据任务设定是什么、关键公式是什么意思、实验到底说明了什么、图表里真正值得看的信息是什么。核心要求：尽量别有幻觉，别全是水话。<br><strong>最适合：</strong>需要真正理解论文内容而非只看摘要的人——做学术的、写行业分析的、准备硕士/博士论文的。同样适用于咨询顾问精读行业白皮书。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/917Dhj/DeepPaperNote.git ~/.codex/skills/DeepPaperNote</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你之前扫过但没真看懂的方法论文章（或论文），让 Codex "用 DeepPaperNote 深度拆解这篇论文"，看一看和你的理解有多大差异。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 DeepPaperNote 给这篇关于混合所有制改革的学术论文生成一个深度精读笔记"</div>
+        <div class="ex-out"><strong>成果：</strong>结构化笔记含：研究故事线（为什么研究→已有研究不足→本文填补什么）→ 数据来源与样本特征 → 方法流程（含关键公式解释）→ 实验结果逐表解读 → 图表信息解读 → 局限性与可推广性分析。不是复述摘要，是真读懂了再讲给你听。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">Punk-Skill — 12种封面风格，中文标题友好</div><div class="sk-subtitle">adrianpunk · 98 stars · 封面图+头像生成</div></div></div>
+      <div class="badges"><span class="bd bd-p">视觉设计</span><span class="bd bd-g">社交分发</span><span class="bd bd-o">12种风格</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一组视觉生成 Skill（punk-cover + punk-avatar）。不是生成长图或网页，而是给 AI 图像模型一套精心调试的生图提示词。内置 12 种封面风格：商业杂志头版、咨询报告视觉、方块世界、极简公共空间摄影、黑白灰先锋几何、巨型透视中文标题等。给一篇文章或一句标题，自动确认平台比例、情绪、视觉主体后出图。<br><strong>最适合：</strong>公众号、小红书、头条号的封面生成——尤其对中文标题排版友好，不会把汉字排得歪歪扭扭。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/adrianpunk/Punk-Skill.git ~/.codex/skills/Punk-Skill</div><div class="cmt">安装后在 Codex 中用 Use $punk-cover ... 触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把这篇速递标题「GPT-5.6 时代的知识工作流」丢给 Codex，说「Use $punk-cover 商业杂志头版风格生成一张公众号封面」，看它出的图和之前手动做的有多大区别。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"Use $punk-cover to create a cover image for 微信公众号, style 商业杂志头版: 文章标题「国企战略性重组：从物理整合到化学融合」"</div>
+        <div class="ex-out"><strong>成果：</strong>一张 900x383 公众号封面图——深蓝底+金色中文大标题+数据图表元素点缀。不是模板套用，而是根据标题主题+风格描述定制生成的独一无二的封面。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">15分钟工作流 →</span>
+      <span class="ps ps-1">② 查资料</span><span class="pa">→</span>
+      <span class="ps ps-2">④ 精读笔记</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 入库 Obsidian</span><span class="pa">→</span>
+      <span class="ps ps-4">① 去 AI 味</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ 出封面</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 重磅更新：GPT-5.6 + 三合一桌面应用</span></div>
+
+    <div class="hl">🔥 <strong>7月9日，OpenAI 完成年度最大产品重组。</strong>GPT-5.6 三款模型全量开放：Sol（旗舰）、Terra（均衡、性能接近 GPT-5.5 但价格一半）、Luna（轻量快速）。Codex 独立应用正式下线，并入新版 ChatGPT 桌面端，统一为 Chat / Work / Codex 三种模式。<strong>非开发者推荐用 Work 模式</strong>——隐藏技术细节，保留了 Agent 的多步骤自主执行能力。</div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ ChatGPT Work：AI 从聊天助手变成干活 Agent</div></div>
+      <div class="tb">给你一句话「把客户调研整理成营销方案」——Work 能自己读 Google Drive 里的文件、跨应用收集上下文、拆解步骤、持续工作数小时、最终生成文档/表格/演示文稿。支持后台运行，手机上可以查看进度。还能设置定时任务，比如每周自动汇总 Slack 消息生成会议议程。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ Ultra 模式：多个 Agent 并行干活</div></div>
+      <div class="tb">Sol 模型的 Ultra 模式默认启动 4 个子 Agent 并行处理任务，最多可扩展到 16 个。复杂项目被自动拆分——一个 Agent 查资料、一个写初稿、一个做图表、一个审核——最后汇总。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 其他更新一览</div></div>
+      <div class="tb"><strong>Sites 公测</strong>：工作成果直接生成可分享的交互式网站。<br><strong>Scheduled Tasks</strong>：定时自动化任务，每周/每日自动执行。<br><strong>Programmatic Tool Calling</strong>：模型自行编写程序调度工具，降低 Agent 开发门槛。<br><strong>直接文件编辑</strong>：Codex 模式下可直接编辑 Markdown 和代码文件。<br>旧 ChatGPT 桌面应用更名为 ChatGPT Classic，可继续使用。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 「反向解释」检验法——比正面理解更深刻</div></div>
+      <div class="tb">在 NotebookLM 里对任何上传的文档说：<strong>「用错误的方式向我解释这个概念。什么是常见的误解？」</strong>知道一个想法的"错误版本"，往往比知道正确版本更能让你真正理解它——你读到误解时心里会想"我明白为什么会有人这么想了，但实际上——"，然后对正确答案的理解就更深了一层。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 自定义 Prompt 控制 Audio Overview</div></div>
+      <div class="tb">Audio Overview 不只是"点生成→听完"。在生成前，点设置面板的「Customize」，可以指定：限定话题范围（只看某几份资料）、设定受众和讲解深度（给12岁小孩 / 给忙碌的高管 / 给非英语母语者）、强调特定角度。还支持 80+ 种语言输出——英文资料变中文播客，通勤路上听完。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 NotebookLM + 大模型分工协作</div></div>
+      <div class="tb">合理分工：NotebookLM 负责「找原文、给引用」（稳定不出幻觉），ChatGPT/Claude 负责「跨主题重组、改 voice、创意延伸」。一句话记住：<strong>想引用、想稳定，交 NotebookLM；想跳脱、想延伸，交大模型。</strong>两者组合使用比单用任一个都强。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 自建 Skills：把"每次都要重复说的指令"存成一个按钮</div></div>
+      <div class="tb">WorkBuddy 的技能中心支持自建技能——用自然语言描述你想要的技能，它帮你创建一个全新的专属技能包。比如：「按照我司 PPT 模板风格生成汇报文档」「每天扫描桌面新增文件，分类归档并生成汇总表」。创建一次，以后说一句就触发，不需要每次重写大段提示词。这是从"用 AI 聊天"到"调教自己的 AI 助手"的关键一步。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 自动化三件套联动：Memory + Expert + Automation</div></div>
+      <div class="tb">WorkBuddy 的真正威力在三件套联动：<strong>Memory</strong> 让 AI 记住你是谁、做什么的（跨会话不丢上下文）；<strong>Expert</strong> 决定回答的专业风格和知识边界；<strong>Automation</strong> 保证每天按时干活。合在一起，你的 AI 助手就从"每次问都失忆的实习生"变成"懂你项目、知你习惯、按时出活的搭档"。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一条命令串联「查→读→存」</div>
+      <div class="sh-sub">用 notebooklm-skill + obsidian-inbox 组合，把一堆零散资料变成可检索的结构化知识库</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你收到三份国企改革政策文件 + 两篇智库解读文章 + 一个专家访谈视频链接。不想手动整理，但下周要做汇报。<br><br>
+        <strong>操作：</strong><br>
+        ① 把所有文件上传到 NotebookLM，建一个笔记本「混合所有制改革2026Q3」<br>
+        ② 在 Codex 里说：「用 notebooklm 查一下混改笔记本里关于"员工持股"的所有内容，按政策要点、企业实践、争议点三个维度整理，每条附原文出处。」→ 5分钟出一份带引用的专题整理<br>
+        ③ 接着说：「把这份专题整理作为参考资料，帮我写一份简报，重点突出三家企业员工持股方案的设计差异，语气是给副总看的。」→ 出一份可用的汇报底稿<br>
+        ④ 最后：「用 obsidian-inbox 把这份简报和原始参考资料都入库」→ Obsidian 里永久保存，以后随时查<br><br>
+        <strong>以前：</strong>手动翻文件→摘录要点→写底稿→排版→存笔记，至少 3 小时，还容易遗漏。<br>
+        <strong>现在：</strong>三句对话，30 分钟，有来源，有底稿，有存档。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具在变，工作流不变——会串流程的人，永远比只会用工具的人快一步。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-10</span>
+  </div>
+</div>
+</body>
+</html>

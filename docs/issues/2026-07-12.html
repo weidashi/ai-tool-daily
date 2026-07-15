@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-12</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-12 · 星期日</div>
+    <h1>周日不加班：5 个 Skill 把下周的活提前干完</h1>
+    <div class="art-sub">更新日志 · 域名创意 · 客户研究 · 视频素材 · 主题设计</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周日是最适合「批量预处理」的时间——把下周要用的素材、文档、模板提前准备好，周一到周五就不用加班。本期 5 个 Skill 来自 ComposioHQ 精选合集，覆盖五个高频但耗时的场景：写产品更新日志、起域名、研究潜在客户、下载素材视频、统一设计主题。每个都是 5 分钟出活的工具。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识工作 Skills — 写·起·研·下·设</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">changelog-generator — 产品更新日志自动生成</div><div class="sk-subtitle">ComposioHQ · Git 提交 → 用户友好的更新日志</div></div></div>
+      <div class="badges"><span class="bd bd-p">内容创作</span><span class="bd bd-g">自动化</span><span class="bd bd-b">产品运营</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>扫描 Git 提交历史，把技术 commit 自动翻译成用户看得懂的更新日志。按功能新增、改进优化、Bug 修复、安全更新自动分类，过滤掉内部重构和测试代码（用户不关心这些），输出干净的 changelog。支持指定版本范围、自定义分类规则、套用品牌语气。<br><strong>最适合：</strong>产品经理、运营、开发者——每周五或发版日，一键生成产品更新日志，不用手动翻 commit 记录。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path changelog-generator</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在你的项目目录里说「Create a changelog for commits from the past 7 days」，看它怎么把一堆技术 commit 变成用户友好的更新说明。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"Create a changelog for commits since v2.4.0, 按功能/优化/修复分类，语气友好"</div>
+        <div class="ex-out"><strong>成果：</strong>✨ 新功能：团队工作区（创建独立项目空间）· 🚀 优化：搜索速度提升 3 倍 · 🐛 修复：导出 PDF 时中文字体丢失问题——每条都用人话写了，不是 commit message 的原始技术描述。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">domain-name-brainstormer — 域名创意头脑风暴</div><div class="sk-subtitle">ComposioHQ · 项目描述 → 域名候选清单</div></div></div>
+      <div class="badges"><span class="bd bd-r">选题诊断</span><span class="bd bd-p">创意</span><span class="bd bd-o">品牌</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>给你的项目/产品描述，AI 自动生成一批候选域名：短名、组合词、谐音梗、行业关键词变体。每个候选附带：可注册性预估、语义解读、品牌调性分析。不用自己在域名注册商网站上一个个试。<br><strong>最适合：</strong>新项目启动、产品改名、副品牌创建——需要好名字但不想花一下午想域名的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path domain-name-brainstormer</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>描述你正在做的项目，说「brainstorm 10 domain names for this project」，看它给的候选里有没有让你眼前一亮的。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"brainstorm domain names for: 一个帮国企做数字化转型的AI咨询平台"</div>
+        <div class="ex-out"><strong>成果：</strong>10 个候选域名：① soeai.com（SOE+AI，简洁直观）② digiso.cn（digital+SOE）③ zhinengzhuan.com（智能转，中文拼音）④ reformai.io …… 每个附语义解读和品牌调性评分。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">lead-research-assistant — 潜在客户研究助手</div><div class="sk-subtitle">ComposioHQ · 公司名 → 结构化调研报告</div></div></div>
+      <div class="badges"><span class="bd bd-r">选题诊断</span><span class="bd bd-b">客户研究</span><span class="bd bd-g">销售支持</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>给一个公司名，自动生成结构化调研报告：公司概况、业务范围、近期动态、行业地位、关键人物、可能的需求痛点。不是泛泛的百科介绍，而是聚焦「这家公司可能需要什么」的销售视角分析。<br><strong>最适合：</strong>销售、BD、咨询顾问——见客户前 5 分钟跑一份，比手动 Google 搜半天全面得多。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path lead-research-assistant</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>输入下周要拜访的客户公司名，说「research this company for my meeting next week」，带着调研报告去开会。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"research this company: 某某国企资产管理公司"</div>
+        <div class="ex-out"><strong>成果：</strong>调研报告：公司概况（成立时间/规模/主业）→ 近期动态（刚启动数字化转型项目）→ 行业地位（区域内前三）→ 关键人物（CIO 姓张，技术背景）→ 需求预判（很可能需要数据治理和流程自动化方案）→ 推荐话题（数字化转型的ROI量化）。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">youtube-downloader — YouTube 视频素材下载</div><div class="sk-subtitle">ComposioHQ · 链接 → 本地视频/音频文件</div></div></div>
+      <div class="badges"><span class="bd bd-o">日常自动化</span><span class="bd bd-g">素材获取</span><span class="bd bd-b">视频</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>给一个 YouTube 链接，自动下载视频或提取音频到本地。支持指定分辨率、只下载音频、批量下载播放列表。下载的文件自动命名、归类存放。适合需要离线使用视频素材的场景——剪辑素材、学习资料归档、会议录像备份。<br><strong>最适合：</strong>内容创作者收集剪辑素材、学习者离线观看课程、团队共享视频资料。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path youtube-downloader</div><div class="cmt">需要 yt-dlp 和 ffmpeg</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一个你想离线保存的 YouTube 视频，说「download this video: https://youtube.com/watch?v=...」，30 秒后文件就在本地了。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"download this YouTube playlist as audio only: https://youtube.com/playlist?list=..."</div>
+        <div class="ex-out"><strong>成果：</strong>播放列表里 12 个视频全部下载为 MP3 音频文件，按「视频标题.mp3」命名，统一存放在 downloads/playlist-name/ 目录下。适合下载播客系列通勤路上听。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">theme-factory — 一键生成设计主题系统</div><div class="sk-subtitle">ComposioHQ · 描述 → 完整配色+字体+间距规范</div></div></div>
+      <div class="badges"><span class="bd bd-p">内容创作</span><span class="bd bd-r">视觉设计</span><span class="bd bd-g">主题系统</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>描述你想要的视觉风格——「科技感深色系」「温暖日系」「专业商务蓝」——AI 自动生成完整的设计主题：主色/辅助色/强调色/背景色（含 HEX 和 RGB 值）、字体搭配方案（标题+正文+数字）、间距规范、圆角规范、阴影规范。输出可以直接交给前端或设计师使用。<br><strong>最适合：</strong>新项目启动需要定设计规范、PPT 需要统一主题、公众号需要固定视觉风格。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path theme-factory</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>描述你下周要做的 PPT 风格，说「create a theme: 科技感、深蓝主色、简洁专业」，拿到一整套可以直接用的设计规范。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"create a theme for 国企数字化转型汇报PPT，风格：稳重、专业、深蓝+金色点缀"</div>
+        <div class="ex-out"><strong>成果：</strong>完整主题系统：主色 #1a365d（深蓝）+ 辅助色 #2c5282 + 强调色 #d69e2e（金色）+ 背景色 #f7fafc + 字体（标题：思源宋体 Bold / 正文：思源黑体 Regular / 数字：DIN）+ 圆角 8px + 阴影 0 4px 12px rgba(0,0,0,.08) + 间距规范（4/8/16/24/32px 体系）。附 CSS 变量代码。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="pa">下周预处理流水线 →</span>
+      <span class="ps ps-1">① 更新日志</span><span class="pa">→</span>
+      <span class="ps ps-2">⑤ 设计主题</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 客户调研</span><span class="pa">→</span>
+      <span class="ps ps-4">② 域名创意</span><span class="pa">→</span>
+      <span class="ps ps-5">④ 素材下载</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态：Record & Replay 深度体验</span></div>
+
+    <div class="hl">🔥 <strong>Record & Replay（6月18日发布）正在改变 Skill 的创建方式。</strong>以前创建 Skill 需要手写 SKILL.md 文件，现在——在 macOS 上点「录制」，给 Codex 演示一遍你想自动化的工作流程（比如填报销单、提交请假、整理周报），它会把你的操作录下来，变成一个可检查、可编辑的 Skill。下次说一句话就能重放整个流程。你控制录制开始和停止，AI 只学你让它学的东西。</div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ Record & Replay 的三个典型用法</div></div>
+      <div class="tb"><strong>① 报销流程自动化：</strong>录制一遍「打开报销系统→填表→上传发票→提交」，之后说「提交本月报销」自动重放。<br><strong>② 请假流程自动化：</strong>录制一遍「打开OA→选请假类型→填时间→提交」，之后说「请年假明天一天」自动执行。<br><strong>③ 数据汇总自动化：</strong>录制一遍「打开三个 Excel→复制数据→粘贴到汇总表→生成图表」，之后说「汇总本周数据」一键搞定。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 闪卡与测验——从阅读工具升级为学习助理</div></div>
+      <div class="tb">上传课程资料后，点击「学习指南」中的功能：<strong>测验</strong>自动出选择题并附答案解析，适合自我检测；<strong>闪卡</strong>制作抽认卡（正面问题、背面答案），适合背名词解释。技巧：只想复习特定章节，只勾选部分来源资料再生成测验题。这让 NotebookLM 从「读文件工具」升级成「学习助理」。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 协作分享笔记本——团队共享研究成果</div></div>
+      <div class="tb">点右上角分享按钮，生成只读链接发给同事。对方不需要重新上传文件，直接基于你整理好的源问问题。团队共享研究成果效率拉满——一个人整理，全团队受益。如果需要共同编辑，也可以设置编辑权限，多人往同一个笔记本添加素材。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 Perplexity + NotebookLM 组合拳</div></div>
+      <div class="tb">外部探勘交 Perplexity（涵盖更广的 web 搜索）→ 把报告导入 NotebookLM 做交叉比对。Perplexity 负责「找」，NotebookLM 负责「整」。比单独用任一个都强——Perplexity 找得快但容易散，NotebookLM 整理得好但来源有限。两者组合是当前最强的 AI 研究工作流。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 自建 Skills——把重复指令存成一键按钮</div></div>
+      <div class="tb">WorkBuddy 的技能中心支持自建技能——用自然语言描述你想要的技能，它帮你创建一个专属技能包。<br><strong>实用举例：</strong><br>
+      ①「按照我司 PPT 模板风格生成汇报文档」——以后说一句就出标准格式汇报<br>
+      ②「每天扫描桌面新增文件，分类归档并生成汇总表」——以后桌面永远整洁<br>
+      ③「把会议录音转成纪要+行动项+待办提醒」——以后开会录音扔进去就行<br>
+      创建一次，以后说一句就触发，不需要每次重写大段提示词。这是从「用 AI 聊天」到「调教自己的 AI 助手」的关键一步。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 周日 1 小时备齐下周三件套</div>
+      <div class="sh-sub">用 changelog-generator + lead-research-assistant + theme-factory 组合，周一到周五不用加班</div>
+      <div class="sh-box">
+        <strong>场景：</strong>周日晚上想起下周有三件事要做：① 发产品周报（含更新日志）② 周三见新客户 ③ 新项目要定设计规范。<br><br>
+        <strong>操作：</strong><br>
+        ① 在项目目录说「Create a changelog for commits from the past 7 days」→ 5 分钟出一份用户友好的产品更新日志，直接贴进周报<br>
+        ② 输入客户公司名「research this company: XXX」→ 3 分钟出一份结构化客户调研报告，含需求预判和推荐话题<br>
+        ③ 描述新项目风格「create a theme: 科技感、深蓝主色、简洁专业」→ 2 分钟出完整设计主题系统（配色+字体+间距+CSS 变量）<br><br>
+        <strong>以前：</strong>三件事至少要花半天，周日晚上加班。<br>
+        <strong>现在：</strong>10 分钟搞定，周日晚上安心看剧。周一到周五直接用产出的成果。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 周日预备 1 小时，周一到周五省 5 小时——这就是预处理的复利。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-12</span>
+  </div>
+</div>
+</body>
+</html>

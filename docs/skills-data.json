@@ -17,7 +17,8 @@
         "internal-comms",
         "wechat-article-write",
         "tailored-resume-generator",
-        "article-writer-skill"
+        "article-writer-skill",
+        "caveman"
       ]
     },
     {
@@ -37,7 +38,8 @@
         "wechat-article-image",
         "qiaomu-design-advisor",
         "image-enhancer",
-        "imagegen-builtin"
+        "imagegen-builtin",
+        "ado-visual-director"
       ]
     },
     {
@@ -52,7 +54,8 @@
         "html-ppt-skill",
         "gorden-ppt-skill",
         "codex-ppt-skill",
-        "paperjsx"
+        "paperjsx",
+        "ian-handdrawn-ppt"
       ]
     },
     {
@@ -66,7 +69,8 @@
         "wechat-article-skills",
         "wechat-daily-skills",
         "wechat-article-publish",
-        "qiaomu-design-advisor"
+        "qiaomu-design-advisor",
+        "ado-visual-director"
       ]
     },
     {
@@ -89,7 +93,8 @@
         "qiaomu-anything-to-notebooklm",
         "video-downloader",
         "web-access",
-        "daily-paper"
+        "daily-paper",
+        "agent-skills"
       ]
     },
     {
@@ -967,6 +972,54 @@
       "screenshot": "",
       "result": "「/content-write 教练模式，主题『AI时代还需要记笔记吗』」→ AI提问引导，最终文章全是你的真话，AI检测率<15%。"
     },
+    "ian-handdrawn-ppt": {
+      "name": "ian-handdrawn-ppt",
+      "author": "helloianneo",
+      "subtitle": "中文手绘技术图PPT：文章→整套手绘课件封面+正文",
+      "desc": "把文章、课程笔记、大纲或讲稿，自动转成一套中文手绘技术风格的PPT页面图。21:9封面+16:9正文配图，先理解叙事结构再逐页出图。视觉统一——近白纸底、细手绘线条、淡彩标记、大量留白。适合技术文章配图、课程课件、知识卡片。",
+      "stars": "412",
+      "tags": ["PPT生成", "手绘风格", "中文配图", "课件制作"],
+      "install": "git clone https://github.com/helloianneo/ian-handdrawn-ppt.git && cp -R ./ian-handdrawn-ppt/ian-handdrawn-ppt ~/.codex/skills/",
+      "issues": ["2026-07-15"],
+      "screenshot": "",
+      "result": "一篇文章/大纲 → 1张21:9封面+3张16:9手绘正文配图。不靠模板，靠内容语义规划页面。"
+    },
+    "ado-visual-director": {
+      "name": "ado-visual-director",
+      "author": "aduo2233",
+      "subtitle": "视觉方案导演：选题→完整视觉策略+逐页提示词+审美检查",
+      "desc": "「先想清楚再动手」的视觉导演Skill。拿到选题后先规划——视觉命题、主角、态度、页面结构、逐页提示词、质量检查清单。默认「研究档案式编辑设计」审美，支持小红书、PPT单页、横版Hero等多种输出。还能给已有图片做审美检查，直接指出廉价AI套路。",
+      "stars": "新发布",
+      "tags": ["视觉设计", "小红书卡片", "审美检查", "提示词包", "PPT配图"],
+      "install": "git clone https://github.com/aduo2233/ado-visual-director.git ~/.codex/skills/ado-visual-director",
+      "issues": ["2026-07-15"],
+      "screenshot": "",
+      "result": "一个选题 → 完整视觉导演方案：视觉命题+主角+逐页结构+提示词+否决清单。先有策略再出图。"
+    },
+    "caveman": {
+      "name": "caveman",
+      "author": "JuliusBrussee",
+      "subtitle": "AI废话刹车：让30+Agent说人话，平均省65%Token",
+      "desc": "让所有AI Agent变得简洁如「原始人说话」。系统性去掉冗余修饰、模板句、过度解释，技术准确度保持100%，输出Token平均减少65%。支持lite/full/ultra/wenyan四档，还带/compress压缩记忆文件。适配Codex、Claude Code、Gemini等30+Agent。",
+      "stars": "87.8K",
+      "tags": ["去AI味", "省Token", "简洁模式", "30+Agent", "写作润色"],
+      "install": "npx skills add JuliusBrussee/caveman --agent codex --global",
+      "issues": ["2026-07-15"],
+      "screenshot": "",
+      "result": "一段AI写的啰嗦回复 → 去掉65%废话但保留100%信息。回复像同事聊天而不是论文摘要。"
+    },
+    "agent-skills": {
+      "name": "agent-skills",
+      "author": "addyosmani（Google工程师）",
+      "subtitle": "精选Skills宝库：76.9K★的一站式「应用商店」",
+      "desc": "Google工程专家Addy Osmani整理的Agent Skills精选宝库。汇集各类可装进Codex、Claude Code、Cursor等智能体的实用技能包。不是单个Skill，而是帮你发现「该装什么」的入口。按分类浏览，一行命令装好。本周新增7944★。",
+      "stars": "76.9K",
+      "tags": ["技能发现", "精选合集", "多Agent", "一站式", "持续更新"],
+      "install": "浏览 GitHub: addyosmani/agent-skills，找到想要的Skill后 npx skills add 作者/仓库 --agent codex --global",
+      "issues": ["2026-07-15"],
+      "screenshot": "",
+      "result": "翻一遍这个宝库 → 找到自己领域最实用的5个Skill → 一行命令装好。不用全网搜GitHub。"
+    },
     "wechat-article-workflow": {
       "name": "wechat-article-workflow",
       "author": "classfang",
@@ -989,6 +1042,30 @@
     }
   },
   "issues": [
+    {
+      "id": 24,
+      "date": "2026-07-15",
+      "weekday": "星期三",
+      "title": "GPT-5.6 全量上线：ChatGPT 从聊天变身交付引擎",
+      "subtitle": "ChatGPT Work · Sites 公测 · Codex 合并桌面端 · 4 个跟上节奏的新 Skills",
+      "tags": [
+        "📽️ 手绘PPT",
+        "🎬 视觉导演",
+        "🦴 去废话",
+        "📦 技能宝库",
+        "🚀 GPT-5.6"
+      ],
+      "skillCount": 4,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-15.html",
+      "skills": [
+        "ian-handdrawn-ppt",
+        "ado-visual-director",
+        "caveman",
+        "agent-skills"
+      ]
+    },
     {
       "id": 23,
       "date": "2026-07-14",
