@@ -1095,118 +1095,130 @@
   },
   "issues": [
     {
-      "id": 25,
+      "id": 24,
       "date": "2026-07-16",
       "weekday": "星期四",
-      "title": "从「用别人的Skill」到「创建自己的Skill」",
-      "subtitle": "skill-creator · 咨询级PPT · Obsidian知识库 · 素材自动入库",
+      "title": "GPT-5.6 专题周收尾：20+ Skills 组合拳——建成个人 AI 知识工作流水线",
+      "subtitle": "选题→研究→写作→视觉→发布→归档 三条流水线闭环方案",
       "tags": [
-        "🔧 创建Skill",
-        "📽️ 咨询PPT",
-        "📚 Obsidian",
-        "📥 素材入库",
-        "🤖 ChatGPT Work"
+        "🔗 内容流水线",
+        "🔬 研究流水线",
+        "📊 汇报流水线",
+        "🤖 全链路",
+        "🎯 专题周终结"
       ],
-      "skillCount": 4,
+      "skillCount": 20,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-16.html",
       "skills": [
-        "skill-creator",
-        "cyberppt",
-        "obsidian-skills",
-        "obsidian-inbox"
-      ]
-    },
-    {
-      "id": 24,
-      "date": "2026-07-15",
-      "weekday": "星期三",
-      "title": "GPT-5.6 全量上线：ChatGPT 从聊天变身交付引擎",
-      "subtitle": "ChatGPT Work · Sites 公测 · Codex 合并桌面端 · 4 个跟上节奏的新 Skills",
-      "tags": [
-        "📽️ 手绘PPT",
-        "🎬 视觉导演",
-        "🦴 去废话",
-        "📦 技能宝库",
-        "🚀 GPT-5.6"
-      ],
-      "skillCount": 4,
-      "color": "g2",
-      "numColor": "n-green",
-      "file": "2026-07-15.html",
-      "skills": [
-        "ian-handdrawn-ppt",
-        "ado-visual-director",
-        "caveman",
-        "agent-skills"
-      ]
-    },
-    {
-      "id": 23,
-      "date": "2026-07-14",
-      "weekday": "星期一",
-      "title": "Codex 并入 ChatGPT 后的第一课：5 个 Skills 让你的知识工作提速 10 倍",
-      "subtitle": "学术写作 · 去AI味 · HTML PPT · 多平台分发 · 选题诊断",
-      "tags": [
-        "✍️ 学术写作",
-        "🧹 去AI味",
-        "📽️ PPT生成",
-        "📱 社交分发",
-        "🔍 选题诊断"
-      ],
-      "skillCount": 5,
-      "color": "g1",
-      "numColor": "n-purple",
-      "file": "2026-07-14.html",
-      "skills": [
-        "nature-skills",
+        "content-research-writer",
         "humanizer-zh",
-        "guizang-ppt-skill",
-        "html-anything",
+        "baoyu-skills",
+        "deep-paper-note",
         "dbskill"
       ]
     },
     {
-      "id": 22,
-      "date": "2026-07-13",
-      "weekday": "星期日",
-      "title": "GPT-5.6 第四天：5个Skills打通内容生产全链路",
-      "subtitle": "内容研究 · 去AI味 · 公文写作 · 视觉设计 · 跨平台分发",
-      "tags": ["✍️ 内容研究", "🧹 去AI味", "📄 公文写作", "🎨 视觉设计", "📱 跨平台分发"],
-      "skillCount": 5,
-      "color": "g1",
-      "numColor": "n-purple",
-      "file": "2026-07-13.html",
-      "skills": ["content-research-writer", "humanizer-zh", "official-document-drafting", "remove-ai-flavor", "canvas-design"]
+      "id": 23,
+      "date": "2026-07-15",
+      "weekday": "星期三",
+      "title": "GPT-5.6 Sol 全量上线：Max 模式、Ultra 多智能体解析",
+      "subtitle": "Max推理深度 · Ultra四智能体并行 · Persisted Reasoning · 多仓库Codex",
+      "tags": [
+        "🧠 Sol Max",
+        "🤖 Ultra多智能体",
+        "🔗 持久推理",
+        "📁 多仓库",
+        "🚀 GPT-5.6"
+      ],
+      "skillCount": 3,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-15.html",
+      "skills": [
+        "sol-max",
+        "ultra-mode",
+        "persisted-reasoning"
+      ]
     },
     {
       "id": 22,
-      "date": "2026-07-10",
-      "weekday": "星期五",
-      "title": "GPT-5.6 时代的知识工作流：用 Skills 串联你的「读·写·存·发」",
-      "subtitle": "去AI味 · 知识库直连 · 自动化笔记 · 论文精读 · 封面生成",
+      "date": "2026-07-14",
+      "weekday": "星期二",
+      "title": "ChatGPT Work 来了！Codex 并入桌面端——一个App搞定聊天、开发和交付",
+      "subtitle": "ChatGPT Work智能体 · Codex三合一 · Scheduled Tasks · Sites公测",
       "tags": [
-        "✍️ 去AI味",
-        "📚 知识库直连",
-        "📝 自动笔记",
-        "🔬 论文精读",
-        "🎨 封面生成"
+        "🤖 ChatGPT Work",
+        "💻 Codex桌面端",
+        "⏰ 定时任务",
+        "🌐 Sites公测",
+        "🔄 全平台"
       ],
-      "skillCount": 5,
-      "color": "g2",
-      "numColor": "n-green",
-      "file": "2026-07-10.html",
+      "skillCount": 3,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-14.html",
       "skills": [
-        "stop-slop",
-        "notebooklm-skill",
-        "obsidian-inbox",
-        "deep-paper-note",
-        "punk-skill"
+        "chatgpt-work",
+        "codex-desktop",
+        "scheduled-tasks"
       ]
     },
     {
       "id": 21,
+      "date": "2026-07-13",
+      "weekday": "星期一",
+      "title": "学术与研究篇：论文精读、笔记整理、文献追踪",
+      "subtitle": "论文速读 · 笔记结构化 · 文献追踪 · NotebookLM直连 · 研究流水线",
+      "tags": ["🔬 论文精读", "📝 结构化笔记", "📡 文献追踪", "🧪 NotebookLM", "📚 学术研究"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-13.html",
+      "skills": ["deep-paper-note", "notebooklm-skill", "daily-paper", "web-access", "obsidian-inbox"]
+    },
+    {
+      "id": 20,
+      "date": "2026-07-12",
+      "weekday": "星期日",
+      "title": "视觉与PPT篇：不用学设计，5个Skill搞定封面、配图和幻灯片",
+      "subtitle": "公众号封面 · 信息图 · 手绘插画 · 咨询级PPT · 品牌视觉",
+      "tags": ["🎨 封面设计", "🖼️ 配图", "📽️ 咨询PPT", "✏️ 手绘插画", "🎯 品牌视觉"],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-12.html",
+      "skills": ["baoyu-skills", "canvas-design", "ian-xiaohei-illustrations", "cyberppt", "codex-ppt"]
+    },
+    {
+      "id": 19,
+      "date": "2026-07-11",
+      "weekday": "星期六",
+      "title": "写作篇：从选题到发布，5个Skill把写作速度翻3倍",
+      "subtitle": "选题诊断 · 深度写作 · 去AI味 · 周报生成 · 长文优化",
+      "tags": ["✍️ 选题诊断", "📝 深度写作", "🧹 去AI味", "📋 周报自动", "📐 结构优化"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-11.html",
+      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "weekly-report-skill", "article-writer-skill"]
+    },
+    {
+      "id": 18,
+      "date": "2026-07-10",
+      "weekday": "星期五",
+      "title": "GPT-5.6 正式发布！三模型怎么选、五个Skill怎么装",
+      "subtitle": "Sol·Terra·Luna三模型定位 + 知识工作者入门入门套装",
+      "tags": ["🧠 Sol旗舰", "⚖️ Terra平衡", "⚡ Luna轻量", "📦 入门套装", "🚀 GPT-5.6"],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-10.html",
+      "skills": ["content-research-writer", "humanizer-zh", "brand-guidelines", "notion-knowledge-capture", "file-organizer"]
+    },
+    {
+      "id": 17,
       "date": "2026-07-09",
       "weekday": "星期四",
       "title": "信息获取力——从搜索到成文，打通信息处理全链路",

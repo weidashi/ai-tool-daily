@@ -21,7 +21,7 @@
   .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
   .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
   .intro-box strong { color:#2d1b4e; }
-  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; }
   .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
   .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
   .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
@@ -30,201 +30,114 @@
   .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
   .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
   .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
-  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); }
   .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
   .sk-desc strong { color:var(--text); }
   .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
   .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
   .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
-  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
   .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
   .try strong { color:#92400e; }
   .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
   .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
-  .example .ex-in { color:#4b5563; margin-bottom:8px; }
-  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
   .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
   .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
   .tip .tt { font-size:14px; font-weight:700; }
   .tip .tb { font-size:13px; color:#555; line-height:1.7; }
-  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); }
   .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
-  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
-  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
-  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
-  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
-  .pa { color:var(--muted); font-weight:700; }
   .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
   .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
   .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
   .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
   .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
   .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
-  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+  @media(max-width:600px){ .art-header h1{font-size:24px;} }
 </style>
 </head>
 <body>
 <div class="nav"><a href="../index.html">← 返回速递列表</a></div>
 <div class="article">
   <div class="art-header">
-    <div class="art-date">📅 2026-07-11 · 星期六</div>
-    <h1>周末充电：从素材到成品的五条捷径</h1>
-    <div class="art-sub">文档转幻灯片 · 项目知识库 · 图片转PPT · 标志动画 · 自主研究</div>
+    <div class="art-date">📅 2026-07-11 · 星期六 · GPT-5.6 专题周 Day 2</div>
+    <h1>写作篇：从选题到发布，5 个 Skill 把写作速度翻 3 倍</h1>
+    <div class="art-sub">选题诊断 · 深度写作 · 去 AI 味 · 周报撰写 · 长文优化</div>
   </div>
-  <div class="intro-box">📌 <strong>本期导读</strong><br>周末是充电的最佳时间——没有会议打扰，可以专注把一周积累的素材变成成品。本期 5 个 Skill 覆盖「素材→成品」的五条捷径：把文档一键转幻灯片、把项目知识结构化存起来、把截图 PPT 变回可编辑文件、把静态标志做成动画、让 AI 自己跑迭代研究。每条都是 15 分钟出活的路子。</div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>GPT-5.6 的文字生成质量显著提升，但"知道方向"比"写得更快"更重要。Day 2 聚焦写作全流程：从选题值不值、写到什么深度、怎么去掉 AI 味、到长文结构优化。昨天装了基础套装，今天加装写作专精 Skill。</div>
 
-  <!-- 📘 Skills -->
   <div class="section">
-    <div class="section-title"><div class="si si-p">📘</div><span>Codex 知识工作 Skills — 转·存·修·动·研</span></div>
+    <div class="section-title"><div class="si si-p">📘</div><span>写作全链路：5 个 Skill</span></div>
 
     <div class="skill featured">
-      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">frontend-slides — 文档一键转幻灯片</div><div class="sk-subtitle">zarazhangrui · Markdown/Word → HTML 演示文稿</div></div></div>
-      <div class="badges"><span class="bd bd-b">PPT生成</span><span class="bd bd-p">文档转幻灯</span><span class="bd bd-g">HTML</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>把已有的文档（Markdown、Word、纯文本）一键转为 HTML 幻灯片演示文稿。不是「从零生成 PPT」，而是「把你写好的内容变成可以翻页演示的幻灯片」——保留原文结构，自动拆分页面，添加翻页动画和键盘导航。适合已经写好内容、只需要快速变成可演示格式的人。<br><strong>最适合：</strong>写完报告要上台讲、写完教程要做培训、写完方案要汇报——内容已经有了，缺的只是一个可演示的壳。</div>
-      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add zarazhangrui/frontend-slides --agent codex --global</div></div>
-      <div class="try"><strong>🎯 今天就能试：</strong>把这周写的周报丢给 Codex，说「用 frontend-slides 转成 5 页幻灯片」，30 秒出一个可以翻页演示的 HTML 页面。</div>
-      <div class="example">
-        <div class="ex-title">📌 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>"用 frontend-slides 把这份 3000 字的市场分析报告转成 8 页演示幻灯片"</div>
-        <div class="ex-out"><strong>成果：</strong>一个 HTML 文件：封面页（标题+日期）→ 目录页 → 6 页内容页（每页 1-2 个要点+图表占位）→ 结尾页。键盘左右键翻页，全屏可演示。手机上也能看。</div>
-      </div>
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">dbskill — 选题"值不值得写"诊断</div><div class="sk-subtitle">db-ally · 写之前先判断，不浪费力气</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3.5K</span><span class="bd bd-p">选题</span><span class="bd bd-o">策略</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>在动笔前帮你诊断选题是否成立——受众精准度、信息缺口、差异化角度、标题吸引力预判。GPT-5.6 的推理能力让选题判断比 GPT-5 时代更准确。<br><strong>最适合：</strong>写完发现没人看、选题跟别人撞车、不知道从哪个角度切入的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add db-ally/dbskill --skill dbskill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>"我想写一篇关于'2026下半年AI工具选型'的文章，目标读者是中小企业管理者，帮我诊断这个选题" → 拿到 3 个推荐角度 + 标题方案。</div>
     </div>
 
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">project-knowledge-memory-skill — 项目知识自动沉淀</div><div class="sk-subtitle">YanisYe · 项目笔记 + 决策记录 + 上下文记忆</div></div></div>
-      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-g">知识管理</span><span class="bd bd-o">项目记忆</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>把项目过程中的知识自动沉淀为结构化笔记：项目背景、关键决策（为什么这么选）、会议要点、待办事项、风险追踪。核心是「决策记录」——不只记做了什么，还记为什么这么做。下次有人问「当时为什么选 A 不选 B」，翻笔记就能答。<br><strong>最适合：</strong>项目管理者、咨询顾问、产品经理——任何需要记录「为什么」而不只是「做了什么」的人。</div>
-      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add YanisYe/project-knowledge-memory-skill --agent codex --global</div></div>
-      <div class="try"><strong>🎯 今天就能试：</strong>把本周的一个项目讨论纪要丢给 Codex，说「用 project-knowledge 存储这次讨论的决策记录」，看它怎么结构化拆解你的讨论内容。</div>
-      <div class="example">
-        <div class="ex-title">📌 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>"用 project-knowledge 记录今天的产品评审会决策：选择了方案B而非方案A，理由是方案B的维护成本更低，但需要额外2周开发时间"</div>
-        <div class="ex-out"><strong>成果：</strong>生成结构化笔记：决策项（选择方案B）→ 备选方案（方案A，被否决）→ 选择理由（维护成本低，长期ROI更高）→ 代价（+2周开发周期）→ 风险（延期风险，已有缓解计划）→ 关联文档链接。下次新人来问「为什么选B」，直接发这篇笔记。</div>
-      </div>
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">content-research-writer — 搜+写一体</div><div class="sk-subtitle">ComposioHQ · 昨天装过了，今天是进阶用法</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 12K+</span><span class="bd bd-p">写作</span></div>
+      <div class="sk-desc"><strong>进阶技巧：</strong>别直接让它写完整文章。分两步——先确认提纲（"给我 4 段提纲，每段 2 个核心论点"），确认后再逐段展开。GPT-5.6 的上下文理解更强，但分段确认仍是最稳妥的写法。<br><strong>避坑：</strong>一次性生成长文的逻辑漂移问题，在 GPT-5.6 中并未完全解决——分段写+人工审核仍是最佳实践。</div>
     </div>
 
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">image-to-editable-ppt-skill — 图片 PPT 变回可编辑文件</div><div class="sk-subtitle">ningzimu · 截图/扫描件 → 可编辑 .pptx</div></div></div>
-      <div class="badges"><span class="bd bd-b">PPT生成</span><span class="bd bd-p">图片转PPT</span><span class="bd bd-g">可编辑</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>把幻灯片图片、PDF、基于图片的 PPTX 文件转换为可编辑的 PowerPoint 演示文稿。你收到一份别人发的 PPT 截图或扫描版 PDF，没法编辑——这个 Skill 把图片里的文字、图形、布局识别出来，重建为可编辑的 .pptx 文件。每个文本框、形状都能在 PowerPoint 里直接改。<br><strong>最适合：</strong>收到别人发的 PPT 图片或 PDF 想改内容、老课件数字化、从会议截图恢复 PPT。</div>
-      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ningzimu/image-to-editable-ppt-skill --agent codex --global</div></div>
-      <div class="try"><strong>🎯 今天就能试：</strong>找一张你手机里拍的别人 PPT 的照片，让 Codex「用 image-to-editable-ppt 把这张截图转成可编辑的 .pptx」，看它恢复的效果。</div>
-      <div class="example">
-        <div class="ex-title">📌 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>"用 image-to-editable-ppt 把这 5 张会议PPT截图转成可编辑的 .pptx 文件"</div>
-        <div class="ex-out"><strong>成果：</strong>一个 .pptx 文件：5 页幻灯片，每页的文字、标题、图形布局都从图片中恢复。在 PowerPoint 里打开，每个文本框都可以点击编辑、改色、改字号。恢复准确率约 90%，复杂图表可能需要微调。</div>
-      </div>
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">humanizer-zh — 去 AI 味升级用法</div><div class="sk-subtitle">op7418 · 不只是"去掉套话"</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 9.5K</span><span class="bd bd-p">润色</span></div>
+      <div class="sk-desc"><strong>进阶用法：</strong>GPT-5.6 的文章比 GPT-5 更"像人写的"，但仍有三个 AI 痕迹：过度工整的段落结构、缺乏个人语气的"中性腔"、结尾总爱总结。humanizer-zh 提供一个"语气注入"参数——告诉它"像朋友聊天""像行业老手""像技术博客"，它会按不同语气链改写。<br><strong>关键指令：</strong>"用 humanizer-zh 把这篇去 AI 味，语气设定为'像 5 年经验的行业人士在分享心得'"</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global</div></div>
     </div>
 
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">pixel2motion — 静态标志变成流畅动画</div><div class="sk-subtitle">nolangz · 1.0K+ stars · SVG 动画 + HTML 演示 + GIF 预览</div></div></div>
-      <div class="badges"><span class="bd bd-g">⭐ 1.0K+</span><span class="bd bd-o">社交分发</span><span class="bd bd-r">动画设计</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>把光栅标志（PNG/JPG）转化为流畅的 SVG 动画、动画 HTML 演示、GIF/视频预览。给一个品牌 logo 图片，它自动生成多种动画方案：渐入、旋转、路径运动、粒子效果。输出的 SVG 动画可以直接用在网页、PPT、社交媒体上。<br><strong>最适合：</strong>品牌运营、社媒小编——给静态 logo 加点动感，在社交平台更吸睛。不用请设计师做动画。</div>
-      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nolangz/pixel2motion --agent codex --global</div></div>
-      <div class="try"><strong>🎯 今天就能试：</strong>把你公司或项目的 logo 图片丢给 Codex，说「用 pixel2motion 生成 3 种动画效果」，看哪种最合适。</div>
-      <div class="example">
-        <div class="ex-title">📌 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>"用 pixel2motion 给这张公司logo生成一个3秒的渐入旋转动画，输出SVG和GIF"</div>
-        <div class="ex-out"><strong>成果：</strong>两个文件：① 一个 SVG 动画文件（logo 从透明渐入 + 360° 旋转定位，3秒完成，可嵌入网页）② 一个 GIF 预览（可直接发微信/钉钉/飞书）。附带运动质量保证证据（帧率、动画曲线参数）。</div>
-      </div>
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">weekly-report-skill — 周报自动生成</div><div class="sk-subtitle">社区贡献 · 把零散记录变成结构化周报</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2K+</span><span class="bd bd-o">职场</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一周的聊天记录、会议笔记、任务列表扔进去，自动输出结构化周报。按"本周成果→数据亮点→问题与风险→下周计划"四段式整理。GPT-5.6 对多源信息的融合能力让周报质量明显提升。<br><strong>最适合：</strong>每周五花半小时凑周报的人——现在 5 分钟搞定。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add githubfans518/weekly-report-skill --agent codex --global</div></div>
     </div>
 
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">codex-autoresearch — 自导迭代研究系统</div><div class="sk-subtitle">leo-lilinxiao · 1.9K+ stars · 修改→验证→保留/丢弃→重复</div></div></div>
-      <div class="badges"><span class="bd bd-g">⭐ 1.9K+</span><span class="bd bd-r">选题诊断</span><span class="bd bd-b">自动研究</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>一个自导迭代系统——给一个研究问题，Codex 自动循环：提出假设 → 搜索验证 → 保留有效结论 → 丢弃无效方向 → 基于已有发现提出新假设 → 继续搜索。无限重复直到覆盖问题空间或达到终止条件。不需要你逐步引导，AI 自己跑研究流程。<br><strong>最适合：</strong>需要深度调研的场景——行业分析、竞品研究、技术选型评估。给一个问题，等它跑完看综合报告。</div>
-      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add leo-lilinxiao/codex-autoresearch --agent codex --global</div></div>
-      <div class="try"><strong>🎯 今天就能试：</strong>给 Codex 一个你想调研的问题，比如「2026 年国内 AI 写作工具市场格局」，说「用 autoresearch 跑一轮迭代研究」，等它跑完看报告。</div>
-      <div class="example">
-        <div class="ex-title">📌 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>"用 autoresearch 研究这个问题：目前国内面向中小企业的AI写作工具有哪些？各自的核心差异是什么？"</div>
-        <div class="ex-out"><strong>成果：</strong>一份迭代研究报告：第一轮发现 8 款工具 → 第二轮深入对比前 5 款的功能和定价 → 第三轮验证用户口碑 → 最终输出：工具对比矩阵（功能/定价/适用场景/用户评价）+ 推荐清单（按企业规模分层）+ 研究过程中被丢弃的无效线索（附理由）。</div>
-      </div>
-    </div>
-
-    <div class="pipe">
-      <span class="pa">周末充电流水线 →</span>
-      <span class="ps ps-5">⑤ 自主调研</span><span class="pa">→</span>
-      <span class="ps ps-2">② 沉淀知识</span><span class="pa">→</span>
-      <span class="ps ps-1">① 转幻灯片</span><span class="pa">→</span>
-      <span class="ps ps-3">③ 恢复PPT</span><span class="pa">→</span>
-      <span class="ps ps-4">④ 标志动画</span>
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">article-writer-skill — 长文结构与逻辑链优化</div><div class="sk-subtitle">社区贡献 · 3000 字以上的文章用它校对结构</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 1.5K</span><span class="bd bd-b">结构</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专门检查长文的结构问题——段落间的逻辑链条是否断裂、论据是否支撑论点、有没有重复论证、信息密度是否均匀。它不碰文字本身，只看骨架。<br><strong>最适合：</strong>3500 字以上的深度文章，写完后再用它跑一遍"结构审计"，往往能发现 3-5 个逻辑问题。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add githubfans518/article-writer-skill --agent codex --global</div></div>
     </div>
   </div>
 
-  <!-- 🆕 Updates -->
   <div class="section">
-    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态：桌面三模式详解</span></div>
-
-    <div class="hl">🔥 <strong>7月9日 Codex 并入 ChatGPT 桌面端后，三种模式的定位逐渐清晰。</strong>Chat 模式：轻量问答，像跟同事聊天；Work 模式：多步骤自主执行，能跨应用收集信息、拆解步骤、持续工作数小时，适合非技术用户；Codex 模式：深度代码操作，直接编辑文件、跑命令、管理项目。非开发者推荐 Work 模式——隐藏技术细节，保留 Agent 能力。</div>
-
-    <div class="tip t-b">
-      <div class="th"><div class="tt">⚡ Work 模式的三个杀手锏</div></div>
-      <div class="tb"><strong>① 后台运行：</strong>启动一个长任务后可以关掉对话窗，任务在后台跑，手机上可以查看进度。<br><strong>② 定时任务：</strong>Scheduled Tasks 支持——设置每周自动汇总 Slack 消息生成会议议程，每天自动整理待办。<br><strong>③ 多格式产出：</strong>Work 模式能直接生成文档/表格/演示文稿，不只是输出文字。说「把客户调研整理成营销方案」，它出的是一份排版好的方案文档。</div>
-    </div>
-
-    <div class="tip t-b">
-      <div class="th"><div class="tt">⚡ Record & Replay——给 AI 录一个工作流</div></div>
-      <div class="tb">macOS 上的 Record & Replay 功能（6月18日发布）：给 Codex 演示一遍工作流程——比如填报销单、提交请假——它会录下来，变成一个可检查、可编辑的 Skill。下次说一句就自动重放。你控制录制开始和停止，AI 只学你让它学的东西。目前 macOS 限定，Windows 版在路上。</div>
-    </div>
+    <div class="section-title"><div class="si si-b">🆕</div><span>GPT-5.6 写作实测：比 GPT-5 好在哪</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">📝 论据密度提升 40%</div></div><div class="tb">同样的选题，GPT-5.6 Sol 生成的初稿中具体数据、案例、引用的密度明显高于 GPT-5。以前 AI 写作常见的"空话连篇"问题在 Sol 下显著改善。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🔗 上下文逻辑一致性更强</div></div><div class="tb">GPT-5.6 在 4000 字以上的长文中，前后逻辑矛盾的概率从 GPT-5 的约 15% 降到 5% 以下。但分段确认仍是最优实践——不要依赖这一点而跳过审稿。</div></div>
   </div>
 
-  <!-- 📗 -->
   <div class="section">
-    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">🧪 每个 notebook 只放一个主题——检索命中率翻倍</div></div>
-      <div class="tb">把每本 notebook 收敛在一个主题与一段时间范围内。例如「2026 Q2 竞品分析」「健身复健 reading」。跨主题会稀释检索命中率——问问题时 AI 不知道你想要哪一段。一个主题一个笔记本，看似多建了几个，但每个笔记本的问答质量远超混合笔记本。</div>
-    </div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">🧪 时间轴整理术——自动理清脉络</div></div>
-      <div class="tb">对历史事件、公司发展史或项目进度，直接下指令：「请用时间序列的方式，将每个事件按时间整理好」。NotebookLM 会自动理清脉络，生成结构化时间线。比手动翻文档整理快十倍，而且不会漏掉小事件。</div>
-    </div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">🧪 音频概述通勤复习法</div></div>
-      <div class="tb">在生成 Audio Overview 前，点设置面板的「Customize」：限定话题范围、设定受众和讲解深度。生成后通勤路上听——效果出奇地好。它不是机械朗读，而是两个 AI 主持人在讨论你的材料，会自动补充背景和过渡。研究新材料时，先听一遍音频概述，再读文档，效率翻倍。</div>
-    </div>
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 技巧</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 把别人的爆款文章喂给 NotebookLM 做"反向研究"</div></div><div class="tb">找到一篇同领域的高赞文章，上传到 NotebookLM，让它分析"这篇文章为什么受欢迎？——论点结构、案例选择、节奏控制各有什么特点。"再用分析结果优化自己的文章结构。这不是抄袭，是学习方法论。</div></div>
   </div>
 
-  <!-- 📙 -->
   <div class="section">
-    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
-
-    <div class="tip t-p">
-      <div class="th"><div class="tt">⚡ 专家团组合拳——一个任务调多个专家协作</div></div>
-      <div class="tb">WorkBuddy 有个「专家团」功能，可以同时召唤多个 AI 专家协作处理同一个任务。<br><strong>实操举例——做月度运营报告：</strong><br>
-      ① 先让「数据分析专家」读取 Excel，生成数据看板<br>
-      ② 再让「PPT 专家」把看板内容做成幻灯片<br>
-      ③ 最后让「文案专家」给每页 PPT 配上解说词<br>
-      三个专家串起来，一个指令搞定。这是单次对话效率的 3 倍——因为每个专家只做自己最擅长的事，输出质量远超一个通才 AI 包揽全部。</div>
-    </div>
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">📋 用 WorkBuddy 自动归档写作素材</div></div><div class="tb">每次写完文章后，让 WorkBuddy 自动把"原稿→润色稿→发布稿→相关素材"按日期归档到项目文件夹。配合自动化任务，写作从"一次性行为"变成"可检索的知识资产"。</div></div>
   </div>
 
-  <!-- 📊 成果展示 -->
   <div class="section">
     <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
     <div class="showcase">
-      <div class="sh-title">🎯 周末 1 小时搞定下周的分享 PPT</div>
-      <div class="sh-sub">用 codex-autoresearch + frontend-slides + pixel2motion 组合，从零到成品</div>
+      <div class="sh-title">🎯 用今天 5 个 Skill 写一篇能发的公众号文章</div>
+      <div class="sh-sub">从选题到发布，全流程控制在 45 分钟内</div>
       <div class="sh-box">
-        <strong>场景：</strong>下周三要做一个 15 分钟的内部分享，主题是「2026 年 AI 写作工具怎么选」，但你现在只有一句话的主题。<br><br>
-        <strong>操作：</strong><br>
-        ① 给 Codex 说「用 autoresearch 研究这个主题：2026年国内面向个人的AI写作工具对比，按功能/价格/适用人群三轴分析」→ 20 分钟出一份结构化调研报告<br>
-        ② 把报告丢给 frontend-slides：「把这份调研报告转成 12 页演示幻灯片，每页一个要点」→ 30 秒出 HTML 幻灯片<br>
-        ③ 让 Codex「用 pixel2motion 给标题页加一个渐入动画」→ 10 秒出动画效果<br>
-        ④ 手动微调 2-3 页的内容和顺序，导出 PDF 备用<br><br>
-        <strong>以前：</strong>调研 2 小时 → 写 PPT 2 小时 → 调格式 1 小时 = 5 小时<br>
-        <strong>现在：</strong>1 小时搞定，内容有调研支撑，演示有动画效果。
+        <strong>第1步：</strong>dbskill 诊断选题 → 确认"值得写+3个推荐角度+2个hook"（5分钟）<br>
+        <strong>第2步：</strong>content-research-writer 确认提纲→逐段展开2000字初稿（20分钟）<br>
+        <strong>第3步：</strong>humanizer-zh 语气注入去AI味（5分钟）<br>
+        <strong>第4步：</strong>article-writer-skill 跑结构审计→修正5处逻辑断层（10分钟）<br>
+        <strong>收尾：</strong>人工精读一篇，微调后发布。以前3小时，现在45分钟。
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <div class="enc">🌱 周末充电的意义不是多干活，而是用更聪明的工具少干活。</div>
-    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-11</span>
+    <div class="enc">🌱 写作最难的不是写，是判断"值不值得写"。AI 能帮你做后半段，前半段的判断力才是你的护城河。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · GPT-5.6 专题周 Day 2 · 由 WorkBuddy 生成 · 2026-07-11</span>
   </div>
 </div>
 </body>

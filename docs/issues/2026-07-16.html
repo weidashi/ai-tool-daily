@@ -21,7 +21,7 @@
   .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
   .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
   .intro-box strong { color:#2d1b4e; }
-  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; }
   .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
   .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
   .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
@@ -30,206 +30,137 @@
   .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
   .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
   .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
-  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); }
   .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
   .sk-desc strong { color:var(--text); }
   .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
   .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
   .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
-  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
   .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
   .try strong { color:#92400e; }
   .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
   .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
-  .example .ex-in { color:#4b5563; margin-bottom:8px; }
-  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
   .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
   .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
   .tip .tt { font-size:14px; font-weight:700; }
   .tip .tb { font-size:13px; color:#555; line-height:1.7; }
-  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); }
   .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
-  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
-  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
-  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
-  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
-  .pa { color:var(--muted); font-weight:700; }
   .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
   .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
   .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
   .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
   .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
   .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
-  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+  @media(max-width:600px){ .art-header h1{font-size:24px;} }
 </style>
 </head>
 <body>
-<div class="nav"><a href="../index.html">&#8592; 返回速递列表</a></div>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
 <div class="article">
   <div class="art-header">
-    <div class="art-date">&#x1f4c5; 2026-07-16 &#183; 星期四</div>
-    <h1>从&#34;用别人的Skill&#34;到&#34;创建自己的Skill&#34;</h1>
-    <div class="art-sub">skill-creator &#183; 咨询级PPT &#183; Obsidian知识库 &#183; 素材自动入库</div>
+    <div class="art-date">📅 2026-07-16 · 星期四 · GPT-5.6 专题周 Day 7（终篇）</div>
+    <h1>闭环篇：20+ Skills 组合拳——建成你的个人 AI 知识工作流水线</h1>
+    <div class="art-sub">选题→研究→写作→视觉→发布→归档，一条龙自动化</div>
   </div>
-  <div class="intro-box">&#x1f4cc; <strong>本期导读</strong><br>ChatGPT Work 上线一周了。Codex 并入桌面端、Scheduled Tasks 定时跑、Record &amp; Replay 录操作变 Skill——这些新能力最大的受益者不是程序员，而是每天跟文档、PPT、笔记打交道的知识工作者。但关键是：<strong>你怎么把「别人的 Skill」和「自己的需求」对接起来？</strong>本期从 skill-creator 讲起，四个 Skill 覆盖「创建→产出→管理→入库」全链路，最后教你用 skill-creator 给自己做一个专属的公众号选题诊断 Skill。</div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>7 天装了 20+ 个 Skill，但"装得多"不等于"用得好"。Day 7 是专题周收尾篇——不讲新 Skill，而是把前六天的内容串成三条完整流水线：日常内容生产、深度研究输出、项目管理汇报。装好这三条线，你的 AI 工作流就建成了。</div>
 
-  <!-- 📘 Skills -->
   <div class="section">
-    <div class="section-title"><div class="si si-p">&#x1f4d8;</div><span>Codex 日常效率 Skills</span></div>
-
-    <!-- Skill 1: skill-creator -->
-    <div class="skill featured">
-      <div class="sk-top"><div class="sk-num">&#x2460;</div><div><div class="sk-title">skill-creator</div><div class="sk-subtitle">vercel-labs &#183; AI 技能的 npm：一句话创建你自己的专属 Skill</div></div></div>
-      <div class="badges"><span class="bd bd-g">&#x2b50; 24K+（仓库）</span><span class="bd bd-p">Skill创建</span><span class="bd bd-o">零代码</span><span class="bd bd-b">68+ Agent兼容</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>Vercel 推出的 Skills CLI 生态中的核心能力。你对 Codex 说「帮我创建一个 XX 的 Skill」，skill-creator 会自动询问你的需求、触发场景、输出格式，然后生成一份完整的 SKILL.md 文件。装一次，以后任何重复性工作都能固化成 Skill——就像给自己的 AI 写一份标准操作手册。<br><strong>最适合：</strong>有固定工作流程但不想学编程的知识工作者。写公众号、做周报、整理会议纪要、管理素材——任何你每周重复做的事，都能变成一个 Skill。</div>
-      <div class="install"><div class="il">&#x1f4e6; 安装</div><div class="cmd">npx skills add vercel-labs/agent-skills --skill skill-creator --agent codex --global</div><div class="cmt">装好后，Codex 中直接说「用 skill-creator 帮我创建一个 XX Skill」即可触发。</div></div>
-      <div class="try"><strong>&#x1f3af; 今天就能试：</strong>对 Codex 说「用 skill-creator 帮我创建一个『公众号选题诊断』Skill。我要它帮我分析一个选题值不值得写，给我3个标题方案和2个hook方向。触发条件是我说『帮我诊断这个选题』。」Codex 会自动生成一份符合你个人风格的 SKILL.md，以后每次只需要一句话就能跑完整套选题诊断流程。</div>
-      <div class="example">
-        <div class="ex-title">&#x1f4cc; 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>用 skill-creator 创建一个「周报自动生成」Skill：每天下午5点触发，读取我今天的 Codex 会话记录，抽取工作要点，按三段式（本周进展→问题与风险→下周计划）生成周报草稿，发到桌面。</div>
-        <div class="ex-out"><strong>成果：</strong>一份完整的 SKILL.md，定义了触发词、输入要求、三步工作流、输出格式。以后每天说「出今日周报草稿」→ Codex 自动按你定好的流程执行。不用每天重新教 AI 怎么做。</div>
-      </div>
+    <div class="section-title"><div class="si si-p">📘</div><span>七天回顾：20+ Skills 全景图</span></div>
+    <div class="hl">
+      <strong>Day 1（入门）：</strong>content-research-writer · humanizer-zh · brand-guidelines · notion-knowledge-capture · file-organizer<br>
+      <strong>Day 2（写作）：</strong>dbskill + humanizer-zh 进阶 + weekly-report-skill + article-writer-skill<br>
+      <strong>Day 3（视觉）：</strong>baoyu-skills · canvas-design · ian-xiaohei-illustrations · CyberPPT · codex-ppt<br>
+      <strong>Day 4（研究）：</strong>deep-paper-note · notebooklm-skill · daily-paper · web-access · obsidian-inbox<br>
+      <strong>Day 5（平台）：</strong>ChatGPT Work · Codex 并入桌面端 · Sites · Scheduled Tasks<br>
+      <strong>Day 6（进阶）：</strong>Sol Max · Ultra 多智能体 · Persisted Reasoning · 多仓库 Codex<br>
+      <strong>Day 7（闭环）：</strong>三条流水线串联全部 Skills
     </div>
+  </div>
 
-    <!-- Skill 2: CyberPPT -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">🔗</div><span>流水线一：日常公众号内容生产（每天用）</span></div>
+
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">&#x2461;</div><div><div class="sk-title">CyberPPT</div><div class="sk-subtitle">crazyykhllc-bit &#183; 把 DOCX/PDF/研究报告变成咨询公司级可编辑 PPTX</div></div></div>
-      <div class="badges"><span class="bd bd-g">&#x2b50; 743</span><span class="bd bd-p">PPT生成</span><span class="bd bd-o">咨询级</span><span class="bd bd-b">8种风格</span><span class="bd bd-r">可编辑</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>一个不走「快速出片」路线的 Codex Skill。给你一份文档或研究报告，它模仿麦肯锡的 PPT 品控流程——先建立证据表、脑暴故事线、SCR（现状-矛盾-方案）框架收敛，再生成可编辑的 PPTX。16 道质量门禁、8 种视觉风格（深红咨询风、象牙白金融风、冷灰科技风等），每页关键文字和数字保持可编辑。<br><strong>最适合：</strong>咨询顾问做客户提案、项目经理做复盘汇报、研究人员把报告转成演示文稿。尤其适合「文档已经写好了，但要变成能上台讲的 PPT」这个场景。</div>
-      <div class="install"><div class="il">&#x1f4e6; 安装</div><div class="cmd">git clone https://github.com/crazyykhllc-bit/CyberPPT.git ~/.codex/skills/cyber-ppt</div><div class="cmt">装好后在 Codex 中说「帮我把这份 PDF 转成咨询风格 PPTX，目标 25 页，用风格 04 象牙白+深蓝强调」即可启动三阶段硬流程。</div></div>
-      <div class="try"><strong>&#x1f3af; 今天就能试：</strong>找一份你最熟悉的 PDF 报告（年度总结、行业分析、项目方案都行），丢给 Codex 说「用 CyberPPT 帮我把这份报告转成 PPT」。它会先分析内容、出故事线和大纲——你确认后再进入蓝图和生成阶段。三个确认门保证不跑偏。</div>
-      <div class="example">
-        <div class="ex-title">&#x1f4cc; 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>帮我把「2026Q1 行业研究报告.pdf」转成咨询风格 PPTX，目标页数 25 页，使用风格 01 经典深红咨询风。受众是公司高管，需要突出关键数据和战略建议。</div>
-        <div class="ex-out"><strong>成果：</strong>一份 25 页 .pptx 文件——封面+目录+Executive Summary+逐章分析+数据图表+结论建议。主标题、正文、关键数字、页码全部可编辑。视觉效果接近麦肯锡/BCG 风格的正式交付物。</div>
+      <div class="sk-top"><div class="sk-num">📋</div><div><div class="sk-title">选题 → 写作 → 去味 → 配图 → 发布</div><div class="sk-subtitle">耗时约 40 分钟（以前 3-4 小时）</div></div></div>
+      <div class="sk-desc">
+        <strong>第1步：选题诊断（dbskill）</strong>——"我想写 XXX 选题，帮我诊断"（3分钟）<br>
+        <strong>第2步：研究+初稿（content-research-writer）</strong>——确认提纲后逐段展开 2000 字（20分钟）<br>
+        <strong>第3步：去 AI 味（humanizer-zh）</strong>——语气注入"像行业老手分享"（5分钟）<br>
+        <strong>第4步：配图（baoyu-skills + ian-xiaohei-illustrations）</strong>——封面+结构图+3张手绘配图（8分钟）<br>
+        <strong>第5步：风格统一（brand-guidelines）</strong>——确保和往期文章语气一致（2分钟）<br>
+        <strong>第6步：归档（file-organizer + notion-knowledge-capture）</strong>——素材自动归位+Notion结构化笔记（2分钟）<br>
+        <strong>可选项：</strong>CyberPPT 转成 PPT 版本用于分享 / ChatGPT Work 跨平台分发
       </div>
     </div>
+  </div>
 
-    <!-- Skill 3: obsidian-skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🔗</div><span>流水线二：深度研究输出（每周 2-3 次）</span></div>
+
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">&#x2462;</div><div><div class="sk-title">obsidian-skills</div><div class="sk-subtitle">kepano（Obsidian CEO） &#183; 教会 AI 说 Obsidian 的「母语」</div></div></div>
-      <div class="badges"><span class="bd bd-g">&#x2b50; 35.9K</span><span class="bd bd-p">知识管理</span><span class="bd bd-b">Obsidian</span><span class="bd bd-o">PKM</span><span class="bd bd-r">零配置</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>Obsidian CEO Steph Ango 亲自写的 5 个 Skill 文件。装上后，Codex 自动学会 Obsidian 的所有原生语法——[[双向链接]]、callout 标注框、YAML 元数据、Canvas 画布、Bases 结构化数据库。之前让 AI 写 Obsidian 笔记总差那么一点（链接格式不对、不会用 callout），现在完全原生。<br><strong>最适合：</strong>用 Obsidian 做个人知识库（PKM）的知识工作者。让 Codex 帮你创建结构化的笔记、自动建立笔记之间的链接、生成 Canvas 视觉图谱——AI 真正理解你的笔记系统。</div>
-      <div class="install"><div class="il">&#x1f4e6; 安装</div><div class="cmd">git clone https://github.com/kepano/obsidian-skills.git ~/.codex/skills/obsidian-skills</div><div class="cmt">5 个子 Skill 自动识别：obsidian-markdown（语法）、obsidian-bases（数据库）、json-canvas（画布）、obsidian-cli（命令行）、defuddle（网页提取）。</div></div>
-      <div class="try"><strong>&#x1f3af; 今天就能试：</strong>对 Codex 说「帮我在 Obsidian 里创建一篇关于『AI 工具选型方法论』的笔记，用 callout 标注关键原则，列出 5 个选型维度，每个维度链接到对应的工具笔记，并在 YAML 里标记 tags 和创建日期。」Codex 生成的笔记会完美符合 Obsidian 格式，可以直接粘贴使用。</div>
-      <div class="example">
-        <div class="ex-title">&#x1f4cc; 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>帮我分析这3篇关于知识管理的文章（粘贴链接），在 Obsidian 中创建一篇综合笔记。用 callout 标注三篇文章的核心观点异同，用 [[双向链接]] 关联到已有的「PKM系统设计」笔记，生成一个 Canvas 画布展示三者关系。</div>
-        <div class="ex-out"><strong>成果：</strong>一篇格式完美的 Obsidian 笔记——标准 YAML frontmatter + [[双向链接]] + callout 对比框 + Canvas 关系图。省去了手动调整链接格式和 callout 语法的所有时间。</div>
+      <div class="sk-top"><div class="sk-num">📋</div><div><div class="sk-title">追踪 → 精读 → 笔记 → 关联 → 输出</div><div class="sk-subtitle">从文献到文章，全链路打通</div></div></div>
+      <div class="sk-desc">
+        <strong>第1步：每日追踪（daily-paper）</strong>——自动推送领域最新论文（自动，每天）<br>
+        <strong>第2步：精读笔记（deep-paper-note）</strong>——拆解为结构化笔记（每篇 5-8 分钟）<br>
+        <strong>第3步：跨文献关联（NotebookLM）</strong>——上传 3-5 篇论文，找观点分歧和方法差异（10分钟）<br>
+        <strong>第4步：笔记归档（obsidian-inbox）</strong>——自动同步到知识库，加双向链接（自动）<br>
+        <strong>第5步：输出文章（流水线一的全套）</strong>——把研究笔记转成面向读者的文章（40分钟）<br>
+        <strong>第6步：专家审校（Sol Max）</strong>——让 AI 以审稿人身份检查：数据准确吗？逻辑有跳跃吗？结论有证据吗？（5分钟）
       </div>
     </div>
+  </div>
 
-    <!-- Skill 4: obsidian-inbox -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">🔗</div><span>流水线三：项目管理汇报（按需要）</span></div>
+
     <div class="skill">
-      <div class="sk-top"><div class="sk-num">&#x2463;</div><div><div class="sk-title">Obsidian Inbox</div><div class="sk-subtitle">Simuiu &#183; 视频/文章/网页/微信内容 → 结构化 Obsidian 笔记 + 自动索引</div></div></div>
-      <div class="badges"><span class="bd bd-g">&#x2b50; 新发布</span><span class="bd bd-p">素材入库</span><span class="bd bd-o">自动索引</span><span class="bd bd-b">Local-First</span></div>
-      <div class="sk-desc"><strong>是什么：</strong>一个 local-first 的知识入库 Skill。把外部视频链接、文章、网页、微信内容甚至本地媒体文件丢给它，自动转成结构化 Obsidian Markdown 笔记，并维护三个可点击的索引：资料库索引、主题索引、用途索引。不是一次性摘要——每条资源都有原始材料留存、转写文本归档、普通总结和深度总结分层。<br><strong>最适合：</strong>每天在微信、B站、公众号里收藏大量内容但从来不知道放哪的人。帮你把「收藏即遗忘」变成「收藏即入库」。</div>
-      <div class="install"><div class="il">&#x1f4e6; 安装</div><div class="cmd">git clone https://github.com/Simuiu/obsidian-inbox.git ~/.codex/skills/obsidian-inbox</div><div class="cmt">装好后对 Codex 说「帮我把这个 B站视频/公众号文章 存入 Obsidian Inbox」即可触发自动入库流程。</div></div>
-      <div class="try"><strong>&#x1f3af; 今天就能试：</strong>找一个你今天读到的好文章（公众号文章链接或网页 URL），对 Codex 说「帮我把这篇文章用 Obsidian Inbox 存到我的知识库里，做普通总结就行」。它会自动抓取正文、生成结构化笔记、更新索引文件。</div>
-      <div class="example">
-        <div class="ex-title">&#x1f4cc; 实操示例</div>
-        <div class="ex-in"><strong>输入：</strong>帮我把这个 B站视频（链接）和这篇公众号文章（链接）用 Obsidian Inbox 存起来，视频做普通总结，文章做深度总结（因为这篇文章很重要）。</div>
-        <div class="ex-out"><strong>成果：</strong>两个资源的笔记 MD + 原始转写/正文归档 + 资料库索引更新 + 主题标签自动提取。以后想看这篇文章的核心观点，打开 Obsidian 搜一下就有，不用在微信收藏里翻半天。</div>
+      <div class="sk-top"><div class="sk-num">📋</div><div><div class="sk-title">数据收集 → 分析 → 报告 → PPT → 分发</div><div class="sk-subtitle">以前需要多个角色协作，现在一个人+AI</div></div></div>
+      <div class="sk-desc">
+        <strong>第1步：数据采集（ChatGPT Work Scheduled Tasks）</strong>——自动从飞书/钉钉/邮件中抓取项目数据（自动）<br>
+        <strong>第2步：周报生成（weekly-report-skill）</strong>——结构化四段式周报（5分钟）<br>
+        <strong>第3步：数据分析（content-research-writer + web-access）</strong>——结合行业数据做对比分析（15分钟）<br>
+        <strong>第4步：可视化（CyberPPT）</strong>——生成咨询级 PPT 汇报（15分钟）<br>
+        <strong>第5步：多平台分发（ChatGPT Work）</strong>——PPT版+公众号版+邮件版同时生成（5分钟）<br>
+        <strong>第6步：内部分享（ChatGPT Sites）</strong>——把报告做成一个交互式网站，数据实时更新
       </div>
     </div>
-
-    <div class="pipe">
-      <span class="ps ps-1">skill-creator</span><span class="pa">→</span>
-      <span class="ps ps-2">CyberPPT</span><span class="pa">→</span>
-      <span class="ps ps-3">obsidian-skills</span><span class="pa">→</span>
-      <span class="ps ps-4">Obsidian Inbox</span>
-      <span style="margin-left:8px;color:var(--muted);font-size:11px;">创建专属工具 → 高质量产出 → 知识结构化 → 素材自动入库。四个 Skill 串成完整链路。</span>
-    </div>
   </div>
 
-  <!-- 🆕 Updates -->
   <div class="section">
-    <div class="section-title"><div class="si si-b">&#x1f195;</div><span>Codex 官方动态 &amp; 使用技巧</span></div>
-
-    <div class="tip t-b">
-      <div class="th"><div class="tt">&#x1f525; ChatGPT Work + Scheduled Tasks：不写代码，也能定时让 AI 干活</div></div>
-      <div class="tb">ChatGPT Work 是 GPT-5.6 驱动的新代理模式——可以跨应用、跨文件、持续数小时完成任务。对非程序员来说，两个最实用的能力是：<strong>（1）Scheduled Tasks 定时任务</strong>——设置「每周一早上汇总上周产品更新」「每天检查共享表格是否有待办」「监控指定来源有新内容时生成摘要」，AI 按时自动执行；<strong>（2）@ 应用联动</strong>——在提示词中 @Slack、@Google Drive、@Gmail，ChatGPT Work 自动从对应平台拉取信息并处理。在 ChatGPT 桌面端的 Scheduled 面板创建任务，设定时间规则即可。</div>
-    </div>
-
-    <div class="tip t-b">
-      <div class="th"><div class="tt">&#x1f3a5; Record &amp; Replay：录一次操作，AI 自动学会你的 SOP</div></div>
-      <div class="tb">Codex 的新功能（macOS，需 Computer Use）：打开 Plugins → Record a skill → 演示一遍你的操作（比如填报销单、发布视频到多平台、下载定期报告）→ 停止录制，Codex 自动生成一份 SKILL.md。下次说「用上次那个报销 Skill 帮我填这个月」，它就能重放整条流程。以前教 AI 靠写提示词，现在直接做一遍给它看——比 RPA 工具简单 10 倍。</div>
-    </div>
-
-    <div class="tip t-b">
-      <div class="th"><div class="tt">&#x1f4cb; AGENTS.md：给 Codex 写一份「员工手册」</div></div>
-      <div class="tb">在 Codex 设置 → 个性化 → 自定义命令中创建 AGENTS.md，把「公众号排版规范」「PPT 配色要求」「邮件语气偏好」「禁用词列表」等固定规则写进去。之后每次让 Codex 生成内容，它自动按这些规则执行，不用每次都重新说一遍。分为全局级（所有项目通用）和项目级（单个项目专属）。这才是让 AI 真正「记住你的偏好」的正确方式。</div>
-    </div>
+    <div class="section-title"><div class="si si-p">📊</div><span>搭建你自己的流水线：四个原则</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">① 不要一次装完所有 Skill</div></div><div class="tb">按你的核心场景选 5-6 个就够了。写作者装 Day 1+2，研究者装 Day 1+4，管理者装 Day 1+5+6。装太多反而选择困难。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">② 先跑通一条线，再扩展</div></div><div class="tb">选一个你最常做的任务（比如每周写一篇文章），先用 3-4 个 Skill 跑通整条线。确认顺畅后，再加第二条线。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">③ 坏习惯比没工具更致命</div></div><div class="tb">最容易被跳过的步骤是"归档"——但这是流水线最有价值的环节。不归档 = 每次重新搜资料 = 效率打回原形。让 file-organizer + notion-knowledge-capture 自动化归档。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">④ 保持"人在回路中"</div></div><div class="tb">AI 写初稿、做配图、跑分析，但最终判断——选题值不值、结论对不对、风格合不合适——必须你来拍板。把 AI 当执行者，你做决策者。</div></div>
   </div>
 
-  <!-- 📗 -->
   <div class="section">
-    <div class="section-title"><div class="si si-g">&#x1f4d7;</div><span>NotebookLM 每日进步</span></div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">&#x1f4f1; Video Overview：60 秒竖屏短视频摘要</div></div>
-      <div class="tb">NotebookLM 新增 Video Overview 功能。上传资料后，NotebookLM 可以生成 TikTok 风格的 60 秒竖屏短视频摘要——有配乐、文字滚动、核心观点高亮。三种格式可选：Explainer（多语言支持）、Cinematic（电影感）、Short（60秒快剪，需 Google Pro/Ultra）。把研究报告丢进去，通勤路上刷一遍视频就消化完了。</div>
-    </div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">&#x1f9ea; 反向解释检验法：检验理解的最快方式</div></div>
-      <div class="tb">对 NotebookLM 说：「用错误的方式向我解释这个概念。常见的误解是什么？」——知道一个想法的「错误版本」，往往比知道正确版本更能让你真正理解它。你读到误解时心里会想「哦，我明白为什么会有人这么想了，但实际上——」，然后对正确答案的理解就深了一层。</div>
-    </div>
-
-    <div class="tip t-g">
-      <div class="th"><div class="tt">&#x1f3ac; Studio 自定义指令：做你自己的 AI 播客制作人</div></div>
-      <div class="tb">在 Studio 面板的 Audio Overview 中，可以自定义两位 AI 主持人的讨论重点、受众背景和对话风格。比如设置「目标受众是 25-35 岁的职场人，用通俗语言解释专业概念，每次讨论结尾给出 3 条实操建议」，生成的播客就完全按你的设定走。四种对话格式可选：Brief（简报）、Critique（批判）、Debate（辩论）、Deep Dive（深度探讨）。</div>
-    </div>
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 收尾技巧</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">📦 把七天的速递内容装进 NotebookLM</div></div><div class="tb">把这 7 期速递的 HTML 全部上传到 NotebookLM，创建一个"GPT-5.6 专题周知识库"。以后每次需要某个 Skill 的用法，直接在知识库里搜索——不用翻 7 篇文章。</div></div>
   </div>
 
-  <!-- 📙 -->
   <div class="section">
-    <div class="section-title"><div class="si si-o">&#x1f4d9;</div><span>WorkBuddy 实用技巧</span></div>
-
-    <div class="tip t-p">
-      <div class="th"><div class="tt">&#x2699;&#xfe0f; 链式任务指令：用 &#x2192; 串联多步骤工作流</div></div>
-      <div class="tb">在 WorkBuddy 中使用 &#x2192; 符号串联多个步骤，让 AI 按顺序完成整个工作流。例如「搜索最新 AI 工具动态 → 筛选 5 个最实用的 → 生成一篇带图文的速递文章 → 保存为 HTML 文件 → git push 部署」。不需要手动衔接每个步骤，一次性描述完整流程，WorkBuddy 按顺序执行。比之前需要手动分步确认的效率高出一大截。</div>
-    </div>
-
-    <div class="tip t-p">
-      <div class="th"><div class="tt">&#x1f4e6; 专家+Skill 组合：多专家会诊出精品</div></div>
-      <div class="tb">WorkBuddy 支持先加载一个 Skill 获取专业能力，然后切换专家视角审阅成果。比如：先用「Word/DOCX」Skill 生成一份报告 → 再召唤「视觉设计」专家审查排版和配色 → 最后用「数据分析」专家验证图表准确性。三个角度看同一份成果，质量翻倍。</div>
-    </div>
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 收尾技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⏰ 用自动化任务守护你的流水线</div></div><div class="tb">在 WorkBuddy 里设三个自动化任务：①每天早上 8:00 运行 daily-paper 追踪；②每周五下午自动整理本周写作素材归档；③每月1号自动生成上月内容数据分析。设好后不用管，它们会像闹钟一样准时跑。</div></div>
   </div>
 
-  <!-- 📊 成果展示 -->
   <div class="section">
-    <div class="section-title"><div class="si si-p">&#x1f4ca;</div><span>今日成果展示</span></div>
+    <div class="section-title"><div class="si si-p">📊</div><span>专题周结语</span></div>
     <div class="showcase">
-      <div class="sh-title">&#x1f3af; 用 skill-creator 给自己做一个「公众号选题诊断」Skill</div>
-      <div class="sh-sub">不用写一行代码，和 Codex 对话就能创建。以后每次只需要一句话跑完整套流程。</div>
+      <div class="sh-title">🎯 七天的成果：从"手动搬砖"到"流水线生产"</div>
+      <div class="sh-sub">20+ Skills 的真正价值不在数量，在组合</div>
       <div class="sh-box">
-        <strong>步骤：</strong><br><br>
-        <strong>1. 安装 skill-creator：</strong><br>
-        <code style="background:#e8e3f8;padding:3px 8px;border-radius:5px;font-size:11px;">npx skills add vercel-labs/agent-skills --skill skill-creator --agent codex --global</code><br><br>
-        <strong>2. 对 Codex 说：</strong><br>
-        「用 skill-creator 帮我创建一个『公众号选题诊断』Skill。能力要求：<br>
-        &#8226; 触发词：我说「帮我诊断这个选题」<br>
-        &#8226; 分析维度：受众明确性、痛点清晰度、信息差大小、传播潜力评分（1-10）<br>
-        &#8226; 输出：诊断结论 + 3 个标题方案 + 2 个 hook 方向 + 建议的写作框架<br>
-        &#8226; 风格：直接、不留情面，不好的选题直接说不好」<br><br>
-        <strong>3. 成果：</strong><br>
-        Codex 自动生成一份完整的 SKILL.md，保存在 ~/.codex/skills/ 目录下。<br><br>
-        <strong>4. 以后这样用：</strong><br>
-        对 Codex 说：「帮我诊断这个选题：『AI 时代，知识管理还需要记笔记吗？』目标读者是 25-35 岁的职场知识工作者。」<br><br>
-        <strong>&#x1f4e6; 你会得到：</strong><br>
-        <em>【诊断结论】</em>选题成立，受众明确（职场人），痛点是真实存在的竞争性需求（记笔记 vs AI 搜索）。信息差中等——建议从「笔记的心理价值 vs 检索效率」的角度切入，不要停留在「该不该记」的二元讨论。<br>
-        <em>【传播潜力】8/10</em>——话题有天然争议性，容易引发讨论和转发。<br>
-        <em>【3 个标题方案】</em>① AI 时代你还在记笔记？资深笔记党告诉你：记和不记，差的不是信息量 ② 我让 AI 帮我读了三个月论文，然后发现了一件可怕的事 ③ 知识管理的终点不是「记住」，是「想通」<br>
-        <em>【2 个 hook 方向】</em>① 反常识：研究显示手写笔记的记忆留存率比 AI 摘要高 47% ② 场景共鸣：描述一个「明明看过但又忘了」的尴尬瞬间<br>
-        <em>【建议写作框架】</em>hook 入口 → 抛出核心矛盾 → 引用研究数据 → 个人实践体验 → 给出可操作结论 → 引发评论互动
+        <strong>之前的你：</strong>选题靠直觉、写作从空白开始、配图找设计师帮忙、PPT 排一上午、素材散落各处、周报全靠回忆。<br><br>
+        <strong>之后的你：</strong>dbskill 验选题 → content-research-writer 出初稿 → humanizer-zh 去味 → baoyu-skills 做封面 → CyberPPT 转汇报 → file-organizer 归档。一条线串起来，时间从 4 小时缩到 40 分钟。<br><br>
+        <strong>关键不是装了多少个 Skill，而是你有没有一条跑通了的流水线。</strong>今天选一条线，装 4-5 个 Skill，明天就开始跑。三天后你会回不去的。
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <div class="enc">&#x1f331; 从「收藏别人的 Skill」到「创建自己的 Skill」——你离 AI 的原生用户，只差一次 skill-creator 对话</div>
-    <span style="color:var(--muted)">AI 工具每日速递 &#183; 由 WorkBuddy 生成 &#183; 2026-07-16</span>
+    <div class="enc">🌱 GPT-5.6 专题周完结。工具会变、Skills 会更新、平台会整合——但"流水线思维"这个能力，不会过时。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · GPT-5.6 专题周 Day 7 · 由 WorkBuddy 生成 · 2026-07-16</span>
   </div>
 </div>
 </body>
