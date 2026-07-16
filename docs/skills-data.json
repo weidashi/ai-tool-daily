@@ -18,7 +18,8 @@
         "wechat-article-write",
         "tailored-resume-generator",
         "article-writer-skill",
-        "caveman"
+        "caveman",
+        "skill-creator"
       ]
     },
     {
@@ -55,7 +56,8 @@
         "gorden-ppt-skill",
         "codex-ppt-skill",
         "paperjsx",
-        "ian-handdrawn-ppt"
+        "ian-handdrawn-ppt",
+        "cyberppt"
       ]
     },
     {
@@ -94,7 +96,9 @@
         "video-downloader",
         "web-access",
         "daily-paper",
-        "agent-skills"
+        "agent-skills",
+        "obsidian-skills",
+        "obsidian-inbox"
       ]
     },
     {
@@ -1039,9 +1043,81 @@
       ],
       "screenshot": "",
       "result": "一句话选题 → 六步自动走完到草稿箱。全程问答补齐关键决策，不需要手动衔接。"
+    },
+    "skill-creator": {
+      "name": "skill-creator",
+      "author": "vercel-labs",
+      "subtitle": "AI技能的npm：一句话创建你自己的专属Skill，零代码",
+      "desc": "Vercel推出的Skills CLI生态核心能力。对Codex说「帮我创建一个XX的Skill」，skill-creator自动询问需求、触发场景、输出格式，生成完整SKILL.md。把任何重复性工作固化为可复用的Skill——公众号写作、周报生成、会议纪要整理、素材管理，全都能变成一句话触发的自动化流程。",
+      "stars": "24K+（仓库）",
+      "tags": ["Skill创建", "零代码", "自定义", "68+Agent", "知识工作"],
+      "install": "npx skills add vercel-labs/agent-skills --skill skill-creator --agent codex --global",
+      "issues": ["2026-07-16"],
+      "screenshot": "",
+      "result": "一句话描述需求 → Codex自动生成完整SKILL.md。以后每次只需一句话触发整个工作流。"
+    },
+    "cyberppt": {
+      "name": "CyberPPT",
+      "author": "crazyykhllc-bit",
+      "subtitle": "文档→咨询级PPTX：16道门禁、8种风格、SCR框架",
+      "desc": "不走「快速出片」路线，模仿麦肯锡PPT品控流程。把DOCX/PDF/TXT/研究报告喂进去，先建证据表→脑暴故事线→SCR框架收敛→生成可编辑PPTX。16道质量门禁、8种视觉风格（深红咨询风、象牙白金融风、冷灰科技风等）、三阶段三确认硬流程。关键文字和数字保持可编辑，视觉资产渲染成图片。",
+      "stars": "743",
+      "tags": ["PPT生成", "咨询级", "8种风格", "可编辑PPTX", "SCR框架"],
+      "install": "git clone https://github.com/crazyykhllc-bit/CyberPPT.git ~/.codex/skills/cyber-ppt",
+      "issues": ["2026-07-16"],
+      "screenshot": "",
+      "result": "一份PDF报告 → 25页咨询公司级别.pptx。封面+目录+Executive Summary+逐章分析+数据图表+结论建议。"
+    },
+    "obsidian-skills": {
+      "name": "obsidian-skills",
+      "author": "kepano（Obsidian CEO）",
+      "subtitle": "教会AI说Obsidian「母语」：双向链接+callout+Canvas+Bases",
+      "desc": "Obsidian CEO Steph Ango写的5个Skill文件。装上后Codex自动学会Obsidian所有原生语法——[[双向链接]]、callout标注框、YAML元数据、Canvas画布、Bases结构化数据库。告别AI生成的笔记格式不对、链接语法错误的尴尬。五个子系统：markdown语法、Bases数据库、Canvas画布、CLI命令行、defuddle网页提取。",
+      "stars": "35.9K",
+      "tags": ["知识管理", "Obsidian", "PKM", "双向链接", "Canvas"],
+      "install": "git clone https://github.com/kepano/obsidian-skills.git ~/.codex/skills/obsidian-skills",
+      "issues": ["2026-07-16"],
+      "screenshot": "",
+      "result": "对Codex说「帮我在Obsidian里创建一篇XX笔记」→ 完美格式的Markdown，含[[双向链接]]+callout+YAML frontmatter。"
+    },
+    "obsidian-inbox": {
+      "name": "Obsidian Inbox",
+      "author": "Simuiu",
+      "subtitle": "视频/文章/网页→结构化Obsidian笔记+自动索引",
+      "desc": "Local-first知识入库Skill。把外部视频链接、文章、网页、微信内容和本地媒体文件丢给它，自动转成结构化Obsidian Markdown笔记，并维护资料库索引、主题索引、用途索引三个可点击入口。每条资源都有原始材料留存、转写文本归档、普通总结和深度总结分层。解决「收藏即遗忘」的知识管理痛点。",
+      "stars": "新发布",
+      "tags": ["知识入库", "Obsidian", "自动索引", "Local-First", "阅读总结"],
+      "install": "git clone https://github.com/Simuiu/obsidian-inbox.git ~/.codex/skills/obsidian-inbox",
+      "issues": ["2026-07-16"],
+      "screenshot": "",
+      "result": "一个B站链接+一篇公众号文章 → 两条结构化笔记+自动提取主题标签+索引文件更新。"
     }
   },
   "issues": [
+    {
+      "id": 25,
+      "date": "2026-07-16",
+      "weekday": "星期四",
+      "title": "从「用别人的Skill」到「创建自己的Skill」",
+      "subtitle": "skill-creator · 咨询级PPT · Obsidian知识库 · 素材自动入库",
+      "tags": [
+        "🔧 创建Skill",
+        "📽️ 咨询PPT",
+        "📚 Obsidian",
+        "📥 素材入库",
+        "🤖 ChatGPT Work"
+      ],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-16.html",
+      "skills": [
+        "skill-creator",
+        "cyberppt",
+        "obsidian-skills",
+        "obsidian-inbox"
+      ]
+    },
     {
       "id": 24,
       "date": "2026-07-15",
@@ -1090,6 +1166,19 @@
         "html-anything",
         "dbskill"
       ]
+    },
+    {
+      "id": 22,
+      "date": "2026-07-13",
+      "weekday": "星期日",
+      "title": "GPT-5.6 第四天：5个Skills打通内容生产全链路",
+      "subtitle": "内容研究 · 去AI味 · 公文写作 · 视觉设计 · 跨平台分发",
+      "tags": ["✍️ 内容研究", "🧹 去AI味", "📄 公文写作", "🎨 视觉设计", "📱 跨平台分发"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-13.html",
+      "skills": ["content-research-writer", "humanizer-zh", "official-document-drafting", "remove-ai-flavor", "canvas-design"]
     },
     {
       "id": 22,
