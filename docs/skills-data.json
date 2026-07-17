@@ -19,7 +19,8 @@
         "tailored-resume-generator",
         "article-writer-skill",
         "caveman",
-        "skill-creator"
+        "skill-creator",
+        "ll-humanizer-zh"
       ]
     },
     {
@@ -40,7 +41,8 @@
         "qiaomu-design-advisor",
         "image-enhancer",
         "imagegen-builtin",
-        "ado-visual-director"
+        "ado-visual-director",
+        "xhs-visual-director"
       ]
     },
     {
@@ -72,7 +74,8 @@
         "wechat-daily-skills",
         "wechat-article-publish",
         "qiaomu-design-advisor",
-        "ado-visual-director"
+        "ado-visual-director",
+        "xhs-visual-director"
       ]
     },
     {
@@ -98,7 +101,9 @@
         "daily-paper",
         "agent-skills",
         "obsidian-skills",
-        "obsidian-inbox"
+        "obsidian-inbox",
+        "ky-markdown-rebuilder",
+        "larksuite-cli"
       ]
     },
     {
@@ -1080,6 +1085,54 @@
       "screenshot": "",
       "result": "对Codex说「帮我在Obsidian里创建一篇XX笔记」→ 完美格式的Markdown，含[[双向链接]]+callout+YAML frontmatter。"
     },
+    "ky-markdown-rebuilder": {
+      "name": "ky-markdown-rebuilder",
+      "author": "KyrieCheungYep",
+      "subtitle": "PDF→结构化Markdown：复杂PDF一键重建，按页对齐，表格流程图全保留",
+      "desc": "用Codex视觉理解能力以"页面"为重建单位，把双栏排版、表格、流程图等复杂PDF变成结构清晰、按页对齐的Markdown。解决"AI读不懂PDF"的痛点——表格不丢、流程图不丢、阅读顺序不乱。",
+      "stars": "新发布",
+      "tags": ["PDF处理", "阅读总结", "知识管理", "Markdown"],
+      "install": "git clone https://github.com/KyrieCheungYep/ky-markdown-rebuilder.git ~/.codex/skills/ky-markdown-rebuilder",
+      "issues": ["2026-07-17"],
+      "screenshot": "",
+      "result": "40页复杂行业报告PDF → 结构完整的Markdown文件：目录锚点+表格转Markdown+流程图文字描述+页码对齐。直接喂给AI深度分析。"
+    },
+    "ll-humanizer-zh": {
+      "name": "ll-humanizer-zh",
+      "author": "liuliu-66-create",
+      "subtitle": "新开源中文去AI味：专治"爹味""教条味""替读者想"",
+      "desc": "六六AI研究所开源的去AI味Skill。专门识别中文AI写作特有的"替读者想""纠正型结构""自问自答""居高临下说教腔"，把老师语气改成朋友聊天的感觉。比通用版更聚焦中文创作场景。",
+      "stars": "新开源",
+      "tags": ["去AI味", "写作润色", "中文专用", "公众号"],
+      "install": "git clone https://github.com/liuliu-66-create/ll-humanizer-zh.git ~/.codex/skills/ll-humanizer-zh",
+      "issues": ["2026-07-17"],
+      "screenshot": "",
+      "result": "一篇AI写的公众号草稿 → 逐段标注AI味问题+替换为自然表达。读起来像资深编辑改过的稿子。"
+    },
+    "xhs-visual-director": {
+      "name": "xhs-visual-director-skill",
+      "author": "ziguishian",
+      "subtitle": "小红书视觉导演：先做策略再出图，逐页规划+提示词+文案+自检清单",
+      "desc": "作为视觉导演规划小红书图文帖子——先判断内容任务类型，再选择最适合的视觉风格，最后输出完整图文结构+逐页视觉方案+图像生成提示词+发布文案+自检清单。每一步都有策略，不是随机发挥。",
+      "stars": "1017",
+      "tags": ["小红书", "社交分发", "视觉设计", "图文规划", "内容创作"],
+      "install": "git clone https://github.com/ziguishian/xhs-visual-director-skill.git ~/.codex/skills/xhs-visual-director",
+      "issues": ["2026-07-17"],
+      "screenshot": "",
+      "result": "一篇文章/主题 → 完整小红书图文方案：内容分析+风格推荐+6页图文结构+逐页视觉方案+发布文案+自检清单。"
+    },
+    "larksuite-cli": {
+      "name": "larksuite/cli Skills",
+      "author": "飞书官方",
+      "subtitle": "26个飞书Skills：在Codex里一句话查日历、搜文档、发消息、管任务",
+      "desc": "飞书官方CLI Skills套装——26个独立Skill覆盖日历查询、即时消息、文档搜索、任务管理、会议安排等飞书核心功能。在Codex里说"帮我查今天的日程"，自动调用飞书API返回结果。一站式管理飞书，少切换APP。",
+      "stars": "官方",
+      "tags": ["飞书", "日常自动化", "日历", "文档管理", "消息"],
+      "install": "npx skills add larksuite/cli -y -g -a codex",
+      "issues": ["2026-07-17"],
+      "screenshot": "",
+      "result": "在Codex里说"搜飞书上关于Q3规划的文档"→ 自动返回标题+时间+作者+链接。不用打开飞书客户端。"
+    },
     "obsidian-inbox": {
       "name": "Obsidian Inbox",
       "author": "Simuiu",
@@ -1094,6 +1147,19 @@
     }
   },
   "issues": [
+    {
+      "id": 25,
+      "date": "2026-07-17",
+      "weekday": "星期五",
+      "title": "信息消费到知识资产：4个Skill把碎片变成武器",
+      "subtitle": "PDF重建 · 去AI味 · 小红书导演 · 飞书自动化——让读过的、写过的、发过的都变成可复用的资产",
+      "tags": ["📄 PDF重建", "✍️ 去AI味", "🃏 小红书", "📅 飞书", "🔗 知识资产"],
+      "skillCount": 4,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-07-17.html",
+      "skills": ["ky-markdown-rebuilder", "ll-humanizer-zh", "xhs-visual-director", "larksuite-cli"]
+    },
     {
       "id": 24,
       "date": "2026-07-16",

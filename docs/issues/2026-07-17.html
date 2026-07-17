@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-17</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">&#8592; 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">&#128197; 2026-07-17 · 星期五</div>
+    <h1>信息消费到知识资产：4个Skill把碎片变成武器</h1>
+    <div class="art-sub">PDF重建 · 去AI味 · 小红书导演 · 飞书自动化——让读过的、写过的、发过的都变成可复用的资产</div>
+  </div>
+  <div class="intro-box">&#128204; <strong>本期导读</strong><br>GPT-5.6专题周+GPT-5.6全线发布连烧了两周，今天是时候回到日常了。本周五聚焦一个被严重低估的问题：<strong>信息消费之后，留下了什么？</strong> 大多数人的日常是：读了一堆PDF和网页→用AI写了初稿→发到社交平台→然后就没有然后了。今天这4个Skill，帮你把每一步的"消耗"变成"资产"——PDF变成结构化笔记，AI文字变成真人风格，内容变成有策略的小红书图文，飞书变成一句话操作的自动化中枢。</div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">&#128214;</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">&#9312;</div><div><div class="sk-title">ky-markdown-rebuilder — PDF结构化重建</div><div class="sk-subtitle">KyrieCheungYep · 把AI读不懂的复杂PDF变成完美对齐的Markdown</div></div></div>
+      <div class="badges"><span class="bd bd-g">&#11088; 新发布</span><span class="bd bd-p">阅读总结</span><span class="bd bd-b">PDF处理</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>传统PDF提取只抓文字，遇到表格、流程图、双栏排版就崩。这个Skill用Codex的视觉理解能力，以"页面"为重建单位，把复杂PDF变成结构清晰、按页对齐的Markdown——表格不丢、流程图不丢、阅读顺序不乱。<br><strong>最适合：</strong>科研论文精读、行业报告归档、教材整理、任何"PDF喂给AI之前需要先看懂"的场景。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">git clone https://github.com/KyrieCheungYep/ky-markdown-rebuilder.git ~/.codex/skills/ky-markdown-rebuilder</div><div class="cmt">克隆后重启Codex，在对话中直接说"帮我把这个PDF重建为Markdown"即可触发。</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>找一份之前"AI读不懂"的复杂PDF（双栏排版、带表格流程图），丢给它重建，对比原PDF和输出Markdown的差异。</div>
+      <div class="example">
+        <div class="ex-title">&#128204; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我把这份行业白皮书PDF重建为Markdown，保留所有表格、流程图描述和章节层级」</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构完整的Markdown文件——标题层级清晰、表格转成Markdown表格、流程图用文字描述保留、页码对齐。现在直接喂给AI做深度分析，不再出现"我看不懂这个PDF"的问题。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&#9313;</div><div><div class="sk-title">ll-humanizer-zh — 新开源中文去AI味</div><div class="sk-subtitle">liuliu-66-create · 专治"爹味""教条味""替读者想"的中文AI通病</div></div></div>
+      <div class="badges"><span class="bd bd-g">&#11088; 新开源</span><span class="bd bd-p">写作润色</span><span class="bd bd-r">中文专用</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>六六AI研究所开源的去AI味Skill。不像通用版只处理"三段式排比"，它专门识别中文AI写作特有的毛病：替读者想（"很多人觉得XX"）、纠正型结构（"不是X，而是Y"）、自问自答（"那能不能？能"）、居高临下的说教腔。把老师的语气改成朋友聊天的感觉。<br><strong>最适合：</strong>公众号文章、小红书文案、知乎回答——所有需要"读起来像人写的"中文内容。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">git clone https://github.com/liuliu-66-create/ll-humanizer-zh.git ~/.codex/skills/ll-humanizer-zh</div><div class="cmt">克隆后重启Codex。在对话中描述你要润色的文本，Codex会自动匹配调用。</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>把之前AI生成的公众号草稿丢给它，让它检查"爹味"和"教条味"，看它具体指出了哪些问题、改成了什么风格。</div>
+      <div class="example">
+        <div class="ex-title">&#128204; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我检查这篇文章有没有AI味——替读者想、说教腔、自问自答这些毛病。有的话直接改成更自然的表达。」</div>
+        <div class="ex-out"><strong>成果：</strong>逐段标注了3处"替读者想"（"大多数人可能不知道……"）、2处说教（"你必须明白的是……"）、1处自问自答。全部替换为直接表达，读起来像资深编辑改过的稿子。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&#9314;</div><div><div class="sk-title">xhs-visual-director-skill — 小红书视觉导演</div><div class="sk-subtitle">ziguishian · 1017&#9733; · 先做策略再出图，让你的小红书图文不再凭感觉</div></div></div>
+      <div class="badges"><span class="bd bd-g">&#11088; 1017</span><span class="bd bd-o">社交分发</span><span class="bd bd-p">视觉设计</span><span class="bd bd-b">小红书</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是普通的"帮我写一篇小红书文案"——这是一个<strong>视觉导演</strong>。先判断内容任务类型，再选择最适合的视觉风格，最后输出完整图文结构+逐页视觉方案+图片生成提示词+发布文案+自检清单。每一步都有策略，不是随机发挥。<br><strong>最适合：</strong>小红书图文创作、品牌推广、知识博主的多平台分发。一篇长文变成有策略的社交内容。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">git clone https://github.com/ziguishian/xhs-visual-director-skill.git ~/.codex/skills/xhs-visual-director</div><div class="cmt">克隆后重启Codex。描述你要发的小红书内容主题，它会先做策略分析再出方案。</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>把你最近写的一篇文章交给它，让它规划一套小红书图文方案——看它选了哪种视觉风格、怎么拆解文章结构、每页配什么图。</div>
+      <div class="example">
+        <div class="ex-title">&#128204; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我规划一篇小红书图文，主题是"AI工具三个月使用心得"，目标读者是25-35岁职场人，风格偏好清爽简约。」</div>
+        <div class="ex-out"><strong>成果：</strong>内容任务分析→推荐"清新知识卡片"风格→6页图文结构（封面hook→痛点引入→3个核心工具→使用场景→总结金句）→每页的视觉方案描述+图像提示词+发布文案+发布前自检清单。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&#9315;</div><div><div class="sk-title">larksuite/cli — 飞书26个Skills</div><div class="sk-subtitle">飞书官方 · 在Codex里一句话操作飞书：查日历、发消息、搜文档、管任务</div></div></div>
+      <div class="badges"><span class="bd bd-g">&#11088; 官方</span><span class="bd bd-o">日常自动化</span><span class="bd bd-b">26个Skill</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>飞书官方发布的CLI Skills套装——26个独立Skill，覆盖日历查询、即时消息、文档搜索、任务管理、会议安排等飞书核心功能。装好之后，在Codex里说"帮我查今天的日程"，它自动调用飞书API返回结果，不用打开飞书APP。<br><strong>最适合：</strong>日常用飞书办公的人——每天打开Codex就一站式管理日历、文档和消息，切换APP的次数大幅减少。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">npx skills add larksuite/cli -y -g -a codex</div><div class="cmt">安装后重启Codex，输入 /skills 看到 lark-calendar、lark-im、lark-doc 等即为安装成功。需要先完成飞书CLI认证配置。</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>在Codex里说"帮我查今天飞书日历上有什么安排"，看它能不能自动返回你的日程。第一次用会很惊喜。</div>
+      <div class="example">
+        <div class="ex-title">&#128204; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「在飞书上搜一下最近一周关于"Q3规划"的文档，把标题和链接汇总给我」</div>
+        <div class="ex-out"><strong>成果：</strong>自动调用飞书搜索API → 返回5篇包含"Q3规划"的文档标题、更新时间、作者和链接。不用打开飞书客户端一个个翻。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">&#9312; 阅读</span><span class="pa">&#8594;</span>
+      <span class="ps ps-2">&#9313; 写作</span><span class="pa">&#8594;</span>
+      <span class="ps ps-3">&#9314; 分发</span><span class="pa">&#8594;</span>
+      <span class="ps ps-4">&#9315; 日常</span>
+      <span style="font-size:12px;color:var(--muted);margin-left:8px;">PDF&#8594;笔记 &#8594; 去AI味 &#8594; 小红书 &#8594; 飞书自动化 = 一条从信息到资产的完整链路</span>
+    </div>
+  </div>
+
+  <!-- Codex Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">&#127381;</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">&#9889; Codex并入ChatGPT桌面端（7/9正式上线）</div></div><div class="tb">Codex不再是独立App，已融入ChatGPT桌面端（macOS+Windows）。一个界面同时聊天和编程：Chat模式讨论方案、Codex模式动手实现、Work模式让ChatGPT Work智能体自动跑任务。老用户可保留Codex图标。这是Codex从"程序员工具"走向"知识工作平台"的关键一步。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">&#128640; GPT-5.6全系上线：三档模型怎么选</div></div><div class="tb"><strong>Sol</strong>（旗舰）：复杂写作、深度研究、长文分析，百万Token $5入/$30出。<strong>Terra</strong>（均衡）：日常写作润色、信息整理，$2.5入/$15出。<strong>Luna</strong>（轻量）：快速翻译、简单摘要、格式转换，$1入/$6出。日常知识工作选Terra就够了，写长文切Sol。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">&#128736; npx skills CLI：一个命令装给所有Agent</div></div><div class="tb">最新skills CLI支持Codex、Claude Code、Cursor等70+ Agent。统一命令格式：<code>npx skills add 作者/仓库 --skill 名称 -a codex</code>。加了<code>-a claude-code</code>同一个Skill就能装两份。以后不用记两套安装路径了。</div></div>
+  </div>
+
+  <!-- NotebookLM -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">&#128215;</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">&#127916; Short Video Overviews全量推送——60秒竖屏知识短片</div></div><div class="tb">7月7日起，所有英文用户都能用Short Video Overviews。把笔记内容一键转成TikTok风格的60秒竖屏短视频，AI配音+AI动画，三种风格可选（Short快速版/Explainer完整解说/Cinematic电影感）。<strong>知识消费正在从"阅读"变成"刷视频"。</strong>适合把学习笔记变成通勤刷的内容。中文版稍后推出。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">&#127917; Studio九大输出格式——一个笔记本当九个工具用</div></div><div class="tb">NotebookLM的Studio现在支持9种输出：Audio播客、Video视频、Slide Deck幻灯片、Quiz测验、Flashcards闪卡、Mind Map思维导图、Report报告、Infographic信息图、Data Table数据表。同一份资料，今天出播客通勤听，明天出闪卡复习，后天出幻灯片汇报。<strong>一份输入，多种输出。</strong></div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">&#128221; 自定义对话指令——让每个回答都按你的标准来</div></div><div class="tb">在笔记本的「Configure Chat」里写入自定义指令，NotebookLM会贯穿整个对话遵守。比如："只根据上传资料回答，每条关键论点标注出处。以忙碌主管为对象写作：先给结论再补充细节。结尾列出资料未覆盖的部分。"<strong>一次性设定，永久生效。</strong>零成本让输出质量上一个台阶。</div></div>
+  </div>
+
+  <!-- WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">&#128217;</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">&#128101; Team模式多Agent协作：复杂任务耗时压缩至1/4</div></div><div class="tb">WorkBuddy的Team模式可以同时召唤多个AI专家并行处理任务。比如做月度汇报：@数据分析专家读取Excel出图表，@PPT专家把结果做成幻灯片，@文案专家给每页写解说词——三个专家同时开工，一个指令搞定。以前半天的工作，现在半小时出初稿。<strong>核心心法：把大任务拆成平行子任务，分配给不同专家同时跑。</strong></div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">&#128241; 微信遥控——外出时发条微信，电脑自动干活</div></div><div class="tb">配置好微信绑定后，人在外面用手机给WorkBuddy发条微信，家里的电脑就会自动执行任务。场景：下班路上老板突然要数据汇总→微信发一句"帮我把桌面上的周报模板填上本周数据，生成PDF发我微信"→到家文件已经在手机里了。配置路径：左侧Claw→齿轮→微信绑定→扫码。</div></div>
+  </div>
+
+  <!-- Showcase -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">&#128202;</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">&#127919; 用ky-markdown-rebuilder把一份复杂PDF变成AI能读懂的笔记</div>
+      <div class="sh-sub">选一份你一直想深度阅读但"AI读不懂"的报告PDF，10分钟完成从混乱到清晰的转变</div>
+      <div class="sh-box">
+        <strong>&#128196; 操作步骤（3步走）：</strong><br><br>
+        <strong>第1步：安装 & 准备</strong><br>
+        git clone ky-markdown-rebuilder → 重启Codex → 准备一份带表格/图表的PDF（eg. 某咨询公司行业报告40页）<br><br>
+        <strong>第2步：一句指令触发</strong><br>
+        "帮我把这份行业报告PDF重建为Markdown，保留所有表格数据、图表文字描述和章节层级，按页对齐。"<br><br>
+        <strong>第3步：得到可用的知识资产</strong><br>
+        一份40页的PDF → 一个结构完整的Markdown文件：<br>
+        &#9989; 目录页→自动生成锚点链接<br>
+        &#9989; 双栏排版→按阅读顺序重排为单栏<br>
+        &#9989; 数据表格→转为Markdown表格<br>
+        &#9989; 流程图→用文字描述保留逻辑<br>
+        &#9989; 每页标注原始页码<br><br>
+        <strong>&#127942; 接下来你可以：</strong><br>
+        &#8226; 把这个Markdown导入NotebookLM，生成播客、闪卡、测验<br>
+        &#8226; 用humanizer-zh润色关键段落，直接发公众号<br>
+        &#8226; 用xhs-visual-director拆成小红书图文<br>
+        &#8226; 存档到Obsidian建立个人知识库<br><br>
+        <strong>一份PDF → 一份可无限复用的知识资产。这才是真正的"读完不白读"。</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">&#127793; 做一个"读过就能用"的人——把每份资料都变成你的武器库</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-17</span>
+  </div>
+</div>
+</body>
+</html>
