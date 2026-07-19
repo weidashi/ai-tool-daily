@@ -20,7 +20,8 @@
         "article-writer-skill",
         "caveman",
         "skill-creator",
-        "ll-humanizer-zh"
+        "ll-humanizer-zh",
+        "wewrite"
       ]
     },
     {
@@ -42,7 +43,9 @@
         "image-enhancer",
         "imagegen-builtin",
         "ado-visual-director",
-        "xhs-visual-director"
+        "xhs-visual-director",
+        "gzh-design-skill",
+        "chenly-wechat-studio"
       ]
     },
     {
@@ -103,7 +106,8 @@
         "obsidian-skills",
         "obsidian-inbox",
         "ky-markdown-rebuilder",
-        "larksuite-cli"
+        "larksuite-cli",
+        "book-to-skill"
       ]
     },
     {
@@ -1144,9 +1148,70 @@
       "issues": ["2026-07-16"],
       "screenshot": "",
       "result": "一个B站链接+一篇公众号文章 → 两条结构化笔记+自动提取主题标签+索引文件更新。"
+    },
+    "gzh-design-skill": {
+      "name": "gzh-design-skill",
+      "author": "isjiamu",
+      "subtitle": "Markdown→公众号HTML：全内联样式，粘贴不掉格式",
+      "desc": "专门为公众号排版设计的Skill。Markdown写完，选主题即可生成全内联HTML——自动编章节号、标关键词下划线、配引言卡与目录、处理代码块和图片，粘贴到公众号后台格式不丢。",
+      "stars": "1.7K",
+      "tags": ["公众号排版", "HTML", "全内联", "Codex原生", "新发布"],
+      "install": "git clone https://github.com/isjiamu/gzh-design-skill.git ~/.codex/skills/gzh-design-skill",
+      "issues": ["2026-07-19"],
+      "screenshot": "",
+      "result": "一篇Markdown → 全内联HTML，粘贴到公众号后台格式完美保留。以前手动调半小时，现在30秒。"
+    },
+    "wewrite": {
+      "name": "WeWrite",
+      "author": "imraywang",
+      "subtitle": "公众号全流程工厂v3.3：热点→选题→写作→配图→排版→草稿箱",
+      "desc": "公众号内容全流程Skill。7个可独立调用的节点：选题、写作、质量评分、AI配图、16主题排版、草稿箱推送、多平台改写。v3.3刚更新，退役单体构建改为folder-per-skill原生支持，Codex/Claude/OpenClaw通用。",
+      "stars": "热门",
+      "tags": ["全流程", "公众号", "v3.3", "草稿箱", "多平台"],
+      "install": "git clone https://github.com/imraywang/wewrite.git ~/.codex/skills/wewrite",
+      "issues": ["2026-07-19"],
+      "screenshot": "",
+      "result": "一句话选题 → 七步自动走完到草稿箱。每个环节也能单独调，不用全量跑。"
+    },
+    "book-to-skill": {
+      "name": "book-to-skill",
+      "author": "virgiliojr94",
+      "subtitle": "PDF书籍→Codex Skill：把整本书变成AI随时查阅的知识库",
+      "desc": "把技术书籍、行业报告、研究方法论PDF一键转为Codex Skill。装好后AI相当于「读完了」整本书——在任何对话中都能随时查阅书中概念、引用原文、对比观点，不用重新翻书。",
+      "stars": "8.6K",
+      "tags": ["PDF转Skill", "知识管理", "阅读效率", "AI外脑", "书籍查阅"],
+      "install": "npx skills add virgiliojr94/book-to-skill --agent codex --global",
+      "issues": ["2026-07-19"],
+      "screenshot": "",
+      "result": "一本PDF书 → 一个Codex Skill。写文章需要引用时直接问AI「这本书怎么讲XX的？」秒回原文。"
+    },
+    "chenly-wechat-studio": {
+      "name": "Chenly WeChat Studio",
+      "author": "LIyvqi",
+      "subtitle": "AI自动匹配审美：想法→公众号草稿，审美全自动",
+      "desc": "不只是一个Markdown转换器。先判断文章类型，自动选择视觉审美——深度分析用简约风，生活随笔用温暖风，教程用结构风。然后渲染HTML+生成草稿payload，需要时上传封面图片并创建公众号草稿。",
+      "stars": "热门",
+      "tags": ["AI排版", "自动审美", "草稿直推", "公众号", "Codex原生"],
+      "install": "git clone https://github.com/LIyvqi/chenly-wechat-studio.git ~/.codex/skills/chenly-wechat-studio",
+      "issues": ["2026-07-19"],
+      "screenshot": "",
+      "result": "几行想法 → AI自动判断类型+匹配审美+生成排版+创建草稿。不需要指定风格。"
     }
   },
   "issues": [
+    {
+      "id": 26,
+      "date": "2026-07-19",
+      "weekday": "星期日",
+      "title": "周日充电：4个新Skill打造个人AI内容工作台",
+      "subtitle": "告别排版噩梦 · 全流程文章工厂 · 知识随身带 · AI审美引擎",
+      "tags": ["🎨 公众号排版", "✍️ 全流程工厂", "📚 知识库", "🤖 AI审美", "🔧 工作台"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-19.html",
+      "skills": ["gzh-design-skill", "wewrite", "book-to-skill", "chenly-wechat-studio"]
+    },
     {
       "id": 25,
       "date": "2026-07-17",
