@@ -21,7 +21,8 @@
         "caveman",
         "skill-creator",
         "ll-humanizer-zh",
-        "wewrite"
+        "wewrite",
+        "transcript-polisher"
       ]
     },
     {
@@ -45,7 +46,8 @@
         "ado-visual-director",
         "xhs-visual-director",
         "gzh-design-skill",
-        "chenly-wechat-studio"
+        "chenly-wechat-studio",
+        "mindmap-ppt-builder"
       ]
     },
     {
@@ -62,7 +64,8 @@
         "codex-ppt-skill",
         "paperjsx",
         "ian-handdrawn-ppt",
-        "cyberppt"
+        "cyberppt",
+        "mindmap-ppt-builder"
       ]
     },
     {
@@ -107,7 +110,9 @@
         "obsidian-inbox",
         "ky-markdown-rebuilder",
         "larksuite-cli",
-        "book-to-skill"
+        "book-to-skill",
+        "sunzi-reading",
+        "ai-news-digest"
       ]
     },
     {
@@ -130,6 +135,51 @@
     }
   ],
   "skills": {
+    "sunzi-reading": {
+      "name": "Sunzi Reading（孙子读论文）",
+      "author": "julilaoshi",
+      "subtitle": "把复杂论文讲成短、准、有人味的解释，像长辈给小孙子讲论文",
+      "desc": "不是简单的论文摘要。像一个有学问、有耐心、还会哄人的长辈，把复杂论文拆成短、准、有人味的解释。会固定检查作者证明了什么/没证明什么，提醒哪里容易误读。提供Prompt和Skill两种用法，Prompt零安装即用。",
+      "stars": "新发布",
+      "tags": ["论文阅读", "说人话", "中文输出", "知识普及", "Prompt即用"],
+      "install": "git clone https://github.com/julilaoshi/sunzi-reading.git ~/.codex/skills/sunzi-reading",
+      "issues": ["2026-07-20"],
+      "result": "一篇看不懂的论文 → 像听长辈讲故事一样理解了核心观点、创新点和局限性。"
+    },
+    "transcript-polisher": {
+      "name": "Transcript Polisher（转录精修师）",
+      "author": "rookie-ricardo",
+      "subtitle": "语音转录→高可读性文章：去口语词+同音纠错+意群分段，保留原词拒绝概括",
+      "desc": "把访谈、演讲、播客、会议的语音转录文本精修为可读性高的文章段落。精准降噪（删口水词）+同音纠错（专有名词修正）+意群分段（按逻辑重组）。自动识别单人/多人模式，5000字以上自动分块并行处理。",
+      "stars": "561+",
+      "tags": ["语音处理", "文本精修", "会议整理", "访谈转化", "播客文章"],
+      "install": "npx skills add rookie-ricardo/erduo-skills --skill transcript-polisher --agent codex --global",
+      "issues": ["2026-07-20"],
+      "result": "1小时播客字幕 → 3分钟可读完的精修文章。口语词全剔除，关键观点和幽默感保留完整。"
+    },
+    "mindmap-ppt-builder": {
+      "name": "Mindmap PPT Builder",
+      "author": "hy546880109",
+      "subtitle": "文章/报告/笔记→可播放思维导图PPT：支持翻页+缩放+节点插画",
+      "desc": "把文章、报告、演讲稿、笔记交给Agent，自动拆结构→写导图内容→配图→生成可播放的思维导图演示。方向键翻页、滑动调画布、点击节点跳转。部署到GitHub Pages即在线演示。",
+      "stars": "LobeHub 133+",
+      "tags": ["思维导图", "演示PPT", "内容可视化", "可部署", "静态网页"],
+      "install": "npx skills add hy546880109/mindmap-ppt --skill mindmap-ppt-builder --agent codex --global",
+      "issues": ["2026-07-20"],
+      "result": "一篇长文章 → 一个可在线播放的思维导图演示。分享链接就能看，手机上也能翻页。"
+    },
+    "ai-news-digest": {
+      "name": "AI News Digest",
+      "author": "chengjialu8888",
+      "subtitle": "30+中英文信源→5道质量审核→结构化日报+CSV，一句触发",
+      "desc": "面向知识工作者的AI日报Skill。自动搜索30+中英文信源+追踪25位海外AI Builder动态，经5道质量审核门把关（信源去重→可信度评估→信号等级标注→事实核验→关联分析），输出结构化Markdown日报+CSV数据表。",
+      "stars": "新发布",
+      "tags": ["信息聚合", "AI日报", "选题追踪", "CSV导出", "5道审核"],
+      "install": "git clone https://github.com/chengjialu8888/AI_News_Digest.git ~/.codex/skills/ai-news-digest",
+      "issues": ["2026-07-20"],
+      "result": "一句话"跑今天的AI日报"→结构化日报（大厂动向/初创融资/海外Builder）+CSV数据表。"
+    },
+
     "qiaomu-paper-interpreter": {
       "name": "qiaomu-paper-interpreter",
       "author": "joeseesun（向阳乔木）",
@@ -1199,6 +1249,19 @@
     }
   },
   "issues": [
+    {
+      "id": 27,
+      "date": "2026-07-20",
+      "weekday": "星期一",
+      "title": "信息消费升级：4个Skill帮你读得更深、整理得更顺、分享得更漂亮",
+      "subtitle": "孙子读论文 · 转录精修师 · 思维导图PPT · AI日报信源聚合",
+      "tags": ["📖 论文说人话", "🎙️ 转录精修", "🗺️ 思维导图PPT", "📰 AI日报", "🔗 消费→输出"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-20.html",
+      "skills": ["sunzi-reading", "transcript-polisher", "mindmap-ppt-builder", "ai-news-digest"]
+    },
     {
       "id": 26,
       "date": "2026-07-19",

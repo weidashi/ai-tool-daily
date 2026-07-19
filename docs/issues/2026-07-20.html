@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-20</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">&larr; 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">&#128197; 2026-07-20 &middot; 星期一</div>
+    <h1>&#128214; 信息消费升级：4个Skill帮你读得更深、整理得更顺、分享得更漂亮</h1>
+    <div class="art-sub">孙子读论文 &middot; 转录精修师 &middot; 思维导图PPT &middot; AI日报信源聚合</div>
+  </div>
+  <div class="intro-box">&#128204; <strong>本期导读</strong><br>
+  信息过载时代，真正拉开差距的不是"看了多少"，而是"消化了多少、输出了多少"。本期4个全新Skill覆盖<strong>阅读&rarr;整理&rarr;输出&rarr;持续追踪</strong>全链路：用孙子读论文的方式看懂硬核内容、把会议访谈整理成可读文章、把任何材料一键做成思维导图PPT、让AI每天帮你盯30+信源出日报。打通从消费到创作的最后一步。</div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">&#128216;</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">&circledast;</div><div><div class="sk-title">Sunzi Reading &mdash; 孙子读论文</div><div class="sk-subtitle">julilaoshi &middot; 把复杂论文讲成短、准、有人味的解释，像一个有学问的长辈给小孙子讲论文</div></div></div>
+      <div class="badges"><span class="bd bd-p">&#11088; 新发布</span><span class="bd bd-g">&#128214; 论文阅读</span><span class="bd bd-r">&#128172; 中文说人话</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是简单的论文摘要——而是像"有学问、有耐心、还会哄人的长辈"一样，把复杂论文拆成短、准、有人味的解释。它会固定检查作者证明了什么/没证明什么，提醒哪里容易误读。<br><strong>最适合：</strong>需要快速读懂非自己领域论文的知识工作者——咨询顾问读行业报告、市场人员读竞品研究、编辑读各领域前沿。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">git clone https://github.com/julilaoshi/sunzi-reading.git ~/.codex/skills/sunzi-reading</div><div class="cmt">初级用法：直接复制仓库里的 sunzi_reading_prompt.md 粘贴到任何AI对话窗口即可使用（零安装即试）；Skill模式更稳定，适合长期复用</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>找一篇一直想读但没勇气读的论文（PDF或摘要都行），丢给Codex让它用孙子读论文的方式给你讲</div>
+      <div class="example">
+        <div class="ex-title">&#128209; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用孙子读论文的方式，帮我读这篇关于Transformer架构的论文摘要：Attention Is All You Need..."</div>
+        <div class="ex-out"><strong>成果：</strong>"好，爷爷给你讲。这篇论文的核心想法其实特别简单——以前机器读句子的时候，必须一个字一个字按顺序读，就跟你看书时用手指着一个字一个字划过去一样。这群作者说：'干嘛非得按顺序？一句话里哪个词跟哪个词有关，直接连起来不就行了？'他们管这个叫Attention。爷爷给你打个比方——就好比你在饭桌上，不用等每个人说完才能回应，谁说的话跟你有关，你转头就去聊，这就是Attention的道理。作者证明了这么做不仅更快，效果还好得多。但有件事他们没完全证明——这个Attention到底在关注什么，有时候机器自己也不知道为什么关注某个词..."</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&copy;</div><div><div class="sk-title">Transcript Polisher &mdash; 转录精修师</div><div class="sk-subtitle">rookie-ricardo &middot; 语音转录文本&rarr;高可读性文章：去口语词+同音纠错+意群分段，保留原句原词拒绝高度概括</div></div></div>
+      <div class="badges"><span class="bd bd-g">&#11088; 561+</span><span class="bd bd-o">&#127908; 语音处理</span><span class="bd bd-p">&#9997;&#65039; 文本精修</span><span class="bd bd-b">&#128340; 省时神器</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把访谈、演讲、播客、会议的语音转录文本精修为可读性高的文章段落。核心原则是"文字精修师，不是内容概括师"——<strong>精准降噪</strong>（删口水词"那个""呃""然后"）+<strong>同音纠错</strong>（专有名词修正）+<strong>意群分段</strong>（按逻辑重组而非机械切割）。自动识别单人/多人模式，5000字以上的长文本自动分块并行处理。<br><strong>最适合：</strong>经常做访谈整理、会议记录、播客内容转化的知识工作者——把1小时录音变成10分钟就能读完的文章。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">npx skills add rookie-ricardo/erduo-skills --skill transcript-polisher --agent codex --global</div><div class="cmt">来自耳朵技能集（erduo-skills），同仓库还有翻译精修师(translate-polisher)、RSS精选日报(ak-rss-digest)等</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>把上次开会的录制自动字幕文件导出粘贴，让Codex精修成你直接能转给参会人的会议记录</div>
+      <div class="example">
+        <div class="ex-title">&#128209; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"帮我精修这段会议转录：那个，我们上周的那个转化率啊，就是，呃，下降了大概3个点..."</div>
+        <div class="ex-out"><strong>成果：</strong>精修后的段落——"上周转化率下降约3个百分点。团队分析认为主要因素有三：竞品在6月15日上线了同类低价产品，我们的落地页加载速度比行业均值慢了1.2秒，且618大促后用户决策周期明显拉长。建议本周二前出一版落地页优化方案。"——口水词全部剔除，关键数据和结论保留完整。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&reg;</div><div><div class="sk-title">Mindmap PPT Builder &mdash; 思维导图式演示生成器</div><div class="sk-subtitle">hy546880109 &middot; 把文章/报告/演讲稿/笔记自动拆成可播放的思维导图PPT，支持方向键翻页+缩放+节点插画</div></div></div>
+      <div class="badges"><span class="bd bd-p">&#11088; LobeHub 133+</span><span class="bd bd-g">&#128451;&#65039; 思维导图</span><span class="bd bd-o">&#128265; 演示PPT</span><span class="bd bd-r">&#127760; 可部署</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一句话描述"把什么材料做成什么风格的思维导图PPT"，Agent自动拆结构、写导图节点内容、匹配配图、启动本地预览。输出为一个可播放的静态网页——用方向键翻页、滑动调画布缩放、点击节点跳转。部署到GitHub Pages就是在线演示。<br><strong>最适合：</strong>把长文章、报告、课程笔记、会议纪要快速转成看得见摸得着的演示材料——内部分享、客户汇报、知识库沉淀都适用。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">npx skills add hy546880109/mindmap-ppt --skill mindmap-ppt-builder --agent codex --global</div><div class="cmt">在线演示：https://hy546880109.github.io/mindmap-ppt/</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>把你最近写的一篇公众号文章链接丢给Codex，让它用mindmap-ppt-builder生成一份思维导图演示</div>
+      <div class="example">
+        <div class="ex-title">&#128209; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用mindmap-ppt-builder把这篇《AI工具选型：2026上半年50个Skill横评》的文章做成思维导图PPT，受众是部门领导，10页，风格简洁专业"</div>
+        <div class="ex-out"><strong>成果：</strong>一个可播放的思维导图页面——按"写作工具&rarr;视觉设计&rarr;PPT生成&rarr;知识管理&rarr;社交分发"五大分支展开，每个节点含子能力和推荐Skill，附关键数据卡片。方向键翻页，手机也能手指滑动播放。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">&#9416;</div><div><div class="sk-title">AI News Digest &mdash; AI行业日报生成器</div><div class="sk-subtitle">chengjialu8888 &middot; 30+中英文信源&rarr;5道质量审核&rarr;结构化日报+CSV数据表，一句话触发</div></div></div>
+      <div class="badges"><span class="bd bd-o">&#11088; 新发布</span><span class="bd bd-b">&#128240; 信息聚合</span><span class="bd bd-g">&#9989; 5道审核</span><span class="bd bd-p">&#128202; CSV导出</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个专门为知识工作者设计的AI日报Skill。自动搜索30+中英文信源，追踪25位海外顶级AI Builder动态，经过<strong>5道质量审核门</strong>（信源去重&rarr;可信度评估&rarr;信号等级标注&rarr;事实核验&rarr;关联分析），输出结构化日报。同时导出CSV数据表可导入多维表格。<br><strong>最适合：</strong>需要持续追踪行业动态的知识工作者——公众号选题素材、团队晨会简报、竞品动态监控、行业趋势研判。</div>
+      <div class="install"><div class="il">&#128230; 安装</div><div class="cmd">git clone https://github.com/chengjialu8888/AI_News_Digest.git ~/.codex/skills/ai-news-digest</div><div class="cmt">安装后直接说"跑一下今天的AI日报"或"出一期适合团队晨会的AI行业日报"即可触发</div></div>
+      <div class="try"><strong>&#127919; 今天就能试：</strong>对Codex说："用AI News Digest生成今天AI行业日报，偏公众号选题方向，重点看内容和工具类动态"</div>
+      <div class="example">
+        <div class="ex-title">&#128209; 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"跑一下今天的AI日报，输出CSV和Markdown两份，重点关注AI写作工具和内容创作赛道"</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化日报——板块分"大厂动向/初创融资/生态政策/海外Builder动态"，每条带信号等级（&#128308;&#128993;&#128994;ABC三档）+可信度评估+来源链接+关联赛道。同时一份CSV表格可直接导入飞书多维表格做长期追踪。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">&#128302; 孙子读论文</span><span class="pa">&rarr;</span>
+      <span class="ps ps-2">&#9997;&#65039; 转录精修师</span><span class="pa">&rarr;</span>
+      <span class="ps ps-3">&#128451;&#65039; 导图PPT</span><span class="pa">&rarr;</span>
+      <span class="ps ps-4">&#128240; AI日报</span>
+    </div>
+    <div class="hl">&#128161; <strong>组合工作流：</strong>AI日报帮你发现好内容 &rarr; 孙子读论文帮你深入理解 &rarr; 转录精修师帮你整理笔记 &rarr; 导图PPT帮你在团队分享会上炫出来。四个Skill串成一条从"发现"到"分享"的完整链路。</div>
+  </div>
+
+  <!-- Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">&#127381;</div><span>Codex 官方动态 &amp; 使用技巧</span></div>
+
+    <div class="tip t-b"><div class="th"><div class="tt">&#9889; ChatGPT Custom Instructions 上限从1500字符扩至5000字符（7/15）</div></div><div class="tb">现在可以写一份更详细的自定义指令了——不只是"请用中文回复"这种一句话，而是可以写一页正式的写作风格指南：偏好的语气、禁用词表、默认结构模板、引用格式要求、行业术语规范等。Plus/Pro/企业版用户可用。写完一次，之后每次对话自动生效。</div></div>
+
+    <div class="tip t-b"><div class="th"><div class="tt">&#128269; ChatGPT全局搜索上线：跨所有聊天、项目、图片、文件一键查找（7/14）</div></div><div class="tb">不再需要翻聊天记录找三个月前的那段对话。在侧边栏搜索框输入关键词，可搜所有历史聊天、项目、上传的图片和文件。还能按内容类型筛选——只搜聊天/只搜文件/只搜图片。找到了直接打开那条对话继续。</div></div>
+
+    <div class="tip t-b"><div class="th"><div class="tt">&#128736;&#65039; Codex CLI 0.144.6更新：GPT-5.6上下文窗口修正为272K Tokens（7/18）</div></div><div class="tb">之前部分场景下的上下文窗口参数存在偏差，此次更新将Sol/Terra/Luna三档模型的上下文窗口统一修正为27.2万tokens。意味着一次性喂进去的材料量可以更大——长篇报告、多篇论文、整本书级别的上下文处理更可靠。</div></div>
+
+    <div class="tip t-b"><div class="th"><div class="tt">&#128187; Codex桌面端使用技巧：用@前缀锁定具体文件或项目（7月新版）</div></div><div class="tb">在你打字时输入@符号，会弹出最近文件和项目的列表——选中后Codex自动将目标文件内容加载到上下文中。不需要手动描述"桌面上周那个xxx文件"，直接从列表里选。跟在Codex里同时按@web可以联网搜索一样，@文件/@项目是最省描述词的交互方式。</div></div>
+  </div>
+
+  <!-- NotebookLM -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">&#128215;</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g"><div class="th"><div class="tt">&#129514; 反向解释检验法：知道"错误版本"比知道"正确版本"更深刻</div></div><div class="tb">对NotebookLM说："用错误的方式向我解释这个概念。什么是常见的误解？"当你读到误解时心里会想"哦，我明白为什么会有人这么想，但实际上——"，然后对正确答案的理解就更深了一层。这个方法源自20个NotebookLM高阶用法之一，2026年7月刚被系统整理。</div></div>
+
+    <div class="tip t-g"><div class="th"><div class="tt">&#127917; 角色转换对话：把AI变成你的"对面立场"</div></div><div class="tb">上传一份方案或报告后，对NotebookLM说："如果你是同行评审/投资方/反对者，会标记什么漏洞？"让AI主动找出弱点和盲区。你习惯AI正面解释事物的同时，反过来问它"哪站不住脚"，能获得更诚实、更均衡的判断。比"多找几个人看看"更快，适合方案打磨和重大决策前的压力测试。</div></div>
+
+    <div class="tip t-g"><div class="th"><div class="tt">&#128202; 三角验证法：同一批资料，三种问法，三个角度交叉验证</div></div><div class="tb">不要只从一个角度提问。同一批资料分别用三种prompt问：①"总结核心观点"②"这些资料之间有什么矛盾"③"如果这些结论全错了，最可能错在哪个前提"。三次回答交叉对比，你会发现很多第一次没注意到的事。每份回答记得点数字引文按钮，直接跳回原文对应段落核查。</div></div>
+  </div>
+
+  <!-- WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">&#128217;</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p"><div class="th"><div class="tt">&#128268; Skill技能链式串联：一句话让多个Skill自动接力跑</div></div><div class="tb">不只装Skill，更要把它们串成流水线。在WorkBuddy里用&rarr;符号串联多个Skill："先用[Skill A]做X &rarr; 再用[Skill B]基于上一步产出做Y &rarr; 最后用[Skill C]输出Z"。本质是告诉AI"前一个的输出是后一个的输入"，一次对话跑完整个工作流。装了本期4个Skill后可以试试：AI日报生成选题 &rarr; 孙子读论文深度阅读 &rarr; 转录精修整理笔记 &rarr; 思维导图PPT生成分享材料，一条指令串到底。</div></div>
+
+    <div class="tip t-p"><div class="th"><div class="tt">&#129309; WorkBuddy 微信遥控：人出去玩，电脑自己加班</div></div><div class="tb">在设置中绑定微信后，通勤路上发一句"执行：生成今日AI早报"，到办公室桌面上已经摆好了。开会时临时需要一份数据对比，微信发个指令，回到工位时已生成。注意：远程操作没有撤回键，重要操作建议设置"先出草稿、人工确认再执行"的安全流程。</div></div>
+  </div>
+
+  <!-- Showcase -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">&#128202;</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">&#127919; 一个能直接带走的小成果：听一次对谈，15分钟产出三份资产</div>
+      <div class="sh-sub">用今天介绍的4个Skill组合，把一次AI行业播客对谈变成：精修文章 + 核心观点卡 + 思维导图演示</div>
+      <div class="sh-box">
+        <strong>&#128260; 完整实操流程（每一步都能复制到Codex试试）：</strong><br><br>
+
+        <strong>Step 1 &mdash; 获取素材：</strong>找一期你感兴趣的AI播客/访谈（YouTube有字幕的），下载字幕文件。<br><br>
+
+        <strong>Step 2 &mdash; 转录精修：</strong>对Codex说："用transcript-polisher帮我把这段播客字幕精修成适合公众号发布的文章，保留主讲人的原话风格和幽默感，去除口语词和重复，按主题分段。"<br>
+        &#9989; 收获：一篇2000-3500字的高可读性访谈文章，可直接发布或存档。<br><br>
+
+        <strong>Step 3 &mdash; 孙子读论文式深度解读：</strong>对Codex说："用sunzi-reading的方式，把刚才那篇文章里提到的核心技术概念（比如'多Agent协作''上下文窗口''推理链'）用通俗的方式讲清楚，受众是不懂技术的市场人员。"<br>
+        &#9989; 收获：3-5个核心概念的通俗解读卡片，相当于给非技术读者配的"术语词典"。<br><br>
+
+        <strong>Step 4 &mdash; 思维导图演示：</strong>对Codex说："用mindmap-ppt-builder把Step 2的精修文章做成思维导图PPT，受众是团队内部，8页，风格简洁专业。"<br>
+        &#9989; 收获：一个可在线播放的思维导图演示页面，部署到GitHub Pages就是链接发给团队。<br><br>
+
+        <strong>&#9200; 总耗时：</strong>15分钟（人工操作主要是复制粘贴+确认，AI实际跑不到5分钟）<br>
+        <strong>&#128230; 三份产出：</strong>精修访谈文章 + 3-5张核心概念深度解读 + 可在线分享的思维导图演示<br>
+        <strong>&#128209; 可复用：</strong>这套流程替换"播客字幕"为"会议录音""PDF报告""课程视频"，模式完全一样。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">&#127793; 真正拉开差距的不是"我看过了"，而是"我真的消化了、输出了、说清楚了"</div>
+    <span style="color:var(--muted)">AI 工具每日速递 &middot; 由 WorkBuddy 生成 &middot; 2026-07-20</span>
+  </div>
+</div>
+</body>
+</html>
