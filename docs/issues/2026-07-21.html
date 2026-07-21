@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-21</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-21 · 星期二</div>
+    <h1>视觉表达力升级：4个Skill让你的内容一眼入魂</h1>
+    <div class="art-sub">设计零基础也能出大厂级的演示、图表、信息图和幻灯片</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>写了半天好内容，发出去没人看——问题往往不出在文字上，而是<strong>视觉表达跟不上内容质量</strong>。今天推荐的4个Skill覆盖了从"一句话出PPT"到"选题雷达自动抓热点"，让非设计师也能做出过目不忘的视觉内容。全部 Codex 原生，一行命令安装。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 视觉设计 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">huashu-design（华书设计）</div><div class="sk-subtitle">alchaincyf · 一句话出PPT/原型/动画/信息图，20种设计哲学驱动</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 13.5K</span><span class="bd bd-p">MIT开源</span><span class="bd bd-b">跨Agent通用</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把设计能力装进Codex。不像传统"AI做PPT"只套模板——它内置20种设计哲学（瑞士现代、纸墨风格、暗色植物、赛博霓虹等），先给你3个风格方向让你挑，再按你的选择生成成品。能产出6类交付物：交互原型、HTML幻灯片+可编辑PPTX、时间轴动画MP4、信息图、设计方向顾问、5维度专家评审。<br><strong>最适合：</strong>不会设计但需要高颜值交付物的人——产品发布、客户提案、内部汇报、公众号封面大图。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx skills add alchaincyf/huashu-design</div><div class="cmt">跨Agent通用：Codex、Claude Code、Cursor、OpenClaw、Hermes 都能装，MIT开源免费商用</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开Codex，说「用huashu-design把我这篇文章做成一套演讲稿PPT，推荐3个风格方向让我选」，AI先生成3个预览页，你挑一个，它再出完整15页deck+可编辑PPTX。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把这篇关于AI赋能国企战略转型的3000字分析文章做成演讲幻灯片，受众是国企中高层，要专业不花哨，推荐3个风格方向让我选」</div>
+        <div class="ex-out"><strong>成果：</strong>3套风格预览（瑞士现代/纸墨/暗色稳重）→ 选纸墨风格 → 12页HTML幻灯片+可编辑PPTX+演讲者备注。全程15分钟，以前手动排版至少2小时。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">frontend-slides</div><div class="sk-subtitle">zarazhangrui · 零依赖HTML幻灯片，三预览选风格，12套视觉预设</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 19.6K</span><span class="bd bd-p">MIT开源</span><span class="bd bd-o">48小时破万星</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>HTML幻灯片赛道Star最高项目（19.6K），48小时破万星的现象级Skill。核心理念是"show, don't tell"——不让你用文字描述审美偏好，直接生成3个视觉预览让你看。12套风格（暗色信号、电子工作室、终端绿、复古编辑等），零依赖单文件HTML，10年后照样能打开。还支持PPTX转换和PDF导出。<br><strong>最适合：</strong>技术分享、产品路演、内部分享——需要快速出效果且能分享链接的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/zarazhangrui/frontend-slides.git ~/.codex/skills/frontend-slides</div><div class="cmt">也支持其他Agent：让Agent直接读取仓库中SKILL.md即可使用</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对Codex说「用frontend-slides帮我做一个AI工具效率提升的分享PPT，5页，风格偏现代科技感」，它会生成3个视觉预览并让你先挑风格。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用frontend-slides做一份关于『AI提效10个真实案例』的内部分享PPT，8页，受众是部门同事，轻松但有干货，不要AI味」</div>
+        <div class="ex-out"><strong>成果：</strong>3套风格预览（Notebook Tabs/终端绿/Vintage Editorial）→ 选Notebook Tabs → 8页HTML幻灯片，单文件，丢个链接就能在手机上看。还能部署到Vercel永久可访问。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">visual-explainer</div><div class="sk-subtitle">nicobailon · 把任何复杂内容变成精美HTML可视化页面+幻灯片</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 9.2K</span><span class="bd bd-p">MIT开源</span><span class="bd bd-o">8个命令</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个让Codex"会说人话更会画图"的Skill。当你问AI一个复杂概念，它不会再给你ASCII字符画，而是生成精美的HTML页面——含Mermaid流程图、Chart.js图表、CSS网格布局。8个命令覆盖：网页图表、可视化计划、幻灯片、代码审查对比、项目回顾、事实核查页面等。还能自动检测终端输出中的表格（4行以上/3列以上），自动转HTML渲染。<br><strong>最适合：</strong>需要把复杂概念讲清楚的场景——架构说明、数据对比、项目复盘、研究简报。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone --depth 1 https://github.com/nicobailon/visual-explainer.git /tmp/ve && cp -R /tmp/ve/plugins/visual-explainer ~/.codex/skills/visual-explainer</div><div class="cmt">Codex/Claude Code/Cursor/OpenClaw 均支持，安装后Codex自动发现</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对Codex说「用visual-explainer画一张国企数字化转型的路线图，包含5个阶段和每个阶段的关键任务」，直接生成交互式HTML流程图。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用visual-explainer的generate-web-diagram功能，画一张内容创作全流程图——从选题到分发，包含每个步骤的工具推荐和时间分配」</div>
+        <div class="ex-out"><strong>成果：</strong>一张精美的HTML流程图页面：顶部标题+5步Mermaid流程图+每步配工具列表表格+底部时间分配饼图。浏览器打开就能看，全交互式。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ai-market-radar（热点情报雷达）</div><div class="sk-subtitle">AustinElite · 自动采集+核验+去重+排序全网AI热点，自带选题建议</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布</span><span class="bd bd-p">情报采集</span><span class="bd bd-r">选题利器</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>专为内容创作者设计的"AI情报雷达"。不是简单搬运新闻——每条信息都要求带来源链接、发布时间、可信度评级、影响判断和不确定性说明。覆盖AI/科技/芯片/软件/政策/融资并购等主题，优先使用公司公告、交易所公告、研究报告等一手来源，自带去重打分脚本，输出结构化中文简报+JSON数据。<br><strong>最适合：</strong>写公众号/日报/行业分析的内容创作者，每天早上不知道写什么的焦虑——一句话出今天的选题地图。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">cp -R ai-market-radar ~/.codex/skills/</div><div class="cmt">先从 GitHub 克隆：git clone https://github.com/AustinElite/ai-market-radar.git</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对Codex说「用ai-market-radar收集过去24小时全球AI和科技行业热点，输出中文简报，标注可信度和影响力，并推荐10个适合写公众号的选题角度」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「收集今天最适合写公众号的AI产业选题，要求每个选题给出事实依据、爆点、写作角度和风险点」</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化选题简报——"一句话总览"+"Top 10选题"每项含事实依据+爆点+写作角度+风险提示+"Watchlist待观察"。信息源带链接可追溯。以前刷2小时才能拼凑出的选题地图，现在5分钟。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">🔍 选题</span><span class="pa">→</span>
+      <span class="ps ps-2">✍️ 写作</span><span class="pa">→</span>
+      <span class="ps ps-3">🎨 设计</span><span class="pa">→</span>
+      <span class="ps ps-4">📊 可视化</span><span class="pa">→</span>
+      <span class="ps ps-5">🃏 分发</span>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px;text-align:center;">今天这四个Skill的串联思路：ai-market-radar找选题 → Codex原生写作 → huashu-design做PPT/信息图 → visual-explainer做流程图 → 一键分享</div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🔥 Codex 并入 ChatGPT 桌面版（7月9日）</div></div><div class="tb">OpenAI将Codex桌面App合并进新版ChatGPT桌面端，一个应用同时拥有 <strong>Chat（聊天问答）+ Work（长任务交付）+ Codex（软件开发）</strong>三种模式。老Codex用户更新后自动迁移，任务和历史保持不变。这是Codex进入"通用知识工作"的标志性动作——不再只是程序员的工具。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">📝 Custom Instructions 扩至5000字符（7月15日）</div></div><div class="tb">Plus/Pro/Enterprise用户的自定义指令从1500字符扩到5000字符。这意味着你可以在Custom Instructions里<strong>完整描述你的写作风格、常用术语、品牌调性、输出偏好</strong>，Codex会在所有对话中自动遵守。之前1500字符只能写个大概，5000字符足够写一份"个人风格手册"了。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🔍 ChatGPT 全局搜索上线（7月14日）</div></div><div class="tb">在ChatGPT里一键搜索所有<strong>聊天记录、项目、图片和文档</strong>，按内容类型过滤。再也不用翻几十页历史找那个"上次讨论过的标题方案"了。所有计划可用。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM（现 Gemini Notebook）每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🔄 NotebookLM 正式更名 Gemini Notebook + 解锁代码执行（7月19日）</div></div><div class="tb">Google宣布NotebookLM更名为<strong>Gemini Notebook</strong>，同时解锁重磅能力——每个笔记本都配置了一台安全的云端计算机，能<strong>在后台写代码、跑代码来分析你的资料</strong>。以前它只能"读"和"总结"，你问一个需要计算的问题它靠猜；现在碰到数据问题，它直接算出结果。上传一堆财务报表或实验数据，它真能帮你做统计分析，而不只是写一篇看起来有道理但数字全错的总结。目前对AI Ultra和企业Workspace用户开放。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🎬 Short Video Overviews 60秒竖屏短视频（7月1日上线）</div></div><div class="tb">在Studio中选择Video→Short，系统自动从你的来源中提炼一个核心概念，生成60秒TikTok风格的竖屏AI短视频——AI图像+自动旁白。适合把一摞资料快速浓缩成一个能发群里/朋友圈的知识短片。目前仅支持英文。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🗣️ Audio Overview 互动模式</div></div><div class="tb">在AI播客播放中<strong>随时暂停提问</strong>，两位AI主持人会根据你的来源回答，然后接回原本内容。把互动模式当作"流动式口试"——每听到不确定的点就立刻按下按钮请主持人解释或反驳。比被动聆听更能训练理解力。正式开会前跑一遍，每个关键主张都经过你的提问压力测试。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 三要素结构化指令法</div></div><div class="tb">让WorkBuddy精准执行的核心公式：<strong>做什么 + 有什么 + 怎么样</strong>。别写「帮我整理会议纪要」，换成「把D:/会议纪要/0720产品评审.docx整理成一份清单，包含：①每个议题的结论 ②对应责任人和截止日期 ③标记有争议的事项，用表格输出，不需要开场白」。三个要素填满，一轮出成品。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 多Agent并行，效率翻倍</div></div><div class="tb">在同一个对话框里把多个独立任务一次性描述清楚——比如同时要求「整理一份Excel销售数据」+「写一份竞品分析报告」+「做一张活动海报」——WorkBuddy自动拆解成多个Agent并行执行。实测比串行快60%，积分消耗没多多少。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 15分钟：从一篇分析文章到一套高颜值幻灯片+可视化路线图</div>
+      <div class="sh-sub">用今天介绍的 4 个 Skill 组合，完成一个完整的"文字→视觉"转化</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你写了一篇「AI赋能国企战略转型的5个关键路径」分析文章，明天要给领导做内部分享。<br><br>
+        <strong>工具链：</strong><br>
+        ① <strong>ai-market-radar</strong> → 补充最新行业数据作为论据支撑（3分钟）<br>
+        ② <strong>huashu-design</strong> → 把文章转成12页演讲幻灯片，选"纸墨风格"（10分钟）<br>
+        ③ <strong>visual-explainer</strong> → 画一张5路径可视化路线图，标注每步关键节点（2分钟）<br><br>
+        <strong>最终收获：</strong><br>
+        ✅ 一份12页HTML幻灯片（浏览器直接演示，还能导出可编辑PPTX）<br>
+        ✅ 一张交互式数字化转型路线图（含5阶段+节点标注，发群里就能看）<br>
+        ✅ 昨天你还得花3小时排版+画图，今天15分钟搞定，而且视觉质量远超过自己手工做的
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 好的内容值得好的视觉表达。设计不是设计师的专利，把审美规则装进Skill，你也能做出让人眼前一亮的作品。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-21</span>
+  </div>
+</div>
+</body>
+</html>

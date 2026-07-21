@@ -47,7 +47,9 @@
         "xhs-visual-director",
         "gzh-design-skill",
         "chenly-wechat-studio",
-        "mindmap-ppt-builder"
+        "mindmap-ppt-builder",
+        "huashu-design",
+        "visual-explainer"
       ]
     },
     {
@@ -65,7 +67,8 @@
         "paperjsx",
         "ian-handdrawn-ppt",
         "cyberppt",
-        "mindmap-ppt-builder"
+        "mindmap-ppt-builder",
+        "frontend-slides"
       ]
     },
     {
@@ -112,7 +115,8 @@
         "larksuite-cli",
         "book-to-skill",
         "sunzi-reading",
-        "ai-news-digest"
+        "ai-news-digest",
+        "ai-market-radar"
       ]
     },
     {
@@ -135,6 +139,50 @@
     }
   ],
   "skills": {
+    "huashu-design": {
+      "name": "huashu-design（华书设计）",
+      "author": "alchaincyf",
+      "subtitle": "一句话出PPT/原型/动画/信息图，20种设计哲学+5维度评审，MIT开源免费商用",
+      "desc": "把设计能力装进Codex。内置20种设计哲学（瑞士现代、纸墨风格、暗色植物等），先生成3个风格预览让你挑，再按选择产出交付物。覆盖6类输出：交互原型、HTML幻灯片+可编辑PPTX、时间轴动画MP4、信息图、设计方向顾问、5维度专家评审。跨Agent通用，全部MIT开源。",
+      "stars": "13.5K",
+      "tags": ["视觉设计", "PPT生成", "HTML原生", "20种设计哲学", "MIT开源", "跨Agent"],
+      "install": "npx skills add alchaincyf/huashu-design",
+      "issues": ["2026-07-21"],
+      "result": "一句话→可选3个风格预览→挑一个→出完整幻灯片+可编辑PPTX。15分钟搞完以前2小时的排版。"
+    },
+    "frontend-slides": {
+      "name": "frontend-slides",
+      "author": "zarazhangrui",
+      "subtitle": "零依赖HTML幻灯片，三预览选风格，12套视觉预设，19.6K星48小时破万",
+      "desc": "HTML幻灯片赛道Star最高项目。核心理念「show, don't tell」——不让你用文字描述审美，直接生成3个视觉预览让你看。12套风格（暗色信号、电子工作室、终端绿等），零依赖单文件HTML，10年后照样能打开。支持PPTX转换和PDF导出。",
+      "stars": "19.6K",
+      "tags": ["HTML幻灯片", "12套风格", "零依赖", "PPT转换", "PDF导出", "MIT开源"],
+      "install": "git clone https://github.com/zarazhangrui/frontend-slides.git ~/.codex/skills/frontend-slides",
+      "issues": ["2026-07-21"],
+      "result": "一句话→3个视觉预览→选一个→单文件HTML幻灯片。丢个链接就能在手机上演示。"
+    },
+    "visual-explainer": {
+      "name": "visual-explainer",
+      "author": "nicobailon",
+      "subtitle": "把任何复杂内容变成精美HTML可视化页面+幻灯片，8个命令+自动触发",
+      "desc": "让Codex'会说人话更会画图'的Skill。生成精美HTML页面——含Mermaid流程图、Chart.js图表、CSS网格布局。8个命令覆盖网页图表、可视化计划、幻灯片、代码审查对比、项目回顾、事实核查。还能自动检测终端输出中的表格转HTML渲染。",
+      "stars": "9.2K",
+      "tags": ["可视化", "HTML页面", "Mermaid", "幻灯片", "自动渲染", "MIT开源"],
+      "install": "git clone --depth 1 https://github.com/nicobailon/visual-explainer.git /tmp/ve && cp -R /tmp/ve/plugins/visual-explainer ~/.codex/skills/visual-explainer",
+      "issues": ["2026-07-21"],
+      "result": "一个复杂概念→一张精美交互式HTML流程图/对比表/幻灯片。不用学Mermaid不用调CSS。"
+    },
+    "ai-market-radar": {
+      "name": "ai-market-radar（热点情报雷达）",
+      "author": "AustinElite",
+      "subtitle": "自动采集+核验+去重+排序全网AI热点，自带选题建议和可信度评级",
+      "desc": "专为内容创作者设计的AI情报雷达。每条信息带来源链接、发布时间、可信度评级、影响判断和不确定性说明。覆盖AI/科技/芯片/软件/政策/融资并购主题，优先一手来源，自带去重打分脚本，输出结构化中文简报+JSON数据。",
+      "stars": "新发布",
+      "tags": ["情报采集", "选题雷达", "AI日报", "来源核验", "公众号选题", "新发布"],
+      "install": "git clone https://github.com/AustinElite/ai-market-radar.git && cp -R ai-market-radar ~/.codex/skills/",
+      "issues": ["2026-07-21"],
+      "result": "一句话→过去24小时AI热点简报：Top10选题+事实依据+爆点+写作角度+风险提示，每条带来源链接。5分钟出选题地图。"
+    },
     "sunzi-reading": {
       "name": "Sunzi Reading（孙子读论文）",
       "author": "julilaoshi",
@@ -177,7 +225,7 @@
       "tags": ["信息聚合", "AI日报", "选题追踪", "CSV导出", "5道审核"],
       "install": "git clone https://github.com/chengjialu8888/AI_News_Digest.git ~/.codex/skills/ai-news-digest",
       "issues": ["2026-07-20"],
-      "result": "一句话"跑今天的AI日报"→结构化日报（大厂动向/初创融资/海外Builder）+CSV数据表。"
+      "result": "一句话「跑今天的AI日报」→结构化日报（大厂动向/初创融资/海外Builder）+CSV数据表。"
     },
 
     "qiaomu-paper-interpreter": {
@@ -1143,7 +1191,7 @@
       "name": "ky-markdown-rebuilder",
       "author": "KyrieCheungYep",
       "subtitle": "PDF→结构化Markdown：复杂PDF一键重建，按页对齐，表格流程图全保留",
-      "desc": "用Codex视觉理解能力以"页面"为重建单位，把双栏排版、表格、流程图等复杂PDF变成结构清晰、按页对齐的Markdown。解决"AI读不懂PDF"的痛点——表格不丢、流程图不丢、阅读顺序不乱。",
+      "desc": "用Codex视觉理解能力以「页面」为重建单位，把双栏排版、表格、流程图等复杂PDF变成结构清晰、按页对齐的Markdown。解决「AI读不懂PDF」的痛点——表格不丢、流程图不丢、阅读顺序不乱。",
       "stars": "新发布",
       "tags": ["PDF处理", "阅读总结", "知识管理", "Markdown"],
       "install": "git clone https://github.com/KyrieCheungYep/ky-markdown-rebuilder.git ~/.codex/skills/ky-markdown-rebuilder",
@@ -1154,8 +1202,8 @@
     "ll-humanizer-zh": {
       "name": "ll-humanizer-zh",
       "author": "liuliu-66-create",
-      "subtitle": "新开源中文去AI味：专治"爹味""教条味""替读者想"",
-      "desc": "六六AI研究所开源的去AI味Skill。专门识别中文AI写作特有的"替读者想""纠正型结构""自问自答""居高临下说教腔"，把老师语气改成朋友聊天的感觉。比通用版更聚焦中文创作场景。",
+      "subtitle": "新开源中文去AI味：专治「爹味」「教条味」「替读者想」",
+      "desc": "六六AI研究所开源的去AI味Skill。专门识别中文AI写作特有的「替读者想」「纠正型结构」「自问自答」「居高临下说教腔」，把老师语气改成朋友聊天的感觉。比通用版更聚焦中文创作场景。",
       "stars": "新开源",
       "tags": ["去AI味", "写作润色", "中文专用", "公众号"],
       "install": "git clone https://github.com/liuliu-66-create/ll-humanizer-zh.git ~/.codex/skills/ll-humanizer-zh",
@@ -1179,13 +1227,13 @@
       "name": "larksuite/cli Skills",
       "author": "飞书官方",
       "subtitle": "26个飞书Skills：在Codex里一句话查日历、搜文档、发消息、管任务",
-      "desc": "飞书官方CLI Skills套装——26个独立Skill覆盖日历查询、即时消息、文档搜索、任务管理、会议安排等飞书核心功能。在Codex里说"帮我查今天的日程"，自动调用飞书API返回结果。一站式管理飞书，少切换APP。",
+      "desc": "飞书官方CLI Skills套装——26个独立Skill覆盖日历查询、即时消息、文档搜索、任务管理、会议安排等飞书核心功能。在Codex里说「帮我查今天的日程」，自动调用飞书API返回结果。一站式管理飞书，少切换APP。",
       "stars": "官方",
       "tags": ["飞书", "日常自动化", "日历", "文档管理", "消息"],
       "install": "npx skills add larksuite/cli -y -g -a codex",
       "issues": ["2026-07-17"],
       "screenshot": "",
-      "result": "在Codex里说"搜飞书上关于Q3规划的文档"→ 自动返回标题+时间+作者+链接。不用打开飞书客户端。"
+      "result": "在Codex里说「搜飞书上关于Q3规划的文档」→ 自动返回标题+时间+作者+链接。不用打开飞书客户端。"
     },
     "obsidian-inbox": {
       "name": "Obsidian Inbox",
@@ -1249,6 +1297,19 @@
     }
   },
   "issues": [
+    {
+      "id": 28,
+      "date": "2026-07-21",
+      "weekday": "星期二",
+      "title": "视觉表达力升级：4个Skill让你的内容一眼入魂",
+      "subtitle": "设计零基础也能出大厂级的演示、图表、信息图和幻灯片",
+      "tags": ["🎨 视觉设计", "📽️ HTML幻灯片", "📊 可视化", "🔍 选题雷达", "🚀 视觉升级"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-21.html",
+      "skills": ["huashu-design", "frontend-slides", "visual-explainer", "ai-market-radar"]
+    },
     {
       "id": 27,
       "date": "2026-07-20",
