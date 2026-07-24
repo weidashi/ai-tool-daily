@@ -383,7 +383,7 @@
       "author": "op7418",
       "subtitle": "中文去AI味必备",
       "desc": "专门识别中文AI文本中的空话、套话、三段式、过度排比和“AI腔”，把生硬的机器文风改得像真人手笔。内置24项检测模式。",
-      "stars": "2.4K+",
+      "stars": "12.5K",
       "tags": [
         "去AI味",
         "写作润色",
@@ -391,6 +391,7 @@
       ],
       "install": "npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global",
       "issues": [
+        "2026-07-24",
         "2026-06-24",
         "2026-06-21"
       ],
@@ -410,6 +411,7 @@
       ],
       "install": "npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global",
       "issues": [
+        "2026-07-24",
         "2026-07-04",
         "2026-06-24",
         "2026-06-21"
@@ -507,6 +509,7 @@
       ],
       "install": "npx -y skills@latest add op7418/guizang-ppt-skill --skill guizang-ppt --agent codex --global",
       "issues": [
+        "2026-07-24",
         "2026-06-22",
         "2026-06-24"
       ],
@@ -580,6 +583,7 @@
       ],
       "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global",
       "issues": [
+        "2026-07-24",
         "2026-07-04",
         "2026-06-24"
       ],
@@ -599,6 +603,7 @@
       ],
       "install": "npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global",
       "issues": [
+        "2026-07-24",
         "2026-07-04",
         "2026-06-24",
         "2026-06-21"
@@ -1297,6 +1302,19 @@
     }
   },
   "issues": [
+    {
+      "id": 29,
+      "date": "2026-07-24",
+      "weekday": "星期五",
+      "title": "写作流水线登场：5个Skill跑通「选题→写稿→去味→排版→分发」",
+      "subtitle": "内容创作 · 写作全链路 · 社交分发 · 选题诊断",
+      "tags": ["✍️ 写作流水线", "🔍 选题诊断", "🧹 去AI味", "📊 文章转PPT", "📱 社交分发"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-24.html",
+      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "guizang-ppt-skill", "guizang-social-card-skill"]
+    },
     {
       "id": 28,
       "date": "2026-07-21",
