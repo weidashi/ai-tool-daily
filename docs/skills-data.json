@@ -22,7 +22,8 @@
         "skill-creator",
         "ll-humanizer-zh",
         "wewrite",
-        "transcript-polisher"
+        "transcript-polisher",
+        "codex-academic-writing-skills"
       ]
     },
     {
@@ -68,7 +69,8 @@
         "ian-handdrawn-ppt",
         "cyberppt",
         "mindmap-ppt-builder",
-        "frontend-slides"
+        "frontend-slides",
+        "nature-paper2ppt"
       ]
     },
     {
@@ -84,7 +86,8 @@
         "wechat-article-publish",
         "qiaomu-design-advisor",
         "ado-visual-director",
-        "xhs-visual-director"
+        "xhs-visual-director",
+        "build-xhs-content-pack"
       ]
     },
     {
@@ -116,7 +119,8 @@
         "book-to-skill",
         "sunzi-reading",
         "ai-news-digest",
-        "ai-market-radar"
+        "ai-market-radar",
+        "agent-reach"
       ]
     },
     {
@@ -1303,9 +1307,70 @@
       "issues": ["2026-07-19"],
       "screenshot": "",
       "result": "几行想法 → AI自动判断类型+匹配审美+生成排版+创建草稿。不需要指定风格。"
+    },
+    "agent-reach": {
+      "name": "Agent-Reach",
+      "author": "Panniantong",
+      "subtitle": "社交媒体全平台内容采集：YouTube/Reddit/X/B站/小红书/RSS一站通读",
+      "desc": "让Codex拥有全网站点信息地图。安装后Codex知道YouTube、Reddit、X、GitHub、B站、小红书、RSS等平台的核心数据在哪、怎么提取。适合跨平台调研、选题找素材、竞品内容监测、社区口碑搜索——一句话出结构化报告。",
+      "stars": "高收藏",
+      "tags": ["选题研究", "信息采集", "跨平台", "竞品监测", "社媒调研"],
+      "install": "npx -y skills@latest add Panniantong/Agent-Reach --agent codex --global",
+      "issues": ["2026-07-26"],
+      "screenshot": "",
+      "result": "「帮我看看各平台对XX的最近讨论」→ 跨平台内容摘要+热点提取+来源链接。以前手动搜2小时，现在5分钟。"
+    },
+    "build-xhs-content-pack": {
+      "name": "build-xhs-content-pack",
+      "author": "Kimberlying",
+      "subtitle": "素材→小红书+公众号完整内容包：4套视觉主题×一键多平台",
+      "desc": "把X长文、书籍资料和零散笔记自动拆解为一套可发布的小红书内容包+公众号文章+贴图。先理解选题→再拆成解释链→再生成图片和发布材料。4套可切换视觉主题，输出含选题brief、8-12张知识卡、横版贴图、发布检查清单。",
+      "stars": "新发布 (7/11)",
+      "tags": ["社交分发", "内容创作", "小红书", "公众号", "4套视觉主题"],
+      "install": "npx -y skills@latest add Kimberlying/build-xhs-content-pack --skill build-xhs-content-pack --agent codex --global",
+      "issues": ["2026-07-26"],
+      "screenshot": "",
+      "result": "一篇X长文→10张小红书知识卡+公众号长文+3张横版贴图+发布检查清单。一次性内容投入，两个平台同步发布。"
+    },
+    "codex-academic-writing-skills": {
+      "name": "codex-academic-writing-skills",
+      "author": "zl9099",
+      "subtitle": "学术写作7件套：翻译/润色/审稿回复/逻辑审计/引用检查/投稿信",
+      "desc": "7个独立Codex Skill覆盖高频学术写作任务：中英翻译（保留LaTeX/P值/基因名）、科学润色（不改变证据强度）、审稿逐点回复、论文逻辑审计、LaTeX-Word格式清理、投稿信撰写、参考文献完整性检查。不止科研适用——战略报告、行业分析、政策研究的逻辑核查同样适用。",
+      "stars": "新发布 (7/16)",
+      "tags": ["写作润色", "学术写作", "7个独立Skill", "翻译", "审稿回复"],
+      "install": "git clone https://github.com/zl9099/codex-academic-writing-skills.git && cd codex-academic-writing-skills && ./install.sh",
+      "issues": ["2026-07-26"],
+      "screenshot": "",
+      "result": "一段中文论文摘要→学术级英文翻译：保留措辞强度、统计术语、引用标记。不会把'suggests'拔高成'proves'。"
+    },
+    "nature-paper2ppt": {
+      "name": "nature-paper2ppt",
+      "author": "lth0",
+      "subtitle": "论文/报告→Nature风格PPTX：智能选图+中文内容+演讲备注",
+      "desc": "从论文PDF、预印本、文章摘要或阅读笔记自动生成完整Nature风格中文PPTX。识别论文类型和核心论点，只选支撑故事的图表，生成逐页中文内容和演讲者备注，自动创建.pptx并做轻量验证。适合组会分享、学术报告、项目汇报。",
+      "stars": "热门",
+      "tags": ["PPT生成", "Nature风格", "含演讲备注", "学术PPT", "报告转PPT"],
+      "install": "git clone https://github.com/lth0/codexSkill.git && cp -R codexSkill/nature-paper2ppt ~/.codex/skills/nature-paper2ppt",
+      "issues": ["2026-07-26"],
+      "screenshot": "",
+      "result": "一份15页PDF研究报告→完整.pptx：封面+目录+核心发现+数据图表+结论建议。每页配演讲者备注，报告→汇报，10分钟。"
     }
   },
   "issues": [
+    {
+      "id": 31,
+      "date": "2026-07-26",
+      "weekday": "星期日",
+      "title": "周日充电：打通「输入→加工→输出」，4个新Skill让知识流动起来",
+      "subtitle": "全平台采集 · 多平台内容包 · 学术写作套件 · Nature风PPT——知识工作的四个卡口，今天一起装上",
+      "tags": ["🌐 全平台采集", "📦 内容包", "✍️ 学术写作", "📽️ Nature PPT", "🔗 知识流动"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-26.html",
+      "skills": ["agent-reach", "build-xhs-content-pack", "codex-academic-writing-skills", "nature-paper2ppt"]
+    },
     {
       "id": 30,
       "date": "2026-07-25",
