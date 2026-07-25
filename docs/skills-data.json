@@ -347,14 +347,15 @@
       "author": "ComposioHQ",
       "subtitle": "文件自动整理",
       "desc": "按规则批量重命名、分类、归档文件。识别文件类型、提取日期、匹配命名模式。支持dry-run预览后再执行。",
-      "stars": "13K+（合集）",
+      "stars": "15K+（合集）",
       "tags": [
         "文件管理",
         "自动整理",
         "日常效率"
       ],
-      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path file-organizer",
+      "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill file-organizer --agent codex --global",
       "issues": [
+        "2026-07-25",
         "2026-06-26"
       ],
       "screenshot": "",
@@ -774,8 +775,9 @@
         "信息图",
         "视觉"
       ],
-      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path canvas-design",
+      "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill canvas-design --agent codex --global",
       "issues": [
+        "2026-07-25",
         "2026-06-28"
       ],
       "screenshot": "",
@@ -793,8 +795,9 @@
         "配色字体",
         "一致性"
       ],
-      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path brand-guidelines",
+      "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill brand-guidelines --agent codex --global",
       "issues": [
+        "2026-07-25",
         "2026-06-28"
       ],
       "screenshot": "",
@@ -812,12 +815,13 @@
         "办公必备",
         "PPTX+DOCX+XLSX+PDF"
       ],
-      "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path paperjsx",
+      "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill paperjsx --agent codex --global",
       "issues": [
+        "2026-07-25",
         "2026-06-29"
       ],
       "screenshot": "",
-      "result": "一段内容描述 → 同时出.pptx+.docx+.xlsx+.pdf四种格式。以前要分别打开三个软件排版。"
+      "result": "一段内容描述 → 同时出.pptx+.docx+.xlsx+.pdf四种格式，纯本地运行无需API。"
     },
     "meeting-insights-analyzer": {
       "name": "meeting-insights-analyzer",
@@ -1302,6 +1306,19 @@
     }
   },
   "issues": [
+    {
+      "id": 30,
+      "date": "2026-07-25",
+      "weekday": "星期六",
+      "title": "周六工具书：这4个Skill被严重低估了——它们不写文章，但让你的工坊自己能转",
+      "subtitle": "文件整理 · 多格式文档 · 品牌统一 · 画布设计——后台杂活交给它们，你只管产出",
+      "tags": ["🗂️ 文件管家", "📄 文档全家桶", "🎨 品牌统一", "🖼️ 画布设计", "🔗 后台自动化"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-25.html",
+      "skills": ["file-organizer", "paperjsx", "brand-guidelines", "canvas-design"]
+    },
     {
       "id": 29,
       "date": "2026-07-24",

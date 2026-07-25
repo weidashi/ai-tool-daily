@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-25</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-25 · 星期六</div>
+    <h1>周六工具书：这4个Skill被严重低估了——它们不写文章，但让你的工坊自己能转</h1>
+    <div class="art-sub">文件整理 · 多格式文档 · 品牌统一 · 画布设计——后台杂活交给它们，你只管产出</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周六不追热点，聊4个「扫地僧」级Skill。它们不写文章、不画图、不做PPT——但少了它们，你的内容工坊就像堆满纸箱的仓库：东西都在，就是找不到。今天每个Skill只做一件事：把后台杂活自动化，让你把精力花在真正值钱的地方。本周还关注Codex 0.145语音交互、Record & Replay录制回放，文末附一个「20分钟焕新桌面→一键出报告」实操方案。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">file-organizer · 文件管家</div><div class="sk-subtitle">ComposioHQ · 自动分类、重命名、归档——从此桌面不再炸</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 15K+ 仓库</span><span class="bd bd-p">日常自动化</span><span class="bd bd-o">零门槛</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你告诉它"把下载文件夹里的图片按月份分、文档按类型分、重复的删掉"，它就去干活。不是AI陪你聊天——是AI替你动手整理文件。<br><strong>最适合：</strong>桌面常年100+文件不敢看的人、多项目素材混在一起的人、每次找文件花5分钟以上的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill file-organizer --agent codex --global</div><div class="cmt">安装位置：~/.codex/skills/，装完重启 Codex 即可生效</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开Codex，说"用 file-organizer 帮我把桌面上最近一个月的文件，按图片/文档/压缩包/其他分四类，放进对应的子文件夹"——30秒搞定你拖了一个月没动的整理。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 file-organizer 整理 E:/Downloads 文件夹：PDF 和 Word 放「文档」，Excel 放「表格」，PNG/JPG 按年月分到「图片/2026-07」和「图片/2026-06」，重复文件标记但先别删，列出让我确认。"</div>
+        <div class="ex-out"><strong>成果：</strong>Skill 扫描文件夹 → 识别文件类型和日期 → 执行移动/分类 → 发现 3 组疑似重复文件 → 输出整理报告："已完成：文档/ 12个文件，表格/ 5个文件，图片/2026-07/ 8张，图片/2026-06/ 6张。疑似重复：report_v2.pdf 与 report_final.pdf (大小相同)，待您确认是否删除。"</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">paperjsx · 多格式文档全家桶</div><div class="sk-subtitle">ComposioHQ · 一条命令生成PPTX + DOCX + XLSX + PDF——零API密钥，本地跑</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 15K+ 仓库</span><span class="bd bd-p">PPT/文档/表格</span><span class="bd bd-b">纯本地</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你给它结构化内容（大纲/要点/数据），它给你四个格式的成品：PPTX演示、DOCX文档、XLSX表格、PDF报告。关键——本地运行，不需要API密钥、不联网、不走云端。<br><strong>最适合：</strong>一份研究资料需要同时出汇报PPT+文字报告+数据附表的人。以前是"写好文本→打开PPT手动复制→排版→导出"，现在是"一句话出四件套"。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill paperjsx --agent codex --global</div><div class="cmt">首次使用会自动安装 @paperjsx/mcp-server 本地依赖，纯离线运行</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一份你最近写完的文章或报告，对Codex说"用 paperjsx 把这篇文章转成一份6页PPT（标题页+4页正文+总结页）和一份DOCX摘要文档"——得到两个可直接交付的文件。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 paperjsx 把以下内容生成三份文件：① 10页PPTX演示文稿（封面+目录+7页正文+结尾），蓝色商务风；② DOCX详细报告（带目录和页眉页脚）；③ XLSX数据附表。内容：[粘贴你的文章或大纲]"</div>
+        <div class="ex-out"><strong>成果：</strong>Skill 解析内容结构 → 生成 JSON 中间层 → 本地引擎渲染 → 输出三个文件：project_report.pptx（10页，每页有标题+要点+数据占位）、project_report.docx（完整报告，自动生成目录）、project_data.xlsx（结构化数据表）。全程本地完成，无需联网。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">brand-guidelines · 品牌统一师</div><div class="sk-subtitle">ComposioHQ · 设定一次配色/字体/语气——从此所有AI产出都像出自同一双手</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 15K+ 仓库</span><span class="bd bd-p">内容一致性</span><span class="bd bd-o">品牌调性</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>做内容最怕"风格乱跳"——今天的PPT蓝色圆角、明天的文档红色直角、后天的海报又变成绿色。这个Skill让你定义一套品牌规范（主色/辅色/字体/语气/排版规则），之后所有Codex产出自动套用。<br><strong>最适合：</strong>运营公众号/小红书的企业和个人，需要所有对外内容视觉统一的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill brand-guidelines --agent codex --global</div><div class="cmt">装完后在 Codex 中说"使用 brand-guidelines 帮我定义品牌规范"，进入交互式设置向导</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>告诉Codex"用 brand-guidelines 帮我建立一套品牌规范：主色#2d1b4e、辅色#6c5ce7、字体思源黑体、语气专业但不死板、目标受众是企业管理者"——5分钟把你的风格焊死。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 brand-guidelines 创建「君卓国企观察」品牌规范：主色深蓝#1a3a5c，辅色金#c9a96e，强调色#e74c3c。字体用微软雅黑（标题）/宋体（正文）。语气要求：专业但不官僚，数据驱动但不冰冷，每篇必须有'一句话总结'模块。把这套规范存为我的默认品牌配置。"</div>
+        <div class="ex-out"><strong>成果：</strong>Skill 生成品牌规范文档（含色板、字体层级、语气指南、模板模块），存入 Codex workspace。之后你让 Codex 生成任何 PPT/文档/海报/文章时，它会自动追问"是否套用君卓品牌规范？"，点确认即统一输出。同一套资料做出的PPT和文档，看起来就像同一个人同一天做的。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div><div class="sk-title">canvas-design · 画布设计师</div><div class="sk-subtitle">ComposioHQ · 可视化排版引擎——知识卡片、信息图、海报长图一张画布搞定</div></div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 15K+ 仓库</span><span class="bd bd-p">视觉排版</span><span class="bd bd-o">社交分发</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>它不是"生成一张图"，而是帮你在画布上按信息层级排好版。你告诉它"做一张小红书知识卡片，三段式布局，主标题大字+3个要点+底部CTA"，它给你一套结构画布——文字在哪、图标在哪、间距多少，都标好了。<br><strong>最适合：</strong>想做小红书卡片/公众号封面/信息图但不会用设计软件的人。你不用学Figma/Canva，告诉它你要什么结构，它给你排版。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill canvas-design --agent codex --global</div><div class="cmt">可与 brand-guidelines 联动，画布自动套用品牌色板</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把今天速递里的任意一段文字发给Codex："用 canvas-design 把这篇文章的3个核心观点做成一张小红书知识卡片，标题用大号粗体、每个观点配一个小图标、底部加上'转给需要的朋友'分享引导"</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>"用 canvas-design 设计一张'高效阅读三步法'知识卡片：① 顶部大标题「30分钟吃透一篇论文」；② 中间三步：第一遍（5min-看摘要/结论/图表）→ 第二遍（15min-精读方法/结果/讨论）→ 第三遍（10min-用自己的话写200字总结）；③ 底部灰色小字「转给正在写论文的朋友 ⬆️」卡片尺寸1080×1440，配色简洁学术风。"</div>
+        <div class="ex-out"><strong>成果：</strong>Skill 输出一张结构清晰的画布设计稿：大标题在顶部1/5位置（36pt粗体），三步流程居中分三栏（每栏独立色块+图标+说明），底部引导语（14pt灰色）。可直接截图发小红书，或导入Canva微调后发布。</div>
+      </div>
+    </div>
+
+    <!-- 串联提示 -->
+    <div class="pipe">
+      <span style="font-weight:700;font-size:12px;color:var(--text)">🔗 四件套串联：</span>
+      <span class="ps ps-1">file-organizer</span>
+      <span class="pa">→</span>
+      <span class="ps ps-2">paperjsx</span>
+      <span class="pa">→</span>
+      <span class="ps ps-3">brand-guidelines</span>
+      <span class="pa">→</span>
+      <span class="ps ps-4">canvas-design</span>
+      <span style="font-size:11px;color:var(--muted);margin-left:8px">整理素材 → 生成文档 → 统一风格 → 出图分发，一条龙</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🎙️ Codex 0.145 三大更新（7/21）</div></div>
+      <div class="tb"><strong>① 语音输入：</strong>Codex CLI 支持实时语音对话和音频文件输入，你可以口述任务需求——比打字快3倍。支持流式语音对话（Realtime V3），用嘴说"帮我分析这个文件夹里的数据，出份报告"就行。<br><strong>② 一键迁移竞品：</strong>新增 <code>codex import</code> 命令，一步迁移 Cursor 和 Claude Code 的全部配置——Skills、MCP服务器、会话记录、项目记忆，全搬过来。<br><strong>③ AWS Bedrock 企业支持：</strong>企业用户可通过 Amazon Bedrock 运行 Codex，推理走企业自己的 AWS 账号，满足安全合规和数据驻留要求。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⏺️ Record & Replay：你做一遍，它学会（6/19）</div></div>
+      <div class="tb">Codex 桌面端上线录制回放功能。打开"录制"，像平时一样操作电脑（比如：打开OA→选差旅→填金额→上传发票→提交），点停止。Codex 看懂你的操作流程后自动生成 SKILL.md，下次说"跑报销技能，金额4800"，它全程自动操作——不是录屏，是真理解哪些是固定步骤、哪些是可变参数。目前仅 Mac 可用，Windows 在排队。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📐 上下文窗口缩减与应对（7/18）</div></div>
+      <div class="tb">GPT-5.6 默认上下文从372K降到272K Token（缩减约27%）。影响：长时间会话中 AI 会更快"忘记"早期内容。应对策略：① 拆大任务为小块，一个会话只干一件事；② 定期用"总结当前进度"让 AI 压缩上下文；③ 拆分后的子任务丢给新会话（Codex 0.145已支持更稳定的会话握手和恢复）。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 本周技巧：</strong>用 Codex 的"先聊方案再动手"模式——复杂任务别直接丢过去，先说"帮我先做个计划，列出步骤和每步要用什么工具"，确认后再执行。这个习惯能让你少浪费一半时间在来回修正上。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎧 Audio Overview 四种人格——同一份资料，听四遍，收获完全不同</div></div>
+      <div class="tb">多数人只知道默认的「双人播客（Deep Dive）」模式。实际有四种格式可切换：<strong>Deep Dive</strong>（双人深入讨论，默认）、<strong>The Brief</strong>（单人60秒精华）、<strong>The Critique</strong>（双人批判性审视你的材料）、<strong>The Debate</strong>（双人多角度辩论）。同一份研究报告，Deep Dive适合通勤听全貌，The Critique适合写论文前找漏洞，The Debate适合决策前看正反观点。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📹 YouTube一键转录——5分钟吃完1小时视频</div></div>
+      <div class="tb">把 YouTube 链接直接粘贴到 NotebookLM 的「来源」里，有字幕的视频自动拉转录稿。然后让它生成：① 章节大纲（3分钟定位关键段落）② 核心引述（直接引用原话）③ 与其他已存来源的矛盾点。一小时长视频，5分钟就抓住骨架了。没字幕的视频：下载音轨上传，NotebookLM 的 Studio → 转录稿。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📋 素材纪律法则：先跟大模型聊方向，再让 NotebookLM 整理</div></div>
+      <div class="tb">最佳实践：<strong>不要</strong>一上来就往 NotebookLM 扔30个素材然后问"我该写什么"。正确顺序：① 先跟 ChatGPT/Claude 讨论"想解什么问题、拆成哪几部分"；② 拿着这个方向去搜集素材、导入 NotebookLM；③ 问 NotebookLM 结构化问题（"这些素材在X问题上的一致/矛盾点是什么"）。NotebookLM 的核心优势是「基于已有材料回答、不瞎编」，把它当整理工具而不是创作工具。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 三要素指令公式：目标 + 输入 + 格式 + 约束 = 零返工</div></div>
+      <div class="tb">WorkBuddy 最实用的指令写法：<strong>做什么（目标）+ 在哪取数据（输入）+ 输出什么格式（格式）+ 有什么特殊要求（约束）</strong>。反例：「帮我做个报告」→ AI开始追问→来回三四轮。正例：「读取 data/ 里的Q2销售数据，按区域汇总销售额和增长率，生成柱状图+饼图，输出5页PPT，蓝色商务风，字号≥16pt」→ 一次出成品。<br><br>搭配 <strong>Plan模式</strong> 使用效果更好：重要任务先让 WorkBuddy 列出执行计划，你确认后再跑——避免花了时间发现方向不对。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🔗 Skill链式串联：多步骤一键自动跑</div></div>
+      <div class="tb">WorkBuddy 支持用 → 串联多个操作：比如"读取桌面项目资料 → 按主题分类归档 → 生成PPT汇报 → 存到指定文件夹"。这不是未来功能，现在已经可以用。把重复的「先整理→再生成→再分发」流程写成一条链式指令存为自动化，每天省30分钟。<br><br><strong>实操模板：</strong>「读取 E:/项目素材/ 文件夹 → 按项目名分类归档到子文件夹 → 每个项目生成一份200字摘要 → 汇总成Excel进度表」。试试看，下周你就可以把它设成周五下午3点的定时自动化。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 20分钟焕新桌面 → 一键出研究简报</div>
+      <div class="sh-sub">用 file-organizer + paperjsx 串联：把一团乱麻的项目资料变成整洁的文件夹 + 可交付的PPT报告</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你的桌面上散落着过去三个月的行业研报PDF、竞品截图PNG、自己写的笔记Word、会议录音——总共60多个文件，每次找东西都要搜半天。你想整理它们，顺便出份简报下周汇报用。<br><br>
+        <strong>操作流程：</strong><br>
+        <strong>第1步（2分钟）：</strong>对Codex说——"用 file-organizer 整理桌面「行业研究」文件夹：PDF按来源机构分（麦肯锡/BCG/其他），截图按竞品名称分，笔记按日期归档，所有文件统一重命名为「日期-来源-标题」格式"<br>
+        → 文件夹从60+杂乱文件变成4个分类子文件夹，每个文件命名规范<br><br>
+        <strong>第2步（5分钟）：</strong>对Codex说——"用 paperjsx 读取「行业研究/麦肯锡」文件夹里的3份最新报告，提取核心观点和数据，生成：① 8页PPT（封面+行业趋势总览+3页核心发现+竞争格局+建议+结尾），深蓝商务风；② DOCX摘要文档（含执行摘要）"<br>
+        → Skill 自动分析PDF内容，识别关键段落，生成JSON→渲染PPTX和DOCX<br><br>
+        <strong>最终成果：</strong>一份整洁的行业研究文件夹 + 一份可直接用于内部汇报的8页PPT + 一份1500字DOCX摘要报告。<strong>全程不打开一个办公软件，不复制粘贴一行文字。</strong><br><br>
+        <span style="font-size:11px;color:var(--muted)">⏱️ 总耗时：约20分钟（其中AI处理15分钟，你只需要坐在旁边喝咖啡确认两次即可）</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 真正的效率不是做得更多，是把重复的事交给机器，把脑子留给真正需要判断的事</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-25</span>
+  </div>
+</div>
+</body>
+</html>
