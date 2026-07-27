@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-27</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-27 · 星期一</div>
+    <h1>周一效率开机：4个新Skill让你的知识工作流水线再提速</h1>
+    <div class="art-sub">多阶段PPT · 小红书图文 · 团队协作 · 流程封装</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周一就该干周一该干的事——不是从零开始，而是把上周积累的经验和方法论封装成这周能直接用的工具。本期4个Skill覆盖了知识工作者最耗时的四种场景：<strong>做有深度的PPT、批量产出小红书图文、协调多步骤复杂任务、把重复流程一键封装成Skill</strong>。每个都带着「今天就能试」的实操方案。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">PPT-Skill — 多阶段智能PPT生成</div><div class="sk-subtitle">Githubfans518（ken861222）· 7阶段流水线，从需求调研到演讲稿全自动</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布（6月）</span><span class="bd bd-p">PPT生成</span><span class="bd bd-b">MIT开源</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是又一个「一键套模板」的AI PPT玩具，而是一条<strong>从需求调研到最终交付的完整内容生产流水线</strong>。你给它一个主题，它像专业咨询团队那样跑完7个阶段——上下文收拢→需求调研→结构化大纲→逐页资料搜集→页面策划稿→SVG设计稿→PPTX导出→演讲稿。<br><strong>最适合：</strong>需要高质量、有逻辑深度的汇报PPT，尤其适合国企战略汇报、项目提案、融资路演等场景。<br><strong>亮点：</strong>金字塔原理组织内容 + 便利贴法可视化大纲 + Bento Grid 7种布局 + SVG可导入Office编辑。跟CyberPPT的「先分析再设计」理念一脉相承，但PPT-Skill更强调<strong>逐页独立研究</strong>——不是搜一次总资料，而是按每页主题单独检索，信息密度更高。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ken861222/PPT-Skill.git ~/.codex/skills/PPT-Skill</div><div class="cmt">PPTX导出需安装依赖：pip install python-pptx cairosvg Pillow</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>给它一个主题「国企改革三年行动方案汇报，目标受众是集团董事会」，它会先做需求调研确认使用场景和目标，再逐页规划内容，最后输出可编辑的PPTX+逐页演讲稿。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>帮我做一个关于「公司Q2业绩汇报」的PPT，受众是董事会，场景是季度经营分析会，需要包含财务数据、业务进展和Q3规划</div>
+        <div class="ex-out"><strong>成果：</strong>阶段1确认使用场景和页数→阶段2用金字塔原理出便利贴式大纲（封面→Q2核心结论→财务亮点→业务亮点→不足与风险→Q3规划→总结）→阶段3逐页联网搜集行业对标数据→阶段4每页策划稿含核心观点+支撑数据→阶段5 SVG设计稿（商务深色配色）→阶段6可编辑PPTX文件→阶段7逐页30-60秒演讲词。全过程15-30分钟，咨询级交付。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">redya-xiaohongshu — 红鸦小红书图文生成</div><div class="sk-subtitle">rnthking · 一句话出标题+正文+9张风格统一配图，20万+创作者在用</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 20万+用户</span><span class="bd bd-o">社交分发</span><span class="bd bd-r">7/17更新</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把红鸦AI的小红书图文生成能力接入Codex。一句话给出主题，自动产出<strong>「标题+正文+6-9张风格统一的配图」</strong>——文案有「人味儿」不像AI写的，一套图背景色、排版、调性统一不用一张张对齐。<br><strong>最适合：</strong>小红书运营、品牌营销、知识博主——尤其是那些「内容不愁但配图太耗时」的人。<br><strong>亮点：</strong>自研视觉一致性算法确保多图风格统一；商品带货模式可关联真实商品图不出假货；先出大纲让你改再出图不浪费积分；Agent端和网页端打通，生成的图文同步到 hy.ithinkai.cn 可预览、下载、一键发布。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">先在 hy.ithinkai.cn 注册获取API Key（注册即送免费试用积分），然后在Codex中说「请帮我安装红鸦小红书图文Skill」让AI自动下载配置</div><div class="cmt">需要设置环境变量 REDYA_API_KEY 和 REDYA_BASE_URL</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>「帮我写一篇三伏天养生茶的小红书，先给我看大纲」→AI出标题+正文大纲+每页图片说明→你微调→确认后一键出6-9张统一风格配图。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>用红鸦帮我写一篇关于「办公室午休高效休息法」的小红书，目标人群是打工人，风格要轻松接地气，先给我看大纲</div>
+        <div class="ex-out"><strong>成果：</strong>大纲预览——标题「午休30分钟＞晚上多睡2小时，打工人高效回血指南」+正文3段（痛点引入→3个方法→亲测效果）+6页配图说明（封面大字报、方法对比图、时间分配图、成果图等）→你改完确认→一键生成6张风格统一的图文，保存到hy.ithinkai.cn「我的创作」可下载发布。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">codex-team-mode — 4角色团队协作</div><div class="sk-subtitle">oil-oil · 把大任务拆给4个专精Agent，主线程只保留决策和验收</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 新发布（7/24）</span><span class="bd bd-p">日常自动化</span><span class="bd bd-b">MIT开源</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个让你把复杂任务拆成「多个专精子Agent并行工作」的协调Skill。4个角色分工明确——<strong>Explorer</strong>（只读搜集证据）→ <strong>Executor</strong>（写权限干清晰有界的活）→ <strong>Complex Executor</strong>（架构清楚的复杂实现）→ <strong>Reviewer</strong>（独立复核挑高后果风险）。最妙的是它<strong>会先算协调成本</strong>——如果派活的沟通成本超过了活儿本身的价值，就直接让主线程自己干，不浪费。<br><strong>最适合：</strong>多步骤知识工作——比如「整理本周客户反馈+写分析报告」「做竞品调研+输出对比表+写策略建议」——这些都是一个人从头做到尾容易脑带宽不够的任务。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add oil-oil/codex-team-mode --agent codex --global</div><div class="cmt">安装后重启Codex，在对话中用自然语言描述多步骤任务即可自动触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>「整理这周5个客户反馈邮件，写一份客户满意度分析报告」→Explorer搜集所有邮件提取关键信息→Executor写初稿→Reviewer独立读一遍挑逻辑漏洞和数据不一致→主线程你最终拍板。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>帮我做一份新能源汽车行业的竞品分析：搜集蔚来、理想、小鹏Q2财报关键数据，做对比表，再写一份300字的策略建议</div>
+        <div class="ex-out"><strong>成果：</strong>主线程先评估协调成本（中等，值得派）→Explorer分别抓取三家财报的关键指标（营收、毛利率、交付量、研发费用）→Executor做对比表格+初步分析→Reviewer独立核实数据来源和对比逻辑（发现一处毛利率口径不一致的隐患，标注）→主线程收到一份带核验标注的完整竞品分析报告。以前手动做需要1-2小时，现在10-15分钟出初稿。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">yao-meta-skill — 流程封装元技能</div><div class="sk-subtitle">yaojingang（姚金刚）· 把重复工作流变成可安装、可复用的Codex Skill</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 91.5分质量评分</span><span class="bd bd-p">日常自动化</span><span class="bd bd-b">MIT开源</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个「用来创造Skill的Skill」。跟Codex自带的skill-creator不同，yao-meta-skill更像一套<strong>工程化的Skill生命周期管理系统</strong>——从意图澄清→生成技能包→验证触发器→导出兼容产物→打包发布，覆盖完整流程。在项目级评审中获得91.5分（对比：官方skill-creator仅50.5分）。<br><strong>最适合：</strong>有固定、高频工作流的知识工作者——比如每周写周报、每月做竞品月报、每次发文前做选题诊断——把这些流程封装成专属Skill，以后一句话触发。<br><strong>跟#24的skill-creator的区别：</strong>skill-creator适合快速生成简单Skill，yao-meta-skill更适合需要多轮验证、跨平台兼容、有质量标准要求的复杂流程封装。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills add yaojingang/yao-meta-skill -a codex -g -y</div><div class="cmt">安装后重启客户端，直接说「从这个工作流创建一个技能」即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你每周写周报的固定流程（收集本周数据→分析亮点/问题→写三段式周报→排版→发邮件）描述给它，它会先做意图澄清确认你的真实需求，然后生成一个专属的「周报自动化Skill」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>我每周五都要做这件事：1）汇总本周项目进展，2）分析三个关键指标的变化，3）写一段500字周报发给领导。帮我封装成一个Skill叫weekly-report</div>
+        <div class="ex-out"><strong>成果：</strong>yao-meta-skill先追问（数据来源是哪里？邮件还是飞书？领导偏好什么风格？）→确认后生成SKILL.md+触发器配置→用内置测试套件验证触发器准确率→打包导出为weekly-report Skill→以后每周五在Codex里说「生成本周周报」就自动跑完三步。把每周30分钟手工活压缩到5分钟。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">📱 Codex iOS 更新（7/20）— Mermaid图表内联渲染 + 交互式表单</div></div><div class="tb">Codex iOS版新增支持在任务记录中<strong>内联渲染Mermaid图表</strong>——流程图、时序图、甘特图直接在对话里看，不用导出再找工具打开。同时新增<strong>交互式表单</strong>支持，在移动端也能填写和提交结构化信息。还有<strong>提示词恢复</strong>功能：切换任务/工作区时未发送的提示词会自动保存。这些更新让移动端不再是「只能看不能干」的状态。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🖥️ ChatGPT桌面应用界面统一（7/16）— 三合一体验升级</div></div><div class="tb">ChatGPT桌面应用（macOS/Windows）完成了界面重构：顶部菜单可选<strong>ChatGPT对话模式</strong>或<strong>Codex工作模式</strong>；「最近项目」统一显示对话和工作记录，支持排序、筛选、钉选；ChatGPT项目中的资料可在Codex工作对话中直接引用；最关键的是——<strong>云工作对话跨设备同步</strong>，桌面开始的任务手机上继续。Codex本身功能不变，只是入口和体验更顺畅。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">💡 本周技巧：上下文窗口272K应对策略</div></div><div class="tb">Codex CLI上下文窗口目前为272K token。当处理超大项目或超长对话时，<strong>主动分段</strong>是最有效的策略：开一个新任务，把当前状态用「📌 当前进度卡片」简洁描述（已完成什么、待做决策、下一步），让新会话快速接上上下文。搭配本期③号Skill（codex-team-mode）效果更好——大任务拆成多个子任务，每个子任务开独立会话，主线程只保留决策和验收。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 同一套素材，四种完全不同的产出</div></div><div class="tb">你可能知道NotebookLM能生成Audio Overview播客，但很多人没注意到<strong>格式切换</strong>这个隐藏按钮。同一套素材可以生成四种不同格式：<strong>Deep Dive</strong>（默认，双人对谈深度解读）、<strong>The Brief</strong>（单人，2分钟内简短摘要）、<strong>The Critique</strong>（双人批判性审查，专挑你素材里的漏洞）、<strong>The Debate</strong>（双人从正反两面辩论）。操作：新建Audio Overview→点齿轮图标→选格式→生成。一套行业报告→早上听Brief快速了解→下午听Deep Dive深入研究→发之前用Critique挑刺。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Briefing Doc回存笔记本，递归提升质量</div></div><div class="tb">这是一个被严重低估的技巧：让NotebookLM先生成一份<strong>Briefing Doc</strong>（简报文档），然后<strong>把这份简报作为新素材回存到同一个笔记本</strong>。此时NotebookLM可以「在自己的总结之上再做总结」——第二轮生成的内容会更有层次、更聚焦核心论点。这个递归方法对信息密度高、来源分散的研究项目尤其有效，重复2-3轮效果最佳。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 素材分工法：大模型讨论方向，NotebookLM整理素材</div></div><div class="tb">先跟ChatGPT/Claude/Codex讨论「想解决什么问题、拆成哪几个维度」→拿着这个框架去搜集素材加入NotebookLM→再对NotebookLM针对性地提问。NotebookLM的设计是<strong>素材整理工具，不是创作工具</strong>——让它从零开始想写什么反而会吃掉它的优势。把它当「研究助理」而不是「代笔者」，输出质量会明显提升。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 多专家会诊：让AI从三个角度同时分析同一问题</div></div><div class="tb">做重大决策时别只听AI的一面之词。WorkBuddy支持<strong>同时召唤多个专家角色</strong>分析同一个问题：比如面对「要不要接一个新行业的咨询项目」——同时召唤「乐观派行业分析师」「悲观派风险评估师」「财务测算专家」，三个角色并行分析，10分钟内给你一份多维度报告。操作：新建任务→在专家中心依次添加三个专家→描述问题让它们各自分析→汇总对比。这个技巧的精髓在于<strong>强制多视角交叉验证</strong>，避免单一视角的盲区。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 给AI看例子，比说一堆要求管用</div></div><div class="tb">当你想要某种「感觉」但无法精确描述——比如某种文风、排版风格、汇报格式——最省力的方法是直接<strong>把一个你满意的样本丢给WorkBuddy</strong>，说「照这个来」。一篇好的参考文章，胜过500字的需求说明。AI更擅长「模仿」而不是「从零想象」。这个技巧搭配本期④号Skill（yao-meta-skill）效果翻倍：把参考样本作为Skill的规范锚点，以后每次调用都自动对齐风格。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 PPT-Skill + redya-xiaohongshu 串联：一次汇报，多处开花</div>
+      <div class="sh-sub">用今天介绍的①+②号Skill组合，把一份PPT内容同时变成小红书推广素材</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你需要做一份「国企数字化转型实践汇报」PPT给领导，同时公司公众号/小红书也需要发相关内容。<br><br>
+        <strong>第1步：</strong>用<strong>PPT-Skill</strong>生成汇报PPT——输入主题「国企数字化转型实践汇报，目标受众集团领导，场景年度总结会」→7阶段流水线产出15页咨询级PPT+演讲稿。<br>
+        <strong>第2步：</strong>从PPT中提炼3个最有传播力的核心观点（比如「数字化不是买系统，是改流程」「从0到1的三个关键决策」「一线员工比领导更懂数字化痛点」）。<br>
+        <strong>第3步：</strong>把每个观点拆成一篇小红书，用<strong>红鸦redya-xiaohongshu</strong>生成——每篇一句话输入→先看大纲→确认后批量出6张统一风格配图。<br><br>
+        <strong>成果：</strong>一次投入写PPT的时间，同时产出：1份15页可编辑PPTX+逐页演讲稿（对内汇报）+3篇小红书图文（对外传播）。以前需要分开做两件事花4-5小时，现在一次搞定约40分钟。
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">PPT-Skill</span><span class="pa">→</span>
+      <span class="ps ps-2">提炼核心观点</span><span class="pa">→</span>
+      <span class="ps ps-3">redya-xiaohongshu</span><span class="pa">→</span>
+      <span class="ps ps-4">1份PPTX + 3篇小红书</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 周一开工，别从零开始——把上周的经验封装成这周的工具，让AI跑流水线，你只管拍板和传播。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-27</span>
+  </div>
+</div>
+</body>
+</html>

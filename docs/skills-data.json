@@ -70,7 +70,8 @@
         "cyberppt",
         "mindmap-ppt-builder",
         "frontend-slides",
-        "nature-paper2ppt"
+        "nature-paper2ppt",
+        "ppt-skill"
       ]
     },
     {
@@ -87,7 +88,8 @@
         "qiaomu-design-advisor",
         "ado-visual-director",
         "xhs-visual-director",
-        "build-xhs-content-pack"
+        "build-xhs-content-pack",
+        "redya-xiaohongshu"
       ]
     },
     {
@@ -120,7 +122,9 @@
         "sunzi-reading",
         "ai-news-digest",
         "ai-market-radar",
-        "agent-reach"
+        "agent-reach",
+        "codex-team-mode",
+        "yao-meta-skill"
       ]
     },
     {
@@ -1355,9 +1359,66 @@
       "issues": ["2026-07-26"],
       "screenshot": "",
       "result": "一份15页PDF研究报告→完整.pptx：封面+目录+核心发现+数据图表+结论建议。每页配演讲者备注，报告→汇报，10分钟。"
+    },
+    "ppt-skill": {
+      "name": "PPT-Skill（多阶段智能PPT）",
+      "author": "Githubfans518/ken861222",
+      "subtitle": "7阶段流水线：需求调研→逐页研究→SVG设计→PPTX+演讲稿，咨询级交付",
+      "desc": "不是一键套模板，而是一条完整的内容生产流水线。7个阶段——上下文收拢、需求调研、结构化大纲（金字塔原理+便利贴法）、逐页资料搜集、页面策划稿、Bento Grid 7种布局SVG设计、PPTX导出+演讲稿。三套配色方案（商务深色/科技风/简约风），四种叙事结构（说服型/通知型/教学型/激励型）。MIT开源。",
+      "stars": "新发布（6月）",
+      "tags": ["PPT生成", "7阶段流水线", "金字塔原理", "Bento Grid", "PPTX+演讲稿", "MIT开源"],
+      "install": "git clone https://github.com/ken861222/PPT-Skill.git ~/.codex/skills/PPT-Skill",
+      "issues": ["2026-07-27"],
+      "result": "一个主题→7阶段自动跑→可编辑PPTX+30-60秒/页演讲稿。15-30分钟咨询级交付。"
+    },
+    "redya-xiaohongshu": {
+      "name": "redya-xiaohongshu（红鸦小红书图文）",
+      "author": "rnthking",
+      "subtitle": "一句话出标题+正文+9张风格统一配图，20万+创作者在用",
+      "desc": "把红鸦AI的小红书图文生成能力接入Codex。自研视觉一致性算法确保多图风格统一；文案有人味不像AI写；支持商品带货模式关联真实商品图；先出大纲让你改再出图不浪费积分；Agent端和网页端打通，hy.ithinkai.cn同步管理。新用户注册即送免费试用积分。",
+      "stars": "20万+用户",
+      "tags": ["社交分发", "小红书图文", "视觉一致性", "商品带货", "大纲可调"],
+      "install": "在 hy.ithinkai.cn 注册获取API Key，然后在Codex中说「请帮我安装红鸦小红书图文Skill」",
+      "issues": ["2026-07-27"],
+      "result": "一个主题→先看大纲→改到你满意→一键出6-9张统一风格配图。一个人就是一个内容团队。"
+    },
+    "codex-team-mode": {
+      "name": "codex-team-mode（4角色团队协作）",
+      "author": "oil-oil",
+      "subtitle": "Explorer搜集+Executor执行+Complex执行+Reviewer复核，主线程只保留决策",
+      "desc": "把大任务拆给4个专精子Agent并行工作。Explorer只读搜集证据（网页/文档/代码/日志）；Executor写权限干清晰有界的活；Complex Executor处理架构清楚的复杂实现；Reviewer独立复核挑高后果风险。核心设计：先算协调成本，如果派活的沟通成本超过活儿本身价值就不派，主线程自己干。MIT开源。",
+      "stars": "新发布（7/24）",
+      "tags": ["日常自动化", "团队协作", "4角色Agent", "协调成本", "独立复核", "MIT开源"],
+      "install": "npx -y skills@latest add oil-oil/codex-team-mode --agent codex --global",
+      "issues": ["2026-07-27"],
+      "result": "一个多步骤任务→4个Agent分工并行→主线程收到带核验标注的完整成果。10-15分钟完成以前1-2小时的手动工作。"
+    },
+    "yao-meta-skill": {
+      "name": "yao-meta-skill（流程封装元技能）",
+      "author": "yaojingang（姚金刚）",
+      "subtitle": "把重复工作流变成可安装、可复用的Codex Skill，91.5分质量评分",
+      "desc": "一个用来创造Skill的Skill，工程化技能生命周期管理系统——意图澄清→生成技能包→验证触发器→导出兼容产物→打包发布。在项目级评审中获得91.5分（官方skill-creator仅50.5分）。适合将固定工作流（周报、月报、选题诊断、内容排版等）封装为专属Skill。MIT开源。",
+      "stars": "91.5分",
+      "tags": ["日常自动化", "Skill创建", "生命周期管理", "触发器验证", "跨平台兼容", "MIT开源"],
+      "install": "npx -y skills add yaojingang/yao-meta-skill -a codex -g -y",
+      "issues": ["2026-07-27"],
+      "result": "描述固定工作流→意图澄清→生成可安装的专属Skill。每周30分钟手工活→一句话5分钟搞定。"
     }
   },
   "issues": [
+    {
+      "id": 32,
+      "date": "2026-07-27",
+      "weekday": "星期一",
+      "title": "周一效率开机：4个新Skill让你的知识工作流水线再提速",
+      "subtitle": "多阶段PPT · 小红书图文 · 团队协作 · 流程封装",
+      "tags": ["📽️ 多阶段PPT", "🃏 小红书图文", "🤖 团队协作", "⚙️ 流程封装", "🚀 周一效率"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-27.html",
+      "skills": ["ppt-skill", "redya-xiaohongshu", "codex-team-mode", "yao-meta-skill"]
+    },
     {
       "id": 31,
       "date": "2026-07-26",
