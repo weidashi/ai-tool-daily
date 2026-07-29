@@ -1407,6 +1407,32 @@
   },
   "issues": [
     {
+      "id": 34,
+      "date": "2026-07-29",
+      "weekday": "星期二",
+      "title": "把重复的事「腌」进自动挡——4个让AI替你值班的方案",
+      "subtitle": "定时任务 · 远程遥控 · 技能固化为Skill · 三层记忆——一次配置，天天自动跑",
+      "tags": ["⏰ 自动化任务", "📱 微信遥控", "⚙️ 技能固化", "🧠 三层记忆", "🤖 无人值守"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-29.html",
+      "skills": ["workbuddy-automation", "wechat-remote", "skill-creator", "memory-system"]
+    },
+    {
+      "id": 33,
+      "date": "2026-07-28",
+      "weekday": "星期一",
+      "title": "文档不是写出来的，是「流」出来的——4个Skill串起你的文件处理管线",
+      "subtitle": "文件管家 · Excel智能处理 · Word全家桶 · PDF批处理——让电脑替你整理",
+      "tags": ["🗂️ 文件管家", "📊 Excel处理", "📄 Word全家桶", "📑 内容摘要", "🔄 流水线"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-28.html",
+      "skills": ["file-organizer", "xlsx", "docx", "summarize"]
+    },
+    {
       "id": 32,
       "date": "2026-07-27",
       "weekday": "星期一",

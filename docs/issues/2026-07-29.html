@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-29</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:40px 0 20px; font-size:11px; color:var(--muted); }
+  .footer a { color:var(--purple); text-decoration:none; }
+  @media (max-width:600px) {
+    .article { padding: 24px 16px 32px; }
+    .art-header h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="nav">← <a href="../index.html">AI 工具每日速递</a> · 每天推荐真正好用的生产力工具</div>
+
+<div class="article">
+<div class="art-header">
+  <div class="art-date">2026年7月29日 · 星期二</div>
+  <h1>把重复的事「腌」进自动挡——4个让AI替你值班的方案</h1>
+  <div class="art-sub">定时任务 · 远程遥控 · 技能固化为Skill · 三层记忆——一次配置，天天自动跑</div>
+</div>
+
+<div class="intro-box">
+  <strong>📌 今天聊什么？</strong><br>
+  昨天聊了文件处理流水线，今天聊下一个层级：<strong>能不亲手跑的就交给自动化</strong>。从每天早上的资讯简报、到每周五的周报汇总、再到下班时的文件归档——这些规律性工作，配一次自动化任务，WorkBuddy 就会自己定时执行。今天就聊聊怎么搭自己的"无人值守"工作流。
+</div>
+
+<!-- Skill 1: automation -->
+<div class="section">
+  <div class="section-title"><span class="si si-o">⏰</span>核心能力</div>
+
+  <div class="skill featured">
+    <div class="sk-top"><span class="sk-num">1</span><div><div class="sk-title">自动化任务 —— WorkBuddy 最被低估的功能</div><div class="sk-subtitle">定时执行，配一次永久生效</div></div></div>
+    <div class="badges"><span class="bd bd-o">自动化</span><span class="bd bd-p">定时任务</span><span class="bd bd-g">无人值守</span></div>
+    <div class="sk-desc">
+      很多人只用了 WorkBuddy 的"对话"功能，却不知道左侧栏的<strong>「自动化」</strong>才是真正的生产力放大器。创建自动化任务只需三步：<strong>①确定任务内容 → ②写好提示词 → ③设置定时规则</strong>。设置好后，到点自动执行，完全不用守着屏幕。
+    </div>
+    <div class="install"><div class="il">快速上手</div><div class="cmd">WorkBuddy 左侧导航栏 → 自动化图标（带循环箭头的时钟）→ 新建任务</div><div class="cmt">内置功能，无需安装任何 Skill</div></div>
+    <div class="try"><strong>💡 推荐模板：</strong>"每天早上 8:00 自动抓取今日天气、科技圈 AI 最新动态精选 3 条、读取我的日历事件列出待办任务，生成一份简报并通过邮件发送。"</div>
+    <div class="example">
+      <div class="ex-title">三个新手推荐模板</div>
+      <div class="ex-out" style="border-left-color:var(--green);">
+        <strong>📰 每日 AI 新闻推送：</strong>每天 09:00 自动抓取行业动态并整理成简报<br>
+        <strong>📋 每周一自动生成周报：</strong>每周一早上 8:00 读取本周工作记录，生成周报初稿<br>
+        <strong>🗂️ 每日下班自动整理文件：</strong>每天下午 6:00 把桌面文件按文档/图片/其他分类归档
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill 2: 微信联动 -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">2</span><div><div class="sk-title">微信远程遥控 —— 人在外面也能指挥电脑干活</div><div class="sk-subtitle">通勤路上发微信，到工位时文件已生成好</div></div></div>
+    <div class="badges"><span class="bd bd-g">远程控制</span><span class="bd bd-b">微信联动</span><span class="bd bd-p">移动办公</span></div>
+    <div class="sk-desc">
+      两个入口：<strong>微信搜「腾讯 WorkBuddy」小程序</strong>（同微信账号自动绑定），或下载手机独立 App（鸿蒙/安卓/iOS，支持拍照传图、语音发指令）。人在外面开会，突然需要数据报表？微信发条消息让电脑自动处理，回去时文件已经躺在桌面上了。
+    </div>
+    <div class="install"><div class="il">配置方式</div><div class="cmd">WorkBuddy 客户端左下角头像 → 个人中心 → 微信联动 → 扫码绑定</div><div class="cmt">绑定后通过微信小程序或 QQ 远程发指令</div></div>
+    <div class="try"><strong>💡 实际场景：</strong>"在外开会临时需要数据报表 → 微信上发'读取我电脑 D 盘环保报价表 Excel，统计近 3 个月客户报价，导出 PDF 发到我的企业微信'→ 回到办公室文件已就绪"</div>
+    <div class="tip t-o" style="margin-top:10px;">
+      <div class="th"><div class="tt">⚠️ 重要前置条件</div></div>
+      <div class="tb">电脑端 WorkBuddy 必须<strong>保持开机、联网、后台在线</strong>。休眠会中断任务。建议在电源设置中关闭自动休眠，或者让一台低功耗主机 24 小时运行。</div>
+    </div>
+  </div>
+
+  <!-- Skill 3: 技能固化 -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">3</span><div><div class="sk-title">把重复流程固化为 Skill —— 同类任务一键调用</div><div class="sk-subtitle">完成一次多步骤任务后，把它保存下来以后复用</div></div></div>
+    <div class="badges"><span class="bd bd-p">技能固化</span><span class="bd bd-g">流程复用</span><span class="bd bd-b">效率提升</span></div>
+    <div class="sk-desc">
+      经常需要整理某个固定格式的报表？让 WorkBuddy 帮你跑通一次完整流程后，<strong>直接告诉它"把这个流程保存为技能"</strong>。以后每次说"运行 XX 报表整理技能"，它就会原样走一遍。你把时间花在琢磨"怎么优化流程"上，而不是"怎么重新写指令"上。
+    </div>
+    <div class="install"><div class="il">触发方式</div><div class="cmd">在 WorkBuddy 完成一个多步骤任务后说："把这个流程保存为一个技能，命名为 XXX"</div><div class="cmt">自定义技能会出现在你的技能列表中，随时调用</div></div>
+  </div>
+
+  <!-- Skill 4: 三层记忆 -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">4</span><div><div class="sk-title">三层记忆系统 —— AI 越用越懂你</div><div class="sk-subtitle">不用每次对话重复交代设置和偏好</div></div></div>
+    <div class="badges"><span class="bd bd-b">记忆系统</span><span class="bd bd-p">个性化</span><span class="bd bd-g">长效沉淀</span></div>
+    <div class="sk-desc">
+      普通 AI 工具"对话清零、用完即忘"。WorkBuddy 搭载<strong>三层分层记忆</strong>：<strong>用户级记忆</strong>（跨项目的个人偏好）、<strong>工作区记忆</strong>（当前项目的决策和约定）、<strong>每日日志</strong>（当天做了什么）。过了一周你说"接着上次的项目继续"，它还记得文件名、修改日期、改了什么内容。
+    </div>
+    <div class="install"><div class="il">使用建议</div><div class="cmd">重要偏好写入用户级记忆（告诉它"以后都这样"）；项目决策写入工作区 MEMORY.md；每日工作记录写入日期文件</div><div class="cmt">在「设置 → 记忆」中开启「生成对话记忆」开关</div></div>
+    <div class="try"><strong>💡 试试：</strong>"记住我以后回复邮件都用轻松语气、200字以内、署名加公司logo签名"——下次让它写邮件会自动套用这个设定。</div>
+  </div>
+</div>
+
+<!-- 最佳实践 -->
+<div class="section">
+  <div class="section-title"><span class="si si-g">🧪</span>实战：搭建一套"全天候自动化办公流"</div>
+  
+  <div class="showcase">
+    <div class="sh-title">🎯 完整方案：早开机 → 自动收发 → 晚关机</div>
+    <div class="sh-sub">配置一次，永久解放</div>
+    <div class="sh-box">
+      <strong>7:50 电脑自动唤醒：</strong>Windows 任务计划程序设置定时启动 WorkBuddy<br>
+      <strong>8:00 自动采集信息：</strong>WorkBuddy 自动化抓取天气+资讯+日程，生成简报发邮件<br>
+      <strong>16:50 自动关机：</strong>Windows 任务计划 shutdown -s -t 0<br><br>
+      <strong style="color:#dc2626;">⚠️ 前提条件：</strong>电脑不能休眠，WorkBuddy 要保持后台运行。建议在电源设置中关闭自动休眠。
+    </div>
+  </div>
+
+  <div class="tip t-b" style="margin-top:16px;">
+    <div class="th"><div class="tt">📋 哪些工作适合自动化？</div></div>
+    <div class="tb">
+      <strong>三个标准：</strong>重复性高 + 规则明确 + 无需实时人工干预<br>
+      典型场景：每日资讯简报、每周工作报告、文件定期整理归档、竞品数据监控、会议纪要整理。这些工作都有一个共同点——你知道"怎么做"和"什么时候做"，但每次都手动操作很浪费。
+    </div>
+  </div>
+
+  <div class="tip t-o" style="margin-top:12px;">
+    <div class="th"><div class="tt">🚫 避坑：别一口气设太多任务</div></div>
+    <div class="tb">建议控制在<strong>5个以内</strong>，只自动化那些真正重复且容易忘的事。任务看板太乱反而失去自动化的意义。"先把最重要的 2 个自动化跑顺，再逐步增加"比"一次性配 20 个然后全乱"靠谱得多。</div>
+  </div>
+
+  <!-- 组合技 -->
+  <div class="pipe" style="margin-top:24px;">
+    <span class="ps ps-1">① 设定身份</span><span class="pa">→</span>
+    <span class="ps ps-2">② 固定工作区</span><span class="pa">→</span>
+    <span class="ps ps-3">③ 设自动化</span><span class="pa">→</span>
+    <span class="ps ps-4">④ 固化为Skill</span><span class="pa">→</span>
+    <span class="ps ps-5">⑤ 微信远程</span>
+  </div>
+  <div class="hl" style="margin-top:16px;">
+    <strong>🔑 核心心法：</strong>把机械的劳动交给 AI，把思考的时间留给自己。不是偷懒，而是让对的人和对的工具去做更合适的事。这 5 个步骤本质上是一次性投资——花 30 分钟搭好框架，以后每天都能省下 1-2 小时的重复劳动。
+  </div>
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · <a href="../index.html">返回主页</a> · <a href="https://github.com/weidashi/ai-tool-daily">GitHub</a><br>
+  下次更新：2026年7月30日 · 周三内容创作专场
+</div>
+</div>
+</body>
+</html>

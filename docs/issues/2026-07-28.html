@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-28</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:40px 0 20px; font-size:11px; color:var(--muted); }
+  .footer a { color:var(--purple); text-decoration:none; }
+  @media (max-width:600px) {
+    .article { padding: 24px 16px 32px; }
+    .art-header h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="nav">← <a href="../index.html">AI 工具每日速递</a> · 每天推荐真正好用的生产力工具</div>
+
+<div class="article">
+<div class="art-header">
+  <div class="art-date">2026年7月28日 · 星期一</div>
+  <h1>文档不是写出来的，是「流」出来的——4个Skill串起你的文件处理管线</h1>
+  <div class="art-sub">文件管家 · Excel智能处理 · Word全家桶 · PDF批处理——让电脑替你整理</div>
+</div>
+
+<div class="intro-box">
+  <strong>📌 今天聊什么？</strong><br>
+  每个打工人桌面都堆着几百个文件，命名混乱、格式不统一、内容要反复手工调整。今天推荐的这4个 Skill 不是帮你在单个文件里"绣花"，而是把一批文件当作流水线来跑——<strong>批量整理、批量处理、批量转换</strong>，像工厂一样吞吐文档。
+</div>
+
+<!-- Skill 1: file-organizer -->
+<div class="section">
+  <div class="section-title"><span class="si si-o">🗂️</span>新发现 Skills</div>
+
+  <div class="skill featured">
+    <div class="sk-top"><span class="sk-num">1</span><div><div class="sk-title">file-organizer —— 智能文件管家</div><div class="sk-subtitle">一句话把混乱桌面变成整齐档案室</div></div></div>
+    <div class="badges"><span class="bd bd-o">文件管理</span><span class="bd bd-p">批量整理</span><span class="bd bd-g">自动化</span></div>
+    <div class="sk-desc">
+      这个 Skill 能<strong>自动识别文件类型、创建日期、项目名称</strong>，按规则批量归类、重命名、归档。你再也不用一个一个拖文件了。支持按扩展名、修改日期、关键词分组，还可以自定义重命名模板（如"日期-项目名-版本号"）。
+    </div>
+    <div class="install"><div class="il">安装方式</div><div class="cmd">在 WorkBuddy 对话中说："帮我安装 file-organizer 技能"</div><div class="cmt">免费，SkillHub 市场可直接安装</div></div>
+    <div class="try"><strong>💡 试试这样说：</strong>"遍历桌面所有 PDF，按「环评资料」「设备报价」「合同文件」分三个文件夹，批量重命名统一格式：日期-文件类型-项目名。"</div>
+    <div class="example">
+      <div class="ex-title">真实效果</div>
+      <div class="ex-in">输入：桌面 50 个散乱文件（PDF/Word/Excel/图片混合，命名毫无规律）</div>
+      <div class="ex-out">输出：按类型自动归入 4 个子文件夹，所有文件统一重命名为"2026-07-28-类型-原标题"，生成归档清单</div>
+    </div>
+  </div>
+
+  <!-- Skill 2: xlsx -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">2</span><div><div class="sk-title">xlsx —— Excel 智能处理引擎</div><div class="sk-subtitle">不用打开Excel就能完成数据清洗和报表生成</div></div></div>
+    <div class="badges"><span class="bd bd-g">数据处理</span><span class="bd bd-b">报表自动化</span><span class="bd bd-o">公式计算</span></div>
+    <div class="sk-desc">
+      WorkBuddy 内置的 xlsx Skill 可以<strong>不打开 Excel 就直接读写、修改、计算</strong>。支持创建新工作簿、添加公式、设置格式、生成图表、合并多表数据。对国企项目台账、月度统计报表这类重复性工作尤其好用。
+    </div>
+    <div class="install"><div class="il">安装方式</div><div class="cmd">在 WorkBuddy 对话中说："帮我安装 xlsx 处理技能"</div><div class="cmt">官方内置 Skill，免费</div></div>
+    <div class="try"><strong>💡 试试这样说：</strong>"@台账.xlsx 筛选苏州环保项目，统计臭氧催化氧化设备月度出货量，做柱状图表，生成汇总 Excel 保存到桌面「环保报表」文件夹。"</div>
+    <div class="example">
+      <div class="ex-title">真实效果</div>
+      <div class="ex-in">输入：一份包含 2000 行数据的项目台账，电话列格式混乱（有的带区号，有的没有）</div>
+      <div class="ex-out">输出：统一清洗为 xxx-xxxx-xxxx 格式，区号以 0 开头保留，否则补默认区号 0755；同时生成按月份汇总的柱状图</div>
+    </div>
+  </div>
+
+  <!-- Skill 3: docx -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">3</span><div><div class="sk-title">docx —— Word 文档全家桶</div><div class="sk-subtitle">批量生成、格式统一、智能排版一条龙</div></div></div>
+    <div class="badges"><span class="bd bd-b">文档生成</span><span class="bd bd-p">排版自动化</span><span class="bd bd-g">批量处理</span></div>
+    <div class="sk-desc">
+      Word 文档的痛点从来不是"写"，而是<strong>反复调格式、统一字体、校对排版</strong>。docx Skill 能从零创建规范 Word 文档，设置标题层级、表格、页眉页脚，还能读取已有文档提取内容、修改样式。周报、会议纪要、标书、方案文档——这些重复性产出，交给它。
+    </div>
+    <div class="install"><div class="il">安装方式</div><div class="cmd">在 WorkBuddy 对话中说："帮我安装 docx 技能"</div><div class="cmt">官方内置 Skill，免费</div></div>
+    <div class="try"><strong>💡 试试这样说：</strong>"读取桌面「周报」文件夹内所有 Word 文档，合并为一个完整文档，统一排版字体为微软雅黑 12 号、行距 1.5 倍；将合并后的文件另存为 PDF。"</div>
+  </div>
+
+  <!-- Skill 4: summarize -->
+  <div class="skill">
+    <div class="sk-top"><span class="sk-num">4</span><div><div class="sk-title">summarize —— 多格式内容消化器</div><div class="sk-subtitle">PDF/网页/音频/视频/图片一键产出摘要</div></div></div>
+    <div class="badges"><span class="bd bd-p">内容摘要</span><span class="bd bd-r">多格式支持</span><span class="bd bd-b">效率工具</span></div>
+    <div class="sk-desc">
+      summarize CLI 工具<strong>支持 URL、PDF、图片、音频、YouTube 视频</strong>的智能摘要生成。扔给它一个 50 页的行业报告 PDF，几秒钟给你提炼核心结论。日常读研报、看政策文件、消化会议录音的利器。
+    </div>
+    <div class="install"><div class="il">安装方式</div><div class="cmd">在 WorkBuddy 对话中说："帮我安装 summarize 技能"</div><div class="cmt">已安装于本机，随时可用</div></div>
+    <div class="try"><strong>💡 试试这样说：</strong>"用 summarize 帮我总结这份 50 页的行业报告 PDF，提炼 5 个最核心的结论，每个结论一句话概括，并附带原文页码。"</div>
+  </div>
+</div>
+
+<!-- 本周亮点 -->
+<div class="section">
+  <div class="section-title"><span class="si si-b">🔥</span>本周亮点：文档处理流水线组合技</div>
+  
+  <div class="pipe">
+    <span class="ps ps-1">① summarize</span><span class="pa">→</span>
+    <span class="ps ps-2">② docx</span><span class="pa">→</span>
+    <span class="ps ps-3">③ xlsx</span><span class="pa">→</span>
+    <span class="ps ps-4">④ file-organizer</span><span class="pa">→</span>
+    <span class="ps ps-5">⑤ 归档</span>
+  </div>
+  <div class="tip t-g" style="margin-top:16px;">
+    <div class="th"><div class="tt">🔗 完整工作流</div></div>
+    <div class="tb">
+      <strong>场景：</strong>周一早上，桌面上堆着上周的会议纪要、项目报表、行业报告。<br>
+      <strong>Step 1：</strong>summarize 快速消化所有 PDF 报告，产出核心摘要<br>
+      <strong>Step 2：</strong>docx 把所有会议纪要合并成一份规范周报，统一排版<br>
+      <strong>Step 3：</strong>xlsx 整理项目数据，生成图表和汇总报表<br>
+      <strong>Step 4：</strong>file-organizer 把处理完的文件按项目归档，旧文件移到存档文件夹<br>
+      <strong>结果：</strong>30分钟跑完整条线，比手工快 5 倍
+    </div>
+  </div>
+</div>
+
+<!-- WorkBuddy技巧 -->
+<div class="section">
+  <div class="section-title"><span class="si si-p">💡</span>WorkBuddy 小技巧</div>
+  
+  <div class="tip t-p">
+    <div class="th"><div class="tt">✨ 多文件同时处理：扔进去，一起看懂</div></div>
+    <div class="tb">WorkBuddy 支持同时读取和处理多个文件。修改合同时，可以同时扔进去<strong>旧版合同 + 新版修改要求 + 相关法规条文</strong>，然后告诉它："对照这三份文件，检查新版合同是否符合法规要求，列出差异点。"比逐个文件来回问效率高得多。</div>
+  </div>
+
+  <div class="tip t-b">
+    <div class="th"><div class="tt">📋 先本地后远程：新手别一上来就远程操控</div></div>
+    <div class="tb">远程遥控意味着 WorkBuddy 在你看不见的地方自主行动。建议先在桌面端边看边用，摸清它的执行方式和风险边界，再逐步放手给它远程跑。先在本地桌面端练熟，再开微信联动功能。</div>
+  </div>
+
+  <div class="tip t-o">
+    <div class="th"><div class="tt">🛡️ 记得先备份：AI 会改过头</div></div>
+    <div class="tb">让 WorkBuddy 帮你修改文档、方案、表格之前，最好先把原文件复制一份备份。不用等出问题了才想"当初应该先备份"。成熟的使用方式不是期待它永远不出错，而是提前准备好回退方案。</div>
+  </div>
+</div>
+
+<!-- 工具生态动态 -->
+<div class="section">
+  <div class="section-title"><span class="si si-g">🌊</span>工具生态动态</div>
+  
+  <div class="hl" style="background:linear-gradient(135deg,#fef3e2,#fffbeb);border-color:#fde68a;color:#92400e;">
+    <strong>📊 WorkBuddy SkillHub 突破 2.2 万技能</strong><br>
+    WorkBuddy 技能市场持续增长，目前已有超过 2.2 万个经过认证的技能包。办公类（PDF 拆分合并、思维导图生成、录音转纪要）、行业类（财报拆解、招投标文书优化、环保工艺文案润色）、工具类（网页批量爬取、图片批量抠图）三大类别覆盖几乎所有职场场景。
+  </div>
+
+  <div class="hl">
+    <strong>🔄 自动化任务成为 WorkBuddy 最被低估的功能</strong><br>
+    很多人只用 WorkBuddy 的"对话"功能，却不知道最强大的"自动化任务"可以设置定时任务——每天 9:00 自动抓取行业动态生成简报、每周五 17:00 汇总本周工作自动生成周报。配一次，永久自动执行。
+  </div>
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · <a href="../index.html">返回主页</a> · <a href="https://github.com/weidashi/ai-tool-daily">GitHub</a><br>
+  下次更新：2026年7月29日 · 周二深度工具书
+</div>
+</div>
+</body>
+</html>
