@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-30</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-30 · 星期四</div>
+    <h1>内容创作效率再升级：4个新Skill让AI产出更像人、更快交付</h1>
+    <div class="art-sub">写作润色 · 演示生成 · 公众号排版 · 零代码全链路</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>一个月前我们梳理了「写作流水线」（#29），今天升级版来了——本期聚焦<strong>7月最新发布</strong>的4个Skill：汲取优秀写作者风格的文采增强器、图片秒变可编辑PPTX、DOCX一键出公众号排版、一句话生成完整PPTX。全部新出、全部0行代码、全部今天就能试。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">zh-humanizer-literary — 中文文采增强去 AI 味</div><div class="sk-subtitle">nihe0909 · 7月20日新发布 · 汲取 Mengke 写作风格</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎯 新发布</span><span class="bd bd-g">✍️ 写作润色</span><span class="bd bd-o">🔥 社区热捧</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>它不是通用的润色器——它汲取了王梦珂（Mengke）大量公开内容的写作风格，提炼出一套去 AI 味的改稿方法。删套话（"在当今时代""综上所述"）、把抽象判断换成具体的人/场景/动作、在准确的基础上增加命名和意象。<br><strong>最适合：</strong>公众号文章、小红书帖子、产品文案、报告提案——任何你觉得"写得对但读着不像人话"的中文内容。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nihe0909/zh-humanizer-literary --skill zh-humanizer-literary --agent codex --global</div><div class="cmt">安装后重启 Codex，使用 $zh-humanizer-literary 触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把最近一篇你觉得"有点AI味"的公众号草稿丢给它，加上一句"保留事实和作者声音，不要鸡汤"，看看改写前后的差距。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「在当今数字化时代，随着人工智能技术的不断发展，越来越多的企业开始关注如何通过 AI 工具提升工作效率。值得注意的是，企业在引入 AI 时需要做好充分的准备工作……」</div>
+        <div class="ex-out"><strong>成果：</strong>「去年，我见过三家公司用同一个 AI 工具，结果完全不同。第一家公司花了两个月做准备工作，几乎什么都没上线——不是工具不行，是他们从头到尾没想清楚一个问题：到底要让 AI 替代谁的哪一步。」</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">image-to-editable-ppt-skill — 图片/PDF 一键转可编辑 PPTX</div><div class="sk-subtitle">ningzimu · 1.5K Stars · 7月持续更新</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 1.5K Stars</span><span class="bd bd-b">📽️ PPT生成</span><span class="bd bd-p">🔄 格式转换</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>codex-ppt-skill（4.1K★）的姊妹技能——当你用图片式 Skill 生成了一套精美的幻灯片图片后，这个工具能把它<strong>还原成可编辑的原生 PPTX</strong>，文字能点进去改、图形能拖动调整、母版能套用。<br><strong>最适合：</strong>先用 codex-ppt-skill 出视觉稿确认风格，再用它转成可交付、可二改的 PPTX 发给同事或客户。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add ningzimu/image-to-editable-ppt-skill --skill image-to-editable-ppt --agent codex --global</div><div class="cmt">配合 codex-ppt-skill 使用效果最佳：先出图确认→再转可编辑 PPTX</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把同事发来的一份"只能看不能改"的图片式 PPTX 丢给它，5 分钟内变成每页文字都能双击编辑的版本。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 image-to-editable-ppt 把这份产品介绍 PDF（15页，每页是整张图片）转成可编辑的 PPTX，保留原始配色和版式」</div>
+        <div class="ex-out"><strong>成果：</strong>一份 Native DrawingML 格式的 .pptx 文件，15 页幻灯片均可直接编辑文字、调整布局、替换图片，不需要从头重做。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">wechat-article-layout — DOCX 一键转公众号精美排版</div><div class="sk-subtitle">AlexWei2020 · 7月新发布 · 零依赖纯排版</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎯 新发布</span><span class="bd bd-g">📱 公众号排版</span><span class="bd bd-o">🎨 自动配色</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把带有内嵌图片的 DOCX 文稿直接转为<strong>微信兼容的内联样式 HTML</strong>——不改写原文、不丢图片、自动识别标题/引言/图注/重点句/总结句，并根据语义自动选择配色主题（田野融合/阳光课堂/乡村华盖/城市蓝）。支持左右滑动图组、倾斜叠图和错层双栏。<br><strong>最适合：</strong>在 Word 里写好初稿→一键出公众号预览→直接复制进微信后台，省去手动排版的半小时。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add AlexWei2020/wechat-article-layout-skill --skill wechat-article-layout --agent codex --global</div><div class="cmt">安装后用 $wechat-article-layout 触发，指定 DOCX 路径和输出目录即可</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你桌面上那篇写到一半的 Word 草稿文件路径告诉它，看看自动生成的排版预览页，再决定要不要细调。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 wechat-article-layout 把 D:/文稿/社区活动总结.docx 排成公众号推文，主题选 sunlight-classroom，输出到 D:/公众号/」</div>
+        <div class="ex-out"><strong>成果：</strong>一份可直接复制到公众号后台的 HTML 文件，附带本地预览页，标题/引言/图注自动识别并加了适配手机屏幕的样式，图片不丢、文字不乱。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ultimate-ppt-master — 一句话需求生成可编辑 PPTX</div><div class="sk-subtitle">kdnsna · 7月24日更新 · 先问清楚再动手</div></div></div>
+      <div class="badges"><span class="bd bd-b">🔄 7/24更新</span><span class="bd bd-g">📽️ PPT生成</span><span class="bd bd-o">🎯 零门槛</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>它的核心理念是<strong>「不猜你要什么」</strong>——接到你的需求后，先问清受众、场景、风格偏好，再整理本地资料，最后生成可编辑的 PPTX 或 Web Deck。流程自带 GPT 生图、渲染审阅、审计留痕，守住了真实办公场景中的成稿底线。<br><strong>最适合：</strong>你说"帮我做个Q2复盘PPT"——它会反问"给谁看？什么场合？几页？什么风格？"而不是闷头产出一个你根本不想用的版本。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add kdnsna/ultimate-ppt-master-skill --skill ultimate-ppt-master --agent codex --global</div><div class="cmt">使用非常简单：直接描述需求，Skill 会主动跟你确认细节再动手</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把下周要汇报的内容用一句话发给它——"帮我做一份关于7月社群运营数据的复盘 PPT，面向部门领导，10页左右，商务风格"——看看它怎么一步一步确认你的需求。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「我需要一份新产品上线宣讲的 PPT，面向全公司，15 页左右，轻松但不随意的风格，需要包含产品亮点、目标用户、上线时间线和 Q&A」</div>
+        <div class="ex-out"><strong>成果：</strong>Skill 先确认"你面向全公司是指技术+非技术都看？上线时间线要精确到天还是周？"，确认后逐页生成可编辑 PPTX，附带演讲备注和审阅记录。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📊 串联管道 -->
+  <div class="pipe">
+    <span class="ps ps-1">DOCX 初稿</span><span class="pa">→</span>
+    <span class="ps ps-2">zh-humanizer-literary 去味</span><span class="pa">→</span>
+    <span class="ps ps-3">wechat-article-layout 排版</span><span class="pa">→</span>
+    <span class="ps ps-4">image-to-editable-ppt 转 PPTX</span><span class="pa">→</span>
+    <span class="ps ps-5">终极交付</span>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🎙️ ChatGPT Voice 上线：用说话操控 Codex 干活</div></div>
+      <div class="tb">7月23日，ChatGPT Voice 正式上线桌面端。你现在可以直接用语音让 Codex 启动新任务、检查进度、调整方向——比如边开车边说「帮我把刚才那份文档转成 PPT 发到群里」，它就在后台默默执行。macOS 上还支持共享当前窗口截图（Appshots），让语音指令更精准。<strong>实操：</strong>打开 ChatGPT 桌面端→点 Voice 按钮→说「帮我检查 Codex 正在跑的那个任务，告诉我进度」。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📁 多文件夹项目：一个项目可关联多个代码/文档目录</div></div>
+      <div class="tb">同样是7月23日的更新：Codex 本地项目现在可以包含多个相关文件夹——主文件夹用于 Git 操作和 AGENTS.md 加载，辅助文件夹可以自由读、写、搜索。<strong>实操意义：</strong>你可以把"素材库""参考资料""输出文件夹"都挂在一个项目下，Codex 一次就能跨目录读取和生成，不用来回切换工作区。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🔓 Codex Security CLI 开源：代码安全扫描工具免费可用</div></div>
+      <div class="tb">7月28日，OpenAI 开源了 Codex Security CLI——一个命令行工具，可以扫描代码仓库、跨多次运行追踪问题、验证修复。虽然这更偏向开发侧，但信号很重要：<strong>OpenAI 开始在安全基础设施上持续投入</strong>，对日常使用 Codex 处理工作文件的人来说，安全性只会越来越好。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 使用技巧：一句话触发 Skill 的最佳姿势</strong><br>
+      不要只喊 Skill 的名字。用这个公式：<strong>「用 $skill名称 把 [源文件路径] 做成 [你想要的产出]」</strong>。比如：「用 $zh-humanizer-literary 把 D:/文稿/周报初稿.md 去 AI 味，保留数据和事实，语气自然但不随意」。Skill 需要知道<strong>输入在哪、输出要什么、有没有特殊要求</strong>——这三样给齐了，结果基本一次到位。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 9种输出格式，一个笔记本多种用法</div></div>
+      <div class="tb">NotebookLM 在 2026 年已经支持不止播客了——同一个笔记本可以生成 Audio Overview（深度讨论/简报/批评/辩论 四种格式）、Video Overview（带动画的深度讲解视频）、思维导图、报告、闪卡、测验、幻灯片和图表。<strong>核心思路：</strong>把一份研究素材导入一个笔记本，然后用不同格式反复"榨取"——先听播客建立感觉，再看思维导图理清结构，最后生成报告和幻灯片交给团队。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📝 Configure Chat：给 NotebookLM 写一份"使用说明书"</div></div>
+      <div class="tb">在笔记本设置里开启 Configure Chat，贴入自定义指令，就能让每次回答都遵循你的规则。比如：「只根据上传的资料回答，每条关键论点标明出处和单源/多源支持情况。写给忙碌的主管看：先两句话给结论，再简短补充。结尾列出"缺口：资料未覆盖的部分"。」<strong>这等于给 NotebookLM 设定了一个永久的"角色+输出格式"</strong>，不用每次都重新描述。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🔗 活文件链接：Google 文档自动同步，告别重复上传</div></div>
+      <div class="tb">把 Google Docs、Sheets、Slides 加为来源，而不是上传 PDF——NotebookLM 会把这些文件视为"活文件"，你点一下就能抓取最新版本。对于持续更新的会议记录、报价表、项目进度文档，这个习惯能省掉"每次更新都要重新上传"的体力活。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🧠 三层记忆系统：让 WorkBuddy 越用越懂你</div></div>
+      <div class="tb">WorkBuddy 搭载了三层分层记忆：<strong>① 云记忆</strong>（自动学习你的偏好）、<strong>② 用户级本地记忆</strong>（跨项目的长期规则，存于 ~/.workbuddy/MEMORY.md）、<strong>③ 工作区记忆</strong>（当前项目的约定和每日日志，存于 .workbuddy/memory/）。<br><strong>实操建议：</strong>对 WorkBuddy 说「记住：以后生成的所有报告都用蓝色商务风格，字号不小于16pt」——它会把这条写进用户级记忆，之后所有项目都会遵循。项目级的偏好则写进工作区的 MEMORY.md。这样你就不需要每次都重新说明风格要求。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">📋 给 WorkBuddy 看例子，比说十行要求更管用</div></div>
+      <div class="tb">当你想要特定风格但描述不清楚时——把一份你满意的样本直接拖给 WorkBuddy，说「照这个来」。一个参考样本胜过十行抽象描述。无论是排版风格、报告结构、图表样式，还是邮件的语气和格式，样本是最精准的"锚点"。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一篇公众号文章的全流程：Word → 去味 → 排版 → PPTX</div>
+      <div class="sh-sub">用今天介绍的 4 个 Skill 串联，把一篇 Word 草稿变成去味文章 + 精美公众号排版 + 可编辑 PPTX 汇报稿</div>
+      <div class="sh-box">
+        <strong>第1步：zh-humanizer-literary 去 AI 味</strong><br>
+        原文（AI初稿）：「通过本次社区文化活动，我们成功搭建了一个居民交流互动的平台，有效提升了社区凝聚力和居民的参与感，活动取得了圆满成功。」<br>
+        → 去味后：「周六那场活动，最让我意外的不是来了多少人——是活动结束后，有三家邻居自发组了个周末买菜群。社区工作做了三年，这是我第一次看到活动结束之后，事情还在自己长。」<br><br>
+        <strong>第2步：wechat-article-layout 一键排版</strong><br>
+        把去味后的 DOCX 丢给 wechat-article-layout → 选 countryside-canopy 主题 → 输出的 HTML 直接可复制进微信公众号后台，图注自动标记、重点句自动加粗、滑动图组适配手机屏幕。<br><br>
+        <strong>第3步：image-to-editable-ppt 转汇报稿</strong><br>
+        把排版好的页面截图丢给 image-to-editable-ppt → 5 分钟拿到可编辑 PPTX → 把文字补上数据图表 → 一份可以在周一例会上直接用的汇报 PPT。<br><br>
+        <strong>⏱️ 全程耗时：约 25 分钟 | 传统方式：至少 3 小时</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具是梯子，不是终点。装好一个、跑通一次，比收藏一百个都强。今天先从你最头疼的那个环节开始。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-30</span>
+  </div>
+</div>
+</body>
+</html>

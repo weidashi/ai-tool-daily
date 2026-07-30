@@ -23,7 +23,8 @@
         "ll-humanizer-zh",
         "wewrite",
         "transcript-polisher",
-        "codex-academic-writing-skills"
+        "codex-academic-writing-skills",
+        "zh-humanizer-literary"
       ]
     },
     {
@@ -50,7 +51,8 @@
         "chenly-wechat-studio",
         "mindmap-ppt-builder",
         "huashu-design",
-        "visual-explainer"
+        "visual-explainer",
+        "wechat-article-layout"
       ]
     },
     {
@@ -71,7 +73,9 @@
         "mindmap-ppt-builder",
         "frontend-slides",
         "nature-paper2ppt",
-        "ppt-skill"
+        "ppt-skill",
+        "image-to-editable-ppt",
+        "ultimate-ppt-master"
       ]
     },
     {
@@ -1403,9 +1407,66 @@
       "install": "npx -y skills add yaojingang/yao-meta-skill -a codex -g -y",
       "issues": ["2026-07-27"],
       "result": "描述固定工作流→意图澄清→生成可安装的专属Skill。每周30分钟手工活→一句话5分钟搞定。"
+    },
+    "zh-humanizer-literary": {
+      "name": "zh-humanizer-literary（文采增强去AI味）",
+      "author": "nihe0909",
+      "subtitle": "汲取Mengke写作风格的中文去AI味Skill，新发布7月20日",
+      "desc": "不是通用润色器——汲取王梦珂（Mengke）大量公开写作风格，提炼出中文去AI味方法。自动删除「在当今时代」「综上所述」等套话，把抽象判断换成具体的人/场景/动作，在准确基础上增加命名和意象。适合公众号、小红书、产品文案、报告提案。MIT开源。",
+      "stars": "新发布",
+      "tags": ["写作润色", "去AI味", "文采增强", "Mengke风格", "中文优化", "MIT开源"],
+      "install": "npx -y skills@latest add nihe0909/zh-humanizer-literary --skill zh-humanizer-literary --agent codex --global",
+      "issues": ["2026-07-30"],
+      "result": "一段AI味营销文案→有具体事实、有人味、有文采的自然中文。30秒改写，效果像人写的。"
+    },
+    "image-to-editable-ppt": {
+      "name": "image-to-editable-ppt-skill（图片转可编辑PPTX）",
+      "author": "ningzimu",
+      "subtitle": "把图片式PPT还原为文字可编辑、图形可拖动的原生PPTX，1.5K Stars",
+      "desc": "codex-ppt-skill（4.1K★）的姊妹技能。把幻灯片图片、PDF、图片式PPTX转为可编辑的原生PPTX——文字能点进去改、图形能拖动调整、母版能套用。适合先用codex-ppt出视觉稿确认风格、再转可交付PPTX的协作场景。",
+      "stars": "1.5K",
+      "tags": ["PPT生成", "格式转换", "可编辑PPTX", "图片转PPTX", "Native DrawingML"],
+      "install": "npx -y skills@latest add ningzimu/image-to-editable-ppt-skill --skill image-to-editable-ppt --agent codex --global",
+      "issues": ["2026-07-30"],
+      "result": "一份只能看不能改的图片式PPTX→5分钟后变成每页文字可双击编辑、排版可调整的完整文件。"
+    },
+    "wechat-article-layout": {
+      "name": "wechat-article-layout（公众号DOCX排版）",
+      "author": "AlexWei2020",
+      "subtitle": "DOCX带图文稿一键转微信兼容HTML排版，7月新发布，零依赖",
+      "desc": "把带有内嵌图片的DOCX文稿直接转为微信兼容的内联样式HTML。不改写原文、不丢图片，自动识别标题/引言/图注/重点句/总结句，根据语义自动选择4套配色主题（田野融合/阳光课堂/乡村华盖/城市蓝）。支持滑动图组、倾斜叠图、错层双栏等微信排版高级功能。",
+      "stars": "新发布",
+      "tags": ["公众号排版", "DOCX转HTML", "自动配色", "移动端适配", "零依赖"],
+      "install": "npx -y skills@latest add AlexWei2020/wechat-article-layout-skill --skill wechat-article-layout --agent codex --global",
+      "issues": ["2026-07-30"],
+      "result": "一份带图Word初稿→可直接复制进微信后台的精美HTML，标题/图注/重点句自动识别和适配。"
+    },
+    "ultimate-ppt-master": {
+      "name": "ultimate-ppt-master（一句话PPT生成）",
+      "author": "kdnsna",
+      "subtitle": "先问清受众场景再动手，一句话需求生成可编辑PPTX，7月24日更新",
+      "desc": "核心理念「不猜你要什么」——接到需求后先问清受众、场景、风格偏好，再整理本地资料，最后生成可编辑PPTX或Web Deck。流程自带GPT生图、渲染审阅、审计留痕，守住真实办公场景的成稿底线。适合一句话需求→确认→成品的懒人式PPT工作流。",
+      "stars": "147",
+      "tags": ["PPT生成", "一句话PPT", "可编辑PPTX", "先问后做", "审计留痕"],
+      "install": "npx -y skills@latest add kdnsna/ultimate-ppt-master-skill --skill ultimate-ppt-master --agent codex --global",
+      "issues": ["2026-07-30"],
+      "result": "「帮我做份Q2复盘PPT」→反问「给谁看？多少页？什么风格？」→确认后逐页生成可编辑PPTX。"
     }
   },
   "issues": [
+    {
+      "id": 35,
+      "date": "2026-07-30",
+      "weekday": "星期四",
+      "title": "内容创作效率再升级：4个新Skill让AI产出更像人、更快交付",
+      "subtitle": "写作润色 · 演示生成 · 公众号排版 · 零代码全链路——7月最新发布的4个创作型Skill",
+      "tags": ["✍️ 文采增强", "📽️ 可编辑PPTX", "📱 公众号排版", "🎯 一句话PPT", "🔗 全链路"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-30.html",
+      "skills": ["zh-humanizer-literary", "image-to-editable-ppt", "wechat-article-layout", "ultimate-ppt-master"]
+    },
     {
       "id": 34,
       "date": "2026-07-29",
