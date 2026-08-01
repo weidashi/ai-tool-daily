@@ -1455,6 +1455,32 @@
   },
   "issues": [
     {
+      "id": 37,
+      "date": "2026-08-01",
+      "weekday": "星期五",
+      "title": "7月AI大事件回顾：模型混战、智能体崛起、安全围栏收紧",
+      "subtitle": "月度盘点 · GPT-5.6 / Claude Sonnet 5 / Gemini 3.6 · 智能体时代正式开启",
+      "tags": ["🏆 GPT-5.6", "🧠 Claude 5", "🌐 Gemini 3.6", "🤖 智能体", "🔒 安全围栏"],
+      "skillCount": 8,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-01.html",
+      "skills": ["gpt-5.6", "claude-sonnet-5", "gemini-3.6-flash", "presence", "chatgpt-voice", "codex-multifolder", "codex-security-cli", "jalapeno-chip"]
+    },
+    {
+      "id": 36,
+      "date": "2026-07-31",
+      "weekday": "星期四",
+      "title": "从\"能写代码\"到\"能跑系统\"——4个Skill让AI智能体真正干活",
+      "subtitle": "浏览器自动化 · 多步骤任务编排 · 代码审计 · 数据处理管线——让AI从聊天变成干活",
+      "tags": ["🌐 浏览器自动化", "🔄 任务编排", "🔒 代码审计", "📊 数据管线", "🤖 智能体"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-31.html",
+      "skills": ["agent-browser", "multi-step-task", "code-reviewer", "data-pipeline"]
+    },
+    {
       "id": 35,
       "date": "2026-07-30",
       "weekday": "星期四",
@@ -1546,6 +1572,32 @@
       "skills": ["dbskill", "content-research-writer", "humanizer-zh", "guizang-ppt-skill", "guizang-social-card-skill"]
     },
     {
+      "id": 40,
+      "date": "2026-07-23",
+      "weekday": "星期四",
+      "title": "AI程序员「自主交付PR」——研发智能体从辅助工具升级为数字员工",
+      "subtitle": "腾讯云CodeBuddy NPC · OpenAI Presence · Nanobrowser开源走红 · 腾讯设计Agent Miora全量开放",
+      "tags": ["🤖 CodeBuddy NPC", "🏭 Presence", "🌐 Nanobrowser", "🎨 Miora", "⚡ 自主交付"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-23.html",
+      "skills": ["codebuddy-npc", "openai-presence", "nanobrowser", "miora"]
+    },
+    {
+      "id": 39,
+      "date": "2026-07-22",
+      "weekday": "星期三",
+      "title": "Gemini深夜「三箭齐发」——大模型开始像工程团队一样分工",
+      "subtitle": "3.6 Flash主力 · 3.5 Flash-Lite跑量 · 3.5 Flash Cyber守安全 · 输出Token直降17%",
+      "tags": ["🏆 3.6 Flash", "⚡ Flash-Lite", "🔒 Flash Cyber", "🤖 Cursor多智能体", "💰 Token降17%"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-22.html",
+      "skills": ["gemini-3.6-flash", "gemini-flash-lite", "gemini-flash-cyber", "cursor-multi-agent"]
+    },
+    {
       "id": 28,
       "date": "2026-07-21",
       "weekday": "星期二",
@@ -1583,6 +1635,19 @@
       "numColor": "n-purple",
       "file": "2026-07-19.html",
       "skills": ["gzh-design-skill", "wewrite", "book-to-skill", "chenly-wechat-studio"]
+    },
+    {
+      "id": 38,
+      "date": "2026-07-18",
+      "weekday": "星期六",
+      "title": "WAIC大会实况——AI从「会聊」走向「能交付」的行业拐点",
+      "subtitle": "小红书RED Skill · 金山灵犀 · 千问AI眼镜 · 豆包Skill自建——本周AI圈全在大模型应用落地",
+      "tags": ["🔴 RED Skill", "🏢 金山灵犀", "👓 千问眼镜", "🤖 豆包Skill", "📅 WAIC"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-18.html",
+      "skills": ["red-skill", "lingxi-pro", "qwen-glasses", "doubao-skill"]
     },
     {
       "id": 25,

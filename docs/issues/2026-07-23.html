@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-23</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-23 · 星期四</div>
+    <h1>AI程序员「自主交付PR」——研发智能体从辅助工具升级为数字员工</h1>
+    <div class="art-sub">腾讯云CodeBuddy NPC · OpenAI Presence · Nanobrowser开源走红 · 腾讯设计Agent Miora全量开放</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>7月23日AI圈高频聚焦：<strong>腾讯云推出可自主交付PR的研发智能体CodeBuddy NPC</strong>；OpenAI发布企业智能体平台<strong>Presence</strong>；开源浏览器自动化插件<strong>Nanobrowser</strong>登顶13K星；腾讯设计Agent平台<strong>Miora</strong>全量开放。这一天的主线很清晰——<strong>智能体正在从「演示」走向「生产」</strong>。</div>
+
+  <!-- 📦 Products -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📦</div><span>今日聚焦 · AI 产品</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">腾讯云 CodeBuddy NPC — 研发智能体</div><div class="sk-subtitle">腾讯云 · 7月22日发布 · 可自主交付PR</div></div></div>
+      <div class="badges"><span class="bd bd-r">🔥 新发布</span><span class="bd bd-p">🤖 数字员工</span><span class="bd bd-b">💻 软件工程</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>自带完整软件工程思维的数字研发助手——在项目 Issue 里 <strong>@它下发开发需求</strong>，它就能自主走完<strong>需求拆解 → 方案设计 → 代码编写 → 提PR → 自动化测试</strong>全流程，并根据 CI/CD 报错持续迭代修复，直到产出符合验收标准的完整工程。<br><strong>亮点：</strong>Token 用量从 2 万多压缩至约 2000（降幅超 90%）；支持多智能体组队（项目经理 / 后端开发 / 测试工程师）；已打通 GitLab 企业版、Jenkins X、Terraform Cloud、CODING DevOps。</div>
+      <div class="install"><div class="il">🚀 怎么用</div><div class="cmd">在 GitLab / CODING 的 Issue 中 @CodeBuddy NPC，粘贴需求描述 + 验收标准，等待它提交 PR</div><div class="cmt">已接入 Jenkins X 等项目，CI/CD 报错会自动触发它自我修复、继续提交</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一个「修个 bug + 补个单测」的小 Issue @给它，盯一眼它拆解出的步骤和第一版 PR，体会"新同事"的工作方式。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「@CodeBuddy NPC 登录接口偶发 500，请定位根因、修复并补上对应单测，验收标准：CI 全绿、覆盖率不低于 80%」</div>
+        <div class="ex-out"><strong>成果：</strong>自主完成代码定位、编写修复、提交 PR、跑通自动化测试，若 CI 报错会自我迭代直至验收通过，全程几乎不消耗你的 Token。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">OpenAI Presence — 企业智能体平台</div><div class="sk-subtitle">OpenAI · 7月发布 · 面向企业部署</div></div></div>
+      <div class="badges"><span class="bd bd-b">🏭 企业级</span><span class="bd bd-g">🔒 护栏机制</span><span class="bd bd-p">🤝 人工接管</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>用于在<strong>客户服务</strong>和<strong>内部业务工作流</strong>中部署、管理 AI 智能体的企业平台：汇集企业知识、SOP、已批准操作、模拟测试、评估工具、护栏和升级规则。<br><strong>亮点：</strong>智能体仅获得<strong>完成任务所需的信息</strong>；客户决定哪些操作独立执行、哪些需审批、何时转人工；Codex 可通过 Presence 插件调查信号并提出改进建议。</div>
+      <div class="install"><div class="il">💡 适用场景</div><div class="cmd">客服自动应答 · 工单分流 · 内部流程审批 · 知识库问答</div><div class="cmt">关键设计：不是让 AI 全权处理，而是「哪些自主、哪些审批、何时转人工」都由企业说了算</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>如果你在用 Codex，试着让它通过 Presence 插件拉取一段业务信号做分析——感受"智能体管智能体"的企业运营方式。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">Nanobrowser — 开源浏览器自动化</div><div class="sk-subtitle">开源社区 · 13K★ 登顶热榜 · Chrome 插件</div></div></div>
+      <div class="badges"><span class="bd bd-r">🔥 13K星</span><span class="bd bd-g">🧩 Chrome插件</span><span class="bd bd-o">💰 开源免费</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>完全免费开源的 Chrome 插件，多 Agent 协作（<strong>Planner + Navigator</strong>）用自然语言操控网页——填表格、抓数据、走流程都能交给它。对比 OpenAI Operator 每月 200 美元，有明显价格优势；支持<strong>自有 API Key</strong> 低成本运行。<br><strong>亮点：</strong>代码全开源、数据本地可控、按自己用量付费，是把浏览器自动化能力"私有化"的低成本方案。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add nanobrowser --agent codex</div><div class="cmt">也可直接在 Chrome 应用商店搜索 Nanobrowser 安装，配好自有 API Key 即可</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>用 Nanobrowser 让 AI 自动帮你填表格、抓取网页数据——先从一个简单的"定时抓取某页面表格"开始。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">腾讯设计 Agent 平台 Miora</div><div class="sk-subtitle">WorkBuddy 团队打造 · 全量开放无需邀请码</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎨 设计</span><span class="bd bd-g">✅ 全量开放</span><span class="bd bd-b">🧠 多模态</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>全面开放、<strong>无需邀请码</strong>的设计 Agent 平台：提供品牌设计、影视创意等<strong>五大场景模式</strong>，支持自定义多模态模型和 Agent 推理深度，内置 Skill 市场与记忆系统。<br><strong>亮点：</strong>由 WorkBuddy 团队打造——设计需求不再只靠模板，而是有 Agent 记忆、有 Skill 扩展的完整创作管线。</div>
+      <div class="install"><div class="il">🚀 怎么用</div><div class="cmd">进入 Miora 平台 → 选择场景模式（品牌 / 影视 / 插画等）→ 配置模型与推理深度 → 描述需求</div><div class="cmt">支持接自定义多模态模型，Agent 推理深度可调，重度需求开高、轻量草图开低</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把最近一个"需要但一直没空做"的品牌物料需求丢进去，选品牌设计场景，看它按几步产出完整方案。</div>
+    </div>
+  </div>
+
+  <!-- 📊 串联管道 -->
+  <div class="pipe">
+    <span class="ps ps-1">需求下发</span><span class="pa">→</span>
+    <span class="ps ps-2">智能体拆解</span><span class="pa">→</span>
+    <span class="ps ps-3">写码提PR</span><span class="pa">→</span>
+    <span class="ps ps-4">CI/CD迭代</span><span class="pa">→</span>
+    <span class="ps ps-5">验收交付</span>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>行业动态</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ GigaToken 发布：分词速度最高提升约 1000 倍</div></div>
+      <div class="tb">语言模型分词速度迎来数量级提升：GPT-2 分词速度达 <strong>24.53 GB/s</strong>，比 HuggingFace Tokenizers 快 <strong>989 倍</strong>、比 tiktoken 快 <strong>681 倍</strong>，且可无缝替代现有方案。<strong>实操意义：</strong>大批量处理文本时（数据清洗、语料预处理、Agent 长上下文加载），等待感会明显消失。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📦 微软 MagenticLite 模型全面开源</div></div>
+      <div class="tb">MagenticBrain 和 Fara 1.5 权重开放至 Hugging Face——不只是模型，<strong>应用、测试工具及堆栈中每个模型全部开放</strong>。<strong>实操意义：</strong>想在本地跑一套多智能体推理栈、或复现微软的智能体评测流程，现在有完整可复现的起点，不用再猜权重和配置。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📊 Claude 新增 Anthropic Economic Index 连接器</div></div>
+      <div class="tb">现在可以在 claude.ai 直接提问「<strong>哪些职业使用 AI 最多</strong>」，答案基于 Anthropic Economic Index 的真实匿名使用数据。<strong>实操意义：</strong>做行业研究、求职或团队 AI 转型规划时，可以用真实数据回答"AI 到底在哪些岗位先用起来了"。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 实用技巧一：把智能体当同事用</strong><br>
+      别只给它一句话任务——要给它<strong>「目标 + 边界 + 验收标准」</strong>，就像给新同事布置工作。目标说清"要什么"，边界说清"别碰什么"，验收标准说清"怎样算完成"。CodeBuddy NPC 能自我迭代，前提是你把"符合验收标准"这个终点定义清楚。
+    </div>
+    <div class="hl">
+      <strong>💡 实用技巧二：开源替代方案盘点</strong><br>
+      在动手付费之前先查一遍开源选项：<strong>Nanobrowser 替代 OpenAI Operator</strong>，省下 200 美元/月；本地分词用 GigaToken、本地智能体推理栈用 MagenticLite——先把能白嫖的生产力用到极致，再为缺口付费。
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🏢 「一人公司」的一天</div>
+      <div class="sh-sub">用今天的四款产品串起一个人的完整工作流，从开发到设计全部自己交付</div>
+      <div class="sh-box">
+        <strong>早上 9:00 · 开发</strong><br>
+        在项目 Issue 里 @CodeBuddy NPC 下发今天的第一个功能需求，附上验收标准 → 它自主拆解、写码、提 PR、跑 CI，你有空去开会。<br><br>
+        <strong>下午 14:00 · 调研</strong><br>
+        用 Nanobrowser 让 AI 自动打开竞品官网、抓取价格与功能页数据 → 一份竞品对比表自动归档到表格里。<br><br>
+        <strong>下午 16:00 · 设计</strong><br>
+        打开 Miora 品牌设计场景，输入产品定位 → 出品牌主视觉 + 物料方案稿，今天就能给客户看方向。<br><br>
+        <strong>傍晚 18:00 · 风控</strong><br>
+        Presence 的护栏与审批规则全程兜底：敏感操作自动转人工确认、超出 SOP 的操作被拦下——你只审批，不盯盘。<br><br>
+        <strong>⏱️ 一人公司全天交付：一个功能 + 一份调研 + 一套设计 + 全程可控</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">当 AI 能自己走完「需求 → 交付」全流程，你真正要做的只剩两件事：说清要什么，把关验收标准。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-23</span>
+  </div>
+</div>
+</body>
+</html>
