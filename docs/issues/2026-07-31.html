@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-07-31</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-07-31 · 星期四</div>
+    <h1>从"能写代码"到"能跑系统"——4个Skill让AI智能体真正干活</h1>
+    <div class="art-sub">企业级智能体部署 · 安全护栏 · 多步骤任务编排 · 代码审计自动化</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>本周AI行业最热的关键词从"模型"变成了"<strong>智能体</strong>"——OpenAI 推出 Presence 企业级智能体平台，Anthropic 全面升级 Managed Agents，Google 连发三模型追赶 Flash 家族。但真正值得关注的是：<strong>怎么把这些能力落地成你自己的工作流</strong>。本期聚焦4个让AI从"聊天"变成"干活"的Skill。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>智能体落地 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">agent-browser — 浏览器自动化 Skill</div><div class="sk-subtitle">社区热门 · 持续更新 · 支持多页面操作</div></div></div>
+      <div class="badges"><span class="bd bd-p">🔥 热门</span><span class="bd bd-b">🌐 浏览器</span><span class="bd bd-g">⚡ 自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>让 AI 直接操控浏览器——打开网页、填表单、点按钮、截图、抓取数据、跨页面完成多步骤操作。不需要写 Selenium 脚本，一句话描述任务，它就执行。<br><strong>最适合：</strong>需要定期从网页抓取数据、自动填写表单、批量截图汇报的场景。比如"帮我每天早上抓取这个数据看板截图发到群里"。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add agent-browser --skill agent-browser --agent codex --global</div><div class="cmt">安装后用 $agent-browser 触发，描述任务即可</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一个你每天手动打开查看的网页地址告诉它——"每天早上8点帮我打开这个数据看板，截图保存到桌面"——看看它怎么完成。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">multi-step-task — 多步骤任务编排 Skill</div><div class="sk-subtitle">社区发布 · 适合复杂工作流自动化</div></div></div>
+      <div class="badges"><span class="bd bd-g">🔄 编排</span><span class="bd bd-o">📊 工作流</span><span class="bd bd-p">🎯 自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>当一个任务需要分多个步骤执行、每步的输出是下一步的输入时，这个 Skill 帮你把整条链路串起来。它会自动拆解你的需求、规划步骤、逐步执行并汇报进度。<br><strong>最适合：</strong>"先搜索资料→整理成大纲→写成初稿→排版→导出 PDF"这种需要多环节串联的复杂任务。不再是手动一步步催 AI，而是一次说清，它自己走完。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add multi-step-task --skill multi-step-task --agent codex --global</div><div class="cmt">描述完整任务链，Skill 会自动拆解和执行</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把下周要交付的一个完整任务丢给它——"帮我做一个Q3市场竞品分析，从收集资料到输出PPT，全程自动"——看它怎么拆步骤。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">code-reviewer — 代码安全审计 Skill</div><div class="sk-subtitle">社区维护 · 对标 OpenAI Codex Security CLI</div></div></div>
+      <div class="badges"><span class="bd bd-b">🔒 安全</span><span class="bd bd-g">📋 审计</span><span class="bd bd-o">⚡ 自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>7月28日 OpenAI 开源了 Codex Security CLI——一个命令行代码安全扫描工具。这个 Skill 是社区基于同样理念做的 Codex 适配版：扫描代码仓库、追踪问题、验证修复，全流程自动化。<br><strong>最适合：</strong>有代码仓库需要做安全审查的团队。不需要手动跑安全扫描工具，一句话让 AI 帮你扫描整个项目并生成报告。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add code-reviewer --skill code-reviewer --agent codex --global</div><div class="cmt">指向项目目录，自动扫描并生成安全报告</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近一个项目的代码仓库路径告诉它——"帮我扫描这个项目的安全漏洞，按严重程度排序"——看看它发现什么。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">data-pipeline — 数据处理管线 Skill</div><div class="sk-subtitle">社区新发布 · CSV/JSON/Excel 全格式支持</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎯 新发布</span><span class="bd bd-g">📊 数据处理</span><span class="bd bd-b">🔄 管线</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把"读取数据→清洗→转换→分析→可视化→导出"整条链路封装成一个 Skill。支持 CSV、JSON、Excel 等格式输入，自动生成清洗规则、统计摘要和可视化图表。<br><strong>最适合：</strong>每周/每月需要处理同一批数据并出报告的人——配置一次管线，之后每次只换数据文件即可。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add data-pipeline --skill data-pipeline --agent codex --global</div><div class="cmt">指定数据文件路径和期望输出，自动跑完管线</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一份你手上最头疼的脏数据丢给它——"帮我清洗这份销售数据，去掉空行和重复项，按地区汇总月度趋势，导出 Excel"——看它怎么处理。</div>
+    </div>
+  </div>
+
+  <!-- 📊 串联管道 -->
+  <div class="pipe">
+    <span class="ps ps-1">浏览器抓数据</span><span class="pa">→</span>
+    <span class="ps ps-2">数据管线清洗</span><span class="pa">→</span>
+    <span class="ps ps-3">多步骤编排分析</span><span class="pa">→</span>
+    <span class="ps ps-4">代码审计安全</span><span class="pa">→</span>
+    <span class="ps ps-5">全自动化交付</span>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>本周AI行业重大动态</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🤖 OpenAI 推出 Presence：企业级智能体平台</div></div>
+      <div class="tb">7月23日发布。Presence 不是"更强的聊天模型"——它是一套<strong>企业级智能体部署框架</strong>：包含策略规则、审批动作、模拟环境、评估护栏和升级规则。核心解决的是"AI 智能体在生产环境中怎么安全运行"的问题。对普通用户的意义：以后用 Codex 跑长任务时，可以设护栏——"只能读不能删""花钱超过100元就暂停"——AI 会在边界内自主执行。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📈 Codex 用户5倍增长：长任务暴增10倍</div></div>
+      <div class="tb">OpenAI 发布了 Codex 智能体平台的使用数据：2026年上半年活跃用户增长5倍，运行超过8小时的长任务暴增10倍。开发者人均产出增长13-50倍。这意味着 AI 智能体已经不是"尝鲜"——越来越多团队在用它跑真正的长周期任务。如果你还没开始用 Codex 做自动化，现在是一个不错的入场时机。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🌟 Anthropic Managed Agents 全面升级</div></div>
+      <div class="tb">Anthropic 本周升级了 Managed Agents 平台——开发者可以更方便地部署 Claude 智能体到生产环境，支持自定义工具、记忆管理和多步骤编排。同时 Claude Sonnet 5 成为所有用户默认模型，性能接近 Opus 4.8 但成本只有一半。对普通用户的意义：用 Claude 做自动化任务的成本大幅降低。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 本周趋势总结：</strong>AI 行业正在从"谁的模型更强"转向"谁的智能体更靠谱"。OpenAI 的 Presence、Anthropic 的 Managed Agents、Google 的多模型矩阵——所有人都在押注同一件事：<strong>让AI不只是回答问题，而是真正完成任务</strong>。对于个人用户，这意味着安装一个 Skill 不再只是"多了个功能"——而是在搭你自己的智能体团队。
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎙️ Audio Overview 四种模式：讨论/简报/批评/辩论</div></div>
+      <div class="tb">NotebookLM 的播客功能现在有四种模式可选——<strong>深度讨论</strong>（两位AI主持人深入分析）、<strong>简报</strong>（5分钟快速摘要）、<strong>批评</strong>（AI找资料中的漏洞和偏见）、<strong>辩论</strong>（两位AI持不同立场辩论）。<strong>实操建议：</strong>先用"简报"模式快速了解一份新资料值不值得深读，再用"批评"模式检验你的分析报告有没有盲区。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📊 思维导图 + 报告：一份素材多种产出</div></div>
+      <div class="tb">同一个笔记本可以同时生成思维导图、结构化报告和闪卡。核心思路是<strong>"榨取"</strong>——把一份研究素材导入后，先用思维导图理清结构，再生成报告交给团队，最后用闪卡自测理解程度。三步走完，一份资料的价值就被充分提取了。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚙️ 自动化任务：让 WorkBuddy 定时替你干活</div></div>
+      <div class="tb">WorkBuddy 支持定时自动化任务——你可以设定"每天早上8点搜索AI行业新闻并生成速递""每天推送一条ICD-10学习内容"。设置方法：直接对 WorkBuddy 说"帮我创建一个自动化任务，每天XX时间做XX事"。它会自动按时执行，你只管看结果。<strong>注意：</strong>自动化需要 WorkBuddy 保持运行，如果关掉了需要重启后才能恢复。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🔗 MCP 连接器：让 AI 直接连你的工具</div></div>
+      <div class="tb">WorkBuddy 的 MCP 连接器生态已经覆盖了钉钉、飞书、企业微信、腾讯文档、金山文档、GitHub等100+服务。连接后，AI 可以直接读写你的文档、发消息、查数据——不需要手动导出导入。<strong>实操：</strong>到设置页面看看有哪些连接器可以启用，先把最常用的几个连上。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 智能体自动化管线：从数据抓取到安全交付</div>
+      <div class="sh-sub">用今天介绍的4个 Skill 串联，搭建一条从数据采集到安全交付的全自动管线</div>
+      <div class="sh-box">
+        <strong>第1步：agent-browser 抓数据</strong><br>
+        让AI每天定时打开竞品网站，抓取价格和库存数据，保存为CSV文件。<br><br>
+        <strong>第2步：data-pipeline 清洗分析</strong><br>
+       自动读取CSV→去重去空行→按品类汇总→生成趋势图表→导出Excel报告。<br><br>
+        <strong>第3步：multi-step-task 编排交付</strong><br>
+        把分析报告自动整理成PPT格式，加上摘要和结论，准备发送给团队。<br><br>
+        <strong>第4步：code-reviewer 安全检查</strong><br>
+        扫描整套管线代码，确认没有安全漏洞和数据泄露风险后正式交付。<br><br>
+        <strong>⏱️ 全程无人值守 | 传统方式：每天手动2-3小时</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 智能体不是未来式，是现在进行时。装好一个 Skill、跑通一条管线，你就已经站在了自动化的前排。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-07-31</span>
+  </div>
+</div>
+</body>
+</html>
