@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-02</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-02 · 星期日（周日）</div>
+    <h1>周日充电——国产大模型集体「交作业」：开源、降价、卷视频</h1>
+    <div class="art-sub">DeepSeek V4 Flash 0731 · MiniMax H3 · Seedance 2.5 · GPT-5.6 Luna降价80%</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>7月31日到8月1日，国产大模型像约好了一样集体发布——<strong>DeepSeek V4 Flash 0731</strong> 开源登顶开源前三、<strong>MiniMax H3</strong> 开源多模态视频生成、字节 <strong>Seedance 2.5</strong> 把视频拉到30秒；大洋彼岸 OpenAI 把 <strong>GPT-5.6 Luna</strong> 价格砍了80%。这一轮关键词：<strong>开源、降价、卷视频</strong>。</div>
+
+  <!-- 🚀 本期主角 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">🚀</div><span>本期主角：集体「交作业」的国产大模型</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">DeepSeek V4 Flash 0731</div><div class="sk-subtitle">🔥 开源旗舰 · MIT 许可 · Artificial Analysis 智能指数 50 分</div></div></div>
+      <div class="badges"><span class="bd bd-p">🔥 开源旗舰</span><span class="bd bd-g">🧠 百万Token上下文</span><span class="bd bd-o">⚡ Agent能力飞跃</span><span class="bd bd-b">💰 $0.14/M输入</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>开源模型登顶前三——总参 284B / 激活 13B，百万 token 上下文，MIT 许可随便商用。Agent 能力大幅升级：<strong>Terminal Bench 2.1 得分 82.7</strong>（超自家 V4-Pro-Preview 的 72.1），在所有 9 项 agentic 和 coding 基准上反超自家旗舰。<br><strong>定价：</strong>API 价格 $0.14/M 输入、$0.28/M 输出，原生支持 Responses API 和 Codex。</div>
+      <div class="install"><div class="il">📦 安装 / 接入</div><div class="cmd">npx -y skills@latest add deepseek-v4-flash --agent codex</div><div class="cmt">也可直接在 API 控制台把 model 设为 deepseek-v4-flash 调用</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 API 里把 model 设为 deepseek-v4-flash，直接体验 0721→0731 的 agent 能力飞跃——让它跑一个多轮 shell 任务，看看自主决策比上一版强在哪。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 deepseek-v4-flash 把这个 5 万行代码的仓库整体梳理一遍：先跑测试找出失败的 3 个用例，再逐个定位根因并修复」</div>
+        <div class="ex-out"><strong>成果：</strong>百万 token 上下文一次吃完整个仓库，Terminal Bench 82.7 的 agent 能力体现在它能自主多轮执行命令、读日志、改代码并复跑验证，全程基本不需要你插手。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">MiniMax H3</div><div class="sk-subtitle">🎬 开源多模态视频 · 2K直出 · 最长15秒带原生立体声</div></div></div>
+      <div class="badges"><span class="bd bd-g">🎬 开源多模态</span><span class="bd bd-b">📺 2K直出</span><span class="bd bd-o">🔊 原生立体声</span><span class="bd bd-p">💰 0.8元/秒</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>首款开源全能多模态生成模型——联合理解文本/图像/视频/音频，直出 2K 分辨率、最长 15 秒带原生立体声的视频。<strong>V2V 动作迁移突出：</strong>真人动作可以直接替换人物/服装/产品/场景。<br><strong>价格：</strong>2K 价格 0.8 元/秒，约为主流旗舰的三分之一。<br><strong>开源状态：</strong>计划近日开源权重。</div>
+      <div class="install"><div class="il">📦 开源预告</div><div class="cmd">权重近日开源（等待官方发布）</div><div class="cmt">开源后即可本地部署；当前可在 MiniMax 官方平台在线体验 H3</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>在 MiniMax 平台用一句文字描述动作场景，先感受"多模态理解 + 视频直出"的组合效果，再对比一下 0.8 元/秒的单价。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>一段真人打拳的实拍视频 + 一句指令：「把主角换成穿古装的女演员，场景换成雪山」</div>
+        <div class="ex-out"><strong>成果：</strong>V2V 动作迁移直出 2K / 15 秒带原生立体声的视频——动作骨骼完全保留，人物、服装、场景全部替换。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">字节 Seedance 2.5</div><div class="sk-subtitle">🎥 新一代视频创作模型 · 单次生成时长拉长至 30 秒</div></div></div>
+      <div class="badges"><span class="bd bd-b">🎥 30秒长视频</span><span class="bd bd-p">🚀 字节发布</span><span class="bd bd-o">🎬 视频创作赛道</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>字节的新一代视频创作模型，核心变化是把<strong>单次生成时长拉长至 30 秒</strong>——相比以往通常十几秒就需要拼接续写的体验，30 秒连续生成让「短视频脚本 → 成片」一条龙更实用。<br><strong>瞄准场景：</strong>广告短片、产品演示、剧情预告等需要完整叙事时长的视频创作。</div>
+      <div class="install"><div class="il">📦 体验入口</div><div class="cmd">即梦 / 火山引擎 搜索 Seedance 2.5</div><div class="cmt">新版本已上线，平台内直接生成体验</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>用一句话描述一段 30 秒的镜头内容（场景、人物动作、转场），让 Seedance 2.5 一次生成完整长镜头，不用再手动拼接。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「清晨城市：地铁通勤、街角咖啡店、写字楼玻璃幕墙的晨光，节奏从快渐慢」</div>
+        <div class="ex-out"><strong>成果：</strong>Seedance 2.5 单次生成连续 30 秒镜头，场景连贯、运镜自然，无需后期拼接。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">OpenAI GPT-5.6 Luna 降价 80%</div><div class="sk-subtitle">💰 价格战 · 内核级优化实现 · 用户称「质量接近 Opus 5 但更快」</div></div></div>
+      <div class="badges"><span class="bd bd-o">💰 降价80%</span><span class="bd bd-b">⚡ 内核级优化</span><span class="bd bd-r">🥊 价格战反击</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>OpenAI 把 GPT-5.6 Luna 的价格砍了 80%，靠的是<strong>内核级优化</strong>——服务成本降 20% + Token 效率提升 15%+ 的叠加效果。用户评价「质量接近 Opus 5 但更快」。<br><strong>行业信号：</strong>业内普遍视为对 DeepSeek、Kimi K3、GLM 5.2 价格战的反击——「拨号上网 → 宽带」式的转折点。</div>
+      <div class="install"><div class="il">📦 调用方式</div><div class="cmd">API 控制台将模型切换为 gpt-5.6-luna</div><div class="cmt">已有账号直接在模型列表中切换，无需迁移代码</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把日常批量任务（翻译、摘要、日志清洗）从旧模型切到 Luna，同样的活儿成本直接降到原来的五分之一。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把本周 100 万 token 的客服日志切到 gpt-5.6-luna 做自动分类和摘要」</div>
+        <div class="ex-out"><strong>成果：</strong>输出质量与 Opus 5 相近、响应更快，账单从"心疼"变成"无感"——同样的预算能跑 5 倍的量。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📊 串联管道 -->
+  <div class="pipe">
+    <span class="ps ps-1">国产开源崛起</span><span class="pa">→</span>
+    <span class="ps ps-2">视频生成卷2K</span><span class="pa">→</span>
+    <span class="ps ps-3">模型价格腰斩</span><span class="pa">→</span>
+    <span class="ps ps-4">企业直签厂商</span><span class="pa">→</span>
+    <span class="ps ps-5">个人开发者受益</span>
+  </div>
+
+  <!-- 🌐 行业动态 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🌐</div><span>行业动态速览</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🤖 Google DeepMind Gemini Robotics 2：全身智能机器人控制</div></div>
+      <div class="tb">7月30日发布——面向全身智能机器人控制的模型系列，包含三个模型：<strong>VLA</strong>（视觉-语言-动作）、<strong>具身推理</strong>、<strong>端侧</strong>。同一 checkpoint 可以控制多种不同本体（机械臂、双足、轮式等），降低了"一个机器人换一个模型"的重复成本。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚖️ 欧盟 AI 法案 GPAI 执法 8/2 生效</div></div>
+      <div class="tb">8月2日起，欧盟《人工智能法案》对<strong>通用人工智能模型（GPAI）</strong>的执法正式生效。通用 AI 模型提供商最高面临<strong>全球年营业额 3% 或 1500 万欧元罚款</strong>（取较高者）——开源模型获得部分豁免，但透明度义务仍在。对国内大模型出海和全球部署提出了新的合规要求。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🏰 迪士尼弃用 Copilot：从「云厂商代理」转向「直签模型厂商」</div></div>
+      <div class="tb">8月起，迪士尼弃用 GitHub Copilot、Amazon Kiro、Amazon Q，改用 OpenAI Codex，同时保留 Claude Enterprise 和 Cursor。<strong>信号：</strong>大企业 AI 采购正从"云厂商打包代理"转向"直接与模型厂商签约"——挑模型本身，而不是挑云平台顺带的工具。</div>
+    </div>
+  </div>
+
+  <!-- 🧰 周日工具箱 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">🧰</div><span>周日工具箱：本周最值得收藏的 3 件事</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">① DeepSeek V4 Flash 0731 的 agent 能力值得跑一遍</div></div>
+      <div class="tb">不是"又发布一个模型"那么简单——Terminal Bench 2.1 得分 82.7、9 项 agentic/coding 基准反超自家旗舰，意味着它<strong>已经能当真正的多轮 agent 用</strong>。周日花半小时，给它一个真实的多步任务（比如清理一个旧项目、自动修 3 个 bug），胜过刷十篇评测文章。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">② 视频生成 2K 价格 0.8 元/秒，意味着什么</div></div>
+      <div class="tb">过去"AI 做视频"是演示级玩具，价格贵到只敢试 3 秒；现在 MiniMax H3 把 2K/15 秒带到 <strong>0.8 元/秒</strong>。算一笔账：一条 15 秒广告素材约 12 元。这个价格到了<strong>可以日常批量生产素材</strong>的量级——想清楚你的第一个真实用途，而不是继续"只收藏不生成"。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">③ 企业采购转向「直签模型商」的信号</div></div>
+      <div class="tb">迪士尼弃用三大云厂商 AI 工具、改用 OpenAI Codex，同时保留 Claude 和 Cursor——这不是"换工具"，是<strong>采购逻辑变了</strong>：从"云平台顺带的模型"变成"按能力直接挑模型厂商"。对你个人的启示：学的是"模型能力"而不是"某个平台的绑定用法"，通用技能永远比平台锁更好用。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">💰 价格战受益者的一天</div>
+      <div class="sh-sub">DeepSeek 跑长任务 · MiniMax H3 做广告视频 · Luna 做实时响应——三个场景，全部吃到本轮降价的福利</div>
+      <div class="sh-box">
+        <strong>上午 · 用 DeepSeek V4 Flash 0731 跑长任务</strong><br>
+        把一整个项目的代码库塞进百万 token 上下文，让 agent 逐目录梳理架构、生成文档、顺手修 bug——几美元跑完百万 token 的活儿，过去这得用团队攒一个下午。<br><br>
+        <strong>下午 · 用 MiniMax H3 做广告视频</strong><br>
+        一句话脚本 → 2K / 15 秒带原生立体声的视频，0.8 元/秒的单价，一条广告素材不到传统做法的三分之一。V2V 动作迁移还能把现有实拍素材直接换人换场景。<br><br>
+        <strong>晚上 · 用 Luna 做实时响应</strong><br>
+        把聊天、客服、实时翻译这类交互任务切到 GPT-5.6 Luna——降价 80% 后单价到五分之一，延迟不增反降，"质量接近 Opus 5 但更快"。<br><br>
+        <strong>⏱️ 一天下来：长任务省钱、创意视频便宜出、实时场景不心疼——同样的预算，量翻了 3-5 倍。</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 模型越便宜、越开源，越不需要「等一个更好的 AI」——今天手上的工具已经够你起飞。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-02</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-03</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-03 · 星期一</div>
+    <h1>周一效率开机——4个Skill把「周末攒的素材」变成「周一的交付物」</h1>
+    <div class="art-sub">多模态视频生成 · 开源模型agent化 · 设计模板库 · 团队协作编排——一周开工组合拳</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>周一开工，最怕两件事——素材攒了一堆不知道从哪下手、任务排了一长串做不过来。这期不追新品，讲4个「把积累变成交付」的Skill组合：视频生成一键出片、开源模型跑长任务、设计模板快速起步、多智能体协同编排。全部0代码，今天就能用。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>周一开工效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">MiniMax H3 视频生成 — 周末素材变品牌视频</div><div class="sk-subtitle">8月1日新发布 · 开源多模态 · 2K原生立体声</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎯 新发布</span><span class="bd bd-b">🎬 视频生成</span><span class="bd bd-o">🔥 开源</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>MiniMax 8月1日发布的首款开源多模态生成模型 H3——文本/图像/视频/音频联合理解，直出2K分辨率、最长15秒带原生立体声视频，V2V动作迁移突出。<br><strong>周一场景：</strong>周末拍的手机实拍视频丢进去做动作迁移，替换成产品/品牌素材，一条15秒广告片10分钟出活。2K价格0.8元/秒，约为主流旗舰三分之一。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add minimax-h3-video --skill minimax-h3-video --agent codex --global</div><div class="cmt">安装后重启 Codex，用 $minimax-h3-video 触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一个手机实拍视频丢给它，让它替换人物/背景生成品牌版——"用 H3 把这段产品试用视频做成15秒品牌广告，替换背景和文案"。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 minimax-h3-video 把 D:/素材/咖啡机试用.mp4 做成品牌广告，保留动作，替换背景为北欧风厨房，输出2K带配乐」</div>
+        <div class="ex-out"><strong>成果：</strong>一条15秒原生立体声广告视频，动作保留、背景和产品包装品牌化，可直接投放到社媒渠道。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">DeepSeek V4 Flash 0731 — 一次性消化周末攒的资料</div><div class="sk-subtitle">7月31日开源 · Agent能力超自家旗舰 · 百万token几美元</div></div></div>
+      <div class="badges"><span class="bd bd-g">🔥 开源前三</span><span class="bd bd-b">🤖 Agent化</span><span class="bd bd-o">💰 白菜价</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>DeepSeek V4 Flash 0731——MIT许可、总参284B/激活13B、百万token上下文，Agent基准全面反超自家V4-Pro-Preview（Terminal Bench 82.7 vs 72.1）。API定价$0.14/M输入、$0.28/M输出，原生支持Responses API和Codex。<br><strong>周一场景：</strong>把周末收集的10篇报告一次性喂进去，让它一口气完成综述、提炼、写成周报初稿——百万token上下文刚好装得下。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add deepseek-v4-agent --skill deepseek-v4-agent --agent codex --global</div><div class="cmt">在 API 中把 model 设为 deepseek-v4-flash 即可体验0731版本</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把周末收藏的文章/PDF链接整理成清单丢给它——"读取这10篇资料，总结本周行业3大趋势，写成800字周报初稿"。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">Replit Design — 拖模板起步，不再从空白页开始</div><div class="sk-subtitle">8月1日更新 · 数百个真实设计师模板</div></div></div>
+      <div class="badges"><span class="bd bd-p">🎨 设计模板</span><span class="bd bd-g">⚡ 快速起步</span><span class="bd bd-b">🖥️ 全场景</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>Replit Design 内置了真实设计师制作的数百个模板——手机界面、落地页、社媒帖子全覆盖。可以拖一个模板起步，或在项目遇到瓶颈时随时添加。<br><strong>周一场景：</strong>要做活动落地页？拖一个模板起步，不用从空白页开始，比对着设计规范从零写快一个上午。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add replit-design --skill replit-design --agent codex --global</div><div class="cmt">描述需求后自动匹配模板库</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>告诉它"帮我做一个8月活动落地页，风格参考科技产品发布会，从模板起步"——看它怎么帮你快速搭出第一版。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">qm 多智能体协作 — 让Agent们组队干活</div><div class="sk-subtitle">Y Combinator支持 · 开源 · 共享「房间」协作</div></div></div>
+      <div class="badges"><span class="bd bd-b">🤝 团队协作</span><span class="bd bd-o">🔄 编排</span><span class="bd bd-g">🔓 开源</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>qm（queue manager）——Y Combinator 支持的开源多智能体协作框架：多个Agent和人类在共享「房间」里协作，每人有独立scope。任务以队列方式流转，Agent间可互相调用。<br><strong>周一场景：</strong>让「内容Agent」写初稿、「设计Agent」配图、「审核Agent」把关，你在中间做统筹——一个人的团队，靠协作框架跑起来。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add qm-agent-room --skill qm-agent-room --agent codex --global</div><div class="cmt">创建房间、分配Agent角色、投递任务即可</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>创建一个「周一周报」房间：内容Agent负责汇总、设计Agent负责配图、审核Agent负责查错，把任务投进队列看它们怎么接力。</div>
+    </div>
+  </div>
+
+  <!-- 📊 串联管道 -->
+  <div class="pipe">
+    <span class="ps ps-1">素材入库</span><span class="pa">→</span>
+    <span class="ps ps-2">DeepSeek长任务综述</span><span class="pa">→</span>
+    <span class="ps ps-3">MiniMax H3出视频</span><span class="pa">→</span>
+    <span class="ps ps-4">Replit Design出页面</span><span class="pa">→</span>
+    <span class="ps ps-5">qm团队准点交付</span>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>周末行业动态回顾</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">💰 OpenAI 把 GPT-5.6 Luna 降价 80%</div></div>
+      <div class="tb">内核级优化（服务成本降20%+Token效率提升15%+）实现80%降价，用户评价「质量接近 Opus 5 但更快」。业内视为对 DeepSeek、Kimi K3、GLM 5.2 价格战的反击——有人评论「拨号上网→宽带」式转折：同样的钱能跑5倍任务。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🤖 Google DeepMind 发布 Gemini Robotics 2</div></div>
+      <div class="tb">7月30日发布：全身智能机器人控制，三个模型（Gemini Robotics 2 VLA、Robotics ER 2 具身推理、On-Device 2 端侧），同一checkpoint控制多种机器人本体。60%成功率、80%准确率——网友类比早期LLM，认为迭代会很快。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🏢 迪士尼 AI 工具大洗牌：弃用 Copilot 改用 Codex</div></div>
+      <div class="tb">迪士尼8月起弃用 GitHub Copilot、Amazon Kiro、Amazon Q，改用 OpenAI Codex，保留 Claude Enterprise 和 Cursor。员工反馈 Copilot 输出「不必要地复杂」。最大信号：企业AI采购从「云厂商代理」转向「直签模型厂商」。</div>
+    </div>
+
+    <div class="hl">
+      <strong>💡 周一开工四步法：</strong><br>
+      ① 周末把攒的资料丢进 <strong>DeepSeek V4 Flash</strong> 跑长任务综述 → 周报初稿自动出<br>
+      ② 用 <strong>MiniMax H3</strong> 把旧素材视频变成新品牌视频 → 一条广告片10分钟<br>
+      ③ <strong>Replit Design</strong> 拖模板起稿 → 落地页不用从空白开始<br>
+      ④ <strong>qm</strong> 让多个Agent分工协作 → 你只做统筹和验收
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📁 周末阅读进 NotebookLM：一个笔记本装下整个行业</div></div>
+      <div class="tb">把周末收藏的行业文章、研报PDF、公众号长文全部拖进一个 NotebookLM 笔记本——用「简报」模式快速扫一遍每篇的核心结论，再用「思维导图」梳理本周行业脉络。周一开会前，花10分钟听一遍 Audio Overview 就能把状态调回来。</div>
+    </div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 让 NotebookLM 给你做「周报初稿检查」</div></div>
+      <div class="tb">写完周报初稿后，把草稿和资料来源一起放进笔记本，问它「对照这些资料，我的周报有没有遗漏的重要信息？结论是否有据可依？」——相当于多了一个免费的审稿人，专挑你没注意到的盲区。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">📅 把「每周一」变成自动化的固定节点</div></div>
+      <div class="tb">WorkBuddy 支持定时自动化任务——直接说「帮我创建一个每周一早上8点的自动化：搜索本周AI行业新闻，生成周报初稿」。它会按设定自动执行。上周的自动化因 WorkBuddy 未保持运行而断档，注意保持桌面端开启即可稳定运行。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">📋 一个清单管住周一：给 WorkBuddy 一份「开工检查表」</div></div>
+      <div class="tb">把每周一固定的任务写成一个清单存起来：①读行业日报 ②更新数据看板 ③生成周报初稿 ④检查自动化任务运行状态。周一直接说「按开工检查表执行」——WorkBuddy 会照着清单一步步跑完，你只需要最后验收。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 周一上午的4小时：从素材到交付</div>
+      <div class="sh-sub">用今天介绍的4个Skill串联，一个上午把周末积累变成可交付成果</div>
+      <div class="sh-box">
+        <strong>9:00 — DeepSeek 出周报初稿</strong><br>
+        把周末收集的10篇行业报告丢进 DeepSeek V4 Flash 0731 → 10分钟拿到800字周报初稿，含本周3大趋势分析。<br><br>
+        <strong>10:00 — MiniMax H3 出产品视频</strong><br>
+        把手机拍的试用视频丢给 H3 → 替换背景和包装，15秒2K品牌广告片直接可用。<br><br>
+        <strong>11:00 — Replit Design 出落地页</strong><br>
+        拖一个发布会风格模板起步 → 填入活动信息 → 中午前活动落地页第一版上线预览。<br><br>
+        <strong>12:00 — qm 团队汇总交稿</strong><br>
+        内容Agent整理周报、设计Agent排版、审核Agent查错 → 你检查一遍直接发出去。<br><br>
+        <strong>⏱️ 全程4小时 | 传统方式：至少2天</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 素材不会自己变成交付物——但有了对的工具，你只需要把第一步迈出去。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-03</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1455,6 +1455,32 @@
   },
   "issues": [
     {
+      "id": 42,
+      "date": "2026-08-03",
+      "weekday": "星期一",
+      "title": "周一效率开机——4个Skill把「周末攒的素材」变成「周一的交付物」",
+      "subtitle": "MiniMax H3视频生成 · DeepSeek V4 Flash长任务 · Replit Design模板 · qm多智能体协作",
+      "tags": ["🎬 视频生成", "🤖 开源Agent", "🎨 设计模板", "🤝 团队编排", "⚡ 周一开工"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-03.html",
+      "skills": ["minimax-h3-video", "deepseek-v4-agent", "replit-design", "qm-agent-room"]
+    },
+    {
+      "id": 41,
+      "date": "2026-08-02",
+      "weekday": "星期日",
+      "title": "周日充电——国产大模型集体「交作业」：开源、降价、卷视频",
+      "subtitle": "DeepSeek V4 Flash 0731 · MiniMax H3 · Seedance 2.5 · GPT-5.6 Luna降价80%",
+      "tags": ["🔥 DeepSeek开源", "🎬 MiniMax H3", "🎥 Seedance 2.5", "💰 Luna降价80%", "🤖 具身智能"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-02.html",
+      "skills": ["deepseek-v4-flash-0731", "minimax-h3", "seedance-2.5", "gpt-5.6-luna"]
+    },
+    {
       "id": 37,
       "date": "2026-08-01",
       "weekday": "星期五",
