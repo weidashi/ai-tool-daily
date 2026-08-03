@@ -1860,6 +1860,56 @@
       ]
     },
     {
+      "id": 44,
+      "date": "2026-07-07",
+      "weekday": "星期二",
+      "title": "想清楚再动手：用 AI 帮你拆解问题、规划路径",
+      "subtitle": "反向提问 · 持久化规划 · 对话交接 · 图表生成 · 论文修订",
+      "tags": [
+        "🔄 反向提问",
+        "📋 持久化规划",
+        "🤝 对话交接",
+        "🎨 图表生成",
+        "📝 论文修订"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-07.html",
+      "skills": [
+        "grill-me",
+        "planning-with-files",
+        "handoff",
+        "excalidraw-diagram-skill",
+        "paper-writing-codex-skill"
+      ]
+    },
+    {
+      "id": 43,
+      "date": "2026-07-06",
+      "weekday": "星期一",
+      "title": "知识输入效率革命：5 个 Skill 让你的阅读不再白读",
+      "subtitle": "批注导图 · 论文追踪 · 知识管理 · 自然写作 · 手绘PPT",
+      "tags": [
+        "🗺️ 批注导图",
+        "📑 论文追踪",
+        "📚 知识管理",
+        "✍️ 自然写作",
+        "🎨 手绘PPT"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-07-06.html",
+      "skills": [
+        "obsidian-reading-map-skill",
+        "dailypaper-skills",
+        "knowledge-mgmt",
+        "write-naturally",
+        "ian-handdrawn-ppt"
+      ]
+    },
+    {
       "id": 19,
       "date": "2026-07-05",
       "weekday": "星期日",
