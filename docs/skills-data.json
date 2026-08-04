@@ -24,7 +24,11 @@
         "wewrite",
         "transcript-polisher",
         "codex-academic-writing-skills",
-        "zh-humanizer-literary"
+        "zh-humanizer-literary",
+        "qu-ai-wei",
+        "shuorenhua",
+        "weixin-writer",
+        "codex-claude-academic-skills"
       ]
     },
     {
@@ -1455,6 +1459,19 @@
   },
   "issues": [
     {
+      "id": 43,
+      "date": "2026-08-04",
+      "weekday": "星期二",
+      "title": "打破AI腔：4个新Skill让你的中文写作自然得像人在说话",
+      "subtitle": "qu-ai-wei v3.0 · shuorenhua 说人话 · Wexin_Writter · 学术三件套",
+      "tags": ["✍️ 去AI味", "🗣️ 说人话", "📱 公众号Agent", "📚 学术写作", "🔄 全链路"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-04.html",
+      "skills": ["qu-ai-wei", "shuorenhua", "weixin-writer", "codex-claude-academic-skills"]
+    },
+    {
       "id": 42,
       "date": "2026-08-03",
       "weekday": "星期一",
@@ -2800,6 +2817,50 @@
       "do": "把所有原始资料打包发给Codex「用visual-report帮我整理成可视化复盘报告，蓝白配色」"
     }
   ],
+  "qu-ai-wei": {
+    "name": "qu-ai-wei（去AI味）",
+    "author": "899ms",
+    "subtitle": "简体中文去AI味v3.0，51条规则+6打磨动作+语音校准",
+    "desc": "专门针对简体中文的去AI味Skill。内置51条改写规则，可检测22种AI写作痕迹。v3.0新增语音校准功能——粘贴你自己写的2-3段文字做风格参考，它会提取高频词、句长、标点偏好等5项特征，让改写结果更贴近你的个人表达习惯。适合公众号、小红书、即刻短帖等场景。",
+    "stars": "新发布",
+    "tags": ["去AI味", "简体中文", "语音校准", "v3.0", "22种痕迹检测"],
+    "install": "git clone https://github.com/899ms/qu-ai-wei.git ~/.codex/skills/qu-ai-wei",
+    "trigger": "帮我去AI味：[粘贴文本]",
+    "issues": ["2026-08-04"]
+  },
+  "shuorenhua": {
+    "name": "shuorenhua（说人话）",
+    "author": "framefutura",
+    "subtitle": "中文去AI味改写，保事实+分场景+可直接发布",
+    "desc": "另一个路线的中文去味Skill。最大特点是'保事实'——不为了去AI味而改写数据、删除关键信息或扭曲原意。会先识别文本场景（公众号推文、技术博客、邮件、社交媒体），然后针对不同场景使用不同策略。适合需要保留精确数据和专业术语的文章，如行业分析报告、产品评测等。",
+    "stars": "新发布",
+    "tags": ["去AI味", "保事实", "分场景", "简体中文"],
+    "install": "git clone https://github.com/framefutura/shuorenhua.git ~/.codex/skills/shuorenhua",
+    "trigger": "说人话 帮我把这段改得更自然：[粘贴文本]",
+    "issues": ["2026-08-04"]
+  },
+  "weixin-writer": {
+    "name": "Wexin_Writter（微信写作Agent）",
+    "author": "KevinKE93",
+    "subtitle": "微信公众号写作全套Agent，6种排版风格+标题+封面+配图",
+    "desc": "微信公众号专用写作Agent。内置6种排版风格（极简知识科普、商业媒体深度、情绪故事治愈、教程干货效率、品牌营销活动、财经专业报告），会根据文章类型自动选择合适的排版方案。还能产出3-8个标题候选、120字摘要、封面图方案和正文配图方案。从选题到发布检查清单，全流程覆盖。",
+    "stars": "新发布",
+    "tags": ["公众号", "微信写作", "6种排版", "全流程"],
+    "install": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo KevinKE93/Wexin_Writter --ref dev --path . --name Weixin_Writer",
+    "trigger": "Use $Weixin_Writer to write a WeChat article about...",
+    "issues": ["2026-08-04"]
+  },
+  "codex-claude-academic-skills": {
+    "name": "codex-claude-academic-skills（学术三件套）",
+    "author": "flyearth9981",
+    "subtitle": "论文写作+学术PPT/Word+科研计算绘图，三Skill联动",
+    "desc": "为中国科研工作者设计的三合一Skill包。包含research-writing-skill（论文章节撰写、润色、审稿回复）、office-academic-skill（文献阅读报告、组会PPT、开题答辩PPT）和scientific-toolkit-skill（MATLAB/Python仿真、论文配图）。三个Skill可联动：先跑数据绘图→再写论文正文→最后生成答辩PPT，一条流水线走完。",
+    "stars": "1.4K+",
+    "tags": ["学术写作", "PPT生成", "科研计算", "论文润色", "三合一"],
+    "install": "git clone https://github.com/flyearth9981/codex-claude-academic-skills.git && cp -R codex-claude-academic-skills/skills/* ~/.codex/skills/",
+    "trigger": "使用office-academic-skill读取这篇论文...",
+    "issues": ["2026-08-04"]
+  },
   "scenarios": [
     {
       "id": "write-article",
