@@ -28,7 +28,10 @@
         "qu-ai-wei",
         "shuorenhua",
         "weixin-writer",
-        "codex-claude-academic-skills"
+        "codex-claude-academic-skills",
+        "self-media-content-workflow",
+        "nature-skills",
+        "canghe-skills"
       ]
     },
     {
@@ -56,7 +59,8 @@
         "mindmap-ppt-builder",
         "huashu-design",
         "visual-explainer",
-        "wechat-article-layout"
+        "wechat-article-layout",
+        "canghe-skills"
       ]
     },
     {
@@ -79,7 +83,8 @@
         "nature-paper2ppt",
         "ppt-skill",
         "image-to-editable-ppt",
-        "ultimate-ppt-master"
+        "ultimate-ppt-master",
+        "nature-skills"
       ]
     },
     {
@@ -97,7 +102,10 @@
         "ado-visual-director",
         "xhs-visual-director",
         "build-xhs-content-pack",
-        "redya-xiaohongshu"
+        "redya-xiaohongshu",
+        "self-media-content-workflow",
+        "agent-xiaohongshu-workbench",
+        "canghe-skills"
       ]
     },
     {
@@ -132,7 +140,11 @@
         "ai-market-radar",
         "agent-reach",
         "codex-team-mode",
-        "yao-meta-skill"
+        "yao-meta-skill",
+        "moore-wechat-article-downloader",
+        "self-media-content-workflow",
+        "nature-skills",
+        "agent-xiaohongshu-workbench"
       ]
     },
     {
@@ -1455,9 +1467,82 @@
       "install": "npx -y skills@latest add kdnsna/ultimate-ppt-master-skill --skill ultimate-ppt-master --agent codex --global",
       "issues": ["2026-07-30"],
       "result": "「帮我做份Q2复盘PPT」→反问「给谁看？多少页？什么风格？」→确认后逐页生成可编辑PPTX。"
+    },
+    "moore-wechat-article-downloader": {
+      "name": "moore-wechat-article-downloader",
+      "author": "Moore Developers",
+      "subtitle": "公众号文章本地同步：把竞品公众号变成本地情报库，供Codex做内容研究",
+      "desc": "把微信公众号里的文章、评论、互动数据同步到本地SQLite数据库，变成一个可搜索、可分析、可长期追踪的内容情报库。用自然语言就能让Codex同步关注的公众号、按日期列出最新文章、拆解选题和标题套路。MIT开源，本地优先，零云端依赖。",
+      "stars": "279",
+      "tags": ["竞品研究", "公众号分析", "本地优先", "MIT开源", "内容情报"],
+      "install": "git clone https://github.com/Moore-developers/moore-wechat-article-downloader.git ~/.codex/skills/moore-wechat-article-downloader",
+      "issues": ["2026-08-05"],
+      "screenshot": "",
+      "result": "「同步我关注的公众号，按日期列出最近50篇新文章」→ 30秒后拥有本地可搜索的内容情报库，竞品选题分析5分钟出结论。"
+    },
+    "self-media-content-workflow": {
+      "name": "self-media-content-workflow",
+      "author": "yanhua1010",
+      "subtitle": "自媒体9模块全流程：选题→创作→排版→发布→复盘，5个人工确认点保质量",
+      "desc": "一套模块化的自媒体内容生产Skill套装。9个独立模块覆盖总控路由、创作简报、内容策略、热点雷达、平台原生文案、短视频方案、数据复盘、交付归档、公众号排版发布。默认只创建草稿不自动群发，5个人工确认点卡住关键决策。MIT开源。",
+      "stars": "310",
+      "tags": ["全流程编排", "9模块", "公众号", "小红书", "MIT开源"],
+      "install": "npx -y skills@latest add yanhua1010/self-media-content-workflow --agent codex --global",
+      "issues": ["2026-08-05"],
+      "screenshot": "",
+      "result": "一个选题→9步流水线自动跑→公众号草稿+小红书6图方案。传统3.5小时手动→15分钟确认+微调。"
+    },
+    "nature-skills": {
+      "name": "nature-skills",
+      "author": "whisper-xiang",
+      "subtitle": "Nature风格学术写作11子技能：润色/论文转PPT/审稿回复/引用检索",
+      "desc": "围绕SKILL.md组织的学术写作全套能力包。11个子技能覆盖Nature风格英文润色（不改变证据强度）、论文生成中文PPTX文献汇报、模拟Nature审稿人评审、逐点回复审稿意见、CNS引用检索等。也适合行业分析、政策研究的逻辑核查。",
+      "stars": "新开源",
+      "tags": ["学术写作", "Nature风格", "英文润色", "论文转PPT", "11子技能"],
+      "install": "git clone https://github.com/whisper-xiang/nature-skills.git ~/.codex/skills/nature-skills",
+      "issues": ["2026-08-05"],
+      "screenshot": "",
+      "result": "一份论文PDF→nature-paper2ppt生成15页Nature风格中文PPTX，每页含演讲者备注。论文→汇报10分钟。"
+    },
+    "canghe-skills": {
+      "name": "canghe-skills",
+      "author": "freestylefly（苍何）",
+      "subtitle": "公众号创作全闭环：标题生成+封面设计+排版预览+草稿同步，集成Obsidian",
+      "desc": "苍何（CodexGuide/awesome-gpt-image-2作者）整理的Skills合集。结合Codex+Obsidian工作流：Obsidian写作→Codex实时润色→AI爆款标题→GPT Image-2封面→实时排版预览→一键同步草稿箱。集成了gzh-design-skill排版引擎。",
+      "stars": "397",
+      "tags": ["公众号创作", "Obsidian集成", "标题生成", "封面设计", "今日开源"],
+      "install": "git clone https://github.com/freestylefly/canghe-skills.git ~/.codex/skills/canghe-skills",
+      "issues": ["2026-08-05"],
+      "screenshot": "",
+      "result": "Obsidian里写完文章→Codex生成5个爆款标题+封面图→实时预览排版→一键同步公众号草稿箱。全程不切换工具。"
+    },
+    "agent-xiaohongshu-workbench": {
+      "name": "agent-xiaohongshu-workbench",
+      "author": "EthanYoQ",
+      "subtitle": "小红书图文工作台：热点研究→内容拆解→原创稿件→去AI味→品牌配图→确认发布",
+      "desc": "六步闭环的小红书内容工作台。热点研究搜小红书/抖音热门话题→内容拆解分析爆款结构→原创稿件基于账号风格生成→去AI味让文案像真人分享→品牌配图保持视觉统一→人工确认发布。强调人机协作，每步可插入修改意见。",
+      "stars": "40",
+      "tags": ["社交分发", "小红书", "图文创作", "六步闭环", "新锐项目"],
+      "install": "git clone https://github.com/EthanYoQ/agent-xiaohongshu-workbench.git ~/.codex/skills/agent-xiaohongshu-workbench",
+      "issues": ["2026-08-05"],
+      "screenshot": "",
+      "result": "一个话题→搜热点→拆竞品→写原创稿→去AI味→配图方案。每步可修改，不会直接出最终稿让你推翻重来。"
     }
   },
   "issues": [
+    {
+      "id": 44,
+      "date": "2026-08-05",
+      "weekday": "星期三",
+      "title": "把重复操作「录」进AI：Codex Record & Replay + 5个新Skills",
+      "subtitle": "录一次变自动Skill · 自定义模型接入 · 自媒体创作流水线 · 学术写作",
+      "tags": ["🎬 录制回放", "🔌 自定义模型", "📱 自媒体流程", "📚 学术写作", "🎨 Obsidian创作"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-05.html",
+      "skills": ["moore-wechat-article-downloader", "self-media-content-workflow", "nature-skills", "canghe-skills", "agent-xiaohongshu-workbench"]
+    },
     {
       "id": 43,
       "date": "2026-08-04",
