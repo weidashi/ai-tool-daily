@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-07</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">&larr; 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-07 · 星期五（周五）</div>
+    <h1>本周 AI 大事盘点——从 DeepSeek 开源到 Meta 下场，一周看懂行业变局</h1>
+    <div class="art-sub">一周回顾特辑：Muse Code · Qwen-Image-3.0 · DeepSeek V4 Flash · Luna 降价 · Cloudflare OS</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>这周 AI 圈像开了倍速：Meta 带着 Muse Code 杀进编程智能体赛道、阿里 Qwen-Image-3.0 把图像文字渲染卷到 10px、DeepSeek V4 Flash 0731 开源登顶、OpenAI 把 GPT-5.6 Luna 降价 80%、Cloudflare 开源智能体 OS。周五不做新品速递，把这一周串成一条线，帮你建立<strong>「本周行业地图」</strong>。</div>
+
+  <!-- 🗓️ 一周大事 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">🗓️</div><span>本周大事盘点</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">DeepSeek V4 Flash 0731</div><div class="sk-subtitle">🔥 开源黑马 · 本周主角 · 8/1 开源，MIT 许可</div></div></div>
+      <div class="badges"><span class="bd bd-r">🔥 本周主角</span><span class="bd bd-g">开源黑马</span><span class="bd bd-b">284B总参/13B激活</span><span class="bd bd-o">MIT许可</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>8/1 开源，MIT 许可，总参 284B/激活 13B，百万 token 上下文，Artificial Analysis 智能指数 50 分登顶开源前三。Agent 能力反超自家旗舰：Terminal Bench 2.1 得分 82.7（旗舰 72.1），9 项 agentic/coding 基准全面领先。API 只要 $0.14/M 输入、$0.28/M 输出。<br><strong>最适合：</strong>需要一次性吃下长文档的综述任务、跑代码智能体工作流的开发者——开源 + 百万上下文 + 低价三合一，自部署和调用两头通吃。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add deepseek-v4-flash --agent codex</div><div class="cmt">装好后在 Codex 中可直接调用，也可用官方 API 或自部署跑长文档任务</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把长文档综述任务丢给它，百万 token 上下文一次吃下——不用再分段切、分段总结、手动拼。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">Meta Muse Code + Muse Spark 1.2</div><div class="sk-subtitle">🤖 编程智能体三国杀 · 8/5 发布，Meta 首款终端编程 Agent</div></div></div>
+      <div class="badges"><span class="bd bd-b">编程智能体</span><span class="bd bd-r">8/5发布</span><span class="bd bd-p">对标 Claude Code/Codex</span><span class="bd bd-g">贡献者0.2</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>Meta 首款终端编程 Agent，直接对标 Claude Code 和 Codex。长时任务自主完成「规划-写码-验证」闭环，支持持久化子 Agent 并行重构。输出价 $4.25/M，贡献者档低至 $0.20/M，用价格拉开发者入场。<br><strong>最适合：</strong>多文件、跨模块的大重构任务——让持久化子 Agent 并行开工，比单线程逐文件改快一个量级；价格敏感的个人开发者尤其值得先试贡献者档。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add meta-muse-code --agent codex</div><div class="cmt">装好后在 Codex 中触发，任务描述里带上「并行重构」「长时任务」关键词即可</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>与 Codex 对比跑同一个重构任务，看谁更快更省——同一份代码、同一个目标，两边同时开跑。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">Qwen-Image-3.0 Pro</div><div class="sk-subtitle">🎨 图像生成军备赛 · 8/6 上线 Qwen Cloud，Arena 榜单中国第一</div></div></div>
+      <div class="badges"><span class="bd bd-o">图像生成</span><span class="bd bd-r">中国第一</span><span class="bd bd-b">10px级文字</span><span class="bd bd-g">12种语言</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>8/6 上线 Qwen Cloud，Arena 榜单中国第一。支持 4.5k-token 超长提示词、10px 级文字渲染精度、12 种语言混排。把「AI 写字」从歪七扭八卷到印刷级——中文海报、图表标注、多语混排不再是硬伤。<br><strong>最适合：</strong>需要海报、封面、信息图里出现精确中文文字的创作者——电商主图、公众号封面、PPT 配图、产品说明图都能直接出图，不用后期 PS 补字。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add qwen-image --agent codex</div><div class="cmt">装好后在 Codex 中用自然语言描述画面 + 文案内容即可出图</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>用它生成带精确中文的海报，检验文字渲染能力——把口号、价格、日期写进提示词，看它敢不敢一个不错。</div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">OpenAI GPT-5.6 Luna 降价 80%</div><div class="sk-subtitle">💰 价格战总攻 · 内核级优化实现 8 折再腰斩</div></div></div>
+      <div class="badges"><span class="bd bd-o">价格战</span><span class="bd bd-r">降80%</span><span class="bd bd-b">内核优化</span><span class="bd bd-p">反击国产模型</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>内核级优化（成本降 20%+、Token 效率提升 15%+）实现 8 折再腰斩，整体降幅约 80%。业内普遍视为对 DeepSeek / Kimi / GLM 价格战的反击——OpenAI 选择用 Luna 这一档打低价位，正面接招。<br><strong>最适合：</strong>高频、低延迟、对成本敏感的调用场景——客服对话、实时翻译、标题生成、内容改写这类量大价敏的任务，切到 Luna 成本立减。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add gpt-luna --agent codex</div><div class="cmt">装好后把高频任务的模型参数切到 gpt-5.6-luna 即可，路由逻辑不用改</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把高频低延迟场景（客服、实时翻译）切到 Luna，成本立减——看月度 API 账单数字变小的速度。</div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① 开源模型登顶</span><span class="pa">→</span>
+      <span class="ps ps-2">② 编程Agent三国杀</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 图像渲染突破</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 大模型价格战</span><span class="pa">→</span>
+      <span class="ps ps-5">⑤ Skill 经济崛起</span>
+      <span style="margin-left:auto;font-size:11px;color:var(--muted);">这一周的主线，就是这五步</span>
+    </div>
+  </div>
+
+  <!-- 🌐 行业动态 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🌐</div><span>本周行业动态</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">☁️ Cloudflare 开源智能体 OS（8/6）</div></div>
+      <div class="tb">Cloudflare 发布面向智能体与工作的开放平台，<strong>每位员工一个智能体工作区</strong>。不是又一个 Agent 框架，而是把「智能体怎么和你的数据、域名、工作流协作」做成了平台基础设施——开源 + 云厂商背书，被视为「智能体时代的操作系统」雏形。<br>
+      <span style="font-size:11px;color:var(--muted);">看点：工作区按人隔离、Skill 可沉淀可共享，和 Skill 经济形成合流。</span></div>
+    </div>
+
+    <div class="tip t-o">
+      <div class="th"><div class="tt">🧩 腾讯 SkillHub 挂载 7.8 万技能，SkillPay 按调用计费上线</div></div>
+      <div class="tb">SkillHub 累计挂载 <strong>7.8 万技能</strong>，并上线 <strong>SkillPay 按调用计费</strong>。「经验蒸馏」正在变成一门新生意——把某领域专家的经验写成 Skill，别人每次调用就付费。过去靠卖课变现的经验，现在可以直接按次结算。<br>
+      <span style="font-size:11px;color:var(--muted);">信号：技能不再是附赠品，而是可定价、可流通的数字资产。</span></div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚠️ 微软披露：OpenAI 贡献其 AI 营收约 70%（241 亿美元）</div></div>
+      <div class="tb">微软财报首次披露，OpenAI 贡献了其 AI 业务营收的约 70%，对应 <strong>241 亿美元</strong>。绑得越深，风险越大——当一家巨头的 AI 营收七成来自单一客户/伙伴，一旦路线分歧或市场竞争生变，双方都是结构性风险。<br>
+      <span style="font-size:11px;color:var(--muted);">提示：看大厂 AI 叙事时，把「绑定关系」和「实际营收质量」一起看。</span></div>
+    </div>
+  </div>
+
+  <!-- 🧭 周末复盘 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">🧭</div><span>实用技巧 · 周末复盘模板</span></div>
+
+    <div class="tip t-g">
+      <div class="th"><div class="tt">📋 每周五 10 分钟，把一周消化成下周的行动清单</div></div>
+      <div class="tb">信息只有落成动作才有价值。每周五固定花 10 分钟过三问：<br>
+        <strong>①</strong> 本周新模型/新工具里，哪个值得下周试用？——只挑一个，别贪多；<br>
+        <strong>②</strong> 哪些重复工作可以交给 Agent？——列出这周做过的重复性任务，标出可自动化的；<br>
+        <strong>③</strong> 哪些经验值得沉淀成 Skill？——把「怎么做好的」写下来，让它成为可复用资产。<br>
+        <span style="font-size:11px;color:var(--muted);">💡 进阶：把三问的答案直接发给 Agent，让它帮你整理成下周行动清单，并自动拆出每日任务。</span></div>
+    </div>
+
+    <div class="hl">
+      <strong>🧭 这一周的本质只有一句话——</strong>能力在<strong>开源化</strong>、价格在<strong>下沉化</strong>、工作流在 <strong>Skill 化</strong>。模型越来越便宜、越来越开放，差距转移到了「谁能把自己的经验沉淀成可复用的工作流」上。
+    </div>
+  </div>
+
+  <!-- 🧰 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">🧰</div><span>本周工具箱快照</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一周组合拳预览：四件套接管你的日常工作流</div>
+      <div class="sh-sub">DeepSeek 跑长任务 + Muse Code 写码 + Qwen-Image 出图 + Luna 做实时交互（实操可复现）</div>
+      <div class="sh-box">
+        <strong>DeepSeek V4 Flash：</strong>百万 token 上下文一次吃下整份研究报告、合同、代码库说明，直接输出综述和摘要。<br>
+        <strong>Muse Code：</strong>接替写码——多文件重构、模块拆分、测试补全，持久化子 Agent 并行开工。<br>
+        <strong>Qwen-Image-3.0 Pro：</strong>负责出图——海报、封面、信息图，10px 级中文文字渲染，文案直接写进图里。<br>
+        <strong>GPT-5.6 Luna：</strong>负责量大价敏的实时交互——客服回复、实时翻译、标题改写，成本立减 80%。<br><br>
+        <strong>📌 组合方式：</strong>长任务喂 DeepSeek → 写码交给 Muse Code → 视觉产出交给 Qwen-Image → 高频调用切 Luna。同一个任务流，四段分工，各取所长。<br>
+        <strong>⏱️ 本周真实收益：</strong>长文档综述从「分段切半天」到「一次吃完」；重构从「单线程改半天」到「并行开工」；出图从「PS 补字」到「直接生成」；高频调用账单肉眼可见地变小。四件事叠加，就是一周组合拳的预览。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 行业变局很快，但落在你身上的只有一件事：这周你比上周多自动化了什么？</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-07</span>
+  </div>
+</div>
+</body>
+</html>

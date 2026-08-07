@@ -1531,6 +1531,32 @@
   },
   "issues": [
     {
+      "id": 46,
+      "date": "2026-08-07",
+      "weekday": "星期五",
+      "title": "本周 AI 大事盘点——从 DeepSeek 开源到 Meta 下场，一周看懂行业变局",
+      "subtitle": "一周回顾特辑：Muse Code · Qwen-Image-3.0 · DeepSeek V4 Flash · Luna 降价 · Cloudflare OS",
+      "tags": ["📊 一周盘点", "🤖 编程Agent", "🎨 图像生成", "🔥 开源模型", "💰 价格战"],
+      "skillCount": 4,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-08-07.html",
+      "skills": ["deepseek-v4-flash", "meta-muse-code", "qwen-image", "gpt-luna"]
+    },
+    {
+      "id": 45,
+      "date": "2026-08-06",
+      "weekday": "星期四",
+      "title": "AI 编程开卷——Meta 携 Muse Code 入场，图像生成卷向 10px 级文字",
+      "subtitle": "Muse Code & Muse Spark 1.2 · Qwen-Image-3.0 · Cloudflare OS · SkillPay 技能计费",
+      "tags": ["🤖 编程Agent", "🎨 文生图", "☁️ 智能体OS", "💰 Skill经济", "🏢 行业动态"],
+      "skillCount": 4,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-08-06.html",
+      "skills": ["meta-muse-code", "qwen-image", "cloudflare-os", "skillpay-market"]
+    },
+    {
       "id": 44,
       "date": "2026-08-05",
       "weekday": "星期三",
