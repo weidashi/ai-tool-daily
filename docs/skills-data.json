@@ -31,7 +31,8 @@
         "codex-claude-academic-skills",
         "self-media-content-workflow",
         "nature-skills",
-        "canghe-skills"
+        "canghe-skills",
+        "agents-md-creator"
       ]
     },
     {
@@ -84,7 +85,8 @@
         "ppt-skill",
         "image-to-editable-ppt",
         "ultimate-ppt-master",
-        "nature-skills"
+        "nature-skills",
+        "gorden-super-ppt"
       ]
     },
     {
@@ -144,7 +146,8 @@
         "moore-wechat-article-downloader",
         "self-media-content-workflow",
         "nature-skills",
-        "agent-xiaohongshu-workbench"
+        "agent-xiaohongshu-workbench",
+        "redfox-community"
       ]
     },
     {
@@ -1280,7 +1283,7 @@
       "stars": "新发布",
       "tags": ["知识入库", "Obsidian", "自动索引", "Local-First", "阅读总结"],
       "install": "git clone https://github.com/Simuiu/obsidian-inbox.git ~/.codex/skills/obsidian-inbox",
-      "issues": ["2026-07-16"],
+      "issues": ["2026-08-08", "2026-07-16"],
       "screenshot": "",
       "result": "一个B站链接+一篇公众号文章 → 两条结构化笔记+自动提取主题标签+索引文件更新。"
     },
@@ -1527,9 +1530,58 @@
       "issues": ["2026-08-05"],
       "screenshot": "",
       "result": "一个话题→搜热点→拆竞品→写原创稿→去AI味→配图方案。每步可修改，不会直接出最终稿让你推翻重来。"
+    },
+    "gorden-super-ppt": {
+      "name": "GordenSuperPPTSkills（PPT三合一）",
+      "author": "GordenSun",
+      "stars": 1293,
+      "category": "ppt",
+      "desc": "GPT 5.5 生图+视觉解析双能力，拆成3个独立Skill：图片PPT生成→可编辑PPTX还原→一键编排。先出图审，定稿转可编辑发客户。",
+      "install": "npx -y skills@latest add GordenSun/GordenSuperPPTSkills --skill GordenSuperPPTSkill --agent codex --global",
+      "trigger": "用 GordenSuperPPTSkill 把这篇文章转成10页PPT，麦肯锡风格",
+      "issues": ["2026-08-08"],
+      "screenshot": "",
+      "result": "一篇文章→10页图片PPT+可编辑PPTX+演讲者备注。先出图给老板审，确认后转可编辑版发客户。5分钟从文章到交付。"
+    },
+    "redfox-community": {
+      "name": "RedFox Community Skills（自媒体数据聚合）",
+      "author": "redfox-data",
+      "stars": null,
+      "category": "research",
+      "desc": "一个API Key打通抖音、小红书、公众号、B站等11个平台的趋势数据。45个开箱即用Skill，选题调研不再需要手动刷各平台。",
+      "install": "npx -y skills@latest add redfox-data/redfox-community --agent codex --global",
+      "trigger": "用 redfox 查小红书和抖音今天关于XX话题最火的5条内容",
+      "issues": ["2026-08-08"],
+      "screenshot": "",
+      "result": "「查AI写作话题各平台爆款」→跨平台热门内容对比+标题策略分析+3个差异化选题建议。以前手动搜2小时，现在5分钟。"
+    },
+    "agents-md-creator": {
+      "name": "AGENTS.md（永久写作风格说明书）",
+      "author": "OpenAI 官方机制",
+      "stars": null,
+      "category": "writing",
+      "desc": "不是Skill胜似Skill——在项目根目录创建AGENTS.md，Codex每次启动自动读取。把你的写作风格、禁用词、读者画像、排版偏好写一次，永久生效。",
+      "install": "在项目根目录创建 AGENTS.md 文件，写入写作规则即可",
+      "trigger": "开Codex新对话直接说「写一篇关于XX的文章」，自动遵守AGENTS.md中的规则",
+      "issues": ["2026-08-08"],
+      "screenshot": "",
+      "result": "一份AGENTS.md→每次开Codex新对话不再需要复制粘贴800字风格prompt。语气、禁用词、段落长度自动遵守。"
     }
   },
   "issues": [
+    {
+      "id": 47,
+      "date": "2026-08-08",
+      "weekday": "星期六",
+      "title": "把重复劳动装进Skill：4个新工具让你的内容生产「自动驾驶」",
+      "subtitle": "PPT一键三吃 · 11平台数据聚合 · 视频自动转笔记 · 选题调研流水线",
+      "tags": ["📘 Skills", "📊 PPT生成", "🔍 选题研究", "📝 阅读总结", "🤖 日常自动化"],
+      "skillCount": 4,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-08.html",
+      "skills": ["gorden-super-ppt", "redfox-community", "obsidian-inbox", "agents-md-creator"]
+    },
     {
       "id": 46,
       "date": "2026-08-07",
