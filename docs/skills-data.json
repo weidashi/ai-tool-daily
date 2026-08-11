@@ -423,6 +423,7 @@
       ],
       "install": "npx -y skills@latest add op7418/Humanizer-zh --skill humanizer-zh --agent codex --global",
       "issues": [
+        "2026-08-11",
         "2026-07-24",
         "2026-06-24",
         "2026-06-21"
@@ -443,6 +444,7 @@
       ],
       "install": "npx -y skills@latest add ComposioHQ/content-research-writer --skill content-research-writer --agent codex --global",
       "issues": [
+        "2026-08-11",
         "2026-07-24",
         "2026-07-04",
         "2026-06-24",
@@ -501,6 +503,7 @@
       ],
       "install": "npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --skill ian-xiaohei-illustrations --agent codex --global",
       "issues": [
+        "2026-08-11",
         "2026-07-04",
         "2026-06-25",
         "2026-06-22"
@@ -615,6 +618,7 @@
       ],
       "install": "npx -y skills@latest add op7418/guizang-social-card-skill --skill guizang-social-card --agent codex --global",
       "issues": [
+        "2026-08-11",
         "2026-07-24",
         "2026-07-04",
         "2026-06-24"
@@ -635,6 +639,7 @@
       ],
       "install": "npx -y skills@latest add dontbesilent/dbskill --skill dbskill --agent codex --global",
       "issues": [
+        "2026-08-11",
         "2026-07-24",
         "2026-07-04",
         "2026-06-24",
@@ -1570,6 +1575,19 @@
   },
   "issues": [
     {
+      "id": 50,
+      "date": "2026-08-11",
+      "weekday": "星期二",
+      "title": "先问这选题值不值得写：5个新Skill把你的内容创作流程拉满",
+      "subtitle": "选题诊断 · 去AI味升级 · 正文配图 · 小红书封面 · 一键HTML发布",
+      "tags": ["📘 Skills", "🔍 选题诊断", "✍️ 写作流程", "🎨 配图封面", "📱 社交分发"],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-11.html",
+      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "ian-xiaohei-illustrations", "guizang-social-card-skill"]
+    },
+    {
       "id": 47,
       "date": "2026-08-08",
       "weekday": "星期六",
@@ -1581,6 +1599,32 @@
       "numColor": "n-purple",
       "file": "2026-08-08.html",
       "skills": ["gorden-super-ppt", "redfox-community", "obsidian-inbox", "agents-md-creator"]
+    },
+    {
+      "id": 48,
+      "date": "2026-08-09",
+      "weekday": "星期日",
+      "title": "中国开源大模型集体爆发：这一周，世界在看东方",
+      "subtitle": "Qwen3.8-Max 首次开源 · MiniMax H3 三天登顶 Hugging Face · DeepSeek-V4-Flash 登顶调用榜 · 阿里千问开放平台",
+      "tags": ["🔥 开源模型", "🇨🇳 中国AI", "🆓 Qwen3.8-Max", "🏆 MiniMax H3", "📊 DeepSeek-V4-Flash"],
+      "skillCount": 4,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-08-09.html",
+      "skills": ["qwen-3.8-max", "minimax-h3", "deepseek-v4-flash", "ali-qianwen-platform"]
+    },
+    {
+      "id": 49,
+      "date": "2026-08-10",
+      "weekday": "星期一",
+      "title": "Agent 生态的「USB-C」时刻来了",
+      "subtitle": "Agent Plugins 1.0 统一标准 · 阿里千问开放平台 · 豆包 Agent 商店 · 客服 Agent 从「能回答」走向「能承担」",
+      "tags": ["🔌 Agent Plugins", "🏪 Agent 商店", "🤖 客服Agent", "🏢 企业落地", "🔄 生态标准"],
+      "skillCount": 4,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-08-10.html",
+      "skills": ["agent-plugins-1.0", "ali-qianwen-platform", "doubao-agent-store", "customer-service-agent"]
     },
     {
       "id": 46,

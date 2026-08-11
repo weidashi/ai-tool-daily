@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-11</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-11 · 星期二</div>
+    <h1>先问这选题值不值得写：5个新Skill把你的内容创作流程拉满</h1>
+    <div class="art-sub">选题诊断 · 去AI味升级 · 正文配图 · 小红书封面 · 一键HTML发布</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>写文章最大的浪费是什么？不是改稿，是写完发出去才发现——选题本身没传播力。本期围绕"选题先行"这个理念，精选 5 个 Codex Skill：先用 dbskill 诊断选题值不值得写，再用 content-research-writer 拉资料出稿，Humanizer-zh 升级版去 AI 味，ian-xiaohei 补上正文风格配图，最后 guizang-social-card 一键生成小红书卡面和公众号封面。五个工具串成一条完整的工作流，每一步都有实操示例。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">dbskill — 选题诊断器</div><div class="sk-subtitle">dontbesilent2025 · 16个诊断工具，从12,307条推文提炼方法论</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 8,800+</span><span class="bd bd-p">选题诊断</span><span class="bd bd-o">Hook 优化</span><span class="bd bd-r">爆款拆解</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是帮你写出更多，而是先判断值不值得写。从 12,307 条推文中提炼方法论，做成 16 个诊断 Skill，包括商业模式诊断、内容创作诊断、Hook（开头抓人度）优化、小红书标题公式匹配（75个爆款公式）、AI写作特征识别（22条特征扫描）等。<br><strong>最适合：</strong>有一个模糊想法但不知道从什么角度切入；文章写完了才发现标题吸引力不够；需要系统诊断内容质量和传播潜力。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add dontbesilent2025/dbskill --agent codex --global</div><div class="cmt">安装后重启 Codex，输入 /dbs 即可触发主入口，自动路由到对应诊断工具</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>你想写一篇"2026年AI工具选型指南"但不确定角度。在 Codex 中输入 /dbs-content，把选题丢给它，它会从五个维度打分：是否有信息缺口、是否有认知冲突、是否有可操作结论、是否有传播钩子、是否有个人视角。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>/dbs-content 我想写一篇"2026年AI工具选型指南"，面向普通职场人。担心选题太泛、没有差异化。</div>
+        <div class="ex-out"><strong>成果：</strong>诊断结果——信息缺口评分 ★★★★☆（大多数选型清单只罗列功能，缺少"按岗位场景"的对照）、传播钩子评分 ★★★☆☆（建议聚焦"月薪8k到25k的7类岗位分别适合哪些AI工具"，比泛泛的"10款AI工具推荐"更有记忆点）。建议切入角度：按岗位而非按工具分类。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">content-research-writer — 完整写作工作流</div><div class="sk-subtitle">ComposioHQ · 从选题到初稿，一条工作流串到底</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 1,900+</span><span class="bd bd-p">写作流程</span><span class="bd bd-b">资料搜索</span><span class="bd bd-o">引用标注</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>提供完整的内容创作流程，从选题确认后开始——资料搜索→观点整理→提纲生成→引用标注→初稿写作，每一步都有检查点，不是"丢一个主题给AI然后祈祷"。<br><strong>最适合：</strong>公众号长文、知乎深度回答、Newsletter、博客——任何需要资料支撑、逻辑结构清晰的长文场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/ComposioHQ/awesome-claude-skills.git && cp -r awesome-claude-skills/content-research-writer ~/.codex/skills/</div><div class="cmt">安装后直接描述写作需求即可触发，Skill 会引导你分步确认资料→提纲→初稿</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一个你最近想写的话题，比如"远程办公三年后，团队协作工具有哪些真实变化"，让它帮你搜索最新数据、整理不同观点、生成有逻辑的提纲。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>帮我写一篇关于"AI辅助写周报"的公众号文章，目标读者是职场新人，1500字左右，希望有具体操作步骤和真实效果对比</div>
+        <div class="ex-out"><strong>成果：</strong>自动拆分为 4 步——(1) 搜索"零代码AI周报工具"最新方案和用户反馈；(2) 整理为对比表格（工具/上手时间/输出质量/成本）；(3) 生成提纲：痛点开场→方案对比→三步实操→避坑指南→效率提升数据；(4) 输出初稿并标注每个数据/引用的来源链接。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">Humanizer-zh — 去AI味 2.0</div><div class="sk-subtitle">op7418（歸藏）· 29种模式完整汉化 + 50分质量评分系统</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 12,200+</span><span class="bd bd-p">去AI味</span><span class="bd bd-g">中文优化</span><span class="bd bd-o">29种模式</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>Humanizer 的中文深度汉化版。不是简单"机翻英文规则"，而是针对中文场景做了完整适配——处理空话套话、三段式结构、翻译腔、大厂黑话、万能鸡汤句式。29 种清洗模式 + 独有 50 分质量评分（直率度、节奏感、真实感、去套话、可读性各10分），45分以上算"去味成功"。<br><strong>最适合：</strong>公众号文章、知乎回答、产品文案、个人表达——每次AI写完初稿后必跑一遍。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/Humanizer-zh --agent codex --global</div><div class="cmt">安装后在 Codex 中说"用 Humanizer-zh 帮我改这段文字"即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一段你用AI生成的中文文案或文章，发给它说"用 Humanizer-zh 帮我改这篇，只改表达不改变事实"，看看改完后的50分评分卡和标注的AI特征痕迹。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>（原文）"在当今数字化浪潮席卷全球的背景下，越来越多的企业开始意识到人工智能技术在提升运营效率方面的重要性。值得注意的是，AI工具已经不再是遥不可及的前沿科技..."</div>
+        <div class="ex-out"><strong>成果：</strong>（改写后）"这两年身边的公司都在上AI，不是跟风，是真的能省钱。做客服的接了个机器人，做设计的用了AI出图，连财务都在拿AI对账。AI不再是PPT里的概念，是办公室里有人在用的东西。" ——评分：直率度9/10、节奏感8/10、真实感9/10、去套话9/10、可读性8/10，总分43/50。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ian-xiaohei-illustrations — 小黑风格正文配图</div><div class="sk-subtitle">helloianneo · 把文章观点/流程/情绪画成手绘风格插图</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3,400+</span><span class="bd bd-p">正文配图</span><span class="bd bd-o">手绘风格</span><span class="bd bd-r">16:9白底</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你写完了文章，但正文纯文字太干。这个 Skill 会读你的文章，把里面的观点、流程、情绪、隐喻转成"小黑"风格的手绘插图——16:9 白底、少量红橙蓝批注、怪诞温馨。不是随机AI出图，而是贴合文章内容的定制插画。<br><strong>最适合：</strong>公众号长文、知乎回答、知识星球帖子——需要正文配图来提升阅读体验和停留时长。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add helloianneo/ian-xiaohei-illustrations --agent codex --global</div><div class="cmt">安装后把文章内容发给 Codex，说"用 ian-xiaohei 给这篇文章画 3 张配图"</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>选你上一篇公众号文章（哪怕是旧文），把核心段落发给它，让它生成 3 张风格统一的小黑插图。"把文章里这场数据对比画成小黑风格的流程插图"。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>这篇文章对比了3种AI写作方式——完全自己写、AI写自己改、AI写自己不查。帮我画一张小黑风格插图，展示这三种方式的效率和风险对比</div>
+        <div class="ex-out"><strong>成果：</strong>生成一张16:9白底手绘插图——左侧三个小人分别代表"累死型""省力但慌型""放飞型"，中间用红橙蓝箭头标注"效率/准确度/后悔率"三条曲线，底部一行手写批注："写完不查，等于裸奔。"</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">guizang-social-card-skill — 小红书图文+公众号封面</div><div class="sk-subtitle">op7418（歸藏）· 28种版式 × 10套主题 × 双视觉系统</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 4,600+</span><span class="bd bd-p">社交分发</span><span class="bd bd-o">小红书</span><span class="bd bd-b">公众号封面</span><span class="bd bd-g">28种版式</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>文章写完了、配图也有了，最后一步是分发。这个 Skill 专做两件事：把一篇长文拆成多张小红书图文卡片 + 生成公众号 21:9 头图和 1:1 分享卡。提供 Editorial（编辑杂志）和 Swiss（瑞士国际）两套视觉系统、28 种预置版式、10 套配色主题，单文件 HTML → PNG 一键导出。<br><strong>最适合：</strong>公众号作者把文章二次分发到小红书；需要快速制作统一风格的社交媒体封面。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add op7418/guizang-social-card-skill --agent codex --global</div><div class="cmt">安装后把文章链接或原文发给 Codex，说"用 guizang-social-card 帮我做一份小红书图文"</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿你上一篇公众号文章链接，告诉它"生成 6 张瑞士风小红书图文，每张一个核心观点 + 一句总结，附带 21:9 公众号封面"。5分钟内拿到可直接发的小红书卡面。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>基于这篇关于"AI写作工具实际体验"的文章，做一套小红书图文。6张卡片，瑞士风格，主题色用墨绿+米白。每张一个观点+一句金句。</div>
+        <div class="ex-out"><strong>成果：</strong>生成6张统一风格PNG卡面——(1)"AI写完你不改，等于把署名权交给机器人"(2)"最好的AI写作方式：AI出草稿，你做判断，AI再润色"(3)... 每张独立可发，附带一张21:9公众号头图和1:1分享卡。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① dbskill 选题</span><span class="pa">→</span><span class="ps ps-2">② content-research-writer 初稿</span><span class="pa">→</span><span class="ps ps-3">③ Humanizer-zh 去味</span><span class="pa">→</span><span class="ps ps-4">④ ian-xiaohei 配图</span><span class="pa">→</span><span class="ps ps-5">⑤ guizang-social-card 分发</span>
+    </div>
+    <div class="hl">💡 <strong>组合技口诀：</strong>先诊断再动笔，先去味再配图，先写好再分发。五个Skill按顺序跑下来，一篇公众号文章从选题到多平台发布的完整流程，不会超过 30 分钟。</div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📦 CLI 0.147.0 发布（8月7日）— 三大更新值得关注</div></div>
+      <div class="tb">
+        <strong>1. Agent Plugins 统一标准上线：</strong>插件现在可以从本地、个人目录、工作区、远程市场四个来源安装和搜索，Codex/Cursor/Claude Code 三方的 Skill 和插件正在走向互通。<br>
+        <strong>2. Cursor Skill 导入 + 去重同步：</strong>/import 命令现在可以从 Cursor 导入 Skills，而且对已导入的对话会增量同步而不是创建重复副本。如果你同时用 Cursor 和 Codex，这个功能消除了一大切换成本。<br>
+        <strong>3. --approve-for-me 自动审批：</strong>新增 CLI 标志，让 Codex 在低风险操作时不再每次都暂停要你批准。不是跳过安全检查，而是把审核自动化——适合长任务跑着跑着被中断打断的痛。<br>
+        <strong style="color:var(--blue)">💡 Skill 调用技巧：</strong>你可以在输入框输入 / 或 $ 显式调用 Skill（如 /dbs-content），也可以直接描述任务，让 Codex 自动匹配——两者效果一样，显式调用适合你非常清楚要用哪个Skill的场景。
+      </div>
+    </div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ AGENTS.md 最佳实践：写短、写真、写可验证</div></div>
+      <div class="tb">OpenAI 官方持续推动 AGENTS.md 作为项目级指令文件。最佳实践三条：(1) <strong>写短</strong>——超过 200 行 AI 就不再忠实遵循；(2) <strong>写真</strong>——只写对输出质量有实际影响的约束，不要写"希望"和"建议"；(3) <strong>写可验证</strong>——每条规则有对错标准，例如"禁止使用'值得注意的是'"而非"注意文风"。目前已超过 6 万个 GitHub 仓库采用 AGENTS.md，包括 Vercel、Supabase 等。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 素材纪律：一个 Notebook 一个研究课题</div></div>
+      <div class="tb">很多人把所有资料塞进一个 Notebook，结果 AI 的回答越来越散。正确做法：<strong>每个 Notebook 只围绕一个研究问题</strong>，5-10 个精选来源，写清楚 Notebook 描述（如"2026年SaaS公司中小企业定价策略分析"）。只加直接相关的资料——行业报告、竞品定价页、创始人访谈、客户评价，跳过泛泛的综述文章。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🔗 多来源交叉引用：3-5个来源才是 NotebookLM 的甜区</div></div>
+      <div class="tb">只上传一个 PDF 很浪费。上传 3-5 个相关来源——行业报告、会议记录、竞品分析——让 AI 从多角度三角验证，摘要质量会大幅提升。一个实用技巧：<strong>把研究论文、新闻简报、YouTube 讲座链接混合上传</strong>——论文提供严谨性，新闻提供时效性，讲座提供实践细节，三者组合产出的分析远比单一来源丰富。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🎬 Short Video Overviews：60秒竖屏视频，全量开放</div></div>
+      <div class="tb">NotebookLM 的 Short Video Overviews 已全量开放——上传文档后点击 Studio → Video Overview，生成 60 秒竖屏解说视频。适合把一份报告快速变成可分享到微信/朋友圈的短视频摘要。一个实用场景：把竞争对手的产品页面截图上传为来源，生成 Video Overview，5分钟内拿到一份可内部分享的竞品可视化简报。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 三种模式口诀：简单活Craft、复杂活Plan、重复活Automate</div></div>
+      <div class="tb">WorkBuddy 有 Ask / Plan / Craft 三种内核模式，选对了效率翻倍：<strong>查概念、对比方案、确认知识点 → Ask</strong>（只回答不碰文件）；<strong>3步以上的复杂任务 → Plan</strong>（先出执行计划你确认再动手，避免AI理解跑偏返工）；<strong>明确需求的简单任务 → Craft</strong>（直接落地执行）。另外，<strong>周期性任务用 Automation</strong>设置定时执行——如每天9点整理待办、每周五生成周报，一次配置永久生效。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 五步串联：从选题到分发，一篇公众号文章的完整流水线</div>
+      <div class="sh-sub">用今天介绍的 5 个 Skill，按顺序跑通一条真实的内容生产工作流</div>
+      <div class="sh-box">
+        <strong>假设选题：</strong>"AI辅助写周报，到底省了多少时间？"<br><br>
+        <strong>第1步 — dbskill 选题诊断：</strong>输入 /dbs-content → 诊断结果：信息缺口 ★★★★☆（大多数文章只讲工具列表，缺"真实时间对比数据"）、传播钩子 ★★★★☆（建议标题："我用AI写了30天周报，省下的时间够看完一部《三体》"）<br><br>
+        <strong>第2步 — content-research-writer 出稿：</strong>按诊断结果切入，搜索"AI周报工具+用户实测时间数据"，生成提纲（痛点→实测对比→三步操作→避坑→效率数据），输出1500字初稿+数据引用来源<br><br>
+        <strong>第3步 — Humanizer-zh 去味：</strong>改写初稿，清除"值得注意的是""在当今XX背景下""赋能""降本增效"等AI高频词，调整句式节奏，最终评分 44/50<br><br>
+        <strong>第4步 — ian-xiaohei 配图：</strong>生成 3 张小黑风格插图——(1)周一对着空白周报发愣的小人 vs 打开AI工具后的表情变化；(2)时间对比柱状图：传统1小时 vs AI辅助15分钟；(3)"省下时间做了什么"的流程图<br><br>
+        <strong>第5步 — guizang-social-card 分发：</strong>基于文章生成 6 张瑞士风小红书图文 + 21:9 公众号头图 + 1:1 朋友圈分享卡<br><br>
+        <strong>🕐 耗时估算：</strong>全程约 25-30 分钟（传统方式：选题纠结1h+写作2h+配图找素材1h+做封面30min = 约4.5小时），效率提升约 9-11 倍。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 工具的价值不在数量，在排队——先想清楚值不值得写，再让Skill帮你跑完剩下的路。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-11</span>
+  </div>
+</div>
+</body>
+</html>

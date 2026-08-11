@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-10</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-10 · 星期一</div>
+    <h1>Agent 生态的「USB-C」时刻来了</h1>
+    <div class="art-sub">Agent Plugins 1.0 统一标准 · 阿里千问开放平台 · 豆包 Agent 商店 · 客服 Agent 从「能回答」走向「能承担」</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>Agent 生态这一周出现了两个关键信号：OpenAI 联合五大厂推出了 Agent Plugins 1.0 开放标准——一个插件可在多个智能体通用，堪称 AI 插件的「USB-C 接口」；另一边，阿里千问开放平台和字节豆包 Agent 商店同时上线，企业级 Agent 正在变成「即买即用」的标准化商品。再加上客服 Agent 从「能回答」走向「能承担业务」的落地案例——Agent 生态的基础设施已经铺好，接下来就看谁能跑通场景。</div>
+
+  <!-- 📘 Agent 生态四大件 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Agent 生态四大件</span></div>
+
+    <!-- Skill 1: Agent Plugins 1.0 -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">Agent Plugins 1.0.0 —— AI 插件的「USB-C 接口」</div><div class="sk-subtitle">OpenAI + Amazon + Cursor + Microsoft + Vercel · 8月7日联合发布</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 生态里程碑</span><span class="bd bd-p">开放标准</span><span class="bd bd-b">跨平台</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>OpenAI 联合 Amazon、Cursor、Microsoft、Vercel 五大厂商推动 Agent Plugins 1.0.0 开放标准，定义了 Skill 与 MCP 服务的「可移植最低标准」——一个插件可以在多个智能体之间通用。治理章程规定任何厂商不得控制多数维护席位，确保标准中立。<br><strong>为什么重要：</strong>目前 AI 插件市场极度碎片化——你在 Codex 上装的 Skill 到 Cursor 用不了，给 ChatGPT 写的插件到 Claude 是废的。Agent Plugins 解决了这个问题：一次开发，多平台运行。对开发者来说不用再为每个平台维护一套插件；对用户来说，积累的 Skill 资产不会因为换工具而报废。<br><strong>现状：</strong>1.0.0 是首个公开版本，定义了基础的可移植规范。后续版本会逐步覆盖更多能力。</div>
+      <div class="install"><div class="il">🔗 了解更多</div><div class="cmd">关注 agentplugins.org 官方文档，查看标准详情与接入指南</div><div class="cmt">目前主流工具（Codex、Cursor、ChatGPT）已宣布逐步支持</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>如果你同时用 Codex 和 Cursor，关注它们各自的 Agent Plugins 支持进度。等首批兼容插件上线后，试试在 Codex 上安装一个 Skill 然后直接在 Cursor 里调用——这是「一次安装，到处使用」的第一次真实体验。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>场景：</strong>你是一个内容创作者，在 Codex 上装了「humanizer-zh」Skill 用于去 AI 味。以前换到 Cursor 写代码时想用同样的 Skill 润色一段注释，得重新配置一遍。</div>
+        <div class="ex-out"><strong>Agent Plugins 之后的体验：</strong>只要这个 Skill 实现了 Agent Plugins 标准，你在 Codex 上安装后，Cursor 也能自动识别并调用它。不需要二次配置，不需要两套环境，就像一个 USB-C 充电器——插哪个设备都行。</div>
+      </div>
+    </div>
+
+    <!-- Skill 2: 阿里千问开放平台 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">阿里千问开放平台深度解析——Agent 落地的「最后一公里」</div><div class="sk-subtitle">阿里巴巴 · 8月10日上线 · 从对话到履约的完整闭环</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 生态里程碑</span><span class="bd bd-p">智能体平台</span><span class="bd bd-o">本地生活</span></div>
+      <div class="sk-desc"><strong>不只是 API 接入，更是「AI 履约」的完整闭环：</strong>千问开放平台不是简单的 API 开放，而是提供了从账号体系、AI 支付、订单链路到多模态交互的全套基础设施。第三方伙伴可以基于平台创建专属 AI 智能体，以独立对话空间的形式运行在千问 APP 内。<br><strong>几个让人印象深刻的场景：</strong>① 顺丰智能体——记忆用户常用地址，一句「帮我给上海客户寄文件」即可推进寄件全流程；② 理财智能体——针对用户闲钱规划做基金筛选，对授权持仓做配置诊断，提示持仓集中、重复买入等风险；③ 租房智能体——生成个性化租房日历，自动提醒保洁、续约、换房节点。<br><strong>AI 眼镜端能力：</strong>平台还支持 AI 眼镜接入，提供 Skill 接入与行业定制两套模式，开发者甚至能用自然语言编写技能——例如面向视障人群开发环境识别 Skill，实时识别台阶、障碍物。</div>
+      <div class="install"><div class="il">🔗 使用方式</div><div class="cmd">打开千问 APP，更新至最新版本，在对话中 @ 相应服务智能体即可使用</div><div class="cmt">开发者可访问千问开放平台官网，阅读标准化协议文档，将已有 Agent 迁移至平台</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开千问 APP，找到「@顺丰」智能体，说「帮我给上海客户寄一份文件，地址是上次那个」，感受 AI 从对话到真实寄件的完整闭环。</div>
+    </div>
+
+    <!-- Skill 3: 豆包 Agent 商店 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">字节豆包 Agent 商店——企业级 Agent 的「App Store 时刻」</div><div class="sk-subtitle">字节跳动 · 8月7日上线 · 首批 1200 个企业级 Agent</div></div></div>
+      <div class="badges"><span class="bd bd-o">🔥 新品上线</span><span class="bd bd-p">企业应用</span><span class="bd bd-b">Agent 商店</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>字节豆包 Agent 商店上线，首批 1200 个企业级 Agent 覆盖销售、客服、法务、财务、HR 等 12 个职能，最低 99 元/月起。这意味着企业不需要自研 AI 团队，花几百块钱就能「买」到一个能干的 Agent。<br><strong>为什么重要：</strong>过去企业用 AI 的路径是：招 AI 工程师 → 选模型 → 调 API → 自建 Agent 应用，至少 3-6 个月。现在路径变成：打开豆包 Agent 商店 → 搜索「客服 Agent」→ 安装 → 配置业务数据 → 上线。这个「App Store 化」的趋势一旦跑通，中小企业将是最大的受益者。<br><strong>趋势：</strong>Agent 商店正在成为 AI 时代的「应用市场」，就像手机 App Store 催生了移动互联网生态一样，Agent 商店可能催生 Agent 生态。</div>
+      <div class="install"><div class="il">🔗 使用方式</div><div class="cmd">在豆包 APP 中进入 Agent 商店，按职能搜索需要的 Agent，安装后配置业务数据即可使用</div><div class="cmt">价格从 99 元/月起，不同职能的 Agent 定价不同</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>如果你是中小企业主或部门负责人，打开豆包 Agent 商店，搜索你的行业相关职能（比如「客服」「HR 助理」），看看有没有合适的 Agent，体验一下「安装即用」的流程。</div>
+    </div>
+
+    <!-- Skill 4: 客服 Agent 落地案例 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">客服 Agent 从「能回答」走向「能承担业务」——三个真实案例</div><div class="sk-subtitle">合力亿捷 Synerow · 亚马逊云科技 AgenticAI 巡展</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 落地案例</span><span class="bd bd-p">企业应用</span><span class="bd bd-o">客服Agent</span></div>
+      <div class="sk-desc"><strong>背景：</strong>8月6日，亚马逊云科技 AgenticAI 软件创新全国巡展在武汉举行。合力亿捷展示了自研 Synerow 客服智能体平台的多个生产级案例，最值得关注的是三个趋势：<br><br>
+      <strong>案例一 · 某回收服务平台：</strong>大模型客服 Agent 已能独立解决 86% 以上咨询，帮助企业在 618 等业务高峰从容应对流量冲击。<br>
+      <strong>案例二 · 某头部扫地机器人品牌：</strong>AI 语音客服进入安装预约流程，将原本依赖人工的标准服务交由 Agent 完成，18 名员工转向更高价值的售后服务岗位。<br>
+      <strong>案例三 · 跨越国界：</strong>Synerow 具备覆盖 193 个国家和地区的海外通信资源，支持多语言服务及 WhatsApp、LINE、Messenger 等海外触点，帮助企业将已有知识、流程和业务能力转化为可跨语言、跨区域运行的客服 Agent。<br><br>
+      <strong>关键变化：</strong>企业关注 Agent 的重点正在从「回答是否自然」转向「Agent 能否真正进入业务场景，稳定承担服务任务，并形成可衡量的业务价值」。客服 Agent 不再只是「能回答问题」，而是「能承担一段真实的服务工作」。</div>
+      <div class="try"><strong>🎯 今天就能试：</strong>如果你负责客服或运营，思考一下：你们团队最重复的服务工单是什么？比如「查物流」「改地址」「退换货流程」——这些就是最容易被 Agent 替代的环节。找出前 3 个高频工单类型，就是 Agent 落地的第一步。</div>
+    </div>
+
+    <!-- 串联工作流 -->
+    <div class="pipe">
+      <span class="pa">🔗 本周 Agent 生态链条</span>
+      <span class="ps ps-1">① 标准统一</span><span class="pa">→</span>
+      <span class="ps ps-2">② 平台开放</span><span class="pa">→</span>
+      <span class="ps ps-3">③ 商店上线</span><span class="pa">→</span>
+      <span class="ps ps-4">④ 场景落地</span>
+    </div>
+  </div>
+
+  <!-- 🆕 更多动态 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>更多动态速览</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">💰 阿里拟对 Qwen 大型商业用户收收入分成——「开源 + 商业分成」模式成型</div></div>
+      <div class="tb">路透报道阿里计划在下一代 Qwen 开源模型中对大型商业用户引入收入分成（比例讨论中）。Kimi K3 已先行：年营收超 2000 万美元的转售方需签约，分成最高 30%。对普通开发者和中小团队来说，仍可低成本使用开源模型——受影响的主要是大规模转售方。这意味着「开源 + 商业分成」正在成为 AI 行业的新商业模式。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🔍 字节 SeedRealtime 音视频全双工模型已在豆包全量上线</div></div>
+      <div class="tb">字节跳动发布的 SeedRealtime 用统一架构原生融合音频、视频与文本，能在连续的多模态信息流上实时交互，带来「边看、边听、边说」的全新体验。相比级联模型，音视频对话节奏问题减少了一半。目前已在豆包 App 全量上线，更新至最新版本即可体验。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📝 腾讯混元 Hy ASR 3.0 preview 发布——更准确的语音识别</div></div>
+      <div class="tb">腾讯混元发布新一代语音识别模型 Hy ASR 3.0 preview，基于最新 Hy3 大语言模型的语言理解能力，能在更复杂的真实输入中给出准确、连贯的转写结果。已上线腾讯云官网对外提供 API 服务，元宝已完成首发上线且免费开放。</div>
+    </div>
+
+    <div class="hl">💡 <strong>给内容创作者 / 中小企业的建议：</strong>Agent 生态的基础设施正在快速成型——标准统一了（Agent Plugins）、平台开放了（千问）、商店上线了（豆包）、落地案例跑通了（客服 Agent）。未来 3 个月最好的策略是：先把手头最重复的 3 个工作流用 Agent 替换掉，别等生态成熟再上车。</div>
+  </div>
+
+  <!-- 📙 WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🔄 WorkBuddy 的自动化任务：让 AI 每天帮你干活</div></div>
+      <div class="tb">WorkBuddy 支持设置自动化任务，按每日/每周/每月的节奏自动执行你预设的指令。比如：每天早上自动生成一份 AI 日报、每周一自动整理上周工作纪要、每月初自动生成一份项目进度报告。设置方式：在 WorkBuddy 中打开自动化面板，创建新任务，写好指令和频率即可。这是 Agent 生态在个人工具层面的对应——让 AI 帮你把「每天都要做的事」变成自动化流水线。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 用「追加约束」代替「重新生成」——节省积分和时间</div></div>
+      <div class="tb">每次对 WorkBuddy 的输出不满意时，不要直接说「重写」——这样它会从零开始，之前的上下文白费了。更好的做法是追加具体约束：「太长了，缩到 500 字」「语气太正式，像微信聊天那样」「第三段逻辑不通，从 XX 角度重新论证」。每次追加一个约束，它会在保留其他部分的基础上精准调整，比反复推翻重来效率高得多，也省积分。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 Agent 生态的基础设施已经铺好了。接下来不是「要不要用 Agent」的问题，而是「用 Agent 做什么」的问题。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-10</span>
+  </div>
+</div>
+</body>
+</html>

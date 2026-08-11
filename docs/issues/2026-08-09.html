@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-09</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-09 · 星期日</div>
+    <h1>中国开源大模型集体爆发：这一周，世界在看东方</h1>
+    <div class="art-sub">Qwen3.8 首次开源旗舰 · MiniMax H3 三天登顶 · DeepSeek-V4-Flash 登顶调用榜 · 阿里千问开放平台</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>这周是「中国开源大模型周」。阿里把 2.4 万亿参数的旗舰 Qwen3.8-Max 首次开源，MiniMax 的视频模型 H3 上线三天冲上 Hugging Face 榜首，DeepSeek-V4-Flash 以 8.83 万亿 Token 登顶全球调用榜，AMD 也开源了 16B 的 MoE 模型。更值得关注的是，阿里千问开放平台把租房、寄快递、理财这些现实服务装进了 AI 对话——大模型竞争正式从「模型能力」转向「生态落地」。这篇帮你把本周最重要的 4 件事串起来看懂。</div>
+
+  <!-- 📘 本周头条 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>本周四大头条</span></div>
+
+    <!-- 头条1: Qwen3.8-Max 开源 -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">Qwen3.8-Max 首次开源——2.4万亿参数旗舰，一句话从空文件夹交付项目</div><div class="sk-subtitle">阿里巴巴 · 8月3日发布 · 千问系列迄今最大最强</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 本周最重要</span><span class="bd bd-p">开源模型</span><span class="bd bd-b">自主编程</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>阿里发布新一代基座大模型 Qwen3.8，总参数 2.4 万亿，其中旗舰 Qwen3.8-Max 采用稀疏 MoE 架构，单次激活约 950 亿参数，支持最长 100 万 Token 上下文，原生集成多模态视觉理解。最大看点：<strong>Qwen3.8-Max 权重首次对全球开源</strong>——这是千问 Max 级别旗舰模型第一次开放。同时实现自主编程新突破：程序员一句话指令，模型可从空文件夹独立完成真实项目交付。<br><strong>为什么重要：</strong>过去开源的都是中端模型，旗舰模型首次开源意味着中小团队也能用上顶级模型能力自建系统，不必受制于闭源 API 的定价和限流。</div>
+      <div class="install"><div class="il">🔗 使用方式</div><div class="cmd">即日起全球开发者可通过千问 AI 平台获取 API 服务；模型权重将于下周正式开源</div><div class="cmt">关注 Qwen 官方仓库，权重放出后即可本地部署或用 Ollama 等工具加载</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>去千问 AI 平台（chat.qwen.ai）体验 Qwen3.8-Max 的自主编程能力——给它一个「从零做一个带登录、数据库、部署配置的待办事项 Web 应用」的指令，看它是否真的能独立从空文件夹交付。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「从空文件夹开始，帮我搭建一个完整的个人博客网站：前端用 React + Tailwind，后端用 FastAPI + SQLite，包含文章列表、详情页、标签、评论功能，并写好 Dockerfile 和部署说明。一步都不要省略，直接开始。」</div>
+        <div class="ex-out"><strong>成果：</strong>模型自动完成项目初始化、依赖安装、前后端代码编写、数据库建表、容器化配置，最终交付一个可本地运行并部署的完整博客项目。全程无需人工逐步下达指令。</div>
+      </div>
+    </div>
+
+    <!-- 头条2: MiniMax H3 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">MiniMax H3 开源视频模型——上线三天登顶 Hugging Face 榜首</div><div class="sk-subtitle">MiniMax · 8月7日开源 · 超百家企业 Day 0 接入</div></div></div>
+      <div class="badges"><span class="bd bd-o">🔥 三天登顶</span><span class="bd bd-b">视频生成</span><span class="bd bd-p">开源模型</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>MiniMax 开源的 H3 视频生成模型，上线三天冲上全球最大开源平台 Hugging Face 热度榜首，超百家企业实现 Day 0 接入，连 Stable Diffusion 创始人都公开致敬。<br><strong>为什么重要：</strong>视频生成模型开源是今年的风向标。H3 三天登顶说明：① 开源视频模型的质量已经追平甚至反超闭源；② 中国团队的模型在国际开源社区影响力持续上升；③ 对内容创作者意味着高质量视频生成正在变成「免费、可本地部署」的能力。</div>
+      <div class="install"><div class="il">🔗 获取方式</div><div class="cmd">在 Hugging Face 搜索 MiniMax H3，获取模型权重与推理示例</div><div class="cmt">可配合本地推理框架部署，或通过 MiniMax 官方 API 直接调用</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>如果你的机器有足够显存，下载 H3 权重本地生成一段视频；没有的话用 MiniMax 官方 API 试一条「一只猫在夕阳下的海边慢跑」的 5 秒视频，感受开源模型的生成质量。</div>
+    </div>
+
+    <!-- 头条3: 阿里千问开放平台 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">阿里千问开放平台——把租房、寄快递、理财装进 AI 对话框</div><div class="sk-subtitle">阿里巴巴 · 8月10日上线 · 大模型从问答到履约的闭环</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 生态里程碑</span><span class="bd bd-p">智能体平台</span><span class="bd bd-o">本地生活</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>阿里千问开放平台正式上线，面向开发者开放手机、PC、AI 眼镜三大终端接入能力，把租房、寄快递、租车、理财等现实服务搬进 AI 对话。首批入驻生态横跨物流、房产、汽车、本地生活、理财等十余个赛道，顺丰、闪送、自如、哈啰租车、天鹅到家、盈米基金等第三方伙伴全部完成接入。<br><strong>怎么用：</strong>用户只需在千问 APP 里 @对应服务，或点击右上角圆点角标唤起智能体，就能直接发起需求。比如顺丰智能体会记忆你的常用地址，一句「帮我给上海客户寄文件」就能推进寄件全流程。<br><strong>为什么重要：</strong>AI 跳出纯文本对话，直接对接现实服务——这是大模型从「回答问题」走向「完成任务」的关键一步，也标志着竞争焦点从模型能力转向生态与落地场景。</div>
+      <div class="install"><div class="il">🔗 使用方式</div><div class="cmd">打开千问 APP，更新至最新版本，在对话中 @ 相应服务或点击右上角圆点角标唤起智能体</div><div class="cmt">开发者可通过标准化协议把已有 Agent 迁移至千问平台，平台配套账号体系、AI 支付、订单链路</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>打开千问 APP，试着对顺丰智能体说「帮我给上海的张先生寄一份文件，用我最常用的地址」，体验从对话到真实寄件的完整流程。</div>
+    </div>
+
+    <!-- 头条4: DeepSeek-V4-Flash 登顶 -->
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">DeepSeek-V4-Flash 登顶全球调用榜——8.83万亿 Token 周调用量</div><div class="sk-subtitle">DeepSeek · 8月10日数据 · 中国大模型连续十五周居首</div></div></div>
+      <div class="badges"><span class="bd bd-b">🚀 登顶</span><span class="bd bd-p">通用模型</span><span class="bd bd-g">生态</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>OpenRouter 数据显示，8月3日至9日 DeepSeek-V4-Flash 正式版以 8.83 万亿 Token 周调用量登顶，环比大增 570%。中国大模型周调用量连续十五周超美国居全球首位。<br><strong>为什么重要：</strong>这不是单个模型的胜利，而是整个中国开源生态的集体胜利。V4-Flash 的高性价比让它成为全球开发者的默认选择，570% 的环比增长说明正在快速渗透。<br><strong>对普通用户：</strong>如果你在 WorkBuddy 等工具里用自定义模型，DeepSeek-V4-Flash 依然是最值得考虑的「便宜大碗」选项——日常写作、润色、代码生成都能胜任，成本远低于闭源旗舰。</div>
+      <div class="install"><div class="il">🔗 使用方式</div><div class="cmd">在各类支持自定义模型的工具（如 Codex、WorkBuddy）中配置 DeepSeek-V4-Flash 的 API</div><div class="cmt">通过 OpenRouter 或 DeepSeek 官方 API 接入均可</div></div>
+    </div>
+
+    <!-- 串联工作流 -->
+    <div class="pipe">
+      <span class="pa">🔗 本周四件事怎么串起来看</span>
+      <span class="ps ps-1">① Qwen 开源旗舰</span><span class="pa">→</span>
+      <span class="ps ps-2">② MiniMax 开源视频</span><span class="pa">→</span>
+      <span class="ps ps-3">④ V4-Flash 登顶</span><span class="pa">→</span>
+      <span class="ps ps-4">③ 千问开放平台</span>
+    </div>
+  </div>
+
+  <!-- 🆕 更多本周动态 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>更多本周动态速览</span></div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🚀 智源发布 AREX 自主研究智能体，权重开放下载</div></div>
+      <div class="tb">智源研究院发布 AREX，以 10B 激活参数在 BrowseComp 等六项基准达到自主研究前沿水平，模型权重已开放下载。它提出「求解—验证」双循环机制，驱动智能体持续自我进化——对需要长时间自主研究的场景（如文献综述、竞品调研）很有参考价值。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">🔌 AMD 开源 16B MoE 模型 Instella-MoE——降低中小企业自训门槛</div></div>
+      <div class="tb">AMD 发布 Instella-MoE-16B-A3B，完全开源混合专家模型，激活参数仅 28 亿，并提供从训练到推理的完整代码。这降低了中小企业自训大模型的门槛，也让硬件厂商在 AI 生态的参与度进一步提升。</div>
+    </div>
+
+    <div class="tip t-b">
+      <div class="th"><div class="tt">📝 字节豆包 Agent 商店上线——首批 1200 个企业级 Agent</div></div>
+      <div class="tb">字节豆包 Agent 商店上线，首批 1200 个企业级 Agent 覆盖销售、客服、法务、财务、HR 等 12 个职能，最低 99 元/月起。这意味着企业级 Agent 正在变成「即买即用」的标准化商品，中小企业无需自研也能快速接入。</div>
+    </div>
+
+    <div class="hl">💡 <strong>一句话总结本周：</strong>模型能力已经「卷」到天花板，接下来拼的是谁能把 AI 真正接进你的生活和工作。Qwen 开源旗舰、千问开放平台、豆包 Agent 商店——巨头们都在抢「AI 落地」这张船票。</div>
+  </div>
+
+  <!-- 📙 WorkBuddy -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">🧠 用自定义模型省钱：DeepSeek-V4-Flash 当日常主力</div></div>
+      <div class="tb">结合本周 DeepSeek-V4-Flash 登顶调用榜这件事，给你一个实操建议：在 WorkBuddy 里把日常任务（写作、润色、选题讨论、简单问答）切到 DeepSeek-V4-Flash 这类高性价比模型，只有复杂的大任务（长文档分析、复杂代码）才用旗舰模型。具体的配置方法：进入设置 → 自定义模型，填入 DeepSeek 的 API 地址和 Key，日常任务手动切换即可。这能让你的积分/API 消耗大幅下降。</div>
+    </div>
+
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 让 WorkBuddy 记得你的偏好：用好记忆系统</div></div>
+      <div class="tb">WorkBuddy 的记忆分三层：用户级记忆（跨项目全局生效）、工作区 MEMORY.md（当前项目长期规则）、每日日志（自动记录做了什么）。如果你希望它「以后都这样」的习惯（比如文章风格、代码规范、回复语气），明确告诉它「记住这个偏好」，它会写入用户级记忆，之后所有项目都遵守。这是本周开源生态「沉淀规则」思路在个人工具上的对应——把规则写下来，一次生效，永久复用。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 这一周，中国开源的力量让世界看到了另一种可能。工具会换，但「把能力握在自己手里」的思路永远值得。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-09</span>
+  </div>
+</div>
+</body>
+</html>
