@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-12</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-12 · 星期三</div>
+    <h1>零排版、零设计、零手动：4个新Skill把知识工作「全自动化」</h1>
+    <div class="art-sub">公众号排版 · 深度阅读 · 小红书图文 · 知识小册</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>写完文章最烦什么？不是写，是排版。读完书最烦什么？读完就忘。上小红书最烦什么？图不好看没人点。这期4个Skill，分别解决这四个「知识工作者的最后一步」——从排版到阅读到分发到出书，一条链打通。全部0代码，今天就能试。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">gzh-design-skill · 公众号排版引擎</div><div class="sk-subtitle">isjiamu · 6套主题+主题生成器+双校验，Markdown一键变公众号HTML</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 1.7K</span><span class="bd bd-p">视觉设计</span><span class="bd bd-b">公众号排版</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个专为公众号排版设计的AI Skill。你只管写Markdown，它按你选的主题生成<strong>样式全内联</strong>的HTML——粘贴到公众号编辑器后格式不丢、样式不掉。自动编章节号、标关键词下划线、配引言卡与目录、处理代码块和图片、合并作者签名。<br><strong>最适合：</strong>公众号号主、教程作者、深度长文创作者——每次写完文章还在手动调字号行距配色的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx skills add https://github.com/isjiamu/gzh-design-skill --agent codex --global</div><div class="cmt">或者对Codex说：「请帮我查找并自动安装 https://github.com/isjiamu/gzh-design-skill」</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你写过的Markdown文章，对Codex说「用摸鱼绿主题把这篇markdown排成公众号HTML」，1分钟拿到可直接粘贴的成品。6套主题可选：摸鱼绿（教程测评）、红白（深度分析）、石墨极简（科技评论）、留白禅意（随笔）、摸鱼票据（对比评测）、橄榄手记（案例复盘）。不够用？一句话描述你想要的颜色风格，AI当场生成一套新主题。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>对Codex说「用摸鱼绿把这篇文章排成公众号HTML。自动标3个关键词下划线，加引言卡和文末互动模块。」</div>
+        <div class="ex-out"><strong>成果：</strong>一份格式完整的公众号HTML——章节编号自动生成、关键词自动标下划线、引言卡从正文提炼、目录自动生成、多级标题层级正确。复制粘贴进公众号后台，零格式丢失。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">deep-reading-coach · 深度阅读教练</div><div class="sk-subtitle">FanPUYen · 检视阅读→分析阅读→主题阅读，像有个教练陪你读书</div></div></div>
+      <div class="badges"><span class="bd bd-p">阅读总结</span><span class="bd bd-g">结构化笔记</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个帮你深度读书的Codex Skill。不是简单的「总结器」，更像一个阅读教练——先帮你判断资料怎么读，再帮你拆结构、抓概念、看论证，最后把阅读结果和你的目标联系起来。支持快速判断一本书值不值得读、制定阅读路线、生成结构化读书笔记、比较同一主题的多本书。<br><strong>最适合：</strong>读书多但读完就忘的人、需要做主题研究的知识工作者、想真正「消化」一本书而不是「浏览」一本书的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/FanPUYen/deep-reading-coach.git ~/.codex/skills/deep-reading-coach</div><div class="cmt">安装后重启Codex，在对话中输入「$deep-reading-coach」或直接说「帮我读这本书」即可触发</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一本你一直想读但还没翻开的PDF或电子书，对Codex说「帮我看看这本书，先告诉我值不值得花时间读」。它会先做检视阅读——判断这本书讲什么、结构怎么样、核心观点是什么——然后告诉你是否值得深入。如果值得，继续让它拆结构做分析阅读。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「使用deep-reading-coach帮我深度阅读《思考，快与慢》PDF。先做检视阅读，然后帮我拆解第1-3章的核心概念和论证结构。」</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化阅读笔记——包含：① 检视阅读（值不值得读+阅读建议）② 核心概念拆解（每个概念的原文出处+通俗解释）③ 论证结构（作者怎么证明的+逻辑链）④ 你个人关心的问题和本书的关联。不再是读完就忘的摘要。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">redya-skills · 小红书图文一键生成</div><div class="sk-subtitle">rnthking · 选题→标题→正文→配图提示词→批量生图，一句话出整套小红书</div></div></div>
+      <div class="badges"><span class="bd bd-o">社交分发</span><span class="bd bd-r">需要API Key</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>红鸦AI提供的专业小红书图文Skill。输入一个主题，Agent自动生成标题、正文、每张图的图片提示词，并继续批量生成整套图片。支持普通图文、知识型图文和商品带货图文。和guizang-social-card的区别：guizang是把长文拆成卡片，redya是从零生成原创小红书内容+图片。<br><strong>最适合：</strong>要做小红书但每次都在标题、正文、配图之间来回切工具的人。尤其是知识型博主——写教程、方法论、行业分析类内容。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/rnthking/redya-skills.git ~/.codex/skills/redya-skills</div><div class="cmt">需要先在 https://hy.ithinkai.cn 获取API Key，设环境变量 REDYA_API_KEY 和 REDYA_BASE_URL。Agent终端和网页端共用账号与积分。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>想一个你熟悉的领域话题，对Codex说「用红鸦AI帮我写一篇关于高效笔记法的小红书图文，先看大纲」。Agent先给你标题+正文大纲+每页配图构思，你确认后再批量出图。另一种方式：直接把一篇公众号文章给它，让它拆成小红书图文分发。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用红鸦AI帮我把这篇《AI时代的笔记方法》公众号文章转成小红书知识图文，6页，先给我看标题和每页大纲。」</div>
+        <div class="ex-out"><strong>成果：</strong>一套6页小红书图文——含抓眼球的标题+破冰文案+每页分点知识卡片+引导互动结尾。每页有配图提示词，Agent继续批量生成实际图片。从长文到可发小红书，15分钟以内。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">snake-digest-codex · 知识小册生成器</div><div class="sk-subtitle">XxSnake · 主题研究→科普长文→Image2配图→精美PDF，全闭环自动化</div></div></div>
+      <div class="badges"><span class="bd bd-b">报告生成</span><span class="bd bd-g">PDF输出</span><span class="bd bd-o">Image2配图</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>在Codex环境内完成从主题研究到图文PDF一体化交付的Skill。自动联网调研→撰写科普长文→规划插图→逐张用Codex原生Image2生成并落盘→合成精美PDF。视觉上遵循低饱和、暖黄旧纸感的小册子风格，产出一份可分享的精美图文小册子。<br><strong>最适合：</strong>想把一个复杂概念说清楚讲透的知识创作者、培训讲师、行业分析师。一次执行，拿到article.md+sources.md+图片文件夹+HTML+PDF全部交付物。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/xxsnake/snake-skills.git ~/.codex/skills/snake-skills</div><div class="cmt">需要Codex原生Image2能力才能生成配图。安装后对Codex说「snake-digest 主题名称」即可触发。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>选一个你一直想搞懂但没时间深入研究的话题——「帮我用snake-digest做一个关于RAG（检索增强生成）的知识小册子」。Agent自动联网研究→写科普长文→规划插图→Image2生成配图→输出可分享的PDF。30分钟内从零到成品。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「snake-digest RAG（检索增强生成）的工作原理和应用场景」</div>
+        <div class="ex-out"><strong>成果：</strong>outputs/RAG/ 文件夹下——article.md（完整科普长文）+ sources.md（全部资料来源）+ image_plan.json（插图规划）+ images/（封面+多张配图PNG）+ RAG.html + RAG.pdf。一份可以直接分享给同事或发布的知识小册子。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">🔧 全部 0 行代码</span>
+      <span class="pa">→</span>
+      <span class="ps ps-2">排版交给gzh-design</span>
+      <span class="pa">→</span>
+      <span class="ps ps-3">阅读交给deep-reading-coach</span>
+      <span class="pa">→</span>
+      <span class="ps ps-4">小红书交给redya</span>
+      <span class="pa">→</span>
+      <span class="ps ps-5">出书交给snake-digest</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="hl"><strong>🔥 Codex CLI 0.147.0 重磅发布（8月7日）</strong><br>三大升级：① <strong>Agent Plugins</strong>——本地/个人/工作区/远程四层插件目录，跨项目共享插件组合，一键安装卸载；② <strong>--approve-for-me</strong>——非破坏性操作自动审批，终结「确认疲劳」；③ <strong>导入Cursor Skills和Claude配置</strong>——竞品技能资产一键迁移。配套还有对话Sections分组管理和长Transcript增量加载。</div>
+    <div class="tip t-b">
+      <div class="th"><div class="tt">⚡ 技巧：AGENTS.md——Codex的永久写作说明书</div></div>
+      <div class="tb">在项目根目录创建AGENTS.md文件，写入你的写作风格、禁用词、读者画像、排版偏好。Codex每次启动自动读取，不需要每个对话都复制800字风格prompt。OpenAI官方数据：超6万个非Fork开源项目已在使用。关键原则：<strong>写短、写真、写可验证。</strong>「每段不超过3句」比「文风简洁」有效得多。当Codex连续犯两次同样的错误时，就是你更新AGENTS.md的最佳时机。</div>
+    </div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 每个Notebook现在自带一台云电脑</div></div>
+      <div class="tb">NotebookLM 7月16日正式更名Gemini Notebook，核心理念不变。但最大变化是：<strong>每个笔记本背后都有一台安全的云端电脑</strong>——预装100+软件技能，能写代码、跑分析、画图表，不再只是「读你给的资料」。对知识工作者最实用的三个变化：① 可生成Slide Decks并导出PPTX（从此资料→PPT一条龙）；② Data Tables自动横向对比多份资料；③ 从空白聊天启动研究——说一个模糊想法，它主动搜Google找来源、建知识库。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 Short Video Overviews 全量开放</div></div>
+      <div class="tb">60秒竖屏短视频自动生成，把整个Notebook的内容浓缩成适合手机刷的知识短片。做知识科普、培训材料、内容分发的利器。说「帮我生成Short Video Overview」即可。三种风格可选：叙事型、问答型、教程型。</div>
+    </div>
+    <div class="tip t-g">
+      <div class="th"><div class="tt">🧪 「Explain > Summarize」原则</div></div>
+      <div class="tb">给NotebookLM下指令时，说「解释这个概念」比「总结这个文档」效果好几倍。总结只是压缩文字，解释需要理解因果+类比+举例。对于复杂资料，先用「Explain」拆解核心概念，再用「Summarize」收尾。</div>
+    </div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 「追加约束」比「重写」高效10倍</div></div>
+      <div class="tb">不满意WorkBuddy的输出？别让它重写。直接追加约束：「把这段缩短到100字」「把语气改成更正式」「把第二段的分析数据换成具体数字」。追加约束让AI在已有框架上精准调整，重写往往扔掉好的部分、生成新的问题。口诀：<strong>不满意先加约束别重写，加了3次还不满意再考虑重写。</strong></div>
+    </div>
+    <div class="tip t-p">
+      <div class="th"><div class="tt">⚡ 三种模式口诀：简单活Craft / 复杂活Plan / 重复活Automate</div></div>
+      <div class="tb">Craft模式说干就干——排版一篇文章、改一段文案；Plan模式先出方案让你确认——写报告框架、做PPT大纲；Automation模式把每天重复的事定时自动跑——每天早上生成AI资讯日报、每周五汇总工作周报。记住这个口诀，模式选对，效率翻倍。</div>
+    </div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 四件套串联：从想法到可分发内容，30分钟闭环</div>
+      <div class="sh-sub">用今天介绍的4个Skill，完成一条「想法→研究→排版→分发」的完整链路</div>
+      <div class="sh-box">
+        <strong>场景：</strong>你有一个想写的选题——「大语言模型的工作原理」，目标产出：一份深度阅读笔记（个人用）+ 一篇公众号文章（对外发）+ 一套小红书图文（社交分发）。<br><br>
+        <strong>第1步：</strong>用 <strong>deep-reading-coach</strong> 读3篇关于LLM的论文/文章，生成结构化阅读笔记和核心概念拆解。（10分钟）<br>
+        <strong>第2步：</strong>基于阅读笔记，让Codex写成一篇Markdown长文。用 <strong>gzh-design</strong> 的「石墨极简」主题一键排成公众号HTML。（5分钟）<br>
+        <strong>第3步：</strong>同一篇Markdown发给 <strong>redya-skills</strong>，让它拆成6页小红书知识图文——标题+正文+配图全部生成。（10分钟）<br>
+        <strong>第4步（可选）：</strong>用 <strong>snake-digest</strong> 把整个研究过程封装成一份精美PDF小册子，分享给同事或保存归档。（5分钟）<br><br>
+        <strong>总耗时：30分钟。传统流程：研究1小时+写作2小时+排版1小时+做图1小时=5小时。效率提升：10倍。</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 把排版、配图、分发交给AI，你只管思考和创造</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-12</span>
+  </div>
+</div>
+</body>
+</html>
