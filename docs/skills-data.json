@@ -33,7 +33,8 @@
         "self-media-content-workflow",
         "nature-skills",
         "canghe-skills",
-        "agents-md-creator"
+        "agents-md-creator",
+        "wechat-article-pipeline-skill"
       ]
     },
     {
@@ -63,7 +64,8 @@
         "huashu-design",
         "visual-explainer",
         "wechat-article-layout",
-        "canghe-skills"
+        "canghe-skills",
+        "cc2image"
       ]
     },
     {
@@ -88,7 +90,8 @@
         "image-to-editable-ppt",
         "ultimate-ppt-master",
         "nature-skills",
-        "gorden-super-ppt"
+        "gorden-super-ppt",
+        "slide-maker"
       ]
     },
     {
@@ -151,7 +154,8 @@
         "self-media-content-workflow",
         "nature-skills",
         "agent-xiaohongshu-workbench",
-        "redfox-community"
+        "redfox-community",
+        "marketing-skills"
       ]
     },
     {
@@ -170,7 +174,8 @@
         "meeting-insights-analyzer",
         "spreadsheet-formula-helper",
         "knowledge-site-creator",
-        "invoice-organizer"
+        "invoice-organizer",
+        "audio-tldr-skill"
       ]
     }
   ],
@@ -181,9 +186,18 @@
       "subtitle": "一句话出PPT/原型/动画/信息图，20种设计哲学+5维度评审，MIT开源免费商用",
       "desc": "把设计能力装进Codex。内置20种设计哲学（瑞士现代、纸墨风格、暗色植物等），先生成3个风格预览让你挑，再按选择产出交付物。覆盖6类输出：交互原型、HTML幻灯片+可编辑PPTX、时间轴动画MP4、信息图、设计方向顾问、5维度专家评审。跨Agent通用，全部MIT开源。",
       "stars": "13.5K",
-      "tags": ["视觉设计", "PPT生成", "HTML原生", "20种设计哲学", "MIT开源", "跨Agent"],
+      "tags": [
+        "视觉设计",
+        "PPT生成",
+        "HTML原生",
+        "20种设计哲学",
+        "MIT开源",
+        "跨Agent"
+      ],
       "install": "npx skills add alchaincyf/huashu-design",
-      "issues": ["2026-07-21"],
+      "issues": [
+        "2026-07-21"
+      ],
       "result": "一句话→可选3个风格预览→挑一个→出完整幻灯片+可编辑PPTX。15分钟搞完以前2小时的排版。"
     },
     "frontend-slides": {
@@ -192,9 +206,18 @@
       "subtitle": "零依赖HTML幻灯片，三预览选风格，12套视觉预设，19.6K星48小时破万",
       "desc": "HTML幻灯片赛道Star最高项目。核心理念「show, don't tell」——不让你用文字描述审美，直接生成3个视觉预览让你看。12套风格（暗色信号、电子工作室、终端绿等），零依赖单文件HTML，10年后照样能打开。支持PPTX转换和PDF导出。",
       "stars": "19.6K",
-      "tags": ["HTML幻灯片", "12套风格", "零依赖", "PPT转换", "PDF导出", "MIT开源"],
+      "tags": [
+        "HTML幻灯片",
+        "12套风格",
+        "零依赖",
+        "PPT转换",
+        "PDF导出",
+        "MIT开源"
+      ],
       "install": "git clone https://github.com/zarazhangrui/frontend-slides.git ~/.codex/skills/frontend-slides",
-      "issues": ["2026-07-21"],
+      "issues": [
+        "2026-07-21"
+      ],
       "result": "一句话→3个视觉预览→选一个→单文件HTML幻灯片。丢个链接就能在手机上演示。"
     },
     "visual-explainer": {
@@ -203,9 +226,18 @@
       "subtitle": "把任何复杂内容变成精美HTML可视化页面+幻灯片，8个命令+自动触发",
       "desc": "让Codex'会说人话更会画图'的Skill。生成精美HTML页面——含Mermaid流程图、Chart.js图表、CSS网格布局。8个命令覆盖网页图表、可视化计划、幻灯片、代码审查对比、项目回顾、事实核查。还能自动检测终端输出中的表格转HTML渲染。",
       "stars": "9.2K",
-      "tags": ["可视化", "HTML页面", "Mermaid", "幻灯片", "自动渲染", "MIT开源"],
+      "tags": [
+        "可视化",
+        "HTML页面",
+        "Mermaid",
+        "幻灯片",
+        "自动渲染",
+        "MIT开源"
+      ],
       "install": "git clone --depth 1 https://github.com/nicobailon/visual-explainer.git /tmp/ve && cp -R /tmp/ve/plugins/visual-explainer ~/.codex/skills/visual-explainer",
-      "issues": ["2026-07-21"],
+      "issues": [
+        "2026-07-21"
+      ],
       "result": "一个复杂概念→一张精美交互式HTML流程图/对比表/幻灯片。不用学Mermaid不用调CSS。"
     },
     "ai-market-radar": {
@@ -214,9 +246,18 @@
       "subtitle": "自动采集+核验+去重+排序全网AI热点，自带选题建议和可信度评级",
       "desc": "专为内容创作者设计的AI情报雷达。每条信息带来源链接、发布时间、可信度评级、影响判断和不确定性说明。覆盖AI/科技/芯片/软件/政策/融资并购主题，优先一手来源，自带去重打分脚本，输出结构化中文简报+JSON数据。",
       "stars": "新发布",
-      "tags": ["情报采集", "选题雷达", "AI日报", "来源核验", "公众号选题", "新发布"],
+      "tags": [
+        "情报采集",
+        "选题雷达",
+        "AI日报",
+        "来源核验",
+        "公众号选题",
+        "新发布"
+      ],
       "install": "git clone https://github.com/AustinElite/ai-market-radar.git && cp -R ai-market-radar ~/.codex/skills/",
-      "issues": ["2026-07-21"],
+      "issues": [
+        "2026-07-21"
+      ],
       "result": "一句话→过去24小时AI热点简报：Top10选题+事实依据+爆点+写作角度+风险提示，每条带来源链接。5分钟出选题地图。"
     },
     "sunzi-reading": {
@@ -225,9 +266,17 @@
       "subtitle": "把复杂论文讲成短、准、有人味的解释，像长辈给小孙子讲论文",
       "desc": "不是简单的论文摘要。像一个有学问、有耐心、还会哄人的长辈，把复杂论文拆成短、准、有人味的解释。会固定检查作者证明了什么/没证明什么，提醒哪里容易误读。提供Prompt和Skill两种用法，Prompt零安装即用。",
       "stars": "新发布",
-      "tags": ["论文阅读", "说人话", "中文输出", "知识普及", "Prompt即用"],
+      "tags": [
+        "论文阅读",
+        "说人话",
+        "中文输出",
+        "知识普及",
+        "Prompt即用"
+      ],
       "install": "git clone https://github.com/julilaoshi/sunzi-reading.git ~/.codex/skills/sunzi-reading",
-      "issues": ["2026-07-20"],
+      "issues": [
+        "2026-07-20"
+      ],
       "result": "一篇看不懂的论文 → 像听长辈讲故事一样理解了核心观点、创新点和局限性。"
     },
     "transcript-polisher": {
@@ -236,9 +285,17 @@
       "subtitle": "语音转录→高可读性文章：去口语词+同音纠错+意群分段，保留原词拒绝概括",
       "desc": "把访谈、演讲、播客、会议的语音转录文本精修为可读性高的文章段落。精准降噪（删口水词）+同音纠错（专有名词修正）+意群分段（按逻辑重组）。自动识别单人/多人模式，5000字以上自动分块并行处理。",
       "stars": "561+",
-      "tags": ["语音处理", "文本精修", "会议整理", "访谈转化", "播客文章"],
+      "tags": [
+        "语音处理",
+        "文本精修",
+        "会议整理",
+        "访谈转化",
+        "播客文章"
+      ],
       "install": "npx skills add rookie-ricardo/erduo-skills --skill transcript-polisher --agent codex --global",
-      "issues": ["2026-07-20"],
+      "issues": [
+        "2026-07-20"
+      ],
       "result": "1小时播客字幕 → 3分钟可读完的精修文章。口语词全剔除，关键观点和幽默感保留完整。"
     },
     "mindmap-ppt-builder": {
@@ -247,9 +304,17 @@
       "subtitle": "文章/报告/笔记→可播放思维导图PPT：支持翻页+缩放+节点插画",
       "desc": "把文章、报告、演讲稿、笔记交给Agent，自动拆结构→写导图内容→配图→生成可播放的思维导图演示。方向键翻页、滑动调画布、点击节点跳转。部署到GitHub Pages即在线演示。",
       "stars": "LobeHub 133+",
-      "tags": ["思维导图", "演示PPT", "内容可视化", "可部署", "静态网页"],
+      "tags": [
+        "思维导图",
+        "演示PPT",
+        "内容可视化",
+        "可部署",
+        "静态网页"
+      ],
       "install": "npx skills add hy546880109/mindmap-ppt --skill mindmap-ppt-builder --agent codex --global",
-      "issues": ["2026-07-20"],
+      "issues": [
+        "2026-07-20"
+      ],
       "result": "一篇长文章 → 一个可在线播放的思维导图演示。分享链接就能看，手机上也能翻页。"
     },
     "ai-news-digest": {
@@ -258,21 +323,36 @@
       "subtitle": "30+中英文信源→5道质量审核→结构化日报+CSV，一句触发",
       "desc": "面向知识工作者的AI日报Skill。自动搜索30+中英文信源+追踪25位海外AI Builder动态，经5道质量审核门把关（信源去重→可信度评估→信号等级标注→事实核验→关联分析），输出结构化Markdown日报+CSV数据表。",
       "stars": "新发布",
-      "tags": ["信息聚合", "AI日报", "选题追踪", "CSV导出", "5道审核"],
+      "tags": [
+        "信息聚合",
+        "AI日报",
+        "选题追踪",
+        "CSV导出",
+        "5道审核"
+      ],
       "install": "git clone https://github.com/chengjialu8888/AI_News_Digest.git ~/.codex/skills/ai-news-digest",
-      "issues": ["2026-07-20"],
+      "issues": [
+        "2026-07-20"
+      ],
       "result": "一句话「跑今天的AI日报」→结构化日报（大厂动向/初创融资/海外Builder）+CSV数据表。"
     },
-
     "qiaomu-paper-interpreter": {
       "name": "qiaomu-paper-interpreter",
       "author": "joeseesun（向阳乔木）",
       "subtitle": "论文智能解读：Arxiv/HuggingFace→结构化中文解读",
       "desc": "提供一个 Arxiv 或 HuggingFace 论文链接，自动下载、解析、生成结构化中文解读。支持原始 TeX Source 格式，图表提取比 AI 截图更精准。输出含研究背景、核心方法、实验结论、局限分析。",
       "stars": "高热度",
-      "tags": ["论文阅读", "Arxiv", "HuggingFace", "图表提取", "中文输出"],
+      "tags": [
+        "论文阅读",
+        "Arxiv",
+        "HuggingFace",
+        "图表提取",
+        "中文输出"
+      ],
       "install": "npx -y skills@latest add joeseesun/qiaomu-paper-interpreter --agent codex --global",
-      "issues": ["2026-07-05"],
+      "issues": [
+        "2026-07-05"
+      ],
       "screenshot": "",
       "result": "一篇 Arxiv 论文链接 → 5分钟出结构化中文报告：含研究背景、核心方法、实验数据对比、应用场景、局限性。"
     },
@@ -282,9 +362,17 @@
       "subtitle": "飞书+AI深度阅读：电子书→飞书标记→AI对话",
       "desc": "把 EPUB 电子书按章节写入飞书文档，人肉阅读时划线+加粗+评论，Codex 自动读取标记和评论后与你对话探讨书中观点。比读完再写笔记深刻得多。",
       "stars": "高热度",
-      "tags": ["深度阅读", "飞书联动", "电子书", "AI对话", "读书笔记"],
+      "tags": [
+        "深度阅读",
+        "飞书联动",
+        "电子书",
+        "AI对话",
+        "读书笔记"
+      ],
       "install": "npx -y skills@latest add joeseesun/qiaomu-read-helper --agent codex --global",
-      "issues": ["2026-07-05"],
+      "issues": [
+        "2026-07-05"
+      ],
       "screenshot": "",
       "result": "一本电子书 → 按章节拆分的飞书文档 + 边读边标记 + AI基于你的标记展开深度对话。"
     },
@@ -294,9 +382,17 @@
       "subtitle": "15+内容源→NotebookLM：播客/PPT/思维导图/测验",
       "desc": "把微信公众号文章、网页、YouTube视频、PDF、Markdown等15+种内容源自动转为NotebookLM可用格式，进一步生成播客、PPT大纲、思维导图、测验题。打通「内容收集→智能处理」最后一公里。",
       "stars": "1611+",
-      "tags": ["NotebookLM", "多源聚合", "播客生成", "思维导图", "自动化"],
+      "tags": [
+        "NotebookLM",
+        "多源聚合",
+        "播客生成",
+        "思维导图",
+        "自动化"
+      ],
       "install": "npx -y skills@latest add joeseesun/qiaomu-anything-to-notebooklm --agent codex --global",
-      "issues": ["2026-07-05"],
+      "issues": [
+        "2026-07-05"
+      ],
       "screenshot": "",
       "result": "5篇公众号+3个YouTube+2份PDF → NotebookLM里的播客+思维导图+测验。通勤路上就能听完。"
     },
@@ -306,9 +402,17 @@
       "subtitle": "一句话生成知识学习网站：闪卡+测试+学习模式+一键部署",
       "desc": "说一句话描述想学什么，AI自动理解主题、生成20-30个核心知识点、创作文案和页面，一键部署为带闪卡、渐进学习、测验、进度追踪的完整学习网站。PWA支持离线使用。",
       "stars": "325+",
-      "tags": ["知识网站", "闪卡学习", "零代码", "PWA", "Vercel部署"],
+      "tags": [
+        "知识网站",
+        "闪卡学习",
+        "零代码",
+        "PWA",
+        "Vercel部署"
+      ],
       "install": "npx -y skills@latest add joeseesun/knowledge-site-creator --agent codex --global",
-      "issues": ["2026-07-05"],
+      "issues": [
+        "2026-07-05"
+      ],
       "screenshot": "",
       "result": "一句话「生成进化心理学学习网站」→ 20分钟出一个带闪卡+测验+进度追踪的完整学习站，手机上也能学。"
     },
@@ -318,9 +422,17 @@
       "subtitle": "偏执型设计顾问：自动检查并修复设计问题",
       "desc": "给它一个页面截图、设计稿或HTML，自动从间距对齐、色彩搭配、字体层级、留白比例、视觉重心等维度逐一检查，生成问题清单+修复建议。像请了一个不留情面的设计总监审稿。",
       "stars": "233+",
-      "tags": ["设计审查", "自动修复", "公众号封面", "小红书卡片", "视觉检查"],
+      "tags": [
+        "设计审查",
+        "自动修复",
+        "公众号封面",
+        "小红书卡片",
+        "视觉检查"
+      ],
       "install": "npx -y skills@latest add joeseesun/qiaomu-design-advisor --agent codex --global",
-      "issues": ["2026-07-05"],
+      "issues": [
+        "2026-07-05"
+      ],
       "screenshot": "",
       "result": "一张封面图截图 → 结构化审查报告：通过的项+需改进的具体问题+修复建议+效果对比。"
     },
@@ -1043,9 +1155,16 @@
       "subtitle": "智能简历精修：按岗位自动定制，突出量化成果",
       "desc": "把基础简历+目标岗位描述交给它，自动分析岗位需求、重组经历、调整措辞、突出量化成果、匹配关键词，生成一份投其所好的专业简历。每条经历都带数据化表述。",
       "stars": "13K+（合集）",
-      "tags": ["简历优化", "求职", "写作润色", "职场"],
+      "tags": [
+        "简历优化",
+        "求职",
+        "写作润色",
+        "职场"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path tailored-resume-generator",
-      "issues": ["2026-07-08"],
+      "issues": [
+        "2026-07-08"
+      ],
       "screenshot": "",
       "result": "一份基础简历+一份岗位JD → 突出量化成果的定制简历。从'我做过什么'变成'我带来了什么结果'。"
     },
@@ -1055,9 +1174,16 @@
       "subtitle": "发票智能整理：规范化提取数据，自动分类归档",
       "desc": "把散乱的发票扫描件/PDF/图片喂给它，自动识别并提取发票号码、金额、日期、供应商、税号、商品明细。按你定义的规则分类归档，月底报销不再手动翻找。",
       "stars": "13K+（合集）",
-      "tags": ["发票管理", "日常自动化", "办公效率", "财务"],
+      "tags": [
+        "发票管理",
+        "日常自动化",
+        "办公效率",
+        "财务"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path invoice-organizer",
-      "issues": ["2026-07-08"],
+      "issues": [
+        "2026-07-08"
+      ],
       "screenshot": "",
       "result": "一堆发票图片 → 提取后的汇总表：日期+金额+供应商+类别一目了然。报销直接复制粘贴。"
     },
@@ -1067,9 +1193,16 @@
       "subtitle": "图片一键增强：放大优化去噪，配置化预设",
       "desc": "用可配置预设参数对图片进行智能放大、降噪、锐化、色彩优化。不学PS不调参数，描述你要的效果（放大到4K、更清晰、去噪点）即可。",
       "stars": "13K+（合集）",
-      "tags": ["图片处理", "视觉设计", "素材优化", "公众号配图"],
+      "tags": [
+        "图片处理",
+        "视觉设计",
+        "素材优化",
+        "公众号配图"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path image-enhancer",
-      "issues": ["2026-07-08"],
+      "issues": [
+        "2026-07-08"
+      ],
       "screenshot": "",
       "result": "一张模糊网图 → 清晰的高清配图。公众号文章不再被低分辨率素材拖累。"
     },
@@ -1079,9 +1212,16 @@
       "subtitle": "视频素材下载：下载+转文字+关键帧提取",
       "desc": "给视频链接自动下载并预处理——提取字幕文字稿、抓取关键帧截图、压缩为移动端可播放格式。做研究、写稿件需要的视频素材，不用手动下载转换。",
       "stars": "13K+（合集）",
-      "tags": ["视频下载", "素材收集", "选题研究", "竞品分析"],
+      "tags": [
+        "视频下载",
+        "素材收集",
+        "选题研究",
+        "竞品分析"
+      ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path video-downloader",
-      "issues": ["2026-07-08"],
+      "issues": [
+        "2026-07-08"
+      ],
       "screenshot": "",
       "result": "一个B站/YouTube链接 → 视频文件+字幕文本+关键截图。20分钟视频3分钟消化。"
     },
@@ -1091,9 +1231,17 @@
       "subtitle": "全平台联网搜索+浏览器自动化：让Codex真正「会上网」",
       "desc": "让AI Agent获得完整联网能力的Skill。通过CDP协议直连Chrome/Edge浏览器，天然携带登录态——能搜网页、读内容、操作交互页面，支持并行多目标调研。兼容Codex、Claude Code、Cursor等所有支持SKILL.md的Agent。",
       "stars": "8.1K",
-      "tags": ["联网搜索", "浏览器自动化", "CDP", "并行调研", "Codex兼容"],
+      "tags": [
+        "联网搜索",
+        "浏览器自动化",
+        "CDP",
+        "并行调研",
+        "Codex兼容"
+      ],
       "install": "npx skills add eze-is/web-access",
-      "issues": ["2026-07-09"],
+      "issues": [
+        "2026-07-09"
+      ],
       "screenshot": "",
       "result": "「同时调研3个竞品官网最新动态」→ 自动并行打开三个网站，提取关键信息，汇总为对比摘要，每条带来源链接。"
     },
@@ -1103,9 +1251,17 @@
       "subtitle": "论文每日追踪：自动检索+中文摘要+邮件推送",
       "desc": "面向科研阅读的Codex自动化项目。配置研究方向后，Codex每天自动检索arXiv、OpenReview、ACL Anthology等来源的最新论文，下载PDF、提取主图、写中文digest、更新Excel汇总表、发手机端友好HTML邮件。不只适合科研者，同样适合行业分析师、咨询顾问追踪专业动态。",
       "stars": "新发布",
-      "tags": ["论文追踪", "自动摘要", "邮件推送", "Codex自动化", "学术研究"],
+      "tags": [
+        "论文追踪",
+        "自动摘要",
+        "邮件推送",
+        "Codex自动化",
+        "学术研究"
+      ],
       "install": "git clone https://github.com/hhhzauuu/Daily-paper.git && cd Daily-paper && cp -Recurse -Force skills/daily-paper-digest $env:USERPROFILE\\.codex\\skills\\daily-paper-digest",
-      "issues": ["2026-07-09"],
+      "issues": [
+        "2026-07-09"
+      ],
       "screenshot": "",
       "result": "配置研究方向「企业战略咨询方法论」→ 每天早8点邮件推送3-5篇最新论文中文摘要，含PDF+主图+你的理解+局限分析。"
     },
@@ -1115,9 +1271,17 @@
       "subtitle": "零安装AI图片生成：封面图、文章配图、概念图解",
       "desc": "Codex自带的图片生成能力，无需安装任何Skill。描述想要的画面——公众号封面图、文章配图、概念图解、数据示意图——Codex直接生成。支持照片级写实、插画风格、信息图解等多种风格。写文章做PPT再也不用另外打开设计工具找图。",
       "stars": "Codex 内置",
-      "tags": ["AI生图", "零安装", "公众号封面", "文章配图", "概念图解"],
+      "tags": [
+        "AI生图",
+        "零安装",
+        "公众号封面",
+        "文章配图",
+        "概念图解"
+      ],
       "install": "无需安装，直接在Codex对话中说「帮我生成一张图：XXX」",
-      "issues": ["2026-07-09"],
+      "issues": [
+        "2026-07-09"
+      ],
       "screenshot": "",
       "result": "「帮我生成一张公众号封面图：简约商务风，深蓝+金色配色」→ 30秒出一张独一无二的封面。"
     },
@@ -1127,9 +1291,17 @@
       "subtitle": "11步系统化写作流：教练/快速/混合三种模式",
       "desc": "专为内容创作者设计的系统化写作CLI。通过/specify→/topic→/research→/write→/review→/publish共11个斜杠命令拆解写作全流程。三种模式：教练模式（AI只提问，0%AI生成，检测率<15%）、快速模式（AI生成初稿）、混合模式（AI写框架你填内容）。支持公众号、视频脚本、通用内容三种工作区，兼容Codex CLI等13个AI平台。",
       "stars": "热门",
-      "tags": ["系统写作", "11步流程", "教练模式", "AI味<15%", "Codex兼容"],
+      "tags": [
+        "系统写作",
+        "11步流程",
+        "教练模式",
+        "AI味<15%",
+        "Codex兼容"
+      ],
       "install": "npm install -g article-writer-cn && content init my-article --workspace wechat --ai codex",
-      "issues": ["2026-07-09"],
+      "issues": [
+        "2026-07-09"
+      ],
       "screenshot": "",
       "result": "「/content-write 教练模式，主题『AI时代还需要记笔记吗』」→ AI提问引导，最终文章全是你的真话，AI检测率<15%。"
     },
@@ -1139,9 +1311,16 @@
       "subtitle": "中文手绘技术图PPT：文章→整套手绘课件封面+正文",
       "desc": "把文章、课程笔记、大纲或讲稿，自动转成一套中文手绘技术风格的PPT页面图。21:9封面+16:9正文配图，先理解叙事结构再逐页出图。视觉统一——近白纸底、细手绘线条、淡彩标记、大量留白。适合技术文章配图、课程课件、知识卡片。",
       "stars": "412",
-      "tags": ["PPT生成", "手绘风格", "中文配图", "课件制作"],
+      "tags": [
+        "PPT生成",
+        "手绘风格",
+        "中文配图",
+        "课件制作"
+      ],
       "install": "git clone https://github.com/helloianneo/ian-handdrawn-ppt.git && cp -R ./ian-handdrawn-ppt/ian-handdrawn-ppt ~/.codex/skills/",
-      "issues": ["2026-07-15"],
+      "issues": [
+        "2026-07-15"
+      ],
       "screenshot": "",
       "result": "一篇文章/大纲 → 1张21:9封面+3张16:9手绘正文配图。不靠模板，靠内容语义规划页面。"
     },
@@ -1151,9 +1330,17 @@
       "subtitle": "视觉方案导演：选题→完整视觉策略+逐页提示词+审美检查",
       "desc": "「先想清楚再动手」的视觉导演Skill。拿到选题后先规划——视觉命题、主角、态度、页面结构、逐页提示词、质量检查清单。默认「研究档案式编辑设计」审美，支持小红书、PPT单页、横版Hero等多种输出。还能给已有图片做审美检查，直接指出廉价AI套路。",
       "stars": "新发布",
-      "tags": ["视觉设计", "小红书卡片", "审美检查", "提示词包", "PPT配图"],
+      "tags": [
+        "视觉设计",
+        "小红书卡片",
+        "审美检查",
+        "提示词包",
+        "PPT配图"
+      ],
       "install": "git clone https://github.com/aduo2233/ado-visual-director.git ~/.codex/skills/ado-visual-director",
-      "issues": ["2026-07-15"],
+      "issues": [
+        "2026-07-15"
+      ],
       "screenshot": "",
       "result": "一个选题 → 完整视觉导演方案：视觉命题+主角+逐页结构+提示词+否决清单。先有策略再出图。"
     },
@@ -1163,9 +1350,17 @@
       "subtitle": "AI废话刹车：让30+Agent说人话，平均省65%Token",
       "desc": "让所有AI Agent变得简洁如「原始人说话」。系统性去掉冗余修饰、模板句、过度解释，技术准确度保持100%，输出Token平均减少65%。支持lite/full/ultra/wenyan四档，还带/compress压缩记忆文件。适配Codex、Claude Code、Gemini等30+Agent。",
       "stars": "87.8K",
-      "tags": ["去AI味", "省Token", "简洁模式", "30+Agent", "写作润色"],
+      "tags": [
+        "去AI味",
+        "省Token",
+        "简洁模式",
+        "30+Agent",
+        "写作润色"
+      ],
       "install": "npx skills add JuliusBrussee/caveman --agent codex --global",
-      "issues": ["2026-07-15"],
+      "issues": [
+        "2026-07-15"
+      ],
       "screenshot": "",
       "result": "一段AI写的啰嗦回复 → 去掉65%废话但保留100%信息。回复像同事聊天而不是论文摘要。"
     },
@@ -1175,9 +1370,17 @@
       "subtitle": "精选Skills宝库：76.9K★的一站式「应用商店」",
       "desc": "Google工程专家Addy Osmani整理的Agent Skills精选宝库。汇集各类可装进Codex、Claude Code、Cursor等智能体的实用技能包。不是单个Skill，而是帮你发现「该装什么」的入口。按分类浏览，一行命令装好。本周新增7944★。",
       "stars": "76.9K",
-      "tags": ["技能发现", "精选合集", "多Agent", "一站式", "持续更新"],
+      "tags": [
+        "技能发现",
+        "精选合集",
+        "多Agent",
+        "一站式",
+        "持续更新"
+      ],
       "install": "浏览 GitHub: addyosmani/agent-skills，找到想要的Skill后 npx skills add 作者/仓库 --agent codex --global",
-      "issues": ["2026-07-15"],
+      "issues": [
+        "2026-07-15"
+      ],
       "screenshot": "",
       "result": "翻一遍这个宝库 → 找到自己领域最实用的5个Skill → 一行命令装好。不用全网搜GitHub。"
     },
@@ -1207,9 +1410,17 @@
       "subtitle": "AI技能的npm：一句话创建你自己的专属Skill，零代码",
       "desc": "Vercel推出的Skills CLI生态核心能力。对Codex说「帮我创建一个XX的Skill」，skill-creator自动询问需求、触发场景、输出格式，生成完整SKILL.md。把任何重复性工作固化为可复用的Skill——公众号写作、周报生成、会议纪要整理、素材管理，全都能变成一句话触发的自动化流程。",
       "stars": "24K+（仓库）",
-      "tags": ["Skill创建", "零代码", "自定义", "68+Agent", "知识工作"],
+      "tags": [
+        "Skill创建",
+        "零代码",
+        "自定义",
+        "68+Agent",
+        "知识工作"
+      ],
       "install": "npx skills add vercel-labs/agent-skills --skill skill-creator --agent codex --global",
-      "issues": ["2026-07-16"],
+      "issues": [
+        "2026-07-16"
+      ],
       "screenshot": "",
       "result": "一句话描述需求 → Codex自动生成完整SKILL.md。以后每次只需一句话触发整个工作流。"
     },
@@ -1219,9 +1430,17 @@
       "subtitle": "文档→咨询级PPTX：16道门禁、8种风格、SCR框架",
       "desc": "不走「快速出片」路线，模仿麦肯锡PPT品控流程。把DOCX/PDF/TXT/研究报告喂进去，先建证据表→脑暴故事线→SCR框架收敛→生成可编辑PPTX。16道质量门禁、8种视觉风格（深红咨询风、象牙白金融风、冷灰科技风等）、三阶段三确认硬流程。关键文字和数字保持可编辑，视觉资产渲染成图片。",
       "stars": "743",
-      "tags": ["PPT生成", "咨询级", "8种风格", "可编辑PPTX", "SCR框架"],
+      "tags": [
+        "PPT生成",
+        "咨询级",
+        "8种风格",
+        "可编辑PPTX",
+        "SCR框架"
+      ],
       "install": "git clone https://github.com/crazyykhllc-bit/CyberPPT.git ~/.codex/skills/cyber-ppt",
-      "issues": ["2026-07-16"],
+      "issues": [
+        "2026-07-16"
+      ],
       "screenshot": "",
       "result": "一份PDF报告 → 25页咨询公司级别.pptx。封面+目录+Executive Summary+逐章分析+数据图表+结论建议。"
     },
@@ -1231,9 +1450,17 @@
       "subtitle": "教会AI说Obsidian「母语」：双向链接+callout+Canvas+Bases",
       "desc": "Obsidian CEO Steph Ango写的5个Skill文件。装上后Codex自动学会Obsidian所有原生语法——[[双向链接]]、callout标注框、YAML元数据、Canvas画布、Bases结构化数据库。告别AI生成的笔记格式不对、链接语法错误的尴尬。五个子系统：markdown语法、Bases数据库、Canvas画布、CLI命令行、defuddle网页提取。",
       "stars": "35.9K",
-      "tags": ["知识管理", "Obsidian", "PKM", "双向链接", "Canvas"],
+      "tags": [
+        "知识管理",
+        "Obsidian",
+        "PKM",
+        "双向链接",
+        "Canvas"
+      ],
       "install": "git clone https://github.com/kepano/obsidian-skills.git ~/.codex/skills/obsidian-skills",
-      "issues": ["2026-07-16"],
+      "issues": [
+        "2026-07-16"
+      ],
       "screenshot": "",
       "result": "对Codex说「帮我在Obsidian里创建一篇XX笔记」→ 完美格式的Markdown，含[[双向链接]]+callout+YAML frontmatter。"
     },
@@ -1243,9 +1470,16 @@
       "subtitle": "PDF→结构化Markdown：复杂PDF一键重建，按页对齐，表格流程图全保留",
       "desc": "用Codex视觉理解能力以「页面」为重建单位，把双栏排版、表格、流程图等复杂PDF变成结构清晰、按页对齐的Markdown。解决「AI读不懂PDF」的痛点——表格不丢、流程图不丢、阅读顺序不乱。",
       "stars": "新发布",
-      "tags": ["PDF处理", "阅读总结", "知识管理", "Markdown"],
+      "tags": [
+        "PDF处理",
+        "阅读总结",
+        "知识管理",
+        "Markdown"
+      ],
       "install": "git clone https://github.com/KyrieCheungYep/ky-markdown-rebuilder.git ~/.codex/skills/ky-markdown-rebuilder",
-      "issues": ["2026-07-17"],
+      "issues": [
+        "2026-07-17"
+      ],
       "screenshot": "",
       "result": "40页复杂行业报告PDF → 结构完整的Markdown文件：目录锚点+表格转Markdown+流程图文字描述+页码对齐。直接喂给AI深度分析。"
     },
@@ -1255,9 +1489,16 @@
       "subtitle": "新开源中文去AI味：专治「爹味」「教条味」「替读者想」",
       "desc": "六六AI研究所开源的去AI味Skill。专门识别中文AI写作特有的「替读者想」「纠正型结构」「自问自答」「居高临下说教腔」，把老师语气改成朋友聊天的感觉。比通用版更聚焦中文创作场景。",
       "stars": "新开源",
-      "tags": ["去AI味", "写作润色", "中文专用", "公众号"],
+      "tags": [
+        "去AI味",
+        "写作润色",
+        "中文专用",
+        "公众号"
+      ],
       "install": "git clone https://github.com/liuliu-66-create/ll-humanizer-zh.git ~/.codex/skills/ll-humanizer-zh",
-      "issues": ["2026-07-17"],
+      "issues": [
+        "2026-07-17"
+      ],
       "screenshot": "",
       "result": "一篇AI写的公众号草稿 → 逐段标注AI味问题+替换为自然表达。读起来像资深编辑改过的稿子。"
     },
@@ -1267,9 +1508,17 @@
       "subtitle": "小红书视觉导演：先做策略再出图，逐页规划+提示词+文案+自检清单",
       "desc": "作为视觉导演规划小红书图文帖子——先判断内容任务类型，再选择最适合的视觉风格，最后输出完整图文结构+逐页视觉方案+图像生成提示词+发布文案+自检清单。每一步都有策略，不是随机发挥。",
       "stars": "1017",
-      "tags": ["小红书", "社交分发", "视觉设计", "图文规划", "内容创作"],
+      "tags": [
+        "小红书",
+        "社交分发",
+        "视觉设计",
+        "图文规划",
+        "内容创作"
+      ],
       "install": "git clone https://github.com/ziguishian/xhs-visual-director-skill.git ~/.codex/skills/xhs-visual-director",
-      "issues": ["2026-07-17"],
+      "issues": [
+        "2026-07-17"
+      ],
       "screenshot": "",
       "result": "一篇文章/主题 → 完整小红书图文方案：内容分析+风格推荐+6页图文结构+逐页视觉方案+发布文案+自检清单。"
     },
@@ -1279,9 +1528,17 @@
       "subtitle": "26个飞书Skills：在Codex里一句话查日历、搜文档、发消息、管任务",
       "desc": "飞书官方CLI Skills套装——26个独立Skill覆盖日历查询、即时消息、文档搜索、任务管理、会议安排等飞书核心功能。在Codex里说「帮我查今天的日程」，自动调用飞书API返回结果。一站式管理飞书，少切换APP。",
       "stars": "官方",
-      "tags": ["飞书", "日常自动化", "日历", "文档管理", "消息"],
+      "tags": [
+        "飞书",
+        "日常自动化",
+        "日历",
+        "文档管理",
+        "消息"
+      ],
       "install": "npx skills add larksuite/cli -y -g -a codex",
-      "issues": ["2026-07-17"],
+      "issues": [
+        "2026-07-17"
+      ],
       "screenshot": "",
       "result": "在Codex里说「搜飞书上关于Q3规划的文档」→ 自动返回标题+时间+作者+链接。不用打开飞书客户端。"
     },
@@ -1291,23 +1548,34 @@
       "subtitle": "视频/文章/网页→结构化Obsidian笔记+自动索引",
       "desc": "Local-first知识入库Skill。把外部视频链接、文章、网页、微信内容和本地媒体文件丢给它，自动转成结构化Obsidian Markdown笔记，并维护资料库索引、主题索引、用途索引三个可点击入口。每条资源都有原始材料留存、转写文本归档、普通总结和深度总结分层。解决「收藏即遗忘」的知识管理痛点。",
       "stars": "新发布",
-      "tags": ["知识入库", "Obsidian", "自动索引", "Local-First", "阅读总结"],
+      "tags": [
+        "知识入库",
+        "Obsidian",
+        "自动索引",
+        "Local-First",
+        "阅读总结"
+      ],
       "install": "git clone https://github.com/Simuiu/obsidian-inbox.git ~/.codex/skills/obsidian-inbox",
-      "issues": ["2026-08-08", "2026-07-16"],
+      "issues": [
+        "2026-08-08",
+        "2026-07-16"
+      ],
       "screenshot": "",
       "result": "一个B站链接+一篇公众号文章 → 两条结构化笔记+自动提取主题标签+索引文件更新。"
     },
     "gzh-design-skill": {
-      "name": "gzh-design-skill",
+      "name": "gzh-design-skill（公众号排版引擎）",
       "author": "isjiamu",
-      "subtitle": "Markdown→公众号HTML：全内联样式，粘贴不掉格式",
-      "desc": "专门为公众号排版设计的Skill。Markdown写完，选主题即可生成全内联HTML——自动编章节号、标关键词下划线、配引言卡与目录、处理代码块和图片，粘贴到公众号后台格式不丢。",
       "stars": "1.7K",
-      "tags": ["公众号排版", "HTML", "全内联", "Codex原生", "新发布"],
-      "install": "git clone https://github.com/isjiamu/gzh-design-skill.git ~/.codex/skills/gzh-design-skill",
-      "issues": ["2026-07-19"],
+      "category": "visual",
+      "desc": "专为公众号排版设计的AI Skill。Markdown一键生成样式全内联HTML，6套精选主题（摸鱼绿/红白/石墨极简/留白禅意/摸鱼票据/橄榄手记），带主题生成器+双校验脚本。自动编章节号、标关键词下划线、配引言卡与目录。",
+      "install": "npx skills add https://github.com/isjiamu/gzh-design-skill --agent codex --global",
+      "trigger": "对Codex说「用摸鱼绿把这篇Markdown排成公众号HTML」",
+      "issues": [
+        "2026-08-12"
+      ],
       "screenshot": "",
-      "result": "一篇Markdown → 全内联HTML，粘贴到公众号后台格式完美保留。以前手动调半小时，现在30秒。"
+      "result": "一篇Markdown→可直接粘贴进公众号编辑器的HTML。自动章节编号、关键词下划线、引言卡、目录。格式零丢失。"
     },
     "wewrite": {
       "name": "WeWrite",
@@ -1315,9 +1583,17 @@
       "subtitle": "公众号全流程工厂v3.3：热点→选题→写作→配图→排版→草稿箱",
       "desc": "公众号内容全流程Skill。7个可独立调用的节点：选题、写作、质量评分、AI配图、16主题排版、草稿箱推送、多平台改写。v3.3刚更新，退役单体构建改为folder-per-skill原生支持，Codex/Claude/OpenClaw通用。",
       "stars": "热门",
-      "tags": ["全流程", "公众号", "v3.3", "草稿箱", "多平台"],
+      "tags": [
+        "全流程",
+        "公众号",
+        "v3.3",
+        "草稿箱",
+        "多平台"
+      ],
       "install": "git clone https://github.com/imraywang/wewrite.git ~/.codex/skills/wewrite",
-      "issues": ["2026-07-19"],
+      "issues": [
+        "2026-07-19"
+      ],
       "screenshot": "",
       "result": "一句话选题 → 七步自动走完到草稿箱。每个环节也能单独调，不用全量跑。"
     },
@@ -1327,9 +1603,17 @@
       "subtitle": "PDF书籍→Codex Skill：把整本书变成AI随时查阅的知识库",
       "desc": "把技术书籍、行业报告、研究方法论PDF一键转为Codex Skill。装好后AI相当于「读完了」整本书——在任何对话中都能随时查阅书中概念、引用原文、对比观点，不用重新翻书。",
       "stars": "8.6K",
-      "tags": ["PDF转Skill", "知识管理", "阅读效率", "AI外脑", "书籍查阅"],
+      "tags": [
+        "PDF转Skill",
+        "知识管理",
+        "阅读效率",
+        "AI外脑",
+        "书籍查阅"
+      ],
       "install": "npx skills add virgiliojr94/book-to-skill --agent codex --global",
-      "issues": ["2026-07-19"],
+      "issues": [
+        "2026-07-19"
+      ],
       "screenshot": "",
       "result": "一本PDF书 → 一个Codex Skill。写文章需要引用时直接问AI「这本书怎么讲XX的？」秒回原文。"
     },
@@ -1339,9 +1623,17 @@
       "subtitle": "AI自动匹配审美：想法→公众号草稿，审美全自动",
       "desc": "不只是一个Markdown转换器。先判断文章类型，自动选择视觉审美——深度分析用简约风，生活随笔用温暖风，教程用结构风。然后渲染HTML+生成草稿payload，需要时上传封面图片并创建公众号草稿。",
       "stars": "热门",
-      "tags": ["AI排版", "自动审美", "草稿直推", "公众号", "Codex原生"],
+      "tags": [
+        "AI排版",
+        "自动审美",
+        "草稿直推",
+        "公众号",
+        "Codex原生"
+      ],
       "install": "git clone https://github.com/LIyvqi/chenly-wechat-studio.git ~/.codex/skills/chenly-wechat-studio",
-      "issues": ["2026-07-19"],
+      "issues": [
+        "2026-07-19"
+      ],
       "screenshot": "",
       "result": "几行想法 → AI自动判断类型+匹配审美+生成排版+创建草稿。不需要指定风格。"
     },
@@ -1351,9 +1643,17 @@
       "subtitle": "社交媒体全平台内容采集：YouTube/Reddit/X/B站/小红书/RSS一站通读",
       "desc": "让Codex拥有全网站点信息地图。安装后Codex知道YouTube、Reddit、X、GitHub、B站、小红书、RSS等平台的核心数据在哪、怎么提取。适合跨平台调研、选题找素材、竞品内容监测、社区口碑搜索——一句话出结构化报告。",
       "stars": "高收藏",
-      "tags": ["选题研究", "信息采集", "跨平台", "竞品监测", "社媒调研"],
+      "tags": [
+        "选题研究",
+        "信息采集",
+        "跨平台",
+        "竞品监测",
+        "社媒调研"
+      ],
       "install": "npx -y skills@latest add Panniantong/Agent-Reach --agent codex --global",
-      "issues": ["2026-07-26"],
+      "issues": [
+        "2026-07-26"
+      ],
       "screenshot": "",
       "result": "「帮我看看各平台对XX的最近讨论」→ 跨平台内容摘要+热点提取+来源链接。以前手动搜2小时，现在5分钟。"
     },
@@ -1363,9 +1663,17 @@
       "subtitle": "素材→小红书+公众号完整内容包：4套视觉主题×一键多平台",
       "desc": "把X长文、书籍资料和零散笔记自动拆解为一套可发布的小红书内容包+公众号文章+贴图。先理解选题→再拆成解释链→再生成图片和发布材料。4套可切换视觉主题，输出含选题brief、8-12张知识卡、横版贴图、发布检查清单。",
       "stars": "新发布 (7/11)",
-      "tags": ["社交分发", "内容创作", "小红书", "公众号", "4套视觉主题"],
+      "tags": [
+        "社交分发",
+        "内容创作",
+        "小红书",
+        "公众号",
+        "4套视觉主题"
+      ],
       "install": "npx -y skills@latest add Kimberlying/build-xhs-content-pack --skill build-xhs-content-pack --agent codex --global",
-      "issues": ["2026-07-26"],
+      "issues": [
+        "2026-07-26"
+      ],
       "screenshot": "",
       "result": "一篇X长文→10张小红书知识卡+公众号长文+3张横版贴图+发布检查清单。一次性内容投入，两个平台同步发布。"
     },
@@ -1375,9 +1683,17 @@
       "subtitle": "学术写作7件套：翻译/润色/审稿回复/逻辑审计/引用检查/投稿信",
       "desc": "7个独立Codex Skill覆盖高频学术写作任务：中英翻译（保留LaTeX/P值/基因名）、科学润色（不改变证据强度）、审稿逐点回复、论文逻辑审计、LaTeX-Word格式清理、投稿信撰写、参考文献完整性检查。不止科研适用——战略报告、行业分析、政策研究的逻辑核查同样适用。",
       "stars": "新发布 (7/16)",
-      "tags": ["写作润色", "学术写作", "7个独立Skill", "翻译", "审稿回复"],
+      "tags": [
+        "写作润色",
+        "学术写作",
+        "7个独立Skill",
+        "翻译",
+        "审稿回复"
+      ],
       "install": "git clone https://github.com/zl9099/codex-academic-writing-skills.git && cd codex-academic-writing-skills && ./install.sh",
-      "issues": ["2026-07-26"],
+      "issues": [
+        "2026-07-26"
+      ],
       "screenshot": "",
       "result": "一段中文论文摘要→学术级英文翻译：保留措辞强度、统计术语、引用标记。不会把'suggests'拔高成'proves'。"
     },
@@ -1387,9 +1703,17 @@
       "subtitle": "论文/报告→Nature风格PPTX：智能选图+中文内容+演讲备注",
       "desc": "从论文PDF、预印本、文章摘要或阅读笔记自动生成完整Nature风格中文PPTX。识别论文类型和核心论点，只选支撑故事的图表，生成逐页中文内容和演讲者备注，自动创建.pptx并做轻量验证。适合组会分享、学术报告、项目汇报。",
       "stars": "热门",
-      "tags": ["PPT生成", "Nature风格", "含演讲备注", "学术PPT", "报告转PPT"],
+      "tags": [
+        "PPT生成",
+        "Nature风格",
+        "含演讲备注",
+        "学术PPT",
+        "报告转PPT"
+      ],
       "install": "git clone https://github.com/lth0/codexSkill.git && cp -R codexSkill/nature-paper2ppt ~/.codex/skills/nature-paper2ppt",
-      "issues": ["2026-07-26"],
+      "issues": [
+        "2026-07-26"
+      ],
       "screenshot": "",
       "result": "一份15页PDF研究报告→完整.pptx：封面+目录+核心发现+数据图表+结论建议。每页配演讲者备注，报告→汇报，10分钟。"
     },
@@ -1399,9 +1723,18 @@
       "subtitle": "7阶段流水线：需求调研→逐页研究→SVG设计→PPTX+演讲稿，咨询级交付",
       "desc": "不是一键套模板，而是一条完整的内容生产流水线。7个阶段——上下文收拢、需求调研、结构化大纲（金字塔原理+便利贴法）、逐页资料搜集、页面策划稿、Bento Grid 7种布局SVG设计、PPTX导出+演讲稿。三套配色方案（商务深色/科技风/简约风），四种叙事结构（说服型/通知型/教学型/激励型）。MIT开源。",
       "stars": "新发布（6月）",
-      "tags": ["PPT生成", "7阶段流水线", "金字塔原理", "Bento Grid", "PPTX+演讲稿", "MIT开源"],
+      "tags": [
+        "PPT生成",
+        "7阶段流水线",
+        "金字塔原理",
+        "Bento Grid",
+        "PPTX+演讲稿",
+        "MIT开源"
+      ],
       "install": "git clone https://github.com/ken861222/PPT-Skill.git ~/.codex/skills/PPT-Skill",
-      "issues": ["2026-07-27"],
+      "issues": [
+        "2026-07-27"
+      ],
       "result": "一个主题→7阶段自动跑→可编辑PPTX+30-60秒/页演讲稿。15-30分钟咨询级交付。"
     },
     "redya-xiaohongshu": {
@@ -1410,9 +1743,17 @@
       "subtitle": "一句话出标题+正文+9张风格统一配图，20万+创作者在用",
       "desc": "把红鸦AI的小红书图文生成能力接入Codex。自研视觉一致性算法确保多图风格统一；文案有人味不像AI写；支持商品带货模式关联真实商品图；先出大纲让你改再出图不浪费积分；Agent端和网页端打通，hy.ithinkai.cn同步管理。新用户注册即送免费试用积分。",
       "stars": "20万+用户",
-      "tags": ["社交分发", "小红书图文", "视觉一致性", "商品带货", "大纲可调"],
+      "tags": [
+        "社交分发",
+        "小红书图文",
+        "视觉一致性",
+        "商品带货",
+        "大纲可调"
+      ],
       "install": "在 hy.ithinkai.cn 注册获取API Key，然后在Codex中说「请帮我安装红鸦小红书图文Skill」",
-      "issues": ["2026-07-27"],
+      "issues": [
+        "2026-07-27"
+      ],
       "result": "一个主题→先看大纲→改到你满意→一键出6-9张统一风格配图。一个人就是一个内容团队。"
     },
     "codex-team-mode": {
@@ -1421,9 +1762,18 @@
       "subtitle": "Explorer搜集+Executor执行+Complex执行+Reviewer复核，主线程只保留决策",
       "desc": "把大任务拆给4个专精子Agent并行工作。Explorer只读搜集证据（网页/文档/代码/日志）；Executor写权限干清晰有界的活；Complex Executor处理架构清楚的复杂实现；Reviewer独立复核挑高后果风险。核心设计：先算协调成本，如果派活的沟通成本超过活儿本身价值就不派，主线程自己干。MIT开源。",
       "stars": "新发布（7/24）",
-      "tags": ["日常自动化", "团队协作", "4角色Agent", "协调成本", "独立复核", "MIT开源"],
+      "tags": [
+        "日常自动化",
+        "团队协作",
+        "4角色Agent",
+        "协调成本",
+        "独立复核",
+        "MIT开源"
+      ],
       "install": "npx -y skills@latest add oil-oil/codex-team-mode --agent codex --global",
-      "issues": ["2026-07-27"],
+      "issues": [
+        "2026-07-27"
+      ],
       "result": "一个多步骤任务→4个Agent分工并行→主线程收到带核验标注的完整成果。10-15分钟完成以前1-2小时的手动工作。"
     },
     "yao-meta-skill": {
@@ -1432,9 +1782,18 @@
       "subtitle": "把重复工作流变成可安装、可复用的Codex Skill，91.5分质量评分",
       "desc": "一个用来创造Skill的Skill，工程化技能生命周期管理系统——意图澄清→生成技能包→验证触发器→导出兼容产物→打包发布。在项目级评审中获得91.5分（官方skill-creator仅50.5分）。适合将固定工作流（周报、月报、选题诊断、内容排版等）封装为专属Skill。MIT开源。",
       "stars": "91.5分",
-      "tags": ["日常自动化", "Skill创建", "生命周期管理", "触发器验证", "跨平台兼容", "MIT开源"],
+      "tags": [
+        "日常自动化",
+        "Skill创建",
+        "生命周期管理",
+        "触发器验证",
+        "跨平台兼容",
+        "MIT开源"
+      ],
       "install": "npx -y skills add yaojingang/yao-meta-skill -a codex -g -y",
-      "issues": ["2026-07-27"],
+      "issues": [
+        "2026-07-27"
+      ],
       "result": "描述固定工作流→意图澄清→生成可安装的专属Skill。每周30分钟手工活→一句话5分钟搞定。"
     },
     "zh-humanizer-literary": {
@@ -1443,9 +1802,18 @@
       "subtitle": "汲取Mengke写作风格的中文去AI味Skill，新发布7月20日",
       "desc": "不是通用润色器——汲取王梦珂（Mengke）大量公开写作风格，提炼出中文去AI味方法。自动删除「在当今时代」「综上所述」等套话，把抽象判断换成具体的人/场景/动作，在准确基础上增加命名和意象。适合公众号、小红书、产品文案、报告提案。MIT开源。",
       "stars": "新发布",
-      "tags": ["写作润色", "去AI味", "文采增强", "Mengke风格", "中文优化", "MIT开源"],
+      "tags": [
+        "写作润色",
+        "去AI味",
+        "文采增强",
+        "Mengke风格",
+        "中文优化",
+        "MIT开源"
+      ],
       "install": "npx -y skills@latest add nihe0909/zh-humanizer-literary --skill zh-humanizer-literary --agent codex --global",
-      "issues": ["2026-07-30"],
+      "issues": [
+        "2026-07-30"
+      ],
       "result": "一段AI味营销文案→有具体事实、有人味、有文采的自然中文。30秒改写，效果像人写的。"
     },
     "image-to-editable-ppt": {
@@ -1454,9 +1822,17 @@
       "subtitle": "把图片式PPT还原为文字可编辑、图形可拖动的原生PPTX，1.5K Stars",
       "desc": "codex-ppt-skill（4.1K★）的姊妹技能。把幻灯片图片、PDF、图片式PPTX转为可编辑的原生PPTX——文字能点进去改、图形能拖动调整、母版能套用。适合先用codex-ppt出视觉稿确认风格、再转可交付PPTX的协作场景。",
       "stars": "1.5K",
-      "tags": ["PPT生成", "格式转换", "可编辑PPTX", "图片转PPTX", "Native DrawingML"],
+      "tags": [
+        "PPT生成",
+        "格式转换",
+        "可编辑PPTX",
+        "图片转PPTX",
+        "Native DrawingML"
+      ],
       "install": "npx -y skills@latest add ningzimu/image-to-editable-ppt-skill --skill image-to-editable-ppt --agent codex --global",
-      "issues": ["2026-07-30"],
+      "issues": [
+        "2026-07-30"
+      ],
       "result": "一份只能看不能改的图片式PPTX→5分钟后变成每页文字可双击编辑、排版可调整的完整文件。"
     },
     "wechat-article-layout": {
@@ -1465,9 +1841,17 @@
       "subtitle": "DOCX带图文稿一键转微信兼容HTML排版，7月新发布，零依赖",
       "desc": "把带有内嵌图片的DOCX文稿直接转为微信兼容的内联样式HTML。不改写原文、不丢图片，自动识别标题/引言/图注/重点句/总结句，根据语义自动选择4套配色主题（田野融合/阳光课堂/乡村华盖/城市蓝）。支持滑动图组、倾斜叠图、错层双栏等微信排版高级功能。",
       "stars": "新发布",
-      "tags": ["公众号排版", "DOCX转HTML", "自动配色", "移动端适配", "零依赖"],
+      "tags": [
+        "公众号排版",
+        "DOCX转HTML",
+        "自动配色",
+        "移动端适配",
+        "零依赖"
+      ],
       "install": "npx -y skills@latest add AlexWei2020/wechat-article-layout-skill --skill wechat-article-layout --agent codex --global",
-      "issues": ["2026-07-30"],
+      "issues": [
+        "2026-07-30"
+      ],
       "result": "一份带图Word初稿→可直接复制进微信后台的精美HTML，标题/图注/重点句自动识别和适配。"
     },
     "ultimate-ppt-master": {
@@ -1476,9 +1860,17 @@
       "subtitle": "先问清受众场景再动手，一句话需求生成可编辑PPTX，7月24日更新",
       "desc": "核心理念「不猜你要什么」——接到需求后先问清受众、场景、风格偏好，再整理本地资料，最后生成可编辑PPTX或Web Deck。流程自带GPT生图、渲染审阅、审计留痕，守住真实办公场景的成稿底线。适合一句话需求→确认→成品的懒人式PPT工作流。",
       "stars": "147",
-      "tags": ["PPT生成", "一句话PPT", "可编辑PPTX", "先问后做", "审计留痕"],
+      "tags": [
+        "PPT生成",
+        "一句话PPT",
+        "可编辑PPTX",
+        "先问后做",
+        "审计留痕"
+      ],
       "install": "npx -y skills@latest add kdnsna/ultimate-ppt-master-skill --skill ultimate-ppt-master --agent codex --global",
-      "issues": ["2026-07-30"],
+      "issues": [
+        "2026-07-30"
+      ],
       "result": "「帮我做份Q2复盘PPT」→反问「给谁看？多少页？什么风格？」→确认后逐页生成可编辑PPTX。"
     },
     "moore-wechat-article-downloader": {
@@ -1487,9 +1879,17 @@
       "subtitle": "公众号文章本地同步：把竞品公众号变成本地情报库，供Codex做内容研究",
       "desc": "把微信公众号里的文章、评论、互动数据同步到本地SQLite数据库，变成一个可搜索、可分析、可长期追踪的内容情报库。用自然语言就能让Codex同步关注的公众号、按日期列出最新文章、拆解选题和标题套路。MIT开源，本地优先，零云端依赖。",
       "stars": "279",
-      "tags": ["竞品研究", "公众号分析", "本地优先", "MIT开源", "内容情报"],
+      "tags": [
+        "竞品研究",
+        "公众号分析",
+        "本地优先",
+        "MIT开源",
+        "内容情报"
+      ],
       "install": "git clone https://github.com/Moore-developers/moore-wechat-article-downloader.git ~/.codex/skills/moore-wechat-article-downloader",
-      "issues": ["2026-08-05"],
+      "issues": [
+        "2026-08-05"
+      ],
       "screenshot": "",
       "result": "「同步我关注的公众号，按日期列出最近50篇新文章」→ 30秒后拥有本地可搜索的内容情报库，竞品选题分析5分钟出结论。"
     },
@@ -1499,9 +1899,17 @@
       "subtitle": "自媒体9模块全流程：选题→创作→排版→发布→复盘，5个人工确认点保质量",
       "desc": "一套模块化的自媒体内容生产Skill套装。9个独立模块覆盖总控路由、创作简报、内容策略、热点雷达、平台原生文案、短视频方案、数据复盘、交付归档、公众号排版发布。默认只创建草稿不自动群发，5个人工确认点卡住关键决策。MIT开源。",
       "stars": "310",
-      "tags": ["全流程编排", "9模块", "公众号", "小红书", "MIT开源"],
+      "tags": [
+        "全流程编排",
+        "9模块",
+        "公众号",
+        "小红书",
+        "MIT开源"
+      ],
       "install": "npx -y skills@latest add yanhua1010/self-media-content-workflow --agent codex --global",
-      "issues": ["2026-08-05"],
+      "issues": [
+        "2026-08-05"
+      ],
       "screenshot": "",
       "result": "一个选题→9步流水线自动跑→公众号草稿+小红书6图方案。传统3.5小时手动→15分钟确认+微调。"
     },
@@ -1511,9 +1919,17 @@
       "subtitle": "Nature风格学术写作11子技能：润色/论文转PPT/审稿回复/引用检索",
       "desc": "围绕SKILL.md组织的学术写作全套能力包。11个子技能覆盖Nature风格英文润色（不改变证据强度）、论文生成中文PPTX文献汇报、模拟Nature审稿人评审、逐点回复审稿意见、CNS引用检索等。也适合行业分析、政策研究的逻辑核查。",
       "stars": "新开源",
-      "tags": ["学术写作", "Nature风格", "英文润色", "论文转PPT", "11子技能"],
+      "tags": [
+        "学术写作",
+        "Nature风格",
+        "英文润色",
+        "论文转PPT",
+        "11子技能"
+      ],
       "install": "git clone https://github.com/whisper-xiang/nature-skills.git ~/.codex/skills/nature-skills",
-      "issues": ["2026-08-05"],
+      "issues": [
+        "2026-08-05"
+      ],
       "screenshot": "",
       "result": "一份论文PDF→nature-paper2ppt生成15页Nature风格中文PPTX，每页含演讲者备注。论文→汇报10分钟。"
     },
@@ -1523,9 +1939,17 @@
       "subtitle": "公众号创作全闭环：标题生成+封面设计+排版预览+草稿同步，集成Obsidian",
       "desc": "苍何（CodexGuide/awesome-gpt-image-2作者）整理的Skills合集。结合Codex+Obsidian工作流：Obsidian写作→Codex实时润色→AI爆款标题→GPT Image-2封面→实时排版预览→一键同步草稿箱。集成了gzh-design-skill排版引擎。",
       "stars": "397",
-      "tags": ["公众号创作", "Obsidian集成", "标题生成", "封面设计", "今日开源"],
+      "tags": [
+        "公众号创作",
+        "Obsidian集成",
+        "标题生成",
+        "封面设计",
+        "今日开源"
+      ],
       "install": "git clone https://github.com/freestylefly/canghe-skills.git ~/.codex/skills/canghe-skills",
-      "issues": ["2026-08-05"],
+      "issues": [
+        "2026-08-05"
+      ],
       "screenshot": "",
       "result": "Obsidian里写完文章→Codex生成5个爆款标题+封面图→实时预览排版→一键同步公众号草稿箱。全程不切换工具。"
     },
@@ -1535,9 +1959,17 @@
       "subtitle": "小红书图文工作台：热点研究→内容拆解→原创稿件→去AI味→品牌配图→确认发布",
       "desc": "六步闭环的小红书内容工作台。热点研究搜小红书/抖音热门话题→内容拆解分析爆款结构→原创稿件基于账号风格生成→去AI味让文案像真人分享→品牌配图保持视觉统一→人工确认发布。强调人机协作，每步可插入修改意见。",
       "stars": "40",
-      "tags": ["社交分发", "小红书", "图文创作", "六步闭环", "新锐项目"],
+      "tags": [
+        "社交分发",
+        "小红书",
+        "图文创作",
+        "六步闭环",
+        "新锐项目"
+      ],
       "install": "git clone https://github.com/EthanYoQ/agent-xiaohongshu-workbench.git ~/.codex/skills/agent-xiaohongshu-workbench",
-      "issues": ["2026-08-05"],
+      "issues": [
+        "2026-08-05"
+      ],
       "screenshot": "",
       "result": "一个话题→搜热点→拆竞品→写原创稿→去AI味→配图方案。每步可修改，不会直接出最终稿让你推翻重来。"
     },
@@ -1549,7 +1981,9 @@
       "desc": "GPT 5.5 生图+视觉解析双能力，拆成3个独立Skill：图片PPT生成→可编辑PPTX还原→一键编排。先出图审，定稿转可编辑发客户。",
       "install": "npx -y skills@latest add GordenSun/GordenSuperPPTSkills --skill GordenSuperPPTSkill --agent codex --global",
       "trigger": "用 GordenSuperPPTSkill 把这篇文章转成10页PPT，麦肯锡风格",
-      "issues": ["2026-08-08"],
+      "issues": [
+        "2026-08-08"
+      ],
       "screenshot": "",
       "result": "一篇文章→10页图片PPT+可编辑PPTX+演讲者备注。先出图给老板审，确认后转可编辑版发客户。5分钟从文章到交付。"
     },
@@ -1561,7 +1995,9 @@
       "desc": "一个API Key打通抖音、小红书、公众号、B站等11个平台的趋势数据。45个开箱即用Skill，选题调研不再需要手动刷各平台。",
       "install": "npx -y skills@latest add redfox-data/redfox-community --agent codex --global",
       "trigger": "用 redfox 查小红书和抖音今天关于XX话题最火的5条内容",
-      "issues": ["2026-08-08"],
+      "issues": [
+        "2026-08-08"
+      ],
       "screenshot": "",
       "result": "「查AI写作话题各平台爆款」→跨平台热门内容对比+标题策略分析+3个差异化选题建议。以前手动搜2小时，现在5分钟。"
     },
@@ -1573,21 +2009,11 @@
       "desc": "不是Skill胜似Skill——在项目根目录创建AGENTS.md，Codex每次启动自动读取。把你的写作风格、禁用词、读者画像、排版偏好写一次，永久生效。",
       "install": "在项目根目录创建 AGENTS.md 文件，写入写作规则即可",
       "trigger": "开Codex新对话直接说「写一篇关于XX的文章」，自动遵守AGENTS.md中的规则",
-      "issues": ["2026-08-08"],
+      "issues": [
+        "2026-08-08"
+      ],
       "screenshot": "",
       "result": "一份AGENTS.md→每次开Codex新对话不再需要复制粘贴800字风格prompt。语气、禁用词、段落长度自动遵守。"
-    },
-    "gzh-design-skill": {
-      "name": "gzh-design-skill（公众号排版引擎）",
-      "author": "isjiamu",
-      "stars": "1.7K",
-      "category": "visual",
-      "desc": "专为公众号排版设计的AI Skill。Markdown一键生成样式全内联HTML，6套精选主题（摸鱼绿/红白/石墨极简/留白禅意/摸鱼票据/橄榄手记），带主题生成器+双校验脚本。自动编章节号、标关键词下划线、配引言卡与目录。",
-      "install": "npx skills add https://github.com/isjiamu/gzh-design-skill --agent codex --global",
-      "trigger": "对Codex说「用摸鱼绿把这篇Markdown排成公众号HTML」",
-      "issues": ["2026-08-12"],
-      "screenshot": "",
-      "result": "一篇Markdown→可直接粘贴进公众号编辑器的HTML。自动章节编号、关键词下划线、引言卡、目录。格式零丢失。"
     },
     "deep-reading-coach": {
       "name": "deep-reading-coach（深度阅读教练）",
@@ -1597,7 +2023,9 @@
       "desc": "像有个阅读教练陪你读书——先做检视阅读判断值不值得读，再做分析阅读拆结构抓概念看论证，最后做主题阅读比较多本书。生成结构化读书笔记，把阅读结果和目标关联。",
       "install": "git clone https://github.com/FanPUYen/deep-reading-coach.git ~/.codex/skills/deep-reading-coach",
       "trigger": "对Codex说「帮我读这本书」或「使用deep-reading-coach阅读这本书的PDF」",
-      "issues": ["2026-08-12"],
+      "issues": [
+        "2026-08-12"
+      ],
       "screenshot": "",
       "result": "一本书的PDF→结构化阅读笔记：含检视阅读判断+核心概念拆解+论证结构+与你个人目标的关联。读完不再忘。"
     },
@@ -1609,7 +2037,9 @@
       "desc": "红鸦AI提供的专业小红书图文Skill。输入主题→自动生成标题+正文+逐页配图提示词→批量生成整套图片。支持普通图文、知识型图文、商品带货图文三种模式。Agent终端与网页端共用账号。",
       "install": "git clone https://github.com/rnthking/redya-skills.git ~/.codex/skills/redya-skills（需在hy.ithinkai.cn获取API Key并设环境变量）",
       "trigger": "对Codex说「用红鸦AI帮我写一篇小红书图文，主题是XXX，先给我看大纲」",
-      "issues": ["2026-08-12"],
+      "issues": [
+        "2026-08-12"
+      ],
       "screenshot": "",
       "result": "一个主题→一套完整小红书图文（标题+正文+多页配图）。普通图文/知识图文/带货图文三种模式。"
     },
@@ -1621,24 +2051,163 @@
       "desc": "在Codex内完成主题研究→科普长文→Image2配图→精美PDF全闭环。自动联网调研、写科普文、规划插图、生成Image2图片、合成HTML+PDF。低饱和暖黄旧纸感小册子风格。",
       "install": "git clone https://github.com/xxsnake/snake-skills.git ~/.codex/skills/snake-skills",
       "trigger": "对Codex说「snake-digest 主题名称」或「帮我用snake-digest做一个关于XX的知识小册子」",
-      "issues": ["2026-08-12"],
+      "issues": [
+        "2026-08-12"
+      ],
       "screenshot": "",
       "result": "一个主题→article.md+sources.md+多张PNG配图+HTML+PDF的全套知识小册子。可分享可发布。"
+    },
+    "slide-maker": {
+      "name": "slide-maker（可编辑 PPT + 来源溯源）",
+      "author": "addsumtech",
+      "subtitle": "原生可编辑 .pptx，多画布，交付前独立评审",
+      "stars": "344",
+      "category": "ppt",
+      "desc": "生成原生可编辑 .pptx（不是 HTML 截图），每页可溯源，交付前独立评审。支持 16:9、4:3、1:1、小红书 3:4、9:16 Story、A4 等画布。适合把研究笔记、行业报告转成正式汇报。",
+      "install": "npx skills add addsumtech/slides_maker --agent codex --global",
+      "trigger": "对 Codex 说「把这篇内容转成一页页可编辑的 PPT，每页标注来源」",
+      "issues": [
+        "2026-08-13"
+      ],
+      "screenshot": "",
+      "result": "一份可直接用 WPS/PowerPoint 打开继续编辑的 .pptx，含封面、目录、观点页（带来源脚注）、行动清单页。",
+      "tags": [
+        "PPT生成",
+        "来源溯源",
+        "多画布"
+      ]
+    },
+    "marketing-skills": {
+      "name": "marketing-skills（160+ 营销技能库）",
+      "author": "kostja94",
+      "subtitle": "选题、内容策略、文案的「总仓库」",
+      "stars": "802",
+      "category": "research",
+      "desc": "装了 160 多个技能的营销知识库，覆盖内容策略、选题拆解、文案框架、SEO、着陆页、冷启动等。当选题和文案的「参考答案库」用。",
+      "install": "npx skills add kostja94/marketing-skills --agent codex --global",
+      "trigger": "对 Codex 说「用 marketing-skills 帮我把这个选题拆出 3 个角度」",
+      "issues": [
+        "2026-08-13"
+      ],
+      "screenshot": "",
+      "result": "选题诊断 + 切入角度 + 备选标题 + 大纲，照着写。",
+      "tags": [
+        "选题诊断",
+        "内容策略",
+        "文案框架"
+      ]
+    },
+    "audio-tldr-skill": {
+      "name": "audio-tldr-skill（播客/视频→文字要点）",
+      "author": "AugustusW",
+      "subtitle": "本地转写，90 分钟节目变 3–7 条可复用要点",
+      "stars": "17",
+      "category": "report",
+      "desc": "把 YouTube、播客或本地音视频在本地转写成文字，输出要点 + 摘要；转写按内容哈希缓存，换角度不重复转写。支持会议纪要、分析报告、Markdown/HTML、简繁转换。",
+      "install": "git clone https://github.com/AugustusW/audio-tldr-skill.git ~/.codex/skills/audio-tldr",
+      "trigger": "对 Codex 说「帮我总结这期播客，输出要点 + 摘要」",
+      "issues": [
+        "2026-08-13"
+      ],
+      "screenshot": "",
+      "result": "带时间轴的要点 + 摘要（Markdown），可继续写 Newsletter、Show Notes 或社媒文案。",
+      "tags": [
+        "阅读总结",
+        "本地转写",
+        "会议纪要"
+      ]
+    },
+    "cc2image": {
+      "name": "cc2image（中文内容交互式生图）",
+      "author": "izscc",
+      "subtitle": "从文章拆认知锚点，批量生成封面/配图/主视觉",
+      "stars": "149",
+      "category": "visual",
+      "desc": "懂中文的交互式生图系统，把文章认知锚点拆出来，批量产出封面、正文配图、系列主视觉、App 图标。内置 49 套风格 + 8 套 logo 模式，输出批量 JSON 提示词。",
+      "install": "npx skills add izscc/cc2image --agent codex --global",
+      "trigger": "对 Codex 说「给这篇长文拆出核心锚点，出一张封面 + 三张正文配图」",
+      "issues": [
+        "2026-08-13"
+      ],
+      "screenshot": "",
+      "result": "风格统一、能体现每个核心观点的封面 + 正文配图（批量出图）。",
+      "tags": [
+        "视觉设计",
+        "49套风格",
+        "封面配图"
+      ]
+    },
+    "wechat-article-pipeline-skill": {
+      "name": "wechat-article-pipeline-skill（公众号长文全链路）",
+      "author": "jhwreal",
+      "subtitle": "选题/口述 → 长文 → 配图 → 可编辑 HTML 草稿",
+      "stars": "新发布",
+      "category": "writing",
+      "desc": "公众号长文的「底稿—配图—草稿」完整链路：从选题或口述出长文 → 规划题图/正文图/尾图 → 输出可编辑 HTML 工作台 → 微信官方 API 创建/验证草稿（可同步头条、小红书）。默认不群发。",
+      "install": "npx skills add jhwreal/wechat-article-pipeline-skill --agent codex --global",
+      "trigger": "对 Codex 说「从这个选题一路做到公众号草稿，先不发布」",
+      "issues": [
+        "2026-08-13"
+      ],
+      "screenshot": "",
+      "result": "一份可编辑 HTML 草稿：标题 + 引言 + 分段正文 + 配图占位 + 尾图，可直接粘进公众号编辑器微调。",
+      "tags": [
+        "内容创作",
+        "社交分发",
+        "公众号"
+      ]
     }
   },
   "issues": [
+    {
+      "id": 52,
+      "date": "2026-08-13",
+      "weekday": "星期四",
+      "title": "内容流水线补上「最后一公里」：音频转文、可编辑 PPT、中文配图一次配齐",
+      "subtitle": "5 个新 Skill · Gemini Notebook 云电脑 · Codex 0.148 迭代",
+      "tags": [
+        "📘 Skills",
+        "📽️ PPT 生成",
+        "📝 阅读总结",
+        "🎨 视觉设计",
+        "✍️ 内容创作",
+        "🔍 选题研究"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-13.html",
+      "skills": [
+        "slide-maker",
+        "marketing-skills",
+        "audio-tldr-skill",
+        "cc2image",
+        "wechat-article-pipeline-skill"
+      ]
+    },
     {
       "id": 51,
       "date": "2026-08-12",
       "weekday": "星期三",
       "title": "零排版、零设计、零手动：4个新Skill把知识工作「全自动化」",
       "subtitle": "公众号排版 · 深度阅读 · 小红书图文 · 知识小册",
-      "tags": ["📘 Skills", "🎨 视觉设计", "📝 阅读总结", "📱 社交分发", "📊 报告生成"],
+      "tags": [
+        "📘 Skills",
+        "🎨 视觉设计",
+        "📝 阅读总结",
+        "📱 社交分发",
+        "📊 报告生成"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-12.html",
-      "skills": ["gzh-design-skill", "deep-reading-coach", "redya-skills", "snake-digest-codex"]
+      "skills": [
+        "gzh-design-skill",
+        "deep-reading-coach",
+        "redya-skills",
+        "snake-digest-codex"
+      ]
     },
     {
       "id": 50,
@@ -1646,12 +2215,24 @@
       "weekday": "星期二",
       "title": "先问这选题值不值得写：5个新Skill把你的内容创作流程拉满",
       "subtitle": "选题诊断 · 去AI味升级 · 正文配图 · 小红书封面 · 一键HTML发布",
-      "tags": ["📘 Skills", "🔍 选题诊断", "✍️ 写作流程", "🎨 配图封面", "📱 社交分发"],
+      "tags": [
+        "📘 Skills",
+        "🔍 选题诊断",
+        "✍️ 写作流程",
+        "🎨 配图封面",
+        "📱 社交分发"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-11.html",
-      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "ian-xiaohei-illustrations", "guizang-social-card-skill"]
+      "skills": [
+        "dbskill",
+        "content-research-writer",
+        "humanizer-zh",
+        "ian-xiaohei-illustrations",
+        "guizang-social-card-skill"
+      ]
     },
     {
       "id": 47,
@@ -1659,12 +2240,23 @@
       "weekday": "星期六",
       "title": "把重复劳动装进Skill：4个新工具让你的内容生产「自动驾驶」",
       "subtitle": "PPT一键三吃 · 11平台数据聚合 · 视频自动转笔记 · 选题调研流水线",
-      "tags": ["📘 Skills", "📊 PPT生成", "🔍 选题研究", "📝 阅读总结", "🤖 日常自动化"],
+      "tags": [
+        "📘 Skills",
+        "📊 PPT生成",
+        "🔍 选题研究",
+        "📝 阅读总结",
+        "🤖 日常自动化"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-08.html",
-      "skills": ["gorden-super-ppt", "redfox-community", "obsidian-inbox", "agents-md-creator"]
+      "skills": [
+        "gorden-super-ppt",
+        "redfox-community",
+        "obsidian-inbox",
+        "agents-md-creator"
+      ]
     },
     {
       "id": 48,
@@ -1672,12 +2264,23 @@
       "weekday": "星期日",
       "title": "中国开源大模型集体爆发：这一周，世界在看东方",
       "subtitle": "Qwen3.8-Max 首次开源 · MiniMax H3 三天登顶 Hugging Face · DeepSeek-V4-Flash 登顶调用榜 · 阿里千问开放平台",
-      "tags": ["🔥 开源模型", "🇨🇳 中国AI", "🆓 Qwen3.8-Max", "🏆 MiniMax H3", "📊 DeepSeek-V4-Flash"],
+      "tags": [
+        "🔥 开源模型",
+        "🇨🇳 中国AI",
+        "🆓 Qwen3.8-Max",
+        "🏆 MiniMax H3",
+        "📊 DeepSeek-V4-Flash"
+      ],
       "skillCount": 4,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-08-09.html",
-      "skills": ["qwen-3.8-max", "minimax-h3", "deepseek-v4-flash", "ali-qianwen-platform"]
+      "skills": [
+        "qwen-3.8-max",
+        "minimax-h3",
+        "deepseek-v4-flash",
+        "ali-qianwen-platform"
+      ]
     },
     {
       "id": 49,
@@ -1685,12 +2288,23 @@
       "weekday": "星期一",
       "title": "Agent 生态的「USB-C」时刻来了",
       "subtitle": "Agent Plugins 1.0 统一标准 · 阿里千问开放平台 · 豆包 Agent 商店 · 客服 Agent 从「能回答」走向「能承担」",
-      "tags": ["🔌 Agent Plugins", "🏪 Agent 商店", "🤖 客服Agent", "🏢 企业落地", "🔄 生态标准"],
+      "tags": [
+        "🔌 Agent Plugins",
+        "🏪 Agent 商店",
+        "🤖 客服Agent",
+        "🏢 企业落地",
+        "🔄 生态标准"
+      ],
       "skillCount": 4,
       "color": "g3",
       "numColor": "n-blue",
       "file": "2026-08-10.html",
-      "skills": ["agent-plugins-1.0", "ali-qianwen-platform", "doubao-agent-store", "customer-service-agent"]
+      "skills": [
+        "agent-plugins-1.0",
+        "ali-qianwen-platform",
+        "doubao-agent-store",
+        "customer-service-agent"
+      ]
     },
     {
       "id": 46,
@@ -1698,12 +2312,23 @@
       "weekday": "星期五",
       "title": "本周 AI 大事盘点——从 DeepSeek 开源到 Meta 下场，一周看懂行业变局",
       "subtitle": "一周回顾特辑：Muse Code · Qwen-Image-3.0 · DeepSeek V4 Flash · Luna 降价 · Cloudflare OS",
-      "tags": ["📊 一周盘点", "🤖 编程Agent", "🎨 图像生成", "🔥 开源模型", "💰 价格战"],
+      "tags": [
+        "📊 一周盘点",
+        "🤖 编程Agent",
+        "🎨 图像生成",
+        "🔥 开源模型",
+        "💰 价格战"
+      ],
       "skillCount": 4,
       "color": "g3",
       "numColor": "n-blue",
       "file": "2026-08-07.html",
-      "skills": ["deepseek-v4-flash", "meta-muse-code", "qwen-image", "gpt-luna"]
+      "skills": [
+        "deepseek-v4-flash",
+        "meta-muse-code",
+        "qwen-image",
+        "gpt-luna"
+      ]
     },
     {
       "id": 45,
@@ -1711,12 +2336,23 @@
       "weekday": "星期四",
       "title": "AI 编程开卷——Meta 携 Muse Code 入场，图像生成卷向 10px 级文字",
       "subtitle": "Muse Code & Muse Spark 1.2 · Qwen-Image-3.0 · Cloudflare OS · SkillPay 技能计费",
-      "tags": ["🤖 编程Agent", "🎨 文生图", "☁️ 智能体OS", "💰 Skill经济", "🏢 行业动态"],
+      "tags": [
+        "🤖 编程Agent",
+        "🎨 文生图",
+        "☁️ 智能体OS",
+        "💰 Skill经济",
+        "🏢 行业动态"
+      ],
       "skillCount": 4,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-08-06.html",
-      "skills": ["meta-muse-code", "qwen-image", "cloudflare-os", "skillpay-market"]
+      "skills": [
+        "meta-muse-code",
+        "qwen-image",
+        "cloudflare-os",
+        "skillpay-market"
+      ]
     },
     {
       "id": 44,
@@ -1724,12 +2360,24 @@
       "weekday": "星期三",
       "title": "把重复操作「录」进AI：Codex Record & Replay + 5个新Skills",
       "subtitle": "录一次变自动Skill · 自定义模型接入 · 自媒体创作流水线 · 学术写作",
-      "tags": ["🎬 录制回放", "🔌 自定义模型", "📱 自媒体流程", "📚 学术写作", "🎨 Obsidian创作"],
+      "tags": [
+        "🎬 录制回放",
+        "🔌 自定义模型",
+        "📱 自媒体流程",
+        "📚 学术写作",
+        "🎨 Obsidian创作"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-05.html",
-      "skills": ["moore-wechat-article-downloader", "self-media-content-workflow", "nature-skills", "canghe-skills", "agent-xiaohongshu-workbench"]
+      "skills": [
+        "moore-wechat-article-downloader",
+        "self-media-content-workflow",
+        "nature-skills",
+        "canghe-skills",
+        "agent-xiaohongshu-workbench"
+      ]
     },
     {
       "id": 43,
@@ -1737,12 +2385,23 @@
       "weekday": "星期二",
       "title": "打破AI腔：4个新Skill让你的中文写作自然得像人在说话",
       "subtitle": "qu-ai-wei v3.0 · shuorenhua 说人话 · Wexin_Writter · 学术三件套",
-      "tags": ["✍️ 去AI味", "🗣️ 说人话", "📱 公众号Agent", "📚 学术写作", "🔄 全链路"],
+      "tags": [
+        "✍️ 去AI味",
+        "🗣️ 说人话",
+        "📱 公众号Agent",
+        "📚 学术写作",
+        "🔄 全链路"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-04.html",
-      "skills": ["qu-ai-wei", "shuorenhua", "weixin-writer", "codex-claude-academic-skills"]
+      "skills": [
+        "qu-ai-wei",
+        "shuorenhua",
+        "weixin-writer",
+        "codex-claude-academic-skills"
+      ]
     },
     {
       "id": 42,
@@ -1750,12 +2409,23 @@
       "weekday": "星期一",
       "title": "周一效率开机——4个Skill把「周末攒的素材」变成「周一的交付物」",
       "subtitle": "MiniMax H3视频生成 · DeepSeek V4 Flash长任务 · Replit Design模板 · qm多智能体协作",
-      "tags": ["🎬 视频生成", "🤖 开源Agent", "🎨 设计模板", "🤝 团队编排", "⚡ 周一开工"],
+      "tags": [
+        "🎬 视频生成",
+        "🤖 开源Agent",
+        "🎨 设计模板",
+        "🤝 团队编排",
+        "⚡ 周一开工"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-03.html",
-      "skills": ["minimax-h3-video", "deepseek-v4-agent", "replit-design", "qm-agent-room"]
+      "skills": [
+        "minimax-h3-video",
+        "deepseek-v4-agent",
+        "replit-design",
+        "qm-agent-room"
+      ]
     },
     {
       "id": 41,
@@ -1763,12 +2433,23 @@
       "weekday": "星期日",
       "title": "周日充电——国产大模型集体「交作业」：开源、降价、卷视频",
       "subtitle": "DeepSeek V4 Flash 0731 · MiniMax H3 · Seedance 2.5 · GPT-5.6 Luna降价80%",
-      "tags": ["🔥 DeepSeek开源", "🎬 MiniMax H3", "🎥 Seedance 2.5", "💰 Luna降价80%", "🤖 具身智能"],
+      "tags": [
+        "🔥 DeepSeek开源",
+        "🎬 MiniMax H3",
+        "🎥 Seedance 2.5",
+        "💰 Luna降价80%",
+        "🤖 具身智能"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-02.html",
-      "skills": ["deepseek-v4-flash-0731", "minimax-h3", "seedance-2.5", "gpt-5.6-luna"]
+      "skills": [
+        "deepseek-v4-flash-0731",
+        "minimax-h3",
+        "seedance-2.5",
+        "gpt-5.6-luna"
+      ]
     },
     {
       "id": 37,
@@ -1776,12 +2457,27 @@
       "weekday": "星期五",
       "title": "7月AI大事件回顾：模型混战、智能体崛起、安全围栏收紧",
       "subtitle": "月度盘点 · GPT-5.6 / Claude Sonnet 5 / Gemini 3.6 · 智能体时代正式开启",
-      "tags": ["🏆 GPT-5.6", "🧠 Claude 5", "🌐 Gemini 3.6", "🤖 智能体", "🔒 安全围栏"],
+      "tags": [
+        "🏆 GPT-5.6",
+        "🧠 Claude 5",
+        "🌐 Gemini 3.6",
+        "🤖 智能体",
+        "🔒 安全围栏"
+      ],
       "skillCount": 8,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-08-01.html",
-      "skills": ["gpt-5.6", "claude-sonnet-5", "gemini-3.6-flash", "presence", "chatgpt-voice", "codex-multifolder", "codex-security-cli", "jalapeno-chip"]
+      "skills": [
+        "gpt-5.6",
+        "claude-sonnet-5",
+        "gemini-3.6-flash",
+        "presence",
+        "chatgpt-voice",
+        "codex-multifolder",
+        "codex-security-cli",
+        "jalapeno-chip"
+      ]
     },
     {
       "id": 36,
@@ -1789,12 +2485,23 @@
       "weekday": "星期四",
       "title": "从\"能写代码\"到\"能跑系统\"——4个Skill让AI智能体真正干活",
       "subtitle": "浏览器自动化 · 多步骤任务编排 · 代码审计 · 数据处理管线——让AI从聊天变成干活",
-      "tags": ["🌐 浏览器自动化", "🔄 任务编排", "🔒 代码审计", "📊 数据管线", "🤖 智能体"],
+      "tags": [
+        "🌐 浏览器自动化",
+        "🔄 任务编排",
+        "🔒 代码审计",
+        "📊 数据管线",
+        "🤖 智能体"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-31.html",
-      "skills": ["agent-browser", "multi-step-task", "code-reviewer", "data-pipeline"]
+      "skills": [
+        "agent-browser",
+        "multi-step-task",
+        "code-reviewer",
+        "data-pipeline"
+      ]
     },
     {
       "id": 35,
@@ -1802,12 +2509,23 @@
       "weekday": "星期四",
       "title": "内容创作效率再升级：4个新Skill让AI产出更像人、更快交付",
       "subtitle": "写作润色 · 演示生成 · 公众号排版 · 零代码全链路——7月最新发布的4个创作型Skill",
-      "tags": ["✍️ 文采增强", "📽️ 可编辑PPTX", "📱 公众号排版", "🎯 一句话PPT", "🔗 全链路"],
+      "tags": [
+        "✍️ 文采增强",
+        "📽️ 可编辑PPTX",
+        "📱 公众号排版",
+        "🎯 一句话PPT",
+        "🔗 全链路"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-30.html",
-      "skills": ["zh-humanizer-literary", "image-to-editable-ppt", "wechat-article-layout", "ultimate-ppt-master"]
+      "skills": [
+        "zh-humanizer-literary",
+        "image-to-editable-ppt",
+        "wechat-article-layout",
+        "ultimate-ppt-master"
+      ]
     },
     {
       "id": 34,
@@ -1815,12 +2533,23 @@
       "weekday": "星期二",
       "title": "把重复的事「腌」进自动挡——4个让AI替你值班的方案",
       "subtitle": "定时任务 · 远程遥控 · 技能固化为Skill · 三层记忆——一次配置，天天自动跑",
-      "tags": ["⏰ 自动化任务", "📱 微信遥控", "⚙️ 技能固化", "🧠 三层记忆", "🤖 无人值守"],
+      "tags": [
+        "⏰ 自动化任务",
+        "📱 微信遥控",
+        "⚙️ 技能固化",
+        "🧠 三层记忆",
+        "🤖 无人值守"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-29.html",
-      "skills": ["workbuddy-automation", "wechat-remote", "skill-creator", "memory-system"]
+      "skills": [
+        "workbuddy-automation",
+        "wechat-remote",
+        "skill-creator",
+        "memory-system"
+      ]
     },
     {
       "id": 33,
@@ -1828,12 +2557,23 @@
       "weekday": "星期一",
       "title": "文档不是写出来的，是「流」出来的——4个Skill串起你的文件处理管线",
       "subtitle": "文件管家 · Excel智能处理 · Word全家桶 · PDF批处理——让电脑替你整理",
-      "tags": ["🗂️ 文件管家", "📊 Excel处理", "📄 Word全家桶", "📑 内容摘要", "🔄 流水线"],
+      "tags": [
+        "🗂️ 文件管家",
+        "📊 Excel处理",
+        "📄 Word全家桶",
+        "📑 内容摘要",
+        "🔄 流水线"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-28.html",
-      "skills": ["file-organizer", "xlsx", "docx", "summarize"]
+      "skills": [
+        "file-organizer",
+        "xlsx",
+        "docx",
+        "summarize"
+      ]
     },
     {
       "id": 32,
@@ -1841,12 +2581,23 @@
       "weekday": "星期一",
       "title": "周一效率开机：4个新Skill让你的知识工作流水线再提速",
       "subtitle": "多阶段PPT · 小红书图文 · 团队协作 · 流程封装",
-      "tags": ["📽️ 多阶段PPT", "🃏 小红书图文", "🤖 团队协作", "⚙️ 流程封装", "🚀 周一效率"],
+      "tags": [
+        "📽️ 多阶段PPT",
+        "🃏 小红书图文",
+        "🤖 团队协作",
+        "⚙️ 流程封装",
+        "🚀 周一效率"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-27.html",
-      "skills": ["ppt-skill", "redya-xiaohongshu", "codex-team-mode", "yao-meta-skill"]
+      "skills": [
+        "ppt-skill",
+        "redya-xiaohongshu",
+        "codex-team-mode",
+        "yao-meta-skill"
+      ]
     },
     {
       "id": 31,
@@ -1854,12 +2605,23 @@
       "weekday": "星期日",
       "title": "周日充电：打通「输入→加工→输出」，4个新Skill让知识流动起来",
       "subtitle": "全平台采集 · 多平台内容包 · 学术写作套件 · Nature风PPT——知识工作的四个卡口，今天一起装上",
-      "tags": ["🌐 全平台采集", "📦 内容包", "✍️ 学术写作", "📽️ Nature PPT", "🔗 知识流动"],
+      "tags": [
+        "🌐 全平台采集",
+        "📦 内容包",
+        "✍️ 学术写作",
+        "📽️ Nature PPT",
+        "🔗 知识流动"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-26.html",
-      "skills": ["agent-reach", "build-xhs-content-pack", "codex-academic-writing-skills", "nature-paper2ppt"]
+      "skills": [
+        "agent-reach",
+        "build-xhs-content-pack",
+        "codex-academic-writing-skills",
+        "nature-paper2ppt"
+      ]
     },
     {
       "id": 30,
@@ -1867,12 +2629,23 @@
       "weekday": "星期六",
       "title": "周六工具书：这4个Skill被严重低估了——它们不写文章，但让你的工坊自己能转",
       "subtitle": "文件整理 · 多格式文档 · 品牌统一 · 画布设计——后台杂活交给它们，你只管产出",
-      "tags": ["🗂️ 文件管家", "📄 文档全家桶", "🎨 品牌统一", "🖼️ 画布设计", "🔗 后台自动化"],
+      "tags": [
+        "🗂️ 文件管家",
+        "📄 文档全家桶",
+        "🎨 品牌统一",
+        "🖼️ 画布设计",
+        "🔗 后台自动化"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-25.html",
-      "skills": ["file-organizer", "paperjsx", "brand-guidelines", "canvas-design"]
+      "skills": [
+        "file-organizer",
+        "paperjsx",
+        "brand-guidelines",
+        "canvas-design"
+      ]
     },
     {
       "id": 29,
@@ -1880,12 +2653,24 @@
       "weekday": "星期五",
       "title": "写作流水线登场：5个Skill跑通「选题→写稿→去味→排版→分发」",
       "subtitle": "内容创作 · 写作全链路 · 社交分发 · 选题诊断",
-      "tags": ["✍️ 写作流水线", "🔍 选题诊断", "🧹 去AI味", "📊 文章转PPT", "📱 社交分发"],
+      "tags": [
+        "✍️ 写作流水线",
+        "🔍 选题诊断",
+        "🧹 去AI味",
+        "📊 文章转PPT",
+        "📱 社交分发"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-24.html",
-      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "guizang-ppt-skill", "guizang-social-card-skill"]
+      "skills": [
+        "dbskill",
+        "content-research-writer",
+        "humanizer-zh",
+        "guizang-ppt-skill",
+        "guizang-social-card-skill"
+      ]
     },
     {
       "id": 40,
@@ -1893,12 +2678,23 @@
       "weekday": "星期四",
       "title": "AI程序员「自主交付PR」——研发智能体从辅助工具升级为数字员工",
       "subtitle": "腾讯云CodeBuddy NPC · OpenAI Presence · Nanobrowser开源走红 · 腾讯设计Agent Miora全量开放",
-      "tags": ["🤖 CodeBuddy NPC", "🏭 Presence", "🌐 Nanobrowser", "🎨 Miora", "⚡ 自主交付"],
+      "tags": [
+        "🤖 CodeBuddy NPC",
+        "🏭 Presence",
+        "🌐 Nanobrowser",
+        "🎨 Miora",
+        "⚡ 自主交付"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-23.html",
-      "skills": ["codebuddy-npc", "openai-presence", "nanobrowser", "miora"]
+      "skills": [
+        "codebuddy-npc",
+        "openai-presence",
+        "nanobrowser",
+        "miora"
+      ]
     },
     {
       "id": 39,
@@ -1906,12 +2702,23 @@
       "weekday": "星期三",
       "title": "Gemini深夜「三箭齐发」——大模型开始像工程团队一样分工",
       "subtitle": "3.6 Flash主力 · 3.5 Flash-Lite跑量 · 3.5 Flash Cyber守安全 · 输出Token直降17%",
-      "tags": ["🏆 3.6 Flash", "⚡ Flash-Lite", "🔒 Flash Cyber", "🤖 Cursor多智能体", "💰 Token降17%"],
+      "tags": [
+        "🏆 3.6 Flash",
+        "⚡ Flash-Lite",
+        "🔒 Flash Cyber",
+        "🤖 Cursor多智能体",
+        "💰 Token降17%"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-22.html",
-      "skills": ["gemini-3.6-flash", "gemini-flash-lite", "gemini-flash-cyber", "cursor-multi-agent"]
+      "skills": [
+        "gemini-3.6-flash",
+        "gemini-flash-lite",
+        "gemini-flash-cyber",
+        "cursor-multi-agent"
+      ]
     },
     {
       "id": 28,
@@ -1919,12 +2726,23 @@
       "weekday": "星期二",
       "title": "视觉表达力升级：4个Skill让你的内容一眼入魂",
       "subtitle": "设计零基础也能出大厂级的演示、图表、信息图和幻灯片",
-      "tags": ["🎨 视觉设计", "📽️ HTML幻灯片", "📊 可视化", "🔍 选题雷达", "🚀 视觉升级"],
+      "tags": [
+        "🎨 视觉设计",
+        "📽️ HTML幻灯片",
+        "📊 可视化",
+        "🔍 选题雷达",
+        "🚀 视觉升级"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-21.html",
-      "skills": ["huashu-design", "frontend-slides", "visual-explainer", "ai-market-radar"]
+      "skills": [
+        "huashu-design",
+        "frontend-slides",
+        "visual-explainer",
+        "ai-market-radar"
+      ]
     },
     {
       "id": 27,
@@ -1932,12 +2750,23 @@
       "weekday": "星期一",
       "title": "信息消费升级：4个Skill帮你读得更深、整理得更顺、分享得更漂亮",
       "subtitle": "孙子读论文 · 转录精修师 · 思维导图PPT · AI日报信源聚合",
-      "tags": ["📖 论文说人话", "🎙️ 转录精修", "🗺️ 思维导图PPT", "📰 AI日报", "🔗 消费→输出"],
+      "tags": [
+        "📖 论文说人话",
+        "🎙️ 转录精修",
+        "🗺️ 思维导图PPT",
+        "📰 AI日报",
+        "🔗 消费→输出"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-20.html",
-      "skills": ["sunzi-reading", "transcript-polisher", "mindmap-ppt-builder", "ai-news-digest"]
+      "skills": [
+        "sunzi-reading",
+        "transcript-polisher",
+        "mindmap-ppt-builder",
+        "ai-news-digest"
+      ]
     },
     {
       "id": 26,
@@ -1945,12 +2774,23 @@
       "weekday": "星期日",
       "title": "周日充电：4个新Skill打造个人AI内容工作台",
       "subtitle": "告别排版噩梦 · 全流程文章工厂 · 知识随身带 · AI审美引擎",
-      "tags": ["🎨 公众号排版", "✍️ 全流程工厂", "📚 知识库", "🤖 AI审美", "🔧 工作台"],
+      "tags": [
+        "🎨 公众号排版",
+        "✍️ 全流程工厂",
+        "📚 知识库",
+        "🤖 AI审美",
+        "🔧 工作台"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-19.html",
-      "skills": ["gzh-design-skill", "wewrite", "book-to-skill", "chenly-wechat-studio"]
+      "skills": [
+        "gzh-design-skill",
+        "wewrite",
+        "book-to-skill",
+        "chenly-wechat-studio"
+      ]
     },
     {
       "id": 38,
@@ -1958,12 +2798,23 @@
       "weekday": "星期六",
       "title": "WAIC大会实况——AI从「会聊」走向「能交付」的行业拐点",
       "subtitle": "小红书RED Skill · 金山灵犀 · 千问AI眼镜 · 豆包Skill自建——本周AI圈全在大模型应用落地",
-      "tags": ["🔴 RED Skill", "🏢 金山灵犀", "👓 千问眼镜", "🤖 豆包Skill", "📅 WAIC"],
+      "tags": [
+        "🔴 RED Skill",
+        "🏢 金山灵犀",
+        "👓 千问眼镜",
+        "🤖 豆包Skill",
+        "📅 WAIC"
+      ],
       "skillCount": 4,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-18.html",
-      "skills": ["red-skill", "lingxi-pro", "qwen-glasses", "doubao-skill"]
+      "skills": [
+        "red-skill",
+        "lingxi-pro",
+        "qwen-glasses",
+        "doubao-skill"
+      ]
     },
     {
       "id": 25,
@@ -1971,12 +2822,23 @@
       "weekday": "星期五",
       "title": "信息消费到知识资产：4个Skill把碎片变成武器",
       "subtitle": "PDF重建 · 去AI味 · 小红书导演 · 飞书自动化——让读过的、写过的、发过的都变成可复用的资产",
-      "tags": ["📄 PDF重建", "✍️ 去AI味", "🃏 小红书", "📅 飞书", "🔗 知识资产"],
+      "tags": [
+        "📄 PDF重建",
+        "✍️ 去AI味",
+        "🃏 小红书",
+        "📅 飞书",
+        "🔗 知识资产"
+      ],
       "skillCount": 4,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-07-17.html",
-      "skills": ["ky-markdown-rebuilder", "ll-humanizer-zh", "xhs-visual-director", "larksuite-cli"]
+      "skills": [
+        "ky-markdown-rebuilder",
+        "ll-humanizer-zh",
+        "xhs-visual-director",
+        "larksuite-cli"
+      ]
     },
     {
       "id": 24,
@@ -2055,12 +2917,24 @@
       "weekday": "星期一",
       "title": "学术与研究篇：论文精读、笔记整理、文献追踪",
       "subtitle": "论文速读 · 笔记结构化 · 文献追踪 · NotebookLM直连 · 研究流水线",
-      "tags": ["🔬 论文精读", "📝 结构化笔记", "📡 文献追踪", "🧪 NotebookLM", "📚 学术研究"],
+      "tags": [
+        "🔬 论文精读",
+        "📝 结构化笔记",
+        "📡 文献追踪",
+        "🧪 NotebookLM",
+        "📚 学术研究"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-13.html",
-      "skills": ["deep-paper-note", "notebooklm-skill", "daily-paper", "web-access", "obsidian-inbox"]
+      "skills": [
+        "deep-paper-note",
+        "notebooklm-skill",
+        "daily-paper",
+        "web-access",
+        "obsidian-inbox"
+      ]
     },
     {
       "id": 20,
@@ -2068,12 +2942,24 @@
       "weekday": "星期日",
       "title": "视觉与PPT篇：不用学设计，5个Skill搞定封面、配图和幻灯片",
       "subtitle": "公众号封面 · 信息图 · 手绘插画 · 咨询级PPT · 品牌视觉",
-      "tags": ["🎨 封面设计", "🖼️ 配图", "📽️ 咨询PPT", "✏️ 手绘插画", "🎯 品牌视觉"],
+      "tags": [
+        "🎨 封面设计",
+        "🖼️ 配图",
+        "📽️ 咨询PPT",
+        "✏️ 手绘插画",
+        "🎯 品牌视觉"
+      ],
       "skillCount": 5,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-07-12.html",
-      "skills": ["baoyu-skills", "canvas-design", "ian-xiaohei-illustrations", "cyberppt", "codex-ppt"]
+      "skills": [
+        "baoyu-skills",
+        "canvas-design",
+        "ian-xiaohei-illustrations",
+        "cyberppt",
+        "codex-ppt"
+      ]
     },
     {
       "id": 19,
@@ -2081,12 +2967,24 @@
       "weekday": "星期六",
       "title": "写作篇：从选题到发布，5个Skill把写作速度翻3倍",
       "subtitle": "选题诊断 · 深度写作 · 去AI味 · 周报生成 · 长文优化",
-      "tags": ["✍️ 选题诊断", "📝 深度写作", "🧹 去AI味", "📋 周报自动", "📐 结构优化"],
+      "tags": [
+        "✍️ 选题诊断",
+        "📝 深度写作",
+        "🧹 去AI味",
+        "📋 周报自动",
+        "📐 结构优化"
+      ],
       "skillCount": 5,
       "color": "g1",
       "numColor": "n-purple",
       "file": "2026-07-11.html",
-      "skills": ["dbskill", "content-research-writer", "humanizer-zh", "weekly-report-skill", "article-writer-skill"]
+      "skills": [
+        "dbskill",
+        "content-research-writer",
+        "humanizer-zh",
+        "weekly-report-skill",
+        "article-writer-skill"
+      ]
     },
     {
       "id": 18,
@@ -2094,12 +2992,24 @@
       "weekday": "星期五",
       "title": "GPT-5.6 正式发布！三模型怎么选、五个Skill怎么装",
       "subtitle": "Sol·Terra·Luna三模型定位 + 知识工作者入门入门套装",
-      "tags": ["🧠 Sol旗舰", "⚖️ Terra平衡", "⚡ Luna轻量", "📦 入门套装", "🚀 GPT-5.6"],
+      "tags": [
+        "🧠 Sol旗舰",
+        "⚖️ Terra平衡",
+        "⚡ Luna轻量",
+        "📦 入门套装",
+        "🚀 GPT-5.6"
+      ],
       "skillCount": 5,
       "color": "g2",
       "numColor": "n-green",
       "file": "2026-07-10.html",
-      "skills": ["content-research-writer", "humanizer-zh", "brand-guidelines", "notion-knowledge-capture", "file-organizer"]
+      "skills": [
+        "content-research-writer",
+        "humanizer-zh",
+        "brand-guidelines",
+        "notion-knowledge-capture",
+        "file-organizer"
+      ]
     },
     {
       "id": 17,
@@ -3096,10 +4006,18 @@
     "subtitle": "简体中文去AI味v3.0，51条规则+6打磨动作+语音校准",
     "desc": "专门针对简体中文的去AI味Skill。内置51条改写规则，可检测22种AI写作痕迹。v3.0新增语音校准功能——粘贴你自己写的2-3段文字做风格参考，它会提取高频词、句长、标点偏好等5项特征，让改写结果更贴近你的个人表达习惯。适合公众号、小红书、即刻短帖等场景。",
     "stars": "新发布",
-    "tags": ["去AI味", "简体中文", "语音校准", "v3.0", "22种痕迹检测"],
+    "tags": [
+      "去AI味",
+      "简体中文",
+      "语音校准",
+      "v3.0",
+      "22种痕迹检测"
+    ],
     "install": "git clone https://github.com/899ms/qu-ai-wei.git ~/.codex/skills/qu-ai-wei",
     "trigger": "帮我去AI味：[粘贴文本]",
-    "issues": ["2026-08-04"]
+    "issues": [
+      "2026-08-04"
+    ]
   },
   "shuorenhua": {
     "name": "shuorenhua（说人话）",
@@ -3107,10 +4025,17 @@
     "subtitle": "中文去AI味改写，保事实+分场景+可直接发布",
     "desc": "另一个路线的中文去味Skill。最大特点是'保事实'——不为了去AI味而改写数据、删除关键信息或扭曲原意。会先识别文本场景（公众号推文、技术博客、邮件、社交媒体），然后针对不同场景使用不同策略。适合需要保留精确数据和专业术语的文章，如行业分析报告、产品评测等。",
     "stars": "新发布",
-    "tags": ["去AI味", "保事实", "分场景", "简体中文"],
+    "tags": [
+      "去AI味",
+      "保事实",
+      "分场景",
+      "简体中文"
+    ],
     "install": "git clone https://github.com/framefutura/shuorenhua.git ~/.codex/skills/shuorenhua",
     "trigger": "说人话 帮我把这段改得更自然：[粘贴文本]",
-    "issues": ["2026-08-04"]
+    "issues": [
+      "2026-08-04"
+    ]
   },
   "weixin-writer": {
     "name": "Wexin_Writter（微信写作Agent）",
@@ -3118,10 +4043,17 @@
     "subtitle": "微信公众号写作全套Agent，6种排版风格+标题+封面+配图",
     "desc": "微信公众号专用写作Agent。内置6种排版风格（极简知识科普、商业媒体深度、情绪故事治愈、教程干货效率、品牌营销活动、财经专业报告），会根据文章类型自动选择合适的排版方案。还能产出3-8个标题候选、120字摘要、封面图方案和正文配图方案。从选题到发布检查清单，全流程覆盖。",
     "stars": "新发布",
-    "tags": ["公众号", "微信写作", "6种排版", "全流程"],
+    "tags": [
+      "公众号",
+      "微信写作",
+      "6种排版",
+      "全流程"
+    ],
     "install": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo KevinKE93/Wexin_Writter --ref dev --path . --name Weixin_Writer",
     "trigger": "Use $Weixin_Writer to write a WeChat article about...",
-    "issues": ["2026-08-04"]
+    "issues": [
+      "2026-08-04"
+    ]
   },
   "codex-claude-academic-skills": {
     "name": "codex-claude-academic-skills（学术三件套）",
@@ -3129,10 +4061,18 @@
     "subtitle": "论文写作+学术PPT/Word+科研计算绘图，三Skill联动",
     "desc": "为中国科研工作者设计的三合一Skill包。包含research-writing-skill（论文章节撰写、润色、审稿回复）、office-academic-skill（文献阅读报告、组会PPT、开题答辩PPT）和scientific-toolkit-skill（MATLAB/Python仿真、论文配图）。三个Skill可联动：先跑数据绘图→再写论文正文→最后生成答辩PPT，一条流水线走完。",
     "stars": "1.4K+",
-    "tags": ["学术写作", "PPT生成", "科研计算", "论文润色", "三合一"],
+    "tags": [
+      "学术写作",
+      "PPT生成",
+      "科研计算",
+      "论文润色",
+      "三合一"
+    ],
     "install": "git clone https://github.com/flyearth9981/codex-claude-academic-skills.git && cp -R codex-claude-academic-skills/skills/* ~/.codex/skills/",
     "trigger": "使用office-academic-skill读取这篇论文...",
-    "issues": ["2026-08-04"]
+    "issues": [
+      "2026-08-04"
+    ]
   },
   "scenarios": [
     {
