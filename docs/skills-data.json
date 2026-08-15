@@ -275,7 +275,8 @@
       ],
       "install": "git clone https://github.com/julilaoshi/sunzi-reading.git ~/.codex/skills/sunzi-reading",
       "issues": [
-        "2026-07-20"
+        "2026-07-20",
+        "2026-08-14"
       ],
       "result": "一篇看不懂的论文 → 像听长辈讲故事一样理解了核心观点、创新点和局限性。"
     },
@@ -351,7 +352,8 @@
       ],
       "install": "npx -y skills@latest add joeseesun/qiaomu-paper-interpreter --agent codex --global",
       "issues": [
-        "2026-07-05"
+        "2026-07-05",
+        "2026-08-14"
       ],
       "screenshot": "",
       "result": "一篇 Arxiv 论文链接 → 5分钟出结构化中文报告：含研究背景、核心方法、实验数据对比、应用场景、局限性。"
@@ -467,7 +469,8 @@
       ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path meeting-notes-and-actions",
       "issues": [
-        "2026-06-26"
+        "2026-06-26",
+        "2026-08-15"
       ],
       "screenshot": "",
       "result": "1小时会议录音 → 2分钟出结构化纪要+行动项。以前手动整理要20分钟。"
@@ -485,7 +488,8 @@
       ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path email-draft-polish",
       "issues": [
-        "2026-06-26"
+        "2026-06-26",
+        "2026-08-15"
       ],
       "screenshot": "",
       "result": "几句要点 → 一封语气恰当的专业邮件。客户/领导/同事各不同。"
@@ -504,7 +508,8 @@
       "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill file-organizer --agent codex --global",
       "issues": [
         "2026-07-25",
-        "2026-06-26"
+        "2026-06-26",
+        "2026-08-15"
       ],
       "screenshot": "",
       "result": "桌面一堆散乱文件 → 按类型/日期/项目自动分类归档。"
@@ -522,7 +527,8 @@
       ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path notion-knowledge-capture",
       "issues": [
-        "2026-06-26"
+        "2026-06-26",
+        "2026-08-15"
       ],
       "screenshot": "",
       "result": "灵感碎片 → 结构化Notion页面。不会因为懒得整理而丢失好想法。"
@@ -1028,7 +1034,8 @@
       ],
       "install": "git clone https://github.com/ComposioHQ/awesome-codex-skills.git && python skill-installer/scripts/install-skill-from-github.py --repo ComposioHQ/awesome-codex-skills --path spreadsheet-formula-helper",
       "issues": [
-        "2026-06-29"
+        "2026-06-29",
+        "2026-08-15"
       ],
       "screenshot": "",
       "result": "描述需求 → 写好+解释好的Excel公式。不用百度，复制粘贴即用。"
@@ -1260,7 +1267,8 @@
       ],
       "install": "git clone https://github.com/hhhzauuu/Daily-paper.git && cd Daily-paper && cp -Recurse -Force skills/daily-paper-digest $env:USERPROFILE\\.codex\\skills\\daily-paper-digest",
       "issues": [
-        "2026-07-09"
+        "2026-07-09",
+        "2026-08-14"
       ],
       "screenshot": "",
       "result": "配置研究方向「企业战略咨询方法论」→ 每天早8点邮件推送3-5篇最新论文中文摘要，含PDF+主图+你的理解+局限分析。"
@@ -1692,7 +1700,8 @@
       ],
       "install": "git clone https://github.com/zl9099/codex-academic-writing-skills.git && cd codex-academic-writing-skills && ./install.sh",
       "issues": [
-        "2026-07-26"
+        "2026-07-26",
+        "2026-08-14"
       ],
       "screenshot": "",
       "result": "一段中文论文摘要→学术级英文翻译：保留措辞强度、统计术语、引用标记。不会把'suggests'拔高成'proves'。"
@@ -1712,7 +1721,8 @@
       ],
       "install": "git clone https://github.com/lth0/codexSkill.git && cp -R codexSkill/nature-paper2ppt ~/.codex/skills/nature-paper2ppt",
       "issues": [
-        "2026-07-26"
+        "2026-07-26",
+        "2026-08-14"
       ],
       "screenshot": "",
       "result": "一份15页PDF研究报告→完整.pptx：封面+目录+核心发现+数据图表+结论建议。每页配演讲者备注，报告→汇报，10分钟。"
@@ -2159,6 +2169,56 @@
     }
   },
   "issues": [
+    {
+      "id": 54,
+      "date": "2026-08-15",
+      "weekday": "星期六",
+      "title": "周末把办公室「杂活」交给 AI：会议、表格、邮件、文件一把梭",
+      "subtitle": "5 个 Skill · Codex 对话效率 · NotebookLM 批量来源",
+      "tags": [
+        "📘 Skills",
+        "🗓️ 会议纪要",
+        "📊 表格公式",
+        "✉️ 邮件处理",
+        "🗂️ 文件整理"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-15.html",
+      "skills": [
+        "meeting-notes-and-actions",
+        "spreadsheet-formula-helper",
+        "email-draft-polish",
+        "file-organizer",
+        "notion-knowledge-capture"
+      ]
+    },
+    {
+      "id": 53,
+      "date": "2026-08-14",
+      "weekday": "星期五",
+      "title": "读得进、讲得清：研究阅读与学术写作的「五件套」",
+      "subtitle": "5 个 Skill · Codex 0.148 稳定版 · Gemini Notebook 文件分析",
+      "tags": [
+        "📘 Skills",
+        "📖 论文阅读",
+        "🎓 学术写作",
+        "📽️ PPT 生成",
+        "🔍 研究追踪"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-08-14.html",
+      "skills": [
+        "qiaomu-paper-interpreter",
+        "nature-paper2ppt",
+        "sunzi-reading",
+        "daily-paper",
+        "codex-academic-writing-skills"
+      ]
+    },
     {
       "id": 52,
       "date": "2026-08-13",
