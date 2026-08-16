@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-16</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-16 · 星期日</div>
+    <h1>内容创作升级包：从「写得像 AI」进化到「写得像你」</h1>
+    <div class="art-sub">5 个 Skill · 审美约束 · 去模板 · 跨平台分发 · 网文与视频化</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>AI 写作最大的坑不是「不会写」，而是「一眼 AI 味」：空话套话、万能过渡、跨平台一个模子。今天这 5 个 Skill 刚好把这条流水线补全——先拦平庸（taste-skill）、再删废话（stop-slop）、一份文稿拆成多平台（platform-repurpose），从网文到视频分镜也一次配齐。全部 0 行代码，装完就能用。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+    <!-- 每个 Skill 用 .skill 卡片，第一个用 .skill.featured -->
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">taste-skill（审美约束）</div><div class="sk-subtitle">Leonxlnx · 阻止 AI 产出平庸同质化内容，写作/脚本/方案质感跃升</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 68K+</span><span class="bd bd-p">内容创作</span><span class="bd bd-o">审美约束</span><span class="bd bd-r">质感提升</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个「审美约束」Skill，让 AI 在写作、脚本、方案时主动避开俗套表达和同质化结构，输出「有质感」而非「能用就行」。<br><strong>最适合：</strong>自媒体文案、短视频脚本、商业方案、创意内容——凡是受够了「一站式」「赋能」「宝藏」这类词的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add Leonxlnx/taste-skill --agent codex --global</div><div class="cmt">装好后直接说「用 taste 视角帮我写/改」，它就会套上审美约束。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>写一段产品种草文案，观察它有没有把「一站式解决方案」「赋能」这类词拦下来。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我写一段咖啡豆的小红书种草文案，目标人群是手冲入门者」</div>
+        <div class="ex-out"><strong>成果：</strong>去掉「宝藏」「绝绝子」「太香了」这类空洞词，改用具体口感描述（花香、酸度、回甘）和真实使用场景，质感明显提升。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">stop-slop（轻量化去模板）</div><div class="sk-subtitle">hardikpandya · 只剔除填充句与冗余修饰，不做大改</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 8K+</span><span class="bd bd-p">写作润色</span><span class="bd bd-b">去 AI 味</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>极简去模板工具，不大幅改写原文，只删掉「总的来说」「值得注意的是」「在当今时代」这类填充句和冗余修饰。<br><strong>最适合：</strong>初稿轻度润色、不想破坏原文结构和语气的场景，删完比原来利落，但不改你的意思。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add hardikpandya/stop-slop --agent codex --global</div><div class="cmt">把初稿贴给它，说「去掉 slop」，它会标出可删的废话并给精简版。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你昨天写的 AI 初稿丢进去，看它删掉了多少废话。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>一段 AI 生成的公文腔段落（「在当今快速发展的时代背景下，值得注意的是……」）</div>
+        <div class="ex-out"><strong>成果：</strong>同一段话删掉约 15% 的冗余词，语义不变，读起来更利落、更像人写的。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">platform-repurpose（跨平台文案适配）</div><div class="sk-subtitle">coinluu · 一份文稿自动适配小红书/抖音/公众号/知乎</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2.1K+</span><span class="bd bd-p">社交分发</span><span class="bd bd-o">一稿多发</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把同一份内容按不同平台的行文规则与语气自动改写。<br><strong>最适合：</strong>做多平台矩阵的自媒体人，一稿四发不用手动改四遍，钩子、标签、语气一次配齐。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add coinluu/platform-repurpose-skill --agent codex --global</div><div class="cmt">给它原文 + 目标平台列表，它会逐平台产出适配版本。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一篇公众号长文，一键转成小红书图文脚本 + 抖音口播稿。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把这篇文章分别改写成小红书、抖音、知乎三个版本」</div>
+        <div class="ex-out"><strong>成果：</strong>三个平台版本各配好钩子开头、话题标签、语气风格，可直接发布。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ai-novel-writing-skills（中文网文全流程）</div><div class="sk-subtitle">imerzzhu · 选题→大纲→章节→审查→润色 9 个 skill 全链路</div></div></div>
+      <div class="badges"><span class="bd bd-r">新发布</span><span class="bd bd-p">内容创作</span><span class="bd bd-b">网文写作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>面向中文网文创作的 9 件套，覆盖选题、大纲、章节写作、剧情审查、文笔润色、完稿校验，还有男频热梗与女频情绪线专属 skill。<br><strong>最适合：</strong>写网文/故事/连载的作者，以及想系统化做内容生产的创作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add imerzzhu/ai-novel-writing-skills --agent codex --global</div><div class="cmt">内含 webnovel-topic / outline / write / review / polish 等 9 个子 skill，可单独触发。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>用 webnovel-topic 生成 5 个高潜都市幻想选题，带钩子和卖点。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「用 webnovel-topic 设计 5 个都市奇幻网文选题，含金手指、目标读者、风险提示」</div>
+        <div class="ex-out"><strong>成果：</strong>5 个选题卡片，每个都带钩子、金手指设定、目标人群与风险点，可直接进入大纲阶段。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">video-storyboard-builder（视频分镜）</div><div class="sk-subtitle">lynote-ai · 脚本自动拆分镜，同步生成文生视频提示词</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2.3K+</span><span class="bd bd-p">内容创作</span><span class="bd bd-o">视频分镜</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把脚本自动拆成标准分镜（景别 + 画面 + 文案），并同步生成 Pika/可灵文生视频提示词。<br><strong>最适合：</strong>数字人短视频、AI 动画创作者，以及想把文字内容视频化的作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add lynote-ai/video-storyboard-builder --agent codex --global</div><div class="cmt">给一段脚本，它按节奏拆成镜头并配文生视频提示词。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你一段口播稿拆成分镜，每个镜头配一条文生视频提示词。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把这段 200 字口播稿拆成 6 个分镜，每个配一条可灵提示词」</div>
+        <div class="ex-out"><strong>成果：</strong>6 个分镜（景别 + 画面描述 + 口播文案）+ 6 条文生视频提示词，可直接丢给可灵/ Pika 出片。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ GPT-5.6 多智能体 v2 全量上线</div></div><div class="tb">8 月 16 日，OpenAI 正式宣布多智能体 v2 全面上线：主 Agent 会自动把子任务委派给不同的模型（Sol / Terra / Luna），每个子 Agent 还能单独设推理强度。总裁 Greg Brockman 表示这是「朝着告别手动选模型的方向前进」。对普通用户的直接好处——复杂任务里只有约 20% 的步骤需要最强模型，其余交给便宜模型，又快又省。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🚀 ChatGPT 前端性能「史诗级」换血</div></div><div class="tb">同一波更新里，ChatGPT 应用加载速度提升 94%，网络请求减少 98.2%，连 741 轮的「怪物级」对话都能 1.66 秒打开。长对话越聊越卡的问题，基本翻篇了。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🧭 对话分区 Sections 技巧</div></div><div class="tb">Codex CLI 0.147.0 支持把长对话整理成可持久化、可手动排序的 section。写长文或做多阶段研究时，按「选题 / 素材 / 初稿 / 润色」分区，回看和续写会清爽很多。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 素材纪律：一个 notebook 一个主题</div></div><div class="tb">NotebookLM 是「以来源为依据」的系统，输出天花板取决于素材质量。一个 notebook 只放一个主题 + 5-10 个高质量来源是「甜区」，塞太多反而稀释检索命中率。素材最好有清晰标题层级和条列结构。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 先跟大模型讨论，再丢 NotebookLM 整理</div></div><div class="tb">NotebookLM 是「整理器」不是「创作器」。正确的顺序是：先跟 Claude / ChatGPT 讨论想解什么题、拆成几段，再拿结论去找素材喂给 NotebookLM，最后做有针对性的问答。反过来让它「从零想写什么」会浪费它的优势。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Deep Research 提问公式 + 中文视觉的坑</div></div><div class="tb">提问用「主题 + 时间范围 + 分析面向」三件套，结果最稳。另外注意：Slide Decks / Infographics 里的中文字经常扭曲，正式简报要「NotebookLM 整内容 + Google Slides / Canva 做视觉」。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 指令四要素，一次说清</div></div><div class="tb">想让 WorkBuddy 精准执行，把「身份 + 目标 + 范围 + 格式」说全：如「你是一名项目数据分析师，分析这份项目运营数据（范围），输出一份带图表的 PDF 报告（格式）」。四要素齐了，一轮就能拿到满意结果，少走几轮返工。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ Plan 预演 + Craft 执行</div></div><div class="tb">3 步以上的复杂任务，先开 Plan 模式让它出完整执行计划，你确认无误再切 Craft 执行，能避免 AI 理解跑偏返工；简单明确的活（改文档、生成表格）直接 Craft 落地。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果</div>
+      <div class="sh-sub">用 stop-slop + taste-skill + platform-repurpose 三连，把 AI 初稿升级成「有质感、无废话、三平台可发」的成品</div>
+      <div class="sh-box">
+        <strong>原始 AI 初稿：</strong>「这款咖啡豆真的太宝藏了！一站式满足你的味蕾需求，赋能你的每一个清晨，绝对不容错过！」<br><br>
+        <strong>① stop-slop 删废话：</strong>去掉「一站式」「赋能」「不容错过」→「这款咖啡豆很宝藏，能满足你的味蕾需求。」<br>
+        <strong>② taste-skill 提质感：</strong>「入口是淡淡的茉莉花香，尾调带一丝柑橘酸，回甘干净——手冲入门的第一支豆，喝得到层次，也踩得了雷。」<br>
+        <strong>③ platform-repurpose 三平台版：</strong>小红书（含 #手冲咖啡 #咖啡豆推荐 标签）+ 抖音口播稿（15 秒开头钩子）+ 公众号长文（从风味讲起）。<br><br>
+        <strong>结果：</strong>同一篇内容，三分钟产出「干净、有质感、三平台可发」的成品，而不是到处都一个味的 AI 腔。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 别让工具替你「偷懒」——让它替你「把关」，把最像你的那部分留给自己。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-16</span>
+  </div>
+</div>
+</body>
+</html>

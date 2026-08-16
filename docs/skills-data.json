@@ -34,7 +34,10 @@
         "nature-skills",
         "canghe-skills",
         "agents-md-creator",
-        "wechat-article-pipeline-skill"
+        "wechat-article-pipeline-skill",
+        "taste-skill",
+        "stop-slop",
+        "ai-novel-writing-skills"
       ]
     },
     {
@@ -65,7 +68,8 @@
         "visual-explainer",
         "wechat-article-layout",
         "canghe-skills",
-        "cc2image"
+        "cc2image",
+        "video-storyboard-builder"
       ]
     },
     {
@@ -113,7 +117,8 @@
         "redya-xiaohongshu",
         "self-media-content-workflow",
         "agent-xiaohongshu-workbench",
-        "canghe-skills"
+        "canghe-skills",
+        "platform-repurpose"
       ]
     },
     {
@@ -2166,9 +2171,119 @@
         "社交分发",
         "公众号"
       ]
+    },
+    "taste-skill": {
+      "name": "taste-skill",
+      "author": "Leonxlnx",
+      "subtitle": "审美约束 · 写作质感提升",
+      "desc": "阻止 AI 产出平庸同质化内容的「审美约束」Skill，让写作、脚本、方案避开俗套表达，输出有质感的内容。",
+      "stars": "68K+",
+      "tags": [
+        "内容创作",
+        "审美约束",
+        "质感提升"
+      ],
+      "install": "npx -y skills@latest add Leonxlnx/taste-skill --agent codex --global",
+      "issues": [
+        "2026-08-16"
+      ],
+      "result": "一句话「帮我写种草文案」也能避开「宝藏/赋能/一站式」空洞词，改成具体口感与场景描述。"
+    },
+    "stop-slop": {
+      "name": "stop-slop",
+      "author": "hardikpandya",
+      "subtitle": "轻量化去模板 · 只删废话不改意思",
+      "desc": "极简去模板工具，只剔除「总的来说」「值得注意的是」等填充句和冗余修饰，不做大幅改写。",
+      "stars": "8K+",
+      "tags": [
+        "写作润色",
+        "去AI味",
+        "轻量"
+      ],
+      "install": "npx -y skills@latest add hardikpandya/stop-slop --agent codex --global",
+      "issues": [
+        "2026-08-16"
+      ],
+      "result": "AI 初稿删掉约 15% 冗余词，语义不变，读起来更利落。"
+    },
+    "platform-repurpose": {
+      "name": "platform-repurpose",
+      "author": "coinluu",
+      "subtitle": "跨平台文案适配 · 一稿多发",
+      "desc": "把同一份内容按小红书/抖音/公众号/知乎的不同行文规则与语气自动改写，配好钩子、标签、语气。",
+      "stars": "2.1K+",
+      "tags": [
+        "社交分发",
+        "一稿多发",
+        "矩阵"
+      ],
+      "install": "npx -y skills@latest add coinluu/platform-repurpose-skill --agent codex --global",
+      "issues": [
+        "2026-08-16"
+      ],
+      "result": "一篇公众号长文一键转成小红书图文+抖音口播+知乎三版，直接可发。"
+    },
+    "ai-novel-writing-skills": {
+      "name": "ai-novel-writing-skills",
+      "author": "imerzzhu",
+      "subtitle": "中文网文全流程 · 9 件套",
+      "desc": "覆盖选题、大纲、章节写作、剧情审查、文笔润色、完稿校验，另含男频热梗与女频情绪线专属 skill。",
+      "stars": "新发布",
+      "tags": [
+        "内容创作",
+        "网文写作",
+        "全流程"
+      ],
+      "install": "npx -y skills@latest add imerzzhu/ai-novel-writing-skills --agent codex --global",
+      "issues": [
+        "2026-08-16"
+      ],
+      "result": "webnovel-topic 一次产出 5 个带钩子、金手指、目标读者与风险点的都市奇幻选题。"
+    },
+    "video-storyboard-builder": {
+      "name": "video-storyboard-builder",
+      "author": "lynote-ai",
+      "subtitle": "视频分镜 · 脚本拆镜头 + 文生视频提示词",
+      "desc": "把脚本自动拆成标准分镜（景别+画面+文案），并同步生成 Pika/可灵文生视频提示词。",
+      "stars": "2.3K+",
+      "tags": [
+        "内容创作",
+        "视频分镜",
+        "短视频"
+      ],
+      "install": "npx -y skills@latest add lynote-ai/video-storyboard-builder --agent codex --global",
+      "issues": [
+        "2026-08-16"
+      ],
+      "result": "200 字口播稿拆成 6 个分镜 + 6 条文生视频提示词，可直接出片。"
     }
   },
   "issues": [
+    {
+      "id": 55,
+      "date": "2026-08-16",
+      "weekday": "星期日",
+      "title": "内容创作升级包：从「写得像 AI」进化到「写得像你」",
+      "subtitle": "5 个 Skill · 审美约束 · 去模板 · 跨平台分发 · 网文与视频化",
+      "tags": [
+        "📘 Skills",
+        "🎨 审美约束",
+        "✂️ 去模板",
+        "📱 跨平台分发",
+        "🎬 视频分镜"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-16.html",
+      "skills": [
+        "taste-skill",
+        "stop-slop",
+        "platform-repurpose",
+        "ai-novel-writing-skills",
+        "video-storyboard-builder"
+      ]
+    },
     {
       "id": 54,
       "date": "2026-08-15",
