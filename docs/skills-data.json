@@ -37,7 +37,8 @@
         "wechat-article-pipeline-skill",
         "taste-skill",
         "stop-slop",
-        "ai-novel-writing-skills"
+        "ai-novel-writing-skills",
+        "human-writing"
       ]
     },
     {
@@ -95,7 +96,8 @@
         "ultimate-ppt-master",
         "nature-skills",
         "gorden-super-ppt",
-        "slide-maker"
+        "slide-maker",
+        "dashiai-ppt-skill"
       ]
     },
     {
@@ -118,7 +120,9 @@
         "self-media-content-workflow",
         "agent-xiaohongshu-workbench",
         "canghe-skills",
-        "platform-repurpose"
+        "platform-repurpose",
+        "yuwen-publish-precheck",
+        "wechat-skill"
       ]
     },
     {
@@ -160,7 +164,8 @@
         "nature-skills",
         "agent-xiaohongshu-workbench",
         "redfox-community",
-        "marketing-skills"
+        "marketing-skills",
+        "bullshit-detector"
       ]
     },
     {
@@ -2256,9 +2261,120 @@
         "2026-08-16"
       ],
       "result": "200 字口播稿拆成 6 个分镜 + 6 条文生视频提示词，可直接出片。"
+    },
+    "human-writing": {
+      "name": "human-writing（活人感写作）",
+      "author": "KKKKhazix",
+      "subtitle": "让 AI 写的中文读起来像一个具体的人在说话",
+      "desc": "治「AI 写中文读着流畅、但说不出是谁写的」通病。动笔前先判断有没有料，材料过关后管三件事：事实/推进/中文白话。初稿后逐段砍重复、调节奏、拦冒号滥用和「不是…而是…」翻案腔。",
+      "stars": "2806",
+      "tags": [
+        "写作润色",
+        "去AI味",
+        "MIT开源"
+      ],
+      "install": "npx -y skills@latest add KKKKhazix/human-writing --agent codex --global",
+      "issues": [
+        "2026-08-17"
+      ],
+      "result": "一段 AI 初稿 → 有判断、有停顿、有细节的活人感版本。"
+    },
+    "dashiai-ppt-skill": {
+      "name": "dashiai-ppt-skill（大师 PPT）",
+      "author": "mujingquan835（@大师的AI小灶）",
+      "subtitle": "网页编辑 + 可编辑 PPTX 导出，12 套主题 1020 版式",
+      "desc": "适合职场人的 PPT Skill。每页自带编辑控制台，浏览器里改完一键导出可编辑 PPTX。12 套视觉主题、1020 版式、8576 可调控件，支持对已有 PPT 做带快照的安全返工。",
+      "stars": "119",
+      "tags": [
+        "PPT生成",
+        "可编辑PPTX",
+        "12套主题",
+        "网页编辑"
+      ],
+      "install": "npx skills add https://github.com/mujingquan835/dashiai-ppt-skill --skill dashiai-ppt",
+      "issues": [
+        "2026-08-17"
+      ],
+      "result": "3000 字方案 → 12 页可编辑 .pptx，浏览器里拖拽改字再导出。"
+    },
+    "bullshit-detector": {
+      "name": "bullshit-detector（事实核查器）",
+      "author": "SerhiiKorniienko",
+      "subtitle": "逐条 claim 核查 + 打分 + 附来源，给 0-10 的 BS 分",
+      "desc": "追热点选题前先验真。把爆款视频/文章/推文/PDF 丢给它，逐条声明核查并给结论（confirmed/plausible/misleading/false/unverifiable），每条带来源链接，最后打一个 BS 分。",
+      "stars": "132",
+      "tags": [
+        "事实核查",
+        "选题研究",
+        "BS分"
+      ],
+      "install": "npx skills@latest add SerhiiKorniienko/bullshit-detector",
+      "issues": [
+        "2026-08-17"
+      ],
+      "result": "270 万播放的「AI 泡沫」视频 → 60 条 claim 逐条核验，44 条单独搜索，每条标真伪附来源。"
+    },
+    "yuwen-publish-precheck": {
+      "name": "yuwen-publish-precheck（发布前审）",
+      "author": "yuwen-cool",
+      "subtitle": "发抖音/小红书/视频号前先审：能不能发、哪句踩线、怎么改",
+      "desc": "两层检测（词面预检+语义判定）分清语境差异——「月入过万」在个人经历没事、绑卖课链接就违规。72 条官方规则引文可查证，把你踩过的坑沉淀下来越用越准。",
+      "stars": "501",
+      "tags": [
+        "发布前审",
+        "合规",
+        "72条官方规则"
+      ],
+      "install": "npx -y skills@latest add yuwen-cool/yuwen-publish-precheck --agent codex --global",
+      "issues": [
+        "2026-08-17"
+      ],
+      "result": "带货口播稿 → 3 处必改点 + 复检 0 命中的可发版本。"
+    },
+    "wechat-skill": {
+      "name": "wechat-skill（公众号内容工具包）",
+      "author": "843645440（甲木 × 摸鱼小李）",
+      "subtitle": "Markdown → 不掉格式的公众号 HTML，多账号草稿全链路",
+      "desc": "公众号排版+发布全链路。样式全内联规避公众号过滤，4 套主题+一句话生成器，章节自动编号、关键词标注，双关卡质量校验，多账号独立草稿箱，一键复制到剪贴板。",
+      "stars": "86",
+      "tags": [
+        "公众号排版",
+        "多账号",
+        "4套主题"
+      ],
+      "install": "npx -y skills@latest add 843645440/wechat-skill --agent codex --global",
+      "issues": [
+        "2026-08-17"
+      ],
+      "result": "一篇 Markdown → 摸鱼绿主题公众号 HTML，一键复制进剪贴板。"
     }
   },
   "issues": [
+    {
+      "id": 56,
+      "date": "2026-08-17",
+      "weekday": "星期一",
+      "title": "内容流水线的「质检关」：写、核、审、发一条龙",
+      "subtitle": "5 个 Skill · 活人感写作 · 大师PPT · 事实核查 · 发布前审 · 公众号排版",
+      "tags": [
+        "📘 Skills",
+        "✍️ 活人感写作",
+        "📽️ 大师PPT",
+        "🔍 事实核查",
+        "📱 发布前审"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-17.html",
+      "skills": [
+        "human-writing",
+        "dashiai-ppt-skill",
+        "bullshit-detector",
+        "yuwen-publish-precheck",
+        "wechat-skill"
+      ]
+    },
     {
       "id": 55,
       "date": "2026-08-16",
