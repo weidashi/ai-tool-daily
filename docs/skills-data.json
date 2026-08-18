@@ -38,7 +38,8 @@
         "taste-skill",
         "stop-slop",
         "ai-novel-writing-skills",
-        "human-writing"
+        "human-writing",
+        "paraphrase-academic"
       ]
     },
     {
@@ -122,7 +123,8 @@
         "canghe-skills",
         "platform-repurpose",
         "yuwen-publish-precheck",
-        "wechat-skill"
+        "wechat-skill",
+        "xhs-account-strategy"
       ]
     },
     {
@@ -165,7 +167,9 @@
         "agent-xiaohongshu-workbench",
         "redfox-community",
         "marketing-skills",
-        "bullshit-detector"
+        "bullshit-detector",
+        "codex-pdf-reader",
+        "claude-scholar"
       ]
     },
     {
@@ -185,7 +189,8 @@
         "spreadsheet-formula-helper",
         "knowledge-site-creator",
         "invoice-organizer",
-        "audio-tldr-skill"
+        "audio-tldr-skill",
+        "pdf-processing-pro-skill"
       ]
     }
   ],
@@ -2347,9 +2352,119 @@
         "2026-08-17"
       ],
       "result": "一篇 Markdown → 摸鱼绿主题公众号 HTML，一键复制进剪贴板。"
+    },
+    "xhs-account-strategy": {
+      "name": "xhs-account-strategy（小红书爆款拆解）",
+      "author": "phoebeliuchang-ai",
+      "subtitle": "自动拆解小红书爆款笔记的钩子、结构、标签与种草逻辑",
+      "desc": "把竞品/爆款笔记喂给它，自动拆出「为什么这篇能火」：标题钩子怎么起、正文结构怎么搭、标签怎么埋、种草点怎么植入。不做内容搬运，只做结构解剖，帮你在动手写之前先看清爆款公式。",
+      "stars": "2.7k",
+      "tags": [
+        "社交分发",
+        "小红书",
+        "爆款拆解"
+      ],
+      "install": "npx -y skills@latest add phoebeliuchang-ai/xhs-account-strategy --agent codex --global",
+      "issues": [
+        "2026-08-18"
+      ],
+      "result": "一篇爆款笔记 → 可复用的钩子+结构+标签清单，照着套出自己的版本。"
+    },
+    "codex-pdf-reader": {
+      "name": "codex-pdf-reader（PDF 深度阅读）",
+      "author": "liyuanliu048-web",
+      "subtitle": "把 PDF 论文/报告读成结构化卡片笔记，边读边沉淀",
+      "desc": "为 PDF 生成证据包（元数据、目录、每页索引、关键页渲染），并按 Zettelkasten 卡片法输出阅读笔记。适合读长报告、论文、行业白皮书，读完直接留下一套可复用的知识卡片。",
+      "stars": "新发布",
+      "tags": [
+        "阅读总结",
+        "知识管理",
+        "PDF"
+      ],
+      "install": "npx -y skills@latest add liyuanliu048-web/codex-pdf-reader --agent codex --global",
+      "issues": [
+        "2026-08-18"
+      ],
+      "result": "一份 40 页行业 PDF → 结构化卡片笔记 + 证据地图，随时能调用。"
+    },
+    "pdf-processing-pro-skill": {
+      "name": "pdf-processing-pro（PDF 全能处理）",
+      "author": "hylarucoder",
+      "subtitle": "PDF 解析、OCR、表格提取、批量导出一条龙",
+      "desc": "把扫描件、合同、报价单、白皮书里的文字和表格抽出来，支持 OCR 识别和批量导出。非开发者也能用它把「死」的 PDF 变成「活」的文本和表格，直接进报告或文章。",
+      "stars": "2.4k",
+      "tags": [
+        "报告生成",
+        "PDF",
+        "文档处理"
+      ],
+      "install": "npx -y skills@latest add hylarucoder/pdf-processing-pro-skill --agent codex --global",
+      "issues": [
+        "2026-08-18"
+      ],
+      "result": "一份扫描版 PDF → 可编辑的文本 + 结构化表格，直接粘贴进报告。"
+    },
+    "paraphrase-academic": {
+      "name": "paraphrase-academic（学术定向改写）",
+      "author": "conorbronsdon",
+      "subtitle": "学术文本同义转述降重，严格不改结论",
+      "desc": "把已有段落改写成新的表述，用于降重和润色，但绝不篡改实验结论、保留严谨学术语气。写论文、写综述、引用前人观点时，用它避免「照抄」又保住原意。",
+      "stars": "3.3k",
+      "tags": [
+        "写作润色",
+        "学术",
+        "降重"
+      ],
+      "install": "npx -y skills@latest add conorbronsdon/paraphrase-academic --agent codex --global",
+      "issues": [
+        "2026-08-18"
+      ],
+      "result": "一段需要引用的原文 → 同义改写版，原意不变、表述全新。"
+    },
+    "claude-scholar": {
+      "name": "claude-scholar（学术研究六合一）",
+      "author": "Galaxy-Dawn",
+      "subtitle": "文献总结、研究缺口、论文大纲、审稿回复、参考文献格式化",
+      "desc": "科研写作一条龙：读文献给总结、找研究缺口、列论文大纲、写审稿回复信、格式化参考文献。硕博、写综述、做行业研究都能用，把「读文献」到「写论文」中间最费时的环节自动化。",
+      "stars": "4.6k",
+      "tags": [
+        "选题研究",
+        "学术写作",
+        "文献"
+      ],
+      "install": "npx -y skills@latest add Galaxy-Dawn/claude-scholar --agent codex --global",
+      "issues": [
+        "2026-08-18"
+      ],
+      "result": "一堆文献 → 结构化总结 + 研究缺口 + 可直接扩展的论文大纲。"
     }
   },
   "issues": [
+    {
+      "id": 57,
+      "date": "2026-08-18",
+      "weekday": "星期二",
+      "title": "读进去、写出来、发出去：内容工作者的输入输出闭环",
+      "subtitle": "PDF 深度阅读 · 学术改写 · 文档处理 · 小红书爆款拆解",
+      "tags": [
+        "📖 深度阅读",
+        "📄 PDF处理",
+        "✍️ 学术改写",
+        "🃏 小红书拆解",
+        "🔬 文献研究"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-18.html",
+      "skills": [
+        "xhs-account-strategy",
+        "codex-pdf-reader",
+        "pdf-processing-pro-skill",
+        "paraphrase-academic",
+        "claude-scholar"
+      ]
+    },
     {
       "id": 56,
       "date": "2026-08-17",

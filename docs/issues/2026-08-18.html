@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-18</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-18 · 星期二</div>
+    <h1>读进去、写出来、发出去：内容工作者的输入输出闭环</h1>
+    <div class="art-sub">PDF 深度阅读 · 学术改写 · 文档处理 · 小红书爆款拆解</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>很多人的内容卡在「读了很多、写不出来、发不出去」。今天把「输入→处理→输出→分发」四步各配一个 Skill，让读过的资料真正变成能发布的内容。另附 Codex 百万上下文大消息——上下文变大后，读长文、处理大文档都更从容了。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">xhs-account-strategy</div><div class="sk-subtitle">phoebeliuchang-ai · 小红书爆款笔记结构拆解</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2.7k</span><span class="bd bd-p">社交分发</span><span class="bd bd-r">小红书</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把竞品或爆款笔记喂给它，自动拆出「为什么这篇能火」——标题钩子怎么起、正文结构怎么搭、标签怎么埋、种草点怎么植入。<br><strong>最适合：</strong>准备发小红书、却总是「凭感觉写」的创作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add phoebeliuchang-ai/xhs-account-strategy --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>找一篇你收藏的小红书爆款，让 Codex 用这个 Skill 拆出它的钩子 + 结构 + 标签，再套到自己的选题上。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>把这条爆款笔记「打工人下班后的 3 个充电方法，亲测有效」拆解成可复用结构</div>
+        <div class="ex-out"><strong>成果：</strong>钩子=反常识身份切入（打工人）；结构=痛点→3 个方法→每步 1 句验证；标签=#打工人 #自我提升 #下班后；种草点=「亲测」降低决策门槛。照着这套结构套自己的选题。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">codex-pdf-reader</div><div class="sk-subtitle">liyuanliu048-web · PDF 深度阅读 + Zettelkasten 卡片笔记</div></div></div>
+      <div class="badges"><span class="bd bd-o">🆕 新发布</span><span class="bd bd-p">阅读总结</span><span class="bd bd-b">知识管理</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>为 PDF 生成「证据包」（元数据、目录、每页索引、关键页渲染），并按卡片笔记法输出结构化阅读笔记。<br><strong>最适合：</strong>读长报告、论文、行业白皮书，读完想留下「随时能调用」的知识、而不是读完就忘。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add liyuanliu048-web/codex-pdf-reader --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>丢一份你一直没读透的 PDF 进去，让它输出一份带目录和证据定位的卡片笔记。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>读这份 40 页的《2026 年 AI 行业趋势报告》，做卡片笔记</div>
+        <div class="ex-out"><strong>成果：</strong>一份阅读笔记 .md：核心论点卡片 + 每张卡标注原文页码/图表号 + 证据地图，需要引用时点页码即可回到原文。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">pdf-processing-pro-skill</div><div class="sk-subtitle">hylarucoder · PDF 解析 / OCR / 表格提取 / 批量导出</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 2.4k</span><span class="bd bd-b">报告生成</span><span class="bd bd-o">文档处理</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把扫描件、合同、报价单、白皮书里的文字和表格抽出来，支持 OCR 识别、批量导出成可编辑文本。<br><strong>最适合：</strong>手里一堆「死」PDF、想快速取字取表进报告或文章的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add hylarucoder/pdf-processing-pro-skill --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一份扫描版资料或带表格的 PDF，让它抽出文字和表格给你。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>把这份扫描版「季度销售表」PDF 转成可编辑文本和表格</div>
+        <div class="ex-out"><strong>成果：</strong>一段可直接粘贴的文字 + 一张结构化表格，省去手动敲字和重画表格的时间。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">paraphrase-academic</div><div class="sk-subtitle">conorbronsdon · 学术文本同义转述，降重不改结论</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3.3k</span><span class="bd bd-p">写作润色</span><span class="bd bd-b">学术</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把已有段落改写成新表述，用于降重和润色，但严格不改实验结论、保留严谨语气。<br><strong>最适合：</strong>写论文、综述、引用前人观点时「想转述又怕照抄」的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add conorbronsdon/paraphrase-academic --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一段你要引用的原文，让它给出同义改写版，对比是否「原意不变、表述全新」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>把这段文献原文转述成自己的话，保留原结论</div>
+        <div class="ex-out"><strong>成果：</strong>一段同义改写版——核心结论原封不动、措辞和句式重写，避免查重命中的同时保留学术严谨。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">claude-scholar</div><div class="sk-subtitle">Galaxy-Dawn · 文献总结 / 研究缺口 / 论文大纲 / 审稿回复 / 参考文献</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 4.6k</span><span class="bd bd-p">选题研究</span><span class="bd bd-r">学术写作</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>科研写作一条龙——读文献给总结、找研究缺口、列论文大纲、写审稿回复信、格式化参考文献。<br><strong>最适合：</strong>硕博、写综述、做行业研究，把「读文献→写论文」中间最费时的环节自动化。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add Galaxy-Dawn/claude-scholar --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你要研究的方向丢进去，让它先给一份「研究缺口 + 大纲雏形」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>围绕「AI 辅助写作对内容创作者的影响」做文献梳理</div>
+        <div class="ex-out"><strong>成果：</strong>一份结构化总结 + 3 个研究缺口 + 一个可直接扩展的论文/长文大纲。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ 百万 Token 上下文向订阅用户开放（8/17）</div></div><div class="tb">GPT-5.6 Sol 的 105 万 Token 上下文窗口，从仅 API 密钥扩展到 ChatGPT Plus/Pro 订阅账号，长会话不再被迫截断历史。官方提醒：默认值已做过性能与成本调优，建议按需开启，避免额度快速消耗。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ Goal 模式转正 + 周活破 400 万（8 月）</div></div><div class="tb">Codex 上线 Goal 模式正式转正——明确目标与验收标准后自主推进数小时至数天，同期 Appshots 截图直喂、锁屏后仍能远程干活。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ GPT-5.6 Sol Ultrafast（8/13）</div></div><div class="tb">输出最高 750 Token/s、约为标准速度的 14 倍，暂向少量 API 客户开放，实时交互场景（客服、语音、金融研究）率先受益。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 NotebookLM — 素材纪律</div></div><div class="tb">一本笔记只放一个主题，5-15 个高质量来源是「甜区」；先跟大模型讨论清楚选题，再丢 NotebookLM 整理——它是整理器，不是创作器。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 NotebookLM — Deep Research 提问公式</div></div><div class="tb">「主题 + 时间范围 + 分析面向」三件套最稳。例：「2026 Q2 竞品分析，按平台 / 定价 / 渠道三轴整理。」</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 NotebookLM — Slide Revisions 对话式改片</div></div><div class="tb">点特定某一页 → 直接下指令：「把第三页改成三栏表格」「套用品牌色」「调整口吻面向 CFO」，AI 只重排该页，不用手动拉字体。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 三模式口诀</div></div><div class="tb">Ask（只聊不动手，查资料首选）→ Plan（先出方案再执行，改重要文件务必用它）→ Craft（说干就干，只用于新项目或副本）。记住顺序，能避开 90% 的误改文件。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 微信 / 企微远程</div></div><div class="tb">设置里扫码绑定微信或企业微信，通勤路上发一句「把今天的销售数据做个看板」，电脑端的 AI 替你干完并回传结果。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果</div>
+      <div class="sh-sub">把一份积灰的行业 PDF，变成一篇能发的小红书笔记</div>
+      <div class="sh-box">输入：一份《2026 AI 工具趋势》PDF（约 40 页）。<br><br>
+        ① <strong>pdf-processing-pro-skill</strong> 抽出正文 + 关键数据表；<br>
+        ② <strong>codex-pdf-reader</strong> 生成 8 张核心论点卡片，每张带页码证据；<br>
+        ③ <strong>paraphrase-academic</strong> 把 3 段核心结论改写成自己的话（不照抄）；<br>
+        ④ <strong>xhs-account-strategy</strong> 拆同类爆款结构，套出标题 + 结构 + 标签。<br><br>
+        <strong>最终交付：</strong>一篇 600 字小红书笔记——标题（打工人最该关注的 3 个 AI 工具趋势）+ 3 个方法 + 1 句种草点 + 6 个标签，可直达发布。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 读过的资料不会自动变成能力，除非你把它「过一遍手」。今天就从一份积灰的 PDF 开始，让它变成你明天能发出去的内容。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-18</span>
+  </div>
+</div>
+</body>
+</html>
