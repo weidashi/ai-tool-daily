@@ -39,7 +39,8 @@
         "stop-slop",
         "ai-novel-writing-skills",
         "human-writing",
-        "paraphrase-academic"
+        "paraphrase-academic",
+        "handoff"
       ]
     },
     {
@@ -98,7 +99,8 @@
         "nature-skills",
         "gorden-super-ppt",
         "slide-maker",
-        "dashiai-ppt-skill"
+        "dashiai-ppt-skill",
+        "ppt-speech-writer"
       ]
     },
     {
@@ -169,7 +171,10 @@
         "marketing-skills",
         "bullshit-detector",
         "codex-pdf-reader",
-        "claude-scholar"
+        "claude-scholar",
+        "grill-me",
+        "podcast-research-skill",
+        "transcribe"
       ]
     },
     {
@@ -2437,9 +2442,118 @@
         "2026-08-18"
       ],
       "result": "一堆文献 → 结构化总结 + 研究缺口 + 可直接扩展的论文大纲。"
+    },
+    "grill-me": {
+      "name": "grill-me（反向拷问）",
+      "author": "Matt Pocock",
+      "subtitle": "动手前先采访你，把思路问清楚",
+      "desc": "写文章、做方案之前，AI 反过来一次一个问题采访你，还常给建议答案照着选，把「写什么、给谁看、结构怎么搭」逼你当场想清楚再动笔。",
+      "stars": "190k+",
+      "tags": [
+        "选题诊断",
+        "写作规划",
+        "内容创作"
+      ],
+      "install": "npx -y skills@latest add mattpocock/skills --skill grill-me --agent codex --global",
+      "issues": [
+        "2026-08-23"
+      ],
+      "result": "一句模糊的选题 → 逐题追问后，拿到带钩子和分论点的大纲"
+    },
+    "handoff": {
+      "name": "handoff（会话交接）",
+      "author": "Matt Pocock",
+      "subtitle": "把对话进度压成一份交接文档",
+      "desc": "把当前对话里做过的决策、待办、进度压成一份 Markdown 交接文档，开新会话、换模型、隔天续写都不丢上下文。",
+      "stars": "190k+",
+      "tags": [
+        "写作续写",
+        "进度管理"
+      ],
+      "install": "npx -y skills@latest add mattpocock/skills --skill handoff --agent codex --global",
+      "issues": [
+        "2026-08-23"
+      ],
+      "result": "当前对话进度 → 一份可无缝续写的 Markdown 交接文档"
+    },
+    "podcast-research-skill": {
+      "name": "podcast-research-skill（播客观点研究）",
+      "author": "winnieAI123",
+      "subtitle": "播客搜索 + 本地转写 + 观点分析",
+      "desc": "搜索播客、本地 Whisper 转写、做观点分析，输出带引用的「观点简报」Markdown 报告：主导观点、核心分歧、逐集摘要。",
+      "stars": "新收录",
+      "tags": [
+        "选题研究",
+        "音频转写",
+        "阅读总结"
+      ],
+      "install": "npx -y skills@latest add winnieAI123/podcast-research-skill --agent codex --global",
+      "issues": [
+        "2026-08-23"
+      ],
+      "result": "若干期播客 → 带引用的观点简报（结论 + 分歧 + 逐集摘要）"
+    },
+    "transcribe": {
+      "name": "transcribe（官方音频转文字）",
+      "author": "OpenAI 官方",
+      "subtitle": "会议录音/播客转可检索文本 + 说话人分离",
+      "desc": "把会议录音、播客、访谈转成可检索文字，支持说话人分离标注谁在说，长音频自动分块，转完即可搜索、复制、引用。",
+      "stars": "官方",
+      "tags": [
+        "音频转写",
+        "日常自动化",
+        "阅读总结"
+      ],
+      "install": "npx -y skills@latest add openai/skills --skill transcribe --agent codex --global",
+      "issues": [
+        "2026-08-23"
+      ],
+      "result": "一段录音 → 带说话人标注的可检索文字稿"
+    },
+    "ppt-speech-writer": {
+      "name": "ppt-speech-writer（PPT 演讲备注）",
+      "author": "AI272",
+      "subtitle": "给真实 PPT 写有据可依的演讲者备注",
+      "desc": "读真实 .pptx，做文本提取 + 逐页渲染 + OCR + 视觉审查，生成有据可依的演讲者备注并注入 PPT 备注栏，含语速预算防超时。",
+      "stars": "v0.8",
+      "tags": [
+        "PPT 生成",
+        "演讲讲稿",
+        "汇报"
+      ],
+      "install": "git clone https://github.com/AI272/speaker && 把 ppt-speech-writer/ 放进 ~/.codex/skills/",
+      "issues": [
+        "2026-08-23"
+      ],
+      "result": "一份 PPT → 注入备注栏的逐页讲稿 + 完整排练文档"
     }
   },
   "issues": [
+    {
+      "id": 58,
+      "date": "2026-08-23",
+      "weekday": "星期日",
+      "title": "「听进去 · 聊清楚 · 讲出来」：5 个新 Skill 打通内容工作者的输入输出",
+      "subtitle": "音频转文字 · 播客观点研究 · 反向拷问 · 进度交接 · PPT 讲稿",
+      "tags": [
+        "🎙️ 音频转写",
+        "📻 播客研究",
+        "🤔 反向拷问",
+        "📝 进度交接",
+        "🎤 演讲备注"
+      ],
+      "skillCount": 5,
+      "color": "g2",
+      "numColor": "n-green",
+      "file": "2026-08-23.html",
+      "skills": [
+        "grill-me",
+        "handoff",
+        "podcast-research-skill",
+        "transcribe",
+        "ppt-speech-writer"
+      ]
+    },
     {
       "id": 57,
       "date": "2026-08-18",

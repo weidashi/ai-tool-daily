@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-23</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-23 · 星期日</div>
+    <h1>「听进去 · 聊清楚 · 讲出来」：5 个新 Skill 打通内容工作者的输入输出</h1>
+    <div class="art-sub">音频转文字 · 播客观点研究 · 反向拷问 · 进度交接 · PPT 讲稿</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>做内容最耗神的往往不是写正文，而是输入到输出之间的几道「暗缝」：听到的音频怎么变成能引用的文字？听完一期播客怎么沉淀成观点？动手前怎么把思路先问清楚？写一半明天怎么接着写？PPT 做完了怎么配讲稿？这期 5 个全新 Skill 正好补上这些缝，全是 0 行代码的日常知识工作。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">grill-me（反向拷问）</div><div class="sk-subtitle">Matt Pocock · mattpocock/skills 合集 · 动手前先采访你</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 190k+ 合集</span><span class="bd bd-p">选题诊断</span><span class="bd bd-o">写作规划</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>写文章、做方案之前，AI 反过来一次一个问题地采访你，还常给你一个「建议答案」照着选。它把「到底要写什么、给谁看、结构怎么搭」逼你当场想清楚，再动笔。<br><strong>最适合：</strong>每次对着空白文档发呆、写着写着跑题、或选题还没想透就急着写的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add mattpocock/skills --skill grill-me --agent codex --global</div><div class="cmt">装完重启 Codex；在对话里直接描述你要写的东西，它就会开始逐题追问。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把下周要写的公众号选题丢给它，回答它 3-5 个问题，先拿到一份清晰大纲再动笔。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「我想写一篇『AI 时代普通人怎么保持竞争力』的公众号文章」</div>
+        <div class="ex-out"><strong>成果：</strong>它会逐题问——读者是谁？他们最大的困惑是什么？你最想反驳的流行观点是哪条？你有哪些亲身案例？答完直接给出一份带钩子、分论点、案例位的大纲，写完不易跑题。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">handoff（会话交接）</div><div class="sk-subtitle">Matt Pocock · mattpocock/skills 合集 · 进度压成一份交接文档</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 190k+ 合集</span><span class="bd bd-b">进度管理</span><span class="bd bd-p">写作续写</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把当前对话里做过的决策、待办事项、写到哪一步，压成一份 Markdown 交接文档。开新会话、换模型、或第二天接着写，都不会丢上下文、不用从头解释。<br><strong>最适合：</strong>长文写作、多日连载、需要隔天续写的场景。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add mattpocock/skills --skill handoff --agent codex --global</div><div class="cmt">装完在对话里输入 /handoff 或直接让它「生成交接文档」。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>写完一段文章后输入 /handoff，把进度存成文档，明天开新会话继续写。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「/handoff」</div>
+        <div class="ex-out"><strong>成果：</strong>一份 Markdown 交接文档——已完成：前三节正文 + 引用的 3 篇文献；待办：补第 4 节案例、写结尾金句；下一步：先找两组对比数据。换会话粘贴即可无缝续写。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">podcast-research-skill（播客观点研究）</div><div class="sk-subtitle">winnieAI123 · 播客搜索 + 本地转写 + 观点分析</div></div></div>
+      <div class="badges"><span class="bd bd-o">🎙️ 音频研究</span><span class="bd bd-p">选题研究</span><span class="bd bd-g">阅读总结</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>搜索播客、本地 Whisper 转写、做观点分析，最后输出一份「观点简报」Markdown 报告——主导观点、核心分歧、逐集摘要，且每条引用都标注来源和说话人。<br><strong>最适合：</strong>做行业调研、竞品观察、选题储备时，把「听播客」从耳朵里过一遍变成可检索、可引用的素材库。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add winnieAI123/podcast-research-skill --agent codex --global</div><div class="cmt">首次用会下载本地 Whisper 模型（约 0.5-1.6GB），之后本地转写不再收费。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>用「AI 时代的知识工作者」为主题搜最近 30 天播客，选 3 集转写，拿到一份带引用的观点简报。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「搜索主题『AI 时代的知识工作者』，分析最近 30 天的播客」</div>
+        <div class="ex-out"><strong>成果：</strong>一份 Markdown 观点简报——一句话结论 + 各方立场表（谁说了什么）+ 主要分歧 2-3 条 + 逐集摘要（3-5 点，逐条带引用）。可直接当选题素材或引用来源。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">transcribe（官方音频转文字）</div><div class="sk-subtitle">OpenAI 官方 · openai/skills curated · 录音/播客转可检索文本</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 官方</span><span class="bd bd-b">音频转写</span><span class="bd bd-o">日常自动化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>OpenAI 官方 skill，把会议录音、播客、访谈转成可检索文字；可切换「说话人分离」模式标注谁在说，长音频自动分块处理。转完即可搜索、复制、引用。<br><strong>最适合：</strong>开会后不想自己整理纪要、想把录音/播客变成能翻能搜的文字的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add openai/skills --skill transcribe --agent codex --global</div><div class="cmt">也可在 Codex 里输入 $skill-installer transcribe 一键安装。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把一段 30 分钟的会议录音丢给它，拿到带说话人标注的文字稿。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把这段会议录音转成文字，标注每位说话人」</div>
+        <div class="ex-out"><strong>成果：</strong>一份按说话人分段的文字稿，可直接搜索关键决策、定位某人的原话、复制成会议纪要。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">ppt-speech-writer（PPT 演讲备注）</div><div class="sk-subtitle">AI272 · AI272/speaker · 给真实 PPT 写有据可依的讲稿</div></div></div>
+      <div class="badges"><span class="bd bd-r">🆕 v0.8</span><span class="bd bd-b">PPT 讲稿</span><span class="bd bd-p">汇报演示</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>读一份真实 .pptx，做文本提取 + 逐页渲染 + OCR + 视觉审查，生成「有据可依」的演讲者备注并直接注入 PPT 备注栏；v0.8 加了语速预算（中文约 165 字/分钟），15 分钟讲稿不再超时。<br><strong>最适合：</strong>做汇报、路演、教学的人——PPT 做完后，用它配一份逐页讲稿，含字数预算和过渡语。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">git clone https://github.com/AI272/speaker && 把 ppt-speech-writer/ 目录放进 ~/.codex/skills/</div><div class="cmt">也可下载仓库里的 speaker-v8.skill 文件，用 Codex 的 skill 导入流程安装。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把下周要汇报的 PPT 交给它，写一份 10 分钟讲稿注入备注栏。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「给这份 PPT 写一份 10 分钟汇报讲稿，写入 speaker notes」</div>
+        <div class="ex-out"><strong>成果：</strong>逐页演讲备注（含每页字数预算、过渡语、停顿标记）+ 一份完整排练文档，直接注入 PPT 备注栏。上台照着念，节奏刚好 10 分钟。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ /export：一键把对话导出成 Markdown</div></div><div class="tb">CLI 0.148.0（8/18）新增 <strong>/export</strong> 命令，把整段 TUI 对话完整导出成 Markdown 到剪贴板或文件。对写作的人尤其实用——写完一篇文章后直接 /export，拿到一份带上下文、可直接当草稿继续改的 Markdown，不用手动复制粘贴。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ 会话 fork + 归档：长文写作不迷路</div></div><div class="tb">同版本新增 <strong>codex exec fork</strong>（分支会话）和 resume 面板的归档/恢复功能。配合今天的 handoff skill，一篇长文可以在不同「分支」里试不同写法，跑偏了随时回到归档的旧会话，像 git 一样管理你的写作进程。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ 模型迁移提醒：GPT-5.4 系列 8/31 退役</div></div><div class="tb">GPT-5.4 与 GPT-5.4-mini 将于 8/31 从 Codex 退役（ChatGPT 登录用户）。官方建议替换为 <strong>gpt-5.6-terra</strong> 和 <strong>gpt-5.6-luna</strong>。如果你在 workspace 默认设置或自动化任务里写死了旧模型名，记得在截止前改掉。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 三栏工作流：素材 → 提问 → 成品</div></div><div class="tb">现在的 NotebookLM 是「左（Sources）→ 中（Chat）→ 右（Studio）」三栏：左栏放素材，中栏提问挖洞察，右栏直接生成报告/PPT 等成品。别再把它当普通问答——它的价值在右侧 Studio，能从你的资料里直接「生产」而不是只「回答」。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 8/17 新功能：整本 Notebook 可复制</div></div><div class="tb">8 月 17 日起，可复制一整个 Gemini Notebook，连同 Studio 产物（Audio/Video Overviews、学习指南、闪卡、测验、Slide Decks）一起带走（个人聊天记录和笔记不复制）。做「模板笔记本」或复用研究框架时，直接复制再替换素材，不用每次重建。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 源选择纪律：10 个优质源 &gt; 40 个重叠源</div></div><div class="tb">输出质量直接取决于输入质量：优先一手源而非二手博客；避免三份来源重复同一组数据（会放大权重）；把最核心的权威源放在上传顺序最前。加完新源后，再跑一次「源地图」提示词，更新对整本 Notebook 内容的理解。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 首页「智能推荐搜索」：描述需求，自动匹配 Skill 组合</div></div><div class="tb">在 WorkBuddy 速递首页顶部的搜索框，用一句话描述你的需求（比如「我要写社区文化活动策划发公众号」），它会自动从 100+ 已收录 Skill 里匹配出一套组合技，附「一键命令」和分步提示词。找不准用哪个工具时，先别记命令，直接描述你要干嘛。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果：一段 30 分钟播客 → 一份公众号选题清单</div>
+      <div class="sh-sub">用今天的工具组合，把「听过的」变成「能写的」</div>
+      <div class="sh-box">
+        <strong>① 转文字：</strong>用 transcribe 把一期 30 分钟播客转成文字（带说话人分离）<br>
+        <strong>② 提观点：</strong>用 podcast-research-skill 提炼出「主导观点 + 2 条核心分歧 + 逐集摘要」<br>
+        <strong>③ 定选题：</strong>用 grill-me 反向拷问，把观点聚焦成 3 个可写角度<br>
+        <strong>④ 输出：</strong>一份公众号选题清单，示例——<br>
+        <span style="color:#047857">选题 1：《为什么 AI 越强，会提问的人越值钱》——反驳「学工具就行」，用播客里两位嘉宾的分歧做钩子；<br>
+        选题 2：《听完 30 分钟播客，我只记下这 3 个反常识结论》——把逐集摘要压缩成清单体；<br>
+        选题 3：《别急着学 Prompt，先学会把一件事问清楚》——借用 grill-me 的「反向拷问」方法论。</span>
+      </div>
+      <div class="pipe">
+        <span class="ps ps-1">transcribe 转文字</span><span class="pa">→</span>
+        <span class="ps ps-2">podcast-research 提观点</span><span class="pa">→</span>
+        <span class="ps ps-3">grill-me 定选题</span><span class="pa">→</span>
+        <span class="ps ps-4">公众号选题清单</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 输入决定输出的上限，工具决定你的下限——今天这 5 个 Skill 都在帮你把「下限」抬高一点。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-23</span>
+  </div>
+</div>
+</body>
+</html>
