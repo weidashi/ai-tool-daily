@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-24</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-24 · 星期一</div>
+    <h1>把收藏夹里的知识，蒸馏成随叫随到的外脑</h1>
+    <div class="art-sub">蒸馏人物 · 蒸馏书籍 · 持续进化 · PPT 输出 —— 一条「知识蒸馏」流水线</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>这期聊一件反直觉的事：你书架上没读完的书、收藏夹里吃灰的视频、听过就忘的播客，不是没用，是从来没被「激活」过。本周 GitHub 最火的一批 Skill 都指向同一个词——<strong>蒸馏</strong>。女娲把一个人「怎么想问题」蒸馏成 skill，仓颉把一本书「讲了什么方法论」蒸馏成 skill，达尔文让这些 skill 持续进化，再配一个设计优先的 PPT 输出。装完这 4 个，你缺的从来不是知识，是随时能调用的外脑。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">女娲 nuwa-skill（蒸馏人物思维）</div><div class="sk-subtitle">alchaincyf · 输入一个人名，蒸馏出他怎么想问题、怎么做决策</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 21.6k</span><span class="bd bd-p">选题研究</span><span class="bd bd-b">思维蒸馏</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>输入一个人名，6 路 Agent 并行采集他的著作、访谈、社交媒体、批评者评价，提炼出「心智模型 + 决策启发式 + 表达 DNA」，生成一个可反复调用的 skill。乔布斯、芒格、费曼、纳瓦尔等 17 位已蒸馏好。<br><strong>最适合：</strong>卡选题、做决策时，想借大佬的脑子想一想。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add alchaincyf/nuwa-skill --agent codex --global</div><div class="cmt">装好后直接说「蒸馏一个保罗·格雷厄姆」即可，跨 Codex/Cursor 等 50+ 运行时通用。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>蒸馏一个你敬佩的人，下次纠结选题时切到他的视角问一句。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>“我同时想做自媒体、写书、做独立开发，精力完全不够”</div>
+        <div class="ex-out"><strong>成果（纳瓦尔视角）：</strong>“你列了三个欲望，每个欲望都是你跟不快乐签的一份合同。不是精力不够，是合同太多。问自己：哪一个做起来你会忘记时间？那个才是你的特定知识所在。先一，再一，再一。串行复利，不是并行内耗。”</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">仓颉 cangjie-skill（蒸馏书/视频/播客）</div><div class="sk-subtitle">kangarooking · 把方法论蒸馏成可触发、可测试的 Skill 包</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6.7k</span><span class="bd bd-p">阅读总结</span><span class="bd bd-o">知识蒸馏</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一本书、一期播客、一个长视频里的方法论，蒸馏成一套可触发、可测试的 skill 包。不是摘要，是「工具化」——每个 skill 带触发条件、使用步骤、边界说明，还生成 5 分钟能读完的 DIGEST 精华长文。<br><strong>最适合：</strong>读了记不住、收藏了用不起来的「知识囤积」。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add kangarooking/cangjie-skill --agent codex --global</div><div class="cmt">蒸馏视频时，建议先配 video-downloader 取字幕转写，再交给仓颉。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>挑一本你反复翻、却总用不起来的方法论书，蒸馏一次。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>“把《影响力》这本书蒸馏成 skill”</div>
+        <div class="ex-out"><strong>成果：</strong>12 个可调用 skill（如「说服-稀缺原则」），每个含触发条件 + 可执行步骤；外加一篇 5 分钟读完的 DIGEST 长文 + 技能地图 INDEX。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">达尔文 darwin-skill（让 skill 自动进化）</div><div class="sk-subtitle">alchaincyf · 女娲生态的「质检与进化」层，只保留改进</div></div></div>
+      <div class="badges"><span class="bd bd-p">元技能</span><span class="bd bd-o">日常自动化</span><span class="bd bd-g">质量优化</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>蒸馏出来的 skill 会过时、会有退步。达尔文用「自主实验循环」批量优化你已有的所有 skill：8 维度评估 + 棘轮机制（只保留改进、自动回滚退步）+ 独立子 agent 评分。<br><strong>最适合：</strong>攒了一批 skill 之后，让它们保持新鲜、不跑偏。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add alchaincyf/darwin-skill --agent codex --global</div><div class="cmt">女娲的 Phase 5 双 Agent 精炼就内置了达尔文的评估体系。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>装完后说一句「跑一轮达尔文，评估并优化我现有的 skill」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>“帮我优化一遍已装的 skill”</div>
+        <div class="ex-out"><strong>成果：</strong>每个 skill 一份 8 维评估报告，有改进的保留、退步的自动回滚，全程只留更好的版本。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">ppt-studio-skill（设计优先 HTML → 可编辑 PPTX）</div><div class="sk-subtitle">Flymetothemood · 先 HTML 审阅，满意再导出可编辑 PPTX</div></div></div>
+      <div class="badges"><span class="bd bd-b">PPT 生成</span><span class="bd bd-r">新发布 8/11</span><span class="bd bd-p">设计优先</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>以 HTML 作为设计与审阅的「唯一事实来源」，先用统一的 design tokens 排版，你在浏览器里确认满意后，再导出可编辑的 PPTX。<br><strong>最适合：</strong>想要「好看」又「能改」的 PPT，而不是套死模板。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add Flymetothemood/ppt-studio-skill --agent codex --global</div><div class="cmt">默认装到 $CODEX_HOME/skills，一次装齐主 skill + 4 个设计协作 skill。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>拿一份 Markdown 讲稿，先出 HTML 预览，改到满意再导 PPTX。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>“用 ppt-studio 把这份 Markdown 大纲做成 10 页演示”</div>
+        <div class="ex-out"><strong>成果：</strong>先出 HTML 幻灯片（浏览器可预览、可批注），确认后导出可编辑 PPTX + 高清 PNG 截图。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">① 女娲</span><span class="pa">蒸馏人</span>
+      <span class="ps ps-2">② 仓颉</span><span class="pa">蒸馏书</span>
+      <span class="ps ps-3">③ 达尔文</span><span class="pa">持续进化</span>
+      <span class="ps ps-4">④ PPT</span><span class="pa">可交付输出</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ CLI 0.149.0（8/20）：多任务管理 + 后台会话</div></div><div class="tb">新增 <strong>codex agents</strong> 交互式任务面板——搜索、启动、打开、改名、停止任务都能在一个面板里完成；<strong>codex queue</strong> 能给运行中的会话发消息而不打断它；<strong>/cd /pwd /cwd</strong> 让你在会话里直接切换工作目录。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ CLI 0.148.0（8/18）：/export 导出对话 + 会话分支</div></div><div class="tb"><strong>/export</strong> 把整段 TUI 对话写成 Markdown（到剪贴板或文件）；<strong>codex exec fork</strong> 从当前状态分支探索另一条路，不用从头重放。</div></div>
+    <div class="hl">💡 <strong>今天就能用的技巧：</strong>一次长任务跑完，敲 <strong>/export</strong> 把全过程存成 Markdown——复盘、归档、发给同事都省事，再也不用对着滚动的终端截图。</div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 只勾 2-3 个最相关来源，回答精度翻倍</div></div><div class="tb">导入大量资料后，先<strong>取消全选</strong>，只勾当前问题最相关的两三个文件。这个被大多数人忽略的操作，能让回答从「泛泛而谈」变得「精准命中」。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 命名纪律 + 混合媒介</div></div><div class="tb">笔记本用具体细分主题命名（如「AI 视频生成研究 2026」），避免检索时领域混淆；同一本里混入论文 + YouTube + 播客音频，跨媒介拼出某个主题的最全视角。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Deep Research 提问公式</div></div><div class="tb">主题 + 时间范围 + 分析面向，缺一不可。它自动抓几十个源、剔除失效链接、生成带引用的报告，还能直接把报告导入成新来源继续追问。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 技能中心直接搜装「仓颉」「女娲」</div></div><div class="tb">社区蒸馏好的 skill，不用记 npx 命令。在 WorkBuddy 里点 <strong>技能 → 搜索「仓颉」或「女娲」→ 推荐 → 去试试</strong>，一键上手。今天这期的主角 skill，WorkBuddy 里都能直接搜到。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 30 分钟，把「一本常翻的书 + 一个敬佩的人」变成外脑</div>
+      <div class="sh-sub">用今天的蒸馏流水线，完成一个可交付的示例</div>
+      <div class="sh-box">
+        <strong>① 女娲蒸馏一个领域前辈</strong> → 输入名字，6 路并行调研，产出 3-7 个心智模型 + 决策启发式 + 表达 DNA 的 skill<br>
+        <strong>② 仓颉蒸馏一本方法论书</strong> → 12-20 个可触发 skill + 一篇 5 分钟 DIGEST 长文<br>
+        <strong>③ 达尔文跑一轮</strong> → 8 维评估 + 棘轮机制，只留改进、自动回滚退步<br>
+        <strong>④ 下次选题时直接调用</strong>：「用 XX 的视角看这个选题」，再交给 ppt-studio 出汇报<br><br>
+        <strong>示例输出</strong>（问芒格：「要不要追这个热点选题？」）：<br>
+        “反过来想。先问这个选题三年后还值不值得写？如果三年后没人记得，它只是噪音。好选题像复利，要能持续给你积累读者信任。追一次热点赚的是流量，亏的是定位。”</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 知识不稀缺，能随时调用才稀缺。今天开始，别再让书和收藏夹替你「保管」知识——把它们蒸馏出来，装进你的外脑。</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-24</span>
+  </div>
+</div>
+</body>
+</html>

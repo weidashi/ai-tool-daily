@@ -100,7 +100,8 @@
         "gorden-super-ppt",
         "slide-maker",
         "dashiai-ppt-skill",
-        "ppt-speech-writer"
+        "ppt-speech-writer",
+        "ppt-studio-skill"
       ]
     },
     {
@@ -174,7 +175,9 @@
         "claude-scholar",
         "grill-me",
         "podcast-research-skill",
-        "transcribe"
+        "transcribe",
+        "nuwa-skill",
+        "darwin-skill"
       ]
     },
     {
@@ -195,7 +198,8 @@
         "knowledge-site-creator",
         "invoice-organizer",
         "audio-tldr-skill",
-        "pdf-processing-pro-skill"
+        "pdf-processing-pro-skill",
+        "cangjie-skill"
       ]
     }
   ],
@@ -2526,9 +2530,100 @@
         "2026-08-23"
       ],
       "result": "一份 PPT → 注入备注栏的逐页讲稿 + 完整排练文档"
+    },
+    "nuwa-skill": {
+      "name": "女娲 nuwa-skill（蒸馏人物思维）",
+      "author": "alchaincyf",
+      "subtitle": "输入人名，蒸馏出他怎么想问题、怎么做决策",
+      "desc": "输入一个人名，6路Agent并行采集著作、访谈、社交媒体、批评者评价，提炼出心智模型+决策启发式+表达DNA，生成可反复调用的skill。乔布斯、芒格、费曼、纳瓦尔等17位已蒸馏好，适合卡选题、做决策时借大佬的脑子想一想。",
+      "stars": "21.6k",
+      "tags": [
+        "选题研究",
+        "思维蒸馏",
+        "决策分析"
+      ],
+      "install": "npx -y skills@latest add alchaincyf/nuwa-skill --agent codex --global",
+      "issues": [
+        "2026-08-24"
+      ],
+      "result": "一个人名 → 可反复调用的心智模型 skill（乔布斯/芒格/纳瓦尔视角随你切）"
+    },
+    "cangjie-skill": {
+      "name": "仓颉 cangjie-skill（蒸馏书/视频/播客）",
+      "author": "kangarooking",
+      "subtitle": "把方法论蒸馏成可触发、可测试的 Skill 包",
+      "desc": "把一本书、一期播客、一个长视频里的方法论蒸馏成可触发可测试的skill包，不是摘要而是工具化——每个skill带触发条件、使用步骤、边界说明，外加一篇5分钟读完的DIGEST精华长文。",
+      "stars": "6.7k",
+      "tags": [
+        "阅读总结",
+        "知识蒸馏",
+        "报告生成"
+      ],
+      "install": "npx -y skills@latest add kangarooking/cangjie-skill --agent codex --global",
+      "issues": [
+        "2026-08-24"
+      ],
+      "result": "一本书/一期播客 → 12-20个可触发 skill + 5分钟 DIGEST 长文"
+    },
+    "darwin-skill": {
+      "name": "达尔文 darwin-skill（让 skill 自动进化）",
+      "author": "alchaincyf",
+      "subtitle": "8维评估 + 棘轮机制，批量优化你已有的 skill",
+      "desc": "用自主实验循环批量优化已有skill：8维度评估+棘轮机制（只保留改进、自动回滚退步）+独立子agent评分，让蒸馏出来的skill持续保持新鲜不跑偏。",
+      "stars": "女娲生态",
+      "tags": [
+        "元技能",
+        "质量优化",
+        "日常自动化"
+      ],
+      "install": "npx -y skills@latest add alchaincyf/darwin-skill --agent codex --global",
+      "issues": [
+        "2026-08-24"
+      ],
+      "result": "一轮评估 → 每个 skill 一份 8 维报告，改进保留、退步自动回滚"
+    },
+    "ppt-studio-skill": {
+      "name": "ppt-studio-skill（设计优先 HTML→PPTX）",
+      "author": "Flymetothemood",
+      "subtitle": "先 HTML 审阅，满意再导出可编辑 PPTX",
+      "desc": "以HTML作为设计与审阅的唯一事实来源，先用统一design tokens排版，浏览器确认满意后再导出可编辑PPTX，避免套死模板。",
+      "stars": "新发布 8/11",
+      "tags": [
+        "PPT 生成",
+        "设计优先",
+        "可编辑PPTX"
+      ],
+      "install": "npx -y skills@latest add Flymetothemood/ppt-studio-skill --agent codex --global",
+      "issues": [
+        "2026-08-24"
+      ],
+      "result": "一份 Markdown 大纲 → 浏览器可预览的 HTML 幻灯片 → 可编辑 PPTX + 高清 PNG"
     }
   },
   "issues": [
+    {
+      "id": 59,
+      "date": "2026-08-24",
+      "weekday": "星期一",
+      "title": "把收藏夹里的知识，蒸馏成随叫随到的外脑",
+      "subtitle": "蒸馏人物 · 蒸馏书籍 · 持续进化 · PPT 输出",
+      "tags": [
+        "🧠 思维蒸馏",
+        "📚 书籍蒸馏",
+        "🔄 自动进化",
+        "📽️ 设计优先PPT"
+      ],
+      "skillCount": 4,
+      "color": "g3",
+      "numColor": "n-blue",
+      "file": "2026-08-24.html",
+      "skills": [
+        "nuwa-skill",
+        "cangjie-skill",
+        "darwin-skill",
+        "ppt-studio-skill"
+      ]
+    },
     {
       "id": 58,
       "date": "2026-08-23",
