@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-25</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .showcase .sh-box .before { color:#991b1b; background:#fef2f2; padding:8px 10px; border-radius:6px; margin-bottom:8px; border:1px solid #fecaca; }
+  .showcase .sh-box .after { color:#065f46; background:#f0fdf4; padding:8px 10px; border-radius:6px; border:1px solid #bbf7d0; }
+  .showcase .sh-box .lbl { font-size:11px; font-weight:700; display:block; margin-bottom:3px; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-25 · 星期二</div>
+    <h1>去 AI 味、出设计感、一键分发：输出层的 5 个新 Skill</h1>
+    <div class="art-sub">写作润色 · 研究写作 · 小红书发布 · 视频分镜 · 论文精读</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>这一期把目光放在「输出层」——AI 帮你把东西做出来之后，能不能直接见人？37.6k★ 的去味旗舰、把模糊想法逼成分镜脚本的「导演」、一键发小红书的自动化、把论文精读成长期笔记……5 个 Skill 全部 0 行代码、装完今天就能试。看完这一期，你的 AI 产出应该能少一点「AI 味」、多一点「能直接发」。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">Humanizer — 去 AI 味旗舰</div><div class="sk-subtitle">blader · 全球最高星的去 AI 味 Skill</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 37.6K</span><span class="bd bd-p">写作润色</span><span class="bd bd-o">35 条模式</span><span class="bd bd-b">声音匹配</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>用维基百科「AI 写作痕迹」整理的 35 条模式重写文本，让 AI 腔读起来像人写的，但不改任何事实——名字、数字、日期、引用必须来自原文，绝不编造。<br><strong>最适合：</strong>公众号推文、产品介绍、邮件、朋友圈文案写完后的「最后一道去味」。贴 2-3 段你自己的文字，它还能模仿你的节奏、用词和语气。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add blader/humanizer --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把昨天写的 AI 初稿丢进去，先让它出一版改写 + 指出哪里还「AI 味」重，而不是直接替换。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>/humanizer，粘贴一段典型 AI 腔文案：「在当今数字化浪潮席卷全球的时代背景下，人工智能技术正在深刻改变内容创作的方式。本文将深入探讨 AI 工具在写作领域的应用价值，为您提供全方位、多维度的深度解析。」</div>
+        <div class="ex-out"><strong>成果：</strong>「AI 正在改变我们写东西的方式。这篇文章不聊宏大叙事，只讲一件事：怎么用 AI 把文章写得又快、又像你自己写的。」</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">Research Paper Writing Skills</div><div class="sk-subtitle">Master-cai · 研究型写作的全流程助手</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 6.3K</span><span class="bd bd-p">研究写作</span><span class="bd bd-o">章节润色</span><span class="bd bd-b">审稿人视角</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一套把论文/研究长文写作拆成「摘要、引言、方法、实验、结论」逐章节打磨的 Skill，沉淀自彭思达教授的公开笔记。除了改写润色，还能检查「论点-证据」是否对齐、以审稿人视角做投稿前自检。<br><strong>最适合：</strong>写深度长文、行业报告、研究型公众号内容时，逐章节打磨逻辑和措辞。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add Master-cai/Research-Paper-Writing-Skills --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>说「Use research-paper-writing to improve my Introduction」，把一篇长文的开头交给它重写并说明改动逻辑。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我看这篇报告的『结论』部分，论点有没有被证据支撑，语句有没有跳跃。」</div>
+        <div class="ex-out"><strong>成果：</strong>逐段标注「哪句有证据支撑 / 哪句是断言需要补数据」，并给出一版更连贯的改写 + 逻辑说明。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">XiaohongshuSkills — 小红书自动发布</div><div class="sk-subtitle">white0dew · CDP 自动化发布图文/视频</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3.4K</span><span class="bd bd-r">社交分发</span><span class="bd bd-o">自动发布</span><span class="bd bd-b">多账号</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>通过 Chrome 调试协议自动把内容发到小红书，支持图文/视频发布、话题标签自动写入、定时发布、多账号 Cookie 隔离。<br><strong>最适合：</strong>内容做完后一键发小红书（发文场景），省掉手动上传、填标题、加标签的重复劳动。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add white0dew/XiaohongshuSkills --agent codex --global</div><div class="cmt">需本机 Python 3.10+ 与 Chrome 浏览器。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong><strong>⚠️ 先看风险：</strong>自动化有风控/限流/封号风险，务必先用测试号验证、控制频率、发布前人工复核。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把这篇已排版好的图文发到小红书，标题《5 个让 AI 写作更像人写的 Skill》，最后一行 #AI工具 #效率」</div>
+        <div class="ex-out"><strong>成果：</strong>自动填标题、上传图片、按最后一行写入话题标签，完成发布（测试号上先跑通）。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">video-spec-builder — 把想法逼成分镜脚本</div><div class="sk-subtitle">feicaiclub · 像导演一样连环追问</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 921</span><span class="bd bd-p">内容创作</span><span class="bd bd-o">视频分镜</span><span class="bd bd-b">逐秒脚本</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>你说「我想做个视频」，它像导演一样连环追问（给谁看？多长？观众该记住哪一句话？哪一镜扛重点？），直到产出精确到秒的 video-spec.md 分镜脚本，交给 HyperFrames 直接渲染成片。<br><strong>最适合：</strong>产品介绍、短视频、公司宣传片等「有想法但说不清」时，把模糊念头逼成能拍的脚本。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add feicaiclub/video-spec-builder --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>对 Codex 说「I want to make a video」，用 3-5 轮问答把一个点子逼成逐镜脚本。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「我想做一个 30 秒的 App 介绍短视频。」</div>
+        <div class="ex-out"><strong>成果：</strong>video-spec.md：镜头 1（0-5s）痛点特写 + 一句话钩子；镜头 2（5-12s）打开 App 到核心功能；镜头 3（12-20s）真实使用画面；镜头 4（20-27s）结果对比；镜头 5（27-30s）Logo + 下载号召。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">DeepPaperNote — 论文精读成长期笔记</div><div class="sk-subtitle">917Dhj · 单篇论文 → Obsidian 结构化笔记</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 860</span><span class="bd bd-p">阅读总结</span><span class="bd bd-o">Obsidian</span><span class="bd bd-b">证据优先</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把一篇复杂论文精读成一张「值得长期保留」的 Obsidian 笔记页——研究问题、方法、证据、结果、图表全部结构化，配套 paper-glossary 还能建术语库。<br><strong>最适合：</strong>读论文/深度长文后想沉淀成可复用笔记，而不是一次性摘要。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add 917Dhj/DeepPaperNote --agent codex --global</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>丢一篇 PDF 给它，输出一张带「研究问题 / 方法 / 证据 / 结论」分区的 Obsidian 笔记。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「精读这篇论文，做成 Obsidian 笔记，保留核心公式和图表上下文。」</div>
+        <div class="ex-out"><strong>成果：</strong>一张结构化 Markdown 笔记，含论文元信息、方法骨架、关键公式、结论与图表说明，可直接放进你的知识库。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ /export — 把整段对话导出成 Markdown</div></div><div class="tb">写完一篇文章、做完一份研究大纲后，输入 <strong>/export</strong> 就能把整段对话导出成 Markdown 到剪贴板或文件。用于给长对话存档、把一次「多轮打磨」的过程留底，回头不用重开就能 review。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ codex queue — 给后台长任务发补充指令</div></div><div class="tb">后台跑着一个长任务（比如生成一份 PPT、批量处理文档）时，用 <strong>codex queue</strong> 直接给它追加一句话指令，不用打开交互界面。多任务并行时尤其好用。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🆕 GPT-5.6 Luna 降价 80%</div></div><div class="tb">Luna 降到 $0.20 / $1.20 每百万 token，日常轻量任务（分类、批处理、初稿）成本大降。另提醒：<strong>Assistants API 明天（8/26）正式关停</strong>，相关自动化需尽快迁移。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 音频概览的 4 种格式，用 Critique 让 AI 帮你挑刺</div></div><div class="tb">音频概览现在有 Deep Dive / Brief / Critique / Debate 四种格式。把写好的文章或设计稿丢进去选 <strong>Critique</strong>，两个 AI 主播会建设性地评价你的作品——相当于一次免费的「口头评审」。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 建可信笔记的「三个验证提问」</div></div><div class="tb">在依赖某个 Notebook 之前，固定跑三个问题：① 来源之间有哪些分歧？② 还缺哪些子话题/盲点？③ 有哪些反方观点？把答案存成笔记，它们就是你的研究脚手架。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Video Overviews（2026 新增）</div></div><div class="tb">除了音频，现在还能把来源做成一段「叙事动画视频」，适合视觉型学习和把内容分享给不愿读原文的人。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 把「每天固定要做的 AI 任务」设成自动化</div></div><div class="tb">WorkBuddy 的「自动化」功能能把重复任务设成定时执行——日报、晨报、素材整理、每日签到……到点自动跑，结果直接推给你。<strong>你正在读的这份「每日速递」，本身就是一条自动化任务</strong>：每天早上 9 点自动搜内容、写稿、更新首页、推送。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果</div>
+      <div class="sh-sub">用今天头条的 Humanizer，给一段典型「AI 腔」导语去味</div>
+      <div class="sh-box">
+        <div class="before"><span class="lbl">❌ 去味前（典型 AI 腔）</span>「在当今数字化浪潮席卷全球的时代背景下，人工智能技术正在深刻改变内容创作的方式。本文将深入探讨 AI 工具在写作领域的应用价值，为您提供全方位、多维度的深度解析，助您更好地把握时代脉搏。」</div>
+        <div class="after"><span class="lbl">✅ 去味后（人话）</span>「AI 正在改变我们写东西的方式。这篇文章不聊宏大叙事，只讲一件事：怎么用 AI 把文章写得又快、又像你自己写的。」</div>
+        <div style="margin-top:10px;color:#065f46">把这段原文丢进 /humanizer，你也能复现。核心变化：删掉了「在……背景下」「全方位、多维度」「把握时代脉搏」这类空话，换成一句具体、有判断、像人说的话。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 输出的东西，要敢直接发出去给人看</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-25</span>
+  </div>
+</div>
+</body>
+</html>
