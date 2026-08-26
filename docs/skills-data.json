@@ -75,7 +75,8 @@
         "canghe-skills",
         "cc2image",
         "video-storyboard-builder",
-        "video-spec-builder"
+        "video-spec-builder",
+        "gbro-cover-design"
       ]
     },
     {
@@ -131,7 +132,8 @@
         "yuwen-publish-precheck",
         "wechat-skill",
         "xhs-account-strategy",
-        "xiaohongshu-skills"
+        "xiaohongshu-skills",
+        "gbro-cover-design"
       ]
     },
     {
@@ -182,7 +184,11 @@
         "transcribe",
         "nuwa-skill",
         "darwin-skill",
-        "deeppapernote"
+        "deeppapernote",
+        "book-deep-read",
+        "make-knowledge-cards",
+        "knowledge-mgmt",
+        "create-plan"
       ]
     },
     {
@@ -2688,9 +2694,130 @@
         "2026-08-25"
       ],
       "result": "一篇论文 PDF → 一张结构化 Obsidian 笔记页"
+    },
+    "book-deep-read": {
+      "name": "book-deep-read（整本书拆解）",
+      "author": "HiHera",
+      "subtitle": "整本书→15种可验证知识资产，支持微信读书划线，Map-reduce并行拆章",
+      "desc": "把一本书（EPUB/PDF/TXT/MD 或微信读书读过的书）拆成结构化知识资产——核心论点、故事库、框架库、金句、背诵卡片、HTML可视化图册共15种产物。Map-reduce并行拆章不惧长书，每句话标注来源定位和忠实度。输出给人看的文档+给Agent调用的YAML/JSONL结构化数据。",
+      "stars": "新发布",
+      "tags": [
+        "阅读总结",
+        "知识资产",
+        "微信读书",
+        "Map-reduce",
+        "背诵卡片"
+      ],
+      "install": "git clone https://github.com/HiHera/book-deep-read.git ~/.codex/skills/book-deep-read",
+      "issues": [
+        "2026-08-26"
+      ],
+      "result": "一本书→15个文件（核心速览/章节地图/核心论点/故事库/框架库/金句/背诵卡片/HTML图册），可背书、可复习、可被其它Agent调用。"
+    },
+    "gbro-cover-design": {
+      "name": "gbro-cover-design（封面提示词生成）",
+      "author": "pyang5166",
+      "subtitle": "公众号/小红书3:4封面提示词，10种构图，三轮提问，人脸一致性",
+      "desc": "把文章丢给Agent，先读内容再只问三轮——构图风格+标题、人脸/产品参考图、表情/背景/字体/字色，输出可直接跑图的封面提示词。内置10套构图（深色渐变/产品主视觉/极简留白等），标题自动帮你想，固定3:4竖版+安全区。不负责生图、不需API Key。",
+      "stars": "327",
+      "tags": [
+        "社交分发",
+        "封面",
+        "3:4竖版",
+        "10种构图",
+        "小红书",
+        "公众号"
+      ],
+      "install": "git clone https://github.com/pyang5166/gbro-cover-design.git ~/.codex/skills/gbro-cover-design",
+      "issues": [
+        "2026-08-26"
+      ],
+      "result": "一篇文章→三轮问答→一段能直接跑图的中文封面提示词。不用自己磨「再大一点、再靠左一点」。"
+    },
+    "make-knowledge-cards": {
+      "name": "make-knowledge-cards（知识卡片）",
+      "author": "charliesure2025",
+      "subtitle": "长文章→5-8张忠实原文的知识卡片，可自测复习，零依赖",
+      "desc": "把粘贴的文章或本地MD/TXT整理成简洁、忠实原文的知识卡片。识别论点/概念/机制/关键区别/实践启示，合并重复、保留限定条件和因果方向，不编造原文没有的信息。每张卡片=标题+核心知识+简明解释+例子/自测问题，只讲一个知识点。",
+      "stars": "新发布",
+      "tags": [
+        "阅读总结",
+        "知识卡片",
+        "自测复习",
+        "零依赖",
+        "原文忠实"
+      ],
+      "install": "git clone https://github.com/charliesure2025/make-knowledge-cards.git && cp -R make-knowledge-cards/skills/make-knowledge-cards ~/.codex/skills/",
+      "issues": [
+        "2026-08-26"
+      ],
+      "result": "一篇长文→5-8张卡片（标题+核心知识+自测问题），重复已合并、结论可追溯原文。"
+    },
+    "knowledge-mgmt": {
+      "name": "knowledge-mgmt（个人知识管理）",
+      "author": "owenliang60-ship-it",
+      "subtitle": "6命令个人知识系统：/read /note /review，FSRS间隔复习，Obsidian存储",
+      "desc": "把Karpathy的LLM Wiki理念做成可安装skill集。6个命令：/read深度阅读、/insights提取洞察、/note唯一写入通道（双提议机制）、/review FSRS-6间隔复习（AI出题+评分）、/query知识查询、/lint健康检查。全部写入Obsidian，强调人必须在loop里。",
+      "stars": "9",
+      "tags": [
+        "知识管理",
+        "间隔复习",
+        "FSRS",
+        "Obsidian",
+        "个人知识库"
+      ],
+      "install": "git clone https://github.com/owenliang60-ship-it/knowledge-mgmt.git ~/.codex/skills/knowledge-mgmt",
+      "issues": [
+        "2026-08-26"
+      ],
+      "result": "/read读报告→/note存卡片→/review定时出题复习，把碎片阅读沉淀成长期可复习的个人知识库。"
+    },
+    "create-plan": {
+      "name": "create-plan（任务前置规划）",
+      "author": "OpenAI / ComposioHQ",
+      "subtitle": "执行前先出方案、划边界、确认需求，避免理解偏差导致返工",
+      "desc": "执行任何任务前，先输出可审阅的执行方案——要做什么、边界在哪、需要确认什么。杜绝理解偏差→越界→返工。特别适合长篇写作、PPT制作、内容策划这类一步错全盘返工的活儿。OpenAI官方skills仓库同名精选Skill。",
+      "stars": "官方精选",
+      "tags": [
+        "日常自动化",
+        "任务规划",
+        "防返工",
+        "官方精选",
+        "边界确认"
+      ],
+      "install": "npx -y skills@latest add ComposioHQ/awesome-codex-skills --skill create-plan --agent codex --global",
+      "issues": [
+        "2026-08-26"
+      ],
+      "result": "让Codex写长文/做PPT前先出方案给你确认，再放它动笔，避免写完才发现跑偏。"
     }
   },
   "issues": [
+    {
+      "id": 61,
+      "date": "2026-08-26",
+      "weekday": "星期三",
+      "title": "「读进去 · 变资产 · 想清楚」：5 个新 Skill 补全知识工作闭环",
+      "subtitle": "整本书拆解 · 知识卡片 · 封面分发 · 间隔复习 · 任务规划",
+      "tags": [
+        "📚 整本书拆解",
+        "📇 知识卡片",
+        "🎨 封面分发",
+        "🧠 间隔复习",
+        "🗂️ 任务规划"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-26.html",
+      "skills": [
+        "book-deep-read",
+        "gbro-cover-design",
+        "make-knowledge-cards",
+        "knowledge-mgmt",
+        "create-plan"
+      ]
+    },
     {
       "id": 60,
       "date": "2026-08-25",
