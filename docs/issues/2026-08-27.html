@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具每日速递 - 2026-08-27</title>
+<style>
+  :root { --bg: #f8f7f4; --card: #ffffff; --text: #1a1a1a; --muted: #787774; --border: #e9e5df; --purple: #6c5ce7; --green: #10ac84; --blue: #3867d6; --orange: #f39c12; --pink: #e84393; --radius: 16px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .nav { text-align:center; padding:12px; font-size:12px; background:#fff; border-bottom:1px solid var(--border); }
+  .nav a { color:var(--purple); text-decoration:none; font-weight:600; }
+  .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 48px; }
+  .art-header { text-align: center; margin-bottom: 40px; }
+  .art-header .art-date { display:inline-block; font-size:12px; color:var(--muted); background:var(--card); padding:5px 14px; border-radius:20px; border:1px solid var(--border); margin-bottom:14px; }
+  .art-header h1 { font-size:30px; font-weight:800; line-height:1.3; margin-bottom:10px; }
+  .art-header .art-sub { font-size:14px; color:var(--muted); }
+  .section { margin-bottom: 40px; }
+  .section-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; margin-bottom:18px; }
+  .si { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .si-p { background:#f3f0ff; } .si-g { background:#e6faf4; } .si-b { background:#e8f0fe; } .si-o { background:#fef3e2; }
+  .intro-box { background:linear-gradient(135deg,#f3f0ff,#fdfbff); border-radius:var(--radius); padding:20px 24px; font-size:13px; color:#4a3f8a; line-height:1.7; border:1px solid #e8e3f8; margin-bottom:24px; }
+  .intro-box strong { color:#2d1b4e; }
+  .skill { background:var(--card); border-radius:var(--radius); border:1px solid var(--border); padding:24px; margin-bottom:16px; transition:box-shadow .2s; }
+  .skill.featured { border-color:#d4c5f9; background:linear-gradient(135deg,#fdfbff,#faf8ff); }
+  .sk-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
+  .sk-num { width:34px; height:34px; border-radius:10px; background:#f3f0ff; color:var(--purple); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+  .sk-title { font-size:16px; font-weight:700; line-height:1.3; }
+  .sk-subtitle { font-size:12px; color:var(--muted); margin-top:2px; }
+  .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; margin-left:46px; }
+  .bd { font-size:11px; font-weight:600; padding:2px 9px; border-radius:12px; }
+  .bd-p { background:#f3f0ff; color:var(--purple); } .bd-g { background:#e6faf4; color:var(--green); }
+  .bd-b { background:#e8f0fe; color:var(--blue); } .bd-o { background:#fef3e2; color:var(--orange); } .bd-r { background:#fce4ec; color:var(--pink); }
+  .sk-desc { font-size:13px; color:#555; line-height:1.7; margin-bottom:14px; }
+  .sk-desc strong { color:var(--text); }
+  .install { background:#faf9f7; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .install .il { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; }
+  .install .cmd { font-family:'SF Mono',Consolas,Monaco,monospace; font-size:11px; color:var(--purple); background:#fff; padding:6px 12px; border-radius:6px; display:inline-block; word-break:break-all; max-width:100%; }
+  .install .cmt { font-size:11px; color:var(--muted); margin-top:6px; }
+  .try { font-size:12px; color:#555; line-height:1.7; background:#fffbeb; border-radius:8px; padding:12px 14px; margin-top:10px; border:1px solid #fef3c7; }
+  .try strong { color:#92400e; }
+  .example { background:#f6f8fa; border-radius:10px; padding:14px 16px; margin-top:10px; font-size:12px; line-height:1.6; border:1px solid #e5e7eb; }
+  .example .ex-title { font-weight:700; color:#374151; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+  .example .ex-in { color:#4b5563; margin-bottom:8px; }
+  .example .ex-out { color:#1f2937; background:#fff; border-left:3px solid var(--green); padding:8px 12px; border-radius:0 6px 6px 0; }
+  .tip { background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:12px; border:1px solid var(--border); }
+  .tip .th { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .tip .tt { font-size:14px; font-weight:700; }
+  .tip .tb { font-size:13px; color:#555; line-height:1.7; }
+  .tip.t-g { border-left:3px solid var(--green); } .tip.t-b { border-left:3px solid var(--blue); } .tip.t-o { border-left:3px solid var(--orange); } .tip.t-p { border-left:3px solid var(--purple); }
+  .hl { background:linear-gradient(135deg,#eff6ff,#f0f9ff); border-radius:12px; padding:18px 20px; margin:16px 0; border:1px solid #bfdbfe; font-size:13px; color:#1e40af; line-height:1.7; }
+  .pipe { display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:12px; padding:14px 18px; background:var(--card); border-radius:12px; border:1px solid var(--border); margin-top:16px; }
+  .ps { padding:4px 12px; border-radius:8px; font-weight:600; font-size:11px; }
+  .ps-1 { background:#f3f0ff; color:var(--purple); } .ps-2 { background:#e6faf4; color:var(--green); }
+  .ps-3 { background:#e8f0fe; color:var(--blue); } .ps-4 { background:#fef3e2; color:var(--orange); } .ps-5 { background:#fce4ec; color:var(--pink); }
+  .pa { color:var(--muted); font-weight:700; }
+  .showcase { background:linear-gradient(135deg,#e6faf4,#f0fdf9); border-radius:var(--radius); border:1px solid #a7f3d0; padding:24px; margin-top:16px; }
+  .showcase .sh-title { font-size:15px; font-weight:700; color:#064e3b; margin-bottom:8px; }
+  .showcase .sh-sub { font-size:12px; color:#047857; margin-bottom:14px; }
+  .showcase .sh-box { background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #d1fae5; font-size:13px; color:#065f46; line-height:1.7; }
+  .footer { text-align:center; padding:32px 24px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); margin-top:40px; }
+  .footer .enc { font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px; }
+  @media(max-width:600px){ .art-header h1{font-size:24px;}.pipe{gap:4px;}.pa{display:none;} }
+</style>
+</head>
+<body>
+<div class="nav"><a href="../index.html">← 返回速递列表</a></div>
+<div class="article">
+  <div class="art-header">
+    <div class="art-date">📅 2026-08-27 · 星期四</div>
+    <h1>让 AI 越写越像你：个人 IP 输出层的最后一公里</h1>
+    <div class="art-sub">个人文风学习 · 表达规则 · X 平台分发 · 公众号全流程 · 合同体检</div>
+  </div>
+  <div class="intro-box">📌 <strong>本期导读</strong><br>前几期我们把「读进去、写出来、发出去」的流水线补齐了，这期补上最容易被忽略的一环——<strong>「写得像你」和「发得多」</strong>。5 个新 Skill 全是 Codex 生态、0 行代码：先给 AI 立表达规矩、让它学你的文风，再把它变成 X 平台和公众号的内容小团队，最后用合同体检收尾，接单不踩坑。</div>
+
+  <!-- 📘 Skills -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📘</div><span>Codex 日常效率 Skills</span></div>
+    <div class="skill featured">
+      <div class="sk-top"><div class="sk-num">①</div><div><div class="sk-title">writing-style-skill（个人文风学习）</div><div class="sk-subtitle">yzhao062 · AI 写 → 你改 → 自动抽规则 → 越写越像你</div></div></div>
+      <div class="badges"><span class="bd bd-p">写作润色</span><span class="bd bd-g">个人 IP</span><span class="bd bd-b">文风沉淀</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>一个「可学习」的个人写作风格模板。AI 先写，你手动修改，系统观察你的改动后自动提取规则，持续更新 SKILL.md——你改得越多，它越懂你的文风。<br><strong>最适合：</strong>想沉淀个人 IP、不想每次开新对话都重新交代「我的语气、禁用词、段落习惯」的内容创作者。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add jzOcb/writing-style-skill --agent codex --global</div><div class="cmt">装好后，把你过去写得好的一两篇文章作为样本喂给它，先建立文风基线。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你最近一篇「写完总想再改一遍」的稿子丢给它，说「按我的写作风格改写这段」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>一段你亲手写的旧稿 + 一句「以后就按这个语气写」</div>
+        <div class="ex-out"><strong>成果：</strong>以后每次让 Codex 写东西，开头不再「在当今时代」，而是有你的判断、你的停顿、你的细节。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">②</div><div><div class="sk-title">agent-style（21 条表达规则）</div><div class="sk-subtitle">yzhao062 · 从源头约束 AI 怎么说话</div></div></div>
+      <div class="badges"><span class="bd bd-p">写作润色</span><span class="bd bd-g">源头约束</span><span class="bd bd-b">21 条规则</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>不是事后改写，而是装好 21 条表达规则，让 Codex 从生成第一句就「不啰嗦、去套话、术语一致、别一开口像说明书」。适合 Claude Code、Codex、Copilot、Cursor 多环境。<br><strong>最适合：</strong>受够了「首先/其次/最后」「值得注意的是」「不仅…更…」的人——从源头就别让它写出来。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add yzhao062/agent-style --agent codex --global</div><div class="cmt">装好后无需特意触发，写内容时规则自动生效。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>直接让 Codex 写一段产品介绍，对比装之前——套话明显变少。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我写一段介绍我们新课程的朋友圈文案」</div>
+        <div class="ex-out"><strong>成果：</strong>一句人话讲清楚课程给谁、解决什么、怎么报名，全程没有「赋能」「一站式」「划时代」。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">③</div><div><div class="sk-title">x-skills（X 平台内容团队）</div><div class="sk-subtitle">sergebulaev · 9 个 Skill 组成 X(Twitter) 内容团队，发布前必审</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 400+（家族）</span><span class="bd bd-p">社交分发</span><span class="bd bd-b">X/Twitter</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把 Codex 变成你的 X 内容小团队——用你的语气写推文和 thread、从爆款推文反向拆 hook、起草回复和引用推文、规划一整周内容。所有草稿先自动去 AI 味、等你审批后才发布。<br><strong>最适合：</strong>想把内容分发到 X/Twitter，做英文或双语内容、出海的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add sergebulaev/x-skills --agent codex --global</div><div class="cmt">也可用 Codex 插件市场：codex plugin marketplace add sergebulaev/x-skills。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>说「把这些笔记写成一条 thread」或「这个爆款推文用了什么 hook？」，它会先拆结构再动笔。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「把我这 5 条零散想法写成一个关于『AI 写稿越写越不像我』的 thread」</div>
+        <div class="ex-out"><strong>成果：</strong>一条带钩子、分论点、有结论的 X thread 草稿，去完 AI 味，等你点头才发。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">④</div><div><div class="sk-title">AIWriteX（公众号全流程）</div><div class="sk-subtitle">iniwap · 热点采集 → 选题 → 写作 → 排版 → 配图 → 多账号发布</div></div></div>
+      <div class="badges"><span class="bd bd-p">内容创作</span><span class="bd bd-g">公众号</span><span class="bd bd-b">多账号</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>公众号 AI 内容生产工作流，覆盖热点采集、选题、文章生成、排版、自动配图、公众号发布、多账号管理和去 AI 味润色，一条龙。<br><strong>最适合：</strong>想把公众号从选题到发布整条链交给 AI 跑、自己只做把关的人。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add iniwap/AIWriteX --agent codex --global</div><div class="cmt">首次使用按提示配置账号与风格偏好，之后一句话触发。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>说「用 AIWriteX 帮我把今天的热点写成一篇文章，先出选题让我确认」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「围绕『AI 写稿同质化』写一篇公众号文章，配 3 张图，先不发布」</div>
+        <div class="ex-out"><strong>成果：</strong>选题 → 标题 → 正文 → 排版 → 配图 → 草稿箱，一条链跑完，发布权始终在你手里。</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="sk-top"><div class="sk-num">⑤</div><div><div class="sk-title">contract-review-skill（合同风险审查）</div><div class="sk-subtitle">kkkcontract · 识别合同漏洞、付款节点、违约条款，输出风险清单</div></div></div>
+      <div class="badges"><span class="bd bd-g">⭐ 3.0K</span><span class="bd bd-p">日常自动化</span><span class="bd bd-b">一人公司</span></div>
+      <div class="sk-desc"><strong>是什么：</strong>把合同丢给它，自动识别漏洞、付款节点、违约条款，输出一份风险清单。<br><strong>最适合：</strong>接商单、外包、合作的自媒体人和一人公司——签合同前先体检一遍，别再「看不懂就签了」。</div>
+      <div class="install"><div class="il">📦 安装</div><div class="cmd">npx -y skills@latest add kkkcontract/contract-review-skill --agent codex --global</div><div class="cmt">把合同 PDF 或文本粘进去即可，不涉及代码。</div></div>
+      <div class="try"><strong>🎯 今天就能试：</strong>把你手里一份待签的合作协议喂进去，看它挑出几处「该改的地方」。</div>
+      <div class="example">
+        <div class="ex-title">📌 实操示例</div>
+        <div class="ex-in"><strong>输入：</strong>「帮我看这份合作合同有哪些坑」+ 粘贴合同全文</div>
+        <div class="ex-out"><strong>成果：</strong>一份风险清单：付款节点、违约责任、版权归属、解约条款逐条标注，哪些要改一目了然。</div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <span class="ps ps-1">立规矩</span><span class="pa">→</span>
+      <span class="ps ps-2">学文风</span><span class="pa">→</span>
+      <span class="ps ps-3">X 分发</span><span class="pa">→</span>
+      <span class="ps ps-4">公众号</span><span class="pa">→</span>
+      <span class="ps ps-5">合同收尾</span>
+      <span style="color:var(--muted)">· 一条「从写到发到接单」的完整链路</span>
+    </div>
+  </div>
+
+  <!-- 🆕 Updates -->
+  <div class="section">
+    <div class="section-title"><div class="si si-b">🆕</div><span>Codex 官方动态 & 使用技巧</span></div>
+    <div class="tip t-b"><div class="th"><div class="tt">⚡ 技巧：codex queue，给后台任务补指令</div></div><div class="tb">Codex CLI 0.149.0（8/20）新增 <strong>codex queue</strong>——任务还在跑的时候，就能把下一条指令排进去，不用干等当前步骤结束。配合新增的 codex agents 面板（搜索/启动/重命名/停止任务），多个后台任务并行时不再手忙脚乱。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🆕 定时任务迎来「事件触发器」（8/26）</div></div><div class="tb">Codex 的定时任务不再只是按点轮询，现在能由 <strong>Gmail 邮件、Slack 频道消息、GitHub PR 评论/提交/合并</strong>等事件触发。比如「收到某发件人的邮件 → 自动整理进日报」，把自动化从「定时」升级到「事件驱动」。</div></div>
+    <div class="tip t-b"><div class="th"><div class="tt">🆕 浏览器支持再扩：Edge / Brave / Opera / Vivaldi</div></div><div class="tb">Codex 的浏览器自动化支持扩展到四大浏览器，并新增 <strong>WebMCP site tools</strong>——让 ChatGPT Work 和 Codex 直接调用网站开放的功能。做跨平台调研、抓网页素材时，选择更多了。</div></div>
+  </div>
+
+  <!-- 📗 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-g">📗</div><span>NotebookLM 每日进步</span></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 双速研究：Fast Research 和 Deep Research 分工</div></div><div class="tb">2026 年的 NotebookLM 已经能上网了，但要用对：<strong>Fast Research</strong> 在搜索框里快速拉一批候选来源给你筛；<strong>Deep Research</strong> 会浏览多个站点、汇编成一份带引用的报告，可直接导入为来源。想快速扫 → 用 Fast，想从零建知识库 → 用 Deep。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 Studio 的输出比你想的多：幻灯片可直接导出 PPTX</div></div><div class="tb">除了音频概览，Studio 还能从你的来源生成<strong>思维导图、信息图（10 种预设风格）、闪卡、测验，以及能导出成 PPTX 的幻灯片大纲</strong>。做分享、做汇报，别只盯着「音频」这一个按钮。</div></div>
+    <div class="tip t-g"><div class="th"><div class="tt">🧪 最高价值的一句提问：「我的来源之间在哪里互相矛盾？」</div></div><div class="tb">多数人只会让 NotebookLM「总结」，但真正的高质量洞察藏在<strong>冲突里</strong>。这句提问会逼它找出不同来源的分歧点——这往往才是你写深度文章时最该抓住的角度。</div></div>
+  </div>
+
+  <!-- 📙 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-o">📙</div><span>WorkBuddy 实用技巧</span></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 一句话内联画图，别开 Visio</div></div><div class="tb">想在文章/方案里配张图？直接在对话里说「帮我画一个 XX 流程图/架构图/柱状图」，WorkBuddy 会<strong>内联渲染出 SVG 图表</strong>——流程图、架构图、数据可视化、交互组件都行。说「对比一下 REST 和 GraphQL」，它会自动画对比图 + 文字解释，比开画图工具快 10 倍。</div></div>
+    <div class="tip t-p"><div class="th"><div class="tt">⚡ 三层记忆：主动说「记住」，别等它猜</div></div><div class="tb">WorkBuddy 有云端/用户级/工作区三层记忆。用法很直接——直接说「记住：我的周报要用表格」「这个项目用 pnpm 不用 npm」，它就会写进本地记忆文件，下次自动遵守，不用每次重复交代。</div></div>
+  </div>
+
+  <!-- 📊 成果展示 -->
+  <div class="section">
+    <div class="section-title"><div class="si si-p">📊</div><span>今日成果展示</span></div>
+    <div class="showcase">
+      <div class="sh-title">🎯 一个能直接带走的小成果</div>
+      <div class="sh-sub">用 agent-style + writing-style-skill 两步，把一段「AI 腔」导语改回你自己的声音</div>
+      <div class="sh-box">
+        <strong>改之前（典型 AI 腔）：</strong>「在当今快节奏的时代背景下，AI 正在深刻改变内容创作的方式。值得注意的是，对于每一个内容创作者来说，这不仅仅是一个工具的升级，更是一场关于表达方式的革命。」<br><br>
+        <strong>改之后（你的声音）：</strong>「AI 把写稿速度提上来了，但三个月后回头看，我的文章都长一个样。这不是工具的问题，是我从没告诉它我该怎么说话。」<br><br>
+        <strong>拆成一条 X 推文：</strong>「AI 写稿越来越快，读起来却越来越不像我。解法不是把『AI 味』改掉，而是让 AI 先学会我怎么说话——规则 + 样本 + 持续改。你改得越多，它越像你。」<br><br>
+        先用 agent-style 立规矩，再用 writing-style-skill 沉淀文风，一段套话就变成了「有判断、有停顿、像你」的成品，顺手拆成 X 推文，一处产出、两处可用。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="enc">🌱 写作的最高境界不是「像人写的」，而是「像你写的」</div>
+    <span style="color:var(--muted)">AI 工具每日速递 · 由 WorkBuddy 生成 · 2026-08-27</span>
+  </div>
+</div>
+</body>
+</html>

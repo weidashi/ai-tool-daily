@@ -42,7 +42,9 @@
         "paraphrase-academic",
         "handoff",
         "humanizer",
-        "research-paper-writing-skills"
+        "research-paper-writing-skills",
+        "writing-style-skill",
+        "agent-style"
       ]
     },
     {
@@ -133,7 +135,9 @@
         "wechat-skill",
         "xhs-account-strategy",
         "xiaohongshu-skills",
-        "gbro-cover-design"
+        "gbro-cover-design",
+        "x-skills",
+        "AIWriteX"
       ]
     },
     {
@@ -210,7 +214,8 @@
         "invoice-organizer",
         "audio-tldr-skill",
         "pdf-processing-pro-skill",
-        "cangjie-skill"
+        "cangjie-skill",
+        "contract-review-skill"
       ]
     }
   ],
@@ -2790,9 +2795,123 @@
         "2026-08-26"
       ],
       "result": "让Codex写长文/做PPT前先出方案给你确认，再放它动笔，避免写完才发现跑偏。"
+    },
+    "writing-style-skill": {
+      "name": "writing-style-skill（个人文风学习）",
+      "author": "jzOcb",
+      "subtitle": "AI 写 → 你改 → 自动抽规则 → 越写越像你",
+      "desc": "一个「可学习」的个人写作风格模板。AI 先写，你手动修改，系统观察你的改动后自动提取规则，持续更新 SKILL.md——你改得越多，它越懂你的文风。适合想沉淀个人 IP、不想每次重新交代文风的创作者。",
+      "stars": "新收录",
+      "tags": [
+        "写作润色",
+        "个人IP",
+        "文风沉淀"
+      ],
+      "install": "npx -y skills@latest add jzOcb/writing-style-skill --agent codex --global",
+      "issues": [
+        "2026-08-27"
+      ],
+      "result": "一段你亲手写的旧稿 → 建立文风基线，以后每次写东西都按你的语气、判断、停顿来。"
+    },
+    "agent-style": {
+      "name": "agent-style（21 条表达规则）",
+      "author": "yzhao062",
+      "subtitle": "从源头约束 AI 怎么说话，去套话、不啰嗦、术语一致",
+      "desc": "不是事后改写，而是装好 21 条表达规则，让 Codex 从生成第一句就「不啰嗦、去套话、术语一致、别一开口像说明书」。适合 Claude Code、Codex、Copilot、Cursor 多环境。",
+      "stars": "新收录",
+      "tags": [
+        "写作润色",
+        "源头约束",
+        "21条规则"
+      ],
+      "install": "npx -y skills@latest add yzhao062/agent-style --agent codex --global",
+      "issues": [
+        "2026-08-27"
+      ],
+      "result": "写一段产品介绍/朋友圈文案 → 全程没有「赋能」「一站式」「划时代」，一句人话讲清楚。"
+    },
+    "x-skills": {
+      "name": "x-skills（X 平台内容团队）",
+      "author": "sergebulaev",
+      "subtitle": "9 个 Skill 组成 X(Twitter) 内容团队，写推文/拆 hook/排期，发布前必审",
+      "desc": "把 Codex 变成你的 X 内容小团队——用你的语气写推文和 thread、从爆款推文反向拆 hook、起草回复和引用推文、规划一整周内容。所有草稿先自动去 AI 味、等你审批后才发布。",
+      "stars": "400+",
+      "tags": [
+        "社交分发",
+        "X/Twitter",
+        "推文",
+        "thread",
+        "发布前审"
+      ],
+      "install": "npx -y skills@latest add sergebulaev/x-skills --agent codex --global",
+      "issues": [
+        "2026-08-27"
+      ],
+      "result": "5 条零散想法 → 一条带钩子、分论点、结论的 X thread 草稿，去完 AI 味等你点头才发。"
+    },
+    "AIWriteX": {
+      "name": "AIWriteX（公众号全流程）",
+      "author": "iniwap",
+      "subtitle": "热点采集 → 选题 → 写作 → 排版 → 配图 → 多账号发布一条龙",
+      "desc": "公众号 AI 内容生产工作流，覆盖热点采集、选题、文章生成、排版、自动配图、公众号发布、多账号管理和去 AI 味润色，一条龙。想把公众号从选题到发布整条链交给 AI 跑的人。",
+      "stars": "新收录",
+      "tags": [
+        "内容创作",
+        "公众号",
+        "多账号",
+        "全流程"
+      ],
+      "install": "npx -y skills@latest add iniwap/AIWriteX --agent codex --global",
+      "issues": [
+        "2026-08-27"
+      ],
+      "result": "一个选题 → 标题+正文+排版+配图+草稿箱，一条链跑完，发布权始终在你手里。"
+    },
+    "contract-review-skill": {
+      "name": "contract-review-skill（合同风险审查）",
+      "author": "kkkcontract",
+      "subtitle": "识别合同漏洞、付款节点、违约条款，输出风险清单",
+      "desc": "把合同丢给它，自动识别漏洞、付款节点、违约条款，输出一份风险清单。适合接商单、外包、合作的自媒体人和一人公司——签合同前先体检一遍。",
+      "stars": "3.0K",
+      "tags": [
+        "日常自动化",
+        "合同审查",
+        "一人公司",
+        "风险清单"
+      ],
+      "install": "npx -y skills@latest add kkkcontract/contract-review-skill --agent codex --global",
+      "issues": [
+        "2026-08-27"
+      ],
+      "result": "一份待签合作协议 → 风险清单：付款节点、违约责任、版权归属、解约条款逐条标注。"
     }
   },
   "issues": [
+    {
+      "id": 62,
+      "date": "2026-08-27",
+      "weekday": "星期四",
+      "title": "让 AI 越写越像你：个人 IP 输出层的最后一公里",
+      "subtitle": "个人文风学习 · 表达规则 · X 平台分发 · 公众号全流程 · 合同体检",
+      "tags": [
+        "✍️ 个人文风",
+        "📏 表达规则",
+        "🐦 X 分发",
+        "📱 公众号",
+        "📄 合同体检"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-08-27.html",
+      "skills": [
+        "writing-style-skill",
+        "agent-style",
+        "x-skills",
+        "AIWriteX",
+        "contract-review-skill"
+      ]
+    },
     {
       "id": 61,
       "date": "2026-08-26",
