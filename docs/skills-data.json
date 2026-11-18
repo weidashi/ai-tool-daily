@@ -44,7 +44,8 @@
         "humanizer",
         "research-paper-writing-skills",
         "writing-style-skill",
-        "agent-style"
+        "agent-style",
+        "longform-polish"
       ]
     },
     {
@@ -78,7 +79,8 @@
         "cc2image",
         "video-storyboard-builder",
         "video-spec-builder",
-        "gbro-cover-design"
+        "gbro-cover-design",
+        "cover-sprite"
       ]
     },
     {
@@ -137,7 +139,8 @@
         "xiaohongshu-skills",
         "gbro-cover-design",
         "x-skills",
-        "AIWriteX"
+        "AIWriteX",
+        "repurpose-lite"
       ]
     },
     {
@@ -192,7 +195,9 @@
         "book-deep-read",
         "make-knowledge-cards",
         "knowledge-mgmt",
-        "create-plan"
+        "create-plan",
+        "topic-doctor",
+        "read-archive"
       ]
     },
     {
@@ -2884,9 +2889,119 @@
         "2026-08-27"
       ],
       "result": "一份待签合作协议 → 风险清单：付款节点、违约责任、版权归属、解约条款逐条标注。"
+    },
+    "topic-doctor": {
+      "name": "topic-doctor（选题诊断器）",
+      "author": "opentopic",
+      "subtitle": "3 个维度给选题打分，写之前先判生死",
+      "desc": "写完标题和简介后，让它从「人群匹配度、信息增量、情绪张力」三个维度给选题打分，并指出哪个角度最能打。每次动笔前犹豫「这个选题值不值得写」时，先让它排个序。",
+      "stars": "2.1K",
+      "tags": [
+        "选题诊断",
+        "爆款预判",
+        "写作决策"
+      ],
+      "install": "npx -y skills@latest add opentopic/topic-doctor --skill topic-doctor --agent codex --global",
+      "issues": [
+        "2026-11-18"
+      ],
+      "result": "3 个待写选题 → 一张打分表（人群规模/搜索热度/差异化角度）+ 明确结论「先写哪个」+ 3 个切入角度。"
+    },
+    "longform-polish": {
+      "name": "longform-polish（长文去水润色）",
+      "author": "cleantext",
+      "subtitle": "专治 AI 腔 + 逻辑松散，保留你的核心观点",
+      "desc": "针对 2000 字以上长文做「去水 + 顺逻辑」双处理——删掉重复论证、填词套话，同时检查段与段之间的衔接是否跳。不是简单降重，而是让长文读起来更紧凑、更像资深编辑改过。",
+      "stars": "1.8K",
+      "tags": [
+        "写作润色",
+        "去AI味",
+        "长文"
+      ],
+      "install": "npx -y skills@latest add cleantext/longform-polish --skill longform-polish --agent codex --global",
+      "issues": [
+        "2026-11-18"
+      ],
+      "result": "一篇 3000 字长文 → 2400 字紧凑版，删掉的每一处都标注原因，观点和数字原样保留。"
+    },
+    "cover-sprite": {
+      "name": "cover-sprite（一句话配图）",
+      "author": "imgcraft",
+      "subtitle": "从文章标题直接生成封面 + 3 张文内配图",
+      "desc": "不写复杂提示词，只要给它文章标题和摘要，它就自动拆出核心意象，生成一张公众号封面（2.35:1）+ 三张正文配图，风格统一。不想在 Canva/PS 里耗时间、又希望配图有设计感的自媒体人。",
+      "stars": "3.4K",
+      "tags": [
+        "封面配图",
+        "视觉设计",
+        "公众号"
+      ],
+      "install": "npx -y skills@latest add imgcraft/cover-sprite --skill cover-sprite --agent codex --global",
+      "issues": [
+        "2026-11-18"
+      ],
+      "result": "文章标题 → 一张宽幅封面 + 三张同风格配图，配色统一，直接进公众号后台。"
+    },
+    "repurpose-lite": {
+      "name": "repurpose-lite（多平台一键改写）",
+      "author": "onepost",
+      "subtitle": "一篇文章拆成小红书/公众号/知乎三种版本",
+      "desc": "写完一篇长文后，自动按不同平台的调性改写——小红书拆成 6 张卡片的短文案、公众号保留深度长文、知乎改成问答体开头。一次写作，三个渠道复用。",
+      "stars": "1.5K",
+      "tags": [
+        "社交分发",
+        "多平台",
+        "内容复用"
+      ],
+      "install": "npx -y skills@latest add onepost/repurpose-lite --skill repurpose-lite --agent codex --global",
+      "issues": [
+        "2026-11-18"
+      ],
+      "result": "一篇长文 → 小红书 6 卡逐页文案 + 知乎问答开头 + 公众号完整版，三份一起交付。"
+    },
+    "read-archive": {
+      "name": "read-archive（阅读归档助手）",
+      "author": "keepnote",
+      "subtitle": "网页/文章自动摘要 + 打标签 + 存进你的笔记库",
+      "desc": "给它一个网页链接或粘贴一段文章，自动生成 3 句话摘要 + 核心观点列表 + 自动打标签，并按你的规则归档进本地 Markdown 笔记库。解决「收藏了却永远不读」的痛点。",
+      "stars": "986",
+      "tags": [
+        "阅读总结",
+        "日常自动化",
+        "知识管理"
+      ],
+      "install": "npx -y skills@latest add keepnote/read-archive --skill read-archive --agent codex --global",
+      "issues": [
+        "2026-11-18"
+      ],
+      "result": "一篇文章链接 → 结构化笔记（标题 + 3 句摘要 + 5 个核心观点 + 标签），以后搜索关键词就能找回来。"
     }
   },
   "issues": [
+    {
+      "id": 63,
+      "date": "2026-11-18",
+      "weekday": "星期三",
+      "title": "把「写作→配图→分发→阅读」串成一条自动化流水线",
+      "subtitle": "选题诊断 · 长文润色 · 封面配图 · 多平台分发 · 阅读归档",
+      "tags": [
+        "🔍 选题诊断",
+        "✍️ 长文润色",
+        "🎨 封面配图",
+        "📮 多平台分发",
+        "📚 阅读归档"
+      ],
+      "skillCount": 5,
+      "color": "g1",
+      "numColor": "n-purple",
+      "file": "2026-11-18.html",
+      "skills": [
+        "topic-doctor",
+        "longform-polish",
+        "cover-sprite",
+        "repurpose-lite",
+        "read-archive"
+      ]
+    },
     {
       "id": 62,
       "date": "2026-08-27",
